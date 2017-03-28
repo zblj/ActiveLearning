@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Thévenin Equivalent Circuit and Maximum Power Transfer &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Transient Response of RC Circuit" href="ResponseRC.html"/>
+        <link rel="prev" title="Proportionality and Superposition" href="Proportionality.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Phase.html">What is Phase and why do we care?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Kirchhoff.html">Kirchhoff&#8217;s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Voltage.html">Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Proportionality.html">Proportionality and Superposition</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Thévenin Equivalent Circuit and Maximum Power Transfer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions">Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ResponseRC.html">Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResponseRL.html">Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ResonanceRCL.html">Resonance in RLC Circuits</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Thévenin Equivalent Circuit and Maximum Power Transfer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Thevenin.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="thevenin-equivalent-circuit-and-maximum-power-transfer">
+<h1>Thévenin Equivalent Circuit and Maximum Power Transfer<a class="headerlink" href="#thevenin-equivalent-circuit-and-maximum-power-transfer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The objective of this Lab activity is to verify Thévenin&#8217;s theorem by obtaining the Thévenin equivalent voltage (V<sub>TH</sub>) and Thévenin equivalent resistance (R<sub>TH</sub>) for the given circuit. Verify the Maximum Power Transfer Theorem.</p>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+Extension connector pin used as 3.3 V voltage source are show in the documentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">here</a>.</p>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Thévenin&#8217;s Theorem is a process by which a complex circuit is reduced to an equivalent circuit consisting of a single voltage source (V<sub>TH</sub>) in series with a single resistance (R<sub>TH</sub>) and a load resistance (R<sub>L</sub>). After creating the Thévenin Equivalent Circuit, the load voltage V<sub>L</sub>or the load current Il may be easily determined.</p>
+<p>One of the principal uses of Thévenin&#8217;s theorem is to replace a large portion of a circuit, often a more complicated and uninteresting part, by a simple equivalent. The new simpler circuit enables rapid calculations of the voltage, current, and power which the more complicated original circuit is able to deliver to a load. It also helps to choose the optimal value of the load (resistance) for maximum power transfer.</p>
+<div class="figure" id="id1">
+<img alt="_images/Activity_5_Figure_1.png" src="_images/Activity_5_Figure_1.png" />
+<p class="caption"><span class="caption-text">Figure 1.</span></p>
+</div>
+<div class="figure" id="id2">
+<img alt="_images/Activity_5_Figure_2.png" src="_images/Activity_5_Figure_2.png" />
+<p class="caption"><span class="caption-text">Figure 2: Thévenin Equivalent Circuit of Figure 1</span></p>
+</div>
+<ol class="arabic simple" start="2">
+<li>The Maximum Power Transfer Theorem states that an independent voltage source in series with a resistance R<sub>s</sub>or an independent current source in parallel with a resistance Rs, delivers a maximum power to the load resistance R<sub>L</sub>when R<sub>L</sub>= R<sub>s</sub>.</li>
+</ol>
+<p>In terms of a Thévenin Equivalent Circuit, maximum power is delivered to the load resistance R<sub>L</sub>when R<sub>L</sub>is equal to the Thévenin equivalent resistance R<sub>TH</sub>of the circuit.</p>
+<div class="figure" id="id3">
+<img alt="_images/Activity_5_Figure_3.png" src="_images/Activity_5_Figure_3.png" />
+<p class="caption"><span class="caption-text">Figure 3: Maximum Power Transfer</span></p>
+</div>
+</div>
+<div class="section" id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<p>Red Pitaya STEMlab 125-14 or STEMlab 125-10</p>
+<p>Various Resistors:</p>
+<blockquote>
+<div><p>100 Ω,</p>
+<p>330 Ω,</p>
+<p>470 Ω,</p>
+<p>1 KΩ,</p>
+<p>1.5 KΩ</p>
+</div></blockquote>
+</div>
+<div class="section" id="procedure">
+<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Verifying the Thévenin&#8217;s theorem:</li>
+</ol>
+<ol class="loweralpha simple">
+<li>Construct the circuit of figure 1 using the following component values:</li>
+</ol>
+<p>R1 = 330 Ω</p>
+<p>R2 = 100 Ω</p>
+<p>R3 = 100 Ω</p>
+<p>R4 = 330 Ω</p>
+<p>R5 = 1 KΩ</p>
+<p>Rl = 1.5 KΩ</p>
+<p>Vs = +3.3V</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Instead of voltage source “V<sub>s</sub>” shown on the Figure 1 use the STEMlab voltage pin on extension connector <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1">E1</a>.</p>
+</div>
+<p>b) Accurately measure the voltage V<sub>L</sub>across the load resistance using Oscilloscope application.
+Set oscilloscope probe attenuation x10
+Start Oscilloscope application and in IN1 and IN2 settings menu select Probe attenuation x10</p>
+<blockquote>
+<div>Use the Oscilloscope application by connecting channel IN1 to the + node of V<sub>L</sub>and connect channel IN2 to the - node. V<sub>L</sub>will be the difference between IN1 volts and IN2 volts. This value will later be compared to the one you will find using Thevenin Equivalent.</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>Find V<sub>TH</sub>: Remove the load resistance R<sub>L</sub>and measure the open circuit voltage VOC across the terminals. Use the Oscilloscope application by connecting channel IN1 to the + node of V<sub>OC</sub>and connect channel IN2 to the - node. V<sub>OC</sub>will be the difference between IN1 volts and IN2 volts. This is equal to V<sub>TH</sub>. See figure 4</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To get voltage values of IN1 and IN2 select MEAS menu, select MEAN value and select DONE.</p>
+</div>
+<div class="figure" id="id4">
+<img alt="_images/Activity_5_Figure_4.png" src="_images/Activity_5_Figure_4.png" />
+<p class="caption"><span class="caption-text">Figure 4: Measuring the Thevenin Voltage</span></p>
+</div>
+<ol class="loweralpha simple" start="4">
+<li>Find R<sub>TH</sub>: Remove the source voltage Vs and construct the circuit as shown in figure 5. Use the Multimeter to measure the resistance looking into the opening where R<sub>L</sub>was. This gives R<sub>TH</sub>. Make sure there is no power applied to the circuit before measuring with the Multimeter and the ground connection has been moved as shown.</li>
+</ol>
+<div class="figure" id="id5">
+<img alt="_images/Activity_5_Figure_5.png" src="_images/Activity_5_Figure_5.png" />
+<p class="caption"><span class="caption-text">Figure 5: Measuring the Thevenin Resistance R<sub>TH</sub>.</span></p>
+</div>
+<ol class="loweralpha simple" start="5">
+<li>Obtaining V<sub>TH</sub>and R<sub>TH</sub>, construct the circuit of figure 2. Create the value of R<sub>rh</sub>using a series and or parallel combination of resistors from your parts kit.</li>
+</ol>
+<p>Using the Oscilloscope &amp; Signal generator application - connect channel OUT1  for the V<sub>TH</sub>source. In the OUT1 settings menu select “DC” signal waveform and in the Amplitude  field set the value to what you measured for V<sub>TH</sub>in step c).
+Select “enable” button.</p>
+<div class="figure">
+<img alt="_images/Activity_5_Figure_6.png" src="_images/Activity_5_Figure_6.png" />
+</div>
+<p>Figure 6: Thevenin Equivalent Construction</p>
+<ol class="loweralpha simple" start="6">
+<li>With R<sub>L</sub>  set to the 1.5 KΩ used in step b) measure the V<sub>L</sub> for the equivalent circuit and compare it to the V<sub>L</sub> obtained in step b). This verifies the Thévenin theorem.</li>
+<li>Optional: Repeat steps 1 b) to 1 f) for R<sub>L</sub> = 2.2 KΩ</li>
+</ol>
+<ol class="arabic simple" start="2">
+<li>Verifying the Maximum Power Transfer theorem:</li>
+</ol>
+<ol class="loweralpha simple">
+<li>Construct the circuit as in figure 7 using the following values:</li>
+</ol>
+<p>Vs = +3.3 V</p>
+<p>R<sub>1</sub> = R<sub>2</sub> = 100 Ω</p>
+<p>R<sub>3</sub> = 1 KΩ</p>
+<p>R<sub>L</sub>= combinations of 1 KΩ and 100 Ω resistors ( figure 8 )</p>
+<div class="figure">
+<img alt="_images/Activity_5_Figure_7.png" src="_images/Activity_5_Figure_7.png" />
+</div>
+<p>Figure 8. Rl configurations</p>
+<ol class="loweralpha simple" start="4">
+<li>Calculate the power for each load resistor value using;</li>
+</ol>
+<div class="math">
+\[P_L = \frac{V_L^{2}}{R_L}\]</div>
+<p>Then, interpolate between your measurements to calculate the load resistor value corresponding to the maximum power (P<sub>l max</sub>). This value should be equal to R<sub>TH</sub> of circuit in figure 7 with respect to load terminals.</p>
+</div>
+<div class="section" id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Calculate the percentage error difference between the load voltages obtained for circuits of figure 1 and figure 2.</li>
+<li>Using Voltage Division for circuit of figure 2, calculate V<sub>L</sub>. Compare it to the measured values. Explain any differences.</li>
+<li>Calculate the maximum power transmitted to the load Rl obtained for the circuit of figure 3.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ResponseRC.html" class="btn btn-neutral float-right" title="Transient Response of RC Circuit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Proportionality.html" class="btn btn-neutral" title="Proportionality and Superposition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
