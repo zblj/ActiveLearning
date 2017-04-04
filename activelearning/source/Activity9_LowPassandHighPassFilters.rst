@@ -66,7 +66,7 @@ _________
 
 1. Set up the RC circuit as shown in figure 1 on your solderless breadboard, with the component values R1 = 1 KΩ, C1 = 1 µF:  
 2. Connect the STEMlab board to your circuit:
-	- Connect the Oscilloscope & Signal generator probes as is shown in figure 3. 
+	- Connect the Oscilloscope & Signal generator probes as is shown in figure 4. 
 	- Set the oscilloscope attenuation to x1.
 
 .. image:: img/Activity_9_Figure_4.png
@@ -75,9 +75,51 @@ Figure 4:  Low pass RC filter breadboard circuit
 
 3. Start the Oscilloscope & Signal Generator application:
 	- In the OUT1 settings menu set DC offset value to 0.5 and Amplitude value to 0.5V to apply a 1Vp-p sine wave centered on 0.5 V as the input voltage to the circuit. From the waveform menu select SINE signal, deselect SHOW button and select enable. On the left bottom of the screen be sure that IN1 V/div and IN2 V/div are both set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) In the IN1 and IN2 settings menu set the value of Vertical Offset to -500mV For the stable acquisition set the trigger level in TRIGGER menu to 0.5V and select NORMAL.
-4. Start with a low frequency, 50 Hz, and measure output voltage IN1 peak to peak from the scope screen. It should be same as channel OUT1 output. Increase the frequency of OUT1 in small increments until  	the peak-peak voltage of channel IN2 is roughly 0.7 times the peak to peak voltage for channel IN1. Compute the 70 % of Vp-p and obtain the frequency at which this happens on the Oscilloscope. 
+4. Start with a low frequency, 50 Hz, and measure output voltage IN1 peak to peak from the scope screen. It should be same as channel OUT1 output. Increase the frequency of OUT1 in small increments
+   until the peak-peak voltage of channel IN2 is roughly 0.7 times the peak to peak voltage for channel IN1. Compute the 70 % of Vp-p and obtain the frequency at which this happens on the Oscilloscope. 
    This gives the cut-off (roll-off) frequency for the constructed Low Pass RC filter. When changing OUT1 frequency adjust time/div using horizontal -/+ controls. For peak-peak measurement in the measurement menu select “P2P”, select IN1, IN2 and press DONE
 
  .. image:: img/Activity_9_Figure_5.png
 
 Figure 5:  Low pass RC filter response at 50Hz
+
+ .. image:: img/Activity_9_Figure_6.png
+
+Figure 6:  Low pass RC filter response at 500Hz
+
+**High-Pass RL filter:**
+
+1. Set up the RL circuit as shown in figure 2 on your solderless breadboard, with the component values R1 = 1 KΩ, L1 = 22 mH.
+2. Connect the STEMlab board to your circuit:
+	- Connect the Oscilloscope & Signal generator probes as is shown in figure 7. 
+	- Set the oscilloscope attenuation to x1.
+
+.. image:: img/Activity_9_Figure_7.png
+
+Figure 7:  High pass RL filter breadboard circuit
+
+3. Start with a high frequency 50 KHz and measure output voltage IN2 peak to peak from the scope screen. It should be same as channel IN1 peak to peak. Lower the frequency of channel OUT1 in 
+   small increments until the peak-peak voltage of channel IN2 is roughly 0.7 times the peak to peak voltage for channel A. Compute the 70 % of Vp-p and obtain the frequency at which this happens on the Oscilloscope. This gives the cut-off (roll-off) frequency for the constructed High Pass RL filter. 
+
+.. image:: img/Activity_9_Figure_8.png
+
+Figure 8:  High pass RL filter response at 50kHz
+
+.. image:: img/Activity_9_Figure_9.png
+
+Figure 9:  High pass RL filter response at 500Hz
+
+**Frequency response plots with Bode Analayzer**
+
+The Bode analyzer application will make a frequency sweep in such way it will generate sine signal on OUT1 within frequency range selected by us(in settings menu). IN1 input signal is directly connected to OUT1 following that IN1=Vin. IN2 is connected on the other side of the RL(RC) filter and from that IN2=Vout. Bode analyzer application will then for each frequency step take the ratio of IN1/IN2 and calculate frequency response. 
+
+.. image:: img/Activity_9_Figure_10.png
+
+Figure 10:  Low pass RC filter response taken with Bode analyzer application
+
+.. image:: img/Activity_9_Figure_11.png
+
+Figure 11:  High pass RL filter response taken with Bode analyzer application
+
+**Questions:**
+Calculate the Cut-off frequencies for the RC low pass and RL high pass filter using equations (1) and (2). Compare the computed theoretical values to the ones obtained from the experimental measurements and provide a suitable explanation for any differences.
