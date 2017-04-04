@@ -1,4 +1,4 @@
-What is Phase and why do we care?
+What is Phase?
 #################################
 
 Objective

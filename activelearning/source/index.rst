@@ -13,5 +13,4 @@ Welcome to Red Pitaya Active Learning
   ./ResponseRC
   ./ResponseRL
   ./ResonanceRCL
-  ./ResonanceRCL
   ./Activity9_LowPassandHighPassFilters
