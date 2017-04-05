@@ -52,7 +52,7 @@ Frequency Response: It is a graph of magnitude of the output voltage of the filt
 Figure 3:  Frequency Response of a typical Low Pass Filter with a cut-off frequency fc
 
 Materials:
-_________
+___________
 
 - Red Pitaya STEMlab 125-14 or STEMlab 125-10 
 - Resistors: 	1 KΩ 

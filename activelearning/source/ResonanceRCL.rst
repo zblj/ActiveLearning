@@ -11,7 +11,9 @@ _____
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
-In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_. Oscilloscope & Signal generator application is used for generating and observing signals on the circuit. Bode_ analyzer application is used to measure frequency response of RLC circuit.
+
+In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_. 
+Oscilloscope & Signal generator application is used for generating and observing signals on the circuit. Bode_ analyzer application is used to measure frequency response of RLC circuit.
 
 Background
 __________

@@ -35,25 +35,25 @@ Loop 2
 
 2. Kirchhoff's Current Law states that the algebraic sum of all the currents at any node is zero. If we define the currents through each resistor R1 through R5 as I1 through I5, applying Kirchhoff's current law to the first four nodes in the circuit shown in figure1 yields the following equations; 
 
-*Node a:
+*Node a:*
 	
 .. math::		
 
 	- I_s + I_1 = 0
 	
-*Node b: 
+*Node b:* 
 
 .. math::		
 
 	- I_1 + I_2 + I_3 = 0
 	
-*Node c: 
+*Node c:* 
 
 .. math::		
 
 	- I_3 + I_4 = 0
 	
-*Node d: 
+*Node d:* 
 	
 .. math::	
 
@@ -61,7 +61,7 @@ Loop 2
 
 
 Materials
-_________
+__________
 
 Red Pitaya STEMlab 125-14 or STEMlab 125-10 
 

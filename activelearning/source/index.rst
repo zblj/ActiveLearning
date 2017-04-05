@@ -2,15 +2,16 @@ Welcome to Red Pitaya Active Learning
 #####################################
 
 .. toctree::
-   :maxdepth: 2
-   :numbered:
+     :maxdepth: 1
+     :numbered:
 
-  ./Phase
-  ./Kirchhoff
-  ./Voltage
-  ./Proportionality
-  ./Thevenin  
-  ./ResponseRC
-  ./ResponseRL
-  ./ResonanceRCL
-  ./Activity9_LowPassandHighPassFilters
+     ./Phase
+     ./Kirchhoff
+     ./Voltage
+     ./Proportionality
+     ./Thevenin  
+     ./ResponseRC
+     ./ResponseRL
+     ./ResonanceRCL
+     ./Activity9_LowPassandHighPassFilters
+     ./Activity10_BandPassFilters 

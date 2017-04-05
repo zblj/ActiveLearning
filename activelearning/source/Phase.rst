@@ -182,13 +182,15 @@ Now it looks like the CHB signal lags the CHA signal.
 • Press the red STOP button to pause the Oscilloscope acquisition. 
 • Select “CURSOR” menu and enable X1 and X2 cursors  
 • Using horizontal +/- controls set Time to 100us/div.
-• Using mouse and left press+hold on the cursor marker(white arrow on the end of the cursor line) set one cursor position so that cursor line going through point where OUT1 is crossing 0V line. Repeat the step for the second cursor and OUT2 signal.
+• Using mouse and left press+hold on the cursor marker(white arrow on the end of the cursor line) set one cursor position so that cursor line going through point where OUT1 is crossing 0V line. 
+  Repeat the step for the second cursor and OUT2 signal.
 • Readout the time difference between cursors 
        
-  What is the ∆t? ________________
+  	What is the ∆t? ________________
        
 • Use the measured ∆t and equation 2 to calculate the phase offset. θ ________°
-Note you cannot measure the frequency of a signal that does not have at least one full period displayed on the screen. Usually you need more than 2 cycles to get consistent results. You are generating the frequency so you already know what it is. You don't need to measure it in this part of the lab.
+
+	Note you cannot measure the frequency of a signal that does not have at least one full period displayed on the screen. Usually you need more than 2 cycles to get consistent results. You are generating the frequency so you already know what it is. You don't need to measure it in this part of the lab.
 
 3. Measuring Magnitude using a real circuit. 
 
@@ -200,7 +202,8 @@ Note you cannot measure the frequency of a signal that does not have at least on
    figure 6: R-R circuit.
 
 • Build the circuit shown in Figure 5 on your solderless breadboard using two 470 Ω, Oscilloscope probes and Red Pitaya STEMlab board.
-NOTICE: For ground pin use probes ground leads (crocodile connectors)
+	
+	NOTICE: For ground pin use probes ground leads (crocodile connectors)
 
 
 .. figure:: img/Activity_1_Figure_7.png
@@ -217,13 +220,13 @@ We have connected OUT1 directly to IN1 so we can observe a real voltage signal a
 • Set the horizontal time scale to 1.0 mS/Div to display two cycles of the waveform.
 • Click on the scope Start button if it is not already running.
 • Using vertical +/- controls set  200 mV/div for IN1 and IN2
-The voltage waveform displayed in IN1(yellow) is the voltage across both resistors (V\ :sub:`R1`\+V\ :sub:`R2`\). The voltage waveform displayed in IN2 is the voltage across just R\ :sub:`2`\ (V\ :sub:`R2`\). To display the voltage across R\ :sub:`1`\ we use the Math waveform display options. Under the Math menu for Signal1 select IN1, select operator “-”, for Signal2 select IN2 then select enable. You should now see a third waveform for the voltage across R\ :sub:`1`\ (V\ :sub:`R1`\). 
+  The voltage waveform displayed in IN1(yellow) is the voltage across both resistors (V\ :sub:`R1`\+V\ :sub:`R2`\). The voltage waveform displayed in IN2 is the voltage across just R\ :sub:`2`\ (V\ :sub:`R2`\). To display the voltage across R\ :sub:`1`\ we use the Math waveform display options. Under the Math menu for Signal1 select IN1, select operator “-”, for Signal2 select IN2 then select enable. You should now see a third waveform for the voltage across R\ :sub:`1`\ (V\ :sub:`R1`\). 
 • Using vertical +/- controls set  200 mV/div (0.2 V/div) for MATH trace.
 
-With this settings you are observing:
-IN1- Input excitation signal
-IN2- Voltage drop signal across R\ :sub:`2`\
-MATH - Voltage drop signal across R\ :sub:`1`\
+  With this settings you are observing:
+  IN1- Input excitation signal
+  IN2- Voltage drop signal across R\ :sub:`2`\
+  MATH - Voltage drop signal across R\ :sub:`1`\
 
 • Record V\ :sub:`R1`\ and V\ :sub:`R2`\.
 
@@ -235,7 +238,7 @@ V\ :sub:`R1`\+V\ :sub:`R2`\_______V\ :sub:`pp`\.
 
 • Can you see any difference between the zero crossings of V\ :sub:`R1`\ and V\ :sub:`R2`\? _________
 • Can you even see two distinct sine waves? ________
-Probably not. There should be no observable time offset and thus no phase shift.
+  Probably not. There should be no observable time offset and thus no phase shift.
 
 You can see that MATH (purple) and IN2 (green) trace are overlapping. To see both traces you can adjust the vertical position of a channel to separate them. 
 This can be done by selecting trace marker(on the left side of the grid) using mouse left button and moving trace up-down. Make sure to set the vertical position back to 0 to realign the signals.
@@ -273,7 +276,7 @@ Because there is no DC current through the capacitor we are not interested in th
 
 
 • Measure IN1, IN2  and Math P2P (peak to peak) value.
-What signal is the Math waveform? _________________
+  What signal is the Math waveform? _________________
 
 • Record V\ :sub:`R1`\, V\ :sub:`C1`\ and V\ :sub:`R1`\+V\ :sub:`C1`\.
 
