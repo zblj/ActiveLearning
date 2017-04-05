@@ -15,3 +15,4 @@ Welcome to Red Pitaya Active Learning
      ./ResonanceRCL
      ./Activity9_LowPassandHighPassFilters
      ./Activity10_BandPassFilters 
+     ./Activity11_ImpedanceMeasurementFrequencyEffects
