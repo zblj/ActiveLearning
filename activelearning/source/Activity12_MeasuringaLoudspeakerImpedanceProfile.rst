@@ -54,7 +54,6 @@ The circuit in figure 1 has a dc resistance placed in series with a lossy parall
 Materials
 __________
 
-ADALM1000 hardware module
 - Red Pitaya STEMlab 125-14 or STEMlab 125-10 
 - Resistor - :math:`R_{shunt}`: 	10 Ω 
 - Loudspeaker, it is best if the speaker is one with a cone diameter larger than 10cm such that is has a relatively low resonant frequency. 
