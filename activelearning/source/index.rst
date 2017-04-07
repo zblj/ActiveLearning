@@ -17,3 +17,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity10_BandPassFilters 
      ./Activity11_ImpedanceMeasurementFrequencyEffects
      ./Activity12_MeasuringaLoudspeakerImpedanceProfile
+     ./Activity13_SimpleOPAmps
