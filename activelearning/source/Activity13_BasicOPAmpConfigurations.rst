@@ -162,5 +162,14 @@ From the measurements shown on figure 8 we can see that amplitude of :math:`V_{o
 .. math::	
 	 V_{out} = - \bigg( \frac{R2}{R1} \bigg)  \quad (2)
 
+Non-Inverting Amplifier
+------------------------
+
+The non-inverting amplifier configuration is shown in figure 9. Like the unity-gain buffer, this circuit has the (usually) desirable property of high input resistance, so it is useful for buffering non-ideal sources, however with a gain greater than one. 
+
+.. image:: img/Activity_13_Figure_9.png
+
+Figure 9: Non-Inverting amplifier configuration measurements
+
 Summing Amplifier Circuit
 --------------------------
