@@ -47,8 +47,10 @@ Op amps must always be supplied with DC power and therefore it is best to config
 
 .. note::
      STEMlab boards do not have 2.5V DC output pin so we are using LM317 adjustable regulator to provide 2.5V DC rail from 5V one. 
-     Connection of LM317 is very simple and described below. Equation for calculating output voltage is given as: 
-     :math:`V_{out} = 1.25 \bigg( 1+\frac{R_2}{R_1} \bigg) \quad (1)`. 
+     Connection of LM317 is very simple and described below. Equation for calculating output voltage is given as:
+     
+     .. math::
+         V_{out} = 1.25 \bigg( 1+\frac{R_2}{R_1} \bigg) \quad (1). 
 
 
 Included are the so-called “supply de-coupling” capacitor connected between the power-supply and ground rails. It is too early to discuss in great detail the purpose of these capacitors, but they are used to reduce noise on the supply lines and avoid parasitic oscillations. It is considered good practice in analog circuit design to always include small bypass capacitors close to the supply pins of each op amp in your circuit. 
@@ -146,9 +148,9 @@ Now assemble the inverting amplifier circuit shown in figure 7 using R2 = 4.7kΩ
 1. Start the Oscilloscope & Signal Generator application.
 2. In the OUT1 settings menu set DC offset value to -0.5V and Amplitude value to 0.45V to apply a offseted sine wave centered on -0.5V as the input voltage to the circuit. From the waveform menu select
    SINE signal deselect SHOW button and select enable. 
-3. On the left bottom of the screen be sure that IN1 V/div is set to 200mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
-4. In the IN1 settings menu set the value of Vertical Offset to -500mV, In the IN2 settings menu set the value of Vertical Offset to 2.500mV,    
-5. In the IN1 and IN2 settings menu set probe settings to x10.
+3. In the IN1 and IN2 settings menu set probe settings to x10.
+4. On the left bottom of the screen be sure that IN1 V/div is set to 200mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+5. In the IN1 settings menu set the value of Vertical Offset to -500mV, In the IN2 settings menu set the value of Vertical Offset to 2.500mV,    
 6. For the stable acquisition set the trigger level in TRIGGER menu to -0.5V and select NORMAL.
 7. In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE
 8. In the measurement menu select “MEAN” , select IN1 and press DONE, select IN2 and press DONE
@@ -157,10 +159,12 @@ Now assemble the inverting amplifier circuit shown in figure 7 using R2 = 4.7kΩ
 
 Figure 8: Inverting amplifier configuration measurements
 
-From the measurements shown on figure 8 we can see that amplitude of :math:`V_{out}` (IN2) is cca 4.5 time larger than amplitude of :math:`V_{in}` (IN1). Also the phase between two signals is 180 degrees.This is the result of inverting amplifier characteristic which is given as:
+.. note::
 
-.. math::	
-	 V_{out} = - \bigg( \frac{R2}{R1} \bigg)  \quad (2)
+     From the measurements shown on figure 8 we can see that amplitude of :math:`V_{out}` (IN2) is cca 4.7 time larger than amplitude of :math:`V_{in}` (IN1). Also the phase between two signals is 180 degrees.This is the result of inverting amplifier characteristic which is given as:
+
+     .. math::	
+	        V_{out} = - \bigg( \frac{R2}{R1} \bigg) V_{in}  \quad (2)
 
 Non-Inverting Amplifier
 ------------------------
@@ -170,6 +174,35 @@ The non-inverting amplifier configuration is shown in figure 9. Like the unity-g
 .. image:: img/Activity_13_Figure_9.png
 
 Figure 9: Non-Inverting amplifier configuration measurements
+
+Assemble the non-inverting amplifier circuit shown in figure 9. Remember to shut off the power supplies before assembling the new circuit. Set **R2 = 4.7kΩ**.
+
+1. Start the Oscilloscope & Signal Generator application.
+2. In the OUT1 settings menu set DC offset value to 0.5V and Amplitude value to 0.3V to apply a offseted sine wave centered on 0.5V as the input voltage to the circuit. From the waveform menu select
+   SINE signal deselect SHOW button and select enable. 
+3. In the IN1 and IN2 settings menu set probe settings to x10.
+4. On the left bottom of the screen be sure that IN1 V/div is set to 100mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+5. In the IN1 settings menu set the value of Vertical Offset to -500mV, In the IN2 settings menu set the value of Vertical Offset to -3V.    
+6. For the stable acquisition set the trigger level in TRIGGER menu to 0.5V and select NORMAL.
+7. In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE
+8. In the measurement menu select “MEAN” , select IN1 and press DONE, select IN2 and press DONE
+
+
+.. image:: img/Activity_13_Figure_10.png
+
+Figure 10: Non-Inverting amplifier configuration measurements
+
+.. note::
+
+     From the measurements shown on figure 10 we can see that amplitude of :math:`V_{out}` (IN2) is cca 5.7 time larger than amplitude of :math:`V_{in}` (IN1). Also the phase between two signals is ~0 degrees.This is the result of non-inverting amplifier characteristic which is given as:
+
+     .. math:: 
+          V_{out} =  \bigg( 1 + \frac{R2}{R1} \bigg) V_{in}  \quad (3)
+
+
+Increase the feedback resistance R2 further until the onset of clipping, that is, until the peaks of the output signal begin to be flattened due to output saturation. Record the value of resistance where this happens. Now increase the feedback resistance to 100 KΩ. Describe and draw waveforms in your notebook. What is the theoretical gain at this point? How small would the input signal have to be in order to keep the output level to less than 5V given this gain? Try to adjust the waveform generator to this value. Describe the output achieved.
+The last step underscores an important consideration for high-gain amplifiers. High-gain necessarily implies a large output for a small input level. Sometimes this can lead to inadvertent saturation due to the amplification of some low-level noise or interference, for example the amplification of stray 60Hz signals from power-lines that can sometimes be picked up. Amplifiers will amplify any signals at the input terminals…whether you want it or not!
+
 
 Summing Amplifier Circuit
 --------------------------
