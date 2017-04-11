@@ -206,3 +206,88 @@ The last step underscores an important consideration for high-gain amplifiers. H
 
 Summing Amplifier Circuit
 --------------------------
+
+The circuit of figure 11 is a basic inverting amplifier with four inputs, called a “summing” amplifier. 
+
+.. image:: img/Activity_13_Figure_11.png
+
+Figure 11: Summing Amplifier configuration
+
+With the power disconnected, build circuit as shown in figure 11 and continue with measurements.
+
+.. image:: img/Activity_13_Figure_12.png
+
+Figure 12: Summing Amplifier circuit on the breadboard
+
+**Set:** :math:`R_{in}` = :math:`R_{in}` = :math:`R_{f}` = 4.7kΩ.
+
+1. Start the Oscilloscope & Signal Generator application.
+2. In the OUT1 and OUT2 settings menu set DC offset value to -0.5V and Amplitude value to 0.3V to apply a offseted sine wave centered on -0.5V as the input voltages to the circuit. From the waveform 
+   menu select SINE signal and select enable. 
+3. In the IN1 and IN2 settings menu set probe settings to x10.
+4. On the left bottom of the screen be sure that IN1 V/div is set to 100mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+5. For the stable acquisition set the trigger level in TRIGGER menu to -0.5V and select NORMAL.
+6. In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE
+
+.. image:: img/Activity_13_Figure_13.png
+
+Figure 13: Summing Amplifier measurements
+
+.. note::
+
+     From measurement above we can see that output voltage is sum of the two input voltages.
+     Also the phase between two signals is ~0 degrees.
+     This is the result of inverting summing amplifier characteristic which is given as: 
+
+     .. math:: 
+          -V_{out} =  \frac{R_f}{R_{in}} \bigg( V_{in1} + V_{in2} \bigg) \quad (4)
+
+     In general :math:`R_{in}` can be different for each input voltage so it follows:
+
+     .. math:: 
+          -V_{out} =  \frac{R_f}{R_{in1}} V_{in1} + \frac{R_f}{R_{in2}} V_{in2} + ... + \frac{R_f}{R_{inN}} V_{inN}  \quad (5)
+
+To prove equation above try to disable OUT2 and observe IN2 P2P value. Also try to change OUT2 amplitude and observe measurements.  What happens if you set OUT2 phase to 180deg?  Can you explain the result in that case?
+
+
+Using an Op-Amp as a Comparator
+---------------------------------
+
+The high intrinsic gain of the op-amp and the output saturation effects can be exploited by configuring the op-amp as a comparator as in figure 14. This is essentially a binary-state decision-making circuit: if the voltage at the “+” terminal is greater than the voltage at the “-” terminal, :math:`V_{in}` > :math:`V_{ref}` , the output goes “high” (saturates at its maximum value). Conversely if :math:`V_{in}` < :math:`V_{ref}` the output goes “low”. The circuit compares the voltages at the two inputs and generates an output based on the relative values. Unlike all the previous circuits there is no feedback between the input and output; we say that the circuit is operating “open-loop”. 
+
+.. image:: img/Activity_13_Figure_14.png
+
+Figure 14: Op-Amp as Comparator 
+
+With the power disconnected, build circuit as shown in figure 14 and continue with measurements.
+
+1. Start the Oscilloscope & Signal Generator application.
+2. In the OUT1 set Amplitude value to 0.45V, and DC offset value to 0.5V to apply a offseted sine wave centered on 0.5V as the input voltage to the circuit. From the waveform 
+   menu select SINE signal deselect SHOW button. Set frequency to 100Hz and select enable (ON). 
+   In the OUT2 select DC signal, deselect SHOW button set Amplitude value to 0.5V to apply a DC voltage as the REFERENCE value :math:`V_{ref}` . Select enable (ON). 
+3. In the IN2 settings menu set probe settings to x10.
+4. On the left bottom of the screen be sure that IN1 V/div is set to 200mV/div and IN2 to 2V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+5. For the stable acquisition set the trigger level in TRIGGER menu to 0.25V and select NORMAL.
+
+.. image:: img/Activity_13_Figure_15.png
+
+Figure 15: Op-Amp as Comparator measurements
+
+.. note::
+
+     For comparator shown on figure 14 it follows:
+
+     .. math:: 
+          if \quad  V_{in} > V_{ref}  \quad  ; \quad V_{out} = V_{+} \quad (5)
+
+     .. math:: 
+          if \quad  V_{in} < V_{ref} \quad  ; \quad V_{out} = V_{-}
+
+Questions
+--------------
+
+- Slew rate: discuss how you measured and computed the slew rate in the unity-gain buffer configuration, and compare this with the value listed in the OP97 data sheet.
+- Buffering: explain why the buffer amplifier in figure 5 allowed the voltage divider circuit to function perfectly with differently load resistances.
+- Output saturation: explain your observations of output voltage saturation in the inverting amplifier configuration and your estimate of the internal voltages drops. How close does the output come to
+   the supply rails in this experiment and also later when used as a comparator with different power-supply voltages? Can you guess what the output voltage swing would be for an op-amp that is advertised as a “rail-to-rail” device?
+- Comparator: discuss your measurements and what would happen if the polarity of Vref is reversed. 
