@@ -18,3 +18,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity11_ImpedanceMeasurementFrequencyEffects
      ./Activity12_MeasuringaLoudspeakerImpedanceProfile
      ./Activity13_BasicOPAmpConfigurations
+     ./Activity14_OPAMPOpenLoopGain
