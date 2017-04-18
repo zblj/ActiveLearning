@@ -161,7 +161,7 @@ Figure 6: Measurements of :math:`V_{out}` when  R5 is set to POS2 (look at Figur
 
           .
 
-          A_{OL} = \frac{93700.0}{99.7} \frac{1V}{(-34.2mV-(34.8mV))} = 
+          A_{OL} = \frac{93700.0}{99.7} \frac{1V}{(-34.2mV-(-34.8mV))} = 
 
           .
 
