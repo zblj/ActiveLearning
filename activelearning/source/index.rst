@@ -20,3 +20,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity13_BasicOPAmpConfigurations
      ./Activity14_OPAMPOpenLoopGain
      ./Activity15_OpAmpGainBandwidthProduct
+     ./Activity16_DifferenceAmplifier
