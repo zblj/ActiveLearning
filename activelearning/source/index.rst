@@ -22,3 +22,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity15_OpAmpGainBandwidthProduct
      ./Activity16_DifferenceAmplifier
      ./Activity17_CurrentSensingUsingDifferenceAmplifier
+     ./Activity18_TheComparatorSchmittTrigger
