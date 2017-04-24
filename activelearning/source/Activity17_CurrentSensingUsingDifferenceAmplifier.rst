@@ -104,7 +104,7 @@ So we can write equation (4) simple as:
 .. math::	
 	 V_{out} = V_S \bigg(\frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1} \bigg) \quad (5)
 
-Now we have simple equation (5) for our difference amplifier form figure 1 and the last step is to is to rewrite it in terms of  :math:`\Delta V` i.e in terms of :math:`I_L`
+Now we have simple equation (5) for our difference amplifier form figure 1 and the last step is to rewrite it in terms of  :math:`\Delta V` i.e in terms of :math:`I_L`
 
 .. math::	
 	 V_{out} = \bigg(\frac{R_2}{R_1} \bigg) (V_S- V_L) 
@@ -216,3 +216,63 @@ We can check our measurements by calculating load current as
 
 We can see that measured current is as what we expected confirming correct behaviour of our difference amplifier.
 The difference of 0.04mA between exact and measured value of load current comes from  nominal tolerances values of load and shunt resistors.
+
+Capacitance LOAD
+------------------
+
+For LOAD take  :math:`0.1 \mu F` capacitor and build circuit shown on figure 2.
+
+.. image:: img/Activity_17_Figure_5.png
+
+Figure 5: Capacitance  LOAD 
+
+.. image:: img/Activity_17_Figure_6.png
+
+Figure 6: Capacitance LOAD current measurements
+
+From the measurements from figure 6 we can calculate max load current as:
+
+.. math::
+     
+     I_L = \frac{IN2_{max}}{100} = \frac{36.5mV}{100} = 0.36mA 
+
+We can check our measurements by calculating load current as
+
+.. math::
+     
+     I_L = \frac{OUT1_{max}}{Z_{load} + R_s } = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1} C_1}  + R_s } = \frac{0.5V}{1592 \Omega+10 \Omega} = 0.31mA
+
+Inductive LOAD
+------------------
+
+For LOAD take  :math:`4.7 mH` inductor and build circuit shown on figure 2.
+
+.. image:: img/Activity_17_Figure_7.png
+
+Figure 7: Inductive LOAD 
+
+
+1. In the OUT1 settings menu set Amplitude value to 0.2V 
+2. On the left bottom of the screen be sure that  IN1 V/div is set to 50mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+3. On the left bottom of the screen be sure that  IN2 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+
+
+.. image:: img/Activity_17_Figure_8.png
+
+Figure 8: Inductive LOAD current measurements
+
+From the measurements from figure 8 we can calculate max load current as:
+
+.. math::
+     
+     I_L = \frac{IN2_{max}}{100} = \frac{620mV}{100} = 6.2mA 
+
+We can check our measurements by calculating load current as
+
+.. math::
+     
+     I_L = \frac{OUT1_{max}}{Z_{load} + R_s } = \frac{OUT1_{max}}{2 \pi f_{OUT_1} L_1  + R_s } = \frac{0.2V}{30 \Omega+10 \Omega} = 5.0mA 
+
+.. note::
+    At inductive load we have largest difference in measurements. Try to explain why.
+    Hint. parasitics, series resistance of an inductor.
