@@ -18,7 +18,7 @@ _____
 .. _AD8561: http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf
 .. _section: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#using-an-op-amp-as-a-comparator
 .. _LM317: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
-.. _previus: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
+.. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power
 
 
 In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_.
@@ -69,7 +69,24 @@ Figure 2: AD8561_  comparator circuit
 
 Figure 3: AD8561_  comparator circuit on the breadboard
 
-LM317_ Voltage regulator is described in previus_ section.
+LM317_ Voltage regulator is described in previous_ section.
 
 Procedure
 ----------
+
+1. Set Oscilloscope probes attenuation; IN1 to x1 and IN2 to x1
+2. Start the Oscilloscope & Signal Generator application.
+3. To apply input voltage :math:`V_{source}` in the OUT1 settings menu set Amplitude value to 0.5V and DC offset to 0.5V. From the waveform menu select TRIANGLE, 
+   deselect SHOW button and select enable.
+4. In the OUT2 settings menu set Amplitude value to 0.5V, from the waveform menu select DC and select enable.
+5. In the IN2 settings menu set probe attenuation to x10 
+6. On the left bottom of the screen be sure that  IN1 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+7. On the left bottom of the screen be sure that  IN2 V/div is set to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+8. On the left bottom of the screen be sure that  OUT2 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)
+9. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
+
+
+.. image:: img/Activity_18_Figure_4.png
+
+Figure 4: AD8561_  comparator circuit measurements
+
