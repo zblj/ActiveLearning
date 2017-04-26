@@ -23,3 +23,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity16_DifferenceAmplifier
      ./Activity17_CurrentSensingUsingDifferenceAmplifier
      ./Activity18_TheComparatorSchmittTrigger
+     ./Activity19_Diodes
