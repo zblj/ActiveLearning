@@ -1,5 +1,5 @@
-Diodes
-#######
+Diodes and Jupyter Notebook example 
+#####################################
 
 Objective
 __________
@@ -14,6 +14,8 @@ ______
 .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Jupyter: http://jupyter.org/index.html
+.. _Notebook: http://jupyter.org/index.html
 
 
 In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_.
@@ -109,3 +111,178 @@ where:
 
 Experiments
 ____________
+
+PN junction diode VI characteristic
+------------------------------------
+
+The current vs. voltage characteristics of the PN junction diode can be measured using the STEMlab and the following connections shown in figure 4. Set up the breadboard with the generator OUT1 channel output attached to one end of the resistor. The other end of the resistor is connected to one end of the diode being measured as shown in the diagram. The inputs channels IN1 and IN2 are also connected different ends the resistor, therefore diode current and voltage will be given as:
+
+.. math::
+      I_d = (IN_1 - IN_2) / R_1
+      
+      .
+
+      V_d = IN_2
+
+.. image:: img/Activity_19_Figure_4.png
+
+Figure 4: Connection diagram for diode I vs. V curves 
+
+For measuring current vs. voltage characteristics of the PN junction diode OUT1 generator should be configured as 1kHz triangle wave with 1 V max and 0 V min values. For measuring :math:`VI` curve an "XY" plot is required where x-axis will represent diode voltage 
+:math:`IN_2` and y-axis a diode current :math:`(IN_1 - IN_2) / R_1`. For this task we will use Jupyter Notebook Web application.
+
+.. note::
+     The Jupyter_ Notebook_ is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. They have also ensured support for the Jupyter application with Red Pitaya libraries enabling control of all features of the STEMlab boards such as: signal acquisition, signal generation, digital signal control, communication etc. The Jupyter Notebook is started on the same way as any other applications. After starting Jupyter application a web based notebook is opened.  This combination of the notebook, STEMlab and Python features makes the STEMlab an excellent tool for prototyping and quick programing. Since Jupyter Notebook enables text, equation and picture editing this is a perfect tool for tutorials, examples and ect. 
+
+But before measuring :math:`VI` curve you should check voltages signals using Oscilloscope & Signal generator application.
+
+
+Materials
+----------
+
+- Solder-less Breadboard
+- Resistor 10 Ω
+- Conventional diode (1N4001 or similar)
+
+Procedure - time domain measurements
+--------------------------------------
+
+1. Build the circuit from figure 4 on the breadboard 
+
+.. image:: img/Activity_19_Figure_5.png
+
+Figure 5: Connections on the breadboard  
+
+2. Start the Oscilloscope & Signal generator application
+3. In the OUT1 settings menu set Amplitude value to 0.5V, DC offset to 0.5V to apply a triangle wave as the input voltage. From the waveform menu select TRIANGLE, deselect SHOW button and select enable.
+4. On the left bottom of the screen be sure that  IN1 V/div is set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+5. On the left bottom of the screen be sure that  IN2 V/div is set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
+6. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
+7. In the MATH settings menu set IN1-IN2 and select enable. **Math trace scaled by factor R1 represent diode current**
+
+
+.. image:: img/Activity_19_Figure_6.png
+
+Figure 6: Voltages and current on the diode (Time dependent)  
+
+From figure 6 we can see that diode start conducting when the voltage on it exceed diode threshold voltage which is around 0.6V.
+Also, diode current represented with MATH trace is observable. We can clearly see that when the diode voltage is below 0.6 the diode current is 0A. At point when the diode voltage exceed 0.6V diode starts conducting and the path current is only limited by resistor R1.
+
+Procedure - VI characteristics measurements
+--------------------------------------------
+
+For this task we will use Jupyter Notebook Web application. 
+How to start Jupyter Notebook and create new project is shown on figure 7 flow chart.
+
+.. image:: img/Activity_19_Figure_7.png
+
+Figure 7: Creating new Jupyter notebook
+
+If you have successfully created new Jupyter notebook then copy-paste code bellow and run it.
+Code bellow will generate same signal as from figure 6 but it will plot them in XY graph. 
+For measuring :math:`VI` curve an "XY" plot is required where x-axis will represent diode voltage 
+:math:`IN_2` and y-axis a diode current :math:`(IN_1 - IN_2) / R_1`.
+
+
+.. note:: Copy code from below into cell 1
+
+    .. code-block:: python
+      
+      # Import libraries 
+      from redpitaya.overlay.mercury import mercury as overlay
+
+      from bokeh.io import push_notebook, show, output_notebook
+      from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
+      from bokeh.plotting import figure, output_file, show
+      from bokeh.resources import INLINE 
+      output_notebook(resources=INLINE)
+
+      import numpy as np
+      
+      # Initialize fpga modules
+      fpga = overlay()
+      gen0 = fpga.gen(0)
+      osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
+      
+      # Configure OUT1 generator channel 
+      gen0.amplitude = 0.5
+      gen0.offset    = 0.5
+      gen0.waveform  = gen0.sawtooth(0.5)
+      gen0.frequency = 2000
+      gen0.start()
+      gen0.enable = True
+      gen0.trigger()
+    
+      # R1 resistor value
+      R1=10
+
+      # Configure IN1 and IN2 oscilloscope input channels
+      for ch in osc:
+          ch.filter_bypass = True
+          # data rate decimation 
+          ch.decimation = 10
+          # trigger timing [sample periods]
+          N = ch.buffer_size
+          ch.trigger_pre  = 0
+          ch.trigger_post = N
+          # osc0 is controlling both channels
+          ch.sync_src = fpga.sync_src["osc0"]
+          ch.trig_src = fpga.trig_src["osc0"]
+          # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
+          ch.level   = 0.5
+          ch.edg     = 'pos'
+          ch.holdoff = 0
+       
+      # Initialize diode current and voltage
+      V = I = np.zeros(N)
+
+      # Plotting
+      hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
+      tools = "wheel_zoom,box_zoom,reset,pan" 
+      p = figure(plot_height=500, plot_width=900, title="XY plot of diodes VI characteristic", toolbar_location="right", tools=(tools, hover))
+      p.xaxis.axis_label='Voltage [V]'
+      p.yaxis.axis_label='Current [mA]'
+      r = p.line(V,I, line_width=1, line_alpha=0.7, color ="blue")
+      # get and explicit handle to update the next show cell 
+      target = show(p,notebook_handle=True)
+
+ 
+ Create new cell (Insert -> Cell Below) and copy code from below into it.
+
+    .. code-block:: python
+
+      # Measuring I , V  and re-plotting
+      while True:
+          # reset and start
+          osc[0].reset()
+          osc[0].start()
+          # wait for data
+          while (osc[0].status_run()): pass
+          V0=osc[0].data(N-100)  # IN1 signal
+          V1=osc[1].data(N-100)  # IN2 signal
+          I=((V0-V1)/R1)*1E3     # 1E3 convert to mA
+          r.data_source.data['x'] = V0
+          r.data_source.data['y'] = I
+          push_notebook(handle=target)
+
+ Run Cell 1 and Cell 2. Notice cell 2 is a main loop for the acquisition and re-plotting. If you stop the acquisition just run only cell 2 
+ for starting measurements again.   
+
+
+After running the code above you should get diode VI characteristic as is shown on figure 8.
+
+.. image:: img/Activity_19_Figure_8.png
+
+Figure 8: Didoes VI characteristic measured using  Jupyter Notebook
+
+From the figure 8 the typical diode VI characteristic is shown. From the figure 8 we can see that, as the voltage on the diode is increasing (from 0-0.5V) the
+diode current stays near zero until voltage reaches values near threshold voltage (~0.6V). At this point diode is "turned on" and the path current (diode current) is only limited by resistor R1. In case when the diode voltage is decreasing the VI curve is not the same, resulting in the diode hysteresis. Upper curve from figure 8 shows that once the diode was "turned on" the lower diode voltage will cause higher current than in the case when the diode was previously "turned off".
+An ideal diode would not have hysteresis i.e the diode current would be independent of previous diode states but only on the diode voltage.
+
+.. note::
+    Try to answer on what is causing diode hysteresis? 
+
+
+
+
+
