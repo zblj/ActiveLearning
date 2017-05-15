@@ -94,7 +94,7 @@ Figure 5: Connections on the breadboard
 4. In the OUT2 settings menu set Amplitude value to 0.9V, DC offset to 0 V, **Phase to 180 deg** to apply the input voltage. From the waveform menu 
    select SINE and select enable.
 5. In the IN1 settings menu deselect SHOW    
-6. On the left bottom of the screen be sure that  IN1,OUT1 and OUT2 V/div are set to 200mV/div (You can set V/div by selecting the desired 
+6. On the left bottom of the screen be sure that  IN2,OUT1 and OUT2 V/div are set to 200mV/div (You can set V/div by selecting the desired 
    channel and using vertical +/- controls
 7. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
 8. In the Trigger settings menu set trigger source to IN2, trigger level to 0.2V, trigger mode to normal and trigger offset to -0.12ms
@@ -122,10 +122,49 @@ Bridge rectifier is a full wave rectifier and we should expect same signals as s
 bridge rectifier fill in the negative half-wave without using additional voltage source shifted by 180 deg. Instead of that 
 bridge rectifier use 4 diodes in order to make full wave rectifier without need for additional voltage source.
 
-
 .. image:: img/Activity_20_Figure_7.png
 
 Figure 7: Bridge full wave diode rectifier 
 
+.. note:: 
+    In bridge diode configuration the "AC" side needs to be floating i.e we can't bring DC ground reference from our Signal generator output (OUT1) to the 
+    AC side of the diodes configuration. If we do that the points 3 and 4 (figure 7) will be on the same GND reference effectively shortcutting D3. Shortcutting of D3 will in case of negative OUT1 half-wave simply, trough at that point forward polarized D4, bypass current flow directly trough D4 and not the load resistor RL. Because of that an isolation transformer is needed to separate common ground of "DC" side of the diode bridge.
+
+On figure 8 the bridge rectifier configuration using transformer is shown. This is the most common usage of the bridge rectifier. As we can see from the figure 8 the points 1 and 3 of the bridge rectifier are exposed to the transformer differential voltage enabling correct operation of the rectifier. Point 3 will not be put to the GND when IN2 probe is connected and D3 will not be bypassed since "AC" (transformer) side is isolated.  
+
+
+.. image:: img/Activity_20_Figure_8.png
+
+Figure 8: Bridge full wave diode rectifier using transformer
+
+.. note:: 
+     Here we have used 1:6 transformer. Transformer selection is dependent on voltage levels and etc. Here we use 1:6 ratio transformer in order to increase supply voltage OUT1(+/- 1V). This voltage increase i.e transformer ratio is not affecting the bridge operation itself. You can use 1:1,1:2 or different ratio transformers. 
+
 Procedure
 ----------
+
+1. Build the circuit from figure 8 on the breadboard 
+
+.. image:: img/Activity_20_Figure_9.png
+
+Figure 9: Bridge rectifier on the breadboard
+
+2. Set IN2 probe attenuation to x10
+3. Start the Oscilloscope & Signal generator application
+4. In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V and Frequency to 100Hz to apply the input voltage. From the waveform menu select SINE, 
+   deselect SHOW and select enable.
+5. In the IN2 input menu set probe attenuation to x10
+6. On the left bottom of the screen be sure that  IN1 is to 200mV/div (You can set V/div by selecting the desired 
+   channel and using vertical +/- controls
+7. On the left bottom of the screen be sure that IN2 is to 2V/div (You can set V/div by selecting the desired 
+   channel and using vertical +/- controls
+8. Set t/div value to 2ms/div (You can set t/div using horizontal +/- controls)
+
+.. image:: img/Activity_20_Figure_10.png
+
+Figure 10: Bridge rectifier measurements
+
+.. note::
+   IN1 signal shown on figure 10 is the voltage signal on the primary side of the transformer(figure 8) therefor, this voltage (IN1) multiplied by transformer ratio and shifted for 180 deg is the actual AC signal on the bridge rectifier. Why we haven't put IN1 probe to the secondary side of the transformer? Look at the figure 7 and its explanation.
+
+The disadvantage of this circuit is that now two diode drops are in series with the load and the peak value of the rectified output is less than the AC input by 1.2 Volts rather than the 0.6 V in the previous circuits. Try to measure this voltage drop.
