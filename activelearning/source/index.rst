@@ -25,3 +25,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity18_TheComparatorSchmittTrigger
      ./Activity19_Diodes
      ./Activity20_DiodeRectifiers
+     ./Activity21_PrecisionRectifiers
