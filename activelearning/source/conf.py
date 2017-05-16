@@ -143,7 +143,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # "<project> v<release> documentation" by default.
 #
 # html_title = u'doctut v1.0'
-
+html_favicon = "img/favicon.ico"
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
 # html_short_title = None
@@ -152,6 +152,8 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # of the sidebar.
 #
 # html_logo = None
+
+html_logo = "img/RedPitayaLogo.png"
 
 # The name of an image file (relative to this directory) to use as a favicon of
 # the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -276,7 +278,7 @@ latex_documents = [
 # the title page.
 #
 # latex_logo = None
-
+latex_logo = "img/RedPitayaLogo.png"
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
 #
