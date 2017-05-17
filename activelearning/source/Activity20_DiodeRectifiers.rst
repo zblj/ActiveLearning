@@ -167,4 +167,5 @@ Figure 10: Bridge rectifier measurements
 .. note::
    IN1 signal shown on figure 10 is the voltage signal on the primary side of the transformer(figure 8) therefor, this voltage (IN1) multiplied by transformer ratio and shifted for 180 deg is the actual AC signal on the bridge rectifier. Why we haven't put IN1 probe to the secondary side of the transformer? Look at the figure 7 and its explanation.
 
+As we can see from figure 10, the bridge configuration is indeed a full wave rectifier using just one voltage source. Although when using STEMlab additional transformer was needed. When using transformer with the central tap we can make a full wave rectifier using only two diodes. Explore how!
 The disadvantage of this circuit is that now two diode drops are in series with the load and the peak value of the rectified output is less than the AC input by 1.2 Volts rather than the 0.6 V in the previous circuits. Try to measure this voltage drop.

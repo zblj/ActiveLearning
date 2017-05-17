@@ -103,7 +103,7 @@ Figure 4: Creating new Jupyter notebook
 If you have successfully created new Jupyter notebook then copy-paste code bellow and run it.
 Code bellow will generate same signal as from figure 6 but it will plot them in XY graph. 
 For measuring :math:`VI` curve an "XY" plot is required where x-axis will represent diode voltage 
-:math:`IN_2` and y-axis a diode current :math:`(IN_1 - IN_2) / R_1`.
+:math:`IN_2` and y-axis a diode current :math:`(IN_1 - IN_2) / R_3`.
 
 
 .. note:: Copy code from below into cell 1

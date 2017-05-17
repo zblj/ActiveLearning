@@ -27,3 +27,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity20_DiodeRectifiers
      ./Activity21_PrecisionRectifiers
      ./Activity22_TheBJTasDiode
+     ./Activity23_TheMOSAsDiode
