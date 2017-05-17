@@ -42,7 +42,9 @@ Materials
 - 1x 10kΩ Resistor
 - 1x 2.2kΩ Resistor
 - 1x small signal NPN transistor (2N3904)
+- 1x small signal PNP transistor (2N3906)
 - 1x Solder-less Breadboard
+- 1x 9V battery
 
 An NPN transistor connected as is shown on figure 1 will behave as an regular diode. We can show that by measuring the NPN response using Oscilloscope & Signal generator application.
 
@@ -75,7 +77,6 @@ Figure 2:  NPN as a diode connection on the breadboard
 5. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
 6. Under MATH channel settings set :math:`IN1-IN2` and select ENABLE.
 7. Under IN1 and IN2 menu settings set probe to x10 and vertical offset to 0.
-8. Under MATH menu settings set vertical offset to 0.
 
 .. image:: img/Activity_22_Figure_3.png
 
@@ -160,7 +161,7 @@ For measuring :math:`VI` curve an "XY" plot is required where x-axis will repres
       # Plotting
       hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
       tools = "wheel_zoom,box_zoom,reset,pan" 
-      p = figure(plot_height=500, plot_width=900, title="XY plot of diodes VI characteristic", toolbar_location="right", tools=(tools, hover))
+      p = figure(plot_height=500, plot_width=900, title="XY plot of transistor VI characteristic", toolbar_location="right", tools=(tools, hover))
       p.xaxis.axis_label='Voltage [V]'
       p.yaxis.axis_label='Current [mA]'
       r = p.line(V,I, line_width=1, line_alpha=0.7, color ="blue")
@@ -201,3 +202,119 @@ Again we can see hysteresis appearing. Explain why we want to use transistors as
 
 Reverse Breakdown Characteristics
 ----------------------------------
+
+Here we will investigate the reverse break down voltage characteristics of the emitter base junction of a bipolar junction transistor (BJT) connected as a diode. 
+
+Set up the breadboard as it is shown on figure 6. **The emitter is connected to the positive battery terminal.**
+The the NPN's is likely to have breakdown voltage higher then 10 V and it may happen that our maximum voltage range will not be sufficient i.e we will not be able to reverse polarize Q1 above breakdown voltage. Because of that we have added additional battery to bring up emitter potential close to the breakdown voltage so when, at some point our :math:`V_{OUT}` signal goes NEGATIVE the transistor will be REVERSED PLOARIZIED but differential voltage :math:`V_{E-BC} = V_E - V_{BC}` will be larger than BREAKDOWN voltage and transistor will starts conducting.
+
+For example without battery i.e when emitter is on GND we can reverse polarize Q1 by amount:
+
+.. math:: 
+   V_{E-BC} = V_E - V_{BC} = 0 - (-3.3V) = 3.3V  \quad \text{of} \quad \text{reverse polarization}
+
+With battery added we can achieve reversed polarization by maximal amount
+
+.. math:: 
+   V_{E-BC} = V_E - V_{BC} = 9 - (-3.3V) = 12.3V  \quad \text{of} \quad \text{reverse polarization}
+
+
+Where :math:`V_{BC}` is maximal negative swing of our excitation voltage signal :math:`V_{OUT}`. 
+
+.. image:: img/Activity_22_Figure_6.png
+
+Figure 6: NPN Emitter Base Reverse breakdown configuration 
+
+
+Procedure
+----------
+
+Build the circuit from the figure 6 on the breadboard and continue with the measurements.
+
+.. image:: img/Activity_22_Figure_7.png
+
+Figure 7: NPN Emitter Base Reverse breakdown configuration on the breadboard
+
+For this task we will use Jupyter Notebook Web application. How to start Jupyter Notebook and create new project is shown on figure 4 flow chart.
+Since you already have Jupyter Notebook running from previews example only small update of the code is needed.
+
+.. note::
+   You should stop Jupyter Notebook by selecting **Stop** icon on the menu bar.
+   After that update **Cell 2** as is shown bellow:
+    
+     .. code-block:: python
+
+         # Measuring I , V  and re-plotting
+         while True:
+            # reset and start
+            osc[0].reset()
+            osc[0].start()
+            # wait for data
+            while (osc[0].status_run()): pass
+            V0=osc[0].data(N-100)*10 - 9 # IN1 signal
+            V1=osc[1].data(N-100)*10 - 9 # IN2 signal
+            I=((V0-V1)/R1)*1E3        # 1E3 convert to mA
+            r.data_source.data['x'] = V0
+            r.data_source.data['y'] = I
+            push_notebook(handle=target)
+
+   As you can see from code above **we have only added "-9"** in order to take into account battery potential when plotting is executed.
+   Select Cell 2 and pres **Play** icon on the menu bar. Notice, cell 2 is a main loop for the acquisition and re-plotting. If you stop the acquisition just run only cell 2 for starting measurements again.
+
+Be sure to measure the actual battery voltage for the most accurate measurements. 
+If you have updated Jupyter Notebook code and run it correctly you should get results similar as is shown on figure 8.
+
+.. image:: img/Activity_22_Figure_8.png
+
+Figure 8: NPN Emitter Base Reverse breakdown voltage measurements
+
+From figure 8 we can see that reversed breakdown voltage of NPN BJT 2N3904 transistor is around  10V. 
+
+Questions
+-----------
+1. Disconnect the collector of Q1 and leave it open. How does this change the breakdown voltage?
+
+
+Lowering the effective forward voltage of the diode
+____________________________________________________
+
+Here we will investigate a circuit configuration with smaller forward voltage characteristics than that of a bipolar 
+junction transistor (BJT) connected as a diode. The turn on voltage of the “diode” is should be about ~0.1V compared to ~0.7V for the simple diode connection in the first example. 
+
+.. image:: img/Activity_22_Figure_9.png
+
+Figure 9: Configuration to lower effective forward voltage drop of diode 
+
+
+Procedure
+----------
+1. Build the circuit from figure 9 on the breadboard. Set R3=1kΩ,R4=100kΩ and use for Q1 2N3904 NPN and for Q2 2N3904 PNP transistor.
+
+.. image:: img/Activity_22_Figure_10.png
+
+Figure 10:  Configuration to lower effective forward voltage drop of diode  on the breadboard
+
+.. warning::
+      Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double check your circuit. The  -3.3V and +3.3V  voltage supply pins do not have short circuit handling and they can be damaged in case of short circuit.
+
+2. Start the Oscilloscope & Signal generator application
+3. In the OUT1 settings menu set Amplitude value to 0.8V, DC offset to -0.12 V, Frequency to 1kHz to apply the input voltage. 
+   From the waveform menu select TRIANGLE, deselect SHOW and select enable.
+4. On the left bottom of the screen be sure that  IN1 V/div is set to 1V/div and IN2 V/div is set to 500mV/div (You can set V/div by selecting the desired 
+   channel and using vertical +/- controls)
+5. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
+6. Under IN1 and IN2 menu settings set probe to x10 and vertical offset to 0.
+7. Under MATH menu settings set vertical offset to 0.
+
+.. image:: img/Activity_22_Figure_11.png
+
+Figure 11: Lower effective forward voltage drop of diode measurements
+
+.. note::
+   As you can see from the figure 11 the forward voltage drop is about 100mV. You can also notice that Q2 is not necessary to lower drop-down voltage of the Q1. 
+   The main role here plays resistor R4 connected to the base of the Q1. Try to remove Q2 and observe results.
+
+Questions
+----------
+
+1. Could the collector of the PNP Q2 be connected to some other node such as a negative supply voltage? And what would be the effect? 
