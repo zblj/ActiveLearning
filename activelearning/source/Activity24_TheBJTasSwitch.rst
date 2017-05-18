@@ -15,6 +15,7 @@ ______
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _datasheet: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 
 In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_.
 Oscilloscope_ & Signal_ generator_ application is used for generating and observing signals on the circuit.
@@ -75,3 +76,32 @@ __________
 
 Procedure
 ___________
+
+1. Build the circuit from figure 2 on the breadboard. Set :math:`R_B` = 1kΩ, :math:`R_C` = 100Ω 
+
+.. image:: img/Activity_24_Figure_3.png
+
+Figure 3:  NPN LED switch on the breadboard 
+
+2. Start the Oscilloscope & Signal generator application
+3. In the OUT1 settings menu set Amplitude value to 0.5V, DC offset to 0.5 V, Frequency to 10Hz to apply the input voltage. 
+   From the waveform menu select SQUARE, deselect SHOW and select enable.
+4. On the left bottom of the screen be sure that  IN1 V/div is set to 200mV/div and  IN2 is set to 1V/div (You can set V/div by selecting the desired 
+   channel and using vertical +/- controls)
+5. Set t/div value to 20ms/div (You can set t/div using horizontal +/- controls)
+6. Under IN2 menu settings set probe to x10 and vertical offset to 0.
+7. Under IN1 set vertical offset to 0.
+
+.. image:: img/Activity_24_Figure_4.png
+
+Figure 4:  NPN as a switch measurements
+
+From figure 4 we can observe NPN transistor behavior when it is operating as a switch. When the base voltage is "high" the transistor is "turned on" enabling current flow from +5V voltage rail trough diode to the GND. When current starts flowing the LED will blink.
+In this "turned on" state we can see that IN2 (LED voltage do not goes to 0 V). This is is the affect of the forward drop down voltages of the LED diode and Q1 transistor. From figure 4 we can measure this drop down voltage do be ~2.2V. Try to measure what amount of drop down voltage is caused by Q1 and what amount by LED. When base voltage is "low" transistor is "turned off" disabling current flow therefore the LED voltage will be same as R1 i.e 5V. 
+
+
+Questions
+__________
+
+1. How much current is flowing in resistors :math:`R_C` and :math:`R_B` when the LED is on and when the LED is off?
+2. Calculate the :math:`\beta` when Q1 is saturated. How does this value compare to the spec listed in the datasheet_?
