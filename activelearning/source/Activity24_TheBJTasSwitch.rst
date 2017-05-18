@@ -38,7 +38,7 @@ When the input equals :math:`+V_{in}`, the transistor is driven into saturation 
 
 .. math::
   
-    V_{CE} = 0 \quad \text{and} \quad I_{C_{sat}} = \frac{V_{CC}}{R_C} A \quad (2)
+    V_{CE} \approx 0 \quad \text{and} \quad I_{C_{sat}} = \frac{V_{CC}}{R_C} A \quad (2)
 
 This state is similar to a closed switch connecting the bottom of :math:`R_C` to ground. 
 

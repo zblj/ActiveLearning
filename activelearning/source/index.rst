@@ -29,3 +29,5 @@ Welcome to Red Pitaya Active Learning
      ./Activity22_TheBJTasDiode
      ./Activity23_TheMOSAsDiode
      ./Activity24_TheBJTasSwitch
+     ./Activity25_MOSasSwitch
+     ./Activity26_BJTCommonEmitterAmplifier

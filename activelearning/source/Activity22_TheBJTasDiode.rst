@@ -24,7 +24,7 @@ ______
 
 In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_.
 Oscilloscope_ & Signal_ generator_ application is used for generating and observing signals on the circuit.
-Extension connector pins used for **-3.3V** and **+3.3V** voltage supply are show in the documentation here_. 
+Extension connector pins used for **+5V**, **-3.3V** and **+3.3V** voltage supply are show in the documentation here_. 
 
 .. note:: 
    Red Pitaya STEMlab outputs can generate voltage signals with maximal output range of +/- 1V (2Vpp). For this experiment the higher signal amplitudes are required. Because of that we will use an OP484_ in the inverting_ opamp configuration to enable OUT1/OUT2 signal amplification achieving voltage swing between +4.7V  to -3.2V. An OP484 will be supplied from STEMlab +5V and -3.3V voltage rails. Gain of the inverting amplifier will be set to ~5, where :math:`R_i  = 2.2k \Omega` and :math:`R_f  = 10k \Omega` 
