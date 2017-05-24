@@ -130,10 +130,23 @@ Suppose that we want to design an amplifier with the gain :math:`A = 5` using  2
 
     Selecting the values of capacitors :math:`C_1` , :math:`C_2`  and :math:`C_E` is done by using high value capacitors while the maximum voltage rating of the capacitors must be larger than :math:`V_{CC}`. Commonly an electrolytic capacitors are used in ranges of :math:`\mu F`. If we want to bring (emitter - gnd) impedance (for AC) close to zero then :math:`C_E` must be large as possible. Also :math:`C_1` , :math:`C_2`  should be large to prevent large voltage drops across them.
 
+Materials
+__________
+
+- Red Pitaya STEMlab 
+- 2x 470Ω Resistor
+- 2x 10kΩ Resistor
+- 1x 10kΩ Trimer
+- 1x 1kΩ Resistor
+- 1x 10uF Capacitor
+- 2x 4.7uF Capacitor
+- 1x small signal NPN transistor (2N3904_)
+- 1x Solder-less Breadboard
+
 Procedure
 _____________
 
-Following calculations and guidelines above we have built and comment emitter amplifier shown in figure 2. We had an :math:`470 \Omega` resistors available and those resistors where used for :math:`R_L` and :math:`R_E`. After selecting the :math:`R_L` and :math:`R_E` the other components have been calculated and selected.
+Following calculations and guidelines above we have built common emitter amplifier shown in figure 2. We had an :math:`470 \Omega` resistors available and those resistors where used for :math:`R_L` and :math:`R_E`. After selecting the :math:`R_L` and :math:`R_E` the other components have been calculated and selected.
 
 
 .. image:: img/Activity_26_Figure_2.png

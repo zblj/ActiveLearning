@@ -31,3 +31,4 @@ Welcome to Red Pitaya Active Learning
      ./Activity24_TheBJTasSwitch
      ./Activity25_MOSasSwitch
      ./Activity26_BJTCommonEmitterAmplifier
+     ./Activity27_MOSCommonSourceAmplifier
