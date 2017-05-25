@@ -169,7 +169,7 @@ Figure 3: Common emitter amplifier on the breadboard
 
 .. image:: img/Activity_26_Figure_4.png
 
-Figure 3: Common emitter amplifier measurements
+Figure 4: Common emitter amplifier measurements
 
 On figure 3 the measurements of the common emitter amplifier is shown. From the P2P measurements we can calculate achieved gain and it is approximately  :math:`A \approx 9` .  
 

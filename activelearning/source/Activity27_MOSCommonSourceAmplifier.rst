@@ -32,13 +32,11 @@ Extension connector pins used for **+5V**, **-3.3V** and **+3.3V** voltage suppl
 Background
 ___________
 
-The configuration, shown in figure 1, demonstrates the NMOS transistor used as a common source amplifier. Output load resistor :math:`R_L` is chosen such that, for the desired nominal drain current :math:`I_D`, the voltage appearing at :math:`V_{DS}` is approximately one third of the :math:`V_{DD}` supply voltage. (At DC operating condition). To set the transistor :math:`V_{GS}` voltage for self-biased DC operating point the voltage divider :math:`\frac{R_1}{R_2}` is chosen.
-Resistor :math:`R_G` is used to set the final **gain** of the amplifier. The value of :math:`R_G` resistor in combination with resistor :math:`R_2` will affect what amount of :math:`V_{in}` is added to the :math:`V_{GS}` voltage and therefore directly setting the amplifier **gain**.  
-Resistor :math:`R_S` is used to add source degeneration in order to stabilize the DC operating point. The best approach for selecting the :math:`R_L` and :math:`R_S` is to enable voltage drops across :math:`M_1`, :math:`R_L` and :math:`R_S` equal to the 1/3 of the :math:`V_{DD}` (at DC operating condition). Therefore :math:`R_S` = :math:`R_L`. Adding the source degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor :math:`C_S` across the degeneration resistor :math:`R_S` effectively setting the  " :math:`R_S` " value close to zero for AC signals. Capacitor :math:`C_2` is added to block the DC component of the output signal. Due to high input impedance transistor :math:`C_1` can be selected in range of :math:`< \mu F`.
+The configuration, shown in figure 1, demonstrates the NMOS transistor used as a common source amplifier.To set the transistor :math:`V_{GS}` voltage for self-biased DC operating point the voltage divider :math:`\frac{R_1}{R_2}` is chosen. Resistor :math:`R_G` is used to set the final **gain** of the amplifier. The value of :math:`R_G` resistor in combination with resistor :math:`R_1` and :math:`R_2` will affect what amount of :math:`V_{in}` is added to the :math:`V_{GS}` voltage and therefore directly setting the amplifier **gain**. Output load resistor :math:`R_L` is chosen such that, for the desired nominal drain current :math:`I_D`, the voltage appearing at :math:`V_{DS}` is approximately one third of the :math:`V_{DD}` supply voltage. Resistor :math:`R_S` is used to add source degeneration in order to stabilize the DC operating point. The best approach for selecting the :math:`R_L` and :math:`R_S` is to enable voltage drops across :math:`M_1`, :math:`R_L` and :math:`R_S` equal to the 1/3 of the :math:`V_{DD}` (at DC operating condition). Therefore :math:`R_S` = :math:`R_L`. Adding the source degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor :math:`C_S` across the degeneration resistor :math:`R_S` effectively setting the  " :math:`R_S` " value close to zero for AC signals. Capacitor :math:`C_2` is added to block the DC component of the output signal. Due to high input impedance transistor :math:`C_1` can be selected in range of :math:`< \mu F`.
 
 .. note::
    One of the main advantages of MOS common source amplifier  over `BJT common emitter amplifier`_ is an extremely high input impedance along with a low noise output making them ideal for use in amplifier circuits that have very small input signals.
-   Input impedance is effectively only dependent on resistors :math:`R_1` and :math:`R_2` which can be selected in range of :math:`M \Omega`.
+   Input impedance is effectively only dependent on input capacitance :math:`C_{iss}`, resistors :math:`R_1` and :math:`R_2` which can be selected in range of :math:`M \Omega`.
 
 .. image:: img/Activity_27_Figure_1.png
 
@@ -46,7 +44,7 @@ Figure 1: Common source amplifier configuration
 
 .. warning::
    Calculating and designing  of a common source amplifier is not straight forward. Common source amplifier design  will be largely dependent on the selected
-   transistor(its parameters), desired frequency range and final amplifier gain. In practice many factors as input capacitance will affect the circuit behavior while this factors are largely excluded from available tutorials and theory. For more in depth understanding of common source amplifier I suggest links below:
+   transistor(its parameters), desired frequency range and final amplifier gain. In practice many factors as input capacitance will affect the circuit behavior while this factors are largely excluded from available tutorials and theory. For more in depth understanding of common source amplifier links below are suggested:
 
    - [1] `Wikipedia Common Source`_ 
    - [2] `Common Source Amplifier Tutorial 1`_
@@ -57,7 +55,7 @@ Figure 1: Common source amplifier configuration
    - [7] `Drain Output Resistance`_ :math:`r_o` 
 
 
-By making flowing simplifications:
+**By making simplifications listed below Approximate Gain relation for common source amplifier shown on figure 1 can be written as shown in equation (2)**.
 
 1. Neglecting voltage drop across :math:`C_1` capacitor. We can neglect voltage drop across capacitor :math:`C_1` in case when  :math:`1/(2 \pi f C_1) << R_G` . 
 2. Neglecting :math:`C_S` impedance. If the :math:`C_S` value is selected in range :math:`C_S >> 10 \mu F` 
@@ -66,8 +64,6 @@ By making flowing simplifications:
 
 .. note::
    Transconductance :math:`g_m` is the change in the drain current divided by the small change in the gate/source voltage with a constant drain/source voltage. Typical values of :math:`g_m` for a small-signal field effect transistor are 1 to 30 :math:`mS` (millisiemens).
-
-**Approximate Gain relation** for common source amplifier shown on figure 1 can be written as:
 
 .. math::
 
@@ -112,24 +108,52 @@ Procedure
 _____________
 
 
-Suppose that we want to design an amplifier with the gain :math:`A_v = 5` using ZVN211 transistor and voltage supply :math:`V_{DD} = 5V` .
+Suppose that we want to design an amplifier with the gain :math:`A_v = 5` and :math:`I_L = 5mA` using ZVN211_ transistor and voltage supply :math:`V_{DD} = 5V` .
 Following calculations and guidelines above we have built common source amplifier shown in figure 2.
 
-To set the transistor :math:`V_{GS}` voltage for self-biased DC operating point the voltage divider :math:`\frac{R_1}{R_2}` is chosen such that :math:`V_G` is set above ( :math:`V_{TH} + V_S` ) voltage (At DC operating condition).
+First step is to set **DC operating point** by deciding voltages across :math:`R_L`, :math:`R_D` and :math:`M_1`.
+
+.. math::
+      
+        V_{R_L}+V_{DS}+V_{R_S} = V_{CC}  \quad  (4)
+
+If we take into account 1/3 ratio of voltages on :math:`R_L`, :math:`R_D` and :math:`M_1` we get following:
+
+.. math::
+      
+        1.5 V + 2.0 V + 1.5 V = 5V  \quad      (5)
+
+:math:`V_{DS}` is the voltage across :math:`M_1` in saturation state. 
+From desired value of :math:`I_L` we can calculate :math:`R_L` as.
+
+.. math::
+      
+        R_L = \frac{V_{R_L}}{I_L} = \frac{1.5V}{5mA} = 300 \Omega \quad   (6)
+
+Following :math:`1/3 V_{DD}` voltages drops across :math:`R_L`, :math:`R_D` and :math:`M_1` we set :math:`R_S = R_L`.
+
+.. note::
+
+    Due to availability of the resistor we have selected :math:`R_S = R_L = 470 \Omega`.
+
+To set the transistor :math:`V_{GS}` voltage for self-biased DC operating point the voltage divider :math:`\frac{R_1}{R_2}` is chosen such that :math:`V_G` is set above ( :math:`V_{TH} + V_S` ) voltage value (at DC operating condition).
+
 
 .. math::
 
-   V_G > V_{TH} + V_{S} > 1.8 V + 1.6 V > 3.4 V
+   V_G > (V_{TH} + V_{S}) > (2.0 V + 1.6 V) > 3.6 V \quad   (7)
 
    .
 
-   \text{ 1.8 V is the threshold voltage of ZVN211 , 1.6V is the DC voltage across } R_S 
+   \text{ 2.0 V is the threshold voltage of ZVN211 , 1.6V is the DC voltage across } R_S 
 
    .
 
-   V_G = \frac{R_2}{R_1+R_2} V_{DD}
+   V_G = \frac{R_2}{R_1+R_2} V_{DD} \quad  (8)
 
-For :math:`V_G  = 3.4 V` and :math:`R_1  = 1 M \Omega` we get (closest value) for :math:`R_2 = 3 M \Omega`   
+
+For selected :math:`V_G  = 3.7 V` and :math:`R_1  = 1 M \Omega` we get (closest value) for :math:`R_2 = 3 M \Omega`   
+
 
 
 .. image:: img/Activity_27_Figure_2.png
@@ -138,8 +162,8 @@ Figure 2: Common source amplifier with components values
 
 .. note::
    
-  For amplifier from figure 2 and  input signal frequency of 10kHz we can calculate voltage gain using equation 2.
-  Here we take for :math:`g_m = 25 mS` and :math:`C_{iss} = 100pF`.
+  For amplifier from figure 2 and  input signal frequency of :math:`10kHz` we can calculate voltage gain using equation 2.
+  For ZVN211_ we take :math:`g_m = 25 mS` and :math:`C_{iss} = 100pF`.
   
   .. math:: 
 
@@ -155,21 +179,18 @@ Figure 2: Common source amplifier with components values
 
      .
      
-     \text{ setting trimmer value } R_G  \text{ to }  35k \Omega \text{ we get: }  
+     \text{ setting trimmer value } R_G  \text{ to }  50k \Omega \text{ we get: }  
 
      .
      
-     A_v \approx - \frac{131 k \Omega } {35 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega  
+     A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega  
 
-     -
+     .
     
-     A_v \approx - 6.4  
+     A_v \approx - 4.2  
 
 
-
-
-
-1. Build the circuit on from figure 2 on the breadboard.
+1. Build the circuit from figure 2 on the breadboard.
 
 .. image:: img/Activity_27_Figure_3.png
 
@@ -182,3 +203,22 @@ Figure 3: Common source amplifier on the breadboard
 5. Set t/div value to 20us/div (You can set t/div using horizontal +/- controls)
 6. In the trigger menu settings and select NORMAL
 7. In the measurements menu select P2P for IN1 and IN2
+
+.. image:: img/Activity_27_Figure_4.png
+
+Figure 4: Common source amplifier measurements
+
+On figure 3 the measurements of the common source amplifier are shown. From the P2P measurements we can calculate achieved gain and it is approximately  :math:`A \approx 4` . Why is the difference between calculated and measured gain? This is due to input capacitance which we have assumed to be 100pF but in reality it can be different. Also values of other components and similar are not exact.  
+
+8. In order to see affect of the gain dependency on the input signal frequency set OUT1 frequency to 5kHz and measure amplifier gain.
+
+.. image:: img/Activity_27_Figure_5.png
+
+Figure 5: Common source amplifier gain at 5kHz frequency of :math:`V_{in}`
+
+Questions
+__________
+
+1. Try to change value of :math:`R_{G_{pot}}` and observe the change in the gain?
+2. Try to change :math:`R_1` and :math:`R_2` to :math:`100k \Omega` and :math:`300k \Omega`. What is the gain dependency on :math:`V_{in}` frequency.  
+ 
