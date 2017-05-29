@@ -42,3 +42,13 @@ For the :math:`M_1` transistor we will use IRLU120N_. We selected this power MOS
     Simple DC-DC `boost converter calculator`_  is also available on Adafruit web page.
 
 For storage capacitor :math:`C_1` and electrolytic high capacitance capacitor should be selected. The selection of this capacitor depends on current ratings, switching frequency and inductor value. But to be on the safe side values above :math:`10 \mu F` would be sufficient.
+An DC-DC boost converter used in this experiment is shown in figure 1.
+
+
+.. image:: img/Activity_28_Figure_1.png
+
+Figure 1: DC to DC boost converter 
+
+On figure 1 basic DC-DC boost converter circuit is shown. To the converter circuit an 200 :math:`\Omega` load is added. **For stable operation of DC-DC boost converter either constant load or load regulation is needed**. Without regulation any change of the load will affect the output voltage level. Therefore we have set 200 :math:`\Omega` load to stabilize output voltage. Parallel to the load two LED diodes in series with 1K resistors are added. Note that adding or removing additional LEDs parallel  to the load will not affect output voltage since current drawn by LED will be much smaller than current drawn by 200 :math:`\Omega` load.
+**But LEDs are indicators that our DC battery voltage is BOOSTED UP form 1.5 V to ~5V.** If the LEDs are off that means our battery voltage is bellow LED forward voltage (2x1.8V) and therefore or DC-DC boost converter circuit is not working correctly. 
+
