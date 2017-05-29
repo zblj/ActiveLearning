@@ -18,6 +18,7 @@ _____
 .. _IRLU120N: http://www.infineon.com/dgdl/irlr120n.pdf?fileId=5546d462533600a4015356695f642663
 .. _1N4001: http://www.vishay.com/docs/88503/1n4001.pdf
 .. _boost converter calculator: https://learn.adafruit.com/diy-boost-calc/the-calculator
+.. _2N3904: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 
 In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_.
 Oscilloscope_ & Signal_ generator_ application is used for generating and observing signals on the circuit.
@@ -49,6 +50,39 @@ An DC-DC boost converter used in this experiment is shown in figure 1.
 
 Figure 1: DC to DC boost converter 
 
-On figure 1 basic DC-DC boost converter circuit is shown. To the converter circuit an 200 :math:`\Omega` load is added. **For stable operation of DC-DC boost converter either constant load or load regulation is needed**. Without regulation any change of the load will affect the output voltage level. Therefore we have set 200 :math:`\Omega` load to stabilize output voltage. Parallel to the load two LED diodes in series with 1K resistors are added. Note that adding or removing additional LEDs parallel  to the load will not affect output voltage since current drawn by LED will be much smaller than current drawn by 200 :math:`\Omega` load.
-**But LEDs are indicators that our DC battery voltage is BOOSTED UP form 1.5 V to ~5V.** If the LEDs are off that means our battery voltage is bellow LED forward voltage (2x1.8V) and therefore or DC-DC boost converter circuit is not working correctly. 
+On figure 1 basic DC-DC boost converter circuit is shown. To the converter circuit a 200 :math:`\Omega` load is added. **For stable operation of DC-DC boost converter either constant load or load regulation is needed**. Without regulation any change of the load will affect the output voltage level. Therefore we have set 200 :math:`\Omega` load to stabilize output voltage. Parallel to the load two LED diodes in series with 1K resistors are added. Note that adding or removing additional LEDs parallel to the load will not affect output voltage since current drawn by LED will be much smaller than current drawn by 200 :math:`\Omega` load.
+**LEDs are used as indicators that our DC battery voltage is BOOSTED UP form 1.5 V to ~5V.** If the LEDs are off that means our battery voltage is bellow LED forward voltage (2x1.8V) and therefore indicating that DC-DC boost converter circuit is not working correctly. 
+
+Red Pitaya STEMlab outputs can generate voltage signals with maximal output range of +/- 1V (2Vpp). For MOSFET switching the higher signal amplitudes are required.Because of that we have used two NPN transistors in switching mode as intermediate stage between OUT1 switching signal and MOSFET transistor. OUT1 square signal will switch ON and OFF first NPN transistor causing its collector voltage to swing between 0-5V. This collector voltage then controls second NPN transistor and its collector voltage, also swinging between 0-5V, will then switch ON/OFF the MOSFET transistor.  
+The reason why two NPN transistors are used is to have OUT1 and MOSFET gate signal in phase. I.e when OUT1 is high the signal on the MOSFET gate should be also high. Using one transistor will cause 180 phase delay.  **You can also see the other more important problem here. If we use only one NPN transistor then when OUT1 is constantly turned OFF the MOSFET transistor will be constantly turned ON producing short circuit: battery - inductor - mosfet - gnd**. Using two NPN transistor will prevent this happening. 
+
+.. warning::
+    Note that +5V voltage rail from the STEMlab is used only for transistor switching and not for the load supply. I.e electrical energy is flowing from battery to the LOAD and LEDs.  
+
+Materials
+__________
+
+- Red Pitaya STEMlab 
+- 1x 1kΩ Resistor
+- 3x 470Ω Resistor
+- 1x 10kΩ Resistor
+- 1x :math:`100 \mu H` Power inductor 
+- 1x :math:`47 \mu F` Capacitor 
+- 2x LED (red)
+- 1x 1W 200Ω Resistor 
+- 1x Signal diode (1N4001_)
+- 2x Small signal NPN transistor (2N3904_)
+- 1x Power MOS transistor (IRLU120N_)
+- 1x AA 1.5V battery
+- 1x Solder-less Breadboard
+
+Procedure
+_____________
+
+1.Following instructions above and schematics from figure 1 build the circuit on the breadboard.
+
+
+.. image:: img/Activity_28_Figure_2.png
+
+Figure 2: DC - DC boost converter on the breadboard
 

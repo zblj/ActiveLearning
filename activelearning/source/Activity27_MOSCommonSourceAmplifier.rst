@@ -216,6 +216,22 @@ On figure 3 the measurements of the common source amplifier are shown. From the 
 
 Figure 5: Common source amplifier gain at 5kHz frequency of :math:`V_{in}`
 
+.. hint:: 
+    We could set :math:`1M \Omega` resistor in series with MOSFET gate input. This would decrease affect of the parasitic capacitance and enable high input impedance regardless of the input signal frequency. As you can see from the equation 2 once the 1M resistor is added the :math:`Z_{iss}` will be "constant" and larger at high frequency therefore less affecting the input divider :math:`R_G / R_2`.
+    Input impedance would become:
+
+    .. math::
+
+         Z_{iss} = 1M \Omega + \frac{1}{2 \pi f C_{iss}} 
+
+    and  :math:`Z_{iss}` capacitance affect (part)
+
+    .. math::
+ 
+       \frac{1}{2 \pi f C_{iss}}    
+
+    would have much less affect on the gain. I.e input signal frequency would have less affect on the amplifier gain.
+
 Questions
 __________
 
