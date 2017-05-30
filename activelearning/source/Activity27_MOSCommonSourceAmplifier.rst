@@ -235,6 +235,7 @@ Figure 5: Common source amplifier gain at 5kHz frequency of :math:`V_{in}`
 Questions
 __________
 
-1. Try to change value of :math:`R_{G_{pot}}` and observe the change in the gain?
-2. Try to change :math:`R_1` and :math:`R_2` to :math:`100k \Omega` and :math:`300k \Omega`. What is the gain dependency on :math:`V_{in}` frequency.  
+1. Try to add :math:`1M` resistor in series with transistor gate pin. Measure amplifier gain. What happens when OUT1 frequency is changed?
+2. Try to change value of :math:`R_{G_{pot}}` and observe the change in the gain?
+3. Try to change :math:`R_1` and :math:`R_2` to :math:`100k \Omega` and :math:`300k \Omega`. What is the gain dependency on :math:`V_{in}` frequency.  
  

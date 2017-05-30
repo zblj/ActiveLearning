@@ -79,10 +79,75 @@ __________
 Procedure
 _____________
 
-1.Following instructions above and schematics from figure 1 build the circuit on the breadboard.
+1. Following instructions above and schematics from figure 1 build the circuit on the breadboard.
 
 
 .. image:: img/Activity_28_Figure_2.png
 
 Figure 2: DC - DC boost converter on the breadboard
 
+2. **Set IN1 and IN2 scope probes attenuations to x10**
+3. Connect IN1 scope probe to the point 3 (figure 1) and IN2 scope probe to the point (5)
+4. Start the Oscilloscope & Signal generator application - **OUT1 must be disabled (turned off)**
+5. In the IN1 and IN2 menu settings set probe attenuation to x10
+6. In the MEASUREMENTS menu select MEAN measurements for IN1 and IN2
+7. What are the values of the DC voltage on point 3 and 5 (figure 1)?
+
+At this point, when OUT1 switching signal is disabled the DC-DC boost converter is not functional. Transistor :math:`M_1` is turned off (open circuit) and battery voltage is, across inductor :math:`L_1` and diode :math:`D_1` , transfered to the load side (point 5, figure 1). For DC signals (no switching) the :math:`L_1` inductor behaves as a short circuit therefore output voltage is the battery voltage decreased by :math:`D_1` diode forward voltage: :math:`V_{out} = V_{battery} - V_{diode}`. This state is shown in the measurements on figure 3. As we expected the :math:`LED_1` and :math:`LED_2` are turned off since output voltage is below LEDs forward voltage (2x1.8V).
+
+.. image:: img/Activity_28_Figure_3.png
+
+Figure 3: DC - DC boost converter is turned off
+
+8. In the OUT1 menu settings set frequency to 10kHz, waveform to PWM, amplitude to 0.5V, DC offset to 0.5V, deselect SHOW and select ON. 
+9. In the MEASUREMENTS menu select P2P measurements for IN1 and IN2
+10. Set t/div value to 100us/div (You can set t/div using horizontal +/- controls)
+
+At this point when OUT1 switching signal is enabled the DC-DC boost converter is functional and behaves as described in theory above. Output voltage is boosted up to approximately 5V and LEDs are turned ON. This state is shown on figure 4. As we can see from the measurements some ripple appears at battery and output voltage.Output voltage ripple is caused by battery voltage ripple and transistor :math:`M_1` switching. Battery voltage ripple is due to fact that battery is not ideal voltage source and when :math:`M_1` is turned on, current drown from battery is causing voltage drop.    
+
+.. image:: img/Activity_28_Figure_4.png
+
+Figure 4: DC - DC boost converter is turned on
+
+.. note:: 
+    Ripple voltage values are one of the main parameters of the DC-DC converter quality. Lower output ripple corresponds to better DC-DC boost converter.
+    Capacitor :math:`C_1` is therefore needed in order to compensate and smooth out switching voltage appearing on inductor :math:`L_1` and diode :math:`D_1`.
+    Try to remove :math:`C_1` and observe :math:`V_{out}`.
+
+
+11. In order to observe switching voltages of the :math:`M_1`, set IN1 probe to the point 2 ( figure 1) and IN2 probe to the point 4 ( figure 1) 
+12. In the IN2 settings menu set vertical offset -4.0V (to better see IN2 signal)
+13. In the TRIGGER menu select NORMAL and set trigger level to 3.0V
+14. Set t/div value to 20us/div (You can set t/div using horizontal +/- controls)
+
+.. image:: img/Activity_28_Figure_5.png
+
+Figure 5: M1 switching voltages
+
+On the figure 5 :math:`M_1` gate and drain signals are shown. From figure 5 we can see that gate signal is an switching square wave controlling the transistor.
+Drain signal corresponds to the "open/closed" states of the transistor :math:`M_1` but during the "off" state a significant oscillations are visible. This is the affect of the inductor :math:`L_1` since it will appose any change in the current trough it which will affect the :math:`M_1` drain voltage.  
+
+.. note::
+   DC-DC boos converter output voltage value is often controlled with :math:`duty-cycle` of the switching signal. 
+
+15. In order to observe affects of the switching signal (OUT1) duty cycle set IN1 probe to the point 2 ( figure 1) and IN2 probe to the point 5 ( figure 1) 
+16. In the IN1 and IN2 menu settings set vertical offset to -3.0V
+17. Set t/div value to 50us/div (You can set t/div using horizontal +/- controls)
+18. In the OUT1 menu settings change duty cycle from :math:`30-80 \%` and observe results.
+
+
+.. image:: img/Activity_28_Figure_6.png
+.. image:: img/Activity_28_Figure_7.png
+
+Figure 5: Above: Output voltage at 40% duty cycle. Below: Output voltage at 80% duty cycle
+
+.. warning::
+   From figure 5 we can observe the affect of the duty cycle on the output voltage. If we go with the duty cycle to 0% or 100% then we will turn off or short circuit :math:`M_1` transistor therefore duty cycle should be limited above for short circuit preventing and circuit damaging.
+
+
+Questions
+__________
+
+1. Change load value to :math:`470 \Omega` and observe results.
+2. Change OUT1 frequency to from  5 - 20 kHz. Measure and record the boosted output voltage waveform and the current waveforms. Explain what has changed and why? 
+3. How would adding LC filter on the converter output affect the voltage ripple?
