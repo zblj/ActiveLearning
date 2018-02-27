@@ -2,13 +2,13 @@ BJT Common Emitter Amplifier
 ============================
 
 Objective
-_________
+---------
 
 The purpose of this experiment is to investigate the common emitter
 configuration using the BJT device.
 
 Notes
-_____
+-----
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -24,47 +24,49 @@ hardware_.
 Oscilloscope_ & Signal_ generator_ application is used for generating
 and observing signals on the circuit.
 
-Extension connector pins used for **+5V**, **-3.3V** and **+3.3V**
+Extension connector pins used for **+5 V**, **-3.3 V** and **+3.3 V**
 voltage supply are show in the documentation here_.  
 
 Background
-__________
+----------
 
-The configuration, shown in figure 1, demonstrates the NPN transistor
-used as a common emitter amplifier. Output load resistor :math:`R_L`
+The configuration, shown in Fig. 1, demonstrates an npn transistor
+used as a common-emitter amplifier. Output load resistor :math:`R_L`
 is chosen such that for the desired nominal collector current
 :math:`I_C`, approximately one third of the +5 V voltage (1.6 V)
-appears at :math:`V_{CE}` (At DC operating condition). Resistor
+appears at :math:`V_{CE}` (at DC operating point condition). Resistor 
 :math:`R_B` sets the nominal bias operating point for the
-transistor (:math:`I_B`) to set the required :math:`I_C`. The input
-signal is AC coupled into the base of the transistor by the
-:math:`C_1` capacitor so as not to disturb the **DC bias
-condition**. Voltage divider :math:`\frac{R_1}{R_2}` is chosen to
+transistor (base current :math:`I_B`) to sink the required collector
+current :math:`I_C`. The input signal is AC coupled to the base of
+the transistor with capacitor :math:`C_1`  to not disturb **DC bias
+conditions**. Voltage divider :math:`\frac{R_1}{R_2}` is chosen to
 provide a self-biased DC operating point. Resistor :math:`R_E` is used
-to add emitter degeneration in order to stabilize the DC operating
-point. The best approach for selecting the :math:`R_L` and :math:`R_E`
+to add emitter degeneration (current feedback) in order to stabilize
+the DC operating point.
+
+The best approach for selecting the :math:`R_L` and :math:`R_E`
 is to enable voltage drops across :math:`Q_1`, :math:`R_L` and
 :math:`R_E` equal to the 1/3 of the :math:`V_{CC}` (at DC operating
-condition). Therefore :math:`R_E` = :math:`R_L`. Adding the emitter
+point condition). Therefore :math:`R_E` = :math:`R_L`. Adding the emitter
 degeneration resistor has improved the stability of the DC operating
-point at the cost decreased amplifier gain. A higher gain for AC
+point at the cost of reduced amplifier gain. A higher gain for AC
 signals can be restored to some extent by adding capacitor
-:math:`C_E` across the degeneration resistor :math:`R_E` effectively
-setting the  " :math:`R_E` " value close to zero for AC
-signals. Capacitor :math:`C_2` is added to block the DC component
+:math:`C_E` across the degeneration resistor :math:`R_E`, effectively 
+setting the " :math:`R_E` " value close to zero for AC
+signals. Capacitor :math:`C_2` is added to block the DC component 
 of the output signal. 
 
 .. _2N3904: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 .. _The Signal Path: https://www.youtube.com/watch?v=Y2ELwLrZrEM&t=1213s
 
 .. note:: 
-    How to design an common emitter amplifier is nicely explained in
+    How to design an common-emitter amplifier is nicely explained in a
     video tutorial on `The Signal Path`_ Youtube channel. 
 
 
 .. image:: img/Activity_26_Figure_1.png
 
-Figure 1: Common emitter amplifier configuration 
+Figure 1: Common-emitter amplifier configuration 
 
 
 Quick calculation of the common emitter amplifier
@@ -91,15 +93,15 @@ voltages on :math:`R_L`, :math:`R_E` and :math:`Q_1` we get following:
 
 .. math::
       
-   1.6 V + 1.6+0.2 V + 1.6 V = 5V  \quad      (2)
+   1.6 V + 1.6 V + 0.2 V + 1.6 V = 5 V  \quad (2)
 
 
 From desired value of gain :math:`A` we can calculate :math:`R_L`
-using (3)-(7) 
+using Eqs. (3) -- (7) 
 
 .. math::
       
-   A  = \beta \frac{R_{out}}{R_{in}}.  \quad  (3)
+   A  = \beta \frac{R_{out}}{R_{in}}.  \quad (3)
 
 where :math:`R_{out}` is the resistor connected in series with the
 collector and :math:`R_{in}` is the resistor connected in series
@@ -118,14 +120,14 @@ It follows:
 In this step we need to **set current ratings of our amplifier**
 i.e we need to choose :math:`I_C` to calculate :math:`R_L`. 
 
-Let's set :math:`I_C = 5mA`, then
+Let's set :math:`I_C = 5 mA`, then
  
 .. math:: 
    
    R_L =  \frac{V_{R_L}}{I_C} = \frac{1.6V}{5mA} =  320 \Omega   \quad (6)
 
 
-In order to satisfy (2) it follows that:
+In order to satisfy Eq. (2) it follows that:
 
 .. math:: 
 
@@ -141,8 +143,8 @@ Now we can calculate :math:`R_{in}` i.e :math:`R_{B}` value as:
 
 The last step is to calculate values of DC bias resistors
 :math:`R_1` and :math:`R_2`. :math:`R_2` can be obtained from
-"cookbook" relation given in equation (9) and therefore :math:`R_1`
-can be calculated from equation (10). 
+"cookbook" relation given in Eq. (9) and therefore :math:`R_1`
+can be calculated from Eq. (10). 
 
 
 .. math:: 
@@ -160,7 +162,7 @@ where :math:`v_{BE} = 0.6 V`
 
 .. math::
    
-   R_1 = \frac{5V - (0.6V+1.6V)}{ \frac{(0.6V+1.6V)}{3.2k \Omega}} = 4.0k \Omega     
+   R_1 = \frac{5V - (0.6V+1.6V)}{ \frac{(0.6V + 1.6V)}{3.2k \Omega}} = 4.0k \Omega     
 
  
 .. note::
@@ -186,7 +188,7 @@ where :math:`v_{BE} = 0.6 V`
 
    
 Materials
-_________
+---------
 
 - Red Pitaya STEMlab
   
@@ -202,13 +204,13 @@ _________
   
 - 2x 4.7uF Capacitor
   
-- 1x small signal NPN transistor (2N3904_)
+- 1x small signal npn transistor (2N3904_)
   
 - 1x Solder-less Breadboard
 
   
 Procedure
-_________
+---------
 
 Following calculations and guidelines above we have built common
 emitter amplifier shown in figure 2. We had an :math:`470 \Omega`
@@ -252,11 +254,11 @@ Figure 4: Common emitter amplifier measurements
 
 On figure 3 the measurements of the common emitter amplifier is
 shown. From the P2P measurements we can calculate achieved gain and it
-is approximately  :math:`A \approx 9` .
+is approximately  :math:`A \approx 9`.
 
 
 Questions
-_________
+---------
 
 1. Try to change value of :math:`R_{B_{pot}}` and observe the change
    in the gain?
@@ -273,8 +275,8 @@ attenuation to 10**  and increase OUT1 amplitude to 0.2V. What is the
 P2P value of the IN2? 
 
 
-With gain :math:`A=9`, input signal P2P amplitude 0.4V the output
-P2P(IN2) value should be :math:`0.4 \times 9=3.6V` ! But it is not?
+With gain :math:`A = 9`, input signal P2P amplitude 0.4V the output
+P2P(IN2) value should be :math:`0.4 \times 9 = 3.6 V` ! But it is not?
 Signal is cut off! Can you explain why?  
 
 .. hint::

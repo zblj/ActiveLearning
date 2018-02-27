@@ -31,8 +31,14 @@
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.mathjax'
+    'sphinx.ext.mathjax',
+    'sphinx_numfig'
 ]
+
+# numfig:
+numfig_number_figures = True
+# numfig_figure_caption_prefix = "Fig."
+# numfig = True
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,8 +50,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-#
-# source_encoding = 'utf-8-sig'
+source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'index'
@@ -61,6 +66,7 @@ author = u'Red Pitaya'
 #
 # The short X.Y version.
 version = u'1.0'
+
 # The full version, including alpha/beta/rc tags.
 release = u'1.0'
 
@@ -69,7 +75,7 @@ release = u'1.0'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -328,7 +334,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'doctut', u'RedPitaya electronic engineering education tutorials',
-     author, 'doctut', 'RedPitaya electronic engineering education tutorials',
+    author, 'doctut', 'RedPitaya electronic engineering education tutorials',
      'Miscellaneous'),
 ]
 
