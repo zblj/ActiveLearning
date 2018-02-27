@@ -5,15 +5,15 @@ Welcome to Red Pitaya Active Learning
      :maxdepth: 1
      :numbered:
 
-     ./Phase
-     ./Kirchhoff
-     ./Voltage
-     ./Proportionality
-     ./Thevenin  
-     ./ResponseRC
-     ./ResponseRL
-     ./ResonanceRCL
-     ./Activity9_LowPassandHighPassFilters
+     ./Activity01_Phase
+     ./Activity02_Kirchhoff
+     ./Activity03_Voltage
+     ./Activity04_Proportionality
+     ./Activity05_Thevenin  
+     ./Activity06_ResponseRC
+     ./Activity07_ResponseRL
+     ./Activity08_ResonanceRCL
+     ./Activity09_LowPassandHighPassFilters
      ./Activity10_BandPassFilters 
      ./Activity11_ImpedanceMeasurementFrequencyEffects
      ./Activity12_MeasuringaLoudspeakerImpedanceProfile
