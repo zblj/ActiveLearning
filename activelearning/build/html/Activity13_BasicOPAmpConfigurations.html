@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>13. Basic OP Amp Configurations &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="14. OPAMP Open Loop Gain" href="Activity14_OPAMPOpenLoopGain.html"/>
+        <link rel="prev" title="12. Measuring a Loudspeaker Impedance Profile" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13. Basic OP Amp Configurations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">13.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">13.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">13.3. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#op-amp-basics">13.4. Op-Amp Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#first-step-connecting-dc-power">13.4.1. First Step: Connecting DC Power</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#first-step-unity-gain-amplifier-voltage-follower">13.4.2. First Step: Unity-Gain Amplifier (Voltage Follower)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buffering-example">13.4.3. Buffering Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basics-amplifier-configurations">13.5. Basics Amplifier Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#inverting-amplifier">13.5.1. Inverting Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#non-inverting-amplifier">13.5.2. Non-Inverting Amplifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summing-amplifier-circuit">13.5.3. Summing Amplifier Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-an-op-amp-as-a-comparator">13.5.4. Using an Op-Amp as a Comparator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#questions">13.5.5. Questions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>13. Basic OP Amp Configurations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity13_BasicOPAmpConfigurations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basic-op-amp-configurations">
+<h1>13. Basic OP Amp Configurations<a class="headerlink" href="#basic-op-amp-configurations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>13.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>In this lab we introduce the operational amplifier (op amp), an active circuit that is designed with certain characteristics (high input resistance, low output resistance, and a large differential gain) that make it a nearly ideal amplifier and useful building-block in many circuits applications. In this lab you will learn about DC biasing for active circuits and explore a few of the basic functional op amp circuits. We will also use this lab to continue developing skills with the lab hardware.</p>
+</div>
+<div class="section" id="notes">
+<h2>13.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> application is used for generating and observing signals on the circuit.
+Extension connector pin used as 5V voltage source are show in the documentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">here</a>.</p>
+</div>
+<div class="section" id="materials">
+<h2>13.3. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab 125-14 or STEMlab 125-10</li>
+<li>OPAMP:  1x AD8541 ( CMOS rail to rail amplifier )</li>
+<li>LED: 1x</li>
+<li>Resistor:  4x 1 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  3x 4.7 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  2x 10 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  1x 20 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Capacitor: 1x 1 <span class="math notranslate">\(\mu F\)</span></li>
+</ul>
+</div>
+<div class="section" id="op-amp-basics">
+<h2>13.4. Op-Amp Basics<a class="headerlink" href="#op-amp-basics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-step-connecting-dc-power">
+<h3>13.4.1. First Step: Connecting DC Power<a class="headerlink" href="#first-step-connecting-dc-power" title="Permalink to this headline">¶</a></h3>
+<p>Op amps must always be supplied with DC power and therefore it is best to configure these connections first before adding any other circuit components. Figure 1 shows one possible power arrangement on your solder-less breadboard. We use two of the long rails for the positive supply voltage and ground. Using <a class="reference external" href="http://www.ti.com/lit/ds/symlink/lm317.pdf">LM317</a> <a class="reference external" href="http://www.ti.com/lit/ds/symlink/lm317.pdf">adjustable</a> <a class="reference external" href="http://www.ti.com/lit/ds/symlink/lm317.pdf">regulator</a> we provide 2.5 V mid supply rail that may be required.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>STEMlab boards do not have 2.5V DC output pin so we are using LM317 adjustable regulator to provide 2.5V DC rail from 5V one.
+Connection of LM317 is very simple and described below. Equation for calculating output voltage is given as:</p>
+<div class="last math notranslate">
+\[V_{out} = 1.25 \bigg( 1+\frac{R_2}{R_1} \bigg) \quad (1).\]</div>
+</div>
+<p>Included are the so-called “supply de-coupling” capacitor connected between the power-supply and ground rails. It is too early to discuss in great detail the purpose of these capacitors, but they are used to reduce noise on the supply lines and avoid parasitic oscillations. It is considered good practice in analog circuit design to always include small bypass capacitors close to the supply pins of each op amp in your circuit.</p>
+<img alt="_images/Activity_13_Figure_1.png" src="_images/Activity_13_Figure_1.png" />
+<p>Figure 1: Power connections using 5V power pin from <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">E2</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">connector</a> and <a class="reference external" href="http://www.ti.com/lit/ds/symlink/lm317.pdf">LM317</a> <a class="reference external" href="http://www.ti.com/lit/ds/symlink/lm317.pdf">adjustable</a> <a class="reference external" href="http://www.ti.com/lit/ds/symlink/lm317.pdf">regulator</a></p>
+<p>It is good practice to have power suply indication. For that we use LED connected to the 2.5V rail. If the voltage is present on this rail the LED will be ON. Since 2.5V is provided from 5V rail the same  LED will also indicate “OK” status of 5V power supply. Insert the LM317 and op amp into your breadboard and add the wires,resistors,led and supply capacitors as shown in figure 1. To avoid problems later you may want to attach a small label to the breadboard to indicate which rails correspond to +5 V, +2.5V and GND.</p>
+<p>Next, attach the +5 V supply and GND connections from the STEMlab board to the terminals on your breadboard. Use jumper wires to power the rails. Remember, the power-supply GND terminal will be our circuit “ground” reference. Once you have your supply connections you may want to use a DMM to probe the IC pins directly to insure that pin 7 is at +5 V, pin 4 at 0 V (ground) and check 2.5 power rail.
+Remember you must have the STEMlab powered up before measuring the voltages with the volt meter.</p>
+<img alt="_images/Activity_13_Figure_2.png" src="_images/Activity_13_Figure_2.png" />
+<p>Figure 2: Power connections</p>
+</div>
+<div class="section" id="first-step-unity-gain-amplifier-voltage-follower">
+<h3>13.4.2. First Step: Unity-Gain Amplifier (Voltage Follower)<a class="headerlink" href="#first-step-unity-gain-amplifier-voltage-follower" title="Permalink to this headline">¶</a></h3>
+<p>Our first op amp circuit is a simple one, shown in figure 3. This is called a unity-gain buffer, or sometimes just a voltage follower, defined by the transfer function <span class="math notranslate">\(V_{out} = V_{in}\)</span>. At first glance it may seem like a useless device, but as we will show later it finds use because of its high <strong>input resistance</strong> and <strong>low output resistance</strong>.</p>
+<img alt="_images/Activity_13_Figure_3.png" src="_images/Activity_13_Figure_3.png" />
+<p>Figure 3: Unity Gain Follower</p>
+<p>Using your breadboard and the STEMlab power supplies, construct the circuit shown in figure 3. Note that the power connections have not been explicitly shown here; it is assumed that those connections must be made in any real circuit (as you did in the previous step), so it is unnecessary to show them in the schematic from this point on. Use jumper wires to connect input and output to the waveform generator output, OUT1 and oscilloscope inputs IN1 an IN2.</p>
+<ol class="arabic simple">
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>In the OUT1 settings menu set DC offset value to 0.5 and Amplitude value to 0.45V to apply a 1Vp-p sine wave centered on 0.5 V as the input voltage to the circuit. From the waveform menu select SINE
+signal deselect SHOW button and select enable. On the left bottom of the screen be sure that IN1 V/div and IN2 V/div are both set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) In the IN1 and IN2 settings menu set the value of Vertical Offset to -500mV For the stable acquisition set the trigger level in TRIGGER menu to 0.5V and select NORMAL.</li>
+<li>In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE</li>
+<li>In the measurement menu select “FREQ” , select IN1 and press DONE, select IN2 and press DONE</li>
+</ol>
+<img alt="_images/Activity_13_Figure_4.png" src="_images/Activity_13_Figure_4.png" />
+<p>Figure 4: Unity Gain Follower measurements with an Oscilloscope &amp; Signal Generator application.</p>
+<p>Our measurements have confirmed that circuit in figure 3 is indeed a voltage follower. This configuration is widely used for example if our signal generator, connected to the “+” pin of the OPAMP, needs to be separated from influence of the circuit connected to the output of the voltage follower (pin 6).
+In reality a voltage follower shown in figure 3 has its limitations in case of performances. Mainly this is the capability of voltage follower to preserve <span class="math notranslate">\(V_{out}=V_{in}\)</span> characteristic in case of high frequencies of <span class="math notranslate">\(V_{in}\)</span> (IN1=OUT1, look at figure 3).
+Try to increase Signal generator (OUT1) frequency up to 100kHz or 1MHz and observe signals IN1 and IN2.  Certain delay of signal IN2 will appear indicating that voltage follower is inserting time delay between input (IN1) and output (IN2) signals.</p>
+</div>
+<div class="section" id="buffering-example">
+<h3>13.4.3. Buffering Example<a class="headerlink" href="#buffering-example" title="Permalink to this headline">¶</a></h3>
+<p>The high input resistance of the op-amp (zero input current) means there is very little loading on the generator; i.e., no current is drawn from the source circuit and therefore no voltage drops on any internal (Thevenin) resistance. Thus in this configuration the op-amp acts like a “buffer” to shield the source from the loading effects from other parts of the system. From the perspective of the load circuit the buffer transforms a non-ideal voltage source into a nearly ideal source. figure 5 describes a simple circuit that we can use to demonstrate this feature of a unity-gain buffer. Here the buffer is inserted between a voltage-divider circuit and some “load” resistance, the 10K resistor.</p>
+<img alt="_images/Activity_13_Figure_5.png" src="_images/Activity_13_Figure_5.png" />
+<p>Figure 5: Buffer Example</p>
+<p>Using your breadboard and the STEMlab power supplies, construct the circuit shown in figure 5, case 1.</p>
+<dl class="docutils">
+<dt><strong>Case 1</strong></dt>
+<dd>Simultaneously observe <span class="math notranslate">\(V_{in}\)</span> (IN1) and <span class="math notranslate">\(V_{out}\)</span> (IN2) and record the amplitudes (P2P).</dd>
+</dl>
+<ol class="arabic simple">
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>In the OUT1 settings menu set DC offset value to 0 and Amplitude value to 1V to apply a 2Vp-p sine wave centered on 0V as the input voltage to the circuit. From the waveform menu select SINE
+signal deselect SHOW button and select enable.</li>
+<li>On the left bottom of the screen be sure that IN1 V/div and IN2 V/div are both set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>In the IN2 settings menu set the value of Vertical Offset to -1000mV.</li>
+<li>In the IN1 and IN2 settings menu set probe settings to x10.</li>
+<li>For the stable acquisition set the trigger level in TRIGGER menu to 1.3V and select NORMAL.</li>
+<li>In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE</li>
+<li>In the measurement menu select “FREQ” , select IN1 and press DONE, select IN2 and press DONE</li>
+</ol>
+<dl class="docutils">
+<dt><strong>Case 2</strong></dt>
+<dd>Remove the 10kΩ load and substitute a 1kΩ resistor instead and record the amplitudes (P2P) of <span class="math notranslate">\(V_{in}\)</span> (IN1) and <span class="math notranslate">\(V_{out}\)</span></dd>
+<dt><strong>Case 3</strong></dt>
+<dd>Move the 1 KΩ load between pin 3 and +2.5 V, so that it is in parallel with the 4.7 KΩ resistor. Record the amplitudes (P2P) of <span class="math notranslate">\(V_{in}\)</span> (IN1) and <span class="math notranslate">\(V_{out}\)</span></dd>
+</dl>
+<img alt="_images/Activity_13_Figure_6.png" src="_images/Activity_13_Figure_6.png" />
+<p>Figure 6: Buffer Example case 1</p>
+<p>If you have performed measurements in all 3 cases you have noticed following; In case 1 and 2 there was no difference between measurements of  <span class="math notranslate">\(V_{in}\)</span> (IN1) and <span class="math notranslate">\(V_{out}\)</span> although we had different loads (1K and 10K resistors) on the buffer output. From this fact it is clear that buffer circuit can drive those loads <span class="math notranslate">\(V_{out-case-1}=V_{out-case-2}\)</span> with the same output voltage while preventing different loads affecting the <span class="math notranslate">\(V_{in}\)</span> signal <span class="math notranslate">\(V_{in-case-1}=V_{in-case-2}\)</span>.
+In case 3 adding 1K resistor between pin 3 (“+”) and 2.5V will affect the <span class="math notranslate">\(V_{in}\)</span> voltage and since, the circuit is a voltage follower, an <span class="math notranslate">\(V_{out}\)</span> will change accordingly.</p>
+</div>
+</div>
+<div class="section" id="basics-amplifier-configurations">
+<h2>13.5. Basics Amplifier Configurations<a class="headerlink" href="#basics-amplifier-configurations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inverting-amplifier">
+<h3>13.5.1. Inverting Amplifier<a class="headerlink" href="#inverting-amplifier" title="Permalink to this headline">¶</a></h3>
+<p>Figure 7 shows the conventional inverting amplifier configuration with a 10 KΩ “load” resistor at the output.</p>
+<img alt="_images/Activity_13_Figure_7.png" src="_images/Activity_13_Figure_7.png" />
+<p>Figure 7: Inverting amplifier configuration</p>
+<p>Now assemble the inverting amplifier circuit shown in figure 7 using R2 = 4.7kΩ. Remember to disconnect the power supply before assembling a new circuit. Cut and bend the resistor leads as needed to keep them flat against the board surface, and use the shortest jumper wires for each connection Remember, the breadboard gives you a lot of flexibility. For example, the leads of resistor R2 do not necessarily have to bridge over the op-amp from pin 2 to pin 6; you could use an intermediate node and a jumper wire to go around the device instead.</p>
+<ol class="arabic simple">
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>In the OUT1 settings menu set DC offset value to -0.5V and Amplitude value to 0.45V to apply a offseted sine wave centered on -0.5V as the input voltage to the circuit. From the waveform menu select
+SINE signal deselect SHOW button and select enable.</li>
+<li>In the IN1 and IN2 settings menu set probe settings to x10.</li>
+<li>On the left bottom of the screen be sure that IN1 V/div is set to 200mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>In the IN1 settings menu set the value of Vertical Offset to -500mV, In the IN2 settings menu set the value of Vertical Offset to 2.500mV,</li>
+<li>For the stable acquisition set the trigger level in TRIGGER menu to -0.5V and select NORMAL.</li>
+<li>In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE</li>
+<li>In the measurement menu select “MEAN” , select IN1 and press DONE, select IN2 and press DONE</li>
+</ol>
+<img alt="_images/Activity_13_Figure_8.png" src="_images/Activity_13_Figure_8.png" />
+<p>Figure 8: Inverting amplifier configuration measurements</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>From the measurements shown on figure 8 we can see that amplitude of <span class="math notranslate">\(V_{out}\)</span> (IN2) is cca 4.7 time larger than amplitude of <span class="math notranslate">\(V_{in}\)</span> (IN1). Also the phase between two signals is 180 degrees.This is the result of inverting amplifier characteristic which is given as:</p>
+<div class="last math notranslate">
+\[V_{out} = - \bigg( \frac{R2}{R1} \bigg) V_{in}  \quad (2)\]</div>
+</div>
+</div>
+<div class="section" id="non-inverting-amplifier">
+<h3>13.5.2. Non-Inverting Amplifier<a class="headerlink" href="#non-inverting-amplifier" title="Permalink to this headline">¶</a></h3>
+<p>The non-inverting amplifier configuration is shown in figure 9. Like the unity-gain buffer, this circuit has the (usually) desirable property of high input resistance, so it is useful for buffering non-ideal sources, however with a gain greater than one.</p>
+<img alt="_images/Activity_13_Figure_9.png" src="_images/Activity_13_Figure_9.png" />
+<p>Figure 9: Non-Inverting amplifier configuration measurements</p>
+<p>Assemble the non-inverting amplifier circuit shown in figure 9. Remember to shut off the power supplies before assembling the new circuit. Set <strong>R2 = 4.7kΩ</strong>.</p>
+<ol class="arabic simple">
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>In the OUT1 settings menu set DC offset value to 0.5V and Amplitude value to 0.3V to apply a offseted sine wave centered on 0.5V as the input voltage to the circuit. From the waveform menu select
+SINE signal deselect SHOW button and select enable.</li>
+<li>In the IN1 and IN2 settings menu set probe settings to x10.</li>
+<li>On the left bottom of the screen be sure that IN1 V/div is set to 100mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>In the IN1 settings menu set the value of Vertical Offset to -500mV, In the IN2 settings menu set the value of Vertical Offset to -3V.</li>
+<li>For the stable acquisition set the trigger level in TRIGGER menu to 0.5V and select NORMAL.</li>
+<li>In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE</li>
+<li>In the measurement menu select “MEAN” , select IN1 and press DONE, select IN2 and press DONE</li>
+</ol>
+<img alt="_images/Activity_13_Figure_10.png" src="_images/Activity_13_Figure_10.png" />
+<p>Figure 10: Non-Inverting amplifier configuration measurements</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>From the measurements shown on figure 10 we can see that amplitude of <span class="math notranslate">\(V_{out}\)</span> (IN2) is cca 5.7 time larger than amplitude of <span class="math notranslate">\(V_{in}\)</span> (IN1). Also the phase between two signals is ~0 degrees.This is the result of non-inverting amplifier characteristic which is given as:</p>
+<div class="last math notranslate">
+\[V_{out} =  \bigg( 1 + \frac{R2}{R1} \bigg) V_{in}  \quad (3)\]</div>
+</div>
+<p>Increase the feedback resistance R2 further until the onset of clipping, that is, until the peaks of the output signal begin to be flattened due to output saturation. Record the value of resistance where this happens. Now increase the feedback resistance to 100 KΩ. Describe and draw waveforms in your notebook. What is the theoretical gain at this point? How small would the input signal have to be in order to keep the output level to less than 5V given this gain? Try to adjust the waveform generator to this value. Describe the output achieved.
+The last step underscores an important consideration for high-gain amplifiers. High-gain necessarily implies a large output for a small input level. Sometimes this can lead to inadvertent saturation due to the amplification of some low-level noise or interference, for example the amplification of stray 60Hz signals from power-lines that can sometimes be picked up. Amplifiers will amplify any signals at the input terminals…whether you want it or not!</p>
+</div>
+<div class="section" id="summing-amplifier-circuit">
+<h3>13.5.3. Summing Amplifier Circuit<a class="headerlink" href="#summing-amplifier-circuit" title="Permalink to this headline">¶</a></h3>
+<p>The circuit of figure 11 is a basic inverting amplifier with four inputs, called a “summing” amplifier.</p>
+<img alt="_images/Activity_13_Figure_11.png" src="_images/Activity_13_Figure_11.png" />
+<p>Figure 11: Summing Amplifier configuration</p>
+<p>With the power disconnected, build circuit as shown in figure 11 and continue with measurements.</p>
+<img alt="_images/Activity_13_Figure_12.png" src="_images/Activity_13_Figure_12.png" />
+<p>Figure 12: Summing Amplifier circuit on the breadboard</p>
+<p><strong>Set:</strong> <span class="math notranslate">\(R_{in}\)</span> = <span class="math notranslate">\(R_{in}\)</span> = <span class="math notranslate">\(R_{f}\)</span> = 4.7kΩ.</p>
+<ol class="arabic simple">
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>In the OUT1 and OUT2 settings menu set DC offset value to -0.5V and Amplitude value to 0.3V to apply a offseted sine wave centered on -0.5V as the input voltages to the circuit. From the waveform
+menu select SINE signal and select enable.</li>
+<li>In the IN1 and IN2 settings menu set probe settings to x10.</li>
+<li>On the left bottom of the screen be sure that IN1 V/div is set to 100mV/div and IN2 to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>For the stable acquisition set the trigger level in TRIGGER menu to -0.5V and select NORMAL.</li>
+<li>In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE</li>
+</ol>
+<img alt="_images/Activity_13_Figure_13.png" src="_images/Activity_13_Figure_13.png" />
+<p>Figure 13: Summing Amplifier measurements</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>From measurement above we can see that output voltage is sum of the two input voltages.
+Also the phase between two signals is ~0 degrees.
+This is the result of inverting summing amplifier characteristic which is given as:</p>
+<div class="math notranslate">
+\[-V_{out} =  \frac{R_f}{R_{in}} \bigg( V_{in1} + V_{in2} \bigg) \quad (4)\]</div>
+<p>In general <span class="math notranslate">\(R_{in}\)</span> can be different for each input voltage so it follows:</p>
+<div class="last math notranslate">
+\[-V_{out} =  \frac{R_f}{R_{in1}} V_{in1} + \frac{R_f}{R_{in2}} V_{in2} + ... + \frac{R_f}{R_{inN}} V_{inN}  \quad (5)\]</div>
+</div>
+<p>To prove equation above try to disable OUT2 and observe IN2 P2P value. Also try to change OUT2 amplitude and observe measurements.  What happens if you set OUT2 phase to 180deg?  Can you explain the result in that case?</p>
+</div>
+<div class="section" id="using-an-op-amp-as-a-comparator">
+<h3>13.5.4. Using an Op-Amp as a Comparator<a class="headerlink" href="#using-an-op-amp-as-a-comparator" title="Permalink to this headline">¶</a></h3>
+<p>The high intrinsic gain of the op-amp and the output saturation effects can be exploited by configuring the op-amp as a comparator as in figure 14. This is essentially a binary-state decision-making circuit: if the voltage at the “+” terminal is greater than the voltage at the “-” terminal, <span class="math notranslate">\(V_{in}\)</span> &gt; <span class="math notranslate">\(V_{ref}\)</span> , the output goes “high” (saturates at its maximum value). Conversely if <span class="math notranslate">\(V_{in}\)</span> &lt; <span class="math notranslate">\(V_{ref}\)</span> the output goes “low”. The circuit compares the voltages at the two inputs and generates an output based on the relative values. Unlike all the previous circuits there is no feedback between the input and output; we say that the circuit is operating “open-loop”.</p>
+<img alt="_images/Activity_13_Figure_14.png" src="_images/Activity_13_Figure_14.png" />
+<p>Figure 14: Op-Amp as Comparator</p>
+<p>With the power disconnected, build circuit as shown in figure 14 and continue with measurements.</p>
+<ol class="arabic simple">
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>In the OUT1 set Amplitude value to 0.45V, and DC offset value to 0.5V to apply a offseted sine wave centered on 0.5V as the input voltage to the circuit. From the waveform
+menu select SINE signal deselect SHOW button. Set frequency to 100Hz and select enable (ON).
+In the OUT2 select DC signal, deselect SHOW button set Amplitude value to 0.5V to apply a DC voltage as the REFERENCE value <span class="math notranslate">\(V_{ref}\)</span> . Select enable (ON).</li>
+<li>In the IN2 settings menu set probe settings to x10.</li>
+<li>On the left bottom of the screen be sure that IN1 V/div is set to 200mV/div and IN2 to 2V/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>For the stable acquisition set the trigger level in TRIGGER menu to 0.25V and select NORMAL.</li>
+</ol>
+<img alt="_images/Activity_13_Figure_15.png" src="_images/Activity_13_Figure_15.png" />
+<p>Figure 15: Op-Amp as Comparator measurements</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For comparator shown on figure 14 it follows:</p>
+<div class="math notranslate">
+\[if \quad  V_{in} &gt; V_{ref}  \quad  ; \quad V_{out} = V_{+} \quad (5)\]</div>
+<div class="last math notranslate">
+\[if \quad  V_{in} &lt; V_{ref} \quad  ; \quad V_{out} = V_{-}\]</div>
+</div>
+</div>
+<div class="section" id="questions">
+<h3>13.5.5. Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Slew rate: discuss how you measured and computed the slew rate in the unity-gain buffer configuration, and compare this with the value listed in the OP97 data sheet.</li>
+<li>Buffering: explain why the buffer amplifier in figure 5 allowed the voltage divider circuit to function perfectly with differently load resistances.</li>
+<li><dl class="first docutils">
+<dt>Output saturation: explain your observations of output voltage saturation in the inverting amplifier configuration and your estimate of the internal voltages drops. How close does the output come to</dt>
+<dd>the supply rails in this experiment and also later when used as a comparator with different power-supply voltages? Can you guess what the output voltage swing would be for an op-amp that is advertised as a “rail-to-rail” device?</dd>
+</dl>
+</li>
+<li>Comparator: discuss your measurements and what would happen if the polarity of Vref is reversed.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity14_OPAMPOpenLoopGain.html" class="btn btn-neutral float-right" title="14. OPAMP Open Loop Gain" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html" class="btn btn-neutral" title="12. Measuring a Loudspeaker Impedance Profile" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. Transient Response of RC Circuit &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="7. Transient Response of an RL Circuit" href="Activity07_ResponseRL.html"/>
+        <link rel="prev" title="5. Thévenin Equivalent Circuit and Maximum Power Transfer" href="Activity05_Thevenin.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Transient Response of RC Circuit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">6.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">6.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">6.3. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">6.4. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">6.5. Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6. Transient Response of RC Circuit</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity06_ResponseRC.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="transient-response-of-rc-circuit">
+<h1>6. Transient Response of RC Circuit<a class="headerlink" href="#transient-response-of-rc-circuit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>6.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The objective of this Lab activity is to study the transient response of a series RC circuit and understand the time constant concept using pulse waveforms.</p>
+</div>
+<div class="section" id="notes">
+<h2>6.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+Oscilloscope &amp; Signal generator application is used for generating and observing signals on the circuit.</p>
+</div>
+<div class="section" id="background">
+<h2>6.3. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>In this lab activity you will apply a pulse waveform to the RC circuit to analyses the transient response of the circuit. The pulse-width relative to a circuit’s time constant determines how it is affected by an RC circuit.</p>
+<p>Time Constant (t): A measure of time required for certain changes in voltages and currents in RC and RL circuits. Generally, when the elapsed time exceeds five time constants (5t) after switching has occurred, the currents and voltages have reached their final value, which is also called steady-state response.</p>
+<p>The time constant of an RC circuit is the product of equivalent capacitance and the Thévenin resistance as viewed from the terminals of the equivalent capacitor.</p>
+<div class="math notranslate">
+\[t = R \cdot C\]</div>
+<p>A Pulse is a voltage or current that changes from one level to another and back again. If a waveform’s high time equals its low time it is called a square wave. The length of each cycle of a pulse is its period (T).</p>
+<p>The pulse width (tp) of an ideal square wave is equal to half the time period.</p>
+<p>The relation between pulse width and frequency is then given by,</p>
+<div class="math notranslate">
+\[f = \frac{1}{2t_p}\]</div>
+<img alt="_images/Activity_6_Figure_1.png" src="_images/Activity_6_Figure_1.png" />
+<p>Figure 1: Series RC circuit.</p>
+<p>From Kirchhoff’s laws, it can be shown that the charging voltage V<sub>C</sub>(t) across the capacitor is given by:</p>
+<div class="math notranslate">
+\[V_C (t) = V( 1- e^{- \frac{t}{RC}})  ;t &gt;= 0\]</div>
+<p>where, V is the applied source voltage to the circuit for t = 0. RC = t is the time constant. The response curve is increasing and is shown in figure 2.</p>
+<img alt="_images/Activity_6_Figure_2.png" src="_images/Activity_6_Figure_2.png" />
+<p>Figure 2: Capacitor charging for Series RC circuit to a step input with time axis normalized by t</p>
+<p>The discharge voltage for the capacitor is given by:</p>
+<div class="math notranslate">
+\[V_C (t) = V_o e^{-\frac{t}{RC}} ;t &gt;= 0\]</div>
+<p>Where V<sub>0</sub> is the initial voltage stored in capacitor at t = 0, and RC = t is time constant. The response curve is a decaying exponential as shown in figure 3.</p>
+<img alt="_images/Activity_6_Figure_3.png" src="_images/Activity_6_Figure_3.png" />
+<p>Figure 3: Capacitor Discharging for Series RC circuit</p>
+</div>
+<div class="section" id="materials">
+<h2>6.4. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<p>Red Pitaya STEMlab 125-14 or STEMlab 125-10</p>
+<dl class="docutils">
+<dt>Resistors:</dt>
+<dd>2.2 KΩ,
+10 KΩ</dd>
+<dt>Capacitors:</dt>
+<dd>1 µF,
+0.01 µF</dd>
+</dl>
+</div>
+<div class="section" id="procedure">
+<h2>6.5. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Set up the circuit shown in figure 4 on your solderless breadboard with the component values R<sub>1</sub>= 2.2 KΩ and C<sub>1</sub>= 1 µF.</p>
+<blockquote>
+<div><p>-Connect the Oscilloscope &amp; Signal generator probes as is shown in figure 5.
+-Set the oscilloscope attenuation to x1.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="figure">
+<img alt="_images/Activity_6_Figure_4.png" src="_images/Activity_6_Figure_4.png" />
+</div>
+<p>Figure 4. Breadboard diagram of RC circuit  R<sub>1</sub>= 2.2 KΩ and C<sub>1</sub>= 1 µF.</p>
+<div class="figure">
+<img alt="_images/Activity_6_Figure_5.png" src="_images/Activity_6_Figure_5.png" />
+</div>
+<p>Figure 5. Breadboard RC circuit R<sub>1</sub>= 2.2 KΩ and C<sub>1</sub>= 1 µF.</p>
+<p>Start the Oscilloscope &amp; Signal Generator application.</p>
+<p>2. In the OUT1 settings menu set DC offset value to 0.5 and Amplitude  value to 0.5V to apply a 1Vp-p square wave centered on 0.5 V as the input voltage to the circuit. From the waveform menu select SQUARE signal, deselect SHOW button and select enable.
+On the left bottom of the screen be sure that IN1 V/div and IN2 V/div are both set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)
+In the IN1 and IN2 settings menu set the value of Vertical Offset to -500mV
+For the stable acquisition set the trigger level in TRIGGER menu to 0.5V and select NORMAL.</p>
+<ol class="arabic simple" start="3">
+<li>Observe the response of the circuit for the following three cases and record the results.</li>
+</ol>
+<ol class="loweralpha simple">
+<li>Pulse width larger than 5t (for example 15t) : Set the frequency of OUT1 output such that the capacitor has enough time to fully charge and discharge during each cycle of the square wave. So let the pulse width be 15t and set the frequency according to equation (2). The value you have found should be approximately 15 Hz.</li>
+</ol>
+<p>Notice: Calculate frequency of OUT1 so that the pulse width of OUT1 is equal to desired
+value of x*t by equation (2):</p>
+<div class="math notranslate">
+\[f_out = \frac{1}{2 \cdot x \cdot t}\]</div>
+<p>For example: If we want to have pulse width of your OUT1 square signal equals 5*t
+(t - time constant of RC circuit  t = R * C)</p>
+<div class="math notranslate">
+\[t = R \cdot C = 2.2E3 \cdot 1E-6 = 2.2E-3\]</div>
+<div class="math notranslate">
+\[f_out  = \frac{1}{2 \cdot 5 \cdot 2.2E-3} = 45Hz\]</div>
+<p>Determine the time constant from the waveforms obtained on the screen if you can. If you cannot obtain the time constant easily, explain possible reasons.</p>
+<p>For determining time constant use “CURSOR” option.
+Open CURSOR menu and select all four cursors: X1, X2, Y1, Y2.
+For Y cursor select IN2 for source.
+Control/Move cursors using an left click+hold mouse control on the cursor marker(an arrow on the end of the cursor line).</p>
+<p>Adjust the <strong>time base</strong> using <strong>horizontal +/-</strong> control until you have at approximately two cycles of the square wave on the display grid.</p>
+<div class="figure">
+<img alt="_images/Activity_6_Figure_6.png" src="_images/Activity_6_Figure_6.png" />
+</div>
+<p>Figure 6. Oscilloscope interface and signals IN1 and IN2 on  RC circuit</p>
+<p>In order to set cursors more accurately adjust the time base  until you have approximately  one or  half of the cycle of the square wave on the display grid.</p>
+<div class="figure">
+<img alt="_images/Activity_6_Figure_7.png" src="_images/Activity_6_Figure_7.png" />
+</div>
+<p>Figure 7: Measuring the time constant t for OUT1 pulse width &gt;&gt; 5t .</p>
+<p>Set cursor as is shown in figure 2 readout  delta values and calculate time constant.</p>
+<ol class="loweralpha simple" start="2">
+<li>Pulse width =  5t : Set the frequency of OUT1 such that the pulse width = 5t (this should be approximately 45 Hz). Since the pulse width is 5t, the capacitor should just be able to fully charge and discharge during each pulse cycle. Using cursor tool determine t.</li>
+</ol>
+<div class="figure">
+<img alt="_images/Activity_6_Figure_8.png" src="_images/Activity_6_Figure_8.png" />
+</div>
+<p>Figure 8: Measuring the time constant t for OUT1 pulse width =  5t</p>
+<ol class="loweralpha simple" start="3">
+<li>Pulse width less than 5t (for example 1t): In this case the capacitor does not have time to charge significantly before it is switched to discharge, and vice versa. Let the pulse width be only 1.0t in this case and set the frequency accordingly (this should be approximately 240 Hz).</li>
+</ol>
+<div class="figure">
+<img alt="_images/Activity_6_Figure_9.png" src="_images/Activity_6_Figure_9.png" />
+</div>
+<p>Figure 9: Measuring the time constant t for OUT1 pulse width =  1t</p>
+<p>4. Repeat the procedure using  R<sub>1</sub>= 10 KΩ and C<sub>1</sub>= 0.01 µF and record the measurements.
+Questions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Calculate the time constant using equation (1) and compare it to the measured value from 3a. Repeat this for other set of R and C values.</li>
+<li>Discuss the effects of changing component values.</li>
+</ol>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity07_ResponseRL.html" class="btn btn-neutral float-right" title="7. Transient Response of an RL Circuit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity05_Thevenin.html" class="btn btn-neutral" title="5. Thévenin Equivalent Circuit and Maximum Power Transfer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

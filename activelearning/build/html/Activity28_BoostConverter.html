@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>28. DC-DC Boost Converter &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="27. MOS transistor common source amplifier" href="Activity27_MOSCommonSourceAmplifier.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">28. DC-DC Boost Converter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">28.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">28.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background-basics">28.3. Background Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">28.4. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">28.5. Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions">28.6. Questions</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>28. DC-DC Boost Converter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity28_BoostConverter.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="dc-dc-boost-converter">
+<h1>28. DC-DC Boost Converter<a class="headerlink" href="#dc-dc-boost-converter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>28.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>Here we will explore an inductor based circuit which can produce an output voltage which is higher than the supplied voltage. This class of circuits are referred to as DC to DC converters or boost regulators. In this experiment the voltage from a 1.5 V supply ( battery ) will be boosted to a voltage high enough ( ~ 5 V) to drive two LEDs in series. <strong>Note that forward voltage of LED is typically 1.8V although for some diodes it can go up to 3.3V (blue LED)</strong></p>
+</div>
+<div class="section" id="notes">
+<h2>28.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> application is used for generating and observing signals on the circuit.
+Extension connector pins used for <strong>+5V</strong>, <strong>-3.3V</strong> and <strong>+3.3V</strong> voltage supply are show in the documentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">here</a>.</p>
+</div>
+<div class="section" id="background-basics">
+<h2>28.3. Background Basics<a class="headerlink" href="#background-basics" title="Permalink to this headline">¶</a></h2>
+<p>Temporarily connect one of your LEDs from the 1.5 V battery. Be careful to note the polarity of the diode so it will be forward biased. Does it light up? Probably not since 1.5 V is generally not enough to turn on an LED. We need a way to boost the 1.5 V to a higher voltage to light a single LED let alone two LEDs connected in series.</p>
+<p>A boost converter (step-up converter) is a DC-to-DC power converter that steps up voltage (while stepping down current) from its input (supply) to its output (load). It is a class of switched-mode power supply (SMPS) containing at least two semiconductors (a diode and a transistor) and at least one energy storage element: a capacitor, inductor, or the two in combination. To reduce voltage ripple, filters made of capacitors (sometimes in combination with inductors) are normally added to such a converter’s output (load-side filter) and input (supply-side filter).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Theory of operation of DC - DC boost converter is nicely explained in <a class="reference external" href="https://en.wikipedia.org/wiki/Boost_converter">this Wikipedia article</a>. Before going into experiment short overview of the theory is recommended.</p>
+</div>
+<p>Classical DC - DC boost converter circuit is shown on figure 1. Depending on the desired operating (switching) frequency and maximum current rating the inductor
+<span class="math notranslate">\(L_1\)</span> should be selected. In this experiment for <span class="math notranslate">\(L_1\)</span> an <span class="math notranslate">\(100 \mu H\)</span> power inductor with 1A current rating is used. Operating (switching) frequency should be in range of <span class="math notranslate">\(10 - 50  kHz\)</span>. For the rectifier <span class="math notranslate">\(D_1\)</span> and the snubber <span class="math notranslate">\(D_2\)</span> diodes classical <a class="reference external" href="http://www.vishay.com/docs/88503/1n4001.pdf">1N4001</a> or a 1N3064 can be used.
+For the <span class="math notranslate">\(M_1\)</span> transistor we will use <a class="reference external" href="http://www.infineon.com/dgdl/irlr120n.pdf?fileId=5546d462533600a4015356695f642663">IRLU120N</a>. We selected this power MOSFET transistor since it has low threshold voltage <span class="math notranslate">\(V_{TH}\)</span>. If you use high threshold voltage FET transistors and low voltage driving  signal  (gate signal) the switching of the MOSFET could be non-optimal. Selected MOSFET already has snubber diode integrated so external diode <span class="math notranslate">\(D_2\)</span> is not necessary.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Simple DC-DC <a class="reference external" href="https://learn.adafruit.com/diy-boost-calc/the-calculator">boost converter calculator</a>  is also available on Adafruit web page.</p>
+</div>
+<p>For storage capacitor <span class="math notranslate">\(C_1\)</span> and electrolytic high capacitance capacitor should be selected. The selection of this capacitor depends on current ratings, switching frequency and inductor value. But to be on the safe side values above <span class="math notranslate">\(10 \mu F\)</span> would be sufficient.
+An DC-DC boost converter used in this experiment is shown in figure 1.</p>
+<img alt="_images/Activity_28_Figure_1.png" src="_images/Activity_28_Figure_1.png" />
+<p>Figure 1: DC to DC boost converter</p>
+<p>On figure 1 basic DC-DC boost converter circuit is shown. To the converter circuit a 200 <span class="math notranslate">\(\Omega\)</span> load is added. <strong>For stable operation of DC-DC boost converter either constant load or load regulation is needed</strong>. Without regulation any change of the load will affect the output voltage level. Therefore we have set 200 <span class="math notranslate">\(\Omega\)</span> load to stabilize output voltage. Parallel to the load two LED diodes in series with 1K resistors are added. Note that adding or removing additional LEDs parallel to the load will not affect output voltage since current drawn by LED will be much smaller than current drawn by 200 <span class="math notranslate">\(\Omega\)</span> load.
+<strong>LEDs are used as indicators that our DC battery voltage is BOOSTED UP form 1.5 V to ~5V.</strong> If the LEDs are off that means our battery voltage is bellow LED forward voltage (2x1.8V) and therefore indicating that DC-DC boost converter circuit is not working correctly.</p>
+<p>Red Pitaya STEMlab outputs can generate voltage signals with maximal output range of +/- 1V (2Vpp). For MOSFET switching the higher signal amplitudes are required.Because of that we have used two NPN transistors in switching mode as intermediate stage between OUT1 switching signal and MOSFET transistor. OUT1 square signal will switch ON and OFF first NPN transistor causing its collector voltage to swing between 0-5V. This collector voltage then controls second NPN transistor and its collector voltage, also swinging between 0-5V, will then switch ON/OFF the MOSFET transistor.
+The reason why two NPN transistors are used is to have OUT1 and MOSFET gate signal in phase. I.e when OUT1 is high the signal on the MOSFET gate should be also high. Using one transistor will cause 180 phase delay.  <strong>You can also see the other more important problem here. If we use only one NPN transistor then when OUT1 is constantly turned OFF the MOSFET transistor will be constantly turned ON producing short circuit: battery - inductor - mosfet - gnd</strong>. Using two NPN transistor will prevent this happening.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Note that +5V voltage rail from the STEMlab is used only for transistor switching and not for the load supply. I.e electrical energy is flowing from battery to the LOAD and LEDs.</p>
+</div>
+</div>
+<div class="section" id="materials">
+<h2>28.4. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>1x 1kΩ Resistor</li>
+<li>3x 470Ω Resistor</li>
+<li>1x 10kΩ Resistor</li>
+<li>1x <span class="math notranslate">\(100 \mu H\)</span> Power inductor</li>
+<li>1x <span class="math notranslate">\(47 \mu F\)</span> Capacitor</li>
+<li>2x LED (red)</li>
+<li>1x 1W 200Ω Resistor</li>
+<li>1x Signal diode (<a class="reference external" href="http://www.vishay.com/docs/88503/1n4001.pdf">1N4001</a>)</li>
+<li>2x Small signal NPN transistor (<a class="reference external" href="https://www.sparkfun.com/datasheets/Components/2N3904.pdf">2N3904</a>)</li>
+<li>1x Power MOS transistor (<a class="reference external" href="http://www.infineon.com/dgdl/irlr120n.pdf?fileId=5546d462533600a4015356695f642663">IRLU120N</a>)</li>
+<li>1x AA 1.5V battery</li>
+<li>1x Solder-less Breadboard</li>
+</ul>
+</div>
+<div class="section" id="procedure">
+<h2>28.5. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Following instructions above and schematics from figure 1 build the circuit on the breadboard.</li>
+</ol>
+<img alt="_images/Activity_28_Figure_2.png" src="_images/Activity_28_Figure_2.png" />
+<p>Figure 2: DC - DC boost converter on the breadboard</p>
+<ol class="arabic simple" start="2">
+<li><strong>Set IN1 and IN2 scope probes attenuations to x10</strong></li>
+<li>Connect IN1 scope probe to the point 3 (figure 1) and IN2 scope probe to the point (5)</li>
+<li>Start the Oscilloscope &amp; Signal generator application - <strong>OUT1 must be disabled (turned off)</strong></li>
+<li>In the IN1 and IN2 menu settings set probe attenuation to x10</li>
+<li>In the MEASUREMENTS menu select MEAN measurements for IN1 and IN2</li>
+<li>What are the values of the DC voltage on point 3 and 5 (figure 1)?</li>
+</ol>
+<p>At this point, when OUT1 switching signal is disabled the DC-DC boost converter is not functional. Transistor <span class="math notranslate">\(M_1\)</span> is turned off (open circuit) and battery voltage is, across inductor <span class="math notranslate">\(L_1\)</span> and diode <span class="math notranslate">\(D_1\)</span> , transfered to the load side (point 5, figure 1). For DC signals (no switching) the <span class="math notranslate">\(L_1\)</span> inductor behaves as a short circuit therefore output voltage is the battery voltage decreased by <span class="math notranslate">\(D_1\)</span> diode forward voltage: <span class="math notranslate">\(V_{out} = V_{battery} - V_{diode}\)</span>. This state is shown in the measurements on figure 3. As we expected the <span class="math notranslate">\(LED_1\)</span> and <span class="math notranslate">\(LED_2\)</span> are turned off since output voltage is below LEDs forward voltage (2x1.8V).</p>
+<img alt="_images/Activity_28_Figure_3.png" src="_images/Activity_28_Figure_3.png" />
+<p>Figure 3: DC - DC boost converter is turned off</p>
+<ol class="arabic simple" start="8">
+<li>In the OUT1 menu settings set frequency to 10kHz, waveform to PWM, amplitude to 0.5V, DC offset to 0.5V, deselect SHOW and select ON.</li>
+<li>In the MEASUREMENTS menu select P2P measurements for IN1 and IN2</li>
+<li>Set t/div value to 100us/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<p>At this point when OUT1 switching signal is enabled the DC-DC boost converter is functional and behaves as described in theory above. Output voltage is boosted up to approximately 5V and LEDs are turned ON. This state is shown on figure 4. As we can see from the measurements some ripple appears at battery and output voltage.Output voltage ripple is caused by battery voltage ripple and transistor <span class="math notranslate">\(M_1\)</span> switching. Battery voltage ripple is due to fact that battery is not ideal voltage source and when <span class="math notranslate">\(M_1\)</span> is turned on, current drown from battery is causing voltage drop.</p>
+<img alt="_images/Activity_28_Figure_4.png" src="_images/Activity_28_Figure_4.png" />
+<p>Figure 4: DC - DC boost converter is turned on</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Ripple voltage values are one of the main parameters of the DC-DC converter quality. Lower output ripple corresponds to better DC-DC boost converter.
+Capacitor <span class="math notranslate">\(C_1\)</span> is therefore needed in order to compensate and smooth out switching voltage appearing on inductor <span class="math notranslate">\(L_1\)</span> and diode <span class="math notranslate">\(D_1\)</span>.
+Try to remove <span class="math notranslate">\(C_1\)</span> and observe <span class="math notranslate">\(V_{out}\)</span>.</p>
+</div>
+<ol class="arabic simple" start="11">
+<li>In order to observe switching voltages of the <span class="math notranslate">\(M_1\)</span>, set IN1 probe to the point 2 ( figure 1) and IN2 probe to the point 4 ( figure 1)</li>
+<li>In the IN2 settings menu set vertical offset -4.0V (to better see IN2 signal)</li>
+<li>In the TRIGGER menu select NORMAL and set trigger level to 3.0V</li>
+<li>Set t/div value to 20us/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<img alt="_images/Activity_28_Figure_5.png" src="_images/Activity_28_Figure_5.png" />
+<p>Figure 5: M1 switching voltages</p>
+<p>On the figure 5 <span class="math notranslate">\(M_1\)</span> gate and drain signals are shown. From figure 5 we can see that gate signal is an switching square wave controlling the transistor.
+Drain signal corresponds to the “open/closed” states of the transistor <span class="math notranslate">\(M_1\)</span> but during the “off” state a significant oscillations are visible. This is the affect of the inductor <span class="math notranslate">\(L_1\)</span> since it will appose any change in the current trough it which will affect the <span class="math notranslate">\(M_1\)</span> drain voltage.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DC-DC boos converter output voltage value is often controlled with <span class="math notranslate">\(duty-cycle\)</span> of the switching signal.</p>
+</div>
+<ol class="arabic simple" start="15">
+<li>In order to observe affects of the switching signal (OUT1) duty cycle set IN1 probe to the point 2 ( figure 1) and IN2 probe to the point 5 ( figure 1)</li>
+<li>In the IN1 and IN2 menu settings set vertical offset to -3.0V</li>
+<li>Set t/div value to 50us/div (You can set t/div using horizontal +/- controls)</li>
+<li>In the OUT1 menu settings change duty cycle from <span class="math notranslate">\(30-80 \%\)</span> and observe results.</li>
+</ol>
+<img alt="_images/Activity_28_Figure_6.png" src="_images/Activity_28_Figure_6.png" />
+<img alt="_images/Activity_28_Figure_7.png" src="_images/Activity_28_Figure_7.png" />
+<p>Figure 5: Above: Output voltage at 40% duty cycle. Below: Output voltage at 80% duty cycle</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">From figure 5 we can observe the affect of the duty cycle on the output voltage. If we go with the duty cycle to 0% or 100% then we will turn off or short circuit <span class="math notranslate">\(M_1\)</span> transistor therefore duty cycle should be limited above for short circuit preventing and circuit damaging.</p>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>28.6. Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Change load value to <span class="math notranslate">\(470 \Omega\)</span> and observe results.</li>
+<li>Change OUT1 frequency to from  5 - 20 kHz. Measure and record the boosted output voltage waveform and the current waveforms. Explain what has changed and why?</li>
+<li>How would adding LC filter on the converter output affect the voltage ripple?</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Activity27_MOSCommonSourceAmplifier.html" class="btn btn-neutral" title="27. MOS transistor common source amplifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

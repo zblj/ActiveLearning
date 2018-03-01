@@ -1,0 +1,426 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>18. The Comparator, Positive Feedback and Schmitt Trigger &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="19. Diodes and Jupyter Notebook example" href="Activity19_Diodes.html"/>
+        <link rel="prev" title="17. Current Sensing using a Difference Amplifier" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. The Comparator, Positive Feedback and Schmitt Trigger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">18.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">18.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">18.3. Background</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-voltage-comparator">18.3.1. The Voltage Comparator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">18.4. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#directions">18.5. Directions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">18.6. Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-positive-feedback-to-add-hysteresis-the-schmitt-trigger">18.7. Using positive feedback to add hysteresis: the Schmitt trigger</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#calculating-the-threshold">18.7.1. Calculating the threshold</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">18.8. Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>18. The Comparator, Positive Feedback and Schmitt Trigger</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity18_TheComparatorSchmittTrigger.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="the-comparator-positive-feedback-and-schmitt-trigger">
+<h1>18. The Comparator, Positive Feedback and Schmitt Trigger<a class="headerlink" href="#the-comparator-positive-feedback-and-schmitt-trigger" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>18.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The objective of this activity is to investigate the voltage comparator, the use of positive feedback and the operation of the Schmitt Trigger configuration. The use of conventional operational amplifiers as a substitute for voltage comparators will described in basic op amp circuits <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#using-an-op-amp-as-a-comparator">section</a>.</p>
+</div>
+<div class="section" id="notes">
+<h2>18.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+Extension connector pins used for <strong>5V</strong> voltage supply are show in the documentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">here</a>.
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> application is used for generating and observing signals on the circuit.</p>
+</div>
+<div class="section" id="background">
+<h2>18.3. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-voltage-comparator">
+<h3>18.3.1. The Voltage Comparator<a class="headerlink" href="#the-voltage-comparator" title="Permalink to this headline">¶</a></h3>
+<p>A Differential Voltage Comparator such as the <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a> from the analog parts kit has a pinout similar in many ways to that of a conventional opamp but with many important differences (figure 1). There are the usual <span class="math notranslate">\(V_+\)</span> and <span class="math notranslate">\(V_-\)</span> power supply pins but a comparator will also have a ground (GND) pin as well. The differential <span class="math notranslate">\(+IN\)</span> and <span class="math notranslate">\(-IN\)</span> pins are essentially the same as a conventional op-amp. There will also be an output pin as in an opamp but there is often a second “inverting” ( or complementary ) output. Also, while the voltage at the output of an opamp can generally swing close to the <span class="math notranslate">\(+\)</span> and <span class="math notranslate">\(-\)</span> supply rails, the output of a comparator will swing only between ground(gnd) and the <span class="math notranslate">\(+\)</span> supply. This makes the output more like a digital signal and compatible with standard logic gates such as TTL or CMOS. The voltage comparator can be thought of as a single bit analog-to-digital converter (ADC). The AD8561 also includes a LATCH input which will latch or freeze the output and prevent it from changing even if the inputs change.</p>
+<img alt="_images/Activity_18_Figure_1.png" src="_images/Activity_18_Figure_1.png" />
+<p>Figure 1: <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a>  datasheet and pin assignments</p>
+</div>
+</div>
+<div class="section" id="materials">
+<h2>18.4. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>OPAMP:     1x <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a>  voltage comparator</li>
+<li>Voltage regulator: 1x LM317</li>
+<li>Resistor:  2x 4.7 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  1x 20 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  1x 47 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  1x 100 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Capacitor: 1x 0.1 <span class="math notranslate">\(\mu F\)</span></li>
+</ul>
+</div>
+<div class="section" id="directions">
+<h2>18.5. Directions<a class="headerlink" href="#directions" title="Permalink to this headline">¶</a></h2>
+<p>Construct the comparator test circuit as shown in figure 2 on your solder-less breadboard. The two 4.7 kΩ pull-up resistors are optional and are used to increase the peak positive output swing to closer to the +5 V supply.</p>
+<img alt="_images/Activity_18_Figure_2.png" src="_images/Activity_18_Figure_2.png" />
+<p>Figure 2: <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a>  comparator circuit</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Voltage Comparators are extremely sensitive to the noise and glitches on the power supply rail. Noisy power supply rail will cause glitches on the output signal. This glitches will be present at switching threshold voltages. In other words, comparator will have some trouble deciding to switch on V+ or to V-  when comparing two input signals affected by the power supply noise. Because of that here we use a voltage regulator to stabilize our power supply rail and prevent noisy output from the comparator.
+You can try directly using 5V power supply rail and observe the results and compare them with the results obtained using voltage regulator.
+Note: It is not necessary to drop down voltage from 5V to 2.5V but we chose that just form simplicity.</p>
+</div>
+<img alt="_images/Activity_18_Figure_3.png" src="_images/Activity_18_Figure_3.png" />
+<p>Figure 3: <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a>  comparator circuit on the breadboard</p>
+<p><a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power">LM317</a> Voltage regulator is described in <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#first-step-connecting-dc-power">previous</a> section.</p>
+</div>
+<div class="section" id="procedure">
+<h2>18.6. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Set Oscilloscope probes attenuation; IN1 to x1 and IN2 to x10</li>
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>To apply input voltage <span class="math notranslate">\(V_{in}\)</span> in the OUT1 settings menu set Amplitude value to 0.5V and DC offset to 0.5V. From the waveform menu select TRIANGLE,
+deselect SHOW button and select enable.</li>
+<li>In the OUT2 settings menu set Amplitude value to 0.5V, from the waveform menu select DC and select enable.</li>
+<li>In the IN2 settings menu set probe attenuation to x10</li>
+<li>On the left bottom of the screen be sure that  IN1 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>On the left bottom of the screen be sure that  IN2 V/div is set to 1V/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>On the left bottom of the screen be sure that  OUT2 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<img alt="_images/Activity_18_Figure_4.png" src="_images/Activity_18_Figure_4.png" />
+<p>Figure 4: <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a>  comparator circuit measurements</p>
+<p>You should see a square wave that is high ( near +2.5 V ) when the input signal level is a greater than 0.5 V (OUT2 DC value) and low ( near 0 V ) when the input signal is less than 0.5 V. Note the levels of the input triangle wave where the output changes from low to high and from high to low.</p>
+<p>Now connect Channel IN1 (set probe attenuation x10 and IN1 settings menu set probe attenuation to x10) to the inverting output ( pin 8 ). You should again see a square wave but with opposite phase to pin 7(IN2). Also change DC level of OUT2 (set amplitude to 0.7V) - this will change switching level of the voltage comparator causing different times duration of HIGH and LOW states of the comparator output. You should again see two square waves with opposite phases but now with opposite HIGH and LOW time durations.</p>
+<ol class="arabic simple">
+<li>Set Oscilloscope probes attenuation; IN1 to x10 and IN2 to x10</li>
+<li>In the OUT2 settings menu set Amplitude value to 0.7V, from the waveform menu select DC and select enable.</li>
+<li>In the IN2 and IN2 settings menu set probe attenuation to x10  and offset level -1700mV</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">From description above you can maybe see how to make an PWM (pulse width modulation) signal using constant frequency triangle signal and changeable DC <span class="math notranslate">\(V_{ref}\)</span> value.</p>
+</div>
+<img alt="_images/Activity_18_Figure_5.png" src="_images/Activity_18_Figure_5.png" />
+<p>Figure 5: <a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf">AD8561</a>  both output measurements at different <span class="math notranslate">\(V_{ref}=0.7V\)</span></p>
+<p>Zoom into the falling edge of the output (IN2) square wave by adjusting the Horizontal position and time per division settings such that the falling edge is centered on the time axis and the time per div is small enough to see the transition time of the edge (5 uS/div). You should see that the output does not go from the high output level all the way to the low output level all at once but stops part way and spends some time at an intermediate level before continuing the rest of the way to the low output level. You should should also see this delay when transitioning from low to high (IN1).
+This delay is caused by noise as the input signal slowly passes through the input threshold level ( 0.7 Volts in this case ) and can cause problems. This is the reason why it is good to have low noise power supply and low noise input signals on voltage comparator.
+Try to repeat switching noise measurement at more noisy power supply (5V pin directly form STEMlab board)</p>
+<img alt="_images/Activity_18_Figure_6.png" src="_images/Activity_18_Figure_6.png" />
+<p>Figure 6: Switching noise measurements.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Usually our intuition is to correlate high possibility of noise issues with high frequency signals. In case of voltage comparator this is not always true.
+If we increase OUT1 (<span class="math notranslate">\(V_{in}\)</span>) frequency to 100kHz the switching noise will be much lower. Way is that? You may think like this: Voltage comparator has very sensitive inputs and it is constantly comparing values of <span class="math notranslate">\(V_{in}\)</span> and <span class="math notranslate">\(V_{ref}\)</span>. Now let’s set <span class="math notranslate">\(V_{in}\)</span> to be noiseless signal and <span class="math notranslate">\(V_{ref} = DC +(-) A_{noise}\)</span>. When triangle wave <span class="math notranslate">\(V_{in}\)</span> signal is slowly approaching <span class="math notranslate">\(V_{ref}\)</span> the voltage comparator will start switching and if the <span class="math notranslate">\(V_{ref}\)</span> amplitude swingings around DC value by <span class="math notranslate">\(A_{noise}\)</span> the comparator
+output will change states according to the <span class="math notranslate">\(V_{in}  - (V_{ref} = DC +(-) A_{noise})\)</span> ratio. So, as long <span class="math notranslate">\(V_{in}\)</span> amplitude <strong>stays in the range</strong> of <span class="math notranslate">\(V_{ref} = DC +(-) A_{noise}\)</span> value the comparator output will effectively switch on <span class="math notranslate">\(A_{noise}\)</span> and not on the input signals. Once <span class="math notranslate">\(V_{in}\)</span> goes below <span class="math notranslate">\(V_{ref} = DC - A_{noise}\)</span> or above <span class="math notranslate">\(V_{ref} = DC + A_{noise}\)</span> the comparator output will switch high or low but now on input signal values not on noise values. You can see that <strong>low frequency triangle wave</strong> <span class="math notranslate">\(V_{in}\)</span> amplitude <strong>will spend more time</strong> near <span class="math notranslate">\(V_{ref} = DC +(-) A_{noise}\)</span> causing voltage comparator to produce noisy output while <strong>high frequency triangle wave</strong> <span class="math notranslate">\(V_{in}\)</span> amplitude will <strong>quickly pass by</strong> <span class="math notranslate">\(V_{ref} = DC +(-) A_{noise}\)</span> range preventing voltage comparator to produce any noise switching.</p>
+</div>
+<img alt="_images/Activity_18_Figure_7.png" src="_images/Activity_18_Figure_7.png" />
+<p>Figure 7: Switching event at high input signal frequency (100kHz)</p>
+</div>
+<div class="section" id="using-positive-feedback-to-add-hysteresis-the-schmitt-trigger">
+<h2>18.7. Using positive feedback to add hysteresis: the Schmitt trigger<a class="headerlink" href="#using-positive-feedback-to-add-hysteresis-the-schmitt-trigger" title="Permalink to this headline">¶</a></h2>
+<p><strong>Along side low noise power supply  a common solution to the problem just outlined is to add noise immunity to the comparator circuit by incorporating hysteresis into the transition threshold voltage</strong> <span class="math notranslate">\(V_{th}\)</span>, as shown in figure 8.
+By “hysteresis” we mean that the threshold voltage is a function of the system’s current operating state, which is defined for this circuit by its output voltage: positive or negative saturation. Because <span class="math notranslate">\(V_{th}\)</span>, the voltage at pin 2, is determined by the voltage divider constructed from resistors R1 and R2, it changes in response to a change in the output voltage: once the output has gone high in response to an input which has passed below the threshold voltage, the threshold voltage is changed to a higher value <span class="math notranslate">\(V_{th+}\)</span> ( <span class="math notranslate">\(V_{ref}\)</span>  + a fraction of the output high voltage ); conversely, an input voltage climbing through <span class="math notranslate">\(V_{th+}\)</span> will change the output to its low state and cause the threshold voltage to be set to a lower value <span class="math notranslate">\(V_{th-}\)</span> ( <span class="math notranslate">\(V_{ref}\)</span> - a fraction of the output low voltage).</p>
+<img alt="_images/Activity_18_Figure_8.png" src="_images/Activity_18_Figure_8.png" />
+<p>Figure 8: Schmitt trigger</p>
+<p>This difference between <span class="math notranslate">\(V_{th+}\)</span>  and <span class="math notranslate">\(V_{th-}\)</span>  means that once a transition is triggered by a change in <span class="math notranslate">\(V_{in}\)</span>, noise excursions smaller than this difference on the input will not cause <span class="math notranslate">\(V_{in}\)</span> to cross the hysteresis gap <span class="math notranslate">\(V_{hist} = V_{th+} - V_{th-}\)</span> and cause an undesired reversal of the output state. If the hysteresis gap is made large enough, then the system can be made completely impervious to the noise on the input signal, eliminating the spurious output levels suffered by the basic comparator circuit (figure 1).</p>
+<div class="section" id="calculating-the-threshold">
+<h3>18.7.1. Calculating the threshold<a class="headerlink" href="#calculating-the-threshold" title="Permalink to this headline">¶</a></h3>
+<p>Let’s call the maximum and minimum output voltages <span class="math notranslate">\(V_{high}\)</span>  and <span class="math notranslate">\(V_{low}\)</span>. The threshold voltage when the output is at <span class="math notranslate">\(V_{high}\)</span> and  at <span class="math notranslate">\(V_{low}\)</span> is:</p>
+<p>The resulting hysteresis gap for the circuit of figure 8 is given by:</p>
+<div class="math notranslate">
+\[ \begin{align}\begin{aligned}V_{th_{high}} = \frac{R_1}{R_1+R_2} (V_{high}+V_{ref})+V_{ref}  \quad (1)\\.\\V_{th_{low}} = \frac{R_1}{R_1+R_2} (V_{low}-V_{ref})+V_{ref}  \quad (2)\end{aligned}\end{align} \]</div>
+<p>The resulting hysteresis gap for the circuit of figure 8 is given by:</p>
+<div class="math notranslate">
+\[V_{hist} = V_{th_{high}}-V_{th_{low}} = \frac{R_1}{R_1+R_2} (V_{high}-V_{low}) \quad (3)\]</div>
+<p>For the AD8561 with a +2.5 V power supply and pull-up resistor, <span class="math notranslate">\(V_{high} - V_{low} \approx 2.3 V\)</span>. Because the other end of the voltage divider (bottom of R1) is connected to <span class="math notranslate">\(V_{ref} = 0.5 V\)</span>, the threshold voltages <span class="math notranslate">\(V_{th_{high}}\)</span> and <span class="math notranslate">\(V_{th_{low}}\)</span> will be centered around 0.5V (<span class="math notranslate">\(V_{ref}\)</span>) assuming that  <span class="math notranslate">\(V_{high}\)</span> and  <span class="math notranslate">\(V_{low}\)</span> are more or less centered around 0.5 V). Connecting the bottom of R1 to a different voltage reference source rather than to mid supply will not affect the hysteresis gap, but it will center that gap around a threshold proportional to the new reference voltage. In fact the negative input pin of the comparator could be connected to the fixed reference voltage and the end of R1 considered as the input. This in effect reverses or inverts the sense of the two outputs. Above stated can be represented in Schmitt Hysteresis plot shown on figure 9.</p>
+<img alt="_images/Activity_18_Figure_9.png" src="_images/Activity_18_Figure_9.png" />
+<p>Figure 9: Schmitt Hysteresis</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Hysteresis gap equation places a potential restriction on the ratio R1/R2 for a Schmitt trigger: unless R1 &lt; R2, the hysteresis gap will be larger than one half of the peak to peak output voltage swing range of the comparator and depending on the reference voltage value, one or the other of the Schmitt trigger thresholds might be beyond the range of the output voltage. Assuming the input signal voltage range is also limited to the output swing range ( in other word the power supply rails ) then the circuit’s output could lock-up and no longer respond to any changes in the input rendering the circuit useless.</p>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>18.8. Procedure<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Add the two positive feedback resistors to your circuit as shown in figure 8. Use values for R2 = 100 KΩ and  R1 equal to 10 KΩ. Using IN2, again observe the output square wave but note the level of the input triangle wave when the output changes level from low to high and high to low. Explain your results. Try a value for R2 less than R1. Does the circuit still work?</p>
+<ol class="arabic simple">
+<li>Set Oscilloscope probes attenuation; IN1 to x1 and IN2 to x10</li>
+<li>Start the Oscilloscope &amp; Signal Generator application.</li>
+<li>To apply input voltage <span class="math notranslate">\(V_{in}\)</span> in the OUT1 settings menu set Amplitude value to 0.5V and DC offset to 0.5V. From the waveform menu select TRIANGLE,
+deselect SHOW button and select enable.</li>
+<li>In the OUT2 settings menu set Amplitude value to 0.5V, from the waveform menu select DC, deselect  SHOW and select enable.</li>
+<li>On the left bottom of the screen be sure that  IN1 V/div is set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>On the left bottom of the screen be sure that  IN2 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>In the IN1 settings menu set probe attenuation to x1 and offset level to -500mV</li>
+<li>In the IN2 settings menu set probe attenuation to x10 and offset level to -1000mV</li>
+<li>In the TRIGGER settings menu select source IN2, select positive edge and set trigger level to 2V</li>
+<li>Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<img alt="_images/Activity_18_Figure_10.png" src="_images/Activity_18_Figure_10.png" />
+<p>Figure 10: Schmitt Hysteresis and output signal</p>
+<p>Compare results from figure 10 and figure 4. Look at the levels of IN1 when IN2 goes high and low.</p>
+<p>To see if the delay caused by the input noise has changed, again zoom into the falling and rising edges of the output square wave by adjusting the Horizontal position and time per division setting. Does the output pause at the same intermediate level as it transitions or does it no longer have this delay?</p>
+<ol class="arabic simple">
+<li>In the TRIGGER settings menu select source IN2, select positive edge, NORMAL and set trigger level to 2V</li>
+<li>Set t/div value to 5us/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<img alt="_images/Activity_18_Figure_11.png" src="_images/Activity_18_Figure_11.png" />
+<p>Figure 11: Switching noise with hysteresis</p>
+<p>As you can see from figure 11 when using hysteresis switching noise is not present at all. Compare figure 6 and figure 11.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity19_Diodes.html" class="btn btn-neutral float-right" title="19. Diodes and Jupyter Notebook example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity17_CurrentSensingUsingDifferenceAmplifier.html" class="btn btn-neutral" title="17. Current Sensing using a Difference Amplifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>15. OPAMP Gain Bandwidth Product \(GBW\) &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="16. Difference Amplifier" href="Activity16_DifferenceAmplifier.html"/>
+        <link rel="prev" title="14. OPAMP Open Loop Gain" href="Activity14_OPAMPOpenLoopGain.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">15.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">15.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">15.3. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">15.4. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">15.5. Procedure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity15_OpAmpGainBandwidthProduct.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="opamp-gain-bandwidth-product">
+<h1>15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span><a class="headerlink" href="#opamp-gain-bandwidth-product" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>15.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The objective of this activity is to explore a key parameter that affects the performance of op-amps at high frequencies.
+The parameter is the <strong>gain-bandwidth product</strong> (<span class="math notranslate">\(GBW\)</span>) or unity gain bandwidth.</p>
+</div>
+<div class="section" id="notes">
+<h2>15.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+Extension connector pins used for <strong>-3.3V</strong> and <strong>+3.3V</strong> voltage supply are show in the documentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">here</a>.
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html">Bode</a> analyzer application is used to measure frequency response of op-amp circuit.</p>
+</div>
+<div class="section" id="materials">
+<h2>15.3. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>OPAMP:  1x OP97</li>
+<li>Resistor:  2x 100 <span class="math notranslate">\(\Omega\)</span></li>
+<li>Resistor:  1x 47 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  1x 100 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Resistor:  2x 10 <span class="math notranslate">\(k \Omega\)</span></li>
+</ul>
+</div>
+<div class="section" id="background">
+<h2>15.4. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>The forward gain, <span class="math notranslate">\(G\)</span> is defined as the gain of the op-amp when a signal is fed differentially into the amplifier with no negative feedback applied. This gain is ideally infinite at all frequencies, but in a real op-amp is <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity14_OPAMPOpenLoopGain.html#opamp-open-loop-gain">finite</a>, and depends on the frequency. At low frequency the gain is maximum, decreases linearly with increasing frequency, and has a value of one at the frequency commonly referred to as the unity gain or cut-off frequency <span class="math notranslate">\(f_{c}\)</span> (in equation form, <span class="math notranslate">\(G(f_c)=1\)</span>). For the <strong>OP97 op-amp</strong>, the <strong>unity gain frequency is 900 kHz</strong>, the <strong>open-loop gain at this frequency is simply one</strong>. This is also the Closed-Loop Bandwidth or the maximum frequency when the feedback is configured with a closed loop gain of 1. <span class="math notranslate">\(G_f\)</span> is defined as the <strong>gain-bandwidth product</strong>,
+<span class="math notranslate">\(GBW\)</span>, and for all input frequencies this product is constant and equal to <span class="math notranslate">\(f_c\)</span>. The gain can be specified as a simple number (magnitude) or in dB(decibel).</p>
+<div class="math notranslate">
+\[ \begin{align}\begin{aligned}GBW = gain * f_c\\or\\GBW = gain * BW\end{aligned}\end{align} \]</div>
+<p>where <span class="math notranslate">\(f_c\)</span> is cut-off frequency (at <span class="math notranslate">\(f_c\)</span> gain drops by -3dB ( -3dB = <span class="math notranslate">\(1 / \sqrt{2}\)</span> drob in signal amplitude))
+and <span class="math notranslate">\(BW\)</span> frequency bandwidth in this case given as <span class="math notranslate">\(BW = f_c\)</span></p>
+<p>Figure 1, from the OP97 datasheet, graphically illustrates this relationship. When feedback is provided, as in an <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier">inverting</a> <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier">amplifier</a>, the gain is given by G = –R2/R1; however, it must be recognized that the magnitude of this gain can never exceed the gain as given by the gain-bandwidth product.</p>
+<img alt="_images/Activity_15_Figure_1.png" src="_images/Activity_15_Figure_1.png" />
+<p>Figure 1: OP97 Open-Loop Gain, Phase vs. Frequency</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>You should remember following: The maximum frequency of “normal operation” (i.e frequency bandwidth, i.e cut-off frequency, i.e frequency where gain drops by 3dB) of your op-amp circuit (amplifier) in non-inverting or inverting configuration will be ALWAYS dependent on the GAIN. <strong>If you chose higher gain the frequency bandwidth will be lower and vice versa.</strong></p>
+<p>For example:
+If we want to have inverting amplifier with gain = 100 based on OP97  then our frequency bandwidth will be given as:</p>
+<div class="math notranslate">
+\[BW = GBW_{OP927}/100 = 900 kHz / 100  = 9 kHz\]</div>
+<p>for gain = 1000</p>
+<div class="last math notranslate">
+\[BW = GBW_{OP927}/1000 = 900 kHz / 1000  = 900 Hz\]</div>
+</div>
+</div>
+<div class="section" id="procedure">
+<h2>15.5. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<p>Build the circuit shown in figure 2 on your solderless breadboard to measure the frequency response of a inverting amplifier configured with a closed loop gain of 1000. Because the circuit’s gain is so high, the circuit needs to be driven with a very small input signal. In order to generate small signal with the STEMlab generator, a 1/1000 <a class="reference external" href="https://en.wikipedia.org/wiki/Voltage_divider">voltage</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Voltage_divider">divider</a>, [R3 - (R4||R1)], is used to reduce the 2V p2p sine signal to 2 mV p2p at the inverting amplifier input. R4 and R1 are effectively in parallel due to the “virtual ground” at pin 2. The parallel combination of R4 and R1 will be 50 Ω which with the 47 KΩ R3 results in a divider ratio close to 1/1000.</p>
+<img alt="_images/Activity_15_Figure_2.png" src="_images/Activity_15_Figure_2.png" />
+<p>Figure 2: Inverting amplifier with gain of 1000</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double check your circuit. The  -3.3V and +3.3V  voltage supply pins do not have  short circuit handling and they can be damaged in case of short circuit.</p>
+</div>
+<ol class="arabic simple">
+<li>Set up the filter circuit as shown in figure 2 on your solderless breadboard, with the component values R1 = R4 = 100 Ω, R2 = 100 kΩ and R3 = 47 kΩ.</li>
+<li>Start the Bode analyzer application. The Bode analyzer application will make a frequency sweep in such way it will generate sine signal on <span class="math notranslate">\(OUT1\)</span> within frequency range selected by us(in settings menu). <span class="math notranslate">\(IN1\)</span> input signal is directly connected to <span class="math notranslate">\(OUT_1\)</span> following that <span class="math notranslate">\(IN1=V_{in}\)</span>. <span class="math notranslate">\(IN2\)</span> is connected on the other side of the filter and from that <span class="math notranslate">\(IN2=V_{out}\)</span>. Bode analyzer application will then for each frequency step take the ratio of <span class="math notranslate">\(IN1/IN2\)</span> (<span class="math notranslate">\(V_{in}/V_{out}\)</span>) and calculate frequency response.</li>
+<li>In the Bode analyzer settings menu set for:</li>
+</ol>
+<ul class="simple">
+<li>start frequency:  100 Hz</li>
+<li>end frequency: 20 kHz</li>
+<li>number of steps: 50</li>
+<li>scale: Log</li>
+<li>select RUN button</li>
+</ul>
+<img alt="_images/Activity_15_Figure_3.png" src="_images/Activity_15_Figure_3.png" />
+<p>Figure 3: Typical OP97 Bode Plot Gain = 1000</p>
+<p>From the figure 3 we can see that theory and OP97 datasheet data are consistent with the measurement. At gain = 1000 the BW is 900Hz.
+Set R2 to 10 kΩ, R3 = 4.7 kΩ, repeat the measurements and observe the results.</p>
+<img alt="_images/Activity_15_Figure_4.png" src="_images/Activity_15_Figure_4.png" />
+<p>Figure 3: Typical OP97 Bode Plot Gain = 100</p>
+<p>As we can see from the figure 4 for x10 less gain the BW is increased x10 confirming the
+equation <span class="math notranslate">\(GBW = BW * Gain = const\)</span>.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity16_DifferenceAmplifier.html" class="btn btn-neutral float-right" title="16. Difference Amplifier" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity14_OPAMPOpenLoopGain.html" class="btn btn-neutral" title="14. OPAMP Open Loop Gain" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

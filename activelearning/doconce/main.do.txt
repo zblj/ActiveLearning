@@ -1,0 +1,70 @@
+TITLE: Welcome to Red Pitaya Active Learning
+AUTHOR: Many authors {copyright} Red Pitaya d.d.
+DATE: today
+
+__Abstract.__
+Active Learning lecture notes 2018.
+
+!bnotice Zu Risiken und Nebenwirkungen
+Ein Skript ist eine Stichwortsammlung. Es ist nicht vollständig sondern stark durch meine Vorstellungen
+und Vorurteile über Elektronik und Schaltungsentwurf geprägt. Und da es, wie üblich, unter Zeitdruck
+entstanden ist, enthält es eine ganze Menge Fehler. Daher sollten Sie sich nicht auf das Skript verlassen
+sondern zusätzlich weitere Quellen zu Rate ziehen.
+!enotice
+
+# #include "Activity01_Phase.do.txt"
+
+## # #include "Activity02_Kirchhoff.do.txt"
+
+## # #include "Activity03_Voltage.do.txt"
+
+## # #include "Activity04_Proportionality.do.txt"
+
+## # #include "Activity05_Thevenin.do.txt"
+
+## # #include "Activity06_ResponseRC.do.txt"
+
+## # #include "Activity07_ResponseRL.do.txt"
+
+## # #include "Activity08_ResonanceRCL.do.txt"
+
+## # #include "Activity09_LowPassandHighPassFilters.do.txt"
+
+## # #include "Activity10_BandPassFilters.do.txt"
+
+## # #include "Activity11_ImpedanceMeasurementFrequencyEffects.do.txt"
+
+## # #include "Activity12_MeasuringaLoudspeakerImpedanceProfile.do.txt"
+
+## # #include "Activity13_BasicOPAmpConfigurations.do.txt"
+
+## # #include "Activity14_OPAMPOpenLoopGain.do.txt"
+
+## # #include "Activity15_OpAmpGainBandwidthProduct.do.txt"
+
+## # #include "Activity16_DifferenceAmplifier.do.txt"
+
+## # #include "Activity17_CurrentSensingUsingDifferenceAmplifier.do.txt"
+
+## # #include "Activity18_TheComparatorSchmittTrigger.do.txt"
+
+## # #include "Activity19_Diodes.do.txt"
+
+## # #include "Activity20_DiodeRectifiers.do.txt"
+
+## # #include "Activity21_PrecisionRectifiers.do.txt"
+
+## # #include "Activity22_TheBJTasDiode.do.txt"
+
+## # #include "Activity23_TheMOSAsDiode.do.txt"
+
+## # #include "Activity24_TheBJTasSwitch.do.txt"
+
+## # #include "Activity25_MOSasSwitch.do.txt"
+
+# #include "Activity26_BJTCommonEmitterAmplifier.do.txt"
+
+## # #include "Activity27_MOSCommonSourceAmplifier.do.txt"
+
+## # #include "Activity28_BoostConverter.do.txt"
+

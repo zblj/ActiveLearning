@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>27. MOS transistor common source amplifier &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="28. DC-DC Boost Converter" href="Activity28_BoostConverter.html"/>
+        <link rel="prev" title="26. BJT Common Emitter Amplifier" href="Activity26_BJTCommonEmitterAmplifier.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">27. MOS transistor common source amplifier</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">27.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">27.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">27.3. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">27.4. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">27.5. Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions">27.6. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>27. MOS transistor common source amplifier</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity27_MOSCommonSourceAmplifier.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mos-transistor-common-source-amplifier">
+<h1>27. MOS transistor common source amplifier<a class="headerlink" href="#mos-transistor-common-source-amplifier" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>27.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of this experimentis to investigate the common source configuration of the MOS transistor.</p>
+</div>
+<div class="section" id="notes">
+<h2>27.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> application is used for generating and observing signals on the circuit.
+Extension connector pins used for <strong>+5V</strong>, <strong>-3.3V</strong> and <strong>+3.3V</strong> voltage supply are show in the documentation <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">here</a>.</p>
+</div>
+<div class="section" id="background">
+<h2>27.3. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>The configuration, shown in figure 1, demonstrates the NMOS transistor used as a common source amplifier.To set the transistor <span class="math notranslate">\(V_{GS}\)</span> voltage for self-biased DC operating point the voltage divider <span class="math notranslate">\(\frac{R_1}{R_2}\)</span> is chosen. Resistor <span class="math notranslate">\(R_G\)</span> is used to set the final <strong>gain</strong> of the amplifier. The value of <span class="math notranslate">\(R_G\)</span> resistor in combination with resistor <span class="math notranslate">\(R_1\)</span> and <span class="math notranslate">\(R_2\)</span> will affect what amount of <span class="math notranslate">\(V_{in}\)</span> is added to the <span class="math notranslate">\(V_{GS}\)</span> voltage and therefore directly setting the amplifier <strong>gain</strong>. Output load resistor <span class="math notranslate">\(R_L\)</span> is chosen such that, for the desired nominal drain current <span class="math notranslate">\(I_D\)</span>, the voltage appearing at <span class="math notranslate">\(V_{DS}\)</span> is approximately one third of the <span class="math notranslate">\(V_{DD}\)</span> supply voltage. Resistor <span class="math notranslate">\(R_S\)</span> is used to add source degeneration in order to stabilize the DC operating point. The best approach for selecting the <span class="math notranslate">\(R_L\)</span> and <span class="math notranslate">\(R_S\)</span> is to enable voltage drops across <span class="math notranslate">\(M_1\)</span>, <span class="math notranslate">\(R_L\)</span> and <span class="math notranslate">\(R_S\)</span> equal to the 1/3 of the <span class="math notranslate">\(V_{DD}\)</span> (at DC operating condition). Therefore <span class="math notranslate">\(R_S\)</span> = <span class="math notranslate">\(R_L\)</span>. Adding the source degeneration resistor has improved the stability of the DC operating point at the cost decreased amplifier gain. A higher gain for AC signals can be restored to some extent by adding capacitor <span class="math notranslate">\(C_S\)</span> across the degeneration resistor <span class="math notranslate">\(R_S\)</span> effectively setting the  ” <span class="math notranslate">\(R_S\)</span> ” value close to zero for AC signals. Capacitor <span class="math notranslate">\(C_2\)</span> is added to block the DC component of the output signal. Due to high input impedance transistor <span class="math notranslate">\(C_1\)</span> can be selected in range of <span class="math notranslate">\(&lt; \mu F\)</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">One of the main advantages of MOS common source amplifier  over <a class="reference external" href="http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity26_BJTCommonEmitterAmplifier.html#bjt-common-emitter-amplifier">BJT common emitter amplifier</a> is an extremely high input impedance along with a low noise output making them ideal for use in amplifier circuits that have very small input signals.
+Input impedance is effectively only dependent on input capacitance <span class="math notranslate">\(C_{iss}\)</span>, resistors <span class="math notranslate">\(R_1\)</span> and <span class="math notranslate">\(R_2\)</span> which can be selected in range of <span class="math notranslate">\(M \Omega\)</span>.</p>
+</div>
+<img alt="_images/Activity_27_Figure_1.png" src="_images/Activity_27_Figure_1.png" />
+<p>Figure 1: Common source amplifier configuration</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Calculating and designing  of a common source amplifier is not straight forward. Common source amplifier design  will be largely dependent on the selected
+transistor(its parameters), desired frequency range and final amplifier gain. In practice many factors as input capacitance will affect the circuit behavior while this factors are largely excluded from available tutorials and theory. For more in depth understanding of common source amplifier links below are suggested:</p>
+<ul class="last simple">
+<li>[1] <a class="reference external" href="https://en.wikipedia.org/wiki/Common_source">Wikipedia Common Source</a></li>
+<li>[2] <a class="reference external" href="http://www.electronics-tutorials.ws/amplifier/amp_3.html">Common Source Amplifier Tutorial 1</a></li>
+<li>[3] <a class="reference external" href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-012-microelectronic-devices-and-circuits-fall-2005/lecture-notes/lecture19annotat.pdf">MIT Common Source Amplifier Lecture</a></li>
+<li>[4] <a class="reference external" href="http://examcrazy.com/Engineering/Electronics-Communication/Common_Source_Amplifier_with_Source_Degeneration.asp">Common Source Amplifier with Source Degeneration</a></li>
+<li>[5] <a class="reference external" href="https://www.slideshare.net/yordibautista/fet-basics1">Common Source Amplifier Tutorial 2</a></li>
+<li>[6] <a class="reference external" href="https://en.wikipedia.org/wiki/Transconductance">Transconductance</a> <span class="math notranslate">\(g_m\)</span></li>
+<li>[7] <a class="reference external" href="http://www.ittc.ku.edu/~jstiles/312/handouts/Drain%20Output%20Resistance.pdf">Drain Output Resistance</a> <span class="math notranslate">\(r_o\)</span></li>
+</ul>
+</div>
+<p><strong>By making simplifications listed below Approximate Gain relation for common source amplifier shown on figure 1 can be written as shown in equation (2)</strong>.</p>
+<ol class="arabic simple">
+<li>Neglecting voltage drop across <span class="math notranslate">\(C_1\)</span> capacitor. We can neglect voltage drop across capacitor <span class="math notranslate">\(C_1\)</span> in case when  <span class="math notranslate">\(1/(2 \pi f C_1) &lt;&lt; R_G\)</span> .</li>
+<li>Neglecting <span class="math notranslate">\(C_S\)</span> impedance. If the <span class="math notranslate">\(C_S\)</span> value is selected in range <span class="math notranslate">\(C_S &gt;&gt; 10 \mu F\)</span>
+its impedance will be neglectable effectively going to <span class="math notranslate">\(0 \Omega\)</span> for any AC signals.</li>
+<li>Drain Output Resistance in case of <span class="math notranslate">\(\lambda = 0\)</span> will tend to infinity , <span class="math notranslate">\(r_o \to \infty\)</span> , therefor it can be neglected in equation (1).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Transconductance <span class="math notranslate">\(g_m\)</span> is the change in the drain current divided by the small change in the gate/source voltage with a constant drain/source voltage. Typical values of <span class="math notranslate">\(g_m\)</span> for a small-signal field effect transistor are 1 to 30 <span class="math notranslate">\(mS\)</span> (millisiemens).</p>
+</div>
+<div class="math notranslate">
+\[A_v \approx - \frac{R_1 || R_2 || Z_{iss} } {R_G + \big(R_1 || R_2 || Z_{iss} \big)} g_m \big(r_o || R_L || R_S \big) \quad (1)\]</div>
+<p>with neglecting the <span class="math notranslate">\(r_o\)</span> ( <span class="math notranslate">\(r_o \to \infty\)</span>  ), we get:</p>
+<div class="math notranslate">
+\[A_v \approx - \frac{R_1 || R_2 || Z_{iss} } {R_G + \big(R_1 || R_2 || Z_{iss} \big)} g_m \big(R_L || R_S \big) \quad (2)\]</div>
+<p>where <span class="math notranslate">\(Z_{iss}\)</span> is the input gate impedance due to input capacitance <span class="math notranslate">\(C_{iss}\)</span> (common-source-circuit input capacitance) of the MOS transistor.</p>
+<div class="math notranslate">
+\[Z_{iss} = \frac{1}{2 \pi f C_{iss}} \quad (3)\]</div>
+<p><strong>If we suppose that the transistor parameters</strong> <span class="math notranslate">\(C_{iss}\)</span> <strong>and</strong> <span class="math notranslate">\(g_m\)</span> <strong>are constant values from equation (2) it follows that the gain of the common source amplifier is dependent on the peripheral resistors</strong> <span class="math notranslate">\(R_1 , R_2, R_G, R_L, R_S\)</span> <strong>and input signal frequency</strong> <span class="math notranslate">\(f\)</span>.</p>
+<p><strong>If</strong> <span class="math notranslate">\(C_{iss}\)</span> <strong>goes to zero then the gain is dependent only on peripheral resistors</strong> <span class="math notranslate">\(R_1 , R_2, R_G, R_L, R_S\)</span> <strong>and transistor transconductance</strong>  <span class="math notranslate">\(g_m\)</span> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In practice the common-source-circuit input capacitance <span class="math notranslate">\(C_{iss}\)</span> is not zero and it can be dependent on gate voltage and amplifier gain.
+Here we will suppose that the <span class="math notranslate">\(C_{iss}\)</span> is constant value. <span class="math notranslate">\(C_{iss}\)</span> and <span class="math notranslate">\(g_m\)</span> values are commonly given in the transistor datasheet.</p>
+</div>
+</div>
+<div class="section" id="materials">
+<h2>27.4. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>4x 1MΩ Resistor</li>
+<li>2x 470Ω Resistor</li>
+<li>1x 100kΩ Trimer</li>
+<li>2x 10uF Capacitor</li>
+<li>1x 1uF Capacitor</li>
+<li>1x small signal NOMS transistor (<a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a>)</li>
+<li>1x Solder-less Breadboard</li>
+</ul>
+</div>
+<div class="section" id="procedure">
+<h2>27.5. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that we want to design an amplifier with the gain <span class="math notranslate">\(A_v = 5\)</span> and <span class="math notranslate">\(I_L = 5mA\)</span> using <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a> transistor and voltage supply <span class="math notranslate">\(V_{DD} = 5V\)</span> .
+Following calculations and guidelines above we have built common source amplifier shown in figure 2.</p>
+<p>First step is to set <strong>DC operating point</strong> by deciding voltages across <span class="math notranslate">\(R_L\)</span>, <span class="math notranslate">\(R_D\)</span> and <span class="math notranslate">\(M_1\)</span>.</p>
+<div class="math notranslate">
+\[V_{R_L}+V_{DS}+V_{R_S} = V_{CC}  \quad  (4)\]</div>
+<p>If we take into account 1/3 ratio of voltages on <span class="math notranslate">\(R_L\)</span>, <span class="math notranslate">\(R_D\)</span> and <span class="math notranslate">\(M_1\)</span> we get following:</p>
+<div class="math notranslate">
+\[1.5 V + 2.0 V + 1.5 V = 5V  \quad      (5)\]</div>
+<p><span class="math notranslate">\(V_{DS}\)</span> is the voltage across <span class="math notranslate">\(M_1\)</span> in saturation state.
+From desired value of <span class="math notranslate">\(I_L\)</span> we can calculate <span class="math notranslate">\(R_L\)</span> as.</p>
+<div class="math notranslate">
+\[R_L = \frac{V_{R_L}}{I_L} = \frac{1.5V}{5mA} = 300 \Omega \quad   (6)\]</div>
+<p>Following <span class="math notranslate">\(1/3 V_{DD}\)</span> voltages drops across <span class="math notranslate">\(R_L\)</span>, <span class="math notranslate">\(R_D\)</span> and <span class="math notranslate">\(M_1\)</span> we set <span class="math notranslate">\(R_S = R_L\)</span>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Due to availability of the resistor we have selected <span class="math notranslate">\(R_S = R_L = 470 \Omega\)</span>.</p>
+</div>
+<p>To set the transistor <span class="math notranslate">\(V_{GS}\)</span> voltage for self-biased DC operating point the voltage divider <span class="math notranslate">\(\frac{R_1}{R_2}\)</span> is chosen such that <span class="math notranslate">\(V_G\)</span> is set above ( <span class="math notranslate">\(V_{TH} + V_S\)</span> ) voltage value (at DC operating condition).</p>
+<div class="math notranslate">
+\[ \begin{align}\begin{aligned}V_G &gt; (V_{TH} + V_{S}) &gt; (2.0 V + 1.6 V) &gt; 3.6 V \quad   (7)\\.\\\text{ 2.0 V is the threshold voltage of ZVN211 , 1.6V is the DC voltage across } R_S\\.\\V_G = \frac{R_2}{R_1+R_2} V_{DD} \quad  (8)\end{aligned}\end{align} \]</div>
+<p>For selected <span class="math notranslate">\(V_G  = 3.7 V\)</span> and <span class="math notranslate">\(R_1  = 1 M \Omega\)</span> we get (closest value) for <span class="math notranslate">\(R_2 = 3 M \Omega\)</span></p>
+<img alt="_images/Activity_27_Figure_2.png" src="_images/Activity_27_Figure_2.png" />
+<p>Figure 2: Common source amplifier with components values</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>For amplifier from figure 2 and  input signal frequency of <span class="math notranslate">\(10kHz\)</span> we can calculate voltage gain using equation 2.
+For <a class="reference external" href="http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf">ZVN211</a> we take <span class="math notranslate">\(g_m = 25 mS\)</span> and <span class="math notranslate">\(C_{iss} = 100pF\)</span>.</p>
+<div class="last math notranslate">
+\[ \begin{align}\begin{aligned}R_1 || R_2 || Z_{iss} = 1 / \bigg( \frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{Z_{iss}} = \frac{1}{R_1}+\frac{1}{R_2} + 2 \pi f C_{iss} \bigg)\\.\\= 1 / \bigg( \frac{1}{1 \times 10^6}+\frac{1}{3 \times 10^6} + 2 \cdot \pi \cdot 10 \times 10^3  \cdot 100 \times 10^{-12} \bigg) = 131 k \Omega\\.\\R_L || R_S = \frac{R_S R_L}{R_S + R_L} = \frac{470 \cdot 470}{470 + 470} = 235 \Omega\\.\\\text{ setting trimmer value } R_G  \text{ to }  50k \Omega \text{ we get: }\\.\\A_v \approx - \frac{131 k \Omega } {50 k \Omega + 131 k \Omega} \cdot 25 \times 10^{-3} \frac{1}{\Omega} \cdot  235\Omega\\.\\A_v \approx - 4.2\end{aligned}\end{align} \]</div>
+</div>
+<ol class="arabic simple">
+<li>Build the circuit from figure 2 on the breadboard.</li>
+</ol>
+<img alt="_images/Activity_27_Figure_3.png" src="_images/Activity_27_Figure_3.png" />
+<p>Figure 3: Common source amplifier on the breadboard</p>
+<ol class="arabic simple" start="2">
+<li>Start the Oscilloscope &amp; Signal generator application</li>
+<li>In the OUT1 settings menu set Amplitude value to 0.1V, DC offset to 0 V  and frequency to 10kHz to apply the input voltage. From the waveform menu select SINE,
+deselect SHOW button and select enable.</li>
+<li>On the left bottom of the screen be sure that  IN1 and IN2 V/div are set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>Set t/div value to 20us/div (You can set t/div using horizontal +/- controls)</li>
+<li>In the trigger menu settings and select NORMAL</li>
+<li>In the measurements menu select P2P for IN1 and IN2</li>
+</ol>
+<img alt="_images/Activity_27_Figure_4.png" src="_images/Activity_27_Figure_4.png" />
+<p>Figure 4: Common source amplifier measurements</p>
+<p>On figure 3 the measurements of the common source amplifier are shown. From the P2P measurements we can calculate achieved gain and it is approximately  <span class="math notranslate">\(A \approx 4\)</span> . Why is the difference between calculated and measured gain? This is due to input capacitance which we have assumed to be 100pF but in reality it can be different. Also values of other components and similar are not exact.</p>
+<ol class="arabic simple" start="8">
+<li>In order to see affect of the gain dependency on the input signal frequency set OUT1 frequency to 5kHz and measure amplifier gain.</li>
+</ol>
+<img alt="_images/Activity_27_Figure_5.png" src="_images/Activity_27_Figure_5.png" />
+<p>Figure 5: Common source amplifier gain at 5kHz frequency of <span class="math notranslate">\(V_{in}\)</span></p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>We could set <span class="math notranslate">\(1M \Omega\)</span> resistor in series with MOSFET gate input. This would decrease affect of the parasitic capacitance and enable high input impedance regardless of the input signal frequency. As you can see from the equation 2 once the 1M resistor is added the <span class="math notranslate">\(Z_{iss}\)</span> will be “constant” and larger at high frequency therefore less affecting the input divider <span class="math notranslate">\(R_G / R_2\)</span>.
+Input impedance would become:</p>
+<div class="math notranslate">
+\[Z_{iss} = 1M \Omega + \frac{1}{2 \pi f C_{iss}}\]</div>
+<p>and  <span class="math notranslate">\(Z_{iss}\)</span> capacitance affect (part)</p>
+<div class="math notranslate">
+\[\frac{1}{2 \pi f C_{iss}}\]</div>
+<p class="last">would have much less affect on the gain. I.e input signal frequency would have less affect on the amplifier gain.</p>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>27.6. Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Try to add <span class="math notranslate">\(1M\)</span> resistor in series with transistor gate pin. Measure amplifier gain. What happens when OUT1 frequency is changed?</li>
+<li>Try to change value of <span class="math notranslate">\(R_{G_{pot}}\)</span> and observe the change in the gain?</li>
+<li>Try to change <span class="math notranslate">\(R_1\)</span> and <span class="math notranslate">\(R_2\)</span> to <span class="math notranslate">\(100k \Omega\)</span> and <span class="math notranslate">\(300k \Omega\)</span>. What is the gain dependency on <span class="math notranslate">\(V_{in}\)</span> frequency.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity28_BoostConverter.html" class="btn btn-neutral float-right" title="28. DC-DC Boost Converter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity26_BJTCommonEmitterAmplifier.html" class="btn btn-neutral" title="26. BJT Common Emitter Amplifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

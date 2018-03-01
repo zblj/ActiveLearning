@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Proportionality and Superposition &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="5. Thévenin Equivalent Circuit and Maximum Power Transfer" href="Activity05_Thevenin.html"/>
+        <link rel="prev" title="3. Voltage Division" href="Activity03_Voltage.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Proportionality and Superposition</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">4.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">4.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">4.3. Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">4.4. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#procedure">4.5. Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#questions">4.6. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity20_DiodeRectifiers.html">20. Diode Rectifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>4. Proportionality and Superposition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity04_Proportionality.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="proportionality-and-superposition">
+<h1>4. Proportionality and Superposition<a class="headerlink" href="#proportionality-and-superposition" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>4.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The objective of this Lab activity is to verify the proportionality and superposition theorems.</p>
+</div>
+<div class="section" id="notes">
+<h2>4.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>. Extension connector pins used as 5V and 3.3V voltage source are show in the documentation for connectors <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1">E1</a> and <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">E2</a>.</p>
+</div>
+<div class="section" id="background">
+<h2>4.3. Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>In this activity proportionality and superposition theorems are examined by applying them to the circuits shown in the following figures.</p>
+<ol class="arabic simple">
+<li>The Proportionality Theorem states that the response of a circuit is proportional to the source acting on the circuit. This is also known as Linearity. The proportionality constant A relates the input voltage to the output voltage as:</li>
+</ol>
+<div class="math notranslate">
+\[V_{out} = A \cdot V_∈\]</div>
+<p>The proportionality constant A is sometimes referred to as the gain of a circuit. For the circuit of figure 1, the source voltage is V<sub>in</sub>. The response V<sub>out</sub>is across the 4.7 KΩ. resistor. The most important result of linearity is superposition.</p>
+<div class="figure align-center">
+<img alt="_images/Activity_4_Figure_1.png" src="_images/Activity_4_Figure_1.png" />
+</div>
+<p>Figure 1 : Resistor circuit with 5V voltage source</p>
+<ol class="arabic simple" start="2">
+<li>The Superposition Theorem states that the response of a linear circuit with multiple independent sources, such as in figure 2, can be obtained by adding the individual responses caused by the individual sources acting alone. For an independent source acting alone, all other independent voltage sources in the circuit are replaced by short circuits and all other independent current sources are replaced by open circuits, as in figure 3.</li>
+</ol>
+<div class="figure align-center">
+<img alt="_images/Activity_4_Figure_2.png" src="_images/Activity_4_Figure_2.png" />
+</div>
+<p>Figure 2. Circuit with two voltage sources</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/Activity_4_Figure_3.png" src="_images/Activity_4_Figure_3.png" />
+<p class="caption"><span class="caption-text">Figure 18: Figure 3. Circuit for response of just one source</span></p>
+</div>
+</div>
+<div class="section" id="materials">
+<h2>4.4. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<p>Red Pitaya STEMlab 125-14 or STEMlab 125-10</p>
+<dl class="docutils">
+<dt>Various Resistors:</dt>
+<dd><ul class="first last simple">
+<li>1 KΩ,</li>
+<li>2.2 KΩ,</li>
+<li>4.7 KΩ</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="procedure">
+<h2>4.5. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<p>Verify the proportionality theorem:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Construct the circuit of figure 1.</li>
+<li>Case 1: For voltage source “V<sub>in</sub>=5V” shown on the Figure 1 use the STEMlab voltage pin on extension connector <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">E2</a>.</li>
+<li>Case 2: For voltage source “V<sub>in</sub>=3.3V” shown on the Figure 1 use the STEMlab voltage pin on extension connector <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1">E1</a>.</li>
+<li>Case 3: For voltage source “V<sub>in</sub>=-3.3V” shown on the Figure 1 use the STEMlab voltage pin on extension connector <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2">E2</a>.</li>
+<li>Set probe attenuation to x10 (on the oscilloscope probe  and on the Oscilloscope IN1 menu settings)</li>
+<li>Accurately measure V<sub>out</sub>using the Oscilloscope application.</li>
+<li>You should measure and record the actual fixed power supply voltages as well.</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Table 1:</dt>
+<dd><table border="1" class="first docutils">
+<colgroup>
+<col width="30%" />
+<col width="38%" />
+<col width="32%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>V<sub>in</sub></td>
+<td>V<sub>out</sub></td>
+<td>A</td>
+</tr>
+<tr class="row-even"><td>5.0 V</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>3.3 V</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>-3.3 V</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="last">
+<div><ul>
+<li><p class="first">Calculate the value of A in each case using equation 1.</p>
+</li>
+<li><p class="first">Plot a graph with V<sub>in</sub>on x-axis and V<sub>out</sub>on y-axis.</p>
+</li>
+<li><p class="first">Verifying the Superposition theorem:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Construct the circuit of figure 2. Measure and record the voltage across the 4.7 KΩ. resistor.</li>
+<li>Construct the circuit of figure 3. Measure and record the voltage across the 4.7 KΩ. resistor.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Measuring voltage drop across desired resistor is done in such way that Oscilloscope probe of IN1 is connected to the one side of the resistor and Oscilloscope probe of IN2 is connected to another side of the resistor. Voltage difference V<sub>in1</sub>-V<sub>in2</sub>will give an voltage on the measured resistor.</p>
+</div>
+<ul class="simple">
+<li>Calculate the total response “V<sub>out</sub>” for circuit of figure 2 by adding the responses from measurement of circuit of figure 1  and measurement of circuit of figure 3.</li>
+</ul>
+<p>V<sub>out</sub>(figure 2) = V<sub>out</sub>(figure 1) + V<sub>out</sub>(figure 3) = __________</p>
+<ul class="simple">
+<li>Compare your calculated result to what you measured in step 2a. Explain any differences.</li>
+</ul>
+<div class="figure align-center" id="id2">
+<img alt="_images/Activity_4_Figure_4.png" src="_images/Activity_4_Figure_4.png" />
+<p class="caption"><span class="caption-text">Figure 19: Figure 4: Voltages pin on the Red Pitays STEMlab board</span></p>
+</div>
+</div>
+<div class="section" id="questions">
+<h2>4.6. Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Is the graph obtained a straight line? Compute the slope of the graph at any point and compare it to the value of K obtained from the measurements. Explain any differences.</li>
+<li>For each of the three circuits you built for the superposition experiment, how well did the calculated and measured outputs compare? Explain any differences.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity05_Thevenin.html" class="btn btn-neutral float-right" title="5. Thévenin Equivalent Circuit and Maximum Power Transfer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity03_Voltage.html" class="btn btn-neutral" title="3. Voltage Division" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

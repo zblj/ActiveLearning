@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>20. Diode Rectifiers &mdash; Red Pitaya 1.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Red Pitaya 1.0 documentation" href="index.html"/>
+        <link rel="next" title="21. Precision Rectifiers, Absolute value circuits" href="Activity21_PrecisionRectifiers.html"/>
+        <link rel="prev" title="19. Diodes and Jupyter Notebook example" href="Activity19_Diodes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Red Pitaya
+          
+
+          
+            
+            <img src="_static/RedPitayaLogo.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Activity01_Phase.html">1. What is Phase?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity02_Kirchhoff.html">2. Kirchhoff’s Voltage and Current Laws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity03_Voltage.html">3. Voltage Division</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity04_Proportionality.html">4. Proportionality and Superposition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity05_Thevenin.html">5. Thévenin Equivalent Circuit and Maximum Power Transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity06_ResponseRC.html">6. Transient Response of RC Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity07_ResponseRL.html">7. Transient Response of an RL Circuit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity08_ResonanceRCL.html">8. Resonance in RLC Circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity09_LowPassandHighPassFilters.html">9. Low Pass and High Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity10_BandPassFilters.html">10. Band Pass Filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity11_ImpedanceMeasurementFrequencyEffects.html">11. Impedance Measurement - Frequency Effects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity12_MeasuringaLoudspeakerImpedanceProfile.html">12. Measuring a Loudspeaker Impedance Profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity13_BasicOPAmpConfigurations.html">13. Basic OP Amp Configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity14_OPAMPOpenLoopGain.html">14. OPAMP Open Loop Gain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity15_OpAmpGainBandwidthProduct.html">15. OPAMP Gain Bandwidth Product <span class="math notranslate">\(GBW\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity16_DifferenceAmplifier.html">16. Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity17_CurrentSensingUsingDifferenceAmplifier.html">17. Current Sensing using a Difference Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity18_TheComparatorSchmittTrigger.html">18. The Comparator, Positive Feedback and Schmitt Trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity19_Diodes.html">19. Diodes and Jupyter Notebook example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">20. Diode Rectifiers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">20.1. Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">20.2. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#materials">20.3. Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#half-wave-rectifier">20.4. Half wave rectifier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directions">20.4.1. Directions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#questions">20.4.2. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#full-wave-rectifier">20.5. Full wave rectifier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#procedure">20.5.1. Procedure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">20.5.2. Questions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bridge-rectifier">20.6. Bridge rectifier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">20.6.1. Procedure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Activity21_PrecisionRectifiers.html">21. Precision Rectifiers, Absolute value circuits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity22_TheBJTasDiode.html">22. The BJT transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity23_TheMOSAsDiode.html">23. The MOS transistor connected as a diode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity24_TheBJTasSwitch.html">24. BJT transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity25_MOSasSwitch.html">25. MOSFET transistor as a switch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity26_BJTCommonEmitterAmplifier.html">26. BJT Common Emitter Amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity27_MOSCommonSourceAmplifier.html">27. MOS transistor common source amplifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Activity28_BoostConverter.html">28. DC-DC Boost Converter</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Red Pitaya</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>20. Diode Rectifiers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/Activity20_DiodeRectifiers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diode-rectifiers">
+<h1>20. Diode Rectifiers<a class="headerlink" href="#diode-rectifiers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>20.1. Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The objective of this experiment is to investigate half wave and full wave diode rectifiers used to convert AC to DC.</p>
+</div>
+<div class="section" id="notes">
+<h2>20.2. Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html">hardware</a>.
+<a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Oscilloscope</a> &amp; <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">Signal</a> <a class="reference external" href="http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html">generator</a> application is used for generating and observing signals on the circuit.</p>
+</div>
+<div class="section" id="materials">
+<h2>20.3. Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Red Pitaya STEMlab</li>
+<li>Resistor:  1x 1 <span class="math notranslate">\(k \Omega\)</span></li>
+<li>Small signal diode: 4x (1N914 or similar)</li>
+</ul>
+</div>
+<div class="section" id="half-wave-rectifier">
+<h2>20.4. Half wave rectifier<a class="headerlink" href="#half-wave-rectifier" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="directions">
+<h3>20.4.1. Directions<a class="headerlink" href="#directions" title="Permalink to this headline">¶</a></h3>
+<p>Set up the breadboard with OUT1 and IN2 channels attached to one end of the diode. The other end of the diode is connected to one end of the 1kΩ load resistor as shown in figure 2. The other end of the resistor is connected to the GND rail. Input of scope channel IN2 is connected to the end of the resistor not connected to the GND rail.</p>
+<img alt="_images/Activity_20_Figure_1.png" src="_images/Activity_20_Figure_1.png" />
+<p>Figure 1: Connection diagram for half wave diode rectifierc</p>
+<p>From the configuration above it follows that input ac voltage and rectified “dc” voltage are represented on scope application as <span class="math notranslate">\(V_{AC} = IN_1\)</span> and <span class="math notranslate">\(V_{rec} = IN_2\)</span>.</p>
+<ol class="arabic simple">
+<li>Build the circuit from figure 1 on the breadboard</li>
+</ol>
+<img alt="_images/Activity_20_Figure_2.png" src="_images/Activity_20_Figure_2.png" />
+<p>Figure 2: Connections on the breadboard</p>
+<ol class="arabic simple" start="2">
+<li>Start the Oscilloscope &amp; Signal generator application</li>
+<li>In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V to apply the input voltage. From the waveform menu select SINE,
+deselect SHOW button and select enable.</li>
+<li>On the left bottom of the screen be sure that  IN1 V/div is set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls</li>
+<li>On the left bottom of the screen be sure that  IN2 V/div is set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)</li>
+<li>Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<img alt="_images/Activity_20_Figure_3.png" src="_images/Activity_20_Figure_3.png" />
+<p>Figure 3:  Half wave diode rectifier measurements</p>
+<p>As we can see from figure 3 the positive half-period of the input signal is transfered to the load. This means that negative half-period is not participating in the power transfer.</p>
+</div>
+<div class="section" id="questions">
+<h3>20.4.2. Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Why is the peak value of the rectified output less than the peak value of the AC input and by how much?</li>
+<li>At what point in the input waveform does the rectified waveform become positive i.e. something other than zero?</li>
+<li>What happens if the direction of the diode is reversed? Repeat the experiment with the direction of the diode reversed.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="full-wave-rectifier">
+<h2>20.5. Full wave rectifier<a class="headerlink" href="#full-wave-rectifier" title="Permalink to this headline">¶</a></h2>
+<p>Here we will investigate the use of two diodes as a full wave rectifier.</p>
+<p>Again using 1N914 diodes, set up the breadboard with OUT1 attached to one end of the first diode, D1, and OUT2 to one end of the second diode, D2. Both diodes should face in the same direction as shown in figure 5. The other end of each diode is connected to one end of the 1kΩ load resistor RL. The other end of the resistor is connected to the GND V rail.</p>
+<img alt="_images/Activity_20_Figure_4.png" src="_images/Activity_20_Figure_4.png" />
+<p>Figure 4: Connection diagram for full wave diode rectifier</p>
+<div class="section" id="procedure">
+<h3>20.5.1. Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Build the circuit from figure 4 on the breadboard</li>
+</ol>
+<img alt="_images/Activity_20_Figure_5.png" src="_images/Activity_20_Figure_5.png" />
+<p>Figure 5: Connections on the breadboard</p>
+<ol class="arabic simple" start="2">
+<li>Start the Oscilloscope &amp; Signal generator application</li>
+<li>In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V to apply the input voltage. From the waveform menu select SINE and select enable.</li>
+<li>In the OUT2 settings menu set Amplitude value to 0.9V, DC offset to 0 V, <strong>Phase to 180 deg</strong> to apply the input voltage. From the waveform menu
+select SINE and select enable.</li>
+<li>In the IN1 settings menu deselect SHOW</li>
+<li>On the left bottom of the screen be sure that  IN2,OUT1 and OUT2 V/div are set to 200mV/div (You can set V/div by selecting the desired
+channel and using vertical +/- controls</li>
+<li>Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)</li>
+<li>In the Trigger settings menu set trigger source to IN2, trigger level to 0.2V, trigger mode to normal and trigger offset to -0.12ms</li>
+</ol>
+<p>If both 0 degree and 180 degree phases of the AC inputs signal (OUT1 and OUT2) are available, then a second diode can fill in the missing half-wave of the input and produce the full-wave rectified signal. Again the forward voltage of the diodes will be apparent and the output waveform will not come to a sharp point at the zero crossing due to the non-zero turn on voltage of the diodes.</p>
+<img alt="_images/Activity_20_Figure_6.png" src="_images/Activity_20_Figure_6.png" />
+<p>Figure 6: Full wave rectifier measurements</p>
+</div>
+<div class="section" id="id1">
+<h3>20.5.2. Questions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>What happens if the direction of the diodes is reversed? Repeat experiment with the direction of both diodes reversed.</li>
+<li>What happens if the direction of one diode is opposite of the other? Repeat experiment with the direction of one diode (D1) reversed.</li>
+<li>How could both 0 degree and 180 degree phases be created from a single source? (how about a transformer?)</li>
+</ol>
+</div>
+</div>
+<div class="section" id="bridge-rectifier">
+<h2>20.6. Bridge rectifier<a class="headerlink" href="#bridge-rectifier" title="Permalink to this headline">¶</a></h2>
+<p>Here we will investigate the use of four diodes as a bridge rectifier.
+Bridge rectifier is a full wave rectifier and we should expect same signals as shown on figure 6. The difference here is that
+bridge rectifier fill in the negative half-wave without using additional voltage source shifted by 180 deg. Instead of that
+bridge rectifier use 4 diodes in order to make full wave rectifier without need for additional voltage source.</p>
+<img alt="_images/Activity_20_Figure_7.png" src="_images/Activity_20_Figure_7.png" />
+<p>Figure 7: Bridge full wave diode rectifier</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In bridge diode configuration the “AC” side needs to be floating i.e we can’t bring DC ground reference from our Signal generator output (OUT1) to the
+AC side of the diodes configuration. If we do that the points 3 and 4 (figure 7) will be on the same GND reference effectively shortcutting D3. Shortcutting of D3 will in case of negative OUT1 half-wave simply, trough at that point forward polarized D4, bypass current flow directly trough D4 and not the load resistor RL. Because of that an isolation transformer is needed to separate common ground of “DC” side of the diode bridge.</p>
+</div>
+<p>On figure 8 the bridge rectifier configuration using transformer is shown. This is the most common usage of the bridge rectifier. As we can see from the figure 8 the points 1 and 3 of the bridge rectifier are exposed to the transformer differential voltage enabling correct operation of the rectifier. Point 3 will not be put to the GND when IN2 probe is connected and D3 will not be bypassed since “AC” (transformer) side is isolated.</p>
+<img alt="_images/Activity_20_Figure_8.png" src="_images/Activity_20_Figure_8.png" />
+<p>Figure 8: Bridge full wave diode rectifier using transformer</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Here we have used 1:6 transformer. Transformer selection is dependent on voltage levels and etc. Here we use 1:6 ratio transformer in order to increase supply voltage OUT1(+/- 1V). This voltage increase i.e transformer ratio is not affecting the bridge operation itself. You can use 1:1,1:2 or different ratio transformers.</p>
+</div>
+<div class="section" id="id2">
+<h3>20.6.1. Procedure<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Build the circuit from figure 8 on the breadboard</li>
+</ol>
+<img alt="_images/Activity_20_Figure_9.png" src="_images/Activity_20_Figure_9.png" />
+<p>Figure 9: Bridge rectifier on the breadboard</p>
+<ol class="arabic simple" start="2">
+<li>Set IN2 probe attenuation to x10</li>
+<li>Start the Oscilloscope &amp; Signal generator application</li>
+<li>In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V and Frequency to 100Hz to apply the input voltage. From the waveform menu select SINE,
+deselect SHOW and select enable.</li>
+<li>In the IN2 input menu set probe attenuation to x10</li>
+<li>On the left bottom of the screen be sure that  IN1 is to 200mV/div (You can set V/div by selecting the desired
+channel and using vertical +/- controls</li>
+<li>On the left bottom of the screen be sure that IN2 is to 2V/div (You can set V/div by selecting the desired
+channel and using vertical +/- controls</li>
+<li>Set t/div value to 2ms/div (You can set t/div using horizontal +/- controls)</li>
+</ol>
+<img alt="_images/Activity_20_Figure_10.png" src="_images/Activity_20_Figure_10.png" />
+<p>Figure 10: Bridge rectifier measurements</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IN1 signal shown on figure 10 is the voltage signal on the primary side of the transformer(figure 8) therefor, this voltage (IN1) multiplied by transformer ratio and shifted for 180 deg is the actual AC signal on the bridge rectifier. Why we haven’t put IN1 probe to the secondary side of the transformer? Look at the figure 7 and its explanation.</p>
+</div>
+<p>As we can see from figure 10, the bridge configuration is indeed a full wave rectifier using just one voltage source. Although when using STEMlab additional transformer was needed. When using transformer with the central tap we can make a full wave rectifier using only two diodes. Explore how!
+The disadvantage of this circuit is that now two diode drops are in series with the load and the peak value of the rectified output is less than the AC input by 1.2 Volts rather than the 0.6 V in the previous circuits. Try to measure this voltage drop.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Activity21_PrecisionRectifiers.html" class="btn btn-neutral float-right" title="21. Precision Rectifiers, Absolute value circuits" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Activity19_Diodes.html" class="btn btn-neutral" title="19. Diodes and Jupyter Notebook example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Red Pitaya d.d..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
