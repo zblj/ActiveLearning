@@ -31,8 +31,19 @@
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.coverage',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
-    'sphinx_numfig'
+    'sphinx_numfig',
+    'sphinx.ext.ifconfig',
+    'matplotlib.sphinxext.only_directives',
+    'matplotlib.sphinxext.plot_directive',
 ]
 
 # numfig:
