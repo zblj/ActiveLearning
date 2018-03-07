@@ -40,11 +40,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
-# numfig does not work with Read the docs.
-#    'sphinx_numfig',
     'sphinx.ext.ifconfig',
-    'matplotlib.sphinxext.only_directives',
-    'matplotlib.sphinxext.plot_directive',
 ]
 
 # numfig:
