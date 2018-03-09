@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Red Pitaya 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-08 08:20+0100\n"
+"POT-Creation-Date: 2018-03-09 17:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.5.3\n"
+"Generated-By: Babel 2.5.1\n"
 
 #: ../../source/Activity01_Phase.rst:2
 msgid "What is Phase?"
@@ -65,136 +65,158 @@ msgstr ""
 
 #: ../../source/Activity01_Phase.rst:39
 msgid ""
-"The sin function results in a value from 1 to -1. First set t equal to a "
-"constant, say, 1. The argument, ωt, is now no longer a function of time. "
-"With ω in radians, the sin of π/4 is approximately 0.7071. 2π radians "
-"equals 360° so π/4 radians corresponds to 45°. In degrees the sin of 45° "
-"is also 0.7071."
+"The sine function results in values ranging from 1 to -1. First set time "
+"variable :math:`t` equal to a constant, say 1. The argument, "
+":math:`\\omega t`, is now no longer a function of time. With "
+":math:`\\omega` in radians, :math:`\\sin(\\frac{\\pi}{4}) \\approx "
+"0.7071`."
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:45
 msgid ""
-"Now let t vary with time like it normally does. When the value of the ωt "
-"changes linearly with time it yields a sin wave function as shown in "
-"figure 1. As ωt goes from 0 to 2π the sin wave goes from 0 up to 1 down "
-"to -1 and back to 0. This is one cycle or one period, T, of the sine "
-"wave. The x axis is the time varying argument/angle, ωt, which varies "
-"from 0 to 2π."
+":math:`2\\pi` radians equals :math:`360^{\\circ}`, so "
+":math:`\\frac{\\pi}{4}` in radians corresponds to :math:`45^{\\circ}`; "
+":math:`\\sin(45^{\\circ}) = 0.7071`, too."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:52
+#: ../../source/Activity01_Phase.rst:50
 msgid ""
-"The value of θ is 0 in the function plotted in figure1. Since the sin(0) "
-"= 0 the plot starts at 0. This is a simple sine wave with no offset in "
-"time which means no phase offset. Note that if we are using degrees ωt, "
-"goes from 0 to 2π or 0 to 360° to yield the sine wave shown in figure 1."
+"Now let :math:`t` vary with time like it normally does. When the value of"
+" :math:`\\omega t` changes linearly with time it yields a sine wave as "
+"shown in Fig. 1. As :math:`\\omega t` goes from 0 to :math:`2 \\pi` the "
+"sine wave goes from 0 up to 1, down to -1 and back to 0. This is one "
+"cycle or one period, :math:`T`, of a sine wave. The x-axis is the time "
+"varying argument/angle, :math:`\\omega t`, which varies from 0 to "
+":math:`2\\pi`."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:61
-msgid "figure 1: 2 cycles of SIN(t)"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:63
+#: ../../source/Activity01_Phase.rst:58
 msgid ""
-"As a side note, what happens when ωt is greater than 2π? Enter 2.5π in a "
-"calculator and see. As you should know the sine function repeats every 2π"
-" radians or 360°. It is similar to subtracting 2π(I) radians from the "
-"argument where I is the largest integer that yields a nonnegative result."
+"The value of :math:`\\theta` is 0 in the function plotted in Fig. 1. "
+"Since the :math:`sin(0) = 0` the plot starts at 0. This is a simple sine "
+"wave without offset in time, which means no phase offset. Note that if we"
+" are using degrees :math:`\\omega t`, in a range from from 0 to :math:`2 "
+"\\pi` or 0 to :math:`360^{\\circ}` to yield the sine wave shown in Fig. "
+"1."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:69
+#: ../../source/Activity01_Phase.rst:68
+msgid "Figure 1: 2 cycles of :math:`\\sin(t)`"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:71
+msgid "As a side note, what happens if :math:`\\omega t > 2\\pi`?"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:73
 msgid ""
-"What happens when we plot a second sine wave function in figure 1 with ω "
-"the same value and θ is also 0? We have another sine wave which lands on "
-"top of the first sine wave. Since θ is 0 there is no phase difference "
-"between the sine waves and they look the same in time."
+"Enter :math:`2.5\\pi` in a calculator and see for yourself. As you should"
+" know, the sine function repeats every :math:`2\\pi` radians or "
+":math:`360^{\\circ}`. It is similar to subtracting :math:`2\\pi(I)` "
+"radians from the argument where I is the largest integer that yields a "
+"non-negative result."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:74
+#: ../../source/Activity01_Phase.rst:79
 msgid ""
-"Now change θ to π/2 radians or 90° for the second waveform. We see the "
-"original sine wave and a sine wave shifted to the left in time. Figure 2 "
-"shows the original sin wave (green) and the second sin (orange) with an "
-"offset in time. Since the offset is a constant we see the original sin "
-"wave shifted in time by the value θ which in this example is 1/4 of the "
-"wave period."
+"What happens if we plot a second sine wave into Fig. 1 with the same "
+":math:`\\omega` value and :math:`\\theta = 0`?"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:84
-msgid "figure 2: green - SIN(t)  orange - SIN(t+ π/4)"
+#: ../../source/Activity01_Phase.rst:82
+msgid ""
+"We have another sine wave which lands on top of the first sine wave. "
+"Since :math:`\\theta = 0` there is no phase difference between the sine "
+"waves and they look the same in time."
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:86
 msgid ""
-"Theta (**θ**) is the time offset or phase portion of equation 1. The "
-"phase angle defines the offset in time and vice versa. Equation 2 shows "
-"the relationship. We happened to choose a particularly common offset of "
-"90°. The phase offset between a sine and cosine wave is 90°. The offset "
-"angle is almost always not 90. As a matter of fact is often a function of"
-" frequency."
+"Now alter :math:`\\theta` to :math:`\\pi / 2` rad or :math:`90^{\\circ}` "
+"for the second sine wave. We see the original sine wave and a second sine"
+" wave shifted to the left in time. Fig. 2 shows the original sine wave "
+"(green) and the second sine wave (orange) with an offset in time. Since "
+"the offset is constant, we see the original sine wave shifted in time by "
+"a value of :math:`\\theta` which is :math:`1/4` of the period in this "
+"example."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:93
+#: ../../source/Activity01_Phase.rst:97
+msgid "Figure 2: green - :math:`\\sin(t)`,  orange - :math:`\\sin(t + \\pi/4)`."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:99
 msgid ""
-"When there are 2 sine waves for example displayed on a scope the phase "
-"angle can be calculated by measuring the time between the 2 waveforms "
-"(negative to positive zero crossings, or “rising edges”, can be used as "
-"time measurement reference points in the waveform). One full period of "
-"the sine wave in time is the same as 360°. Taking the ratio of the time "
-"between the 2 waveforms, ∆t, and the time in one period of a full sine "
-"wave, T, you can determine the angle between them. Equation 2 shows the "
-"exact relationship."
+":math:`\\theta` is time offset or phase portion of Eq. (1). The phase "
+"angle defines offset in time and vice versa. Eq. (2) shows the "
+"relationship. We happened to choose a particularly common offset of "
+":math:`90^{\\circ}`. The phase offset between a sine wave and cosine wave"
+" is :math:`90^{\\circ}`. The offset angle is almost always not 90. As a "
+"matter of fact it is often a function of frequency (:math:`f`)."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:103
+#: ../../source/Activity01_Phase.rst:106
+msgid ""
+"When there are two sine waves, e.g. displayed on a scope, the phase angle"
+" can be calculated by measuring the time between the two waveforms "
+"(negative to positive zero crossings or \"rising edges\", can be used as "
+"time measurement reference points in the waveform). One full period of "
+"the sine wave in time is the same as :math:`360^{\\circ}`. Taking the "
+"ratio of the time between the two waveforms as:math:`\\Delta t`, and the "
+"time in one period of a full sine wave as :math:`T`, you can determine "
+"the angle between them. Eq. (2) gives the exact relationship."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:116
 msgid "Phase"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:109
-msgid "Where T is the period of the sinusoid."
+#: ../../source/Activity01_Phase.rst:123
+msgid "where :math:`T` is the period of the sine wave."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:111
+#: ../../source/Activity01_Phase.rst:127
 msgid "**Naturally occurring time offsets in sine waves.**"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:113
+#: ../../source/Activity01_Phase.rst:129
 msgid ""
 "Some passive components yield a time offset between the voltage across "
 "them and the current through them. In class we showed that the voltage "
 "across and the current through a resistor was a simple time independent "
-"relationship. V/I=R. where R is real and in ohms. So the voltage across "
-"and current through a resistor are always in phase."
+"relationship. :math:`V / I = R`, where :math:`R` is real and in ohms. So "
+"the voltage across and current through a resistor are always in phase."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:119
+#: ../../source/Activity01_Phase.rst:136
 msgid ""
-"For capacitors and inductors the equation relating V to I is similar. "
-"V/I=Z, where Z is an impedance with real and imaginary components. We are"
-" only going to look at capacitors in this lab."
+"For capacitors and inductors the equation relating voltage :math:`V` to "
+"current :math:`I` is similar. :math:`V / I = Z`, where :math:`Z` is an "
+"complex impedance with real and imaginary parts. We are only looking at a"
+" capacitors in this lab."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:123
+#: ../../source/Activity01_Phase.rst:141
 msgid ""
 "Generally, capacitors are made of two conductive plates separated by a "
 "dielectric material. When a potential difference is applied across the "
-"plates, an electric field is created between the plates. Capacitor "
+"plates, hence an electric field is created between the plates. Capacitor "
 "dielectrics can be made of many materials, including thin insulating "
 "films and ceramic. A capacitor's distinguishing characteristic is its "
 "capacitance (C), measured in Farads (F), which measures the ratio between"
 " voltage and charge buildup."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:131
+#: ../../source/Activity01_Phase.rst:149
 msgid ""
 "The basic rule for capacitors is that the voltage across the capacitor "
-"will not change unless there is a current flowing into the capacitor. The"
-" rate of change of the voltage (dv/dt) depends on the magnitude of the "
-"current. For an ideal capacitor the current i(t) is related to the "
-"voltage by the following formula:"
+"will not change unless there is current flowing into the capacitor. The "
+"rate of change of the voltage (:math:`dv_C/dt`) depends on the magnitude "
+"of the current. For an ideal capacitor the current :math:`i_C(t)` is "
+"related to the voltage by the following formula:"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:141
+#: ../../source/Activity01_Phase.rst:159
 msgid ""
 "Right now, the full implications of this is beyond the scope of this lab."
 " You will observe this behavior in later labs. The impedance of a "
@@ -202,513 +224,526 @@ msgid ""
 "frequency conversely the lower the frequency the higher the impedance."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:151
-msgid "Where ω is defined as the angular velocity:"
+#: ../../source/Activity01_Phase.rst:169
+msgid "where :math:`\\omega = 2 \\pi f` is defined as the angular velocity."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:157
+#: ../../source/Activity01_Phase.rst:172
 msgid ""
-"One subtle thing about equation 4 is the imaginary operator j. When we "
-"looked at a resistor for example there was no imaginary operator in the "
+"One subtle thing about Eq. (4) is the imaginary operator :math:`j`. When "
+"we looked at a resistor, i.e., there is no imaginary operator in the "
 "equation for the impedance. The sinusoidal current through a resistor and"
-" the voltage across a resistor have no time offset between them because "
-"the relationship is completely real. The only difference is the "
-"amplitude. The voltage is sinusoidal and is in phase with the current "
-"sinusoid. This is not the case with a capacitor. When we look at the "
-"waveform of a sinusoidal voltage across a capacitor it will be time "
-"shifted compared to the current through the capacitor. The imaginary "
-"operator, j, is responsible for this. Looking at figure 3 we can see that"
-" the current waveform is at a peak ( maximum ) when the slope of the "
-"voltage waveform ( time rate of change dv/dt ) is its highest."
+" the voltage across a resistor have no time offset between them, as the "
+"relationship is completely real. The only difference is in amplitude. The"
+" voltage is sinusoidal and is in phase with the current sinusoid. This is"
+" not the case with a capacitor. When we look at the waveform of a "
+"sinusoidal voltage across a capacitor it will be time shifted compared to"
+" the current through the capacitor. The imaginary operator :math:`j` is "
+"responsible for this. Looking at Fig. 3, we can observe that the current "
+"waveform has a peak (maximum) if the slope of the voltage waveform "
+"(:math:`dv/dt`) is maximal."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:171
+#: ../../source/Activity01_Phase.rst:185
 msgid ""
 "The time difference can be expressed as a phase angle between the two "
-"waveforms as defined in Equation 2."
+"waveforms as defined in Eq. (2)."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:176
-msgid "figure 3: Phase Angle Determination between Voltage and Current."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:178
-msgid ""
-"You probably have seen circuits made entirely from resistors. These "
-"circuits have only real impedance, which means that voltages throughout "
-"the circuit will all be in phase (i.e. θ = 0 degrees) as it is the "
-"complex impedance that shifts the current in time with respect to the "
-"voltage.  Note that the impedance of a capacitor is wholly imaginary. "
-"Resistors have real impedances, so circuits that contain both resistors "
-"and capacitors will have complex impedances."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:186
-msgid ""
-"To calculate the theoretical phase angle between voltage and current in "
-"an RC circuit:"
+#: ../../source/Activity01_Phase.rst:191
+msgid "Figure 3: Phase angle determination between voltage (V) and current (I)."
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:193
-msgid "Where Zc is the total circuit impedance = I"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:195
 msgid ""
-"Rearrange the equation until it looks like I=A+jB, where A and B are real"
-" numbers."
+"You probably have seen circuits made entirely from resistors. These "
+"circuits have only real impedance, which means that voltages throughout "
+"the circuit will all be in phase (i.e. :math:`\\theta = 0` deg.) as it is"
+" the complex impedance that shifts the current in time with respect to "
+"the voltage.  Note that the impedance of a capacitor is pure imaginary. "
+"Resistors have real impedances, so circuits that contain both, resistors "
+"and capacitors, will have complex impedances."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:198
-msgid "The phase relationship of the current relative to the voltage is then:"
+#: ../../source/Activity01_Phase.rst:201
+msgid ""
+"In order to calculate the theoretical phase angle between voltage (V) and"
+" current (I) in an RC circuit:"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:206
-msgid "Materials"
+#: ../../source/Activity01_Phase.rst:209
+msgid "where :math:`Z_{tot}` is the total circuit impedance."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:208
+#: ../../source/Activity01_Phase.rst:211
+msgid ""
+"Rearrange the equation until it looks like :math:`Z_{tot} = a + jb`, "
+"where :math:`a` and :math:`b` are real numbers. The phase relationship of"
+" the current relative to the voltage is then:"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:220
+msgid "**Materials**"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:222
 msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:210
-msgid "2 – 470 Ω resistors"
+#: ../../source/Activity01_Phase.rst:224
+msgid ":math:`2 \\times 470\\Omega` resistors"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:212
-msgid "1 – 1 uF capacitor"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:216
-msgid "Oscilloscope & Signal Generator"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:221
-msgid ""
-"You are going to use the Red Pitays STEMlab board and the Oscilloscope & "
-"Signal generator application. User guide for starting the Red Pitaya "
-"STEMlab board can be found at quickstart_. Oscilloscope & Signal "
-"generator application is explained here_."
+#: ../../source/Activity01_Phase.rst:226
+msgid ":math:`1 \\times 1 \\mu F` capacitor"
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:229
+msgid "**Oscilloscope & Signal Generator**"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:234
+msgid ""
+"You are going to use Red Pitaya's STEMlab board and the Oscilloscope & "
+"Signal generator application. User guide for starting the Red Pitaya "
+"STEMlab board can be found at quickstart_, while Oscilloscope & Signal "
+"generator application is explained here_."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:242
 msgid "Instructional Objectives"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:231
-msgid "Explore the phase relationship of voltages a resistive circuit."
+#: ../../source/Activity01_Phase.rst:244
+msgid "Explore the phase relationship of voltages in a resistive circuit."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:233
-msgid ""
-"Explore the phase relationship of voltages in a capacitive, resistive "
-"(RC) circuit."
+#: ../../source/Activity01_Phase.rst:246
+msgid "Explore the phase relationship of voltages in an RC circuit."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:237
+#: ../../source/Activity01_Phase.rst:250
 msgid "Procedure"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:240
+#: ../../source/Activity01_Phase.rst:252
 msgid ""
 "Be sure the STEMlab is plugged into a local network and start up the web "
 "interface using web browser."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:243
+#: ../../source/Activity01_Phase.rst:255
 msgid ""
-"Start the Oscilloscope & Signal generator application. The Main screen "
+"Start the Oscilloscope & Signal generator application. The main screen "
 "should look like a scope display with adjustable range, position and "
 "measurement parameters."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:247
+#: ../../source/Activity01_Phase.rst:259
 msgid ""
 "On the left bottom of the screen be sure that OUT1 V/div and OUT2 V/div "
 "are both set to 200 mV/div (You can set V/div by selecting the desired "
 "channel and using vertical +/- controls)."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:251
+#: ../../source/Activity01_Phase.rst:263
 msgid ""
-"In the OUT1 controls menu, set the frequency of OUT1 to 1000 Hz with 0° "
-"Phase and 0.9 V  amplitude. Select SINE waveform shape and enable output."
+"In the OUT1 controls menu, set the frequency of OUT1 to 1000 Hz with "
+":math:`0^{\\circ}` phase and 0.9 V  amplitude. Select SINE waveform shape"
+" and enable output."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:255
+#: ../../source/Activity01_Phase.rst:267
 msgid ""
 "In the OUT2 controls menu, set the frequency of OUT2 to 1000 Hz and 0.9 V"
 " amplitude. Select SINE waveform shape and enable output."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:258
-msgid "Set t/div to 200us/div (using horizontal +/- controls)."
+#: ../../source/Activity01_Phase.rst:270
+msgid "Set t/div to 200 us/div (using horizontal +/- controls)."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:263
+#: ../../source/Activity01_Phase.rst:275
 msgid ""
-"figure 4: Sine signal generated with Oscilloscope and Signal generator "
+"Figure 4: Sine signal generated with Oscilloscope and Signal generator "
 "applications. Marked with green - main setting and controls."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:268
+#: ../../source/Activity01_Phase.rst:280
 msgid "Measure the phase angle between two generated waveforms:"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:270
+#: ../../source/Activity01_Phase.rst:282
 msgid ""
 "From the previous settings you should  see what looks like 1 sine wave. "
 "There are two just one is on top of the other - zero phase angle!"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:274
-msgid "In the OUT1 control menu, change the phase  to 90°."
+#: ../../source/Activity01_Phase.rst:286
+msgid "In the OUT1 control menu, change the phase to :math:`90^{\\circ}`."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:276
-msgid "In the OUT2 control menu, change the phase  to 135°."
+#: ../../source/Activity01_Phase.rst:288
+msgid "In the OUT2 control menu, change the phase to :math:`135^{\\circ}`."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:278
-msgid "Which Channel looks like the sine is occurring before the other?"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:281
-msgid ""
-"The OUT2 signal should look like it is leading (happening before) the "
-"OUT1 signal. The OUT2 signal crosses the 0 V axis from below to above "
-"before the OUT1 signal. It turns out a positive θ is called a phase lead."
-" The low to high crossing time reference point is arbitrary. The high to "
-"low crossing could also be used."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:291
-msgid ""
-"figure 5: Oscilloscope application showing two sine signal with phase "
-"difference."
+#: ../../source/Activity01_Phase.rst:290
+msgid "Which channel looks like the sine is occurring before the other?"
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:293
 msgid ""
-"Change the phase of OUT2 to 45°. Now it looks like the CHB signal lags "
-"the CHA signal."
+"The OUT2 signal should look like it is leading (happening before) the "
+"OUT1 signal. The OUT2 signal crosses the 0 V axis from below to above "
+"before the OUT1 signal. It turns out a positive :math:`\\theta` is called"
+" a phase lead. The low to high crossing time reference point is "
+"arbitrary. The high to low crossing could also be used."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:296
+#: ../../source/Activity01_Phase.rst:303
+msgid ""
+"Figure 5: Oscilloscope application showing two sine signal with phase "
+"difference."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:306
+msgid ""
+"Change the phase of OUT2 to :math:`45^{\\circ}`. Now it looks like the "
+"CHB signal lags the CHA signal."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:309
 msgid "Press the red STOP button to pause the Oscilloscope acquisition."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:298
-msgid "Select “CURSOR” menu and enable X1 and X2 cursors"
+#: ../../source/Activity01_Phase.rst:311
+msgid "Select \"CURSOR\" menu and enable X1 and X2 cursors"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:300
-msgid "Using horizontal +/- controls set Time to 100us/div."
+#: ../../source/Activity01_Phase.rst:313
+msgid "Using horizontal +/- controls set Time to 100 us/div."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:302
+#: ../../source/Activity01_Phase.rst:315
 msgid ""
 "Using mouse and left press+hold on the cursor marker(white arrow on the "
 "end of the cursor line) set one cursor position so that cursor line going"
 " through point where OUT1 is crossing 0V line."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:307
+#: ../../source/Activity01_Phase.rst:320
 msgid "Repeat the step for the second cursor and OUT2 signal."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:309
-msgid "Readout the time difference between cursors"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:311
-msgid "What is the ∆t? ________________"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:313
-msgid ""
-"Use the measured ∆t and equation 2 to calculate the phase offset. θ "
-"________°"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:315
-msgid ""
-"Note you cannot measure the frequency of a signal that does not have at "
-"least one full period displayed on the screen. Usually you need more than"
-" 2 cycles to get consistent results. You are generating the frequency so "
-"you already know what it is. You don't need to measure it in this part of"
-" the lab."
-msgstr ""
-
 #: ../../source/Activity01_Phase.rst:322
-msgid "Measuring Magnitude using a real circuit."
+msgid "Readout the time difference between cursors."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:324
+msgid "What is :math:`\\Delta t`?"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:326
+msgid ""
+"Use the measured :math:`\\Delta t` and Eq. (2) to calculate the phase "
+"offset :math:`\\theta` in degrees."
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:329
-msgid "figure 6: R-R circuit."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:331
 msgid ""
-"Build the circuit shown in Figure 5 on your solderless breadboard using "
-"two 470 Ω, Oscilloscope probes and Red Pitaya STEMlab board."
+"Note you cannot measure the frequency of a signal that does not have at "
+"least one full period displayed on the screen. Usually you need more than"
+" two cycles to get consistent results. You are generating the frequency "
+"so you already know what it is. You don't need to measure it in this part"
+" of the lab."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:335
-msgid "NOTICE: For ground pin use probes ground leads (crocodile connectors)"
+#: ../../source/Activity01_Phase.rst:336
+msgid "Measuring Magnitude using a real circuit."
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:341
-msgid "figure 7: R-R circuit on the breadboard"
+msgid "Figure 6: R-R circuit."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:346
+#: ../../source/Activity01_Phase.rst:343
+msgid ""
+"Build the circuit shown in Fig. 5 on your solderless breadboard using two"
+" :math:`470 \\Omega` resistors, oscilloscope probes and Red Pitaya "
+"STEMlab board."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:348
+msgid "NOTICE: For ground pin use probes ground leads (crocodile connectors)."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:354
+msgid "Figure 7: R-R circuit on the breadboard."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:358
 msgid ""
 "We have connected OUT1 directly to IN1 so we can observe a real voltage "
 "signal across resistors R\\ :sub:`1`\\ and R\\ :sub:`2`\\."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:350
+#: ../../source/Activity01_Phase.rst:362
 msgid ""
 "In the OUT1 controls menu, set the Frequency  to 200 Hz with 0° Phase and"
-" 0.9 V amplitude. Deselect  “Show” button, select SINE waveform shape and"
-" select “ON” button."
+" 0.9 V amplitude. Deselect  \"Show\" button, select SINE waveform shape "
+"and select \"ON\" button."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:354
+#: ../../source/Activity01_Phase.rst:366
 msgid ""
 "Set the horizontal time scale to 1.0 mS/Div to display two cycles of the "
 "waveform."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:357
+#: ../../source/Activity01_Phase.rst:369
 msgid "Click on the scope Start button if it is not already running."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:359
+#: ../../source/Activity01_Phase.rst:371
 msgid "Using vertical +/- controls set  200 mV/div for IN1 and IN2"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:361
+#: ../../source/Activity01_Phase.rst:373
 msgid ""
 "The voltage waveform displayed in IN1(yellow) is the voltage across both "
 "resistors (V\\ :sub:`R1`\\+V\\ :sub:`R2`\\). The voltage waveform "
 "displayed in IN2 is the voltage across just R\\ :sub:`2`\\ (V\\ "
 ":sub:`R2`\\). To display the voltage across R\\ :sub:`1`\\ we use the "
-"Math waveform display options. Under the Math menu for Signal1 select "
-"IN1, select operator “-”, for Signal2 select IN2 then select enable. You "
-"should now see a third waveform for the voltage across R\\ :sub:`1`\\ "
-"(V\\ :sub:`R1`\\)."
+"Math waveform display options. Under the math menu for Signal1 select "
+"IN1, select operator \"-\", for Signal2 select IN2 then select enable. "
+"You should now see a third waveform for the voltage across R\\ :sub:`1`\\"
+" (V\\ :sub:`R1`\\)."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:370
+#: ../../source/Activity01_Phase.rst:382
 msgid "Using vertical +/- controls set  200 mV/div (0.2 V/div) for MATH trace."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:372
-msgid ""
-"With this settings you are observing: IN1- Input excitation signal IN2- "
-"Voltage drop signal across R\\ :sub:`2`\\ MATH - Voltage drop signal "
-"across R\\ :sub:`1`\\"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:377
-msgid "Record V\\ :sub:`R1`\\ and V\\ :sub:`R2`\\."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:379
-msgid "V\\ :sub:`R1`\\_______V\\ :sub:`pp`\\."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:381
-msgid "V\\ :sub:`R2`\\_______V\\ :sub:`pp`\\."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:383
-msgid "V\\ :sub:`R1`\\+V\\ :sub:`R2`\\_______V\\ :sub:`pp`\\."
-msgstr ""
-
 #: ../../source/Activity01_Phase.rst:385
-msgid ""
-"Can you see any difference between the zero crossings of V\\ :sub:`R1`\\ "
-"and V\\ :sub:`R2`\\? _________"
+msgid "With this settings you are observing: - IN1- Input excitation signal"
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:388
-msgid ""
-"Can you even see two distinct sine waves? ________ Probably not. There "
-"should be no observable time offset and thus no phase shift."
+msgid "IN2- Voltage drop signal across R\\ :sub:`2`\\"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:391
+#: ../../source/Activity01_Phase.rst:390
+msgid "MATH - Voltage drop signal across R\\ :sub:`1`\\"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:393
+msgid "Record V\\ :sub:`R1`\\ and V\\ :sub:`R2`\\."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:395
+msgid "V\\ :sub:`R1`\\_______V\\ :sub:`pp`\\."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:397
+msgid "V\\ :sub:`R2`\\_______V\\ :sub:`pp`\\."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:399
+msgid "V\\ :sub:`R1`\\+V\\ :sub:`R2`\\_______V\\ :sub:`pp`\\."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:401
+msgid ""
+"Can you see any difference between the zero crossings of V\\ :sub:`R1`\\ "
+"and V\\ :sub:`R2`\\?"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:404
+msgid "Can you even see two distinct sine waves?"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:406
+msgid ""
+"Probably not. There should be no observable time offset and thus no phase"
+" shift."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:408
 msgid ""
 "You can see that MATH (purple) and IN2 (green) trace are overlapping. To "
 "see both traces you can adjust the vertical position of a channel to "
 "separate them."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:395
+#: ../../source/Activity01_Phase.rst:412
 msgid ""
-"This can be done by selecting trace marker(on the left side of the grid) "
-"using mouse left button and moving trace up-down. Make sure to set the "
+"This can be done by selecting trace marker (on the left side of the grid)"
+" using mouse left button and moving trace up-down. Make sure to set the "
 "vertical position back to 0 to realign the signals."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:399
+#: ../../source/Activity01_Phase.rst:416
 msgid ""
-"Here we don’t have phase shift and value of R\\ :sub:`1`\\ = R\\ "
+"Here we don't have phase shift and value of R\\ :sub:`1`\\ = R\\ "
 ":sub:`2`\\ so the signal amplitudes for V\\ :sub:`R1`\\ and V\\ "
 ":sub:`R2`\\ will be the same. The result is that we have two identical "
 "signals (IN2=V\\ :sub:`R2`\\ , MATH=V\\ :sub:`R1`\\) on the Oscilloscope."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:405
-msgid "What happens if you use 220 Ohm value for R\\ :sub:`2`\\?"
+#: ../../source/Activity01_Phase.rst:422
+msgid "What happens if you use :math:`220 \\Omega` value for R\\ :sub:`2`\\?"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:407
-msgid "-. Measuring RC circuit"
+#: ../../source/Activity01_Phase.rst:424
+msgid "Measuring RC circuit"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:409
+#: ../../source/Activity01_Phase.rst:426
 msgid "Replace R\\ :sub:`2`\\ with a 1 uF capacitor C\\ :sub:`1`\\."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:415
-msgid "figure 8: RC circuit on"
+#: ../../source/Activity01_Phase.rst:432
+msgid "Figure 8: RC circuit on"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:417
+#: ../../source/Activity01_Phase.rst:434
 msgid ""
-"NOTICE: For 1uF capacitor you will be probably using an electrolytic "
-"capacitor. This capacitors are polarity sensitive i.e  on the positive "
-"capacitor pin the voltage should never go negative and on negative pin "
-"(GND) voltage should never go positive."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:422
-msgid ""
-"From previous example (RR circuit ) and Oscilloscope & Signal generator "
-"settings we are generating sine wave which is going from -0.9V to 0.9V "
-"and causing a wrong polarization of capacitor(it can damage a capacitor) "
-"we need to adjust our output signal so we generate a sine signal which is"
-" always positive (sine signal with an offset)."
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:429
-msgid ""
-"In the OUT1 settings menu set Amplitude and Offset values  to 0.45 V (Now"
-" we are generating sine signal which is oscillating around 0.45 V of DC "
-"offset value i.e sine signal is going  from 0 to 0.9V )"
-msgstr ""
-
-#: ../../source/Activity01_Phase.rst:433
-msgid ""
-"Because there is no DC current through the capacitor we are not "
-"interested in this DC value. In order to re-center our signals on the "
-"grid we need to shift signals in vertical direction using negative offset"
-" values."
+"NOTICE: For 1 uF capacitor you will be probably using an electrolytic "
+"capacitor."
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:438
 msgid ""
-"In the IN1 and IN2 settings menu set the value of Vertical Offset to "
-"-450mV"
+"This capacitors are polarity sensitive i.e  on the positive capacitor pin"
+" the voltage should never go negative and on negative pin (GND) voltage "
+"should never go positive."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:441
-msgid "For the stable acquisition set the trigger level in TRIGGER menu to 0.45V"
+#: ../../source/Activity01_Phase.rst:442
+msgid ""
+"From previous example (RR circuit) and Oscilloscope & Signal generator "
+"settings we are generating sine wave which is going from -0.9 V to 0.9 V,"
+" causing a wrong polarization of capacitor (it can damage a capacitor) we"
+" need to adjust our output signal so we generate a sine signal which is "
+"always positive (sine signal with an offset)."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:450
-msgid "figure 9: Oscilloscope signals with the RC circuit"
+#: ../../source/Activity01_Phase.rst:449
+msgid ""
+"In the OUT1 settings menu set Amplitude and Offset values to 0.45 V (Now "
+"we are generating sine signal which is oscillating around 0.45 V of DC "
+"offset value i.e sinusoidal signal is going from 0 V to 0.9 V)"
 msgstr ""
 
 #: ../../source/Activity01_Phase.rst:453
 msgid ""
-"Measure IN1, IN2  and Math P2P (peak to peak) value. What signal is the "
-"Math waveform? _________________"
+"Because there is no DC current through the capacitor, we are not "
+"interested in this DC value. In order to re-center our signals on the "
+"grid, we need to shift signals in vertical direction using negative "
+"offset values."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:456
+#: ../../source/Activity01_Phase.rst:458
+msgid ""
+"In the IN1 and IN2 settings menu set the value of Vertical Offset to -450"
+" mV"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:461
+msgid "For the stable acquisition set the trigger level in TRIGGER menu to 0.45 V"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:469
+msgid "Figure 9: Oscilloscope signals with RC circuit."
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:472
+msgid ""
+"Measure IN1, IN2  and Math P2P (peak to peak) value. What signal is the "
+"Math waveform?"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:475
 msgid ""
 "Record V\\ :sub:`R1`\\, V\\ :sub:`C1`\\ and V\\ :sub:`R1`\\+V\\ "
 ":sub:`C1`\\."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:458
+#: ../../source/Activity01_Phase.rst:477
 msgid "V\\ :sub:`R1`\\____________V\\ :sub:`PP`\\."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:460
+#: ../../source/Activity01_Phase.rst:479
 msgid "V\\ :sub:`C1`\\_______________V\\ :sub:`PP`\\."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:462
+#: ../../source/Activity01_Phase.rst:481
 msgid "V\\ :sub:`R1`\\+V\\ :sub:`C1`\\____________V\\ :sub:`PP`\\."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:464
+#: ../../source/Activity01_Phase.rst:484
 msgid ""
 "Now something to do with phase. Hopefully you see a few sine waves with "
 "time offsets or phase differences displayed on the grid. Let's measure "
 "the time offsets and calculate the phase differences."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:469
+#: ../../source/Activity01_Phase.rst:489
 msgid ""
 "Measure the time difference between V\\ :sub:`R1`\\ and V\\ :sub:`C1`\\. "
 "and calculate the phase offsets."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:472
-msgid "Use equation 2 and the measured ∆t to calculate the phase angle θ."
+#: ../../source/Activity01_Phase.rst:492
+msgid ""
+"Use Eq. (2) and the measured :math:`\\Delta t` to calculate the phase "
+"angle :math:`\\theta`."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:474
-msgid "The CURSORS are useful for determining ∆t. Here's how."
+#: ../../source/Activity01_Phase.rst:495
+msgid "The CURSORS are useful for determining :math:`\\Delta t`; here's how:"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:476
+#: ../../source/Activity01_Phase.rst:497
 msgid "Display at least 2 cycles of the sine waves."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:478
+#: ../../source/Activity01_Phase.rst:499
 msgid ""
-"Set the horizontal time/div  to  500us/div. Note the Delta  cursor "
-"display keeps track of the sign of the difference."
+"Set the horizontal time/div to 500 us/div. Note the Delta cursor display "
+"keeps track of the sign of the difference."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:482
+#: ../../source/Activity01_Phase.rst:504
 msgid ""
 "You can use the measurement display to get frequency. Since you set the "
 "frequency of the source you don't really need to depend on the "
 "measurement window for this value."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:486
+#: ../../source/Activity01_Phase.rst:509
 msgid ""
-"Assume ∆t is 0 if you really can't see any difference with 1 or 2 cycles "
-"of the sine wave on the screen."
+"Assume :math:`\\Delta t` is 0 if you really can't see any difference with"
+" 1 or 2 cycles of the sine wave on the screen."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:489 ../../source/Activity01_Phase.rst:522
+#: ../../source/Activity01_Phase.rst:512
 msgid ""
 "Put a first cursor at the neg. to pos. zero crossing location for the IN1"
 " ( V\\ :sub:`R1`\\ + V\\ :sub:`C1`\\) signal. Put a second cursor at the "
-"nearest neg. to pos. zero crossing location for the Math ( V\\ "
+"nearest neg. to pos. zero crossing location for the math ( V\\ "
 ":sub:`R1`\\ ) signal. Record the time difference and calculate the phase "
-"angle. Note ∆t maybe a negative number. Does this mean the phase angle "
-"leads or lags?"
+"angle. Note :math:`\\Delta t` maybe a negative number. Does this mean the"
+" phase angle leads or lags?"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:497 ../../source/Activity01_Phase.rst:506
-#: ../../source/Activity01_Phase.rst:515 ../../source/Activity01_Phase.rst:530
-#: ../../source/Activity01_Phase.rst:539 ../../source/Activity01_Phase.rst:548
-msgid "∆t _________, θ_________"
+#: ../../source/Activity01_Phase.rst:520 ../../source/Activity01_Phase.rst:528
+#: ../../source/Activity01_Phase.rst:536 ../../source/Activity01_Phase.rst:552
+#: ../../source/Activity01_Phase.rst:561 ../../source/Activity01_Phase.rst:570
+msgid ":math:`\\Delta t` _________, :math:`\\theta` _________"
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:499 ../../source/Activity01_Phase.rst:532
+#: ../../source/Activity01_Phase.rst:522 ../../source/Activity01_Phase.rst:555
 msgid ""
 "Put a first cursor at the neg. to pos. zero crossing location for the IN1"
 " ( V\\ :sub:`R1`\\ + V\\ :sub:`C1`\\) signal. Put a second cursor at the "
@@ -716,21 +751,619 @@ msgid ""
 " ) signal. Record the time difference and calculate the phase angle."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:508 ../../source/Activity01_Phase.rst:541
+#: ../../source/Activity01_Phase.rst:530
 msgid ""
 "Put a first cursor at the neg. to pos. zero crossing location for the "
 "Math ( V\\ :sub:`R1`\\ ) signal. Put a second cursor at the nearest neg. "
-"to pos. zero crossing location for the IN2 ( V\\ :sub:`C1`\\ ) signal. "
+"to pos. zero crossing location for the IN2 (V\\ :sub:`C1`\\ ) signal. "
 "Record the time difference and calculate the phase angle."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:518
+#: ../../source/Activity01_Phase.rst:539
 msgid ""
-"Measure the time difference and calculate the phase θ offset at a "
-"different frequency."
+"Measure the time difference and calculate the phase :math:`\\theta` "
+"offset at a different frequency."
 msgstr ""
 
-#: ../../source/Activity01_Phase.rst:520
-msgid "Set OUT1 frequency to 1000 Hz and the time / div to 200us/div."
+#: ../../source/Activity01_Phase.rst:542
+msgid "Set OUT1 frequency to 1000 Hz and the time / div to 200 us/div."
 msgstr ""
+
+#: ../../source/Activity01_Phase.rst:545
+msgid ""
+"Put a first cursor at the neg. to pos. zero crossing location for the IN1"
+" ( V\\ :sub:`R1`\\ + V\\ :sub:`C1`\\) signal. Put a second cursor at the "
+"nearest neg. to pos. zero crossing location for the math (V\\ :sub:`R1`\\"
+" ) signal. Record the time difference and calculate the phase angle. Note"
+" :math:`\\Delta t` maybe a negative number. Does this mean the phase "
+"angle leads or lags?"
+msgstr ""
+
+#: ../../source/Activity01_Phase.rst:564
+msgid ""
+"Put a first cursor at the neg. to pos. zero crossing location for the "
+"math ( V\\ :sub:`R1`\\ ) signal. Put a second cursor at the nearest neg. "
+"to pos. zero crossing location for the IN2 (V\\ :sub:`C1`\\) signal. "
+"Record the time difference and calculate the phase angle."
+msgstr ""
+
+#~ msgid ""
+#~ "The sin function results in a "
+#~ "value from 1 to -1. First set "
+#~ "t equal to a constant, say, 1. "
+#~ "The argument, ωt, is now no longer"
+#~ " a function of time. With ω in"
+#~ " radians, the sin of π/4 is "
+#~ "approximately 0.7071. 2π radians equals "
+#~ "360° so π/4 radians corresponds to "
+#~ "45°. In degrees the sin of 45° "
+#~ "is also 0.7071."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now let t vary with time like "
+#~ "it normally does. When the value "
+#~ "of the ωt changes linearly with "
+#~ "time it yields a sin wave function"
+#~ " as shown in figure 1. As ωt"
+#~ " goes from 0 to 2π the sin "
+#~ "wave goes from 0 up to 1 "
+#~ "down to -1 and back to 0. "
+#~ "This is one cycle or one period,"
+#~ " T, of the sine wave. The x "
+#~ "axis is the time varying argument/angle,"
+#~ " ωt, which varies from 0 to 2π."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The value of θ is 0 in the"
+#~ " function plotted in figure1. Since "
+#~ "the sin(0) = 0 the plot starts "
+#~ "at 0. This is a simple sine "
+#~ "wave with no offset in time which"
+#~ " means no phase offset. Note that "
+#~ "if we are using degrees ωt, goes"
+#~ " from 0 to 2π or 0 to "
+#~ "360° to yield the sine wave shown"
+#~ " in figure 1."
+#~ msgstr ""
+
+#~ msgid "figure 1: 2 cycles of SIN(t)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "As a side note, what happens when"
+#~ " ωt is greater than 2π? Enter "
+#~ "2.5π in a calculator and see. As"
+#~ " you should know the sine function"
+#~ " repeats every 2π radians or 360°."
+#~ " It is similar to subtracting 2π(I)"
+#~ " radians from the argument where I"
+#~ " is the largest integer that yields"
+#~ " a nonnegative result."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "What happens when we plot a second"
+#~ " sine wave function in figure 1 "
+#~ "with ω the same value and θ "
+#~ "is also 0? We have another sine"
+#~ " wave which lands on top of the"
+#~ " first sine wave. Since θ is 0"
+#~ " there is no phase difference between"
+#~ " the sine waves and they look "
+#~ "the same in time."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Now change θ to π/2 radians or "
+#~ "90° for the second waveform. We "
+#~ "see the original sine wave and a"
+#~ " sine wave shifted to the left "
+#~ "in time. Figure 2 shows the "
+#~ "original sin wave (green) and the "
+#~ "second sin (orange) with an offset "
+#~ "in time. Since the offset is a "
+#~ "constant we see the original sin "
+#~ "wave shifted in time by the value"
+#~ " θ which in this example is 1/4"
+#~ " of the wave period."
+#~ msgstr ""
+
+#~ msgid "figure 2: green - SIN(t)  orange - SIN(t+ π/4)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Theta (**θ**) is the time offset "
+#~ "or phase portion of equation 1. "
+#~ "The phase angle defines the offset "
+#~ "in time and vice versa. Equation 2"
+#~ " shows the relationship. We happened "
+#~ "to choose a particularly common offset"
+#~ " of 90°. The phase offset between "
+#~ "a sine and cosine wave is 90°. "
+#~ "The offset angle is almost always "
+#~ "not 90. As a matter of fact "
+#~ "is often a function of frequency."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "When there are 2 sine waves for"
+#~ " example displayed on a scope the "
+#~ "phase angle can be calculated by "
+#~ "measuring the time between the 2 "
+#~ "waveforms (negative to positive zero "
+#~ "crossings, or “rising edges”, can be "
+#~ "used as time measurement reference "
+#~ "points in the waveform). One full "
+#~ "period of the sine wave in time"
+#~ " is the same as 360°. Taking "
+#~ "the ratio of the time between the"
+#~ " 2 waveforms, ∆t, and the time "
+#~ "in one period of a full sine "
+#~ "wave, T, you can determine the "
+#~ "angle between them. Equation 2 shows "
+#~ "the exact relationship."
+#~ msgstr ""
+
+#~ msgid "Where T is the period of the sinusoid."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Some passive components yield a time "
+#~ "offset between the voltage across them"
+#~ " and the current through them. In "
+#~ "class we showed that the voltage "
+#~ "across and the current through a "
+#~ "resistor was a simple time independent"
+#~ " relationship. V/I=R. where R is real"
+#~ " and in ohms. So the voltage "
+#~ "across and current through a resistor"
+#~ " are always in phase."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For capacitors and inductors the "
+#~ "equation relating V to I is "
+#~ "similar. V/I=Z, where Z is an "
+#~ "impedance with real and imaginary "
+#~ "components. We are only going to "
+#~ "look at capacitors in this lab."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Generally, capacitors are made of two"
+#~ " conductive plates separated by a "
+#~ "dielectric material. When a potential "
+#~ "difference is applied across the plates,"
+#~ " an electric field is created between"
+#~ " the plates. Capacitor dielectrics can "
+#~ "be made of many materials, including "
+#~ "thin insulating films and ceramic. A "
+#~ "capacitor's distinguishing characteristic is "
+#~ "its capacitance (C), measured in Farads"
+#~ " (F), which measures the ratio "
+#~ "between voltage and charge buildup."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The basic rule for capacitors is "
+#~ "that the voltage across the capacitor"
+#~ " will not change unless there is "
+#~ "a current flowing into the capacitor."
+#~ " The rate of change of the "
+#~ "voltage (dv/dt) depends on the magnitude"
+#~ " of the current. For an ideal "
+#~ "capacitor the current i(t) is related"
+#~ " to the voltage by the following "
+#~ "formula:"
+#~ msgstr ""
+
+#~ msgid "Where ω is defined as the angular velocity:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "One subtle thing about equation 4 "
+#~ "is the imaginary operator j. When "
+#~ "we looked at a resistor for "
+#~ "example there was no imaginary operator"
+#~ " in the equation for the impedance."
+#~ " The sinusoidal current through a "
+#~ "resistor and the voltage across a "
+#~ "resistor have no time offset between "
+#~ "them because the relationship is "
+#~ "completely real. The only difference is"
+#~ " the amplitude. The voltage is "
+#~ "sinusoidal and is in phase with "
+#~ "the current sinusoid. This is not "
+#~ "the case with a capacitor. When we"
+#~ " look at the waveform of a "
+#~ "sinusoidal voltage across a capacitor it"
+#~ " will be time shifted compared to "
+#~ "the current through the capacitor. The"
+#~ " imaginary operator, j, is responsible "
+#~ "for this. Looking at figure 3 we"
+#~ " can see that the current waveform"
+#~ " is at a peak ( maximum ) "
+#~ "when the slope of the voltage "
+#~ "waveform ( time rate of change "
+#~ "dv/dt ) is its highest."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The time difference can be expressed "
+#~ "as a phase angle between the two"
+#~ " waveforms as defined in Equation 2."
+#~ msgstr ""
+
+#~ msgid "figure 3: Phase Angle Determination between Voltage and Current."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You probably have seen circuits made "
+#~ "entirely from resistors. These circuits "
+#~ "have only real impedance, which means"
+#~ " that voltages throughout the circuit "
+#~ "will all be in phase (i.e. θ "
+#~ "= 0 degrees) as it is the "
+#~ "complex impedance that shifts the "
+#~ "current in time with respect to "
+#~ "the voltage.  Note that the impedance"
+#~ " of a capacitor is wholly imaginary."
+#~ " Resistors have real impedances, so "
+#~ "circuits that contain both resistors and"
+#~ " capacitors will have complex impedances."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "To calculate the theoretical phase angle"
+#~ " between voltage and current in an"
+#~ " RC circuit:"
+#~ msgstr ""
+
+#~ msgid "Where Zc is the total circuit impedance = I"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Rearrange the equation until it looks"
+#~ " like I=A+jB, where A and B are"
+#~ " real numbers."
+#~ msgstr ""
+
+#~ msgid "The phase relationship of the current relative to the voltage is then:"
+#~ msgstr ""
+
+#~ msgid "Materials"
+#~ msgstr ""
+
+#~ msgid "2 – 470 Ω resistors"
+#~ msgstr ""
+
+#~ msgid "1 – 1 uF capacitor"
+#~ msgstr ""
+
+#~ msgid "Oscilloscope & Signal Generator"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You are going to use the Red "
+#~ "Pitays STEMlab board and the "
+#~ "Oscilloscope & Signal generator application."
+#~ " User guide for starting the Red "
+#~ "Pitaya STEMlab board can be found "
+#~ "at quickstart_. Oscilloscope & Signal "
+#~ "generator application is explained here_."
+#~ msgstr ""
+
+#~ msgid "Explore the phase relationship of voltages a resistive circuit."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Explore the phase relationship of "
+#~ "voltages in a capacitive, resistive (RC)"
+#~ " circuit."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Start the Oscilloscope & Signal "
+#~ "generator application. The Main screen "
+#~ "should look like a scope display "
+#~ "with adjustable range, position and "
+#~ "measurement parameters."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the OUT1 controls menu, set the"
+#~ " frequency of OUT1 to 1000 Hz "
+#~ "with 0° Phase and 0.9 V  "
+#~ "amplitude. Select SINE waveform shape "
+#~ "and enable output."
+#~ msgstr ""
+
+#~ msgid "Set t/div to 200us/div (using horizontal +/- controls)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "figure 4: Sine signal generated with "
+#~ "Oscilloscope and Signal generator "
+#~ "applications. Marked with green - main"
+#~ " setting and controls."
+#~ msgstr ""
+
+#~ msgid "In the OUT1 control menu, change the phase  to 90°."
+#~ msgstr ""
+
+#~ msgid "In the OUT2 control menu, change the phase  to 135°."
+#~ msgstr ""
+
+#~ msgid "Which Channel looks like the sine is occurring before the other?"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The OUT2 signal should look like "
+#~ "it is leading (happening before) the "
+#~ "OUT1 signal. The OUT2 signal crosses "
+#~ "the 0 V axis from below to "
+#~ "above before the OUT1 signal. It "
+#~ "turns out a positive θ is called"
+#~ " a phase lead. The low to high"
+#~ " crossing time reference point is "
+#~ "arbitrary. The high to low crossing "
+#~ "could also be used."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "figure 5: Oscilloscope application showing "
+#~ "two sine signal with phase difference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Change the phase of OUT2 to 45°."
+#~ " Now it looks like the CHB "
+#~ "signal lags the CHA signal."
+#~ msgstr ""
+
+#~ msgid "Select “CURSOR” menu and enable X1 and X2 cursors"
+#~ msgstr ""
+
+#~ msgid "Using horizontal +/- controls set Time to 100us/div."
+#~ msgstr ""
+
+#~ msgid "Readout the time difference between cursors"
+#~ msgstr ""
+
+#~ msgid "What is the ∆t? ________________"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use the measured ∆t and equation 2"
+#~ " to calculate the phase offset. θ "
+#~ "________°"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Note you cannot measure the frequency"
+#~ " of a signal that does not have"
+#~ " at least one full period displayed"
+#~ " on the screen. Usually you need "
+#~ "more than 2 cycles to get "
+#~ "consistent results. You are generating "
+#~ "the frequency so you already know "
+#~ "what it is. You don't need to "
+#~ "measure it in this part of the "
+#~ "lab."
+#~ msgstr ""
+
+#~ msgid "figure 6: R-R circuit."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Build the circuit shown in Figure "
+#~ "5 on your solderless breadboard using"
+#~ " two 470 Ω, Oscilloscope probes and"
+#~ " Red Pitaya STEMlab board."
+#~ msgstr ""
+
+#~ msgid "NOTICE: For ground pin use probes ground leads (crocodile connectors)"
+#~ msgstr ""
+
+#~ msgid "figure 7: R-R circuit on the breadboard"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the OUT1 controls menu, set the"
+#~ " Frequency  to 200 Hz with 0° "
+#~ "Phase and 0.9 V amplitude. Deselect  "
+#~ "“Show” button, select SINE waveform "
+#~ "shape and select “ON” button."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The voltage waveform displayed in "
+#~ "IN1(yellow) is the voltage across both"
+#~ " resistors (V\\ :sub:`R1`\\+V\\ :sub:`R2`\\). "
+#~ "The voltage waveform displayed in IN2"
+#~ " is the voltage across just R\\ "
+#~ ":sub:`2`\\ (V\\ :sub:`R2`\\). To display "
+#~ "the voltage across R\\ :sub:`1`\\ we "
+#~ "use the Math waveform display options."
+#~ " Under the Math menu for Signal1 "
+#~ "select IN1, select operator “-”, for "
+#~ "Signal2 select IN2 then select enable."
+#~ " You should now see a third "
+#~ "waveform for the voltage across R\\ "
+#~ ":sub:`1`\\ (V\\ :sub:`R1`\\)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "With this settings you are observing:"
+#~ " IN1- Input excitation signal IN2- "
+#~ "Voltage drop signal across R\\ "
+#~ ":sub:`2`\\ MATH - Voltage drop signal"
+#~ " across R\\ :sub:`1`\\"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Can you see any difference between "
+#~ "the zero crossings of V\\ :sub:`R1`\\"
+#~ " and V\\ :sub:`R2`\\? _________"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Can you even see two distinct sine"
+#~ " waves? ________ Probably not. There "
+#~ "should be no observable time offset "
+#~ "and thus no phase shift."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This can be done by selecting "
+#~ "trace marker(on the left side of "
+#~ "the grid) using mouse left button "
+#~ "and moving trace up-down. Make "
+#~ "sure to set the vertical position "
+#~ "back to 0 to realign the signals."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Here we don’t have phase shift and"
+#~ " value of R\\ :sub:`1`\\ = R\\ "
+#~ ":sub:`2`\\ so the signal amplitudes for"
+#~ " V\\ :sub:`R1`\\ and V\\ :sub:`R2`\\ "
+#~ "will be the same. The result is"
+#~ " that we have two identical signals"
+#~ " (IN2=V\\ :sub:`R2`\\ , MATH=V\\ "
+#~ ":sub:`R1`\\) on the Oscilloscope."
+#~ msgstr ""
+
+#~ msgid "What happens if you use 220 Ohm value for R\\ :sub:`2`\\?"
+#~ msgstr ""
+
+#~ msgid "-. Measuring RC circuit"
+#~ msgstr ""
+
+#~ msgid "figure 8: RC circuit on"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "NOTICE: For 1uF capacitor you will "
+#~ "be probably using an electrolytic "
+#~ "capacitor. This capacitors are polarity "
+#~ "sensitive i.e  on the positive capacitor"
+#~ " pin the voltage should never go "
+#~ "negative and on negative pin (GND) "
+#~ "voltage should never go positive."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "From previous example (RR circuit ) "
+#~ "and Oscilloscope & Signal generator "
+#~ "settings we are generating sine wave "
+#~ "which is going from -0.9V to 0.9V"
+#~ " and causing a wrong polarization of"
+#~ " capacitor(it can damage a capacitor) "
+#~ "we need to adjust our output "
+#~ "signal so we generate a sine "
+#~ "signal which is always positive (sine"
+#~ " signal with an offset)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the OUT1 settings menu set "
+#~ "Amplitude and Offset values  to 0.45 "
+#~ "V (Now we are generating sine "
+#~ "signal which is oscillating around 0.45"
+#~ " V of DC offset value i.e sine"
+#~ " signal is going  from 0 to "
+#~ "0.9V )"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Because there is no DC current "
+#~ "through the capacitor we are not "
+#~ "interested in this DC value. In "
+#~ "order to re-center our signals on"
+#~ " the grid we need to shift "
+#~ "signals in vertical direction using "
+#~ "negative offset values."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "In the IN1 and IN2 settings menu"
+#~ " set the value of Vertical Offset "
+#~ "to -450mV"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "For the stable acquisition set the "
+#~ "trigger level in TRIGGER menu to "
+#~ "0.45V"
+#~ msgstr ""
+
+#~ msgid "figure 9: Oscilloscope signals with the RC circuit"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Measure IN1, IN2  and Math P2P "
+#~ "(peak to peak) value. What signal "
+#~ "is the Math waveform? _________________"
+#~ msgstr ""
+
+#~ msgid "Use equation 2 and the measured ∆t to calculate the phase angle θ."
+#~ msgstr ""
+
+#~ msgid "The CURSORS are useful for determining ∆t. Here's how."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set the horizontal time/div  to  "
+#~ "500us/div. Note the Delta  cursor "
+#~ "display keeps track of the sign of"
+#~ " the difference."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Assume ∆t is 0 if you really "
+#~ "can't see any difference with 1 or"
+#~ " 2 cycles of the sine wave on"
+#~ " the screen."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Put a first cursor at the neg. "
+#~ "to pos. zero crossing location for "
+#~ "the IN1 ( V\\ :sub:`R1`\\ + V\\"
+#~ " :sub:`C1`\\) signal. Put a second "
+#~ "cursor at the nearest neg. to pos."
+#~ " zero crossing location for the Math"
+#~ " ( V\\ :sub:`R1`\\ ) signal. Record"
+#~ " the time difference and calculate "
+#~ "the phase angle. Note ∆t maybe a"
+#~ " negative number. Does this mean the"
+#~ " phase angle leads or lags?"
+#~ msgstr ""
+
+#~ msgid "∆t _________, θ_________"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Put a first cursor at the neg. "
+#~ "to pos. zero crossing location for "
+#~ "the Math ( V\\ :sub:`R1`\\ ) "
+#~ "signal. Put a second cursor at the"
+#~ " nearest neg. to pos. zero crossing"
+#~ " location for the IN2 ( V\\ "
+#~ ":sub:`C1`\\ ) signal. Record the time"
+#~ " difference and calculate the phase "
+#~ "angle."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Measure the time difference and "
+#~ "calculate the phase θ offset at a"
+#~ " different frequency."
+#~ msgstr ""
+
+#~ msgid "Set OUT1 frequency to 1000 Hz and the time / div to 200us/div."
+#~ msgstr ""
 
