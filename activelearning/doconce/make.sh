@@ -2,8 +2,8 @@
 
 language="English"
 options=" --encoding=utf-8 --language=$language"
-name=lec
-public="elite:/home/mimeiners/public_html"
+name=main
+public=""
 
 
 set -x
@@ -48,6 +48,7 @@ editfix ()
 
 # html=${name}-reveal-blue
 # doconce format html ${name} --pygments_html_style=default --keep_pygments_html_bg SLIDE_TYPE=reveal SLIDE_THEME=sky --html_output=$html $options
+
 # doconce slides_html ${html} reveal --html_slide_theme=sky --copyright=everypage --html_footer_logo=HSB_RGB
 # system doconce format html $name --pygments_html_style=default --keep_pygments_html_bg --html_links_in_new_window --html_output=$html ${options}
 # system doconce slides_html $html reveal --html_slide_theme=simple --copyright=titlepage
@@ -82,7 +83,7 @@ cp ._*.html ./${name}
 # zip -r ${name}.zip ./${name}
 find ./${name} -type f -exec chmod 644 {} \;
 find ./${name} -type d -exec chmod 755 {} \;
-rsync -rtvuz -e ssh ./${name} ${public}/mxe/ --delete-before
+# rsync -rtvuz -e ssh ./${name} ${public}/mxe/ --delete-before
 
 # LaTeX Beamer slides
 # theme=blue_shadow
@@ -132,8 +133,8 @@ doconce format pdflatex ${name} --latex_font=cmbright \
 
 # system rm -rf ${name}.aux
 system pdflatex -shell-escape ${name}
-system bibtex ${name}
-system pdflatex -shell-escape ${name}
+# system bibtex ${name}
+# system pdflatex -shell-escape ${name}
 system pdflatex -shell-escape ${name}
 mv -f ${name}.pdf ${name}-screen.pdf
 # system doconce lightclean
@@ -155,13 +156,13 @@ mv -f ${name}.pdf ${name}-screen.pdf
 # system xelatex ${name}
 
 # Sphinx document
-# theme=bootstrap
+theme=bootstrap
 # theme=pyramid
-# system doconce format sphinx ${name} ${options}
-# system doconce split_rst ${name}
-# editfix ${name}.rst
-# system doconce sphinx_dir theme=${theme} ${name}
-# system python automake_sphinx.py
+system doconce format sphinx ${name} ${options}
+system doconce split_rst ${name}
+editfix ${name}.rst
+system doconce sphinx_dir theme=${theme} ${name}
+system python automake_sphinx.py
 
 # Markdown (pandoc extended)
 # system doconce format pandoc ${name} ${options}
@@ -199,6 +200,3 @@ mv -f ${name}.pdf ${name}-screen.pdf
 # system doconce format pandoc ${name} ${options}
 # system pandoc -R -t mediawiki -o ${name}.mwk --toc ${name}.md
 
-# Make HTML Bibliography
-system publish export papers.bib
-system bibtex2html -a -nokeys -nobibsource -header "Bibliography Module MXE" papers.bib

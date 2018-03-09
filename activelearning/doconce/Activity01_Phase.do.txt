@@ -1,25 +1,22 @@
-What is Phase?
-==============
+===== What is Phase? =====
 
-Objective
----------
 
+=== Objective ===
 The objective of this lab activity is to understand what is meant by the
 phase relationship between signals and to see how well theory agrees
 with practice. A secondary outcome will be a preliminary understanding
 of the Red Pitaya STEMlab hardware and software - test & measurements
 applications.
 
-Notes
------
 
+!bhint
 In this tutorials we use the terminology taken from the user manual when
 referring to the connections to the Red Pitaya STEMlab board
 [hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
+!ehint
 
-Background
-----------
 
+=== Background ===
 We will investigate the concept of phase by looking at sine waves and
 passive components that will allow us to observe phase shift with real
 signals. First we will look at a sin wave and the phase term in the
@@ -95,8 +92,8 @@ the time between the two waveforms as$\Delta t$, and the time in one
 period of a full sine wave as $T$, you can determine the angle between
 them. Eq. (2) gives the exact relationship.
 
-Phase
------
+
+=== Phase ===
 
 $$\theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi
 \, rad = \Delta t f 2 \pi \, rad;$$
@@ -196,14 +193,14 @@ STEMlab board can be found at
 while Oscilloscope & Signal generator application is explained
 [here](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html).
 
-Instructional Objectives
-------------------------
+=== Instructional Objectives ===
 
 1.  Explore the phase relationship of voltages in a resistive circuit.
+
 2.  Explore the phase relationship of voltages in an RC circuit.
 
-Procedure
----------
+
+=== Procedure ===
 
 -   Be sure the STEMlab is plugged into a local network and start up the
     web interface using web browser.

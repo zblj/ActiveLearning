@@ -1,9 +1,9 @@
-TITLE: Welcome to Red Pitaya Active Learning
+TITLE: Welcome to Red Pitaya's Electronic Active Learning
 AUTHOR: Many authors {copyright} Red Pitaya d.d.
 DATE: today
 
 __Abstract.__
-Active Learning lecture notes 2018.
+Electronic Active Learning lecture notes.
 
 !bnotice Zu Risiken und Nebenwirkungen
 Ein Skript ist eine Stichwortsammlung. Es ist nicht vollständig sondern stark durch meine Vorstellungen
