@@ -26,26 +26,27 @@ are:
 
 $$V_1 = V_S \frac{R_1}{R_1 + R_2}$$$$V_2 = V_S \frac{R_2}{R_1 + R_2}$$
 
-![figure 1: Voltage division](img/Activity_3_Figure_1.png)
+![Figure 1: Voltage division.](img/Activity_3_Figure_1.png)
 
 Materials
 ---------
 
-Red Pitaya STEMlab 125-14 or STEMlab 125-10 Various Resistors:
-
-> -   470 Ω,
-> -   1 KΩ,
-> -   4.7 KΩ,
-> -   1.5 KΩ
+-   Red Pitaya STEMlab 125-14 or STEMlab 125-10
+-   Various Resistors:
+    -   $470 \Omega$,
+    -   $1 k\Omega$,
+    -   $4.7 k\Omega$,
+    -   $1.5 k\Omega$.
 
 Procedure
 ---------
 
-a)  Construct the circuit as shown in figure 1. Set R1= 4.7 KΩ, R2= 1.5
-    KΩ and use the fixed power supply 5V pin from extension connector as
-    voltage source V~s~. Use the Oscilloscope application to measure the
-    voltages V~1~and V~2~Repeat this step for R~1~= R~2~= 4.7 KΩ and
-    write down the measurements.
-b)  Calculate the voltages V~1~and V~2~by using the formulas (1) and (2)
-    in each case.
+a)  Construct the circuit as shown in Fig. 1. Set $R_1 = 4.7
+    k\Omega$, $R_2 = 1.5 k\Omega$ and use the fixed power supply 5 V pin
+    from extension connector as voltage source V~s~. Use the
+    Oscilloscope application to measure the voltages V~1~and V~2~Repeat
+    this step for R~1~= R~2~= $4.7 k\Omega$ and write down the
+    measurements.
+b)  Calculate the voltages V~1~and V~2~by using Eqs. (1) and (2) in each
+    case.
 c)  Compare the results from steps a and 1.

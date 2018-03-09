@@ -13,11 +13,13 @@ Notes
 In this tutorials we use the terminology taken from the user manual when
 referring to the connections to the Red Pitaya STEMlab board
 [hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
+
 [Oscilloscope](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
 &
 [Signal](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
 [generator](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
 application is used for generating and observing signals on the circuit.
+
 Extension connector pins used for **-3.3V** and **+3.3V** voltage supply
 are show in the documentation
 [here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
@@ -47,17 +49,16 @@ open loop gain of the
 [OP27](http://www.analog.com/media/en/technical-documentation/data-sheets/OP27.pdf)
 amplifier is arround 1.8 million.
 
-![image](img/Activity_14_Figure_1.png)
-
-Figure 1: OP27 datasheet and Open Loop Gain value marked
+![Figure 1: OP27 datasheet and Open Loop Gain value
+marked](img/Activity_14_Figure_1.png)
 
 The definition of open-loop gain is
 
-$$A_{OL} = \frac{V_{out}}{( V^+ − V^− )} \quad (1)$$
+$$A_{OL} = \frac{V_{out}}{(V^{+} - V^{-})} \quad (1)$$
 
-where $(V^+ − V^−)$ is the input voltage difference $V_d$ that is being
-amplified, $V^+$ a voltage on noninverting input and $V^-$ voltage on
-inverting input.
+where $(V^{+} - V^{-})$ is the input voltage difference $V_d$ that is
+being amplified, $V^{+}$ a voltage on non-inverting input and $V^{-}$
+voltage on inverting input.
 
 Voltage feedback op amps operate as a **voltage in / voltage out**
 amplifier and the open-loop gain is a **dimensionless ratio**, so no
@@ -104,16 +105,18 @@ $$A_{OL} = Gain_{OL} = \frac{R_3}{R_2}  \frac{1V}{V_{out}} \quad (2)$$
 Note
 :::
 
-In other words, DUT input differential voltage $V_d=V^{+}+{V^-}$,(where
-$V^-=0$ and $V_d = V^+$), necessary to set DUT output to -1V is
-$\frac{V_{out}}{A_{OL}}$.
+In other words, DUT input differential voltage $V_d=V^{+}+{V^-}$, (where
+$V^-=0$ and $V_d =
+V^+$), necessary to set DUT output to -1V is $\frac{V_{out}}{A_{OL}}$.
 
 DUT output must go to -1V since our AUX opamp is in feedback loop trying
 to push his $V_d$ to 0V.
 :::
 
-**Example:** If we take $A_{OL} = 1.8E6$ then for 1V on DUT(OP27) output
-we need to have input diferential voltage $V_d$ as folows:
+**Example:**
+
+If we take $A_{OL} = 1.8E6$ then for 1V on DUT(OP27) output we need to
+have input diferential voltage $V_d$ as folows:
 
 $$V_d = \frac{1V}{1.8E6} \approx 0.555 \mu V$$
 
@@ -134,8 +137,9 @@ thus measurable with our equipment.
 
 **Construct the circuit shown in figure 2.** Before inserting the R2 and
 R3 resistors in the circuit, measure and record the values of the two
-resistors using a DMM if available. In our case R3 = 97.3k $\Omega$ and
-R2 = 99.7 $\Omega$
+resistors using a DMM if available.
+
+In our case R3 = 97.3k $\Omega$ and R2 = 99.7 $\Omega$
 
 ::: {.warning}
 ::: {.admonition-title}
@@ -147,9 +151,8 @@ check your circuit. The -3.3V and +3.3V voltage supply pins do not have
 short circuit handling and they can be damaged in case of short circuit.
 :::
 
-![image](img/Activity_14_Figure_2.png)
-
-Figure 2: Voltage supply connections and test circuit
+![Figure 2: Voltage supply connections and test
+circuit](img/Activity_14_Figure_2.png)
 
 ::: {.warning}
 ::: {.admonition-title}
@@ -159,22 +162,24 @@ Warning
 C1 capacitor is used as a feedback impedance on the inverting amplifier
 configuration of the AUX opamp. This is done to attenuate all AC signals
 in the circuit and AUX opamp output. For this reason it is good to have
-large capacitance of C1 in order to eliminate any AC signals. We chosed
-10uF and used polarized(electrolytic) capacitor here. This is not an
-"ok" solution since our capacitor can be subjected to reverse
+large capacitance of C1 in order to eliminate any AC signals.
+
+We chosed 10uF and used polarized(electrolytic) capacitor here. This is
+not an "ok" solution since our capacitor can be subjected to reverse
 polarisation. But for good measurements and short period of measurements
 the electrolytic capacitor can be used.
 :::
 
-### Step 1: S is on POS1 (Figure 2)
+Step 1: S is on POS1 (Figure 2)
+-------------------------------
 
 Instead of using switch S, R5 can be manually set on pin6 of DUT on the
 breadboard. Build circuit in the breadboard and set R5 to POS1.
+
 **Connect OUT1 to IN1 and set probe attenuations to x1.**
 
-![image](img/Activity_14_Figure_3.png)
-
-Figure 3: Test circuit. R5 on POS1 (look at Figure 2)
+![Figure 3: Test circuit. R5 on POS1 (look at Figure
+2)](img/Activity_14_Figure_3.png)
 
 1.  Start the Oscilloscope & Signal Generator application
 2.  On the left bottom of the screen be sure that IN1 V/div is set to
@@ -185,46 +190,50 @@ Figure 3: Test circuit. R5 on POS1 (look at Figure 2)
     select IN2 and press DONE
 5.  **Readout MEAN(IN2): In our case it is -34.2mV**
 
-![image](img/Activity_14_Figure_4.png)
+    ![](img/Activity_14_Figure_4.png)
 
-Figure 4: Measurements of $V_{out}$ when R5 is set to POS1 (look at
-Figure 2)
+    Figure 4: Measurements of $V_{out}$ when R5 is set to POS1 (look at
+    Figure 2)
 
-### Step 2: S is on POS2 (Figure 2)
+Step 2: S is on POS2 (Figure 2)
+-------------------------------
 
 Build circuit on the breadboard and set R5 to POS2.
 
-![image](img/Activity_14_Figure_5.png)
-
-Figure 5: Test circuit. R5 on POS2 (look at Figure 2)
+![Figure 5: Test circuit. R5 on POS2 (look at Figure
+2)](img/Activity_14_Figure_5.png)
 
 1.  In the OUT1 settings menu from the waveform menu select DC. Set
     Amplitude value to 1V to apply a 1V DC voltage to the circuit (R5).
+
     Deselect SHOW button and select enable.
+
 2.  Adjust OUT1 amplitude until MEAN(IN1) shows near 1V.
 3.  **Readout MEAN(IN2): In our case it is -34.8mV**
 
-![image](img/Activity_14_Figure_6.png)
+    ![](img/Activity_14_Figure_6.png)
 
-Figure 6: Measurements of $V_{out}$ when R5 is set to POS2 (look at
-Figure 2)
+    Figure 6: Measurements of $V_{out}$ when R5 is set to POS2 (look at
+    Figure 2)
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+    ::: {.note}
+    ::: {.admonition-title}
+    Note
+    :::
 
-As you can see from the measurements there is certain offset on the AUX
-opamp output (pin 6). Ideally when R5 is set to POS1 (figure 2)
-$V_{out}$ should be 0. Nonetheless, during both (POS1 and POS2)
-measurements the DC offset is the same and it will cancel out when
-calculating open loop gain. For open loop gain folowing equation 2 we
-get:
+    As you can see from the measurements there is certain offset on the
+    AUX opamp output (pin 6). Ideally when R5 is set to POS1 (figure 2)
+    $V_{out}$ should be 0.
+    :::
 
-$$A_{OL} = \frac{R3}{R2} \frac{1V}{(V_{out_{POS1}}-V_{out_{POS2}})} =$$$$.$$$$A_{OL} = \frac{93700.0}{99.7} \frac{1V}{(-34.2mV-(-34.8mV))} =$$$$.$$$$A_{OL} \approx  1566365.764 \approx 1.566 milion$$
-:::
+    Nonetheless, during both (POS1 and POS2) measurements the DC offset
+    is the same and it will cancel out when calculating open loop gain.
 
-Compare measurements with the datasheet value from Figure 2. Our
-measurements are very close to the specified value. For more accurate
-measurement a higher resolution equipment and less noisy environment is
-necessary.
+    For open loop gain folowing equation 2 we get:
+
+    $$A_{OL} = \frac{R3}{R2} \frac{1V}{(V_{out_{POS1}}-V_{out_{POS2}})} =$$$$A_{OL} = \frac{93700.0}{99.7} \frac{1V}{(-34.2mV-(-34.8mV))} =$$$$A_{OL} \approx  1566365.764 \approx 1.566 milion$$
+
+    Compare measurements with the datasheet value from Figure 2. Our
+    measurements are very close to the specified value. For more
+    accurate measurement a higher resolution equipment and less noisy
+    environment is necessary.

@@ -18,18 +18,21 @@ Notes
 In this tutorials we use the terminology taken from the user manual when
 referring to the connections to the Red Pitaya STEMlab board
 [hardware](http://redpitaya.readthedocs.io/en/latest/index.html).
+
 [Bode](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html)
 analyzer application is used to measure frequency response of Low Pass
-and High Pass Filters. The Bode analyzer is an ideal application for
-measuring frequency responses of the passive/active filters, complex
-impedances and any other electronic circuit. The Gain/Phase frequency
-response can be used to characterize any device under test completely,
-you can perform linear and logarithmic sweeps. Gain and Phase can be
-measured from 1Hz to 60MHz. The basic user interface enables quick
-interaction and parameter settings. The Bode analyzer can be used for
-the measurement of Stability of control circuits such as the DC/DC
-converters in power supplies, Influence of termination on amplifiers or
-filters, Ultrasonic and piezo electric systems and similar.
+and High Pass Filters.
+
+The Bode analyzer is an ideal application for measuring frequency
+responses of the passive/active filters, complex impedances and any
+other electronic circuit. The Gain/Phase frequency response can be used
+to characterize any device under test completely, you can perform linear
+and logarithmic sweeps. Gain and Phase can be measured from 1Hz to
+60MHz. The basic user interface enables quick interaction and parameter
+settings. The Bode analyzer can be used for the measurement of Stability
+of control circuits such as the DC/DC converters in power supplies,
+Influence of termination on amplifiers or filters, Ultrasonic and piezo
+electric systems and similar.
 
 Background
 ----------
@@ -49,11 +52,11 @@ $$f_L < f_H$$
 
 The Lower cut-off frequency is given as:
 
-$$f_L = \frac{R}{2πL} \quad (1)$$
+$$f_L = \frac{R}{2 \pi L} \quad (1)$$
 
 The higher cut-off frequency is given as:
 
-$$f_H = \frac{1}{2πRC} \quad (2)$$
+$$f_H = \frac{1}{2 \pi RC} \quad (2)$$
 
 The **Band Width** of frequencies passed is given by:
 
@@ -62,11 +65,10 @@ $$BW = f_L < f_{BW} < f_H \quad (3)$$
 All signal frequencies $f$ below $f_L$ and above $f_H$ are attenuated
 and the frequencies between are passed by the filter.
 
-![image](img/Activity_10_Figure_1.png)
+![Figure 1: Band Pass Filter circuit](img/Activity_10_Figure_1.png)
 
-Figure 1: Band Pass Filter circuit
-
-### Frequency Response
+Frequency Response
+------------------
 
 To show how a circuit responds to a range of frequencies a plot of the
 magnitude ( amplitude ) of the output voltage of the filter as a
@@ -75,9 +77,8 @@ characterize the range of frequencies in which the filter is designed to
 operate within. Figure 2 shows a typical frequency response of a Band
 Pass filter.
 
-![image](img/Activity_10_Figure_2.png)
-
-Figure 2: Band Pass Filter Frequency Response
+![Figure 2: Band Pass Filter Frequency
+Response](img/Activity_10_Figure_2.png)
 
 Materials:
 ----------
@@ -94,9 +95,9 @@ Procedure
     solderless breadboard, with the component values R1 = 1 KΩ, C1 =
     0.047 µF, L1 =22 mH.
 
-![image](img/Activity_10_Figure_3.png)
+    ![](img/Activity_10_Figure_3.png)
 
-Figure 3: Band Pass Filter on solderless breadboard
+    Figure 3: Band Pass Filter on solderless breadboard
 
 2.  Start the Bode analyzer application. The Bode analyzer application
     will make a frequency sweep in such way it will generate sine signal
@@ -108,17 +109,18 @@ Figure 3: Band Pass Filter on solderless breadboard
     and calculate frequency response.
 3.  In the Bode analyzer settings menu set for:
 
--   start frequency: 500 Hz
--   end frequency: 30 kHz
--   number of steps: 50
--   scale: Log
--   select RUN button
+    -   start frequency: 500 Hz
+    -   end frequency: 30 kHz
+    -   number of steps: 50
+    -   scale: Log
+    -   select RUN button
 
-![image](img/Activity_10_Figure_4.png)
+    ![](img/Activity_10_Figure_4.png)
 
-Figure 4: Band Pass Filter **measured** Frequency Response
+    Figure 4: Band Pass Filter **measured** Frequency Response
 
-### Questions:
+Questions:
+----------
 
 1.  Compute the cut-off frequencies for each Band Pass filter
     constructed using the formula in equations (1) and (2). Compare

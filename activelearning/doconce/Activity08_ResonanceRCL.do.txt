@@ -15,6 +15,7 @@ Notes
 In this tutorials we use the terminology taken from the user manual when
 referring to the connections to the Red Pitaya STEMlab board
 [hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
+
 Oscilloscope & Signal generator application is used for generating and
 observing signals on the circuit.
 [Bode](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html)
@@ -35,29 +36,27 @@ A network is in resonance when the voltage and current at the network
 input terminals are in phase and the input impedance of the network is
 purely resistive.
 
-![image](img/Activity_8_Figure_1.png)
+![Figure 1: Parallel Resonance Circuit](img/Activity_8_Figure_1.png)
 
-Figure 1: Parallel Resonance Circuit
+Consider the parallel RLC circuit of Fig. 1. The steady-state admittance
+offered by the circuit is:
 
-Consider the Parallel RLC circuit of figure 1. The steady-state
-admittance offered by the circuit is:
-
-$$Y = \frac{1}{R} + j(ωC - \frac{1}{ωL})$$
+$$Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)$$
 
 Resonance occurs when the voltage and current at the input terminals are
 in phase. This corresponds to a purely real admittance, so that the
 necessary condition is given by:
 
-$$ω C - \frac{1}{ω} L = 0$$
+$$\omega C - \frac{1}{\omega L} = 0$$
 
-The resonant condition may be achieved by adjusting L, C, or ω. Keeping
-L and C constant, the resonant frequency ω\_o is given by:
+The resonant condition may be achieved by adjusting L, C, or $\omega$.
+Keeping L and C constant, the resonant frequency $\omega_0$ is given by:
 
-$$ω_o = \frac{1}{\sqrt{LC}} rad/s (1)$$
+$$\omega_0 = \frac{1}{\sqrt{LC}} \, rad/s (1)$$
 
-OR
+or
 
-$$f_o = \frac {1}{2 π \sqrt{LC}} Hertz  (2)$$
+$$f_0 = \frac {1}{2 \pi \sqrt{LC}} \, Hz  (2)$$
 
 Frequency Response: It is a plot of the magnitude of the output Voltage
 of a resonance circuit as function of frequency. The response of course
@@ -65,9 +64,8 @@ starts at zero, reaches a maximum value in the vicinity of the natural
 resonant frequency, and then drops again to zero as ω becomes infinite.
 The frequency response is shown in figure 2.
 
-![image](img/Activity_8_Figure_2.png)
-
-Figure 2: Frequency Response of Parallel Resonant Circuit
+![Figure 2: Frequency Response of Parallel Resonant
+Circuit](img/Activity_8_Figure_2.png)
 
 The two additional frequencies ω :sub: 1 and ω ~2~ are also indicated
 which are called half-power frequencies. These frequencies locate those
@@ -76,11 +74,9 @@ times the maximum value. They are used to measure the band-width of the
 response curve. This is called the half-power bandwidth of the resonant
 circuit and is defined as:
 
-$$ß = ω_2 - ω_1   (3)$$
+$$\beta = \omega_2 - \omega_1  (3)$$
 
-![image](img/Activity_8_Figure_3.png)
-
-Figure 3: Series Resonance Circuit
+![Figure 3: Series Resonance Circuit](img/Activity_8_Figure_3.png)
 
 Materials
 ---------
@@ -93,8 +89,10 @@ Procedure
 
 Additional Calculation: Using one of the sw tools such is Matlab or
 Python we can calculate the impedance of the parallel RLC circuit from
-Figure 1. The admittance(Y) of the parallel circuit is given in equation
-1 above where impedance Z is given as Z = 1 / Y.
+Figure 1.
+
+The admittance(Y) of the parallel circuit is given in equation 1 above
+where impedance Z is given as Z = 1 / Y.
 
 ::: {.note}
 ::: {.admonition-title}
@@ -104,10 +102,12 @@ Note
 In this calculation we take into account series resistance of the
 inductor. This resistance will affect the phase response of the RLC
 circuit at lower frequencies. Equation above are used for ideal
-components without parasitic elements. In the practice(measurements) we
+components without parasitic elements. In practice (measurements) we
 only have real elements and we need to take into account that inductor
-is not a pure inductance but also has a series resistance Rind. Yind=
-1/(Rind+i\*2\*Pi\*f\*L).
+is not a pure inductance but also has an effective series resistance
+$R_{esr}$, hence
+
+$$Y_{L} = \frac{1}{(R_{esr} + j 2 \pi f L)}.$$
 :::
 
 ::: {.note}
@@ -129,31 +129,31 @@ still usual, however, to name the frequency at which this occurs as the
 resonance frequency.
 :::
 
-Matlab code for calculation of Z is given below.
+Matlab code for calculation of $Z$ is given below.
 
 ``` {.sourceCode .matlab}
 close all
 clear all
 clc
-Rs=100;
-R1=1E3;
-L1=4.7E-3;
-C1=0.1E-6;
-Rind=6.5;       % inductor series resistance in Ohms
-Vin=1;
-f=100:100:1E6;  % frequency range for calculation
+Rs = 100;
+R1 = 1E3;
+L1 = 4.7E-3;
+C1 = 0.1E-6;
+Resr = 6.5;       % inductor series resistance in Ohms
+Vin = 1;
+f = 100:100:1E6;  % frequency range for calculation
 
-% calculation of Z
-Y1=1/R1;
-Y2=i*2*pi.*f*C1;
-Y3=1./(Rind+i*2*pi.*f*L1);
-Y=Y1+Y2+Y3;
-Z=1./Y;
+%% calculation of Z
+Y1 = 1/R1;
+Y2 = i*2*pi.*f*C1;
+Y3 = 1./(Rind+i*2*pi.*f*L1);
+Y = Y1 + Y2 + Y3;
+Z = 1./Y;
 
-% plotting
-ax=plotyy(f,real(Z),f,imag(Z),'semilogx','semilogx');
-ylabel(ax(1),'Real part of  Z / Ohms');
-ylabel(ax(2),'Real part of  Z / Ohms');
+%% Plotting
+ax = plotyy(f,real(Z),f,imag(Z),'semilogx','semilogx');
+ylabel(ax(1), 'Real part of  Z / Ohms');
+ylabel(ax(2), 'Real part of  Z / Ohms');
 xlabel('Frequency / Hz');
 grid on
 ```
@@ -161,47 +161,60 @@ grid on
 By running code above we get following results shown on picture bellow.
 
 ![Figure 4: Calculation of the Impedance Z of parallel RLC circuit. Blue
-trace real/resistive part ot Z, green trace imaginary/reactive part of
+trace real/resistive part of Z, green trace imaginary/reactive part of
 Z.](img/Activity_8_Figure_4.png)
 
 We can also calculate absolute value of Z which is the combined
 impedance of RLC circuit from Figure 1. Absolute value of Impedance Z is
 the parameter form which we can predict what the measurements should
-look like. We can model the circuit from Figure 8 as is shown on figure
-below where Z = 1/Y and Y is given in equation 1.
+look like.
 
-![](img/Activity_8_Figure_5.png)
+We can model the circuit from Figure 8 as is shown on figure below where
+Z = 1/Y and Y is given in equation 1.
 
-Figure 5: Representing parallel RLC circuit as a complex impedance Z
+![Figure 5: Representing parallel RLC circuit as a complex impedance
+Z](img/Activity_8_Figure_5.png)
 
 From figure 5 above we can clearly see that our circuit is simple
 voltage divider where Vout=Vin\*Z/(Rs+Z). But since the Z is frequency
 dependent the ratio between Z and Rs will be frequency dependent and
-with that the Vin/Vout ratio. At some frequency f: where the value of Z
-is much smaller than value of Rs the output voltage amplitude will be
-much smaller than input voltage amplitude, At some frequency f: where
-value of Z is much higher than value of Rs the output voltage amplitude
-will be close to the input voltage amplitude At some frequency f: where
-Z=Rs the Vout will be ½ Vin. At some frequency f: where Z is maximal the
-Vout will be also maximal. This is the resonant frequency.
+with that the Vin/Vout ratio.
 
-![](img/Activity_8_Figure_6.png)
+At some frequency f: where the value of Z is much smaller than value of
+Rs the output voltage amplitude will be much smaller than input voltage
+amplitude.
 
-Figure 6: Calculation of absolute value of impedance Z for the circuit
-shown on figure 3.
+At some frequency f: where value of Z is much higher than value of Rs
+the output voltage amplitude will be close to the input voltage
+amplitude
 
-Using equations below,
+At some frequency f: where Z=Rs the Vout will be ½ Vin.
 
-Vout=Vin\*Z/(Rs+Z) Amplitude=20\*Log(Vout/Vin) - amplitude is given in
-decibels
+At some frequency f: where Z is maximal the Vout will be also maximal.
+This is the resonant frequency.
+
+![Figure 6: Calculation of absolute value of impedance Z for the circuit
+shown on figure 3.](img/Activity_8_Figure_6.png)
+
+Using
+
+$$V_{out} = V_{in} \frac{Z}{R_s + Z}$$
 
 we can calculate the frequency response of our RLC circuit shown in
-figure 5 and figure 8.
+Figs. 5 and 8.
 
-![](img/Activity_8_Figure_7.png)
+::: {.note}
+::: {.admonition-title}
+Note
+:::
 
-Figure 7: Calculation of frequency response (Vout/Vin) for circuit on
-figure 5.
+Magnitude repsponse in decibel (dB)
+
+$$H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.$$
+:::
+
+![Figure 7: Calculation of frequency response (Vout/Vin) for circuit on
+figure 5.](img/Activity_8_Figure_7.png)
 
 Procedure:
 
@@ -209,9 +222,8 @@ Procedure:
     breadboard, with the component values RS = 100 Ω, R1 = 1 KΩ, C1 =
     0.1 µF and L1= 4.7 mH.
 
-![](img/Activity_8_Figure_8.png)
-
-Figure 8: Parallel RLC circuit for the measurements.
+![Figure 8: Parallel RLC circuit for the
+measurements.](img/Activity_8_Figure_8.png)
 
 2.  Open the Bode analyzer application. In "Settings" menu set start
     frequency to 100Hz, end frequency to 1MHz and number of steps to 50.
@@ -223,7 +235,7 @@ After the measurements are done you should get the frequency response of
 your circuit as is shown on Figure 10q.
 
 ![Figure 10: Frequency response of circuit from Figure 8 take by Bode
-analyzer application](img/Activity_8_Figure_10.png)
+analyzer application.](img/Activity_8_Figure_10.png)
 
 -   Compare measurements and calculation. If there is any difference try
     to explain why.
@@ -238,25 +250,28 @@ parasitic
 
 The Bode analyzer application will make a frequency sweep in such way it
 will generate sine signal on OUT1 within frequency range selected by
-us(in settings menu). IN1 input signal is directly connected to OUT1
-following that IN1=Vin. IN2 is connected on the other side of the RLC
-circuit and from that IN2=Vout. Bode analyzer application will then for
-each frequency step take the ratio of IN1/IN2 and calculate frequency
-response.
+us(in settings menu).
 
-2\. On order to see how Vout/IN2 signal amplitude is changing in respect
-to OUT1 start the Oscilloscope application, in OUT1 settings enable
-OUT1, deselect SHOW button and look at the signal amplitudes of IN1 and
-IN2.
+IN1 input signal is directly connected to OUT1 following that IN1=Vin.
+IN2 is connected on the other side of the RLC circuit and from that
+IN2=Vout. Bode analyzer application will then for each frequency step
+take the ratio of IN1/IN2 and calculate frequency response.
 
-Change the OUT1 frequency, adjust t/div value so you have 2 cycles of
-the IN1 and observe the amplitudes of IN1 and IN2. Repeat this step for
-OUT1 frequency from 100Hz to 1MHz and you should observe same amplitude
-response as it is measured by Bode analyzer application.
+2.  On order to see how Vout/IN2 signal amplitude is changing in respect
+    to OUT1 start the Oscilloscope application, in OUT1 settings enable
+    OUT1, deselect SHOW button and look at the signal amplitudes of IN1
+    and IN2.
 
-Bode analyzer is also measuring phase between IN1 and IN2. Phase is also
-frequency dependent. You can see that easily wit the Oscilloscope
-application.
+    Change the OUT1 frequency, adjust t/div value so you have 2 cycles
+    of the IN1 and observe the amplitudes of IN1 and IN2.
+
+    Repeat this step for OUT1 frequency from 100Hz to 1MHz and you
+    should observe same amplitude response as it is measured by Bode
+    analyzer application.
+
+    Bode analyzer is also measuring phase between IN1 and IN2. Phase is
+    also frequency dependent. You can see that easily wit the
+    Oscilloscope application.
 
 3.  Repeat the experiment using for the series resonant circuit in
     figure 3, and use L1 = 20 mH and C1 = 0.01 uF and R1 = 1 KΩ. The Vo
