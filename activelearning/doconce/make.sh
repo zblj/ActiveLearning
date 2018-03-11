@@ -74,15 +74,15 @@ system doconce split_html ${html}.html --nav_button=gray2,bottom \
 
 # Construct AULIS folder for export
 mkdir -p ${name}/fig
-cp ../../fig/${name}*.png ./${name}/fig
-cp ../../fig/${name}*.jpg ./${name}/fig
-cp ../../fig/${name}*.svg ./${name}/fig
-cp ${name}.html ./${name}/
-ln -s ${name}.html ./${name}/index.html
-cp ._*.html ./${name}
+# cp ../../fig/${name}*.png ./${name}/fig
+# cp ../../fig/${name}*.jpg ./${name}/fig
+# cp ../../fig/${name}*.svg ./${name}/fig
+# cp ${name}.html ./${name}/
+# ln -s ${name}.html ./${name}/index.html
+# cp ._*.html ./${name}
 # zip -r ${name}.zip ./${name}
-find ./${name} -type f -exec chmod 644 {} \;
-find ./${name} -type d -exec chmod 755 {} \;
+# find ./${name} -type f -exec chmod 644 {} \;
+# find ./${name} -type d -exec chmod 755 {} \;
 # rsync -rtvuz -e ssh ./${name} ${public}/mxe/ --delete-before
 
 # LaTeX Beamer slides
@@ -156,8 +156,8 @@ mv -f ${name}.pdf ${name}-screen.pdf
 # system xelatex ${name}
 
 # Sphinx document
-theme=bootstrap
-# theme=pyramid
+# theme=bootstrap
+theme=pyramid
 system doconce format sphinx ${name} ${options}
 system doconce split_rst ${name}
 editfix ${name}.rst

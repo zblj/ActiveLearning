@@ -12,7 +12,7 @@ applications.
 !bhint
 In this tutorials we use the terminology taken from the user manual when
 referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
+"hardware":"http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html".
 !ehint
 
 
@@ -22,7 +22,11 @@ passive components that will allow us to observe phase shift with real
 signals. First we will look at a sin wave and the phase term in the
 argument. You should be familiar with the equation:
 
-$$f(t) = \sin(\omega t + \theta)$$
+!bt
+\begin{equation}
+f(t) = \sin(\omega t + \theta)
+\end{equation}
+!et
 
 $\omega$ sets the frequency of the sinusoidal wave as $t$ progresses and
 $\theta$ defines an offset in time which defines a phase shift in the
@@ -49,10 +53,11 @@ offset in time, which means no phase offset. Note that if we are using
 degrees $\omega t$, in a range from from 0 to $2 \pi$ or 0 to
 $360^{\circ}$ to yield the sine wave shown in Fig. 1.
 
-![Figure 1: 2 cycles of
-$\sin(t)$](img/Activity_1_Figure_1.png){.align-center}
+FIGURE: [./img/Activity_1_Figure_1.png, width=400, frac=0.8] 2 cycles of $\sin(t)$
 
-As a side note, what happens if $\omega t > 2\pi$?
+!bhint
+What happens if $\omega t > 2\pi$?
+!ehint
 
 Enter $2.5\pi$ in a calculator and see for yourself. As you should know,
 the sine function repeats every $2\pi$ radians or $360^{\circ}$. It is
@@ -73,8 +78,7 @@ second sine wave (orange) with an offset in time. Since the offset is
 constant, we see the original sine wave shifted in time by a value of
 $\theta$ which is $1/4$ of the period in this example.
 
-![Figure 2: green - $\sin(t)$, orange -
-$\sin(t + \pi/4)$.](img/Activity_1_Figure_2.png){.align-center}
+FIGURE: [./img/Activity_1_Figure_2.png, width=400, frac=0.8] Sinusoidal curves.
 
 $\theta$ is time offset or phase portion of Eq. (1). The phase angle
 defines offset in time and vice versa. Eq. (2) shows the relationship.
@@ -95,10 +99,14 @@ them. Eq. (2) gives the exact relationship.
 
 === Phase ===
 
-$$\theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi
-\, rad = \Delta t f 2 \pi \, rad;$$
+!bt
+\begin{equation}
+\theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi\, rad = \Delta t f 2 \pi \, rad;$$
+\end{equation}
+!et
 
 where $T$ is the period of the sine wave.
+
 
 **Naturally occurring time offsets in sine waves.**
 
@@ -154,8 +162,7 @@ voltage waveform ($dv/dt$) is maximal.
 The time difference can be expressed as a phase angle between the two
 waveforms as defined in Eq. (2).
 
-![Figure 3: Phase angle determination between voltage (V) and current
-(I).](img/Activity_1_Figure_3.png){.align-center}
+FIGURE: [./img/Activity_1_Figure_3.png, width=400, frac=0.8] Phase angle determination between voltage (V) and current (I).
 
 You probably have seen circuits made entirely from resistors. These
 circuits have only real impedance, which means that voltages throughout
@@ -167,6 +174,7 @@ and capacitors, will have complex impedances.
 
 In order to calculate the theoretical phase angle between voltage (V)
 and current (I) in an RC circuit:
+
 
 $$i(t) = \frac{v(t)}{Z_{tot}},$$
 
@@ -189,9 +197,9 @@ $$\theta = \arctan\left(\frac{b}{a}\right).$$
 You are going to use Red Pitaya\'s STEMlab board and the Oscilloscope &
 Signal generator application. User guide for starting the Red Pitaya
 STEMlab board can be found at
-[quickstart](http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html),
+"quickstart":"http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html",
 while Oscilloscope & Signal generator application is explained
-[here](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html).
+"here":"http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html".
 
 === Instructional Objectives ===
 
