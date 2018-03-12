@@ -6,10 +6,7 @@ __Abstract.__
 Red Pitaya's Electronic Active Learning lecture notes.
 
 !bnotice Zu Risiken und Nebenwirkungen
-Ein Skript ist eine Stichwortsammlung. Es ist nicht vollständig sondern stark durch meine Vorstellungen
-und Vorurteile über Elektronik und Schaltungsentwurf geprägt. Und da es, wie üblich, unter Zeitdruck
-entstanden ist, enthält es eine ganze Menge Fehler. Daher sollten Sie sich nicht auf das Skript verlassen
-sondern zusätzlich weitere Quellen zu Rate ziehen.
+
 !enotice
 
 # #include "Activity01_Phase.do.txt"
@@ -62,7 +59,7 @@ sondern zusätzlich weitere Quellen zu Rate ziehen.
 
 ## # #include "Activity25_MOSasSwitch.do.txt"
 
-# #include "Activity26_BJTCommonEmitterAmplifier.do.txt"
+## #include "Activity26_BJTCommonEmitterAmplifier.do.txt"
 
 ## # #include "Activity27_MOSCommonSourceAmplifier.do.txt"
 

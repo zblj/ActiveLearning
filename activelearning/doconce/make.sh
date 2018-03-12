@@ -69,11 +69,11 @@ style=bootswatch_spacelab
 system doconce format html ${name} --pygments_html_style=emacs \
        --html_style=${style} --html_links_in_new_window \
        --html_output=${html} --siunits ${options}
-system doconce split_html ${html}.html --nav_button=gray2,bottom \
-       --font_size=slides --copyright=titlepage
+# system doconce split_html ${html}.html --nav_button=gray2,bottom \
+#       --font_size=slides --copyright=titlepage
 
 # Construct AULIS folder for export
-mkdir -p ${name}/fig
+# mkdir -p ${name}/fig
 # cp ../../fig/${name}*.png ./${name}/fig
 # cp ../../fig/${name}*.jpg ./${name}/fig
 # cp ../../fig/${name}*.svg ./${name}/fig
@@ -122,7 +122,7 @@ mkdir -p ${name}/fig
 
 # PDF for screen viewing with an alternative look from classic LaTeX
 doconce format pdflatex ${name} --latex_font=cmbright \
-    --latex_preamble=preamble.tex --siunits \
+	--latex_preamble=preamble.tex --siunits \
 	--latex_admon=yellowicon '--latex_admon_color=yellow!5' \
 	--latex_fancy_header --latex_code_style=pyg \
 	--latex_section_headings=blue --latex_colored_table_rows=blue \
@@ -136,7 +136,7 @@ system pdflatex -shell-escape ${name}
 # system bibtex ${name}
 # system pdflatex -shell-escape ${name}
 system pdflatex -shell-escape ${name}
-mv -f ${name}.pdf ${name}-screen.pdf
+# mv -f ${name}.pdf ${name}-screen.pdf
 # system doconce lightclean
 
 # PDF for printing
