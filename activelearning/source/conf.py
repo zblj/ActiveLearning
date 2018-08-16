@@ -80,7 +80,7 @@ release = u'1.0'
 # Usually you set "language" from the command line for these cases.
 language = 'en'
 locale_dirs = ['locale/']
-gettext_compact = True
+gettext_compact = False
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -133,7 +133,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'alabaster' -- original Sphinx
+# html_theme = 'alabaster' -- original Sphinx
 import sphinx_rtd_theme
 
 html_theme = "sphinx_rtd_theme"
@@ -166,9 +166,9 @@ html_favicon = "img/favicon.ico"
 
 html_logo = "img/RedPitayaLogo.png"
 
-# The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
+# The name of an image file (relative to this directory) to use as a favicon
+# of the docs.  This file should be a Windows icon file (.ico) being 16x16 or
+# 32x32 pixels large.
 #
 # html_favicon = None
 

@@ -60,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Red Pitaya'
-copyright = u'2017, Red Pitaya d.d.'
+copyright = u'2018, Red Pitaya d.d.'
 author = u'Red Pitaya'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -80,7 +80,7 @@ release = u'1.0'
 # Usually you set "language" from the command line for these cases.
 language = 'de'
 locale_dirs = ['locale/']
-gettext_compact = True
+gettext_compact = False
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -133,7 +133,7 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-#html_theme = 'alabaster' -- original Sphinx
+# html_theme = 'alabaster' -- original Sphinx
 import sphinx_rtd_theme
 
 html_theme = "sphinx_rtd_theme"
@@ -166,9 +166,9 @@ html_favicon = "img/favicon.ico"
 
 html_logo = "img/RedPitayaLogo.png"
 
-# The name of an image file (relative to this directory) to use as a favicon of
-# the docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
+# The name of an image file (relative to this directory) to use as a favicon
+# of the docs.  This file should be a Windows icon file (.ico) being 16x16 or
+# 32x32 pixels large.
 #
 # html_favicon = None
 
@@ -260,21 +260,21 @@ htmlhelp_basename = 'doctutdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-     # The paper size ('letterpaper' or 'a4paper').
-     #
-     # 'papersize': 'letterpaper',
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    # 'papersize': 'letterpaper',
 
-     # The font size ('10pt', '11pt' or '12pt').
-     #
-     # 'pointsize': '10pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    # 'pointsize': '10pt',
 
-     # Additional stuff for the LaTeX preamble.
-     #
-     # 'preamble': '',
+    # Additional stuff for the LaTeX preamble.
+    #
+    # 'preamble': '',
 
-     # Latex figure (float) alignment
-     #
-     # 'figure_align': 'htbp',
+    # Latex figure (float) alignment
+    #
+    # 'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -282,7 +282,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'doctut.tex', u'RedPitaya',
-     u'Aktives Lernen mit Elektronik','How-to'),
+     u'Aktives Lernen mit Elektronik', 'How-to'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -339,7 +339,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'doctut', u'RedPitaya Elektronik Tutorials Entwicklung Ausbildung',
-    author, 'doctut', 'RedPitaya Elektronik Tutorials Entwicklung Ausbildung',
+     author, 'doctut', 'RedPitaya Elektronik Tutorials Entwicklung Ausbildung',
      'Verschiedenes'),
 ]
 
