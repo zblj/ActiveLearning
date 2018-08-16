@@ -31,7 +31,7 @@ formulas are:
 	V_2 = V_S \frac{R_2}{R_1 + R_2}
 
 	
-.. figure:: img/Activity_3_Figure_1.png
+.. figure:: img/Activity_03_Fig_01.png
    
    Figure 1: Voltage division.
 

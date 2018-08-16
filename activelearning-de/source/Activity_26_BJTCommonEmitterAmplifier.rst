@@ -64,7 +64,7 @@ of the output signal.
     video tutorial on `The Signal Path`_ Youtube channel. 
 
 
-.. image:: img/Activity_26_Figure_1.png
+.. image:: img/Activity_26_Fig_1.png
 
 Figure 1: Common-emitter amplifier configuration 
 
@@ -219,14 +219,14 @@ resistors available and those resistors where used for :math:`R_L` and
 components have been calculated and selected. 
 
 
-.. image:: img/Activity_26_Figure_2.png
+.. image:: img/Activity_26_Fig_2.png
 
 Figure 2: Common emitter amplifier with components values
 
 
 1. Build the circuit on from figure 2 on the breadboard.
 
-.. image:: img/Activity_26_Figure_3.png
+.. image:: img/Activity_26_Fig_3.png
 
 Figure 3: Common emitter amplifier on the breadboard
 
@@ -248,7 +248,7 @@ Figure 3: Common emitter amplifier on the breadboard
 7. In the measurements menu select P2P for IN1 and IN2
    
 
-.. image:: img/Activity_26_Figure_4.png
+.. image:: img/Activity_26_Fig_4.png
 
 Figure 4: Common emitter amplifier measurements
 

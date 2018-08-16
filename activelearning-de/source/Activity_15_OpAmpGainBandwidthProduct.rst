@@ -55,7 +55,7 @@ and :math:`BW` frequency bandwidth in this case given as :math:`BW = f_c`
 
 Figure 1, from the OP97 datasheet, graphically illustrates this relationship. When feedback is provided, as in an inverting_ amplifier_, the gain is given by G = –R2/R1; however, it must be recognized that the magnitude of this gain can never exceed the gain as given by the gain-bandwidth product. 
 
-.. image:: img/Activity_15_Figure_1.png
+.. image:: img/Activity_15_Fig_1.png
 
 Figure 1: OP97 Open-Loop Gain, Phase vs. Frequency
 
@@ -83,7 +83,7 @@ __________
 Build the circuit shown in figure 2 on your solderless breadboard to measure the frequency response of a inverting amplifier configured with a closed loop gain of 1000. Because the circuit’s gain is so high, the circuit needs to be driven with a very small input signal. In order to generate small signal with the STEMlab generator, a 1/1000 voltage_ divider_, [R3 - (R4||R1)], is used to reduce the 2V p2p sine signal to 2 mV p2p at the inverting amplifier input. R4 and R1 are effectively in parallel due to the “virtual ground” at pin 2. The parallel combination of R4 and R1 will be 50 Ω which with the 47 KΩ R3 results in a divider ratio close to 1/1000. 
 
 
-.. image:: img/Activity_15_Figure_2.png
+.. image:: img/Activity_15_Fig_2.png
 
 Figure 2: Inverting amplifier with gain of 1000 
 
@@ -104,14 +104,14 @@ Figure 2: Inverting amplifier with gain of 1000
 - select RUN button
 
 
-.. image:: img/Activity_15_Figure_3.png
+.. image:: img/Activity_15_Fig_3.png
 
 Figure 3: Typical OP97 Bode Plot Gain = 1000 
 
 From the figure 3 we can see that theory and OP97 datasheet data are consistent with the measurement. At gain = 1000 the BW is 900Hz.
 Set R2 to 10 kΩ, R3 = 4.7 kΩ, repeat the measurements and observe the results.
 
-.. image:: img/Activity_15_Figure_4.png
+.. image:: img/Activity_15_Fig_4.png
 
 Figure 3: Typical OP97 Bode Plot Gain = 100
 

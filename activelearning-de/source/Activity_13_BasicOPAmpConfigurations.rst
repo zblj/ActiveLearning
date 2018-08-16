@@ -55,7 +55,7 @@ Op amps must always be supplied with DC power and therefore it is best to config
 
 Included are the so-called “supply de-coupling” capacitor connected between the power-supply and ground rails. It is too early to discuss in great detail the purpose of these capacitors, but they are used to reduce noise on the supply lines and avoid parasitic oscillations. It is considered good practice in analog circuit design to always include small bypass capacitors close to the supply pins of each op amp in your circuit. 
 
-.. image:: img/Activity_13_Figure_1.png
+.. image:: img/Activity_13_Fig_1.png
 
 Figure 1: Power connections using 5V power pin from E2_ connector_ and LM317_ adjustable_ regulator_
 
@@ -64,7 +64,7 @@ It is good practice to have power suply indication. For that we use LED connecte
 Next, attach the +5 V supply and GND connections from the STEMlab board to the terminals on your breadboard. Use jumper wires to power the rails. Remember, the power-supply GND terminal will be our circuit “ground” reference. Once you have your supply connections you may want to use a DMM to probe the IC pins directly to insure that pin 7 is at +5 V, pin 4 at 0 V (ground) and check 2.5 power rail.
 Remember you must have the STEMlab powered up before measuring the voltages with the volt meter. 
 
-.. image:: img/Activity_13_Figure_2.png
+.. image:: img/Activity_13_Fig_2.png
 
 Figure 2: Power connections 
 
@@ -73,7 +73,7 @@ First Step: Unity-Gain Amplifier (Voltage Follower)
 
 Our first op amp circuit is a simple one, shown in figure 3. This is called a unity-gain buffer, or sometimes just a voltage follower, defined by the transfer function :math:`V_{out} = V_{in}`. At first glance it may seem like a useless device, but as we will show later it finds use because of its high **input resistance** and **low output resistance**.
 
-.. image:: img/Activity_13_Figure_3.png
+.. image:: img/Activity_13_Fig_3.png
 
 Figure 3: Unity Gain Follower
 
@@ -85,7 +85,7 @@ Using your breadboard and the STEMlab power supplies, construct the circuit show
 3. In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE
 4. In the measurement menu select “FREQ” , select IN1 and press DONE, select IN2 and press DONE 
 
-.. image:: img/Activity_13_Figure_4.png
+.. image:: img/Activity_13_Fig_4.png
 
 Figure 4: Unity Gain Follower measurements with an Oscilloscope & Signal Generator application.
 
@@ -98,7 +98,7 @@ Buffering Example
 The high input resistance of the op-amp (zero input current) means there is very little loading on the generator; i.e., no current is drawn from the source circuit and therefore no voltage drops on any internal (Thevenin) resistance. Thus in this configuration the op-amp acts like a “buffer” to shield the source from the loading effects from other parts of the system. From the perspective of the load circuit the buffer transforms a non-ideal voltage source into a nearly ideal source. figure 5 describes a simple circuit that we can use to demonstrate this feature of a unity-gain buffer. Here the buffer is inserted between a voltage-divider circuit and some “load” resistance, the 10K resistor. 
 
 
-.. image:: img/Activity_13_Figure_5.png
+.. image:: img/Activity_13_Fig_5.png
 
 Figure 5: Buffer Example 
 
@@ -123,7 +123,7 @@ Using your breadboard and the STEMlab power supplies, construct the circuit show
 **Case 3**
     Move the 1 KΩ load between pin 3 and +2.5 V, so that it is in parallel with the 4.7 KΩ resistor. Record the amplitudes (P2P) of :math:`V_{in}` (IN1) and :math:`V_{out}` 
 
-.. image:: img/Activity_13_Figure_6.png
+.. image:: img/Activity_13_Fig_6.png
 
 Figure 6: Buffer Example case 1
 
@@ -139,7 +139,7 @@ Inverting Amplifier
 
 Figure 7 shows the conventional inverting amplifier configuration with a 10 KΩ “load” resistor at the output. 
 
-.. image:: img/Activity_13_Figure_7.png
+.. image:: img/Activity_13_Fig_7.png
 
 Figure 7: Inverting amplifier configuration 
 
@@ -155,7 +155,7 @@ Now assemble the inverting amplifier circuit shown in figure 7 using R2 = 4.7kΩ
 7. In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE
 8. In the measurement menu select “MEAN” , select IN1 and press DONE, select IN2 and press DONE
 
-.. image:: img/Activity_13_Figure_8.png
+.. image:: img/Activity_13_Fig_8.png
 
 Figure 8: Inverting amplifier configuration measurements
 
@@ -171,7 +171,7 @@ Non-Inverting Amplifier
 
 The non-inverting amplifier configuration is shown in figure 9. Like the unity-gain buffer, this circuit has the (usually) desirable property of high input resistance, so it is useful for buffering non-ideal sources, however with a gain greater than one. 
 
-.. image:: img/Activity_13_Figure_9.png
+.. image:: img/Activity_13_Fig_9.png
 
 Figure 9: Non-Inverting amplifier configuration measurements
 
@@ -188,7 +188,7 @@ Assemble the non-inverting amplifier circuit shown in figure 9. Remember to shut
 8. In the measurement menu select “MEAN” , select IN1 and press DONE, select IN2 and press DONE
 
 
-.. image:: img/Activity_13_Figure_10.png
+.. image:: img/Activity_13_Fig_10.png
 
 Figure 10: Non-Inverting amplifier configuration measurements
 
@@ -209,13 +209,13 @@ Summing Amplifier Circuit
 
 The circuit of figure 11 is a basic inverting amplifier with four inputs, called a “summing” amplifier. 
 
-.. image:: img/Activity_13_Figure_11.png
+.. image:: img/Activity_13_Fig_11.png
 
 Figure 11: Summing Amplifier configuration
 
 With the power disconnected, build circuit as shown in figure 11 and continue with measurements.
 
-.. image:: img/Activity_13_Figure_12.png
+.. image:: img/Activity_13_Fig_12.png
 
 Figure 12: Summing Amplifier circuit on the breadboard
 
@@ -229,7 +229,7 @@ Figure 12: Summing Amplifier circuit on the breadboard
 5. For the stable acquisition set the trigger level in TRIGGER menu to -0.5V and select NORMAL.
 6. In the measurement menu select “P2P” , select IN1 and press DONE, select IN2 and press DONE
 
-.. image:: img/Activity_13_Figure_13.png
+.. image:: img/Activity_13_Fig_13.png
 
 Figure 13: Summing Amplifier measurements
 
@@ -255,7 +255,7 @@ Using an Op-Amp as a Comparator
 
 The high intrinsic gain of the op-amp and the output saturation effects can be exploited by configuring the op-amp as a comparator as in figure 14. This is essentially a binary-state decision-making circuit: if the voltage at the “+” terminal is greater than the voltage at the “-” terminal, :math:`V_{in}` > :math:`V_{ref}` , the output goes “high” (saturates at its maximum value). Conversely if :math:`V_{in}` < :math:`V_{ref}` the output goes “low”. The circuit compares the voltages at the two inputs and generates an output based on the relative values. Unlike all the previous circuits there is no feedback between the input and output; we say that the circuit is operating “open-loop”. 
 
-.. image:: img/Activity_13_Figure_14.png
+.. image:: img/Activity_13_Fig_14.png
 
 Figure 14: Op-Amp as Comparator 
 
@@ -269,7 +269,7 @@ With the power disconnected, build circuit as shown in figure 14 and continue wi
 4. On the left bottom of the screen be sure that IN1 V/div is set to 200mV/div and IN2 to 2V/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
 5. For the stable acquisition set the trigger level in TRIGGER menu to 0.25V and select NORMAL.
 
-.. image:: img/Activity_13_Figure_15.png
+.. image:: img/Activity_13_Fig_15.png
 
 Figure 15: Op-Amp as Comparator measurements
 

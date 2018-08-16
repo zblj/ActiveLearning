@@ -29,7 +29,7 @@ _________________
 
 The basic difference opamp circuit is shown in figure 1.  To solve for the transfer function :math:`V_{out} = f(V_1,V_2)` of the difference amplifier we can use a superposition principle.
 
-.. image:: img/Activity_16_Figure_1.png
+.. image:: img/Activity_16_Fig_1.png
 
 Figure 1: Basic Difference Amplifier
 
@@ -75,14 +75,14 @@ With voltage divider (R3, R4) added, for circuit shown on figure 2 and from equa
 .. math::	
 	        V_{out} = 2V_2 - V_1 = \frac{1}{2} 2 V_2^* - V_1 = V_2^* - V_1 = OUT_2 - OUT_1  \quad (5)
 
-.. image:: img/Activity_16_Figure_2.png
+.. image:: img/Activity_16_Fig_2.png
 
 Figure 2: Difference Amplifier
 
 .. warning::
       Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double check your circuit. The  -3.3V and +3.3V  voltage supply pins do not have  short circuit handling and they can be damaged in case of short circuit.
 
-.. image:: img/Activity_16_Figure_3.png
+.. image:: img/Activity_16_Fig_3.png
 
 Figure 3: Difference Amplifier on the breadboard
 
@@ -95,7 +95,7 @@ Figure 3: Difference Amplifier on the breadboard
 7. On the left bottom of the screen be sure that OUT1 V/div and OUT2 V/div are both set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
 8. In the measurement menu select “MAX” , select IN2 and press DONE
 
-.. image:: img/Activity_16_Figure_4.png
+.. image:: img/Activity_16_Fig_4.png
 
 Figure 4: Difference Amplifier measurements
 
@@ -106,7 +106,7 @@ Since both input signals are sinusoidal the only artefact of the difference ampl
 
 1. In the OUT2 settings menu select SQUARE waveform and observe results
 
-.. image:: img/Activity_16_Figure_5.png
+.. image:: img/Activity_16_Fig_5.png
 
 Figure 5: Difference Amplifier measurements - Different waveforms of OUT1 and OUT2
 

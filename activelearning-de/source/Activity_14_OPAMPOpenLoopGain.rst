@@ -53,7 +53,7 @@ precision op amp this gain can be very high, on the order of 160 dB
 (100 million) or more. The open loop gain of the OP27_ amplifier is
 arround 1.8 million.  
 
-.. figure:: img/Activity_14_Figure_1.png
+.. figure:: img/Activity_14_Fig_1.png
 
    Figure 1: OP27 datasheet and Open Loop Gain value marked
 
@@ -158,7 +158,7 @@ In our case R3 = 97.3k :math:`\Omega` and R2 = 99.7 :math:`\Omega`
    case of short circuit. 
 
 
-.. figure:: img/Activity_14_Figure_2.png
+.. figure:: img/Activity_14_Fig_2.png
 
    Figure 2: Voltage supply connections and  test circuit
 
@@ -186,7 +186,7 @@ Build circuit in the breadboard and set R5 to POS1.
 
 **Connect OUT1 to IN1 and set probe attenuations to x1.**
 
-.. figure:: img/Activity_14_Figure_3.png
+.. figure:: img/Activity_14_Fig_3.png
 
    Figure 3: Test circuit. R5 on POS1 (look at Figure 2)
 
@@ -204,7 +204,7 @@ Build circuit in the breadboard and set R5 to POS1.
 5. **Readout MEAN(IN2): In our case it is -34.2mV**
 
 
-   .. figure:: img/Activity_14_Figure_4.png
+   .. figure:: img/Activity_14_Fig_4.png
 
    Figure 4: Measurements of :math:`V_{out}` when  R5 is set to POS1 (look at Figure 2)
 
@@ -214,7 +214,7 @@ Step 2: S is on POS2 (Figure 2)
 
 Build circuit on the breadboard and set R5 to POS2.
 
-.. figure:: img/Activity_14_Figure_5.png
+.. figure:: img/Activity_14_Fig_5.png
 
    Figure 5: Test circuit. R5 on POS2 (look at Figure 2)
 
@@ -227,7 +227,7 @@ Build circuit on the breadboard and set R5 to POS2.
 
 3. **Readout MEAN(IN2): In our case it is -34.8mV**
 
-   .. figure:: img/Activity_14_Figure_6.png
+   .. figure:: img/Activity_14_Fig_6.png
 
    Figure 6: Measurements of :math:`V_{out}` when  R5 is set to POS2 (look at Figure 2)
 

@@ -46,7 +46,7 @@ For storage capacitor :math:`C_1` and electrolytic high capacitance capacitor sh
 An DC-DC boost converter used in this experiment is shown in figure 1.
 
 
-.. image:: img/Activity_28_Figure_1.png
+.. image:: img/Activity_28_Fig_1.png
 
 Figure 1: DC to DC boost converter 
 
@@ -82,7 +82,7 @@ _____________
 1. Following instructions above and schematics from figure 1 build the circuit on the breadboard.
 
 
-.. image:: img/Activity_28_Figure_2.png
+.. image:: img/Activity_28_Fig_2.png
 
 Figure 2: DC - DC boost converter on the breadboard
 
@@ -95,7 +95,7 @@ Figure 2: DC - DC boost converter on the breadboard
 
 At this point, when OUT1 switching signal is disabled the DC-DC boost converter is not functional. Transistor :math:`M_1` is turned off (open circuit) and battery voltage is, across inductor :math:`L_1` and diode :math:`D_1` , transfered to the load side (point 5, figure 1). For DC signals (no switching) the :math:`L_1` inductor behaves as a short circuit therefore output voltage is the battery voltage decreased by :math:`D_1` diode forward voltage: :math:`V_{out} = V_{battery} - V_{diode}`. This state is shown in the measurements on figure 3. As we expected the :math:`LED_1` and :math:`LED_2` are turned off since output voltage is below LEDs forward voltage (2x1.8V).
 
-.. image:: img/Activity_28_Figure_3.png
+.. image:: img/Activity_28_Fig_3.png
 
 Figure 3: DC - DC boost converter is turned off
 
@@ -105,7 +105,7 @@ Figure 3: DC - DC boost converter is turned off
 
 At this point when OUT1 switching signal is enabled the DC-DC boost converter is functional and behaves as described in theory above. Output voltage is boosted up to approximately 5V and LEDs are turned ON. This state is shown on figure 4. As we can see from the measurements some ripple appears at battery and output voltage.Output voltage ripple is caused by battery voltage ripple and transistor :math:`M_1` switching. Battery voltage ripple is due to fact that battery is not ideal voltage source and when :math:`M_1` is turned on, current drown from battery is causing voltage drop.    
 
-.. image:: img/Activity_28_Figure_4.png
+.. image:: img/Activity_28_Fig_4.png
 
 Figure 4: DC - DC boost converter is turned on
 
@@ -120,7 +120,7 @@ Figure 4: DC - DC boost converter is turned on
 13. In the TRIGGER menu select NORMAL and set trigger level to 3.0V
 14. Set t/div value to 20us/div (You can set t/div using horizontal +/- controls)
 
-.. image:: img/Activity_28_Figure_5.png
+.. image:: img/Activity_28_Fig_5.png
 
 Figure 5: M1 switching voltages
 
@@ -136,8 +136,8 @@ Drain signal corresponds to the "open/closed" states of the transistor :math:`M_
 18. In the OUT1 menu settings change duty cycle from :math:`30-80 \%` and observe results.
 
 
-.. image:: img/Activity_28_Figure_6.png
-.. image:: img/Activity_28_Figure_7.png
+.. image:: img/Activity_28_Fig_6.png
+.. image:: img/Activity_28_Fig_7.png
 
 Figure 5: Above: Output voltage at 40% duty cycle. Below: Output voltage at 80% duty cycle
 

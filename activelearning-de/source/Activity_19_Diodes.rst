@@ -62,7 +62,7 @@ denotes an LED as in the symbol on the right. Arrows pointing toward
 the diode would represent a photo diode light detector.
 
 
-.. image:: img/Activity_19_Figure_1.png
+.. image:: img/Activity_19_Fig_1.png
 
 Figure 1: Diode schematic symbols 
 
@@ -83,7 +83,7 @@ maximum reverse-bias potential that can be applied before
 entering the Zener region is called the Peak Inverse Voltage
 (PIV) or the Peak Reverse Voltage (PRV).  
 
-.. image:: img/Activity_19_Figure_2.png
+.. image:: img/Activity_19_Fig_2.png
 
 Figure 2: Forward and reverse zener diode :math:`I/V` characteristic
 
@@ -172,7 +172,7 @@ on the wavelength of the emitted light. The LED is also built in a
 special transparent package as shown in figure 3.
 
 
-.. image:: img/Activity_19_Figure_3.png
+.. image:: img/Activity_19_Fig_3.png
 
 Figure 3: Light emitting diodes 
 
@@ -241,7 +241,7 @@ as:
 
    V_d = IN_2
 
-.. image:: img/Activity_19_Figure_4.png
+.. image:: img/Activity_19_Fig_4.png
 
 Figure 4: Connection diagram for diode I vs. V curves 
 
@@ -287,7 +287,7 @@ Procedure - time domain measurements
 
 1. Build the circuit from figure 4 on the breadboard 
 
-.. image:: img/Activity_19_Figure_5.png
+.. image:: img/Activity_19_Fig_5.png
 
 Figure 5: Connections on the breadboard  
 
@@ -314,7 +314,7 @@ Figure 5: Connections on the breadboard
    
 
 
-.. image:: img/Activity_19_Figure_6.png
+.. image:: img/Activity_19_Fig_6.png
 
 Figure 6: Voltages and current on the diode (Time dependent)  
 
@@ -333,7 +333,7 @@ Procedure - VI characteristics measurements
 For this task we will use Jupyter Notebook Web application. 
 How to start Jupyter Notebook and create new project is shown on figure 7 flow chart.
 
-.. image:: img/Activity_19_Figure_7.png
+.. image:: img/Activity_19_Fig_7.png
 
 Figure 7: Creating new Jupyter notebook
 
@@ -438,7 +438,7 @@ only cell 2 for starting measurements again.
 After running the code above you should get diode VI characteristic as
 is shown on figure 8. 
 
-.. image:: img/Activity_19_Figure_8.png
+.. image:: img/Activity_19_Fig_8.png
 
 Figure 8: Didoes VI characteristic measured using  Jupyter Notebook
 

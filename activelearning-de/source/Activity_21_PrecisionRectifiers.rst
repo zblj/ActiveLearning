@@ -39,7 +39,7 @@ As we have seen in the simple_ rectifier_ circuits constructed with diodes, the 
 The inverting op-amp circuit can be converted into an “ideal” (linear precision) half-wave rectifier by adding two diodes as shown in figure 2. For the negative half of the input diode D1 is reverse biased and diode D2 is forward biased and the circuit operates as a conventional inverter with a gain of -1. For the positive half of the input, diode D1 is forward biased, closing the feedback around the amplifier. Diode D2 is reverse biased disconnecting the output from the amplifier. The output will be at the virtual ground potential ( - input terminal ) through the 10kΩ resistor. 
 
 
-.. image:: img/Activity_21_Figure_1.png
+.. image:: img/Activity_21_Fig_1.png
 
 Figure 1: Connection diagram for precision half-wave rectifier 
 
@@ -48,7 +48,7 @@ Procedure
 
 1. Build the circuit from figure 1 on the breadboard 
 
-.. image:: img/Activity_21_Figure_2.png
+.. image:: img/Activity_21_Fig_2.png
 
 Figure 2: Connections on the breadboard
 
@@ -60,7 +60,7 @@ Figure 2: Connections on the breadboard
 5. Set t/div value to 2ms/div (You can set t/div using horizontal +/- controls)
 
 
-.. image:: img/Activity_21_Figure_3.png
+.. image:: img/Activity_21_Fig_3.png
 
 Figure 3: Precision half-wave rectifier measurements
 
@@ -90,7 +90,7 @@ We can modify the half wave rectifier to make full wave rectifier or absolute va
 The circuit shown in figure 4 is an absolute value circuit, often called a precision full-wave rectifier. It should operate like a full wave rectifier circuit constructed with ideal diodes ( the voltage across the diode, in forward conduction, equals 0 volts). The actual diodes used in the circuit will have a forward voltage of around 0.6 V. 
 
 
-.. image:: img/Activity_21_Figure_4.png
+.. image:: img/Activity_21_Fig_4.png
 
 Figure 4: Precision full-wave rectifier
 
@@ -103,7 +103,7 @@ Procedure
 .. warning::
   	Before connecting the circuit to the STEMlab -3.3V and +3.3V pins double check your circuit. The -3.3V and +3.3V voltage supply pins do not have short circuit handling and they can be damaged in case of short circuit.
 
-.. image:: img/Activity_21_Figure_5.png
+.. image:: img/Activity_21_Fig_5.png
 
 Figure 5: Connections on the breadboard
 
@@ -115,7 +115,7 @@ Figure 5: Connections on the breadboard
 5. Set t/div value to 2ms/div (You can set t/div using horizontal +/- controls)
 
 
-.. image:: img/Activity_21_Figure_6.png
+.. image:: img/Activity_21_Fig_6.png
 
 Figure 6: Precision full-wave rectifier measurements - Absolute value circuit
 

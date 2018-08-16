@@ -54,14 +54,14 @@ so called threshold voltage :math:`V_{TH}` is around 2.4V.This mean when the Gat
     This configuration of NMOS will effectively produce a diode with forward drop voltage equal to the :math:`V_{TH}`
 
 
-.. image:: img/Activity_23_Figure_1.png
+.. image:: img/Activity_23_Fig_1.png
 
 Figure 1:  ZVN211_ specifications
 
 On the breadboard build the circuit from figure 2 and proceed withe the measurements.
 
 
-.. image:: img/Activity_23_Figure_2.png
+.. image:: img/Activity_23_Fig_2.png
 
 Figure 2:  NMOS diode connection diagram 
 
@@ -71,7 +71,7 @@ Procedure
 
 1. Build the circuit from figure 1 on the breadboard. Set R1=2.2kΩ, R2=10kΩ and R3=1kΩ. For M1 take ZVN211.
 
-.. image:: img/Activity_22_Figure_3.png
+.. image:: img/Activity_22_Fig_3.png
 
 Figure 3:   NMOS diode connection on the breadboard 
 
@@ -91,7 +91,7 @@ Figure 3:   NMOS diode connection on the breadboard
 
 
 
-.. image:: img/Activity_23_Figure_4.png
+.. image:: img/Activity_23_Fig_4.png
 
 Figure 4: NMOS diode connection measurements
 
@@ -105,7 +105,7 @@ Since NMOS can behave as an diode with forward voltage equal to the :math:`V_{TH
      The Jupyter_ Notebook_ is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. They have also ensured support for the Jupyter application with Red Pitaya libraries enabling control of all features of the STEMlab boards such as: signal acquisition, signal generation, digital signal control, communication etc. The Jupyter Notebook is started on the same way as any other applications. After starting Jupyter application a web based notebook is opened.  This combination of the notebook, STEMlab and Python features makes the STEMlab an excellent tool for prototyping and quick programing. Since Jupyter Notebook enables text, equation and picture editing this is a perfect tool for tutorials, examples and ect. 
 
 
-.. image:: img/Activity_19_Figure_7.png
+.. image:: img/Activity_19_Fig_7.png
 
 Figure 5: Creating new Jupyter notebook
 
@@ -203,7 +203,7 @@ For measuring :math:`VI` curve an "XY" plot is required where x-axis will repres
 
 After running the code above you should get diode VI characteristic as is shown on figure 5.
 
-.. image:: img/Activity_23_Figure_5.png
+.. image:: img/Activity_23_Fig_5.png
 
 Figure 6: NMOS VI characteristic measured using Jupyter Notebook
 
@@ -214,7 +214,7 @@ Same measurements can be also don for PMOS transistor. With PMOS transistor the 
 NMOS one. PMOS diode configuration is shown on figure 7. 
 
 
-.. image:: img/Activity_23_Figure_6.png
+.. image:: img/Activity_23_Fig_6.png
 
 Figure 7:  PMOS diode connection diagram 
 
@@ -239,7 +239,7 @@ Procedure
 9. Under TRIGER settings, set trigger level to 1V
 
 
-.. image:: img/Activity_23_Figure_7.png
+.. image:: img/Activity_23_Fig_7.png
 
 Figure 8: PMOS diode connection measurements
 

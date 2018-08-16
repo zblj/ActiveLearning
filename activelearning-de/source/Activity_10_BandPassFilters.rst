@@ -78,7 +78,7 @@ All signal frequencies :math:`f` below :math:`f_L` and above
 the filter.
       
 
-.. figure:: img/Activity_10_Figure_1.png
+.. figure:: img/Activity_10_Fig_1.png
 
    Figure 1: Band Pass Filter circuit 
 
@@ -94,7 +94,7 @@ to operate within. Figure 2 shows a typical frequency response of a
 Band Pass filter.
 
 
-.. figure:: img/Activity_10_Figure_2.png
+.. figure:: img/Activity_10_Fig_2.png
 
    Figure 2: Band Pass Filter Frequency Response
 
@@ -120,7 +120,7 @@ Procedure
    solderless breadboard, with the component values R1 = 1 KΩ, C1 =
    0.047 µF, L1 =22 mH.
 
-   .. figure:: img/Activity_10_Figure_3.png
+   .. figure:: img/Activity_10_Fig_3.png
 
    Figure 3: Band Pass Filter on solderless breadboard
 
@@ -147,7 +147,7 @@ Procedure
 
    - select RUN button
 
-   .. figure:: img/Activity_10_Figure_4.png
+   .. figure:: img/Activity_10_Fig_4.png
 
    Figure 4: Band Pass Filter **measured** Frequency Response
 

@@ -1,23 +1,32 @@
 Kirchhoff's Voltage and Current Laws
-####################################
+====================================
 
 Objective
-_________
+---------
 
-The objective of this Lab activity is to verify Kirchhoff's Voltage Law (KVL) and Kirchhoff's Current Law (KCL) using mesh and  nodal analysis of the given circuit.
+The objective of this Lab activity is to verify Kirchhoff's Voltage
+Law (KVL) and Kirchhoff's Current Law (KCL) using mesh and  nodal
+analysis of the given circuit. 
 
 Notes
-_____
+-----
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
-In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_. Extension connector pin used as 5V voltage source are show in the documentation here_.
+In this tutorials we use the terminology taken from the user manual
+when referring to the connections to the Red Pitaya STEMlab board
+hardware_. Extension connector pin used as 5V voltage source are show
+in the documentation here_. 
 
 Background
-__________
+----------
 
-1. Kirchhoff's Voltage Law states that the algebraic sum of all the voltages around any closed path (loop or mesh) is zero. If we define the voltages across each resistor R1 through R5 as V1 through V5, applying Kirchhoff's voltage law to the first and the second loops in the circuit shown in figure 1 yields: 
+1. Kirchhoff's Voltage Law states that the algebraic sum of all the
+   voltages around any closed path (loop or mesh) is zero. If we
+   define the voltages across each resistor R1 through R5 as V1
+   through V5, applying Kirchhoff's voltage law to the first and the
+   second loops in the circuit shown in figure 1 yields:  
 
 Loop 1
 
@@ -29,11 +38,15 @@ Loop 2
 .. math::
 		- V_2 + V_3 + V_4 = 0
 
-.. figure:: img/Activity_2_Figure_1.png
+.. figure:: img/Activity_02_Fig_01.png
 
 	figure 1: Kirchhoff's Voltage Law
 
-2. Kirchhoff's Current Law states that the algebraic sum of all the currents at any node is zero. If we define the currents through each resistor R1 through R5 as I1 through I5, applying Kirchhoff's current law to the first four nodes in the circuit shown in figure1 yields the following equations; 
+2. Kirchhoff's Current Law states that the algebraic sum of all the
+   currents at any node is zero. If we define the currents through
+   each resistor R1 through R5 as I1 through I5, applying Kirchhoff's
+   current law to the first four nodes in the circuit shown in figure1
+   yields the following equations; 
 
 *Node a:*
 	
@@ -61,7 +74,7 @@ Loop 2
 
 
 Materials
-__________
+---------
 
 Red Pitaya STEMlab 125-14 or STEMlab 125-10 
 
@@ -73,7 +86,7 @@ Various Resistors:
 
 
 Procedure
-_________
+---------
 
 
 Step 1. 
@@ -91,40 +104,50 @@ Step 1.
 
 Step 2. 
 	
-	Use color_coding_tool_ to select correct resistors from your kit. Use Multimeter, resistance measurements to check actual resistor values.
+	Use color_coding_tool_ to select correct resistors from your
+	kit. Use Multimeter, resistance measurements to check actual
+	resistor values. 
 
 Step 3. 
 
-	Instead of voltage source “V\ :sub:`s`\” shown on the Figure 1 use the STEMlab voltage pins on extension connector E2_. Connect the 5V pin to node **a** and connect node **e** to **GND** pin.
+	Instead of voltage source “V\ :sub:`s`\” shown on the Figure 1
+	use the STEMlab voltage pins on extension connector
+	E2_. Connect the 5V pin to node **a** and connect node **e**
+	to **GND** pin. 
 
 
-.. figure:: img/Activity_2_Figure_2.png
+.. figure:: img/Activity_02_Fig_02.png
 	
 	    figure 2: Power connections
 
 Circuit on the breadboard is shown in picture bellow.
 
-.. figure:: img/Activity_2_Figure_3.png
+.. figure:: img/Activity_02_Fig_03.png
 	
 	figure 3: Resistors circuit from close
 
 Step 4. 
 	
-	Accurately measure all voltages and calculate currents in the circuit using the Oscilloscope application.
+	Accurately measure all voltages and calculate currents in the
+	circuit using the Oscilloscope application. 
 	
-	Measuring voltage drop across desired resistor is done in such way that Oscilloscope probe of IN1 is connected to the one side of the resistor and Oscilloscope probe of IN2 is connected to another side of the resistor. Voltage difference VIN1-VIN2 will give an voltage on the measured resistor.
+	Measuring voltage drop across desired resistor is done in such
+	way that Oscilloscope probe of IN1 is connected to the one
+	side of the resistor and Oscilloscope probe of IN2 is
+	connected to another side of the resistor. Voltage difference
+	VIN1-VIN2 will give an voltage on the measured resistor. 
 	
 	- Set probes attenuation to x10
 	
 	- Connect probes to the desired resistor 
 
-.. figure:: img/Activity_2_Figure_4.png
+.. figure:: img/Activity_02_Fig_04.png
 
 	figure 4:  Measureing circuit
 	
 	- Start Oscilloscope application 
 	
-.. figure:: img/Activity_2_Figure_5.png
+.. figure:: img/Activity_02_Fig_05.png
 
 	figure 4:  Osciloscope application
 	
@@ -134,7 +157,9 @@ Step 4.
 
 	- In the measurement menu select “MEAN” , select IN2 and press DONE
 
-	 After clicking “done” the measurements of the mean value of the IN1 and IN2 will be shown. Use this measurement to calculate voltage on R1.
+	 After clicking “done” the measurements of the mean value of
+	 the IN1 and IN2 will be shown. Use this measurement to
+	 calculate voltage on R1. 
 
 V\ :sub:`R1`\ = MEAN( IN1 ) - MEAN( IN2 )
 
@@ -142,11 +167,15 @@ I\ :sub:`R1`\ = V\ :sub:`R1`\ / R\ :sub:`1`\.
 
 .. note:: 
 	
-	To obtain correct voltages signes, when performing measurement always work in the same direction: for example, connect IN1 probe on the side of the resistor where marked arrow begins (Figure 1) 
+	To obtain correct voltages signes, when performing measurement
+	always work in the same direction: for example, connect IN1
+	probe on the side of the resistor where marked arrow begins
+	(Figure 1)  
 
 Step 5. 
 
-	Record the measurements in a tabular form containing the measured voltage and current values as shown below.
+	Record the measurements in a tabular form containing the
+	measured voltage and current values as shown below. 
 
  +------------------------------+-------------------+----------------+-------------+-------------+	
  |	Branch                  |  current/voltage  |   V [volts ]   |   I  [mA]   |     R [KΩ]  |    
@@ -176,7 +205,9 @@ Step 5.
 
 
 Questions
-_________
+---------
 
-1. Calculate the ideal voltages and currents for each element in the circuit and compare them to the measured values.
-2. Compute the percentage error in the two measurements and provide a brief explanation for the error.
+1. Calculate the ideal voltages and currents for each element in the
+   circuit and compare them to the measured values. 
+2. Compute the percentage error in the two measurements and provide a
+   brief explanation for the error. 

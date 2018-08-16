@@ -35,7 +35,7 @@ Directions
 
 Set up the breadboard with OUT1 and IN2 channels attached to one end of the diode. The other end of the diode is connected to one end of the 1kΩ load resistor as shown in figure 2. The other end of the resistor is connected to the GND rail. Input of scope channel IN2 is connected to the end of the resistor not connected to the GND rail.
 
-.. image:: img/Activity_20_Figure_1.png
+.. image:: img/Activity_20_Fig_1.png
 
 Figure 1: Connection diagram for half wave diode rectifierc
 
@@ -44,7 +44,7 @@ From the configuration above it follows that input ac voltage and rectified "dc"
 
 1. Build the circuit from figure 1 on the breadboard 
 
-.. image:: img/Activity_20_Figure_2.png
+.. image:: img/Activity_20_Fig_2.png
 
 Figure 2: Connections on the breadboard  
 
@@ -55,7 +55,7 @@ Figure 2: Connections on the breadboard
 5. On the left bottom of the screen be sure that  IN2 V/div is set to 200mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls)
 6. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
 
-.. image:: img/Activity_20_Figure_3.png
+.. image:: img/Activity_20_Fig_3.png
 
 Figure 3:  Half wave diode rectifier measurements
 
@@ -76,7 +76,7 @@ Here we will investigate the use of two diodes as a full wave rectifier.
 
 Again using 1N914 diodes, set up the breadboard with OUT1 attached to one end of the first diode, D1, and OUT2 to one end of the second diode, D2. Both diodes should face in the same direction as shown in figure 5. The other end of each diode is connected to one end of the 1kΩ load resistor RL. The other end of the resistor is connected to the GND V rail. 
 
-.. image:: img/Activity_20_Figure_4.png
+.. image:: img/Activity_20_Fig_4.png
 
 Figure 4: Connection diagram for full wave diode rectifier 
 
@@ -85,7 +85,7 @@ Procedure
 
 1. Build the circuit from figure 4 on the breadboard 
 
-.. image:: img/Activity_20_Figure_5.png
+.. image:: img/Activity_20_Fig_5.png
 
 Figure 5: Connections on the breadboard
 
@@ -102,7 +102,7 @@ Figure 5: Connections on the breadboard
 
 If both 0 degree and 180 degree phases of the AC inputs signal (OUT1 and OUT2) are available, then a second diode can fill in the missing half-wave of the input and produce the full-wave rectified signal. Again the forward voltage of the diodes will be apparent and the output waveform will not come to a sharp point at the zero crossing due to the non-zero turn on voltage of the diodes. 
 
-.. image:: img/Activity_20_Figure_6.png
+.. image:: img/Activity_20_Fig_6.png
 
 Figure 6: Full wave rectifier measurements
 
@@ -122,7 +122,7 @@ Bridge rectifier is a full wave rectifier and we should expect same signals as s
 bridge rectifier fill in the negative half-wave without using additional voltage source shifted by 180 deg. Instead of that 
 bridge rectifier use 4 diodes in order to make full wave rectifier without need for additional voltage source.
 
-.. image:: img/Activity_20_Figure_7.png
+.. image:: img/Activity_20_Fig_7.png
 
 Figure 7: Bridge full wave diode rectifier 
 
@@ -133,7 +133,7 @@ Figure 7: Bridge full wave diode rectifier
 On figure 8 the bridge rectifier configuration using transformer is shown. This is the most common usage of the bridge rectifier. As we can see from the figure 8 the points 1 and 3 of the bridge rectifier are exposed to the transformer differential voltage enabling correct operation of the rectifier. Point 3 will not be put to the GND when IN2 probe is connected and D3 will not be bypassed since "AC" (transformer) side is isolated.  
 
 
-.. image:: img/Activity_20_Figure_8.png
+.. image:: img/Activity_20_Fig_8.png
 
 Figure 8: Bridge full wave diode rectifier using transformer
 
@@ -145,7 +145,7 @@ Procedure
 
 1. Build the circuit from figure 8 on the breadboard 
 
-.. image:: img/Activity_20_Figure_9.png
+.. image:: img/Activity_20_Fig_9.png
 
 Figure 9: Bridge rectifier on the breadboard
 
@@ -160,7 +160,7 @@ Figure 9: Bridge rectifier on the breadboard
    channel and using vertical +/- controls
 8. Set t/div value to 2ms/div (You can set t/div using horizontal +/- controls)
 
-.. image:: img/Activity_20_Figure_10.png
+.. image:: img/Activity_20_Fig_10.png
 
 Figure 10: Bridge rectifier measurements
 
