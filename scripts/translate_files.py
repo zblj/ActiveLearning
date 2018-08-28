@@ -11,7 +11,7 @@ dest = cwd + '/activelearning-de/source/'
 
 # Grep all rst files for translation
 dir_list = os.listdir(src)
-rst_files = [ f for f in dir_list if f.endswith('.rst')]
+rst_files = [f for f in dir_list if f.endswith('.rst')]
 gs = goslate.Goslate()
 
 # Delete index.rst

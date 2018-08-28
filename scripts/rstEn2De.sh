@@ -1,7 +1,10 @@
-#!/bin/sh
-src = ./activelearning/source 
-dest = ./activelearning-de/source
-cd ${src}
-for file in Activity_*.rst do
-    trans :de file://${file} > "${dest}/${file}"
+#!/bin/bash
+SRC="${HOME}/sci.comp/redpitaya/ActiveLearning/activelearning/source" 
+DEST="${HOME}/sci.comp/redpitaya/ActiveLearning/activelearning-de/source"
+cd ${SRC}
+for FILE in Activity_*.rst 
+do
+    trans -sl en -tl de -i ${FILE}  -o ${DEST}/${FILE}
+#    echo ${FILE}
+#    cp -f ${FILE} ${DEST}/${FILE}
 done
