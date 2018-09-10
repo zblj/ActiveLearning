@@ -109,7 +109,7 @@ Im Moment sind die Auswirkungen davon nicht zu verstehen Labor. Sie werden diese
 .. math::
    Z_C = \frac{1}{j \omega C},
 
-   Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
+Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
 
 
 Eine subtile Sache über Gl. (4) ist der imaginäre Operator :math:`j`. Wenn wir auf einen Widerstand schauen, d. H. Es befindet sich kein imaginärer Operator darin die Gleichung für die Impedanz. Der sinusförmige Strom durch a Widerstand und die Spannung über einen Widerstand haben keinen Zeitversatz zwischen sie, als die Beziehung ist wirklich real. Der einzige Unterschied ist in der Amplitude. Die Spannung ist sinusförmig und ist in Phase mit der aktuelle Sinuskurve. Dies ist bei einem Kondensator nicht der Fall. Wenn wir schauen bei der Wellenform einer sinusförmigen Spannung über einen Kondensator wird es sein Zeit verschoben im Vergleich zu dem Strom durch den Kondensator. Das imaginärer Operator :math:`j` ist dafür verantwortlich. Betrachten wir Fig. 3, wir kann beobachten, dass die aktuelle Wellenform eine Spitze (Maximum) hat, wenn die Steigung der Spannungswellenform ( :math:`dv/dt`) ist maximal.
@@ -149,7 +149,7 @@ der Strom in Bezug auf die Spannung ist dann:
 
 - :math:`2 \times 470\Omega` Widerstände
 
-- :math:`1 \mal 1 \mu F` Kondensator
+- :math:`1 \time 1 \mu F` Kondensator
 
 
 **Oszilloskop & Signalgenerator**
