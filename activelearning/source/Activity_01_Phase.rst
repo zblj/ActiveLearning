@@ -108,7 +108,7 @@ angle can be calculated by measuring the time between the two waveforms
 (negative to positive zero crossings or "rising edges", can be used
 as time measurement reference points in the waveform). One full period
 of the sine wave in time is the same as :math:`360^{\circ}`. Taking the
-ratio of the time between the two waveforms as:math:`\Delta t`, and
+ratio of the time between the two waveforms as :math:`\Delta t`, and
 the time in one period of a full sine wave as :math:`T`, you can
 determine the angle between them. Eq. (2) gives the exact relationship. 
 
