@@ -149,7 +149,7 @@ der Strom in Bezug auf die Spannung ist dann:
 
 - :math:`2 \times 470\Omega` Widerstände
 
-- :math:`1 \time 1 \mu F` Kondensator
+- :math:`1 \times 1\mu F` Kondensator
 
 
 **Oszilloskop & Signalgenerator**
