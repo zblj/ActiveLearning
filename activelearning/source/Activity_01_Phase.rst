@@ -317,7 +317,7 @@ arbitrary. The high to low crossing could also be used.
   cursor line going through point where OUT1 is crossing 0V line.
     
 
-  Repeat the step for the second cursor and OUT2 signal.
+Repeat the step for the second cursor and OUT2 signal.
 
 - Readout the time difference between cursors.
        
@@ -326,25 +326,26 @@ arbitrary. The high to low crossing could also be used.
 - Use the measured :math:`\Delta t` and Eq. (2) to calculate the phase
   offset :math:`\theta` in degrees.
 
-  Note you cannot measure the frequency of a signal that does not have
-  at least one full period displayed on the screen. Usually you need
-  more than two cycles to get consistent results. You are generating the
-  frequency so you already know what it is. You don't need to measure
-  it in this part of the lab.
+  
+Note you cannot measure the frequency of a signal that does not have
+at least one full period displayed on the screen. Usually you need
+more than two cycles to get consistent results. You are generating the
+frequency so you already know what it is. You don't need to measure
+it in this part of the lab.
   
 
-3. Measuring Magnitude using a real circuit. 
+3. Measuring magnitude using a real circuit. 
 
 .. figure:: img/Activity_01_Fig_06.png
    :scale: 50 %
    
    Figure 6: R-R circuit.
 
-- Build the circuit shown in Fig. 5 on your solderless breadboard
-  using two :math:`470 \Omega` resistors, oscilloscope probes and Red
-  Pitaya STEMlab board.
+Build the circuit shown in Fig. 5 on your solderless breadboard
+using two :math:`470 \Omega` resistors, oscilloscope probes and Red
+Pitaya STEMlab board.
+
   
-	
   NOTICE: For ground pin use probes ground leads (crocodile connectors).
 
 
@@ -352,7 +353,6 @@ arbitrary. The high to low crossing could also be used.
    :scale: 50 %
    
    Figure 7: R-R circuit on the breadboard.
-
 
 
 We have connected OUT1 directly to IN1 so we can observe a real
@@ -382,12 +382,13 @@ voltage across R\ :sub:`1`\ (V\ :sub:`R1`\).
 - Using vertical +/- controls set  200 mV/div (0.2 V/div) for MATH
   trace.
 
-  With this settings you are observing:
-  - IN1- Input excitation signal
+With this settings you are observing:
 
-  - IN2- Voltage drop signal across R\ :sub:`2`\
+- IN1- Input excitation signal
 
-  - MATH - Voltage drop signal across R\ :sub:`1`\
+- IN2- Voltage drop signal across R\ :sub:`2`\
+  
+- MATH - Voltage drop signal across R\ :sub:`1`\
 
     
 - Record V\ :sub:`R1`\ and V\ :sub:`R2`\.
@@ -402,8 +403,9 @@ voltage across R\ :sub:`1`\ (V\ :sub:`R1`\).
   :sub:`R1`\ and V\ :sub:`R2`\?
        
 - Can you even see two distinct sine waves?
-  
-  Probably not. There should be no observable time offset and thus no phase shift.
+
+  Probably not. There should be no observable time offset and thus no
+  phase shift. 
 
 You can see that MATH (purple) and IN2 (green) trace are
 overlapping. To see both traces you can adjust the vertical position 
@@ -462,7 +464,7 @@ offset values.
   0.45 V
   
 
-
+  
 .. figure:: img/Activity_01_Fig_09.png
    :scale: 50%
    
@@ -486,7 +488,7 @@ with time offsets or phase differences displayed on the grid. Let's
 measure the time offsets and calculate the phase differences.
 
 
-5. Measure the time difference between V\ :sub:`R1`\ and V\
+4. Measure the time difference between V\ :sub:`R1`\ and V\
    :sub:`C1`\. and calculate the phase offsets.
 	
 Use Eq. (2) and the measured :math:`\Delta t` to calculate the phase
@@ -509,34 +511,36 @@ measurement window for this value.
 Assume :math:`\Delta t` is 0 if you really can't see any difference
 with 1 or 2 cycles of the sine wave on the screen.
 
+
 - Put a first cursor at the neg. to pos. zero crossing location for
   the IN1 ( V\ :sub:`R1`\ + V\ :sub:`C1`\) signal. Put a second cursor
   at the nearest neg. to pos. zero crossing location for the math
   ( V\ :sub:`R1`\ ) signal. Record the time difference and calculate the
   phase angle. Note :math:`\Delta t` maybe a negative number. Does this mean
   the phase angle leads or lags?
-       
+  
+  :math:`\Delta t` _________, :math:`\theta` _________
 
-:math:`\Delta t` _________, :math:`\theta` _________
-
+	
 - Put a first cursor at the neg. to pos. zero crossing location for
   the IN1 ( V\ :sub:`R1`\ + V\ :sub:`C1`\) signal. Put a second cursor
   at the nearest neg. to pos. zero crossing location for the IN2 ( V\
   :sub:`C1`\ ) signal. Record the time difference and calculate the
   phase angle.
        
-:math:`\Delta t` _________, :math:`\theta` _________
+  :math:`\Delta t` _________, :math:`\theta` _________
 
+	
 - Put a first cursor at the neg. to pos. zero crossing location for
   the Math ( V\ :sub:`R1`\ ) signal. Put a second cursor at the
   nearest neg. to pos. zero crossing location for the IN2
   (V\ :sub:`C1`\ ) signal. Record the time difference and calculate
   the phase angle.
        
-:math:`\Delta t` _________, :math:`\theta` _________
+  :math:`\Delta t` _________, :math:`\theta` _________
 
 
-6. Measure the time difference and calculate the phase :math:`\theta`
+5. Measure the time difference and calculate the phase :math:`\theta`
    offset at a different frequency.
 
 - Set OUT1 frequency to 1000 Hz and the time / div to 200 us/div.
@@ -549,7 +553,7 @@ with 1 or 2 cycles of the sine wave on the screen.
   phase angle. Note :math:`\Delta t` maybe a negative number. Does
   this mean the phase angle leads or lags?
        
-:math:`\Delta t` _________, :math:`\theta` _________
+  :math:`\Delta t` _________, :math:`\theta` _________
 
 
 - Put a first cursor at the neg. to pos. zero crossing location for
@@ -557,8 +561,8 @@ with 1 or 2 cycles of the sine wave on the screen.
   at the nearest neg. to pos. zero crossing location for the IN2 ( V\
   :sub:`C1`\ ) signal. Record the time difference and calculate the
   phase angle.
-    
-:math:`\Delta t` _________, :math:`\theta` _________
+	  
+  :math:`\Delta t` _________, :math:`\theta` _________
 
       
 - Put a first cursor at the neg. to pos. zero crossing location for
@@ -567,5 +571,5 @@ with 1 or 2 cycles of the sine wave on the screen.
   (V\ :sub:`C1`\) signal. Record the time difference and calculate the
   phase angle.
        
-:math:`\Delta t` _________, :math:`\theta` _________
+  :math:`\Delta t` _________, :math:`\theta` _________
 

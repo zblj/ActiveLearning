@@ -35,7 +35,7 @@ Loop 2
 
 $$- V_2 + V_3 + V_4 = 0$$
 
-![figure 1: Kirchhoff\'s Voltage Law](img/Activity_2_Figure_1.png)
+![figure 1: Kirchhoff\'s Voltage Law](img/Activity_02_Figure_1.png)
 
 2.  Kirchhoff\'s Current Law states that the algebraic sum of all the
     currents at any node is zero. If we define the currents through each
@@ -98,11 +98,11 @@ Step 3.
 > Connect the 5V pin to node **a** and connect node **e** to **GND**
 > pin.
 
-![figure 2: Power connections](img/Activity_2_Figure_2.png)
+![figure 2: Power connections](img/Activity_02_Figure_2.png)
 
 Circuit on the breadboard is shown in picture bellow.
 
-![figure 3: Resistors circuit from close](img/Activity_2_Figure_3.png)
+![figure 3: Resistors circuit from close](img/Activity_02_Figure_3.png)
 
 Step 4.
 
@@ -118,11 +118,11 @@ Step 4.
 > -   Set probes attenuation to x10
 > -   Connect probes to the desired resistor
 
-![figure 4: Measureing circuit](img/Activity_2_Figure_4.png)
+![figure 4: Measureing circuit](img/Activity_02_Figure_4.png)
 
 -   Start Oscilloscope application
 
-![figure 4: Osciloscope application](img/Activity_2_Figure_5.png)
+![figure 4: Osciloscope application](img/Activity_02_Figure_5.png)
 
 -   In the IN1 and IN2 settings menu select Probe attenuation x10
 -   In the measurement menu select "MEAN" , select IN1 and press DONE

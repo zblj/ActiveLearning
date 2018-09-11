@@ -1,8 +1,8 @@
 #!/bin/sh -x
 
-language="English"
+language="German"
 options=" --encoding=utf-8 --language=$language"
-name=main
+name=index
 public=""
 
 
@@ -71,19 +71,6 @@ system doconce format html ${name} --pygments_html_style=emacs \
        --html_output=${html} --siunits ${options}
 # system doconce split_html ${html}.html --nav_button=gray2,bottom \
 #       --font_size=slides --copyright=titlepage
-
-# Construct AULIS folder for export
-# mkdir -p ${name}/fig
-# cp ../../fig/${name}*.png ./${name}/fig
-# cp ../../fig/${name}*.jpg ./${name}/fig
-# cp ../../fig/${name}*.svg ./${name}/fig
-# cp ${name}.html ./${name}/
-# ln -s ${name}.html ./${name}/index.html
-# cp ._*.html ./${name}
-# zip -r ${name}.zip ./${name}
-# find ./${name} -type f -exec chmod 644 {} \;
-# find ./${name} -type d -exec chmod 755 {} \;
-# rsync -rtvuz -e ssh ./${name} ${public}/mxe/ --delete-before
 
 # LaTeX Beamer slides
 # theme=blue_shadow
@@ -165,7 +152,7 @@ system doconce sphinx_dir theme=${theme} ${name}
 system python automake_sphinx.py
 
 # Markdown (pandoc extended)
-# system doconce format pandoc ${name} ${options}
+system doconce format pandoc ${name} ${options}
 # system doconce md2latex ${name}
 # system doconce md2html ${name} ${options}
 # system mv ${name}.html ${name}-pandoc.html
@@ -181,19 +168,24 @@ system python automake_sphinx.py
 
 
 # IPython notebook
-# ipynb_figure=imgtag
-# ipynb_movie=ipynb
-# ipynb_admon=hrule
-# nbv=3
+ipynb_figure=imgtag
+ipynb_movie=ipynb
+ipynb_admon=hrule
+nbv=3
 # system doconce format ipynb ${name} --encoding=utf-8
 # pygmentize -l json -o ${name}.ipynb.html ${name}.ipynb
 
-# doconce format ipynb ${name} --no_preprocess --ipynb_figure=${ipynb_figure} ipynb_figure=${ipynb_figure} --ipynb_movie=${ipynb_movie} ipynb_movie=${ipynb_movie} --ipynb_admon=${ipynb_admon} ipynb_admon=${ipynb_admon} --ipynb_version=$nbv ${options}
+doconce format ipynb ${name} --no_preprocess \
+    --ipynb_figure=${ipynb_figure} ipynb_figure=${ipynb_figure} \
+    --ipynb_movie=${ipynb_movie} ipynb_movie=${ipynb_movie} \
+    --ipynb_admon=${ipynb_admon} ipynb_admon=${ipynb_admon} \
+    --ipynb_version=$nbv \
+    ${options}
 # Must fix instructions since doconce performs certain actions for
 # some of the code segments we demonstrate
-# doconce subst '" +%matplotlib inline\\n",\n +" +\\n",\n +' '' ${name}.ipynb
-# doconce subst '"import numpy as np\\n"', '"%matplotlib inline\\n",\n "import numpy as np\\n",' ${name}.ipynb
-# doconce subst 'Plot\. \\\\label' 'Plot. label' ${name}.ipynb
+doconce subst '" +%matplotlib inline\\n",\n +" +\\n",\n +' '' ${name}.ipynb
+doconce subst '"import numpy as np\\n"', '"%matplotlib inline\\n",\n "import numpy as np\\n",' ${name}.ipynb
+doconce subst 'Plot\. \\\\label' 'Plot. label' ${name}.ipynb
 
 
 # system doconce format mwiki ${name} ${options}

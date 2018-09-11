@@ -36,10 +36,10 @@ complicated original circuit is able to deliver to a load. It also helps
 to choose the optimal value of the load (resistance) for maximum power
 transfer.
 
-![Figure 1.](img/Activity_5_Figure_1.png)
+![Figure 1.](img/Activity_05_Figure_1.png)
 
 ![Figure 2: Thévenin Equivalent Circuit of Figure
-1](img/Activity_5_Figure_2.png)
+1](img/Activity_05_Figure_2.png)
 
 2.  The Maximum Power Transfer Theorem states that an independent
     voltage source in series with a resistance R~s~or an independent
@@ -50,7 +50,7 @@ In terms of a Thévenin Equivalent Circuit, maximum power is delivered to
 the load resistance R~L~when R~L~is equal to the Thévenin equivalent
 resistance R~TH~of the circuit.
 
-![Figure 3: Maximum Power Transfer](img/Activity_5_Figure_3.png)
+![Figure 3: Maximum Power Transfer](img/Activity_05_Figure_3.png)
 
 Materials
 ---------
@@ -129,7 +129,7 @@ To get voltage values of IN1 and IN2 select MEAS menu, select MEAN value
 and select DONE.
 :::
 
-![Figure 4: Measuring the Thevenin Voltage](img/Activity_5_Figure_4.png)
+![Figure 4: Measuring the Thevenin Voltage](img/Activity_05_Figure_4.png)
 
 d)  Find R~TH~: Remove the source voltage Vs and construct the circuit
     as shown in figure 5. Use the Multimeter to measure the resistance
@@ -138,7 +138,7 @@ d)  Find R~TH~: Remove the source voltage Vs and construct the circuit
     Multimeter and the ground connection has been moved as shown.
 
 ![Figure 5: Measuring the Thevenin Resistance
-R~TH~.](img/Activity_5_Figure_5.png)
+R~TH~.](img/Activity_05_Figure_5.png)
 
 e)  Obtaining V~TH~and R~TH~, construct the circuit of figure 2. Create
     the value of R~rh~using a series and or parallel combination of
@@ -149,7 +149,7 @@ OUT1 for the V~TH~source. In the OUT1 settings menu select "DC" signal
 waveform and in the Amplitude field set the value to what you measured
 for V~TH~in step c). Select "enable" button.
 
-![](img/Activity_5_Figure_6.png)
+![](img/Activity_05_Figure_6.png)
 
 Figure 6: Thevenin Equivalent Construction
 
@@ -174,7 +174,7 @@ R~3~ = 1 KΩ
 
 R~L~= combinations of 1 KΩ and 100 Ω resistors ( figure 8 )
 
-![](img/Activity_5_Figure_7.png)
+![](img/Activity_05_Figure_7.png)
 
 Figure 8. Rl configurations
 

@@ -34,12 +34,12 @@ characteristics can be used to select or reject certain frequencies of
 an input signal. This selection and rejection of frequencies is called
 filtering, and a circuit which does this is called a filter. 
 
-.. figure:: img/Activity_9_Figure_1.png
+.. figure:: img/Activity_09_Figure_1.png
 
    Figure 1:  Low Pass RC filter.
 
    
-.. figure:: img/Activity_9_Figure_2.png
+.. figure:: img/Activity_09_Figure_2.png
 
    Figure 2:  High Pass RL filter.
 
@@ -73,7 +73,7 @@ of the filter as a function of the frequency. It is generally used to
 characterize the range of frequencies in which the filter is designed
 to operate within. 
 
-.. figure:: img/Activity_9_Figure_3.png
+.. figure:: img/Activity_09_Figure_3.png
 
    Figure 3:  Frequency Response of a typical Low Pass Filter with a cut-off frequency fc
 
@@ -100,7 +100,7 @@ Procedure
 
    - Set the oscilloscope attenuation to x1.
 
-   .. figure:: img/Activity_9_Figure_4.png
+   .. figure:: img/Activity_09_Figure_4.png
 
    Figure 4:  Low pass RC filter breadboard circuit
 
@@ -130,12 +130,12 @@ Procedure
    horizontal -/+ controls. For peak-peak measurement in the
    measurement menu select “P2P”, select IN1, IN2 and press DONE
 
-   .. figure:: img/Activity_9_Figure_5.png
+   .. figure:: img/Activity_09_Figure_5.png
 
    Figure 5:  Low pass RC filter response at 50Hz
 
    
-   .. figure:: img/Activity_9_Figure_6.png
+   .. figure:: img/Activity_09_Figure_6.png
 
    Figure 6:  Low pass RC filter response at 500Hz
 
@@ -151,7 +151,7 @@ Procedure
 
    - Set the oscilloscope attenuation to x1.
 
-   .. figure:: img/Activity_9_Figure_7.png
+   .. figure:: img/Activity_09_Figure_7.png
 
    Figure 7:  High pass RL filter breadboard circuit
 
@@ -164,12 +164,12 @@ Procedure
    Oscilloscope. This gives the cut-off (roll-off) frequency for the
    constructed High Pass RL filter.
 
-   .. figure:: img/Activity_9_Figure_8.png
+   .. figure:: img/Activity_09_Figure_8.png
 
    Figure 8:  High pass RL filter response at 50kHz
 
    
-   .. figure:: img/Activity_9_Figure_9.png
+   .. figure:: img/Activity_09_Figure_9.png
 
    Figure 9:  High pass RL filter response at 500Hz
 
@@ -184,12 +184,12 @@ RL(RC) filter and from that IN2=Vout. Bode analyzer application will
 then for each frequency step take the ratio of IN1/IN2 and calculate
 frequency response.
 
-.. figure:: img/Activity_9_Figure_10.png
+.. figure:: img/Activity_09_Figure_10.png
 
    Figure 10:  Low pass RC filter response taken with Bode analyzer application
 
    
-.. figure:: img/Activity_9_Figure_11.png
+.. figure:: img/Activity_09_Figure_11.png
 
    Figure 11:  High pass RL filter response taken with Bode analyzer application
 

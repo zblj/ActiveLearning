@@ -37,7 +37,7 @@ The relation between pulse width and frequency for the square wave is given by:
 	f=\frac{1}{2t_p} 
 	
 
-.. image:: img/Activity_7_Figure_1.png
+.. image:: img/Activity_07_Figure_1.png
 
 Figure 1: Series RL circuit
 
@@ -51,7 +51,7 @@ The expression for the current in the Inductor is given by:
 
 where, V is the applied source voltage to the circuit for t = 0. The response curve is increasing and is shown in figure 2. 
 
-.. image:: img/Activity_7_Figure_2.png
+.. image:: img/Activity_07_Figure_2.png
 
 Figure 2: Current in Inductor increasing in a Series RL circuit.
 
@@ -68,7 +68,7 @@ L/R = t is time constant.
  
 The response curve is a decaying exponential and is shown in figure 3. 
 
-.. image:: img/Activity_7_Figure_3.png
+.. image:: img/Activity_07_Figure_3.png
 
 Since it is not possible to directly measure the current through the Inductor ( current supplied by driving source OUT1 ) with the STEMlab, we will measure output voltage across the Resistor in series with the Inductor. The resistor waveform will be same shape as the inductor current since from Ohm’s law we know that current and voltage through resistor are related with  V :sub:`R` = I :sub:`R` * R. Our circuit has two elements (Resistor and Inductor) in series which means same current is flowing through both components I :sub:`circuit` = I :sub:`L` = I :sub:`R` 
 We know that signal on input IN2 is voltage across resistor V :sub: `R` which is in fact current through inductor multiplied by resistance R.
@@ -101,7 +101,7 @@ _________
 
 
 
-.. figure::   img/Activity_7_Figure_4.png
+.. figure::   img/Activity_07_Figure_4.png
 
 2. Set up the circuit shown in figure 5 on your solderless breadboard with the component values R :sub:`1` = 220 Ω and L :sub:`1` = 20mH. 
 -Connect the Oscilloscope & Signal generator probes as is shown in Figure 5.

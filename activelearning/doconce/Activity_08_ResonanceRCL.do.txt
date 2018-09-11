@@ -36,7 +36,7 @@ A network is in resonance when the voltage and current at the network
 input terminals are in phase and the input impedance of the network is
 purely resistive.
 
-![Figure 1: Parallel Resonance Circuit](img/Activity_8_Figure_1.png)
+![Figure 1: Parallel Resonance Circuit](img/Activity_08_Figure_1.png)
 
 Consider the parallel RLC circuit of Fig. 1. The steady-state admittance
 offered by the circuit is:
@@ -65,7 +65,7 @@ resonant frequency, and then drops again to zero as ω becomes infinite.
 The frequency response is shown in figure 2.
 
 ![Figure 2: Frequency Response of Parallel Resonant
-Circuit](img/Activity_8_Figure_2.png)
+Circuit](img/Activity_08_Figure_2.png)
 
 The two additional frequencies ω :sub: 1 and ω ~2~ are also indicated
 which are called half-power frequencies. These frequencies locate those
@@ -76,7 +76,7 @@ circuit and is defined as:
 
 $$\beta = \omega_2 - \omega_1  (3)$$
 
-![Figure 3: Series Resonance Circuit](img/Activity_8_Figure_3.png)
+![Figure 3: Series Resonance Circuit](img/Activity_08_Figure_3.png)
 
 Materials
 ---------
@@ -162,7 +162,7 @@ By running code above we get following results shown on picture bellow.
 
 ![Figure 4: Calculation of the Impedance Z of parallel RLC circuit. Blue
 trace real/resistive part of Z, green trace imaginary/reactive part of
-Z.](img/Activity_8_Figure_4.png)
+Z.](img/Activity_08_Figure_4.png)
 
 We can also calculate absolute value of Z which is the combined
 impedance of RLC circuit from Figure 1. Absolute value of Impedance Z is
@@ -173,7 +173,7 @@ We can model the circuit from Figure 8 as is shown on figure below where
 Z = 1/Y and Y is given in equation 1.
 
 ![Figure 5: Representing parallel RLC circuit as a complex impedance
-Z](img/Activity_8_Figure_5.png)
+Z](img/Activity_08_Figure_5.png)
 
 From figure 5 above we can clearly see that our circuit is simple
 voltage divider where Vout=Vin\*Z/(Rs+Z). But since the Z is frequency
@@ -194,7 +194,7 @@ At some frequency f: where Z is maximal the Vout will be also maximal.
 This is the resonant frequency.
 
 ![Figure 6: Calculation of absolute value of impedance Z for the circuit
-shown on figure 3.](img/Activity_8_Figure_6.png)
+shown on figure 3.](img/Activity_08_Figure_6.png)
 
 Using
 
@@ -214,7 +214,7 @@ $$H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.$$
 :::
 
 ![Figure 7: Calculation of frequency response (Vout/Vin) for circuit on
-figure 5.](img/Activity_8_Figure_7.png)
+figure 5.](img/Activity_08_Figure_7.png)
 
 Procedure:
 
@@ -223,19 +223,19 @@ Procedure:
     0.1 µF and L1= 4.7 mH.
 
 ![Figure 8: Parallel RLC circuit for the
-measurements.](img/Activity_8_Figure_8.png)
+measurements.](img/Activity_08_Figure_8.png)
 
 2.  Open the Bode analyzer application. In "Settings" menu set start
     frequency to 100Hz, end frequency to 1MHz and number of steps to 50.
     And Click "RUN" button.
 
-![Figure 9: Bode analyzer application](img/Activity_8_Figure_9.png)
+![Figure 9: Bode analyzer application](img/Activity_08_Figure_9.png)
 
 After the measurements are done you should get the frequency response of
 your circuit as is shown on Figure 10q.
 
 ![Figure 10: Frequency response of circuit from Figure 8 take by Bode
-analyzer application.](img/Activity_8_Figure_10.png)
+analyzer application.](img/Activity_08_Figure_10.png)
 
 -   Compare measurements and calculation. If there is any difference try
     to explain why.

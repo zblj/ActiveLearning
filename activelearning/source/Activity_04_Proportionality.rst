@@ -42,7 +42,7 @@ figures.
    the :math:`4.7 k\Omega` resistor. The most important result of
    linearity is superposition.
 
-   .. figure:: img/Activity_4_Figure_1.png
+   .. figure:: img/Activity_04_Figure_1.png
       :align: center 
 	
       Figure 1 : Resistor circuit with 5V voltage source
@@ -56,13 +56,13 @@ figures.
    replaced by short circuits and all other independent current
    sources are replaced by open circuits, as in figure 3.
 
-   .. figure:: img/Activity_4_Figure_2.png
+   .. figure:: img/Activity_04_Figure_2.png
       :align: center 
 
       Figure 2. Circuit with two voltage sources 
 
       
-   .. figure:: img/Activity_4_Figure_3.png
+   .. figure:: img/Activity_04_Figure_3.png
       :align: center 
 	
       Figure 3. Circuit for response of just one source
@@ -148,7 +148,7 @@ Verify the proportionality theorem:
 
 - Compare your calculated result to what you measured in step 2a. Explain any differences.
 
-  .. figure:: img/Activity_4_Figure_4.png
+  .. figure:: img/Activity_04_Figure_4.png
      :align: center 
      
      Figure 4: Voltages pin on the Red Pitays STEMlab board

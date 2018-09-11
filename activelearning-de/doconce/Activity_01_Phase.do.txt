@@ -53,7 +53,7 @@ offset in time, which means no phase offset. Note that if we are using
 degrees $\omega t$, in a range from from 0 to $2 \pi$ or 0 to
 $360^{\circ}$ to yield the sine wave shown in Fig. 1.
 
-FIGURE: [./img/Activity_1_Figure_1.png, width=400 frac=0.8] Sine wave.
+FIGURE: [./img/Activity_01_Fig_01.png, width=400 frac=0.8] Sine wave.
 
 !bhint
 What happens if $\omega t > 2\pi$?
@@ -78,7 +78,7 @@ second sine wave (orange) with an offset in time. Since the offset is
 constant, we see the original sine wave shifted in time by a value of
 $\theta$ which is $1/4$ of the period in this example.
 
-FIGURE: [./img/Activity_1_Figure_2.png, width=400 frac=0.8] Sinusoidal curves.
+FIGURE: [./img/Activity_01_Fig_02.png, width=400 frac=0.8] Sinusoidal curves.
 
 $\theta$ is time offset or phase portion of Eq. (1). The phase angle
 defines offset in time and vice versa. Eq. (2) shows the relationship.
@@ -170,7 +170,7 @@ voltage waveform ($dv/dt$) is maximal.
 The time difference can be expressed as a phase angle between the two
 waveforms as defined in Eq. (2).
 
-FIGURE: [./img/Activity_1_Figure_3.png, width=400 frac=0.8] Phase angle determination between voltage (V) and current (I).
+FIGURE: [./img/Activity_01_Fig_03.png, width=400 frac=0.8] Phase angle determination between voltage (V) and current (I).
 
 You probably have seen circuits made entirely from resistors. These
 circuits have only real impedance, which means that voltages throughout
@@ -244,7 +244,7 @@ o  Explore the phase relationship of voltages in an RC circuit.
 
 * Set t/div to 200 us/div (using horizontal +/- controls).
 
-FIGURE: [./img/Activity_1_Figure_4.png, width=400 frac=0.8] Sine signal generated with Oscilloscope and Signal generator applications.
+FIGURE: [./img/Activity_01_Fig_04.png, width=400 frac=0.8] Sine signal generated with Oscilloscope and Signal generator applications.
 
 Marked with green - main setting and controls.
 
@@ -267,7 +267,7 @@ phase lead. The low to high crossing time reference point is arbitrary.
 The high to low crossing could also be used.
 
 
-FIGURE: [./img/Activity_1_Figure_5.png, width=400 frac=0.8] Oscilloscope application showing two sine signals with phase difference.
+FIGURE: [./img/Activity_01_Fig_05.png, width=400 frac=0.8] Oscilloscope application showing two sine signals with phase difference.
 
 
 * Change the phase of OUT2 to $45^{\circ}$. Now it looks like the CHB
@@ -303,7 +303,7 @@ measure it in this part of the lab.
 o  Measuring magnitude using a real circuit.
 
 
-FIGURE: [./img/Activity_1_Figure_6.png, width=400 frac=0.8] R-R circuit.
+FIGURE: [./img/Activity_01_Fig_06.png, width=400 frac=0.8] R-R circuit.
 
 
 * Build the circuit shown in Fig. 5 on your solderless breadboard
@@ -315,7 +315,7 @@ For ground pin use probes ground leads (crocodile connectors).
 !ehint
 
 
-FIGURE: [./img/Activity_1_Figure_7.png, width=400 frac=0.8] R-R circuit on the breadboard.
+FIGURE: [./img/Activity_01_Fig_07.png, width=400 frac=0.8] R-R circuit on the breadboard.
 
 
 We have connected OUT1 directly to IN1 so we can observe a real voltage
@@ -395,7 +395,7 @@ What happens if you use $220 \Omega$ value for R 2 ?
 * Replace R 2 with a 1 uF capacitor C 1 .
 
 
-FIGURE: [./img/Activity_1_Figure_8.png, width=400 frac=0.8] RC circuit.
+FIGURE: [./img/Activity_01_Fig_08.png, width=400 frac=0.8] RC circuit.
 
 
 !bhint
@@ -428,7 +428,7 @@ offset values.
 * For the stable acquisition set the trigger level in TRIGGER menu to 0.45 V
 
 
-FIGURE: [./img/Activity_1_Figure_9.png, width=400 frac=0.8] Oscilloscope signals with RC circuit.
+FIGURE: [./img/Activity_01_Fig_09.png, width=400 frac=0.8] Oscilloscope signals with RC circuit.
 
 
 * Measure IN1, IN2 and Math P2P (peak to peak) value. What signal is the Math waveform?

@@ -2,7 +2,7 @@
 
 language="English"
 options=" --encoding=utf-8 --language=$language"
-name=main
+name=index
 public=""
 
 

@@ -26,7 +26,7 @@ are:
 
 $$V_1 = V_S \frac{R_1}{R_1 + R_2}$$$$V_2 = V_S \frac{R_2}{R_1 + R_2}$$
 
-![Figure 1: Voltage division.](img/Activity_3_Figure_1.png)
+![Figure 1: Voltage division.](img/Activity_03_Figure_1.png)
 
 Materials
 ---------

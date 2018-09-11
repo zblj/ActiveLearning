@@ -29,7 +29,7 @@ Loop 2
 .. math::
 		- V_2 + V_3 + V_4 = 0
 
-.. figure:: img/Activity_2_Figure_1.png
+.. figure:: img/Activity_02_Figure_1.png
 
 	figure 1: Kirchhoff's Voltage Law
 
@@ -98,13 +98,13 @@ Step 3.
 	Instead of voltage source “V\ :sub:`s`\” shown on the Figure 1 use the STEMlab voltage pins on extension connector E2_. Connect the 5V pin to node **a** and connect node **e** to **GND** pin.
 
 
-.. figure:: img/Activity_2_Figure_2.png
+.. figure:: img/Activity_02_Figure_2.png
 	
 	    figure 2: Power connections
 
 Circuit on the breadboard is shown in picture bellow.
 
-.. figure:: img/Activity_2_Figure_3.png
+.. figure:: img/Activity_02_Figure_3.png
 	
 	figure 3: Resistors circuit from close
 
@@ -118,13 +118,13 @@ Step 4.
 	
 	- Connect probes to the desired resistor 
 
-.. figure:: img/Activity_2_Figure_4.png
+.. figure:: img/Activity_02_Figure_4.png
 
 	figure 4:  Measureing circuit
 	
 	- Start Oscilloscope application 
 	
-.. figure:: img/Activity_2_Figure_5.png
+.. figure:: img/Activity_02_Figure_5.png
 
 	figure 4:  Osciloscope application
 	

@@ -38,7 +38,7 @@ by applying them to the circuits shown in the following figures.
     important result of linearity is superposition.
 
     ![Figure 1 : Resistor circuit with 5V voltage
-    source](img/Activity_4_Figure_1.png){.align-center}
+    source](img/Activity_04_Figure_1.png){.align-center}
 
 2.  The Superposition Theorem states that the response of a linear
     circuit with multiple independent sources, such as in figure 2, can
@@ -49,10 +49,10 @@ by applying them to the circuits shown in the following figures.
     are replaced by open circuits, as in figure 3.
 
     ![Figure 2. Circuit with two voltage
-    sources](img/Activity_4_Figure_2.png){.align-center}
+    sources](img/Activity_04_Figure_2.png){.align-center}
 
     ![Figure 3. Circuit for response of just one
-    source](img/Activity_4_Figure_3.png){.align-center}
+    source](img/Activity_04_Figure_3.png){.align-center}
 
 Materials
 ---------
@@ -128,7 +128,7 @@ Measuring voltage drop across desired resistor is done in
     Explain any differences.
 
     ![Figure 4: Voltages pin on the Red Pitays STEMlab
-    board](img/Activity_4_Figure_4.png){.align-center}
+    board](img/Activity_04_Figure_4.png){.align-center}
 
 Questions
 ---------
