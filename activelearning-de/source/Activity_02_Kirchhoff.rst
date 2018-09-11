@@ -29,7 +29,7 @@ Masche 2
 .. Math::
 		- V_2 + V_3 + V_4 = 0
 
-.. figure:: img/Aktivität_02_Figur_1.png
+.. figure:: img/Activity_02_Figur_1.png
 
 	Abbildung 1: Kirchhoffs Spannungsgesetz
 
@@ -98,13 +98,13 @@ Schritt 3.
 	Verwenden Sie anstelle der in Abbildung 1 dargestellten Spannungsquelle "V\ :sub:`s`\" die STEMlab-Spannungsstifte am Erweiterungsstecker E2_. Verbinden Sie den 5V-Pin mit dem Knoten **a** und den Knoten **e** mit dem **GND** -Pin.
 
 
-.. figure:: img/Aktivität_02_Figur_2.png
+.. figure:: img/Activity_02_Figur_2.png
 	
 	    Abbildung 2: Leistungsanschlüsse
 
 Die Schaltung auf der Platine ist in der folgenden Abbildung dargestellt.
 
-.. figure:: img/Aktivität_02_Figur_3.png
+.. figure:: img/Activity_02_Figur_3.png
 	
 	Abbildung 3: Widerstandsschaltung aus der Nähe
 
@@ -118,13 +118,13 @@ Schritt 4.
 	
 	- Schließen Sie die Sonden an den gewünschten Widerstand an. 
 
-.. figure:: img/Aktivität_02_Figur_4.png
+.. figure:: img/Activity_02_Figur_4.png
 
 	Abbildung 4: Messkreis
 	
 	- Oszilloskop-Anwendung starten 
 	
-.. figure:: img/Aktivität_02_Figur_5.png
+.. figure:: img/Activity_02_Figur_5.png
 
 	Abbildung 4: Osciloskop-Anwendung
 	
