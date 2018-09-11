@@ -6,9 +6,8 @@ Willkommen zu Red Pitaya's aktivem Lernen
    :numbered:
 
    ./Activity_01_Phase
-
-..
    ./Activity_02_Kirchhoff
+..
    ./Activity_03_Voltage
    ./Activity_04_Proportionality
    ./Activity_05_Thevenin  
