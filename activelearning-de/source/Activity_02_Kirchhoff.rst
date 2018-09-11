@@ -124,7 +124,7 @@ Schritt 4.
 	
 	- Oszilloskop-Anwendung starten 
 	
-.. figure:: img/Activity_02_Figur_5.png
+.. figure:: img/Activity_02_Figure_5.png
 
 	Abbildung 4: Osciloskop-Anwendung
 	
