@@ -1,13 +1,13 @@
 Kirchhoffs Spannungs- und Stromgesetze
-####################################
+######################################
 
 Zielsetzung
-_________
+___________
 
 Ziel dieser Labortätigkeit ist es, Kirchhoffs Spannungsgesetz (KVL) und Kirchhoffs Aktuelles Gesetz (KCL) mittels Netz- und Knotenanalyse der gegebenen Schaltung zu überprüfen.
 
 Notizen
-_____
+_______
 
 .. Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
@@ -15,21 +15,21 @@ _____
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. Die als 5V-Spannungsquelle verwendeten Verlängerungsstecker-Pins sind in der Dokumentation hier_ dargestellt.
 
 Hintergrund
-__________
+___________
 
 1. Kirchhoffs Spannungsgesetz besagt, dass die algebraische Summe aller Spannungen um jeden geschlossenen Weg (Schleife oder Netz) Null ist. Wenn wir die Spannungen an jedem Widerstand R1 bis R5 als V1 bis V5 definieren, ergibt sich die Anwendung des Kirchhoff-Spannungsgesetzes auf die erste und zweite Schleife in der in Figur 1 dargestellten Schaltung: 
 
-Schleife 1
+Masche 1
 
-... Mathe:...:
+.. Math::
 		- V_s + V_1 + V_2 + V_5 = 0
 
-Schleife 2 
+Masche 2 
 
-... Mathe:...:
+.. Math::
 		- V_2 + V_3 + V_4 = 0
 
-... Abbildung:: img/Aktivität_02_Figur_1.png
+.. figure:: img/Aktivität_02_Figur_1.png
 
 	Abbildung 1: Kirchhoffs Spannungsgesetz
 
@@ -37,31 +37,31 @@ Schleife 2
 
 *Knoten a:*
 	
-... Mathe:...:		
+.. math::		
 
 	- I_s + I_1 = 0
 	
 *Knoten b:* 
 
-... Mathe:...:		
+.. math::		
 
 	- I_1 + I_2 + I_3 = 0
 	
-*Node c:* 
+*Knoten c:* 
 
-... Mathe:...:		
+.. math::		
 
 	- I_3 + I_4 = 0
 	
 *Knoten d:* 
 	
-... Mathe:...:	
+.. math::	
 
 	- I_2 - I_4 + I_5 = 0
 
 
 Materialien
-__________
+___________
 
 Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
@@ -73,7 +73,7 @@ Verschiedene Widerstände:
 
 
 Vorgehensweise
-_________
+______________
 
 
 Schritt 1. 
@@ -86,25 +86,25 @@ Schritt 1.
 	- R4 = 1 KΩ
 	- R5 = 1,5 KΩ
 
-.. _Farbcodierung_Tool: http://www.hobby-hour.com/electronics/resistorcalculator.php
+.. _color_coding_tool: http://www.hobby-hour.com/electronics/resistorcalculator.php
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
 Schritt 2. 
 	
-	Verwenden Sie das Color_coding_tool_, um die richtigen Widerstände aus Ihrem Kit auszuwählen. Verwenden Sie Multimeter, Widerstandsmessungen, um die aktuellen Widerstandswerte zu überprüfen.
+	Verwenden Sie das color_coding_tool_, um die richtigen Widerstände aus Ihrem Kit auszuwählen. Verwenden Sie Multimeter, Widerstandsmessungen, um die aktuellen Widerstandswerte zu überprüfen.
 
 Schritt 3. 
 
-	Verwenden Sie anstelle der in Abbildung 1 dargestellten Spannungsquelle "V\ :sub:`s`\" die STEMlab-Spannungsstifte am Erweiterungsstecker E2_. Verbinden Sie den 5V-Pin mit dem Knoten **a** und den Knoten **e** mit dem **GND**-Pin.
+	Verwenden Sie anstelle der in Abbildung 1 dargestellten Spannungsquelle "V\ :sub:`s`\" die STEMlab-Spannungsstifte am Erweiterungsstecker E2_. Verbinden Sie den 5V-Pin mit dem Knoten **a** und den Knoten **e** mit dem **GND** -Pin.
 
 
-... Abbildung:: img/Aktivität_02_Figur_2.png
+.. figure:: img/Aktivität_02_Figur_2.png
 	
 	    Abbildung 2: Leistungsanschlüsse
 
 Die Schaltung auf der Platine ist in der folgenden Abbildung dargestellt.
 
-... Abbildung:: img/Aktivität_02_Figur_3.png
+.. figure:: img/Aktivität_02_Figur_3.png
 	
 	Abbildung 3: Widerstandsschaltung aus der Nähe
 
@@ -118,13 +118,13 @@ Schritt 4.
 	
 	- Schließen Sie die Sonden an den gewünschten Widerstand an. 
 
-... Abbildung:: img/Aktivität_02_Figur_4.png
+.. figure:: img/Aktivität_02_Figur_4.png
 
 	Abbildung 4: Messkreis
 	
 	- Oszilloskop-Anwendung starten 
 	
-... Abbildung:: img/Aktivität_02_Figur_5.png
+.. figure:: img/Aktivität_02_Figur_5.png
 
 	Abbildung 4: Osciloskop-Anwendung
 	
@@ -140,7 +140,7 @@ V\ :sub:`R1`\ = MEAN( IN1 ) - MEAN( IN2 )
 
 I\ :sub:`R1`\ = V\ \ :sub:`R1`\ / R\ :sub:`1`\.
 
-... Anmerkung:: 
+.. note:: 
 	
 	Um korrekte Spannungsvorzeichen zu erhalten, arbeiten Sie bei der Messung immer in die gleiche Richtung: Schließen Sie beispielsweise die IN1-Sonde auf der Seite des Widerstandes an, wo der markierte Pfeil beginnt (Abbildung 1). 
 
@@ -151,19 +151,19 @@ Schritt 5.
 	Protokollieren Sie die Messungen in tabellarischer Form mit den gemessenen Spannungs- und Stromwerten wie unten gezeigt.
 
  +------------------------------+-------------------+----------------+-------------+-------------+	
- Abzweig | Strom/Spannung | V [Volt ] | I [mA] | R [KΩ] |    
+ |          Abzweig             |  Strom/Spannung   |   V [Volt ]    |   I [mA]    |   R [KΩ]    |    
  +------------------------------+-------------------+----------------+-------------+-------------+
- V\ :sub:`1`\, I\ \ :sub:`1`\ | | | | | | | | | |	
+ | V\ :sub:`1`\, I\ :sub:`1`\   |                   |                |             |             | 	
  +------------------------------+-------------------+----------------+-------------+-------------+
- V\ :sub:`2`\, I\ \ :sub:`2`\ | | | | | | | | | |
+ | V\ :sub:`2`\, I\ :sub:`2`\   |                   |                |             |             |                             
  +------------------------------+-------------------+----------------+-------------+-------------+
- V\ :sub:`3`\, I\ \ :sub:`3`\ | | | | | | | | | |
+ | V\ :sub:`3`\, I\ :sub:`3`\   |                   |                |             |             |
  +------------------------------+-------------------+----------------+-------------+-------------+
- V\ :sub:`4`\, I\ \ :sub:`4`\ | | | | | | | | | |
+ | V\ :sub:`4`\, I\ :sub:`4`\   |                   |                |             |             | 
  +------------------------------+-------------------+----------------+-------------+-------------+
- V\ :sub:`5`\, I\ \ :sub:`5`\ | | | | | | | | | |
+ | V\ :sub:`5`\, I\ :sub:`5`\   |                   |                |             |             |
  +------------------------------+-------------------+----------------+-------------+-------------+
- V\ :sub:`s`\ \ ,I\ \ :sub:`s`\ | | | | | | | | |
+ | V\ :sub:`s`\, I\ :sub:`s`\   |                   |                |             |             |
  +------------------------------+-------------------+----------------+-------------+-------------+
  
  Schritt 6. 

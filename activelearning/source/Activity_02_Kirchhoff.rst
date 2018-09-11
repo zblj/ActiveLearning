@@ -1,8 +1,8 @@
 Kirchhoff's Voltage and Current Laws
 ####################################
 
-Objective
-_________
+Objectivec
+__________
 
 The objective of this Lab activity is to verify Kirchhoff's Voltage Law (KVL) and Kirchhoff's Current Law (KCL) using mesh and  nodal analysis of the given circuit.
 
@@ -15,6 +15,7 @@ _____
 In this tutorials we use the terminology taken from the user manual when referring to the connections to the Red Pitaya STEMlab board hardware_. Extension connector pin used as 5V voltage source are show in the documentation here_.
 
 Background
+
 __________
 
 1. Kirchhoff's Voltage Law states that the algebraic sum of all the voltages around any closed path (loop or mesh) is zero. If we define the voltages across each resistor R1 through R5 as V1 through V5, applying Kirchhoff's voltage law to the first and the second loops in the circuit shown in figure 1 yields: 
