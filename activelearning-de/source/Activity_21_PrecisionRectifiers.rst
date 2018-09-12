@@ -12,7 +12,7 @@ in Gleichstrom verwendet werden.
 Anmerkungen
 -----------
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -48,7 +48,7 @@ Eingang des Oszilloskopkanals IN2 ist mit dem Ende des Widerstands
 verbunden, der nicht mit der GND-Schiene verbunden ist.
 
 
-.. figure:: img / Activity_20_Figure_1.png
+.. figure:: img/Activity_20_Fig_1.png
 
    Abbildung 1: Anschlussplan für Halbwellen-Diodengleichrichter
 
@@ -63,7 +63,7 @@ als mathematisch dargestellt werden: "V_ {AC} = IN_1" und: math: `V_
 1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem Steckbrett
 
    
-.. figure:: img / Activity_20_Figure_2.png
+.. figure:: img/Activity_20_Fig_2.png
 
    Abbildung 2: Verbindungen auf dem Steckbrett
 
@@ -91,7 +91,7 @@ als mathematisch dargestellt werden: "V_ {AC} = IN_1" und: math: `V_
    
 
    
-.. figure:: img / Activity_20_Figure_3.png
+.. figure:: img/Activity_20_Fig_3.png
 
    Abbildung 3: Halbwellen-Diodengleichrichtermessungen
 
@@ -131,7 +131,7 @@ des Widerstands ist mit der GND V-Schiene verbunden.
 
 
 
-.. figure:: img / Activity_20_Figure_4.png
+.. figure:: img/Activity_20_Fig_4.png
 
    Abbildung 4: Anschlussplan für Vollwellen-Diodengleichrichter
 
@@ -142,7 +142,7 @@ Verfahren
 1. Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett
 
    
-.. figure:: img / Activity_20_Figure_5.png
+.. figure:: img/Activity_20_Fig_5.png
 
    Abbildung 5: Verbindungen auf dem Steckbrett
 
@@ -186,7 +186,7 @@ einem scharfen Punkt kommen.
 
 
 
-.. figure:: img / Activity_20_Figure_6.png
+.. figure:: img/Activity_20_Fig_6.png
 
    Abbildung 6: Vollweggleichrichtermessungen
 
@@ -222,7 +222,7 @@ machen, ohne eine zusätzliche Spannungsquelle zu benötigen.
 
 
 
-.. figure:: img / Activity_20_Figure_7.png
+.. figure:: img/Activity_20_Fig_7.png
 
    Abbildung 7: Brückenvollwellen-Diodengleichrichter
 
@@ -252,7 +252,7 @@ IN2-Fühler angeschlossen ist und D3 nicht überbrückt wird, da die "AC"
 
 
 
-.. figure:: img / Activity_20_Figure_8.png
+.. figure:: img/Activity_20_Fig_8.png
 
    Abbildung 8: Brückenvollwellen-Diodengleichrichter mit Transformator
 
@@ -273,7 +273,7 @@ Verfahren
 1. Baue die Schaltung aus Abbildung 8 auf dem Steckbrett
 
    
-.. figure:: img / Activity_20_Figure_9.png
+.. figure:: img/Activity_20_Fig_9.png
 
    Abbildung 9: Brückengleichrichter auf dem Steckbrett
 
@@ -304,7 +304,7 @@ Verfahren
 8. Setze t / div Wert auf 2ms / div (Du kannst t / div mit horizontalen +/- Kontrollen einstellen)
 
    
-.. figure:: img / Activity_20_Figure_10.png
+.. figure:: img/Activity_20_Fig_10.png
 
    Abbildung 10: Brückengleichrichtermessungen
 

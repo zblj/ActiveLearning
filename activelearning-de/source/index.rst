@@ -10,6 +10,11 @@ Willkommen zu Red Pitaya's aktivem Lernen
    ./Activity_03_Voltage
    ./Activity_04_Proportionality
    ./Activity_05_Thevenin
+   ./Activity_19_Diodes
+   ./Activity_20_DiodeRectifiers
+   ./Activity_21_PrecisionRectifiers
+   ./Activity_22_TheBJTasDiode
+
 ..
    ./Activity_06_ResponseRC
    ./Activity_07_ResponseRL
@@ -24,10 +29,6 @@ Willkommen zu Red Pitaya's aktivem Lernen
    ./Activity_16_DifferenceAmplifier
    ./Activity_17_CurrentSensingUsingDifferenceAmplifier
    ./Activity_18_TheComparatorSchmittTrigger
-   ./Activity_19_Diodes
-   ./Activity_20_DiodeRectifiers
-   ./Activity_21_PrecisionRectifiers
-   ./Activity_22_TheBJTasDiode
    ./Activity_23_TheMOSAsDiode
    ./Activity_24_TheBJTasSwitch
    ./Activity_25_MOSasSwitch

@@ -12,7 +12,7 @@ Diode, die Zener - Diode und Leuchtdiode (LED).
 Anmerkungen
 -----------
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -64,7 +64,7 @@ bezeichnet eine LED wie im rechten Symbol. Pfeile zeigen in Richtung
 die Diode würde einen Photodioden-Lichtdetektor darstellen.
 
 
-.. figure:: img / Activity_19_Figure_1.png
+.. figure:: img/Activity_19_Fig_1.png
 
 Abbildung 1: Diodeschemasymbole
 
@@ -85,7 +85,7 @@ maximales Sperrspannungspotential, das vorher angewendet werden kann
 Das Eintreten in die Zener-Region wird als Peak Inverse Voltage bezeichnet
 (PIV) oder die Spitzensperrspannung (PRV).
 
-.. figure:: img / Activity_19_Figure_2.png
+.. figure:: img/Activity_19_Fig_2.png
 
 Abbildung 2: Vorwärts- und Rückwärts-Zenerdiode :math: `I / V`-Charakteristik
 
@@ -180,7 +180,7 @@ ebenfalls in einem eingebaut spezielle transparente Verpackung wie in
 Abbildung 3 gezeigt.
 
 
-.. figure:: img / Activity_19_Figure_3.png
+.. figure:: img/Activity_19_Fig_3.png
 
    Abbildung 3: Leuchtdioden
 
@@ -250,7 +250,7 @@ angegeben wie:
    V_d = IN_2
 
    
-.. figure:: img / Activity_19_Figure_4.png
+.. figure:: img/Activity_19_Fig_4.png
 
    Abbildung 4: Anschlussplan für Dioden I- und V-Kurven
 
@@ -297,7 +297,7 @@ Prozedur - Zeitbereichsmessungen
 
 1. Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett
 
-.. figure:: img/Activity_19_Figure_5.png
+.. figure:: img/Activity_19_Fig_5.png
 
    Abbildung 5: Verbindungen auf dem Steckbrett
 
@@ -324,7 +324,7 @@ Prozedur - Zeitbereichsmessungen
    
 
 
-.. figure:: img/Activity_19_Figure_6.png
+.. figure:: img/Activity_19_Fig_6.png
 
    Abbildung 6: Spannungen und Strom auf der Diode (zeitabhängig)
 
@@ -345,7 +345,7 @@ Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
 Wie man Jupyter Notebook startet und ein neues Projekt erstellt, zeigt
 das Flussdiagramm in Abbildung 7. 
 
-.. figure:: img / Activity_19_Figure_7.png
+.. figure:: img/Activity_19_Fig_7.png
 
 Abbildung 7: Erstellen eines neuen Jupyter-Notebooks
 
@@ -453,7 +453,7 @@ Starten der Messungen.
 Nach dem Ausführen des obigen Codes sollten Sie die Diode VI als
 charakteristisch erhalten ist in Abb. 8 dargestellt.
 
-.. figure:: img/Activity_19_Figure_8.png
+.. figure:: img/Activity_19_Fig_8.png
 
    Abbildung 8: Didoes VI-Charakteristik gemessen mit Jupyter Notebook
 
