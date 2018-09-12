@@ -29,9 +29,9 @@ In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme geprüft,
 	
       V_{out} = Ein \cdot V_{in} 
 
-   Der Proportionalitätsfaktor A wird manchmal als der sogenannte Verstärkung einer Schaltung. Für die Schaltung in Fig. 1 ist die Quelle Die Spannung ist V\ :sub:`in`\. Die Antwort V\ :sub:sub:`out`\ ist across der :math:`4,7 k\Omega` Widerstand. Das wichtigste Ergebnis der Linearität ist Überlagerung.
+   Der Proportionalitätsfaktor A wird manchmal als der sogenannte Verstärkung einer Schaltung. Für die Schaltung in Fig. 1 ist die Quelle Die Spannung ist V\ :sub:`in`\. Die Antwort V\ :sub:`out`\ ist across der :math:`4,7 k\Omega` Widerstand. Das wichtigste Ergebnis der Linearität ist Überlagerung.
 
-   ... Abbildung:: img/Aktivität_04_Figur_1.png
+   .. figure:: img/Activity_04_Fig_01.png
       :align: center 
 	
       Abbildung 1: Widerstandsschaltung mit 5V Spannungsquelle
@@ -77,7 +77,7 @@ Vorgehensweise
 
 - Stellen Sie die Sondendämpfung auf x10 ein (an der Oszilloskopsonde und an der Oszilloskop IN1 Menüeinstellungen) 
 
-- Messen Sie V\:sub:`out`\ mit dem Oszilloskop genau Anwendung. 
+- Messen Sie V\ :sub:`out`\ mit dem Oszilloskop genau Anwendung. 
   
 - Sie sollten die tatsächlichen festen Netzspannungen messen und aufzeichnen auch. 
 
