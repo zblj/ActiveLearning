@@ -139,8 +139,7 @@ Abbildung 8. Rl-Konfigurationen
 d) Berechnen Sie die Leistung für jeden Lastwiderstandswert mit;
 
 .. math::
-   
-	P_L = \frac{V_L^{2}}}{R_L}
+   	P_L = \frac{V_L^{2}}}{R_L}
 
 Interpolieren Sie dann zwischen Ihren Messungen, um den Lastwiderstandswert entsprechend der maximalen Leistung (P\ :sub:`l max`\) zu berechnen. Dieser Wert sollte gleich R\ :sub:`TH` der Schaltung in Abbildung 7 in Bezug auf die Lastklemmen sein.
 
