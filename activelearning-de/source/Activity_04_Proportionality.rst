@@ -1,5 +1,5 @@
- Proportionalität und Überlagerung
-===================================
+Proportionalität und Überlagerung
+=================================
 
 Zielsetzung
 -----------

@@ -1,23 +1,22 @@
 Transient Response der RC-Beschaltung
-################################
+#####################################
 
 
 Zielsetzung
-_________
+___________
 
 Das Ziel dieser Labortätigkeit ist es, das transiente Verhalten einer RC-Schaltung zu untersuchen und das Konzept der Zeitkonstante unter Verwendung von Pulswellenformen zu verstehen.
 
 Notizen
-_____
+_______
 
 .. Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht.
-Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet. 
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet. 
 
 
 Hintergrund
-__________
+___________
 
 In dieser Labortätigkeit wenden Sie eine Pulswellenform auf die RC-Schaltung an, um das transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in Bezug auf die Zeitkonstante einer Schaltung bestimmt, wie sie von einer RC-Schaltung beeinflusst wird. 
 
