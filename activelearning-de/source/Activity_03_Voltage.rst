@@ -24,7 +24,7 @@ Schaltkreis. Die Spannungsteilung ermöglicht es uns, zu berechnen, welcher Ante
 	V_2 = V_S \frac{R_2}{R_1 + R_2}
 
 	
-.. figure:: img/Activity_03_Fig_1.png
+.. figure:: img/Activity_03_Fig_01.png
    
    Abbildung 1: Spannungsteilung.
 
@@ -35,11 +35,11 @@ Materialien
 
 - Verschiedene Widerstände:
   
-  - :math: `470 \Omega`, 
+  - :math:`470 \Omega`, 
     
-  - :math: `1 k\Omega`, 
+  - :math:`1 k\Omega`, 
 
-  - :math: `4,7 k\Omega`,
+  - :math:`4,7 k\Omega`,
 
   - :math:`1,5 k\Omega`.
 
