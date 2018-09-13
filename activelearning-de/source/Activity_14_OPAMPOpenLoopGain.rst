@@ -33,10 +33,10 @@ Materialien
 - OPAMP: 1x OP27
 - OPAMP: 1x OP97
 - Widerstand: 2x 100: Mathe: `\ Omega`
-- Widerstand: 2x 200: math: `k \ Omega`
-- Widerstand: 1x 100: math: `k \ Omega`
-- Kondensator: 2x 0.1: math: `\ mu F`
-- Kondensator: 1x 10: math: `\ mu F`
+- Widerstand: 2x 200 :math:`k \ Omega`
+- Widerstand: 1x 100 :math:`k \ Omega`
+- Kondensator: 2x 0.1 :math:`\ mu F`
+- Kondensator: 1x 10 :math:`\ mu F`
 
 
 Hintergrund
@@ -46,45 +46,45 @@ Hintergrund
 .. _tutorial: http://www.analog.com/media/en/training-seminars/tutorials/MT-044.pdf
 
 Anders als der ideale Operationsverstärker hat ein praktischer Operationsverstärker eine begrenzte Verstärkung. Das
-Open-Loop-DC-Verstärkung (normalerweise bezeichnet als: math: `A_ {VOL}` und
+Open-Loop-DC-Verstärkung (normalerweise bezeichnet als :math:`A_ {VOL}` und
 manchmal als ** forward gain **) ist die Verstärkung des Verstärkers ohne
 die Rückkopplungsschleife ist geschlossen, daher der Name "open-loop". Für a
 Präzisionsverstärker kann diese Verstärkung sehr hoch sein, in der Größenordnung von 160 dB
 (100 Millionen) oder mehr. Die offene Schleifenverstärkung des OP27_-Verstärkers ist
 rund 1,8 Millionen.
 
-.. Abbildung :: img / Activity_14_Figure_1.png
+.. Abbildung :: img/ Activity_14_Fig_1.png
 
    Abbildung 1: OP27 Datenblatt und Open Loop Gain Wert markiert
 
    
 Die Definition von Open-Loop-Verstärkung ist
 
-.. Mathematik::
+.. math::
 
    A_ {OL} = \ frac {V_ {out}} {(V ^ {+} - V ^ {-})} \ quad (1)
 
-wo: math: `(V ^ {+} - V ^ {-})` ist die Eingangsspannungsdifferenz
-: math: `V_d`, das verstärkt wird,: math:` V ^ {+} `eine Spannung an
-nichtinvertierender Eingang und: math: `V ^ {-}` Spannung am invertierenden Eingang.
+wo :math:`(V ^ {+} - V ^ {-})` ist die Eingangsspannungsdifferenz
+ :math:`V_d`, das verstärkt wird,: math:` V ^ {+} `eine Spannung an
+nichtinvertierender Eingang und :math:`V ^ {-}` Spannung am invertierenden Eingang.
 
 
 Spannungsrückkopplungs-Operationsverstärker arbeiten als ** Spannungseingang / Spannungsausgang **
 Verstärker und die Open-Loop-Verstärkung ist ein ** dimensionsloses Verhältnis **, also nein
 Einheiten sind notwendig. Datenblätter drücken jedoch manchmal Gewinn aus
-: math: `V / mV` oder: math:` V / \ mu V` anstatt: math: `V / V`, für die
+ :math:`V / mV` oder: math:` V / \ mu V` anstatt :math:`V / V`, für die
 Bequemlichkeit der Verwendung kleinerer Zahlen. Oder, Spannungsverstärkung kann auch
-ausgedrückt werden in: math: `dB` Terme, als Gain in
+ausgedrückt werden in :math:`dB` Terme, als Gain in
 
-.. Mathematik::
+.. math::
 
    Verstärkung \ quad in \ quad dB = 20log (A_ {VOL}) \ quad (2)
 
-.. Hinweis::
+.. note::
 
    Also eine Open-Loop-Verstärkung von
 
-   .. Mathematik::
+   .. math::
 
       1V / \ mu V \ quad = \ quad 1 \ quad Millionen V / V \ quad = \ quad 120 dB, \ quad usw.
       
@@ -101,46 +101,46 @@ und eine 1 V Referenz (STEMlab OUT1 Ausgang) mit Schalter S. Wenn R5 ist
 bei + 1V (Schalter S Position POS2), dann muss der Prüflingsausgang (OP27 Pin6)
 gehe auf -1V, wenn der Eingang des Hilfsverstärkers bleiben soll
 unverändert nahe Null. Die Spannungsänderung am Ausgang des Hilfsverstärkers
-: math: `V_ {out}` (OP97 Pin 6), abgeschwächt um ** R3 / R1 ** Faktor, ist der
+ :math:`V_ {out}` (OP97 Pin 6), abgeschwächt um ** R3 / R1 ** Faktor, ist der
 Eingang zum Prüfling (OP27 Pin 3), der eine Änderung von 1V verursacht
 output.Es ist einfach, den Gewinn daraus zu berechnen:
 
-.. Mathematik::
+.. math::
 
    A_ {OL} = Verstärkung_ {OL} = \ frac {R_3} {R_2} \ frac {1V} {V_ {out}} \ quad (2)
 
    
-.. Hinweis::
+.. note::
 
    Mit anderen Worten, DUT-Eingangsdifferenzspannung
-   : math: `V_d = V ^ {+} + {V ^ -}`, (wobei: math: `V ^ - = 0` und: math:` V_d =
+    :math:`V_d = V ^ {+} + {V ^ -}`, (wobei :math:`V ^ - = 0` und: math:` V_d =
    V ^ + `), notwendig, um den DUT-Ausgang auf -1 V zu setzen
-   : math: `\ frac {V_ {out}} {A_ {OL}}`.
+    :math:`\ frac {V_ {out}} {A_ {OL}}`.
 
    Der DUT-Ausgang muss auf -1 V gehen, da sich unser AUX-Operationsverstärker in der Rückkopplungsschleife befindet
-   versuchen, seine zu schieben: math: `V_d` zu 0V.
+   versuchen, seine zu schieben :math:`V_d` zu 0V.
 
    
 **Beispiel:**
 
-Wenn wir nehmen: math: `A_ {OL} = 1.8E6` dann für 1V am DUT (OP27) wir ausgeben
-muss Eingangsdifferenzspannung haben: math: `V_d` wie folgt:
+Wenn wir nehmen :math:`A_ {OL} = 1.8E6` dann für 1V am DUT (OP27) wir ausgeben
+muss Eingangsdifferenzspannung haben :math:`V_d` wie folgt:
 
-.. Mathematik::
+.. math::
    
    V_d = \ frac {1V} {1.8E6} \ ungefähr 0,555 \ mu V
 
    
-.. Hinweis::
+.. note::
 
-   In der Theorie, um zu messen: math: `A_ {OL}` konnten wir nur eine verwenden
-   Signalgenerator (zum Einstellen von: math: `V_ {d}`) und Voltmeter für
+   In der Theorie, um zu messen :math:`A_ {OL}` konnten wir nur eine verwenden
+   Signalgenerator (zum Einstellen von :math:`V_ {d}`) und Voltmeter für
    Messungen der DUT-Ausgabe. In der Praxis ist dies jedoch fast nicht der Fall
    duable dou zu Unvollkommenheiten, Rauschlevels, Offset - Niveaus und
    usw. Deshalb verwenden wir die in Abbildung 2 gezeigte Methode
-   Führen Sie die Messungen des Ausgangssignals durch: math: `V_ {out}` was ist,
-   durch Spannungsteiler (R3 / R2) bezogen auf: math: `V_ {d}` und einige
-   Größenordnung größer als: math: `V_ {d}` und somit messbar
+   Führen Sie die Messungen des Ausgangssignals durch :math:`V_ {out}` was ist,
+   durch Spannungsteiler (R3 / R2) bezogen auf :math:`V_ {d}` und einige
+   Größenordnung größer als :math:`V_ {d}` und somit messbar
    mit unserer Ausrüstung.
 
 
@@ -148,7 +148,7 @@ muss Eingangsdifferenzspannung haben: math: `V_d` wie folgt:
 und R3 Widerstände in der Schaltung, messen und notieren die Werte der
 zwei Widerstände, die ein DMM verwenden, falls verfügbar.
 
-In unserem Fall ist R3 = 97.3k: math: `\ Omega` und R2 = 99.7: math:` \ Omega`
+In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7: math:` \ Omega`
 
 .. Warnung::
 
@@ -158,7 +158,7 @@ In unserem Fall ist R3 = 97.3k: math: `\ Omega` und R2 = 99.7: math:` \ Omega`
    Kurzschlussfall.
 
 
-.. Abbildung :: img / Activity_14_Figure_2.png
+.. Abbildung :: img/ Activity_14_Fig_2.png
 
    Abbildung 2: Spannungsversorgung und Testschaltung
 
@@ -186,7 +186,7 @@ Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 
 ** Verbinden Sie OUT1 mit IN1 und stellen Sie die Tastkopfdämpfungen auf x1 ein. **
 
-.. Abbildung :: img / Activity_14_Figure_3.png
+.. Abbildung :: img/ Activity_14_Fig_3.png
 
    Abbildung 3: Testschaltung. R5 auf POS1 (siehe Abbildung 2)
 
@@ -204,9 +204,9 @@ Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 5. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.2mV **
 
 
-   .. Abbildung :: img / Activity_14_Figure_4.png
+   .. Abbildung :: img/ Activity_14_Fig_4.png
 
-   Abbildung 4: Messungen von: math: `V_ {out}` wenn R5 auf POS1 gesetzt wird (siehe Abbildung 2)
+   Abbildung 4: Messungen von :math:`V_ {out}` wenn R5 auf POS1 gesetzt wird (siehe Abbildung 2)
 
 
 Schritt 2: S ist auf POS2 (Abbildung 2)
@@ -214,7 +214,7 @@ Schritt 2: S ist auf POS2 (Abbildung 2)
 
 Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
-.. Abbildung :: img / Activity_14_Figure_5.png
+.. Abbildung :: img/ Activity_14_Fig_5.png
 
    Abbildung 5: Testschaltung. R5 auf POS2 (siehe Abbildung 2)
 
@@ -227,15 +227,15 @@ Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
 3. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.8mV **
 
-   .. Abbildung :: img / Activity_14_Figure_6.png
+   .. Abbildung :: img/ Activity_14_Fig_6.png
 
-   Abbildung 6: Messungen von: math: `V_ {out}` wenn R5 auf POS2 gesetzt ist (siehe Abbildung 2)
+   Abbildung 6: Messungen von :math:`V_ {out}` wenn R5 auf POS2 gesetzt ist (siehe Abbildung 2)
 
-   .. Hinweis::
+   .. note::
 
       Wie Sie den Messungen entnehmen können, gibt es einen gewissen Offset
       der AUX-Operationsverstärker-Ausgang (Pin 6). Idealerweise wenn R5 auf POS1 gesetzt ist
-      (Abbildung 2): math: `V_ {out}` sollte 0 sein.
+      (Abbildung 2) :math:`V_ {out}` sollte 0 sein.
       
    Nichtsdestoweniger, während beider (POS1 und POS2) Messungen der DC
    Der Offset ist gleich und wird bei der Berechnung von open aufgehoben
@@ -243,7 +243,7 @@ Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
       
    Für eine offene Schleifenverstärkung gemäß Gleichung 2 erhalten wir:
 
-   .. Mathematik::
+   .. math::
 
       A_ {OL} = \ Frac {R3} {R2} \ Frac {1V} {(V_ {out_ {POS1}} - V_ {out_ {POS2}})} =
 

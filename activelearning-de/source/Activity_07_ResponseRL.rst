@@ -124,7 +124,7 @@ Stellen Sie die Zeitbasis mit der horizontalen +/- Steuerung so ein, dass Sie et
 
 4. Die VR (IN2) Wellenform hat die gleiche Form wie die IL(t) Wellenform. Messen Sie aus VR die Zeitkonstante t und vergleichen Sie sie mit derjenigen, die Sie aus L/R :sub:`total` berechnet haben. 
 
-... Hinweis:...: 
+... note:...: 
 	
 	Bei der Messung des RC-Transienteneffekts haben wir den Cursor verwendet, um 0,63*Vc zu finden, hier interessieren wir uns für den Strom I :sub:`L` = IN2/R und nicht für die Spannung. 
 	Gemäß der Abbildung 3 sollten Sie den Cursor Y1 auf den Maximalwert von IN2 und den Cursor Y2 auf den Wert 0,37*IN2 stellen. 

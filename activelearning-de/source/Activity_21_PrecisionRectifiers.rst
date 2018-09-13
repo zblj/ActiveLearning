@@ -29,7 +29,7 @@ Materialien
 -----------
 
 - Rotes Pitaya STEMlab
-- Widerstand: 1x 1: math: `k \ Omega`
+- Widerstand: 1x 1 :math:`k \ Omega`
 - Kleinsignaldiode: 4x (1N914 oder ähnlich)
 
 
@@ -55,7 +55,7 @@ verbunden, der nicht mit der GND-Schiene verbunden ist.
    
 Aus der obigen Konfiguration folgt, dass die Eingangswechselspannung
 und die gleichgerichtete "Gleichspannung" in der Oszilloskopanwendung
-als mathematisch dargestellt werden: "V_ {AC} = IN_1" und: math: `V_
+als mathematisch dargestellt werden: "V_ {AC} = IN_1" und :math:`V_
 {rec} = IN_2`.
 
 

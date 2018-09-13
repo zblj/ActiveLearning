@@ -106,7 +106,7 @@ Für die stabile Aufnahme stellen Sie den Triggerpegel im TRIGGER-Menü auf 0,5V
 
 a. Impulsbreite größer als 5t (z.B. 15t): Stellen Sie die Frequenz des Ausgangs OUT1 so ein, dass der Kondensator bei jedem Zyklus der Rechteckwelle genügend Zeit zum vollständigen Laden und Entladen hat. Lassen Sie also die Impulsbreite 15t betragen und stellen Sie die Frequenz nach Gleichung (2) ein. Der von Ihnen gefundene Wert sollte etwa 15 Hz betragen. 
 
-Hinweis: Berechnen Sie die Frequenz von OUT1, so dass die Impulsbreite von OUT1 gleich der gewünschten ist. 
+note: Berechnen Sie die Frequenz von OUT1, so dass die Impulsbreite von OUT1 gleich der gewünschten ist. 
 Wert von x*t durch Gleichung (2):
 
 ... Mathe:...:

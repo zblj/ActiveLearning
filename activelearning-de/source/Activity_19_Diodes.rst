@@ -256,7 +256,7 @@ angegeben wie:
 
 Zur Messung der Strom-Spannungs-Kennlinie des PN-Übergangs
 Diode OUT1 Generator sollte als 1kHz Dreieckswelle mit 1 konfiguriert
-werden V max und 0 V min Werte. Zum Messen: Mathematik: VI-Kurve und
+werden V max und 0 V min Werte. Zum Messen: math: VI-Kurve und
 XY-Kurve wird benötigt, wenn die x-Achse die Diodenspannung darstellt 
 :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_1`.
 Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
@@ -319,7 +319,7 @@ Prozedur - Zeitbereichsmessungen
 6. Setzen Sie t / div-Wert auf 200us / div (Sie können t / div mit horizontalem einstellen
    +/- Kontrollen)
    
-7. Stellen Sie im Menü MATH settings IN1-IN2 ein und wählen Sie enable. **Mathematik
+7. Stellen Sie im Menü MATH settings IN1-IN2 ein und wählen Sie enable. **math
    Spur mit Faktor R1 skaliert Diodenstrom **
    
 
@@ -352,7 +352,7 @@ Abbildung 7: Erstellen eines neuen Jupyter-Notebooks
 Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
 kopieren und einfügen Code unten und führen Sie es aus. Code unten
 erzeugt das gleiche Signal wie von Abbildung 6, aber es wird sie in
-XY-Graphen darstellen. Zum Messen: Mathematik: `VI` Kurve ein "XY"
+XY-Graphen darstellen. Zum Messen: math: `VI` Kurve ein "XY"
 Diagramm ist erforderlich, wo x-Achse Diode darstellt Spannung
 :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_1`. 
 
@@ -444,7 +444,7 @@ von unten in es.
 
    
    
-Führen Sie Zelle 1 und Zelle 2 aus. Hinweis Zelle 2 ist eine
+Führen Sie Zelle 1 und Zelle 2 aus. note Zelle 2 ist eine
 Hauptschleife für die Akquisition und Neuplanung. Wenn Sie die
 Erfassung stoppen, fahren Sie einfach fort nur Zelle 2 zum erneuten
 Starten der Messungen. 

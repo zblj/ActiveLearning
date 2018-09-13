@@ -285,7 +285,7 @@ Nachdem die Messungen durchgeführt wurden, sollten Sie den Frequenzgang Ihrer S
 
 - Vergleichen Sie Messungen und Berechnungen. Wenn es einen Unterschied gibt, versuchen Sie zu erklären, warum.
 
-... Hinweis:...: 
+... note:...: 
 
    parasitär
 

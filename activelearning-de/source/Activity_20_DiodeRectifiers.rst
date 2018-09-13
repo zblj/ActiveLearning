@@ -55,7 +55,7 @@ verbunden, der nicht mit der GND-Schiene verbunden ist.
 
 Aus der obigen Konfiguration folgt, dass die Eingangswechselspannung
 und die gleichgerichtete "Gleichspannung" in der Oszilloskopanwendung
-als mathematisch dargestellt werden: "V_ {AC} = IN_1" und: math: `V_
+als mathematisch dargestellt werden: "V_ {AC} = IN_1" und :math:`V_
 {rec} = IN_2`. 
 
 

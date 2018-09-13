@@ -27,40 +27,40 @@ ___________
 
 Schaltkreise unterscheiden sich wesentlich von linearen Schaltkreisen. Sie sind auch leichter zu verstehen. Bevor wir komplexere Schaltungen untersuchen, werden wir mit der Einführung diskreter Halbleiterschaltkreise beginnen: jene, die um BJTs herum gebaut sind.
 
-Ein Schalter besteht aus einem BJT-Transistor, der abwechselnd zwischen dem Sättigungs- und dem Sperrbereich betrieben wird. Eine einfache Version des Schalters ist in Abbildung 1 dargestellt. Wenn der Eingang gleich ist: math: `-V_ {in}`, ist die Basis-Emitter-Verbindung in Sperrrichtung vorgespannt oder ausgeschaltet, so dass kein Strom im Kollektor fließt. Dies wird durch die rote Lastlinie in der Abbildung veranschaulicht. Wenn der BJT abgeschaltet ist, hat die Schaltung (idealerweise) die folgenden Werte:
+Ein Schalter besteht aus einem BJT-Transistor, der abwechselnd zwischen dem Sättigungs- und dem Sperrbereich betrieben wird. Eine einfache Version des Schalters ist in Abbildung 1 dargestellt. Wenn der Eingang gleich ist :math:`-V_ {in}`, ist die Basis-Emitter-Verbindung in Sperrrichtung vorgespannt oder ausgeschaltet, so dass kein Strom im Kollektor fließt. Dies wird durch die rote Lastlinie in der Abbildung veranschaulicht. Wenn der BJT abgeschaltet ist, hat die Schaltung (idealerweise) die folgenden Werte:
 
-.. Mathematik::
+.. math::
   
     V_ {CE} = V_ {CC} \ Quad \ Text {und} \ Quad I_C = 0 A \ Quad (1)
 
 Dieser Zustand ähnelt einem offenen Schalter.
-Wenn der Eingang gleich ist: math: `+ V_ {in}`, wird der Transistor in die Sättigung getrieben und die folgenden Bedingungen treten auf:
+Wenn der Eingang gleich ist :math:`+ V_ {in}`, wird der Transistor in die Sättigung getrieben und die folgenden Bedingungen treten auf:
 
-.. Mathematik::
+.. math::
   
     V_ {CE} \ approx 0 \ quad \ text {und} \ quad I_ {C_ {sat}} = \ frac {V_ {CC}} {R_C} A \ quad (2)
 
-Dieser Zustand ähnelt einem geschlossenen Schalter, der den Boden von: math: `R_C` mit Masse verbindet.
+Dieser Zustand ähnelt einem geschlossenen Schalter, der den Boden von :math:`R_C` mit Masse verbindet.
 
-.. Bild :: img / Activity_24_Figure_1.png
+.. figure:: img/ Activity_24_Fig_1.png
 
 Abbildung 1: NPN BJT-Schalter und seine Lastlinie
 
 Die Merkmale für einen BJT-Schalter gehen davon aus, dass
 
-1.: math: `-V_ {in}` ist niedrig genug, um den Transistor in Abschaltung zu treiben.
-2.: math: `+ V_ {in}` muss genug Basisstrom durch RB erzeugen, um den Transistor in Sättigung zu treiben.
+1. :math:`-V_ {in}` ist niedrig genug, um den Transistor in Abschaltung zu treiben.
+2. :math:`+ V_ {in}` muss genug Basisstrom durch RB erzeugen, um den Transistor in Sättigung zu treiben.
 3. Der Transistor ist eine ideale Komponente.
 
 Diese Bedingungen können sichergestellt werden, indem die Schaltung so ausgelegt wird, dass:
 
-1.: math: `-V_ {in} = V_ {BE}`
-2.: math: `+ V_ {in} = V_ {BE} + I_B R_B` (: math:` V_ {CC} `ist ein gutes Maximum)
-3.: math: `I_B> I_ {C_ {sat}} / \ beta`
+1. :math:`-V_ {in} = V_ {BE}`
+2. :math:`+ V_ {in} = V_ {BE} + I_B R_B` (: math:` V_ {CC} `ist ein gutes Maximum)
+3. :math:`I_B> I_ {C_ {sat}} / \ beta`
 
 Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbereich getrieben wird. Die Bedingungen 2 und 3 stellen sicher, dass der Transistor in den Sättigungsbereich getrieben wird. Ein tatsächlicher BJT-Schalter unterscheidet sich von dem idealen Schalter in mehreren Aspekten. In der Praxis gibt es selbst im Sperrbereich einen kleinen Leckstrom durch den Transistor. Auch in der Sättigung fällt immer eine gewisse Spannung über den Innenwiderstand des Transistors ab. In der Regel liegt die Sättigung zwischen 0,2 und 0,4 V, abhängig vom Kollektorstrom und der Größe des Geräts. Diese Abweichungen vom Ideal sind bei einem Gerät mit richtiger Größe im Allgemeinen geringfügig, so dass wir bei der Analyse oder Konstruktion eines BJT-Schaltkreises nahezu ideale Bedingungen annehmen können.
 
-.. Bild :: img / Activity_24_Figure_2.png
+.. figure:: img/ Activity_24_Fig_2.png
 
 Abbildung 2: NPN-LED-Schalter
 
@@ -77,9 +77,9 @@ __________
 Verfahren
 ___________
 
-1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set: Mathematik: `R_B` = 1kΩ,: Mathematik:` R_C` = 100Ω
+1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set: math: `R_B` = 1kΩ,: math:` R_C` = 100Ω
 
-.. Bild :: img / Activity_24_Figure_3.png
+.. figure:: img/ Activity_24_Fig_3.png
 
 Abbildung 3: NPN LED-Schalter auf dem Steckbrett
 
@@ -92,7 +92,7 @@ Abbildung 3: NPN LED-Schalter auf dem Steckbrett
 6. Stellen Sie unter IN2-Menüeinstellungen Sonde auf x10 und vertikalen Offset auf 0 ein.
 7. Setzen Sie unter IN1 den vertikalen Offset auf 0.
 
-.. Bild :: img / Activity_24_Figure_4.png
+.. figure:: img/ Activity_24_Fig_4.png
 
 Abbildung 4: NPN als Schalter Messungen
 
@@ -103,10 +103,10 @@ In diesem "eingeschalteten" Zustand können wir sehen, dass IN2 (LED-Spannung ni
 Fragen
 __________
 
-1. Wieviel Strom fließt in den Widerständen: math: `R_C` und: math:`
+1. Wieviel Strom fließt in den Widerständen :math:`R_C` und: math:`
    R_B` wenn die LED an ist und wenn die LED aus ist?
    
-2. Berechnen Sie: math: `\ beta`, wenn Q1 gesättigt ist. Wie
+2. Berechnen Sie :math:`\ beta`, wenn Q1 gesättigt ist. Wie
    vergleicht sich dieser Wert mit der im Datenblatt angegebenen
    Spezifikation?
    

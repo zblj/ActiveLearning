@@ -50,7 +50,7 @@ aufgeführt.
    Omega` und: math:` R_f = 10k \ Omega`
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-   oder OP97 verwendet haben. (Hinweis "Schiene-zu-Schiene").
+   oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
    
 
 Der Diode Verbunden NPN-Transistor
@@ -185,7 +185,7 @@ kopieren Sie den Code und fügen Sie ihn ein.
 Der Code unten erzeugt das gleiche Signal wie in Abbildung 6, aber es
 wird sie im XY-Diagramm darstellen.
 
-Zum Messen: Mathematik: `VI'-Kurve wird ein" XY "-Plot benötigt, wobei
+Zum Messen: math: `VI'-Kurve wird ein" XY "-Plot benötigt, wobei
 die x-Achse die Diodenspannung darstellt :math:`IN_2` und y-Achse ein
 Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
 
@@ -273,7 +273,7 @@ Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
           push_notebook(handle=target)
 
 
- Führen Sie Zelle 1 und Zelle 2 aus. Hinweiszelle 2 ist eine
+ Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
  Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
  Erfassung stoppen, führen Sie nur die Zelle 2 aus  um die Messung
  erneut zu starten.

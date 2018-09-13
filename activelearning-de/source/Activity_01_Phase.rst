@@ -65,7 +65,7 @@ keine Phase Offset. Beachten Sie, dass bei Verwendung von Graden
 :math:`360^{\circ}` um den Sinus zu erhalten Welle in Fig. 1
 gezeigt. 
 
-.. figure:: img / Activity_01_Fig_01.png
+.. figure:: img/ Activity_01_Fig_01.png
    :align: center
 
    Abbildung 1: 2 Zyklen von :math:`\sin(t)`
@@ -97,7 +97,7 @@ Sinuswelle zeitlich um einen Wert von :math:`\ theta`
 verschoben, was :math:`1/4` von der Zeitraum in diesem
 Beispiel. 
 
-.. figure:: img / Activity_01_Fig_02.png
+.. figure:: img/ Activity_01_Fig_02.png
    :align: center
 
    Abbildung 2: grün - :math:`\sin(t)`, orange - :math:`\sin(t + \pi/4)`.
@@ -314,9 +314,9 @@ Messen Sie den Phasenwinkel zwischen zwei generierten Wellenformen:
 Von den vorherigen Einstellungen sollten Sie sehen, was wie 1 Sinus aussieht
 Welle. Es gibt zwei nur eins ist übereinander - Nullphase Winkel!
 
-- Ändern Sie im OUT1-Steuermenü die Phase in: math: `90 ^ {\ circ}`.
+- Ändern Sie im OUT1-Steuermenü die Phase in :math:`90 ^ {\ circ}`.
 
-- Ändern Sie im OUT2-Steuermenü die Phase in: math: `135 ^ {\ circ}`.
+- Ändern Sie im OUT2-Steuermenü die Phase in :math:`135 ^ {\ circ}`.
 
 - Welcher Kanal sieht aus wie der Sinus vor dem anderen auftritt?
 
@@ -335,7 +335,7 @@ ebenfalls verwendet werden.
    Bild 5: Oszilloskop-Applikation mit zwei Sinussignalen mit
    Phasendifferenz.
 
-- Ändern Sie die Phase von OUT2 zu: math: `45 ^ {\ circ}`. Jetzt sieht
+- Ändern Sie die Phase von OUT2 zu :math:`45 ^ {\ circ}`. Jetzt sieht
   es so aus, als ob das CHB-Signal dem CHA-Signal nacheilt. 
 
 - Drücken Sie die rote STOP-Taste, um die Erfassung des Oszilloskops
@@ -358,7 +358,7 @@ OUT2-Signal.
 
 - Was ist :math:`\Delta t`?
 
-- Verwenden Sie die gemessenen: math: `\ Delta t` und Gl. (2) um die
+- Verwenden Sie die gemessenen :math:`\ Delta t` und Gl. (2) um die
   Phase zu berechnen Offset :math:`\theta` in Grad.
 
 
@@ -378,7 +378,7 @@ diesem Teil des Labors.
    Abbildung 6: R-R-Schaltung.
 
 Baue die in Abb. 5 gezeigte Schaltung auf deinem lötfreien Steckbrett
-mit zwei: math: `470 \ Omega` Widerstände, Oszilloskop-Sonden und Red
+mit zwei :math:`470 \ Omega` Widerstände, Oszilloskop-Sonden und Red
 Pitaya STEMlab Board.
 
 
@@ -464,7 +464,7 @@ dass wir zwei identische haben Signale (IN2 = V \: sub: `R2` \, MATH =
 V \: sub:` R1` \) auf der Oszilloskop.
 
 
-Was passiert, wenn du folgendes verwendest: math: `220 \ Omega` Wert für R \: sub:` 2` \?
+Was passiert, wenn du folgendes verwendest :math:`220 \ Omega` Wert für R \: sub:` 2` \?
 
 - Messung RC-Schaltung
 
@@ -559,9 +559,9 @@ Bildschirm.
 - Setzen Sie einen ersten Cursor auf das Neg. zu
   pos. Nulldurchgangsstelle für das Signal IN1 (V\ :sub:`R1` \ + V\
   :sub:`C1` \). Setzen Sie einen zweiten Cursor beim nächsten neg. zu
-  pos. Nulldurchgangsstelle für die Mathematik (V\ :sub:`R1` \)
+  pos. Nulldurchgangsstelle für die math (V\ :sub:`R1` \)
   Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie
-  den Phasenwinkel. Hinweis: math: `\ Delta t` kann eine negative Zahl
+  den Phasenwinkel. note :math:`\ Delta t` kann eine negative Zahl
   sein. Heißt das der Phasenwinkel führt oder lagert?
 
   :math:`\ Delta t` _________, :math:`\theta` _________
@@ -595,9 +595,9 @@ Bildschirm.
 - Setzen Sie einen ersten Cursor auf das Neg. zu
   pos. Nulldurchgangsstelle für das Signal IN1 (V\ :sub:`R1` \ + V\
   :sub:`C1` \). Setzen Sie einen zweiten Cursor beim nächsten
-  neg. zu pos. Nulldurchgangsstelle für die Mathematik (V\ :sub:`R1`
+  neg. zu pos. Nulldurchgangsstelle für die math (V\ :sub:`R1`
   \) Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie
-  den Phasenwinkel. Hinweis :math:`\Delta t` kann eine negative Zahl
+  den Phasenwinkel. note :math:`\Delta t` kann eine negative Zahl
   sein. Tut Das heißt, der Phasenwinkel führt oder hinkt?
 
   :math:`\Delta t` _________, :math:`\theta` _________
