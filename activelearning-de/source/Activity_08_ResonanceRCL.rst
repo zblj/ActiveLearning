@@ -188,7 +188,7 @@ können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5 und 8.
    
    .. math::
 
-      H_v = 20 \cdot \log_{10}\left\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.
+      H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.
 
 
 
