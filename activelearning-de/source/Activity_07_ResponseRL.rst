@@ -1,21 +1,21 @@
 Transient Response einer RL-Schaltung
-###################################
+#####################################
 
 Zielsetzung
-_________
+___________
 
 Das Ziel dieser Labortätigkeit ist es, das transiente Verhalten von Induktionsschaltungen mit einer RL-Konfiguration der Serie zu untersuchen und das Konzept der Zeitkonstante zu verstehen.
 
 Notizen
-_____
+_______
 
-.. Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht.
 Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet. 
 
 Hintergrund
-__________
+___________
 
 Diese Labortätigkeit ist ähnlich wie die RC Lab Aktivität 5, nur dass der Kondensator durch einen Induktor ersetzt wird. In diesem Experiment wenden Sie eine rechteckige Wellenform auf die RL-Schaltung an, um das transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in Bezug auf die Zeitkonstante der Schaltung bestimmt, wie sie von der RL-Schaltung beeinflusst wird. 
 
@@ -23,7 +23,7 @@ Zeitkonstante (t): Es ist ein Maß für die Zeit, die für bestimmte Änderungen
  
 Die Zeitkonstante einer RL-Schaltung ist die äquivalente Induktivität dividiert durch den Thévenin-Widerstand, bezogen auf die Anschlüsse des äquivalenten Induktors. 
 
-... Mathe:...:
+.. math::
 	f=\frac{L}{R}{R} 
 
 
@@ -32,12 +32,12 @@ Ein Impuls ist eine Spannung oder ein Strom, der von einem Niveau zum anderen un
 
 Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird durch: 
  
-... Mathe:...:
+.. math::
 
 	f=\frac{1}{2t_p} 
 	
 
-... Bild:: img/Aktivität_07_Figur_1.png
+.. image:: img/Aktivity_07_Fig_01.png
 
 Abbildung 1: Serien-RL-Schaltung
 
@@ -45,13 +45,13 @@ In einem R-L-Kreis nimmt die Spannung über dem Induktor mit der Zeit ab, währe
 
 Der Ausdruck für den Strom im Induktor wird durch:
 
-... Mathe:...:
+.. math::
 	
 	I_L(t) = RV( 1 - e^{-\frac{R}{L}t} ) ; t >= 0
 
 wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist, die Ansprechkurve steigt und ist in Figur 2 dargestellt. 
 
-... Bild:: img/Aktivität_07_Figur_2.png
+.. image:: img/Aktivity_07_Fig_02.png
 
 Abbildung 2: Der Strom im Induktor steigt in einem Serien-RL-Kreis an.
 
@@ -59,21 +59,21 @@ Abbildung 2: Der Strom im Induktor steigt in einem Serien-RL-Kreis an.
 
 Der Ausdruck für den Stromabfall über den Induktor wird durch: 
  
-... Mathe:...: 
+.. math:: 
  
 	I_L(t) = I_0 e^{- \frac{R}{L}t} ; t >= 0 
 
-wo, ich untergehe: `0` ist der Anfangsstrom, der im Induktor bei t = 0 gespeichert ist.  
+wo, I\ :sub:`0`\ ist der Anfangsstrom, der im Induktor bei t = 0 gespeichert ist.  
 L/R = t ist die Zeitkonstante. 
  
 Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in Abbildung 3 dargestellt. 
 
-... Bild:: img/Aktivität_07_Figur_3.png
+.. image:: img/Aktivity_07_Fig_03.png
 
 Da es nicht möglich ist, den Strom durch den Induktor direkt zu messen (Strom, der von der Antriebsquelle OUT1 geliefert wird), werden wir die Ausgangsspannung über den Widerstand in Reihe mit dem Induktor messen. Die Wellenform des Widerstandes wird die gleiche Form wie der Induktorstrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Induktor) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`circuit` = I :sub:`L` = I :sub:`R` 
-Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub ist: "R", das ist der Strom durch den Induktor multipliziert mit dem Widerstand R.
+Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R`, das ist der Strom durch den Induktor multipliziert mit dem Widerstand R.
 
-... Mathe:...:
+.. math::
 	
 	IN2 = R \cdot I_L 
 
@@ -85,27 +85,27 @@ Die R-Induktivität ist der Messwert des Induktionswiderstandes und kann mit ein
 
 
 Materialien
-_________
+___________
 
-Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
+Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 Widerstand 220 Ω
 
 Induktor 20 mH (2x10 mH in Serie)
 
 Vorgehensweise
-_________
+______________
 
 1. Messen Sie den kombinierten Induktor- und Widerstandswiderstand R \ :sub:`total` \ mit einem Multimeter.
 
 
 
 
-... Abbildung:: img/Aktivität_07_Figur_4.png
+.. figure:: img/Aktivity_07_Fig_04.png
 
 2. Richten Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH ein. 
-Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
-Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.
+-Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
+-Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.
 
 Abbildung 5: Versuchsaufbau 
 
@@ -124,9 +124,10 @@ Stellen Sie die Zeitbasis mit der horizontalen +/- Steuerung so ein, dass Sie et
 
 4. Die VR (IN2) Wellenform hat die gleiche Form wie die IL(t) Wellenform. Messen Sie aus VR die Zeitkonstante t und vergleichen Sie sie mit derjenigen, die Sie aus L/R :sub:`total` berechnet haben. 
 
-... note:...: 
+.. hint:: 
 	
-	Bei der Messung des RC-Transienteneffekts haben wir den Cursor verwendet, um 0,63*Vc zu finden, hier interessieren wir uns für den Strom I :sub:`L` = IN2/R und nicht für die Spannung. 
+	Bei der Messung des RC-Transienteneffekts haben wir den Cursor verwendet, um 0,63*Vc zu finden, hier interessieren wir uns für den Strom I :sub:`L` = IN2/R und nicht für die Spannung.
+	
 	Gemäß der Abbildung 3 sollten Sie den Cursor Y1 auf den Maximalwert von IN2 und den Cursor Y2 auf den Wert 0,37*IN2 stellen. 
 	Die Cursor X1 und X2 auf die Kreuzungspunkte einstellen und die Zeitkonstante messen.
 
