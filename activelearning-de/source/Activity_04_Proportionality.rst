@@ -12,10 +12,10 @@ Notizen
 
 .. _E1: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
-.. Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya STEMlab-Karte geht.
-hardware_. Verlängerungsstecker-Pins, die als 5V- und 3,3V-Spannungsquelle verwendet werden sind in der Dokumentation zu den Steckverbindern E1_ und E2_ aufgeführt. 
+Hardware_. Verlängerungsstecker-Pins, die als 5V- und 3,3V-Spannungsquelle verwendet werden sind in der Dokumentation zu den Steckverbindern E1_ und E2_ aufgeführt. 
 
 
 Hintergrund
