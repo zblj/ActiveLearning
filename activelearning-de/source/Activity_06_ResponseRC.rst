@@ -45,7 +45,7 @@ Abbildung 1: RC-Beschaltung der Serie.
 Aus den Gesetzen Kirchhoffs lässt sich nachweisen, dass die Ladespannung V\ :sub:`C`\ (t) über dem Kondensator durch gegeben ist: 
 
 .. math::	
-	V_C (t) = V( 1- e^{- \frac{t}{RC}}) ) } t >= 0 
+	V_C (t) = V( 1- e^{- \frac{t}{RC}}) t >= 0 
 
 wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist, RC = t die Zeitkonstante ist. Die Ansprechkurve nimmt zu und ist in Abbildung 2 dargestellt. 
 
@@ -57,7 +57,7 @@ Die Entladungsspannung für den Kondensator wird durch angegeben:
 
 .. math::
 
-	V_C (t) = V_o e^{-\frac{t}{RC}}} ;t >= 0 
+	V_C (t) = V_o e^{-\frac{t}{RC}} ;t >= 0 
 
 Dabei ist V\ :sub:`0`\ die im Kondensator gespeicherte Anfangsspannung bei t = 0 und RC = t die Zeitkonstante. Die Reaktionskurve ist eine abnehmende Exponentialfunktion, wie in Abbildung 3 dargestellt. 
 
