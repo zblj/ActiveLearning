@@ -105,17 +105,17 @@ ist so gewählt, dass für den gewünschten Nennkollektorstrom
 erscheint bei :math:`V_ {CE}` (bei DC-Betriebspunktbedingung). Widerstand
  :math:`R_B` legt den Betriebspunkt für die nominale Vorspannung für die
 Transistor (Basisstrom :math:`I_B`), um den erforderlichen Kollektor zu versenken
-aktuell: math: `I_C`. Das Eingangssignal ist AC-gekoppelt mit der Basis von
+aktuell :math:`I_C`. Das Eingangssignal ist AC-gekoppelt mit der Basis von
 der Transistor mit Kondensator :math:`C_1`, um die DC-Vorspannung nicht zu stören
 Bedingungen**. Spannungsteiler :math:`\ frac {R_1} {R_2}` wird gewählt
-einen selbst vorgespannten DC-Arbeitspunkt bereitstellen. Widerstand: math: `R_E` wird verwendet
+einen selbst vorgespannten DC-Arbeitspunkt bereitstellen. Widerstand :math:`R_E` wird verwendet
 Emitterdegeneration (Stromrückkopplung) hinzufügen, um sich zu stabilisieren
 der DC-Arbeitspunkt.
 
 Der beste Ansatz für die Auswahl von :math:`R_L` und: math:` R_E`
 ist es, Spannungsabfälle quer zu ermöglichen :math:`Q_1`,: math:` R_L` und
  :math:`R_E` entspricht dem 1/3 von: math:` V_ {CC} `(bei DC-Betrieb
-Punktbedingung). Also: math: `R_E` =: math:` R_L`. Hinzufügen des Emitters
+Punktbedingung). Also :math:`R_E` =: math:` R_L`. Hinzufügen des Emitters
 Degenerationswiderstand hat die Stabilität des DC-Betriebs verbessert
 Punkt auf Kosten der reduzierten Verstärkerverstärkung. Eine höhere Verstärkung für AC
 Signale können durch Hinzufügen eines Kondensators in gewissem Umfang wiederhergestellt werden
@@ -210,7 +210,7 @@ Jetzt können wir berechnen :math:`R_ {in}`, d. H . :math:`R_ {B}` Wert als:
 
 
 Der letzte Schritt besteht darin, Werte von DC-Vorspannungswiderständen zu berechnen
-: math: `R_1` und: math:` R_2`.  :math:`R_2` kann erhalten werden von
+ :math:`R_1` und: math:` R_2`.  :math:`R_2` kann erhalten werden von
 "Kochbuch" -Beziehung in Gl. (9) und deshalb: Mathe: `R_1`
 kann aus Gl. (10).
 
@@ -281,9 +281,9 @@ Verfahren
 ---------
 
 Nach obigen Berechnungen und Richtlinien haben wir gemeinsam gebaut
-Emitter-Verstärker in Abbildung 2 gezeigt. Wir hatten eine: math: `470 \ Omega`
-Widerstände verfügbar und diese Widerstände wurden verwendet für: math: `R_L` und
-: math: `R_E`. Nach Auswahl von :math:`R_L` und: math:` R_E` der anderen
+Emitter-Verstärker in Abbildung 2 gezeigt. Wir hatten eine :math:`470 \ Omega`
+Widerstände verfügbar und diese Widerstände wurden verwendet für :math:`R_L` und
+ :math:`R_E`. Nach Auswahl von :math:`R_L` und: math:` R_E` der anderen
 Komponenten wurden berechnet und ausgewählt.
 
 

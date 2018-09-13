@@ -42,7 +42,7 @@ Für den :math:`M_1` Transistor werden wir IRLU120N_ verwenden. Wir haben diesen
 
     Ein einfacher DC-DC-Boost-Konverter-Rechner ist auch auf der Adafruit-Webseite verfügbar.
 
-Für Speicherkondensator: math: `C_1` und Elektrolytkondensator sollte gewählt werden. Die Auswahl dieses Kondensators hängt von Stromstärken, Schaltfrequenz und Induktivitätswert ab. Aber um auf der sicheren Seite zu sein Werte oben :math:`10 \ mu F` wäre ausreichend.
+Für Speicherkondensator :math:`C_1` und Elektrolytkondensator sollte gewählt werden. Die Auswahl dieses Kondensators hängt von Stromstärken, Schaltfrequenz und Induktivitätswert ab. Aber um auf der sicheren Seite zu sein Werte oben :math:`10 \ mu F` wäre ausreichend.
 Ein DC-DC-Aufwärtswandler, der in diesem Experiment verwendet wird, ist in 1 gezeigt.
 
 

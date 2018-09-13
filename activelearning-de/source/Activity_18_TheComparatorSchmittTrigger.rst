@@ -18,7 +18,7 @@ Anmerkungen
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _AD8561: http://www.analog.com/media/en/technical-documentation/data-sheets/AD8561.pdf
@@ -66,7 +66,7 @@ zwischenspeichert oder einfriert und verhindert, dass er sich
       
 
 
-.. figure:: img/Aktivität_18_Fig_1.png
+.. figure:: img/Activity_18_Fig_1.png
 
    Abbildung 1: AD8561_ Datenblatt und Pinbelegung
 
@@ -92,7 +92,7 @@ Ihrem Lötplatinen-Board dargestellt. Die zwei Pull-up-Widerstände mit
 Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
 
 
-.. figure:: img/ Activity_18_Fig_2.png
+.. figure:: img/Activity_18_Fig_2.png
 
    Abbildung 2: AD8561_ Komparatorschaltung
 
@@ -239,41 +239,42 @@ Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
 
    
 .. note::
-     Normalerweise besteht unsere Intuition darin, eine hohe
-     Wahrscheinlichkeit von Rauschproblemen mit Hochfrequenzsignalen
-     zu korrelieren. Im Falle eines Spannungskomparators ist dies
-     nicht immer der Fall.
+   Normalerweise besteht unsere Intuition darin, eine hohe
+   Wahrscheinlichkeit von Rauschproblemen mit Hochfrequenzsignalen
+   zu korrelieren. Im Falle eines Spannungskomparators ist dies
+   nicht immer der Fall.
      
-     Wenn wir die OUT1-Frequenz ( :math:`V_ {in}`) auf 100 kHz
-     erhöhen, ist das Schaltrauschen viel geringer. Weg ist das? Sie
-     denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
-     Eingänge und vergleicht ständig Werte von :math:`V_ {in}` und
-     :math:`V_ {ref}`. Nun stellen wir :math:`V_ {in}` als
-     geräuschloses Signal und :math:`V_ {ref} = DC + (-) A_{noise}`.
-     Wenn die Dreieckwelle :math:`V_ {in}` Signal sich
-     langsam nähert :math:`V_ {ref}` beginnt der
-     Spannungsvergleicher zu schalten und wenn die
-     :math:`V_{ref}` Amplitude um den DC-Wert schwingt um
-     :math:`A_{noise}` der Komparator
+   Wenn wir die OUT1-Frequenz ( :math:`V_ {in}`) auf 100 kHz
+   erhöhen, ist das Schaltrauschen viel geringer. Weg ist das? Sie
+   denken vielleicht so: Spannungsvergleicher hat sehr empfindliche
+   Eingänge und vergleicht ständig Werte von :math:`V_ {in}` und
+   :math:`V_ {ref}`. Nun stellen wir :math:`V_ {in}` als
+   geräuschloses Signal und :math:`V_ {ref} = DC + (-) A_{noise}`.
+   Wenn die Dreieckwelle :math:`V_ {in}` Signal sich
+   langsam nähert :math:`V_ {ref}` beginnt der
+   Spannungsvergleicher zu schalten und wenn die
+   :math:`V_{ref}` Amplitude um den DC-Wert schwingt um
+   :math:`A_{noise}` der Komparator
 	   
-     Die Ausgabe ändert die Zustände entsprechend dem :math:`V_ {in} -
-     (V_ {ref} = DC + (-) A_ {Rauschen})` Verhältnis. Also, so lange
-     :math:`V_ {in}` amplitude ** bleibt im Bereich ** von
-     :math:`V_{ref} = DC + (-) A_ {noise}` Wert wird der
-     Komparatorausgang effektiv eingeschaltet  :math:`A_{noise}`
-     und nicht auf den Eingangssignalen. Einmal :math:`V_ {in}`
-     geht unter :math:`V_ {ref} = DC - A_{noise}` oder höher
-     :math:`V_ {ref} = DC + A_{noise}` wird der Komparator ausgegeben
-     Schalter hoch  oder niedrig, aber jetzt auf Eingangssignalwerte
-     nicht auf Rauschwerte. Sie können sehen, dass **
-     niederfrequente Dreiecksschwingung ** :math:`V_ {in}
-     'Amplitude ** mehr Zeit verbringen wird ** in der
-     Nähe von: math:` V_ {ref} = DC + (-) A_ {noise} `
-     wodurch der Spannungsvergleicher eine verrauschte
-     Ausgabe erzeugt, während die ** hohe
-     Frequenzdreieckwelle ** :math:`V_ {in}` die Amplitude
-     **schnell vergeht**
-     :math:`V_ {ref} = DC + (-) A_{rauschunterdrückender Spannungskomparator, um irgendeine Rauschumschaltung zu erzeugen}`.
+   Die Ausgabe ändert die Zustände entsprechend dem
+   :math:`V_ {in} - (V_ {ref} = DC + (-) A_ {Rauschen})`
+   Verhältnis. Also, so lange
+   :math:`V_ {in}` amplitude **bleibt im Bereich** von
+   :math:`V_{ref} = DC + (-) A_ {noise}` Wert wird der
+   Komparatorausgang effektiv eingeschaltet  :math:`A_{noise}`
+   und nicht auf den Eingangssignalen. Einmal :math:`V_ {in}`
+   geht unter :math:`V_ {ref} = DC - A_{noise}` oder höher
+   :math:`V_ {ref} = DC + A_{noise}` wird der Komparator ausgegeben
+   Schalter hoch  oder niedrig, aber jetzt auf Eingangssignalwerte
+   nicht auf Rauschwerte. Sie können sehen, dass **
+   niederfrequente Dreiecksschwingung ** :math:`V_ {in}
+   'Amplitude ** mehr Zeit verbringen wird ** in der
+   Nähe von: math:` V_ {ref} = DC + (-) A_ {noise} `
+   wodurch der Spannungsvergleicher eine verrauschte
+   Ausgabe erzeugt, während die ** hohe
+   Frequenzdreieckwelle ** :math:`V_ {in}` die Amplitude
+   **schnell vergeht**
+   :math:`V_ {ref} = DC + (-) A_{rauschunterdrückender Spannungskomparator, um irgendeine Rauschumschaltung zu erzeugen}`.
 		 
 
 
@@ -337,38 +338,34 @@ von :math:`V_ {high}` und bei :math:`V_ {low}` ist:
 Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
 
 .. math::
+   V_ {th_ {hoch}} = \ frac {R_1} {R_1 + R_2} (V_ {hoch} + V_ {ref}) + V_ {ref} \ quad (1)
 
-     V_ {th_ {hoch}} = \ frac {R_1} {R_1 + R_2} (V_ {hoch} + V_ {ref}) + V_ {ref} \ quad (1)
-
-     .
-
-     V_ {th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_ {niedrig} - V_ {ref}) + V_ {ref} \ quad (2)
+   V_ {th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_ {niedrig} - V_ {ref}) + V_ {ref} \ quad (2)
 
 
 Die resultierende Hysteresespalte für die Schaltung von Fig. 8 ist gegeben durch:
 
 .. math::
- 
-     V_ {hist} = V_ {th_ {hoch}} - V_ {th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_ {hoch} - V_ {niedrig}) \ quad (3)
+   V_ {hist} = V_ {th_ {hoch}} - V_ {th_ {niedrig}} = \ frac {R_1} {R_1 + R_2} (V_ {hoch} - V_ {niedrig}) \ quad (3)
 
 
 Für den AD8561 mit einer +2,5-V-Stromversorgung und Pull-up-Widerstand
 :math:`V_ {hoch} - V_ {niedrig} \ ca. 2,3 V`. Weil das andere Ende des
-      Spannungsteilers (unten von R1) verbunden ist mit :math:`V_
-      {ref} = 0,5 V`, die Schwellenspannungen: math:` V_ {th_ {high}}
-      `und: math:` V_ {th_ {low}} `wird um 0,5 V herum zentriert (:
-      math:` V_ {ref} `) unter der Annahme, dass: math:` V_ {high}
-      `und: math:` V_ {low} `mehr oder weniger zentriert sind etwa 0,5
-      V). Wenn Sie die Unterseite von R1 an eine andere
-      Spannungsreferenzquelle als an die mittlere Stromversorgung
-      anschließen, wirkt sich dies nicht auf die Hysteresespalte aus,
-      sondern zentriert diese Lücke um einen Schwellenwert, der
-      proportional zur neuen Referenzspannung ist. Tatsächlich könnte
-      der negative Eingangspin des Komparators mit der festen
-      Referenzspannung und das Ende von R1 als der Eingang verbunden
-      sein. Dies kehrt die Richtung der beiden Ausgänge um oder
-      invertiert sie. Die oben angegebenen Werte können in der
-      Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
+Spannungsteilers (unten von R1) verbunden ist mit
+:math:`V_{ref} = 0,5V`, die Schwellenspannungen :math:`V_ {th_{high}}`
+und :math:`V_{th_{low}}` wird um 0,5 V herum zentriert
+(:math:`V_{ref}`) unter der Annahme, dass :math:`V_{high}`
+und :math:`V_{low}` mehr oder weniger zentriert sind etwa 0,5V).
+Wenn Sie die Unterseite von R1 an eine andere
+Spannungsreferenzquelle als an die mittlere Stromversorgung
+anschließen, wirkt sich dies nicht auf die Hysteresespalte aus,
+sondern zentriert diese Lücke um einen Schwellenwert, der
+proportional zur neuen Referenzspannung ist. Tatsächlich könnte
+der negative Eingangspin des Komparators mit der festen
+Referenzspannung und das Ende von R1 als der Eingang verbunden
+sein. Dies kehrt die Richtung der beiden Ausgänge um oder
+invertiert sie. Die oben angegebenen Werte können in der
+Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
       
 
 

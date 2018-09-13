@@ -352,7 +352,7 @@ Abbildung 7: Erstellen eines neuen Jupyter-Notebooks
 Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
 kopieren und einfügen Code unten und führen Sie es aus. Code unten
 erzeugt das gleiche Signal wie von Abbildung 6, aber es wird sie in
-XY-Graphen darstellen. Zum Messen: math: `VI` Kurve ein "XY"
+XY-Graphen darstellen. Zum Messen :math:`VI` Kurve ein "XY"
 Diagramm ist erforderlich, wo x-Achse Diode darstellt Spannung
 :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_1`. 
 

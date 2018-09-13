@@ -185,101 +185,112 @@ kopieren Sie den Code und fügen Sie ihn ein.
 Der Code unten erzeugt das gleiche Signal wie in Abbildung 6, aber es
 wird sie im XY-Diagramm darstellen.
 
-Zum Messen: math: `VI'-Kurve wird ein" XY "-Plot benötigt, wobei
-die x-Achse die Diodenspannung darstellt :math:`IN_2` und y-Achse ein
-Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
-
-
+Zum Messen :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei
+die x-Achse die Diodenspannung darstellt :math:`IN_2` und y-Achse
+ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
 
 .. note:: Kopieren Sie den Code von unten in die Zelle 1
 
+	  
 .. code-block:: python
-      
-   # Import libraries 
+
+   # Import libraries
    from redpitaya.overlay.mercury import mercury as overlay
 
    from bokeh.io import push_notebook, show, output_notebook
    from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
    from bokeh.plotting import figure, output_file, show
-   from bokeh.resources import INLINE 
+   from bokeh.resources import INLINE
    output_notebook(resources=INLINE)
 
    import numpy as np
-      
+
    # Initialize fpga modules
    fpga = overlay()
    gen0 = fpga.gen(0)
    osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
-      
-   # Configure OUT1 generator channel 
+
+   # Configure OUT1 generator channel
    gen0.amplitude = 0.8
-   gen0.offset    = -0.12
-   gen0.waveform  = gen0.sawtooth(0.5)
+   gen0.offset = -0.12
+   gen0.waveform = gen0.sawtooth(0.5)
    gen0.frequency = 2000
    gen0.start()
    gen0.enable = True
    gen0.trigger()
-    
+
    # R1 resistor value
-   R1=1000
+   R1 = 1000
 
    # Configure IN1 and IN2 oscilloscope input channels
    for ch in osc:
-          ch.filter_bypass = True
-          # data rate decimation 
-          ch.decimation = 10
-          # trigger timing [sample periods]
-          N = ch.buffer_size
-          ch.trigger_pre  = 0
-          ch.trigger_post = N
-          # osc0 is controlling both channels
-          ch.sync_src = fpga.sync_src["osc0"]
-          ch.trig_src = fpga.trig_src["osc0"]
-          # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
-          ch.level   = 0.01
-          ch.edg     = 'pos'
-          ch.holdoff = 0
-       
+       ch.filter_bypass = True
+       # data rate decimation
+       ch.decimation = 10
+       # trigger timing [sample periods]
+       N = ch.buffer_size
+       ch.trigger_pre = 0
+       ch.trigger_post = N
+       # osc0 is controlling both channels
+       ch.sync_src = fpga.sync_src["osc0"]
+       ch.trig_src = fpga.trig_src["osc0"]
+       # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
+       ch.level = 0.01
+       ch.edg = 'pos'
+       ch.holdoff = 0
+
+
    # Initialize diode current and voltage
    V = I = np.zeros(N)
 
+
    # Plotting
-   hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
-   tools = "wheel_zoom,box_zoom,reset,pan" 
-   p = figure(plot_height=500, plot_width=900, title="XY plot of transistor VI characteristic", toolbar_location="right", tools=(tools, hover))
-   p.xaxis.axis_label='Voltage [V]'
-   p.yaxis.axis_label='Current [mA]'
-   r = p.line(V,I, line_width=1, line_alpha=0.7, color ="blue")
-   # get and explicit handle to update the next show cell 
-   target = show(p,notebook_handle=True)
+   hover = HoverTool(mode='vline', tooltips=[("V", "@x"), ("I", "@y")])
+   tools = "wheel_zoom, box_zoom, reset,pan"
+   p = figure(plot_height=500,
+              plot_width=900,
+              title="XY plot of transistor VI characteristic",
+              toolbar_location="right",
+              tools=(tools, hover))
+   p.xaxis.axis_label = 'Voltage [V]'
+   p.yaxis.axis_label = 'Current [mA]'
+   r = p.line(V, I, line_width=1, line_alpha=0.7, color="blue")
+   # get and explicit handle to update the next show cell
+   target = show(p, notebook_handle=True)
+
+
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code von unten hinein.
+
 
  
- Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code von unten hinein.
-
 .. code-block:: python
 
-   # Measuring I , V  and re-plotting
+   # Measuring I, V  and re-plotting
    while True:
-          # reset and start
-          osc[0].reset()
-          osc[0].start()
-          # wait for data
-          while (osc[0].status_run()): pass
-          V0=osc[0].data(N-100)*10  # IN1 signal
-          V1=osc[1].data(N-100)*10  # IN2 signal
-          I=((V0-V1)/R1)*1E3        # 1E3 convert to mA
-          r.data_source.data['x'] = V0
-          r.data_source.data['y'] = I
-          push_notebook(handle=target)
+       # reset and start
+       osc[0].reset()
+       osc[0].start()
+       # wait for data
+       while (osc[0].status_run()):
+           pass
+       V0 = osc[0].data(N-100)*10  # IN1 signal
+       V1 = osc[1].data(N-100)*10  # IN2 signal
+       I = ((V0-V1)/R1)*1E3        # 1E3 convert to mA
+       r.data_source.data['x'] = V0
+       r.data_source.data['y'] = I
+       push_notebook(handle=target)
 
 
- Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
- Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
- Erfassung stoppen, führen Sie nur die Zelle 2 aus  um die Messung
- erneut zu starten.
+
+Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
+Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
+Erfassung stoppen, führen Sie nur die Zelle 2 aus  um die Messung
+erneut zu starten.
  
 
-Nach dem Ausführen des obigen Codes sollten Sie die Diode VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
+Nach dem Ausführen des obigen Codes sollten Sie die Diode
+VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
+
 
 .. figure:: img/Activity_22_Fig_5.png
 
@@ -310,9 +321,9 @@ V und es kann vorkommen, dass unser maximaler Spannungsbereich nicht
 ausreichend ist, d. H. Wir werden nicht in der Lage sein, Q1 oberhalb
 der Durchbruchspannung umzupolen. Aus diesem Grund haben wir eine
 zusätzliche Batterie hinzugefügt, um das Emitterpotential in der Nähe
-der Durchbruchsspannung zu erhöhen. Wenn also unser:math:`V_ {OUT}`
+der Durchbruchsspannung zu erhöhen. Wenn also unser :math:`V_ {OUT}`
 Signal NEGATIV wird, wird der Transistor REVERSED PLOARIZED aber
-differentielle Spannung:math:` V_ {E-BC} = V_E - V_ {BC} `ist größer
+differentielle Spannung :math:`V_ {E-BC} = V_E - V_ {BC}` ist größer
 als die BREAKDOWN-Spannung und der Transistor beginnt zu leiten.
 
 
@@ -340,7 +351,9 @@ Anregungsspannungssignals ist :math:`V_ {OUT}`.
 Verfahren
 ---------
 
-Baue die Schaltung aus der Abbildung 6 auf dem Steckbrett und fahre mit den Messungen fort.
+Baue die Schaltung aus der Abbildung 6 auf dem Steckbrett und fahre
+mit den Messungen fort.
+
 
 
 .. figure:: img/Activity_22_Fig_7.png
@@ -366,17 +379,17 @@ ein kleines Update des Codes benötigt.
 
    # Measuring I , V  and re-plotting
    while True:
-            # reset and start
-            osc[0].reset()
-            osc[0].start()
-            # wait for data
-            while (osc[0].status_run()): pass
-            V0=osc[0].data(N-100)*10 - 9 # IN1 signal
-            V1=osc[1].data(N-100)*10 - 9 # IN2 signal
-            I=((V0-V1)/R1)*1E3        # 1E3 convert to mA
-            r.data_source.data['x'] = V0
-            r.data_source.data['y'] = I
-            push_notebook(handle=target)
+     # reset and start
+     osc[0].reset()
+     osc[0].start()
+     # wait for data
+     while (osc[0].status_run()): pass
+     V0 = osc[0].data(N-100)*10 - 9 # IN1 signal
+     V1 = osc[1].data(N-100)*10 - 9 # IN2 signal
+     I = ((V0-V1)/R1)*1E3        # 1E3 convert to mA
+     r.data_source.data['x'] = V0
+     r.data_source.data['y'] = I
+     push_notebook(handle=target)
 
 
 Wie Sie aus dem obigen Code sehen können **haben wir nur "-9"**
@@ -425,7 +438,7 @@ zu 0,7 V für die einfache Diodenverbindung im ersten Beispiel.
 
 .. figure:: img/Activity_22_Fig_9.png
 
-Abbildung 9: Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
+   Abbildung 9: Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
 
 
 Verfahren

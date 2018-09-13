@@ -77,7 +77,7 @@ __________
 Verfahren
 ___________
 
-1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set: math: `R_B` = 1kΩ,: math:` R_C` = 100Ω
+1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set :math:`R_B` = 1kΩ,: math:` R_C` = 100Ω
 
 .. figure:: img/ Activity_24_Fig_3.png
 

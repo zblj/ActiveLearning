@@ -98,7 +98,7 @@ Abbildung 5: Grafik der Lautsprecherimpedanzphase, die mit der Anwendung des Imp
 .. note::
      Die Frequenz, bei der dies auftritt ** (Phase = 0) ** wird als Resonanzfrequenz bezeichnet.
 
-Wie im Lautsprechermodell (Abbildung 1) gezeigt Widerstand: math: `R 'repräsentieren den mechanischen Widerstand eines Fahrers Federungsverluste.
+Wie im Lautsprechermodell (Abbildung 1) gezeigt Widerstand :math:`R 'repräsentieren den mechanischen Widerstand eines Fahrers Federungsverluste.
 Um einen Effekt dieses modellierten Widerstandes zu sehen :math:`R` flipover Lautsprecher so, dass seine Membran zur Arbeitsbank zeigt. Damit werden wir uns verändern
 akustisch-mechanische Umgebung des Lautsprechers, die die Lautsprecherimpedanz beeinflusst.
 

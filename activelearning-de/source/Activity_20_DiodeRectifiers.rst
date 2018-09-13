@@ -182,7 +182,7 @@ einem scharfen Punkt kommen.
 
    
 Fragen
-----------
+------
 
 1. Was passiert, wenn die Richtung der Dioden umgekehrt wird?
    Wiederholen Sie den Versuch mit umgekehrter Richtung der beiden
