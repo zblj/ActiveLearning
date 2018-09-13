@@ -37,7 +37,7 @@ Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird d
 	f=\frac{1}{2t_p} 
 	
 
-.. image:: img/Aktivity_07_Fig_01.png
+.. image:: img/Activity_07_Fig_01.png
 
 Abbildung 1: Serien-RL-Schaltung
 
@@ -51,7 +51,7 @@ Der Ausdruck für den Strom im Induktor wird durch:
 
 wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist, die Ansprechkurve steigt und ist in Figur 2 dargestellt. 
 
-.. image:: img/Aktivity_07_Fig_02.png
+.. image:: img/Activity_07_Fig_02.png
 
 Abbildung 2: Der Strom im Induktor steigt in einem Serien-RL-Kreis an.
 
@@ -68,7 +68,7 @@ L/R = t ist die Zeitkonstante.
  
 Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in Abbildung 3 dargestellt. 
 
-.. image:: img/Aktivity_07_Fig_03.png
+.. image:: img/Activity_07_Fig_03.png
 
 Da es nicht möglich ist, den Strom durch den Induktor direkt zu messen (Strom, der von der Antriebsquelle OUT1 geliefert wird), werden wir die Ausgangsspannung über den Widerstand in Reihe mit dem Induktor messen. Die Wellenform des Widerstandes wird die gleiche Form wie der Induktorstrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Induktor) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`circuit` = I :sub:`L` = I :sub:`R` 
 Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R`, das ist der Strom durch den Induktor multipliziert mit dem Widerstand R.
@@ -101,7 +101,7 @@ ______________
 
 
 
-.. figure:: img/Aktivity_07_Fig_04.png
+.. figure:: img/Activity_07_Fig_04.png
 
 2. Richten Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH ein. 
 -Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
