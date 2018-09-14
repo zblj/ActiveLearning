@@ -92,8 +92,7 @@ Die übliche Anwendung für einen NMOS (oder irgendeinen anderen) Schalter ist d
 
 1. Bauen Sie den LED-Schalter-Schaltkreis, der in Abbildung 2 gezeigt wird, auf Ihrem lötfreien Steckbrett auf.  :math:`R_D` dient zur Begrenzung des Stroms, der in der LED von der +5 V-Spannung fließt
    liefern. Der Schalter wird durch den Spannungsausgang OUT1 gesteuert, der durch den invertierenden Verstärker OP484 verstärkt wird. Der Scope-Kanal IN zeigt die Spannung an der LED an, wie in Abbildung 2 dargestellt.
-2. Für :math:`R_D` nehmen 100: math:` \ Omega` Widerstand. Für :math:`R_G` nehmen Sie 10: math:` k \ Omega`. Gate-Widerstand mit der GND verbunden ist eine gute Praxis, um
-   verhindert eine unerwünschte Transistorumschaltung durch statische Elektrizität.
+2. Für :math:`R_D` nehmen 100 :math:`\ Omega` Widerstand. Für :math:`R_G` nehmen Sie 10 :math:`k \ Omega`. Gate-Widerstand mit der GND verbunden ist eine gute Praxis, um verhindert eine unerwünschte Transistorumschaltung durch statische Elektrizität.
 
 .. figure:: img/ Activity_25_Fig_3.png
 
