@@ -1,185 +1,301 @@
-Transient Response of an RL Circuit
-===================================
+Transient Response einer RL-Schaltung
+#####################################
 
-Objective
----------
+Zielsetzung
+___________
 
-The objective of this Lab activity is to study the transient response of
-inductor circuits using a series RL configuration and understand the
-time constant concept.
+Das Ziel dieser Labortätigkeit ist es, das transiente Verhalten von Induktionsschaltungen mit einer RL-Konfiguration der Serie zu untersuchen und das Konzept der Zeitkonstante zu verstehen.
 
-Notes
------
+Notizen
+_______
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-Oscilloscope & Signal generator application is used for generating and
-observing signals on the circuit.
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
-Background
-----------
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht.
+Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet. 
 
-This lab activity is similar to the RC Lab activity 5, except that the
-capacitor is replaced by an inductor. In this experiment, you will apply
-a square waveform to the RL circuit to analyze the transient response of
-the circuit. The pulse width relative to the circuit\'s time constant
-determines how it is affected by the RL circuit.
+Hintergrund
+___________
 
-Time Constant (t): It is a measure of time required for certain changes
-in voltages and currents in RC and RL circuits. Generally, when the
-elapsed time exceeds five time constants (5t) after switching has
-occurred, the currents and voltages have reached their final value,
-which is also called steady-state response.
+Diese Labortätigkeit ist ähnlich wie die RC Lab Aktivität 5, nur dass der Kondensator durch einen Induktor ersetzt wird. In diesem Experiment wenden Sie eine rechteckige Wellenform auf die RL-Schaltung an, um das transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in Bezug auf die Zeitkonstante der Schaltung bestimmt, wie sie von der RL-Schaltung beeinflusst wird. 
 
-The time constant of an RL circuit is the equivalent inductance divided
-by the Thévenin resistance as viewed from the terminals of the
-equivalent inductor.
+Zeitkonstante (t): Es ist ein Maß für die Zeit, die für bestimmte Änderungen von Spannungen und Strömen in RC- und RL-Kreisen benötigt wird. Im Allgemeinen, wenn die verstrichene Zeit fünf Zeitkonstanten (5t) nach dem Schalten überschreitet, haben die Ströme und Spannungen ihren Endwert erreicht, der auch als stationäre Reaktion bezeichnet wird. 
+ 
+Die Zeitkonstante einer RL-Schaltung ist die äquivalente Induktivität dividiert durch den Thévenin-Widerstand, bezogen auf die Anschlüsse des äquivalenten Induktors. 
 
-$$f=\frac{L}{R}$$
+.. math::
+	f=\frac{L}{R}{R} 
 
-A Pulse is a voltage or current that changes from one level to another
-and back again. If a waveform\'s high time equals its low time, it is
-called a square wave. The length of each cycle of a pulse train is its
-period (T). The pulse width (tp) of an ideal square wave is equal to
-half the time period.
 
-The relation between pulse width and frequency for the square wave is
-given by:
 
-$$f=\frac{1}{2t_p}$$
+Ein Impuls ist eine Spannung oder ein Strom, der von einem Niveau zum anderen und wieder zurück wechselt. Wenn die hohe Zeit einer Wellenform gleich ihrer niedrigen Zeit ist, wird sie als Rechteckwelle bezeichnet. Die Länge eines jeden Zyklus einer Impulsfolge ist seine Periode (T). Die Impulsbreite (tp) einer idealen Rechteckwelle entspricht der Hälfte der Zeitspanne. 
 
-![image](img/Activity_07_Figure_1.png)
+Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird durch: 
+ 
+.. math::
 
-Figure 1: Series RL circuit
+	f=\frac{1}{2t_p} 
+	
 
-In an R-L circuit, voltage across the inductor decreases with time while
-in the RC circuit the voltage across the capacitor increased with time.
-Thus, current in an RL circuit has the same form as voltage in an RC
-circuit: they both rise to their final value exponentially.
+.. image:: img/Activity_07_Fig_01.png
 
-The expression for the current in the Inductor is given by:
+Abbildung 1: Serien-RL-Schaltung
 
-$$I_L(t) = RV( 1 - e^{-\frac{R}{L}t} )  ; t >= 0$$
+In einem R-L-Kreis nimmt die Spannung über dem Induktor mit der Zeit ab, während in dem RC-Kreis die Spannung über dem Kondensator mit der Zeit zunimmt. Somit hat der Strom in einer RL-Schaltung die gleiche Form wie die Spannung in einer RC-Schaltung: Sie steigen beide exponentiell auf ihren Endwert an.
 
-where, V is the applied source voltage to the circuit for t = 0. The
-response curve is increasing and is shown in figure 2.
+Der Ausdruck für den Strom im Induktor wird durch:
 
-![image](img/Activity_07_Figure_2.png)
+.. math::
+	
+	I_L(t) = RV( 1 - e^{-\frac{R}{L}t} ) ; t >= 0
 
-Figure 2: Current in Inductor increasing in a Series RL circuit.
+wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist, die Ansprechkurve steigt und ist in Figur 2 dargestellt. 
 
-(Time axis normalized by t)
+.. image:: img/Activity_07_Fig_02.png
 
-The expression for the current decay across the Inductor is given by:
+Abbildung 2: Der Strom im Induktor steigt in einem Serien-RL-Kreis an.
 
-$$I_L(t) = I_0 e^{- \frac{R}{L}t} ; t >= 0$$
+(Zeitachse normiert um t) 
 
-where, I :sub: 0 is the initial current stored in the inductor at t = 0
-L/R = t is time constant.
+Der Ausdruck für den Stromabfall über den Induktor wird durch: 
+ 
+.. math:: 
+ 
+	I_L(t) = I_0 e^{- \frac{R}{L}t} ; t >= 0 
 
-The response curve is a decaying exponential and is shown in figure 3.
+wo, I\ :sub:`0`\ ist der Anfangsstrom, der im Induktor bei t = 0 gespeichert ist.  
+L/R = t ist die Zeitkonstante. 
+ 
+Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in Abbildung 3 dargestellt. 
 
-![image](img/Activity_07_Figure_3.png)
+.. image:: img/Activity_07_Fig_03.png
 
-Since it is not possible to directly measure the current through the
-Inductor ( current supplied by driving source OUT1 ) with the STEMlab,
-we will measure output voltage across the Resistor in series with the
-Inductor. The resistor waveform will be same shape as the inductor
-current since from Ohm's law we know that current and voltage through
-resistor are related with V ~R~ = I ~R~ \* R. Our circuit has two
-elements (Resistor and Inductor) in series which means same current is
-flowing through both components I ~circuit~ = I ~L~ = I ~R~ We know that
-signal on input IN2 is voltage across resistor V :sub: R which is in
-fact current through inductor multiplied by resistance R.
+Da es nicht möglich ist, den Strom durch den Induktor direkt zu messen (Strom, der von der Antriebsquelle OUT1 geliefert wird), werden wir die Ausgangsspannung über den Widerstand in Reihe mit dem Induktor messen. Die Wellenform des Widerstandes wird die gleiche Form wie der Induktorstrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Induktor) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`circuit` = I :sub:`L` = I :sub:`R` 
+Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R`, das ist der Strom durch den Induktor multipliziert mit dem Widerstand R.
 
-$$IN2 = R \cdot I_L$$
+.. math::
+	
+	IN2 = R \cdot I_L 
 
-From that it follows that when observing signal IN2 we are observing
-current through inductor, and only thing we need to have in mind is
-scaling factor - resistance R.
+Daraus folgt, dass wir bei der Beobachtung des Signals IN2 den Strom durch den Induktor beobachten, und das Einzige, was wir beachten müssen, ist der Skalierungsfaktor - Widerstand R.
+     
+Aus den Wellenformen des Scopes sollten wir die Zeitkonstante t messen können, die gleich t = L / R :sub:`total` sein sollte.
+Hier ist R :sub:`total` der Gesamtwiderstand und kann aus R :sub:`total` = R :sub:`Induktivität` + R berechnet werden.
+Die R-Induktivität ist der Messwert des Induktionswiderstandes und kann mit einem Multimeter vor der Durchführung des Experiments gemessen werden. (Messen Sie die R-Induktivität genauso, wie Sie den normalen Widerstand messen würden.)
 
-From the waveforms on the scope, we should be able to measure the time
-constant t which should be equal to t = L / R ~total~ . Here, R ~total~
-is the total resistance and can be calculated from R ~total~ = R
-~inductance~ + R. R inductance is the measured value of inductor
-resistance and can be measured by using Multimeter prior to running the
-experiment. (Measure R inductance same as you would measure normal
-resistor.)
 
-Materials
----------
+Materialien
+___________
 
-Red Pitaya STEMlab 125-14 or STEMlab 125-10
+Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
-Resistor 220 Ω
+Widerstand 220 Ω
 
-Inductor 20 mH ( 2x10 mH in series )
+Induktor 20 mH (2x10 mH in Serie)
 
-Procedure
----------
+Vorgehensweise
+______________
 
-1.  Measure the combined inductor and resistor resistance R ~total~ by
-    using a Multimeter.
+1. Messen Sie den kombinierten Induktor- und Widerstandswiderstand R \ :sub:`total` \ mit einem Multimeter.
 
-![](img/Activity_07_Figure_4.png)
 
-2\. Set up the circuit shown in figure 5 on your solderless breadboard
-with the component values R ~1~ = 220 Ω and L ~1~ = 20mH. -Connect the
-Oscilloscope & Signal generator probes as is shown in Figure 5. -Set the
-oscilloscope attenuation to x1.
 
-Figure 5: Experiment Set-Up
 
-Start the Oscilloscope & Signal Generator application.
+.. figure:: img/Activity_07_Fig_04.png
 
-3\. In the OUT1 settings menu set DC offset value to 0.5 and Amplitude
-value to 0.5V to apply a 1Vp-p square wave centered on 0.5 V as the
-input voltage to the circuit. From the waveform menu select SQUARE
-signal, deselect SHOW button and select enable. On the left bottom of
-the screen be sure that IN1 V/div and IN2 V/div are both set to
-200mV/div (You can set V/div by selecting the desired channel and using
-vertical +/- controls) In the IN1 and IN2 settings menu set the value of
-Vertical Offset to -500mV For the stable acquisition set the trigger
-level in TRIGGER menu to 0.5V and select NORMAL.
+2. Richten Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH ein. 
+-Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
+-Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.
 
-Calculate the applied frequency using equation (2) for tp = 5t . In the
-OUT1 settings menu set frequency according to the calculation.
+Abbildung 5: Versuchsaufbau 
 
-Adjust the time base using horizontal +/- control until you have at
-approximately two cycles of the square wave on the display grid.
+Starten Sie die Anwendung Oszilloskop & Signalgenerator.
 
-4.  The VR (IN2) waveform has the same shape as IL(t) waveform. From VR
-    waveform measure time constant t and compare with the one that you
-    calculated from L/R ~total~.
 
-::: {.hint}
-::: {.admonition-title}
-Hint
-:::
+3. Im Einstellungsmenü OUT1 den DC-Offsetwert auf 0,5 und den Amplitudenwert auf 0,5V einstellen, um eine 1Vp-p Rechteckwelle mit einer Zentrierung von 0,5 V als Eingangsspannung für die Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü SQUARE-Signal, deaktivieren Sie die SHOW-Taste und wählen Sie enable. 
+Stellen Sie sicher, dass IN1 V/div und IN2 V/div beide auf 200mV/div eingestellt sind (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und vertikale +/- Regler verwenden).
+Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Versatzes auf -500mV einstellen. 
+Für die stabile Aufnahme stellen Sie den Triggerpegel im TRIGGER-Menü auf 0,5V und wählen Sie NORMAL.
 
-When measuring RC transient effect we used cursor to find 0.63\*Vc, here
-we are interested in current I ~L~ = IN2/R and not voltage. According to
-the Figure 3 you should put cursor Y1 to the maximum value of IN2 and
-cursor Y2 to the 0.37\*IN2. Set the X1 and X2 cursors to the crossing
-points and measure time constant.
-:::
+Berechnen Sie die angewandte Frequenz nach Gleichung (2) für tp = 5t . Im Menü OUT1 Einstellungen die Frequenz entsprechend der Berechnung einstellen.
 
-For determining time constant use "CURSOR" option. Open CURSOR menu and
-select all four cursors: X1,X2,Y1,Y2. For Y cursor select IN2 for
-source. Control/Move cursors using an left click+hold mouse control on
-the cursor marker(an arrow on the end of the cursor line).
+Stellen Sie die Zeitbasis mit der horizontalen +/- Steuerung so ein, dass Sie etwa zwei Zyklen der Rechteckwelle auf dem Anzeigegitter haben. 
 
-In order to set cursors more accurately adjust the time base until you
-have approximately one or half of the cycle of the square wave on the
-display grid.
 
-5.  Observe the response of the circuit and record the results again for
-    tp = 25t, and tp = 0.5t.
+4. Die VR (IN2) Wellenform hat die gleiche Form wie die IL(t) Wellenform. Messen Sie aus VR die Zeitkonstante t und vergleichen Sie sie mit derjenigen, die Sie aus L/R :sub:`total` berechnet haben. 
 
-Questions
----------
+.. hint:: 
+	
+	Bei der Messung des RC-Transienteneffekts haben wir den Cursor verwendet, um 0,63*Vc zu finden, hier interessieren wir uns für den Strom I :sub:`L` = IN2/R und nicht für die Spannung.
+	
+	Gemäß der Abbildung 3 sollten Sie den Cursor Y1 auf den Maximalwert von IN2 und den Cursor Y2 auf den Wert 0,37*IN2 stellen. 
+	Die Cursor X1 und X2 auf die Kreuzungspunkte einstellen und die Zeitkonstante messen.
 
-• Include plots of IL and VR for different tp values given above in
-Procedure 4. • A Capacitor stores charge. What do you think an Inductor
-stores? Answer in brief.
+
+Zur Bestimmung der Zeitkonstante verwenden Sie die Option "CURSOR".
+Öffnen Sie das Menü CURSOR und wählen Sie alle vier Cursor aus: X1, X2, Y1, Y2. 
+Für den Y-Cursor wählen Sie IN2 für die Quelle.
+Steuern/Bewegen von Cursorn mit einem Linksklick+Maussteuerung auf der Cursor-Markierung (ein Pfeil am Ende der Cursorlinie).
+
+Um die Cursor genauer einzustellen, stellen Sie die Zeitbasis ein, bis Sie etwa eine oder die Hälfte des Zyklus der Rechteckwelle auf dem Anzeigegitter haben. 
+
+
+5. Beobachten Sie die Reaktion der Schaltung und notieren Sie die Ergebnisse erneut für tp = 25t und tp = 0,5t.
+
+Fragen zu
+_________
+
+- Fügen Sie Diagramme von IL und VR für verschiedene tp-Werte hinzu, die oben in Verfahren 4 beschrieben sind.
+- Ein Kondensator speichert die Ladung. Was denkst du, was ein Inductor speichert? Antworte kurz.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

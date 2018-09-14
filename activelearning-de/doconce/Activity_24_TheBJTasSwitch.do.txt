@@ -1,145 +1,218 @@
-BJT transistor as a switch
-==========================
+BJT-Transistor als Schalter
+#############################
 
-Objective
----------
+Zielsetzung
+__________
 
-A bipolar junction transistor (BJT) can be used in many circuit
-configurations such as an amplifier, oscillator, filter, rectifier or
-just used as an on-off switch. If the transistor is biased into the
-linear region, it will operate as an amplifier or other linear circuit,
-if biased alternately in the saturation and cut-off regions, then it is
-being used as a switch, allowing current to flow or not to flow in other
-parts of the circuit. This experiment describes the BJT when operated as
-a switch.
+Ein bipolarer Sperrschichttransistor (BJT) kann in vielen Schaltungskonfigurationen verwendet werden, wie einem Verstärker, Oszillator, Filter, Gleichrichter oder einfach als Ein-Aus-Schalter verwendet werden. Wenn der Transistor in den linearen Bereich vorgespannt ist, wird er als ein Verstärker oder eine andere lineare Schaltung arbeiten, wenn er abwechselnd in den Sättigungs- und Sperrbereichen vorgespannt wird, dann wird er als Schalter verwendet, der Strom fließen lässt oder nicht fließt in anderen Teilen der Schaltung. Dieses Experiment beschreibt das BJT, wenn es als Schalter betrieben wird.
 
-Notes
------
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-[Oscilloscope](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-&
-[Signal](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-[generator](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-application is used for generating and observing signals on the circuit.
-Extension connector pins used for **+5V** voltage supply are show in the
-documentation
-[here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
+Anmerkungen
+______
 
-Background
-----------
+..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _datasheet: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 
-Switching circuits are significantly different than linear circuits.
-They are also easier to understand. Before investigating more complex
-circuits, we will begin by introducing discrete solid-state switching
-circuits: those built around BJTs.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya STEMlab-Board-Hardware beziehen.
+Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
+Die für ** + 5V ** - Spannungsversorgung verwendeten Steckerstifte für die Verlängerung finden Sie in der Dokumentation hier_.
 
-A switch consists of a BJT transistor that is alternately driven between
-the saturation and cutoff regions. A simple version of the switch is
-shown in figure 1. When the input equals $-V_{in}$ , the base-emitter
-junction is reverse biased or off so no current flows in the collector.
-This is illustrated by the red load line shown in the figure. When the
-BJT is in cutoff, the circuit (ideally) has the following values:
 
-$$V_{CE} = V_{CC} \quad \text{and} \quad I_C = 0  A \quad (1)$$
+Hintergrund
+___________
 
-This state is similar to an open switch. When the input equals
-$+V_{in}$, the transistor is driven into saturation and the following
-conditions occur:
+Schaltkreise unterscheiden sich wesentlich von linearen Schaltkreisen. Sie sind auch leichter zu verstehen. Bevor wir komplexere Schaltungen untersuchen, werden wir mit der Einführung diskreter Halbleiterschaltkreise beginnen: jene, die um BJTs herum gebaut sind.
 
-$$V_{CE} \approx 0 \quad \text{and} \quad I_{C_{sat}} = \frac{V_{CC}}{R_C} A \quad (2)$$
+Ein Schalter besteht aus einem BJT-Transistor, der abwechselnd zwischen dem Sättigungs- und dem Sperrbereich betrieben wird. Eine einfache Version des Schalters ist in Abbildung 1 dargestellt. Wenn der Eingang gleich ist :math:`-V_ {in}`, ist die Basis-Emitter-Verbindung in Sperrrichtung vorgespannt oder ausgeschaltet, so dass kein Strom im Kollektor fließt. Dies wird durch die rote Lastlinie in der Abbildung veranschaulicht. Wenn der BJT abgeschaltet ist, hat die Schaltung (idealerweise) die folgenden Werte:
 
-This state is similar to a closed switch connecting the bottom of $R_C$
-to ground.
+.. math::
+  
+    V_ {CE} = V_ {CC} \ Quad \ Text {und} \ Quad I_C = 0 A \ Quad (1)
 
-![image](img/Activity_24_Figure_1.png)
+Dieser Zustand ähnelt einem offenen Schalter.
+Wenn der Eingang gleich ist :math:`+ V_ {in}`, wird der Transistor in die Sättigung getrieben und die folgenden Bedingungen treten auf:
 
-Figure 1: NPN BJT switch and its load line
+.. math::
+  
+    V_ {CE} \ approx 0 \ quad \ text {und} \ quad I_ {C_ {sat}} = \ frac {V_ {CC}} {R_C} A \ quad (2)
 
-The characteristics for a BJT switch assume that:
+Dieser Zustand ähnelt einem geschlossenen Schalter, der den Boden von :math:`R_C` mit Masse verbindet.
 
-1.  $-V_{in}$ is low enough to drive the transistor into cutoff.
-2.  $+V_{in}$ must produce enough base current through RB to drive the
-    transistor into saturation.
-3.  The transistor is an ideal component.
+.. figure:: img/ Activity_24_Fig_1.png
 
-These conditions can be assured by designing the circuit so that:
+Abbildung 1: NPN BJT-Schalter und seine Lastlinie
 
-1.  $-V_{in}=V_{BE}$
-2.  $+V_{in} = V_{BE} + I_B R_B$ ($V_{CC}$ is a good maximum)
-3.  $I_B > I_{C_{sat}} / \beta$
+Die Merkmale für einen BJT-Schalter gehen davon aus, dass
 
-Condition 1 guarantees that the circuit is driven into the cutoff region
-by the input. Conditions 2 and 3 assure that the transistor will be
-driven into the saturation region. An actual BJT switch differs from the
-ideal switch in several aspects. In practice, even in cutoff there is
-some small leakage current through the transistor. Also, in saturation,
-there is always some voltage dropped across the transistor\'s internal
-resistance. Typically, this will be between 0.2 and 0.4 V in saturation
-depending on the collector current and size of the device. These
-variations from the ideal are generally minor with a properly sized
-device, so we can assume near ideal conditions when analyzing or
-designing a BJT switch circuit.
+1. :math:`-V_ {in}` ist niedrig genug, um den Transistor in Abschaltung zu treiben.
+2. :math:`+ V_ {in}` muss genug Basisstrom durch RB erzeugen, um den Transistor in Sättigung zu treiben.
+3. Der Transistor ist eine ideale Komponente.
 
-![image](img/Activity_24_Figure_2.png)
+Diese Bedingungen können sichergestellt werden, indem die Schaltung so ausgelegt wird, dass:
 
-Figure 2: NPN LED switch
+1. :math:`-V_ {in} = V_ {BE}`
+2. :math:`+ V_ {in} = V_ {BE} + I_B R_B` (: math:` V_ {CC} `ist ein gutes Maximum)
+3. :math:`I_B> I_ {C_ {sat}} / \ beta`
 
-Materials
----------
+Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbereich getrieben wird. Die Bedingungen 2 und 3 stellen sicher, dass der Transistor in den Sättigungsbereich getrieben wird. Ein tatsächlicher BJT-Schalter unterscheidet sich von dem idealen Schalter in mehreren Aspekten. In der Praxis gibt es selbst im Sperrbereich einen kleinen Leckstrom durch den Transistor. Auch in der Sättigung fällt immer eine gewisse Spannung über den Innenwiderstand des Transistors ab. In der Regel liegt die Sättigung zwischen 0,2 und 0,4 V, abhängig vom Kollektorstrom und der Größe des Geräts. Diese Abweichungen vom Ideal sind bei einem Gerät mit richtiger Größe im Allgemeinen geringfügig, so dass wir bei der Analyse oder Konstruktion eines BJT-Schaltkreises nahezu ideale Bedingungen annehmen können.
 
--   Red Pitaya STEMlab
--   1x 1kΩ Resistor
--   1x 100Ω Resistor
--   1x 5mm LED (any color)
--   1x small signal NPN transistor (2N3904)
--   1x Solder-less Breadboard
+.. figure:: img/ Activity_24_Fig_2.png
 
-Procedure
----------
+Abbildung 2: NPN-LED-Schalter
 
-1.  Build the circuit from figure 2 on the breadboard. Set $R_B$ = 1kΩ,
-    $R_C$ = 100Ω
+Materialien
+__________
 
-![image](img/Activity_24_Figure_3.png)
+- Rotes Pitaya STEMlab
+- 1x 1kΩ Widerstand
+- 1x 100Ω Widerstand
+- 1x 5mm LED (jede Farbe)
+- 1x kleinsignal NPN-Transistor (2N3904)
+- 1x lötfreies Steckbrett
 
-Figure 3: NPN LED switch on the breadboard
+Verfahren
+___________
 
-2.  Start the Oscilloscope & Signal generator application
-3.  In the OUT1 settings menu set Amplitude value to 0.5V, DC offset to
-    0.5 V, Frequency to 10Hz to apply the input voltage. From the
-    waveform menu select SQUARE, deselect SHOW and select enable.
-4.  On the left bottom of the screen be sure that IN1 V/div is set to
-    200mV/div and IN2 is set to 1V/div (You can set V/div by selecting
-    the desired channel and using vertical +/- controls)
-5.  Set t/div value to 20ms/div (You can set t/div using horizontal +/-
-    controls)
-6.  Under IN2 menu settings set probe to x10 and vertical offset to 0.
-7.  Under IN1 set vertical offset to 0.
+1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set :math:`R_B` = 1kΩ,: math:` R_C` = 100Ω
 
-![image](img/Activity_24_Figure_4.png)
+.. figure:: img/ Activity_24_Fig_3.png
 
-Figure 4: NPN as a switch measurements
+Abbildung 3: NPN LED-Schalter auf dem Steckbrett
 
-From figure 4 we can observe NPN transistor behavior when it is
-operating as a switch. When the base voltage is \"high\" the transistor
-is \"turned on\" enabling current flow from +5V voltage rail trough
-diode to the GND. When current starts flowing the LED will blink. In
-this \"turned on\" state we can see that IN2 (LED voltage do not goes to
-0 V). This is is the affect of the forward drop down voltages of the LED
-diode and Q1 transistor. From figure 4 we can measure this drop down
-voltage do be \~2.2V. Try to measure what amount of drop down voltage is
-caused by Q1 and what amount by LED. When base voltage is \"low\"
-transistor is \"turned off\" disabling current flow therefore the LED
-voltage will be same as R1 i.e 5V.
+2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V, den DC-Offset auf 0,5 V und die Frequenz auf 10 Hz ein, um die Eingangsspannung anzulegen.
+   Wählen Sie im Wellenform-Menü SQUARE, deaktivieren Sie SHOW und wählen Sie enable.
+4. Stellen Sie sicher, dass IN1 V / div am linken unteren Bildschirmrand auf 200mV / div und IN2 auf 1V / div eingestellt ist (Sie können V / div einstellen, indem Sie die gewünschte Option auswählen
+   Kanal und mit vertikalen +/- Kontrollen)
+5. Setze t / div Wert auf 20ms / div (Du kannst t / div mit horizontalen +/- Kontrollen einstellen)
+6. Stellen Sie unter IN2-Menüeinstellungen Sonde auf x10 und vertikalen Offset auf 0 ein.
+7. Setzen Sie unter IN1 den vertikalen Offset auf 0.
 
-Questions
----------
+.. figure:: img/ Activity_24_Fig_4.png
 
-1.  How much current is flowing in resistors $R_C$ and $R_B$ when the
-    LED is on and when the LED is off?
-2.  Calculate the $\beta$ when Q1 is saturated. How does this value
-    compare to the spec listed in the
-    [datasheet](https://www.sparkfun.com/datasheets/Components/2N3904.pdf)?
+Abbildung 4: NPN als Schalter Messungen
+
+Aus Abbildung 4 können wir das Verhalten des NPN-Transistors beobachten, wenn es als Schalter arbeitet. Wenn die Basisspannung "hoch" ist, wird der Transistor "eingeschaltet", wodurch ein Stromfluss von +5 V Spannungsschiene durch die Diode zu GND ermöglicht wird. Wenn der Strom zu fließen beginnt, blinkt die LED.
+In diesem "eingeschalteten" Zustand können wir sehen, dass IN2 (LED-Spannung nicht auf 0 V geht). Dies ist der Effekt der Vorwärtsabfallsspannungen der LED-Diode und des Q1-Transistors. Aus Abbildung 4 können wir diese Drop-Down-Spannung von ~ 2,2 V messen. Versuchen Sie zu messen, wie viel Drop-Down-Spannung von Q1 verursacht wird und welche Menge von LED. Wenn die Basisspannung "niedrig" ist, wird der Transistor "ausgeschaltet", wodurch der Stromfluss gesperrt wird, weshalb die LED-Spannung gleich ist wie R1, d. H. 5 V.
+
+
+Fragen
+__________
+
+1. Wieviel Strom fließt in den Widerständen :math:`R_C` und: math:`
+   R_B` wenn die LED an ist und wenn die LED aus ist?
+   
+2. Berechnen Sie :math:`\ beta`, wenn Q1 gesättigt ist. Wie
+   vergleicht sich dieser Wert mit der im Datenblatt angegebenen
+   Spezifikation?
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

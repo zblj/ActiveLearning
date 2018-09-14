@@ -1,18 +1,18 @@
 Tiefpass- und Hochpassfilter
-==============================
+============================
 
 Zielsetzung
----------
+-----------
 
 Das Ziel dieser Labortätigkeit ist es, die Eigenschaften von
 passive Filter durch Erhalten des Frequenzgangs von Tiefpass RC
 Filter und Hochpass-RL-Filter.  
 
 Notizen
------
+-------
 
-.. Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
-.. Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _Oscillosope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -21,7 +21,7 @@ In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch.
 wenn es um die Anschlüsse an die Red Pitaya STEMlab-Karte geht.
 hardware_.
 
-Die Anwendung Oszilloskop_ & Signal_ Generator_ wird zur Erzeugung von
+Die Anwendung Oscilloscope_ & Signal_ Generator_ wird zur Erzeugung von
 und Beobachten von Signalen auf dem Schaltkreis. Bode_ Analysator Anwendung ist
 wird zur Messung des Frequenzgangs von Tiefpass- und Hochpassfiltern verwendet. 
 
@@ -34,14 +34,14 @@ Merkmale können verwendet werden, um bestimmte Frequenzen von
 ein Eingangssignal. Diese Auswahl und Ablehnung von Frequenzen wird als
 Filtern, und eine Schaltung, die dies tut, wird als Filter bezeichnet. 
 
-... Abbildung:: img/Aktivität_09_Figur_1.png
+.. figure:: img/Activity_09_Fig_1.png
 
-   Abbildung 1: Tiefpassfilter RC.
+	    Abbildung 1: Tiefpassfilter RC.
 
    
-... Abbildung:: img/Aktivität_09_Figur_2.png
+.. figure:: img/Activity_09_Fig_2.png
 
-   Abbildung 2: Hochpass-RL-Filter.
+	    Abbildung 2: Hochpass-RL-Filter.
 
    
 Wenn ein Filter hohe Frequenzen durchläuft und tiefe Frequenzen ablehnt, dann wird
@@ -50,20 +50,22 @@ verwirft hohe Frequenzen, es ist ein Tiefpassfilter. Filter, wie die meisten Din
 nicht perfekt sind. Sie passieren nicht unbedingt einige Frequenzen und
 andere absolut ablehnen. Eine Frequenz gilt als bestanden, wenn ihre
 Größe (Spannungsamplitude) liegt innerhalb von 70% oder 1/sqrt(2) der
-maximale Amplitude bestanden und anderweitig abgelehnt. Die 70%ige Frequenz ist
-genannt Eckfrequenz, Abrollfrequenz oder Halbleistungsfrequenz. 
+maximale Amplitude bestanden und anderweitig abgelehnt. Die 70%ige
+Frequenz ist genannt Eckfrequenz, Abrollfrequenz oder
+Halbleistungsfrequenz.
+
 
 Die Eckfrequenzen für RC-Filter und RL-Filter sind wie folgt:
 
 Für RC-Filter: 
 
-... Mathe:...:
+.. math::
    
    f_c = \frac{1}{2 \pi RC} (1) 
 
 Für RL-Filter: 
 
-... Mathe:...:	
+.. math::	
 
    f_c = \frac{R}{2 \pi L} (2) 
 
@@ -73,9 +75,9 @@ des Filters in Abhängigkeit von der Frequenz. Es wird im Allgemeinen verwendet,
 den Frequenzbereich charakterisieren, in dem der Filter ausgelegt ist.
 um darin zu operieren. 
 
-... Abbildung:: img/Aktivität_09_Figur_3.png
+.. figure:: img/Activity_09_Fig_3.png
 
-   Abbildung 3: Frequenzgang eines typischen Tiefpassfilters mit einer Grenzfrequenz fc
+	    Abbildung 3: Frequenzgang eines typischen Tiefpassfilters mit einer Grenzfrequenz fc
 
    
 Materialien:
@@ -88,21 +90,26 @@ Materialien:
 
   
 Vorgehensweise
----------
+--------------
 
 Tiefpassfilter für RC-Filter:***
 
-1. Richten Sie die RC-Schaltung wie in Abbildung 1 auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R1 = 1 KΩ, C1 = 1 µF ein:  
+1. Richten Sie die RC-Schaltung wie in Abbildung 1 auf Ihrer lötfreien
+   Leiterplatte mit den Bauteilwerten R1 = 1 KΩ, C1 = 1 µF ein:
+   
 
 2. Verbinden Sie die STEMlab-Platine mit Ihrer Schaltung:
 
-   - Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 4 dargestellt an. 
+   - Schließen Sie die Sonden des Oszilloskops und des
+     Signalgenerators wie in Abbildung 4 dargestellt an.
+     
 
    - Stellen Sie die Oszilloskopdämpfung auf x1 ein.
 
-   ... Abbildung:: img/Aktivität_09_Figur_4.png
+     
+.. figure:: img/Activity_09_Fig_4.png
 
-   Abbildung 4: Tiefpass RC-Filter Breadboard-Schaltung
+	    Abbildung 4: Tiefpass RC-Filter Breadboard-Schaltung
 
    
 3. Starten Sie die Anwendung Oszilloskop & Signalgenerator:
@@ -130,14 +137,14 @@ Tiefpassfilter für RC-Filter:***
    horizontale -/+ Kontrollen. Für die Peak-Peak-Messung in der
    Messmenü "P2P" auswählen, IN1, IN2 auswählen und DONE drücken.
 
-   ... Abbildung:: img/Aktivität_09_Figur_5.png
+.. figure:: img/Activity_09_Fig_5.png
 
-   Abbildung 5: Tiefpass RC-Filterreaktion bei 50Hz
+	    Abbildung 5: Tiefpass RC-Filterreaktion bei 50Hz
 
    
-   ... Abbildung:: img/Aktivität_09_Zahl_6.png
+.. figure:: img/Activity_09_Fig_6.png
 
-   Abbildung 6: Tiefpass RC-Filterreaktion bei 500Hz
+	    Abbildung 6: Tiefpass RC-Filterreaktion bei 500Hz
 
 Hochpass-RL-Filter:**Hochpass-RL-Filter:**
 
@@ -150,9 +157,9 @@ Hochpass-RL-Filter:**Hochpass-RL-Filter:**
 
    - Stellen Sie die Oszilloskopdämpfung auf x1 ein.
 
-   ... Abbildung:: img/Aktivität_09_Figur_7.png
+.. figure:: img/Activity_09_Figur_7.png
 
-   Abbildung 7: Hochpass RL-Filter Breadboard-Schaltung
+	    Abbildung 7: Hochpass RL-Filter Breadboard-Schaltung
 
 3. Beginnen Sie mit einer Hochfrequenz von 50 KHz und messen Sie die Ausgangsspannung IN2.
    von Spitze zu Spitze vom Scope Bildschirm aus. Es sollte das gleiche wie der Kanal sein.
@@ -163,12 +170,12 @@ Hochpass-RL-Filter:**Hochpass-RL-Filter:**
    Oszilloskop. Daraus ergibt sich die Grenzfrequenz (Roll-off) für die
    konstruierten Hochpass-RL-Filter.
 
-   ... Abbildung:: img/Aktivität_09_Zahl_8.png
+.. figure:: img/Activity_09_Fig_8.png
 
-   Abbildung 8: Hochpass-RL-Filterreaktion bei 50kHz
+	    Abbildung 8: Hochpass-RL-Filterreaktion bei 50kHz
 
    
-   ... Abbildung:: img/Aktivität_09_Figur_9.png
+.. figure:: img/Activity_09_Fig_9.png
 
    Abbildung 9: Hochpass-RL-Filterreaktion bei 500Hz
 
@@ -183,20 +190,22 @@ RL(RC)-Filter und daraus IN2=Vout. Bode Analysator Anwendung wird
 dann für jeden Frequenzschritt das Verhältnis von IN1/IN2 nehmen und berechnen.
 Frequenzgang.
 
-... Abbildung:: img/Aktivität_09_Zahl_10.png
+.. figure:: img/Activity_09_Fig_10.png
 
    Abbildung 10: Tiefpassfilterreaktion des RC-Filters mit der Bode-Analysatoranwendung
 
-   
-... Abbildung:: img/Aktivität_09_Zahl_11.png
+.. figure:: img/Activity_09_Fig_11.png
 
    Abbildung 11: Hochpass-RL-Filterreaktion mit der Bode-Analysatoranwendung
 
-**Fragen**
+Fragen
+------
 Berechnung der Grenzfrequenzen für den RC-Tiefpass und RL-Hochpass
-Filter unter Verwendung der Gleichungen (1) und (2). Vergleichen Sie die berechnete theoretische
-Werte zu den Werten aus den experimentellen Messungen und
-eine geeignete Erklärung für etwaige Unterschiede liefern. 
+Filter unter Verwendung der Gleichungen (1) und (2). Vergleichen Sie
+die berechnete theoretische Werte zu den Werten aus den
+experimentellen Messungen und eine geeignete Erklärung für etwaige
+Unterschiede liefern.
+
 
 
 

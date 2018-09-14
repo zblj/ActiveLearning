@@ -1,223 +1,287 @@
-MOSFET transistor as a switch
-=============================
+MOSFET-Transistor als Schalter
+###############################
 
-Objective
----------
+Zielsetzung
+__________
 
-A MOS FET (NMOS) device can be used in many circuit configurations such
-as an amplifier, oscillator, filter, rectifier or just used as an on-off
-switch. If the FET is biased into the saturation region, it will operate
-as an amplifier or other linear circuit, if biased alternately in the
-linear (triode) region and cut-off region, then it is being used as a
-switch, allowing current to flow or not to flow in other parts of the
-circuit. This lab activity describes the NMOS device when operated as a
-switch.
+Eine MOSFET-Vorrichtung (NMOS-Vorrichtung) kann in vielen Schaltungskonfigurationen verwendet werden, wie einem Verstärker, einem Oszillator, einem Filter, einem Gleichrichter oder einfach als Ein-Aus-Schalter verwendet werden. Wenn der FET in den Sättigungsbereich vorgespannt ist, arbeitet er als ein Verstärker oder eine andere lineare Schaltung, wenn er abwechselnd in dem linearen (Trioden) -Bereich und dem Sperrbereich vorgespannt wird, dann wird er als Schalter verwendet, der Strom fließen lässt oder nicht in anderen Teilen der Schaltung fließen. Diese Laboraktivität beschreibt das NMOS-Gerät, wenn es als Schalter betrieben wird.
 
-Notes
------
+Anmerkungen
+______
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-[Oscilloscope](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-&
-[Signal](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-[generator](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-application is used for generating and observing signals on the circuit.
-Extension connector pins used for **+5V**, **-3.3V** and **+3.3V**
-voltage supply are show in the documentation
-[here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
+..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
+.. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+.. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya STEMlab-Board-Hardware beziehen.
+Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
+Die für die Spannungsversorgung ** + 5V **, ** - 3.3V ** und ** + 3.3V ** verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
 
-Red Pitaya STEMlab outputs can generate voltage signals with maximal
-output range of +/- 1V (2Vpp). For this experiment the higher signal
-amplitudes are required in order \"turn on\" NMOS transistor ($V_{TH}$
-voltage). Because of that we will use an
-[OP484](http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf)
-in the
-[inverting](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier)
-opamp configuration to enable OUT1/OUT2 signal amplification achieving
-voltage swing between +4.7V to -3.2V. An OP484 will be supplied from
-STEMlab +5V and -3.3V voltage rails. Gain of the inverting amplifier
-will be set to \~5, where $R_i  = 2.2k \Omega$ and $R_f  = 10k \Omega$.
-Try to answer why we have used an OP484 instead for example OP27 or
-OP97. (hint \"rail-to-rail\").
-:::
+.. note::
+   Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses Experiment werden die höheren Signalamplituden benötigt, um den NMOS-Transistor "einzuschalten" ( :math:`V_ {TH}` voltage). Aus diesem Grund werden wir einen OP484_ in der inverting_opamp Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2 zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V Spannungsschienen geliefert. Die Verstärkung des invertierenden Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \ Omega` und: math:` R_f = 10k \ Omega`.
+   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27 oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
+  
+Hintergrund
+___________
 
-Background
-----------
+Schaltkreise unterscheiden sich wesentlich von linearen Schaltkreisen. Sie sind auch leichter zu verstehen. Bevor wir komplexere Schaltungen untersuchen, werden wir mit der Einführung diskreter Halbleiterschaltkreise beginnen: diejenigen, die um NMOS-Bausteine ​​herum gebaut sind.
 
-Switching circuits are significantly different than linear circuits.
-They are also easier to understand. Before investigating more complex
-circuits, we will begin by introducing discrete solid-state switching
-circuits: those built around NMOS devices.
+Ein Schalter besteht aus einem NMOS-Transistor, der abwechselnd zwischen den Trioden- und Abschneidebereichen betrieben wird. Eine einfache Version des Schalters ist in Abbildung 1 dargestellt. Wenn der Eingang gleich ist :math:`-V_ {in}`, ist die Gate-Source-Spannung kleiner als die Schwellenspannung ( :math:`-V_ {TH}`) oder aus, so fließt kein Strom in den Drain. Dies wird durch die rote Lastlinie in der Abbildung veranschaulicht. Wenn der NMOS abgeschaltet ist, hat die Schaltung (idealerweise) die folgenden Werte:
 
-A switch consists of a NMOS transistor that is alternately driven
-between the triode and cutoff regions. A simple version of the switch is
-shown in figure 1. When the input equals $-V_{in}$, the gate-source
-voltage is less than the threshold voltage ($-V_{TH}$) or off so no
-current flows in the drain. This is illustrated by the red load line
-shown in the figure. When the NMOS is in cutoff, the circuit (ideally)
-has the following values:
+.. math::
+  
+    V_ {DS} = V_ {DD} \ Quad \ Text {und} \ Quad I_D = 0 A \ Quad (1)
 
-$$V_{DS} = V_{DD} \quad \text{and} \quad I_D = 0  A \quad (1)$$
 
-This state is similar to an open switch. When the input equals $V_{TH}$,
-the transistor is driven into the triode region and the following
-conditions occur:
+Dieser Zustand ähnelt einem offenen Schalter.
+Wenn der Eingang gleich ist :math:`V_ {TH}`, wird der Transistor in die Triodenregion getrieben und die folgenden Bedingungen treten auf:
 
-$$V_{DS} \approx 0 \quad \text{and} \quad I_D = \frac{V_{DD}}{R_D} A \quad (2)$$
+.. math::
 
-This state is similar to a closed switch connecting the bottom of $R_D$
-to ground.
+    V_ {DS} \ approx 0 \ quad \ text {und} \ quad I_D = \ frac {V_ {DD}} {R_D} A \ quad (2)
 
-![image](img/Activity_25_Figure_1.png)
+Dieser Zustand ähnelt einem geschlossenen Schalter, der die Unterseite von :math:`R_D` mit Masse verbindet.
 
-Figure 1: NMOS FET switch and its load line
+.. figure:: img/ Activity_25_Fig_1.png
 
-The characteristics for an enhancement mode NMOS switch assume that:
+Abbildung 1: NMOS-FET-Schalter und seine Ladeleitung
 
-1.  $-V_{in}$ is low enough to drive the transistor into cutoff.
-2.  $+V_{in}$ must be greater than $V_{TH}$ to drive the transistor into
-    triode
-3.  The transistor is an ideal component.
+Die Eigenschaften für einen Enhancement-Modus-NMOS-Schalter setzen voraus, dass:
 
-These conditions can be assured by designing the circuit so that:
+1. :math:`-V_ {in}` ist niedrig genug, um den Transistor in Abschaltung zu treiben.
+2. :math:`+ V_ {in}` muss größer sein als :math:`V_ {TH}` um den Transistor in Triode zu treiben
+3. Der Transistor ist eine ideale Komponente.
 
-1.  $-V_{in} = V_{TH}$
-2.  $+V_{in} = V_{TH}$ ($V_{DD}$ is a good maximum)
+Diese Bedingungen können sichergestellt werden, indem die Schaltung so ausgelegt wird, dass:
 
-Condition 1 guarantees that the circuit is driven into the cutoff region
-by the input. Conditions 2 assure that the transistor will be driven
-into the triode region.
+1. :math:`-V_ {in} = V_ {TH}`
+2. :math:`+ V_ {in} = V_ {TH}` ( :math:`V_ {DD}` ist ein gutes Maximum)
 
-An actual NMOS switch differs from the ideal switch in several aspects.
-In practice, even in cutoff there is some small leakage current through
-the transistor. Also, in triode, there is always some voltage dropped
-across the transistor\'s internal resistance, $R_{ON}$. Typically, this
-will be between 0.1 and 0.2 V in triode depending on the drain current
-and size of the device. These variations from the ideal are generally
-minor with a properly sized device, so we can assume near ideal
-conditions when analyzing or designing a NMOS switch circuit.
+Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbereich getrieben wird. Die Bedingungen 2 stellen sicher, dass der Transistor angesteuert wird
+in die Triodenregion.
 
-![image](img/Activity_25_Figure_2.png)
+Ein tatsächlicher NMOS-Schalter unterscheidet sich von dem idealen Schalter in mehreren Aspekten. In der Praxis gibt es selbst im Sperrbereich einen kleinen Leckstrom durch den Transistor. In der Triode fällt auch immer eine gewisse Spannung über den internen Widerstand des Transistors ab :math:`R_ {ON}`. Typischerweise liegt diese in Abhängigkeit von dem Drain-Strom und der Größe des Geräts zwischen 0,1 und 0,2 V in Triode. Diese Abweichungen vom Ideal sind bei einem Gerät mit einer geeigneten Größe im Allgemeinen geringfügig, so dass wir nahezu ideale Bedingungen annehmen können, wenn ein NMOS-Schaltkreis analysiert oder entworfen wird.
 
-Figure 2: NMOS LED switch
 
-Materials
----------
+.. figure:: img/ Activity_25_Fig_2.png
 
--   Red Pitaya STEMlab
--   1x 10kΩ Resistor
--   1x 100Ω Resistor
--   1x 5mm LED (any color)
--   1x small signal NMOS transistor
-    [ZVN211](http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf)
--   1x Solder-less Breadboard
+Abbildung 2: NMOS-LED-Schalter
 
-Procedure
----------
+Materialien
+__________
 
-Tne common application for a NMOS (or any other) switch is to drive an
-LED. An LED driver is shown in figure 2. The driver shown in this figure
-is used to couple a low current part of the circuit to a relatively high
-current device (the LED). When the output from the low current circuit
-is low (0 V), the transistor is in cutoff and the LED is off. When the
-output from the low current circuit goes high (above $V_{TH}$), the
-transistor is driven into triode and the LED lights. The driver is used
-because the low-current part of the circuit may not have the current
-capability to supply the 20 mA (typical) required to light the LED to
-full brightness.
+- Rotes Pitaya STEMlab
+- 1x 10kΩ Widerstand
+- 1x 100Ω Widerstand
+- 1x 5mm LED (jede Farbe)
+- 1x Kleinsignal-NMOS-Transistor ZVN211_
+- 1x lötfreies Steckbrett
 
-1.  Build the LED switch circuit shown in figure 2 on your solder-less
-    breadboard. $R_D$ serves to limit the current that flows in the LED
-    from the +5 V power supply. The switch is controlled by the OUT1
-    voltage output amplified by OP484 inverting amplifier. Scope channel
-    IN will display the voltage across the the LED as indicated on
-    figure 2.
-2.  For $R_D$ take 100 $\Omega$ resistor. For $R_G$ take 10 $k \Omega$.
-    Gate resistor connected to the GND is a good practice in order to
-    prevent undesired transistor switching caused by static electricity.
+Verfahren
+___________
 
-![image](img/Activity_25_Figure_3.png)
+Die übliche Anwendung für einen NMOS (oder irgendeinen anderen) Schalter ist das Ansteuern einer LED. Ein LED-Treiber ist in Fig. 2 gezeigt. Der Treiber, der in dieser Figur gezeigt ist, wird verwendet, um einen Niedrigstromteil der Schaltung an ein Gerät mit relativ hohem Strom (die LED) zu koppeln. Wenn der Ausgang von der Niedrigstromschaltung niedrig ist (0 V), ist der Transistor abgeschaltet und die LED ist aus. Wenn der Ausgang des Niederstromkreises hoch geht (oben :math:`V_ {TH}`), wird der Transistor in Triode getrieben und die LED leuchtet. Der Treiber wird verwendet, da der stromsparende Teil der Schaltung möglicherweise nicht über die Stromfähigkeit verfügt, um die 20 mA (typisch) zu liefern, die erforderlich sind, um die LED auf volle Helligkeit zu bringen.
 
-Figure 3: NMOS LED switch on the breadboard
 
-3.  Start the Oscilloscope & Signal generator application
-4.  In the OUT1 settings menu set Amplitude value to 0.5V, DC offset to
-    -0.5 V, Frequency to 10Hz to apply the input voltage. From the
-    waveform menu select SQUARE, deselect SHOW and select enable.
-5.  On the left bottom of the screen be sure that IN1 V/div is set to
-    2V/div and IN2 is set to 1V/div (You can set V/div by selecting the
-    desired channel and using vertical +/- controls)
-6.  Set t/div value to 20ms/div (You can set t/div using horizontal +/-
-    controls)
-7.  Under IN2 and IN1 menu settings set probe to x10 and vertical offset
-    to 0.
+1. Bauen Sie den LED-Schalter-Schaltkreis, der in Abbildung 2 gezeigt wird, auf Ihrem lötfreien Steckbrett auf.  :math:`R_D` dient zur Begrenzung des Stroms, der in der LED von der +5 V-Spannung fließt
+   liefern. Der Schalter wird durch den Spannungsausgang OUT1 gesteuert, der durch den invertierenden Verstärker OP484 verstärkt wird. Der Scope-Kanal IN zeigt die Spannung an der LED an, wie in Abbildung 2 dargestellt.
+2. Für :math:`R_D` nehmen 100: math:` \ Omega` Widerstand. Für :math:`R_G` nehmen Sie 10: math:` k \ Omega`. Gate-Widerstand mit der GND verbunden ist eine gute Praxis, um
+   verhindert eine unerwünschte Transistorumschaltung durch statische Elektrizität.
 
-![image](img/Activity_25_Figure_4.png)
+.. figure:: img/ Activity_25_Fig_3.png
 
-Figure 4: NMOS as a switch measurements
+Abbildung 3: NMOS LED-Schalter auf dem Steckbrett
 
-From figure 4 we can observe NMOS transistor behavior when it is
-operating as a switch. When the base voltage is \"high\" the transistor
-is \"turned on\" enabling current flow from +5V voltage rail trough
-diode to the GND. When current starts flowing the LED will blink. In
-this \"turned on\" state we can see that IN2 (LED voltage do not goes to
-0 V). This is is the affect of the forward drop down voltages of the LED
-diode and M1 transistor. From figure 4 we can measure this drop down
-voltage do be \~1.9V. Try to measure what amount of drop down voltage is
-caused by M1 and what amount by LED. When base voltage is \"low\"
-transistor is \"turned off\" disabling current flow therefore the LED
-voltage will be same as R1 i.e 5V.
+3. Starten Sie die Applikation Oszilloskop & Signalgenerator
+4. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V, den DC-Offset auf -0,5 V und die Frequenz auf 10 Hz ein, um die Eingangsspannung anzulegen.
+   Wählen Sie im Wellenform-Menü SQUARE, deaktivieren Sie SHOW und wählen Sie enable.
+5. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms, dass IN1 V / div auf 2V / div und IN2 auf 1V / div eingestellt ist (Sie können V / div einstellen, indem Sie die gewünschte Option auswählen
+   Kanal und mit vertikalen +/- Kontrollen)
+6. Setze t / div Wert auf 20ms / div (Du kannst t / div mit horizontalen +/- Kontrollen einstellen)
+7. Stellen Sie unter den Menüeinstellungen IN2 und IN1 den Messtaster auf x10 und den vertikalen Offset auf 0.
 
-We can observe \"turn on event\" of M1 by selecting TRIANGLE waveform of
-OUT1. From figure 5 we can see when Gate signal goes above $V_{TH}$ the
-transistor is turned on.
 
-![image](img/Activity_25_Figure_5.png)
+.. figure:: img/ Activity_25_Fig_4.png
 
-Figure 5: NMOS switching event
+Abbildung 4: NMOS als Switch-Messungen
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+Aus Abbildung 4 können wir das Verhalten des NMOS-Transistors beobachten, wenn es als Schalter arbeitet. Wenn die Basisspannung "hoch" ist, wird der Transistor "eingeschaltet", wodurch ein Stromfluss von +5 V Spannungsschiene durch die Diode zu GND ermöglicht wird. Wenn der Strom zu fließen beginnt, blinkt die LED.
+In diesem "eingeschalteten" Zustand können wir sehen, dass IN2 (LED-Spannung nicht auf 0 V geht). Dies ist der Effekt der Vorwärtsabfallsspannungen der LED-Diode und des M1-Transistors. Aus Abbildung 4 können wir diese Drop-Down-Spannung von ~ 1,9 V messen. Versuchen Sie zu messen, wie viel Drop-Down-Spannung durch M1 verursacht wird und welche Menge durch LED. Wenn die Basisspannung "niedrig" ist, wird der Transistor "ausgeschaltet", wodurch der Stromfluss gesperrt wird, weshalb die LED-Spannung gleich ist wie R1, d. H. 5 V.
 
-Majority of NMOS transistor have $V_{TH}$ larger than 2V.
-:::
+Wir können das "Einschalt-Ereignis" von M1 beobachten, indem wir die TRIANGLE-Wellenform von OUT1 auswählen. Aus Abbildung 5 können wir sehen, wenn Gate-Signal übergeht :math:`V_ {TH}` der Transistor ist eingeschaltet.
 
-By switching IN2 scope probe to the M1 drain (D) pin we can measure
-voltage drop across the M1 transistor (Figure 6).
+.. figure:: img/ Activity_25_Fig_5.png
 
-![image](img/Activity_25_Figure_6.png)
+Abbildung 5: NMOS-Schaltereignis
 
-Figure 6: NMOS voltage drop.
+.. note::
+    Mehrheit der NMOS-Transistoren haben :math:`V_ {TH}` größer als 2V.
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+Durch Umschalten des Oszilloskop-Sensors IN2 auf den Drain-Anschluss (D) des M1 können wir den Spannungsabfall am M1-Transistor messen (Abbildung 6).
 
-From M1 voltage drop try to calculate $R_{ON}$ of the NMOS
-[ZVN211](http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf)
-transistor and compare the results with the values from datasheet. Hint:
-Calculate current going trough M1, measure voltage drop on M1, calculate
-$R_{ON}$.
-:::
+.. figure:: img/ Activity_25_Fig_6.png
 
-::: {.warning}
-::: {.admonition-title}
-Warning
-:::
+Abbildung 6: NMOS-Spannungsabfall.
 
-Transistor $R_{ON}$ parameter is crucial in high current application
-since power dissipation will be dependent on current flowing trough
-transistor and $R_{ON}$ value.
+.. note::
+    Versuchen Sie aus dem M1 Spannungsabfall zu berechnen :math:`R_ {ON}` des NMOS ZVN211_ Transistors und vergleichen Sie die Ergebnisse mit den Werten aus dem Datenblatt.
+    Tipp: Berechnen Sie den Strom durch M1, messen Sie den Spannungsabfall an M1, berechnen Sie :math:`R_ {ON}`.
 
-$$P_{dis} = I^2_D R_{ON} \quad$$
-:::
+.. Warnung::
+    
+    Transistor :math:`R_ {ON}` Parameter ist entscheidend in Hochstromanwendungen, da die Verlustleistung vom Stromfluss durch den Transistor und :math:`R_ {ON}` Wert abhängig ist.
+
+    .. math::
+
+         P_ {dis} = I ^ 2_D R_ {ON} \ quad
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

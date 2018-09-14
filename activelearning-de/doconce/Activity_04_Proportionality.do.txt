@@ -1,141 +1,323 @@
-Proportionality and Superposition
+Proportionalität und Überlagerung
 =================================
 
-Objective
+Zielsetzung
+-----------
+
+Das Ziel dieser Labortätigkeit ist es, die Verhältnismäßigkeit zu überprüfen.
+und Überlagerungssätze. 
+
+Notizen
+-------
+
+.. _E1: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1
+.. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya STEMlab-Karte geht.
+Hardware_. Verlängerungsstecker-Pins, die als 5V- und 3,3V-Spannungsquelle verwendet werden sind in der Dokumentation zu den Steckverbindern E1_ und E2_ aufgeführt. 
+
+
+Hintergrund
+-----------
+
+In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme geprüft, indem sie auf die nachfolgend dargestellten Schaltungen angewendet werden Zahlen. 
+
+1. Der Proportionalitätstheorem besagt, dass die Reaktion einer
+   Schaltung ist proportional zur Quelle, die auf die Schaltung
+   wirkt. Dies ist auch der Fall bekannt als *Linearität*. Die
+   Proportionalitätskonstante A bezieht sich auf die Eingangsspannung
+   zur Ausgangsspannung als:  
+
+   .. math:: 
+	
+      V_{out} = Ein \cdot V_{in} 
+
+   Der Proportionalitätsfaktor A wird manchmal als der sogenannte
+   Verstärkung einer Schaltung. Für die Schaltung in Fig. 1 ist die
+   Quelle Die Spannung ist V\ :sub:`in`\. Die Antwort V\ :sub:`out`\
+   ist across der :math:`4,7 k\Omega` Widerstand. Das wichtigste
+   Ergebnis der Linearität ist Überlagerung.
+   
+
+   .. figure:: img/Activity_04_Fig_01.png
+      :align: center 
+	
+      Abbildung 1: Widerstandsschaltung mit 5V Spannungsquelle
+
+
+2. Der Überlagerungssatz besagt, dass die Reaktion eines linearen
+   Schaltung mit mehreren unabhängigen Quellen, wie in Figur 2, kann
+   erhalten werden, indem man die einzelnen Antworten addiert, die
+   durch die einzelne Quellen, die allein handeln. Für eine
+   unabhängige Quelle, die handelt. allein, alle anderen unabhängigen
+   Spannungsquellen im Stromkreis sind ersetzt durch Kurzschlüsse und
+   alle anderen unabhängigen Ströme. Quellen werden durch offene
+   Stromkreise ersetzt, wie in Abbildung 3 dargestellt.
+   
+
+   .. figure:: img/Activity_04_Fig_02.png
+      :align: center 
+
+      Abbildung 2. Schaltung mit zwei Spannungsquellen 
+
+      
+   .. figure:: img/Activity_04_Fig_03.png
+      :align: center 
+	
+      Abbildung 3. Schaltung zur Reaktion von nur einer Quelle
+
+      
+Materialien
+-----------
+
+- Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
+
+- Verschiedene Widerstände:
+  - :math:`1 k\Omega`, 
+  - :math:`2,2 k\Omega`, 
+  - :math:`4,7 k\Omega`.
+
+
+Vorgehensweise
+--------------
+
+Überprüfen Sie den Satz des Proportionalitätssatzes:
+
+- Konstruieren Sie die Schaltung aus Figur 1.
+
+- Fall 1: Für die Spannungsquelle "V\ :sub:`in`\=5V", dargestellt in
+  Abbildung 1. Verwenden Sie den STEMlab-Spannungsstift am
+  Erweiterungsstecker E2_. 
+  
+- Fall 2: Für die Spannungsquelle "V\ :sub:`in`\=3.3V", dargestellt in
+  der Abbildung.1. Verwenden Sie den STEMlab-Spannungsstift am
+  Erweiterungsstecker E1_.  
+
+- Fall 3: Für die Spannungsquelle "V\ :sub:`in`\=-3.3V", dargestellt
+  in der Abbildung. 1 Verwenden Sie den STEMlab-Spannungsstift am
+  Erweiterungsstecker E2_.
+  
+
+- Stellen Sie die Sondendämpfung auf x10 ein (an der Oszilloskopsonde
+  und an der Oszilloskop IN1 Menüeinstellungen)
+  
+
+- Messen Sie V\ :sub:`out`\ mit dem Oszilloskop genau Anwendung.
+  
+  
+- Sie sollten die tatsächlichen festen Netzspannungen messen und aufzeichnen auch. 
+
+  
+  .. table:: Tabelle 1
+     :widths: auto
+
+     +---------------+----------------+-------+	
+     | V\ :sub:`in`\ | V\ :sub:`out`\ |   A   |  
+     +---------------+----------------+-------+
+     |    5.0 V      |                |       |	
+     +---------------+----------------+-------+
+     |    3.3 V      |                |       |
+     +---------------+----------------+-------+
+     |   -3.3 V      |                |       |
+     +---------------+----------------+-------+
+
+
+ 
+- Berechnen Sie den Wert von A jeweils mit Äquivalent (1).
+
+- Zeichne ein Diagramm mit V\ :sub:`in`\ auf der x-Achse und V\
+  :sub:`out`\ auf der y-Achse.
+       
+
+- Überprüfen des Überlagerungssatzes:
+
+  - Konstruieren Sie die Schaltung von Fig. 2. Messen und
+    protokollieren Sie die Spannung über dem :math:`4,7 k\Omega`
+    Widerstand.
+    
+
+  - Konstruieren Sie die Schaltung von Fig. 3. Messen und
+    protokollieren Sie die Spannung über dem :math:`4,7 k\Omega`
+    Widerstand.
+    
+
+    
+.. note:: Die Messung des Spannungsabfalls am gewünschten Widerstand
+	  erfolgt in den Bereiche so, dass die Oszilloskop-Sonde von
+	  IN1 mit dem Gerät verbunden ist eine Seite des Widerstandes
+	  und der Oszilloskop-Sonde von IN2 ist die mit einer anderen
+	  Seite des Widerstandes verbunden sind. Spannung Unterschied
+	  V\ :sub:`in1`\-V\ :sub:`in2`\ gibt einen Spannung am
+	  gemessenen Widerstand.
+	  
+
+
+- Berechnen Sie die Gesamtreaktion "V\ :sub:`out`\" für die Schaltung
+  der Figur 2 durch Hinzufügen der Antworten aus der Messung der
+  Schaltung von Figur 1 und Messung der Schaltung von Figur 3.
+  
+
+  V\ :sub:`out`\(figure 2) = V\ :sub:`out`\(figure 1) + V\ :sub:`out`\(figure 3) = _______________
+
+
+- Vergleichen Sie Ihr berechnetes Ergebnis mit dem, was Sie in Schritt
+  2a gemessen haben. Erklären Sie eventuelle Unterschiede.
+  
+
+  .. figure:: img/Activity_04_Fig_04.png
+     :align: center  
+     
+     Abbildung 4: Spannungsstift auf der Red Pitays STEMlab-Platine
+
+
+Fragen zu
 ---------
 
-The objective of this Lab activity is to verify the proportionality and
-superposition theorems.
+1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die
+   Steigung des Diagramm an beliebiger Stelle und vergleichen Sie es
+   mit dem Wert von K, der sich ergibt aus die Messungen. Erklären Sie
+   eventuelle Unterschiede.
+   
+   
+2. Für jeden der drei Schaltkreise, die du für die Überlagerung gebaut
+   hast.Experiment, wie gut die berechneten und gemessenen Ergebnisse
+   waren vergleichen? Erklären Sie eventuelle Unterschiede.
+   
 
-Notes
------
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-Extension connector pins used as 5V and 3.3V voltage source are show in
-the documentation for connectors
-[E1](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1)
-and
-[E2](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
 
-Background
-----------
 
-In this activity proportionality and superposition theorems are examined
-by applying them to the circuits shown in the following figures.
 
-1.  The Proportionality Theorem states that the response of a circuit is
-    proportional to the source acting on the circuit. This is also known
-    as *linearity*. The proportionality constant A relates the input
-    voltage to the output voltage as:
 
-    $$V_{out} = A \cdot V_{in}$$
 
-    The proportionality factor A is sometimes referred to as the gain of
-    a circuit. For the circuit in Fig. 1, the source voltage is V~in~.
-    The response V~out~is across the $4.7 k\Omega$ resistor. The most
-    important result of linearity is superposition.
 
-    ![Figure 1 : Resistor circuit with 5V voltage
-    source](img/Activity_04_Figure_1.png){.align-center}
 
-2.  The Superposition Theorem states that the response of a linear
-    circuit with multiple independent sources, such as in figure 2, can
-    be obtained by adding the individual responses caused by the
-    individual sources acting alone. For an independent source acting
-    alone, all other independent voltage sources in the circuit are
-    replaced by short circuits and all other independent current sources
-    are replaced by open circuits, as in figure 3.
 
-    ![Figure 2. Circuit with two voltage
-    sources](img/Activity_04_Figure_2.png){.align-center}
 
-    ![Figure 3. Circuit for response of just one
-    source](img/Activity_04_Figure_3.png){.align-center}
 
-Materials
----------
 
--   Red Pitaya STEMlab 125-14 or STEMlab 125-10
--   Various Resistors:
-    -   $1 k\Omega$,
-    -   $2.2 k\Omega$,
-    -   $4.7 k\Omega$.
 
-Procedure
----------
 
-Verify the proportionality theorem:
 
--   Construct the circuit of figure 1.
--   Case 1: For voltage source "V~in~=5V" shown on the Figure 1 use the
-    STEMlab voltage pin on extension connector
-    [E2](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
--   Case 2: For voltage source "V~in~=3.3V" shown on the Figure 1 use
-    the STEMlab voltage pin on extension connector
-    [E1](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1).
--   Case 3: For voltage source "V~in~=-3.3V" shown on the Figure 1 use
-    the STEMlab voltage pin on extension connector
-    [E2](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
--   Set probe attenuation to x10 (on the oscilloscope probe and on the
-    Oscilloscope IN1 menu settings)
--   Accurately measure V~out~using the Oscilloscope application.
--   You should measure and record the actual fixed power supply voltages
-    as well.
 
-    +----------+--------+---+
-    | V~in~    | V~out~ | A |
-    +----------+--------+---+
-    | > 5.0 V  |        |   |
-    +----------+--------+---+
-    | > 3.3 V  |        |   |
-    +----------+--------+---+
-    | > -3.3 V |        |   |
-    +----------+--------+---+
 
-    : Table 1
 
--   Calculate the value of A in each case using Eq. (1).
--   Plot a graph with V~in~on x-axis and V~out~on y-axis.
--   Verifying the Superposition theorem:
-    -   Construct the circuit of Fig. 2. Measure and record the voltage
-        across the $4.7 k\Omega$ resistor.
-    -   Construct the circuit of Fig. 3. Measure and record the voltage
-        across the $4.7 k\Omega$ resistor.
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
 
-Measuring voltage drop across desired resistor is done in
 
-:   such way that Oscilloscope probe of IN1 is connected to the one side
-    of the resistor and Oscilloscope probe of IN2 is connected to
-    another side of the resistor. Voltage difference V~in1~-V~in2~will
-    give an voltage on the measured resistor.
-:::
 
--   Calculate the total response "V~out~" for circuit of figure 2 by
-    adding the responses from measurement of circuit of figure 1 and
-    measurement of circuit of figure 3.
 
-    V~out~(figure 2) = V~out~(figure 1) + V~out~(figure 3) =
-    \_\_\_\_\_\_\_\_\_\_
 
--   Compare your calculated result to what you measured in step 2a.
-    Explain any differences.
 
-    ![Figure 4: Voltages pin on the Red Pitays STEMlab
-    board](img/Activity_04_Figure_4.png){.align-center}
 
-Questions
----------
 
-1.  Is the graph obtained a straight line? Compute the slope of the
-    graph at any point and compare it to the value of K obtained from
-    the measurements. Explain any differences.
-2.  For each of the three circuits you built for the superposition
-    experiment, how well did the calculated and measured outputs
-    compare? Explain any differences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

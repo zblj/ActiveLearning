@@ -1,188 +1,367 @@
-Kirchhoff\'s Voltage and Current Laws
-=====================================
+Kirchhoffs Spannungs- und Stromgesetze
+######################################
 
-Objective
----------
+Zielsetzung
+___________
 
-The objective of this Lab activity is to verify Kirchhoff\'s Voltage Law
-(KVL) and Kirchhoff\'s Current Law (KCL) using mesh and nodal analysis
-of the given circuit.
+Ziel dieser Labortätigkeit ist es, Kirchhoffs Spannungsgesetz (KVL) und Kirchhoffs Aktuelles Gesetz (KCL) mittels Netz- und Knotenanalyse der gegebenen Schaltung zu überprüfen.
 
-Notes
------
+Notizen
+_______
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-Extension connector pin used as 5V voltage source are show in the
-documentation
-[here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
-Background
-----------
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. Die als 5V-Spannungsquelle verwendeten Verlängerungsstecker-Pins sind in der Dokumentation hier_ dargestellt.
 
-1.  Kirchhoff\'s Voltage Law states that the algebraic sum of all the
-    voltages around any closed path (loop or mesh) is zero. If we define
-    the voltages across each resistor R1 through R5 as V1 through V5,
-    applying Kirchhoff\'s voltage law to the first and the second loops
-    in the circuit shown in figure 1 yields:
+Hintergrund
+___________
 
-Loop 1
+1. Kirchhoffs Spannungsgesetz besagt, dass die algebraische Summe aller Spannungen um jeden geschlossenen Weg (Schleife oder Netz) Null ist. Wenn wir die Spannungen an jedem Widerstand R1 bis R5 als V1 bis V5 definieren, ergibt sich die Anwendung des Kirchhoff-Spannungsgesetzes auf die erste und zweite Schleife in der in Figur 1 dargestellten Schaltung: 
 
-$$- V_s + V_1 + V_2 + V_5 = 0$$
+Masche 1
 
-Loop 2
+.. Math::
+		- V_s + V_1 + V_2 + V_5 = 0
 
-$$- V_2 + V_3 + V_4 = 0$$
+Masche 2 
 
-![figure 1: Kirchhoff\'s Voltage Law](img/Activity_02_Figure_1.png)
+.. Math::
+		- V_2 + V_3 + V_4 = 0
 
-2.  Kirchhoff\'s Current Law states that the algebraic sum of all the
-    currents at any node is zero. If we define the currents through each
-    resistor R1 through R5 as I1 through I5, applying Kirchhoff\'s
-    current law to the first four nodes in the circuit shown in figure1
-    yields the following equations;
+.. figure:: img/Activity_02_Fig_01.png
 
-*Node a:*
+	Abbildung 1: Kirchhoffs Spannungsgesetz
 
-$$- I_s + I_1 = 0$$
+2. Kirchhoffs Aktuelles Gesetz besagt, dass die algebraische Summe aller Ströme an einem Knoten Null ist. Wenn wir die Ströme durch jeden Widerstand R1 bis R5 als I1 bis I5 definieren, ergibt die Anwendung des Kirchhoffschen Stromgesetzes auf die ersten vier Knoten in der in Figur 1 dargestellten Schaltung die folgenden Gleichungen; 
 
-*Node b:*
+*Knoten a:*
+	
+.. math::		
 
-$$- I_1 + I_2 + I_3 = 0$$
+	- I_s + I_1 = 0
+	
+*Knoten b:* 
 
-*Node c:*
+.. math::		
 
-$$- I_3 + I_4 = 0$$
+	- I_1 + I_2 + I_3 = 0
+	
+*Knoten c:* 
 
-*Node d:*
+.. math::		
 
-$$- I_2 - I_4 + I_5 = 0$$
+	- I_3 + I_4 = 0
+	
+*Knoten d:* 
+	
+.. math::	
 
-Materials
----------
+	- I_2 - I_4 + I_5 = 0
 
-Red Pitaya STEMlab 125-14 or STEMlab 125-10
 
-Various Resistors:
+Materialien
+___________
 
-> -   1 KΩ (2),
-> -   1.5 KΩ (2),
-> -   2.2 KΩ
+Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
-Procedure
----------
+Verschiedene Widerstände:
 
-Step 1.
+	- 1 KΩ (2),
+	- 1,5 KΩ (2),
+	- 2.2 KΩ
 
-> Construct the circuit shown in Figure 1 using these resistor values:
->
-> -   R1 = 1 KΩ
-> -   R2 = 2.2 KΩ
-> -   R3 = 1.5 KΩ
-> -   R4 = 1 KΩ
-> -   R5 = 1.5 KΩ
 
-Step 2.
+Vorgehensweise
+______________
 
-> Use
-> [color\_coding\_tool](http://www.hobby-hour.com/electronics/resistorcalculator.php)
-> to select correct resistors from your kit. Use Multimeter, resistance
-> measurements to check actual resistor values.
 
-Step 3.
+Schritt 1. 
+	
+	Konstruieren Sie die in Abbildung 1 dargestellte Schaltung mit diesen Widerstandswerten:
 
-> Instead of voltage source "V~s~" shown on the Figure 1 use the STEMlab
-> voltage pins on extension connector
-> [E2](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
-> Connect the 5V pin to node **a** and connect node **e** to **GND**
-> pin.
+	- R1 = 1 KΩ
+	- R2 = 2,2 KΩ
+	- R3 = 1,5 KΩ
+	- R4 = 1 KΩ
+	- R5 = 1,5 KΩ
 
-![figure 2: Power connections](img/Activity_02_Figure_2.png)
+.. _color_coding_tool: http://www.hobby-hour.com/electronics/resistorcalculator.php
+.. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
-Circuit on the breadboard is shown in picture bellow.
+Schritt 2. 
+	
+	Verwenden Sie das color_coding_tool_, um die richtigen Widerstände aus Ihrem Kit auszuwählen. Verwenden Sie Multimeter, Widerstandsmessungen, um die aktuellen Widerstandswerte zu überprüfen.
 
-![figure 3: Resistors circuit from close](img/Activity_02_Figure_3.png)
+Schritt 3. 
 
-Step 4.
+	Verwenden Sie anstelle der in Abbildung 1 dargestellten Spannungsquelle "V\ :sub:`s`\" die STEMlab-Spannungsstifte am Erweiterungsstecker E2_. Verbinden Sie den 5V-Pin mit dem Knoten **a** und den Knoten **e** mit dem **GND** -Pin.
 
-> Accurately measure all voltages and calculate currents in the circuit
-> using the Oscilloscope application.
->
-> Measuring voltage drop across desired resistor is done in such way
-> that Oscilloscope probe of IN1 is connected to the one side of the
-> resistor and Oscilloscope probe of IN2 is connected to another side of
-> the resistor. Voltage difference VIN1-VIN2 will give an voltage on the
-> measured resistor.
->
-> -   Set probes attenuation to x10
-> -   Connect probes to the desired resistor
 
-![figure 4: Measureing circuit](img/Activity_02_Figure_4.png)
+.. figure:: img/Activity_02_Fig_02.png
+	
+	    Abbildung 2: Leistungsanschlüsse
 
--   Start Oscilloscope application
+Die Schaltung auf der Platine ist in der folgenden Abbildung dargestellt.
 
-![figure 4: Osciloscope application](img/Activity_02_Figure_5.png)
+.. figure:: img/Activity_02_Fig_03.png
+	
+	Abbildung 3: Widerstandsschaltung aus der Nähe
 
--   In the IN1 and IN2 settings menu select Probe attenuation x10
--   In the measurement menu select "MEAN" , select IN1 and press DONE
--   In the measurement menu select "MEAN" , select IN2 and press DONE
+Schritt 4. 
+	
+	Messen Sie alle Spannungen genau und berechnen Sie Ströme in der Schaltung mit der Oszilloskopanwendung.
+	
+	Das Messen des Spannungsabfalls am gewünschten Widerstand erfolgt so, dass die Oszilloskopsonde von IN1 mit der einen Seite des Widerstands und die Oszilloskopsonde von IN2 mit der anderen Seite des Widerstands verbunden ist. Die Spannungsdifferenz VIN1-VIN2 liefert eine Spannung am gemessenen Widerstand.
+	
+	- Stellen Sie die Dämpfung der Sonden auf x10 ein.
+	
+	- Schließen Sie die Sonden an den gewünschten Widerstand an. 
 
-> After clicking "done" the measurements of the mean value of the IN1
-> and IN2 will be shown. Use this measurement to calculate voltage on
-> R1.
+.. figure:: img/Activity_02_Fig_04.png
 
-V~R1~= MEAN( IN1 ) - MEAN( IN2 )
+	Abbildung 4: Messkreis
+	
+	- Oszilloskop-Anwendung starten 
+	
+.. figure:: img/Activity_02_Fig_05.png
 
-I~R1~= V~R1~/ R~1~.
+	Abbildung 4: Osciloskop-Anwendung
+	
+	- Im Einstellungsmenü IN1 und IN2 die Option Sondendämpfung x10 auswählen.
+	
+	- Im Messmenü "MEAN" auswählen, IN1 auswählen und DONE drücken.
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+	- Im Messmenü "MEAN" auswählen, IN2 auswählen und DONE drücken.
 
-To obtain correct voltages signes, when performing measurement always
-work in the same direction: for example, connect IN1 probe on the side
-of the resistor where marked arrow begins (Figure 1)
-:::
+	 Nach dem Anklicken von "Fertig" werden die Messungen des Mittelwertes von IN1 und IN2 angezeigt. Verwenden Sie diese Messung, um die Spannung an R1 zu berechnen.
 
-Step 5.
+V\ :sub:`R1`\ = MEAN( IN1 ) - MEAN( IN2 )
 
-> Record the measurements in a tabular form containing the measured
-> voltage and current values as shown below.
+I\ :sub:`R1`\ = V\ \ :sub:`R1`\ / R\ :sub:`1`\.
 
-> +----------------------+--------------+-----------+---------+---------+
-> | > Branch \| cu       | rrent/voltag | \[volts   | > \[mA\ | R       |
-> |                      | e            | \] \| I   | ]       | \[KΩ\]  |
-> |                      | \| V         |           | > \|    |         |
-> +----------------------+--------------+-----------+---------+---------+
-> | V~1~, I~1~           |              |           |         |         |
-> +----------------------+--------------+-----------+---------+---------+
-> | V~2~, I~2~           |              |           |         |         |
-> +----------------------+--------------+-----------+---------+---------+
-> | V~3~, I~3~           |              |           |         |         |
-> +----------------------+--------------+-----------+---------+---------+
-> | V~4~, I~4~           |              |           |         |         |
-> +----------------------+--------------+-----------+---------+---------+
-> | V~5~, I~5~           |              |           |         |         |
-> +----------------------+--------------+-----------+---------+---------+
-> | V~s~,I~s~            |              |           |         |         |
-> +----------------------+--------------+-----------+---------+---------+
->
-> Step 6.
->
-> > Verify KVL for the loops in the circuit using loop equations 1 and
-> > 2.
->
-> Step 7.
->
-> > Verify KCL for the nodes in the circuit using node equations a, b, c
-> > and d.
+.. note:: 
+	
+	Um korrekte Spannungsvorzeichen zu erhalten, arbeiten Sie bei der Messung immer in die gleiche Richtung: Schließen Sie beispielsweise die IN1-Sonde auf der Seite des Widerstandes an, wo der markierte Pfeil beginnt (Abbildung 1). 
 
-Questions
----------
 
-1.  Calculate the ideal voltages and currents for each element in the
-    circuit and compare them to the measured values.
-2.  Compute the percentage error in the two measurements and provide a
-    brief explanation for the error.
+
+Schritt 5. 
+
+	Protokollieren Sie die Messungen in tabellarischer Form mit den gemessenen Spannungs- und Stromwerten wie unten gezeigt.
+
+ +------------------------------+-------------------+----------------+-------------+-------------+	
+ |          Abzweig             |  Strom/Spannung   |   V [Volt ]    |   I [mA]    |   R [KΩ]    |    
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ | V\ :sub:`1`\, I\ :sub:`1`\   |                   |                |             |             | 	
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ | V\ :sub:`2`\, I\ :sub:`2`\   |                   |                |             |             |                             
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ | V\ :sub:`3`\, I\ :sub:`3`\   |                   |                |             |             |
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ | V\ :sub:`4`\, I\ :sub:`4`\   |                   |                |             |             | 
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ | V\ :sub:`5`\, I\ :sub:`5`\   |                   |                |             |             |
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ | V\ :sub:`s`\, I\ :sub:`s`\   |                   |                |             |             |
+ +------------------------------+-------------------+----------------+-------------+-------------+
+ 
+ Schritt 6. 
+
+	Überprüfen Sie KVL für die Schleifen im Stromkreis anhand der Schleifenformeln 1 und 2.
+
+ Schritt 7.
+  
+	Überprüfen Sie KCL für die Knoten in der Schaltung unter Verwendung der Knotengleichungen a, b, c und d.
+
+
+
+
+Fragen zu
+_________
+
+1. Berechnen Sie die idealen Spannungen und Ströme für jedes Element in der Schaltung und vergleichen Sie sie mit den Messwerten.
+2. Berechnen Sie den prozentualen Fehler in den beiden Messungen und geben Sie eine kurze Erklärung für den Fehler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

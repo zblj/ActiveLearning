@@ -1,128 +1,324 @@
-Band Pass Filters
+Bandpassfilter
 =================
 
-Objective
+Zielsetzung
 ---------
 
-The objective of this Lab activity is to:
+Das Ziel dieser Labortätigkeit ist es,: 
 
-1.  Construct a Band Pass Filter by cascading a low pass filter and a
-    high pass filter.
-2.  Obtain the frequency response of the filter using
-    [Bode](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html)
-    analyzer application.
+1. Konstruieren Sie einen Bandpassfilter, indem Sie einen Tiefpassfilter und einen Hochpassfilter kaskadieren. 
 
-Notes
+2. Erhalten Sie den Frequenzgang des Filters mit Hilfe der Anwendung Bode_ analyzer.
+
+
+Notizen
 -----
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/index.html).
+.. Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html 
 
-[Bode](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html)
-analyzer application is used to measure frequency response of Low Pass
-and High Pass Filters.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch.
+wenn es um die Anschlüsse an die Red Pitaya STEMlab-Karte geht.
+hardware_.
 
-The Bode analyzer is an ideal application for measuring frequency
-responses of the passive/active filters, complex impedances and any
-other electronic circuit. The Gain/Phase frequency response can be used
-to characterize any device under test completely, you can perform linear
-and logarithmic sweeps. Gain and Phase can be measured from 1Hz to
-60MHz. The basic user interface enables quick interaction and parameter
-settings. The Bode analyzer can be used for the measurement of Stability
-of control circuits such as the DC/DC converters in power supplies,
-Influence of termination on amplifiers or filters, Ultrasonic and piezo
-electric systems and similar.
+Die Bode_ Analysatoranwendung wird zur Messung des Frequenzgangs von
+Tiefpass- und Hochpassfilter.
 
-Background
+Der Bode Analysator ist eine ideale Anwendung zur Messung der Frequenz.
+Reaktionen der passiven/aktiven Filter, komplexe Impedanzen und beliebige
+andere elektronische Schaltung. Der Gain/Phase Frequenzgang kann wie folgt eingestellt werden
+um jedes zu testende Gerät vollständig zu charakterisieren, können Sie Folgendes durchführen
+lineare und logarithmische Sweeps. Verstärkung und Phase können ab 1Hz gemessen werden.
+auf 60MHz. Die grundlegende Benutzeroberfläche ermöglicht eine schnelle Interaktion und
+Parametereinstellungen. Der Bode-Analysator kann für die Messung verwendet werden.
+der Stabilität von Regelkreisen wie den DC/DC-Wandlern im Leistungsbereich
+Versorgungsspannungen, Einfluss der Terminierung auf Verstärker oder Filter,
+Ultraschall- und Piezoelektriksysteme und dergleichen.
+
+
+Hintergrund
 ----------
 
-A Band Pass Filter allows a specific range of frequencies to pass, while
-blocking or attenuating lower and higher frequencies. It passes
-frequencies between the two cut-off frequencies while attenuating
-frequencies outside the cut-off frequencies. One typical application of
-a band pass filter is in Audio Signal Processing, where a specific range
-of frequencies of sound are desired while attenuating the rest. Another
-application is in the selection of a specific signal from a range of
-signals in communication systems. A band pass filter may be constructed
-by cascading a High Pass RL filter with a roll-off frequency $f_L$ and a
-Low Pass RC filter with a roll-off frequency $f_H$, such that:
+Ein Bandpassfilter ermöglicht den Durchgang eines bestimmten Frequenzbereichs,
+beim Blockieren oder Dämpfen niedrigerer und höherer Frequenzen. Es geht vorbei
+Frequenzen zwischen den beiden Grenzfrequenzen bei gleichzeitiger Dämpfung.
+Frequenzen außerhalb der Grenzfrequenzen. Eine typische Anwendung
+eines Bandpassfilters befindet sich in der Audiosignalverarbeitung, wobei eine bestimmte
+Bereich der Schallfrequenzen sind erwünscht, während die Dämpfung der
+Ruhe. Eine weitere Anwendung ist die Auswahl eines bestimmten Signals.
+aus einer Reihe von Signalen in Kommunikationssystemen. Bandpassfilter
+kann durch Kaskadierung eines Hochpass-RL-Filters mit einem Abrollvorgang konstruiert werden.
+Frequenz :math:`f_L` und ein Tiefpassfilter mit einem Roll-off
+Frequenz :math:`f_H`, so dass:
 
-$$f_L < f_H$$
+... Mathe:...:	
 
-The Lower cut-off frequency is given as:
+   f_L < f_H 
 
-$$f_L = \frac{R}{2 \pi L} \quad (1)$$
+Die untere Grenzfrequenz wird als: 
 
-The higher cut-off frequency is given as:
+... Mathe:...:	
 
-$$f_H = \frac{1}{2 \pi RC} \quad (2)$$
+   f_L = \frac{R}{2 \pi L} \quad (1)
 
-The **Band Width** of frequencies passed is given by:
+Die höhere Grenzfrequenz wird als: 
 
-$$BW = f_L < f_{BW} < f_H \quad (3)$$
+... Mathe:...:
 
-All signal frequencies $f$ below $f_L$ and above $f_H$ are attenuated
-and the frequencies between are passed by the filter.
+   f_H = \frac{1}{2 \pi RC} \quad (2) 
 
-![Figure 1: Band Pass Filter circuit](img/Activity_10_Figure_1.png)
+Die **Bandbreite** der übergebenen Frequenzen wird durch: 
 
-Frequency Response
+... Mathe:...:
+
+   BW = f_L < f_{BW} < f_H \quad (3) 
+
+Alle Signalfrequenzen :math:`f` unterhalb :math:`f_L` und darüber
+:math:`f_H` werden gedämpft und die Frequenzen dazwischen werden von der
+den Filter.
+      
+
+... Abbildung:: img/Aktivität_10_Figur_1.png
+
+   Abbildung 1: Bandpass-Filterschaltung 
+
+   
+Frequenzgang
 ------------------
 
-To show how a circuit responds to a range of frequencies a plot of the
-magnitude ( amplitude ) of the output voltage of the filter as a
-function of the frequency can be drawn. It is generally used to
-characterize the range of frequencies in which the filter is designed to
-operate within. Figure 2 shows a typical frequency response of a Band
-Pass filter.
+Um zu zeigen, wie eine Schaltung auf einen Frequenzbereich reagiert, wird eine Darstellung der
+Größe ( Amplitude) der Ausgangsspannung des Filters als
+Funktion der Frequenz kann gezeichnet werden. Es wird im Allgemeinen verwendet, um
+den Frequenzbereich charakterisieren, in dem der Filter ausgelegt ist.
+um darin zu operieren. Abbildung 2 zeigt einen typischen Frequenzgang eines
+Bandpassfilter.
 
-![Figure 2: Band Pass Filter Frequency
-Response](img/Activity_10_Figure_2.png)
 
-Materials:
+... Abbildung:: img/Aktivität_10_Figur_2.png
+
+   Abbildung 2: Bandpassfilter Frequenzgang
+
+   
+Materialien:
 ----------
 
--   Red Pitaya STEMlab 125-14 or STEMlab 125-10
--   Resistor: 1 KΩ
--   Capacitor: 0.047 µF
--   Inductor: 22 mH
 
-Procedure
+- Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
+
+- Widerstand: 1 KΩ 
+
+- Kondensator: 0,047 µF
+
+- Induktor: 22 mH 
+
+
+Vorgehensweise
 ---------
 
-1.  Set up the filter circuit as shown in figure 1 and figure 3 on your
-    solderless breadboard, with the component values R1 = 1 KΩ, C1 =
-    0.047 µF, L1 =22 mH.
 
-    ![](img/Activity_10_Figure_3.png)
+1. Stellen Sie den Filterschaltkreis wie in Abbildung 1 und Abbildung 3 an Ihrem
+   lötfreie Lochrasterplatine, mit den Bauteilwerten R1 = 1 KΩ, C1 =
+   0,047 µF, L1 =22 mH.
 
-    Figure 3: Band Pass Filter on solderless breadboard
+   ... Abbildung:: img/Aktivität_10_Figur_3.png
 
-2.  Start the Bode analyzer application. The Bode analyzer application
-    will make a frequency sweep in such way it will generate sine signal
-    on $OUT1$ within frequency range selected by us(in settings menu).
-    $IN1$ input signal is directly connected to $OUT_1$ following that
-    $IN1=V_{in}$. $IN2$ is connected on the other side of the filter and
-    from that $IN2=V_{out}$. Bode analyzer application will then for
-    each frequency step take the ratio of $IN1/IN2$ ($V_{in}/V_{out}$)
-    and calculate frequency response.
-3.  In the Bode analyzer settings menu set for:
+   Abbildung 3: Bandpassfilter auf lötfreier Leiterplatte
 
-    -   start frequency: 500 Hz
-    -   end frequency: 30 kHz
-    -   number of steps: 50
-    -   scale: Log
-    -   select RUN button
+2. Starten Sie die Anwendung Bode analyzer. Die Bode Analysator-Anwendung
+   wird einen Frequenzdurchlauf machen, so dass er Sinus erzeugt.
+   Signal auf :math:`OUT1` innerhalb des von uns gewählten Frequenzbereichs (in
+   :math:`IN1`Eingangssignal ist direkt verbunden mit dem
+   :math:`OUT_1` nach diesem :math:`IN1=V_{in}`. :math:`IN2` ist
+   die auf der anderen Seite des Filters und davon ausgehend angeschlossen sind.
+   :math:`IN2=V_{out}`. Bode Analysator Anwendung wird dann für die
+   Jeder Frequenzschritt nimmt das Verhältnis von :math:`IN1/IN2`.
+   (:math:`V_{in}/V_{out}`) und berechnen der Frequenz
+   Antwort.  
 
-    ![](img/Activity_10_Figure_4.png)
+3. Im Menü Einstellungen des Bode-Analysators ist das Menü auf:
 
-    Figure 4: Band Pass Filter **measured** Frequency Response
+   - Startfrequenz: 500 Hz
 
-Questions:
+   - Endfrequenz: 30 kHz
+
+   - Anzahl der Schritte: 50
+
+   - Maßstab: Protokoll 
+
+   - RUN-Taste auswählen
+
+   ... Abbildung:: img/Aktivität_10_Figur_4.png
+
+   Abbildung 4: Bandpassfilter **gemessen** Frequenzgang
+
+   
+Fragen:
 ----------
 
-1.  Compute the cut-off frequencies for each Band Pass filter
-    constructed using the formula in equations (1) and (2). Compare
-    these theoretical values to the ones obtained from the experiment
-    and provide suitable explanation for any differences.
+1. Berechnung der Grenzfrequenzen für jeden Bandpassfilter
+   konstruiert unter Verwendung der Formel in den Gleichungen (1) und (2). Vergleichen Sie
+   diese theoretischen Werte zu denjenigen, die aus dem Experiment gewonnen wurden.
+   und geben Sie eine geeignete Erklärung für eventuelle Unterschiede. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

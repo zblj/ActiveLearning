@@ -1,425 +1,829 @@
-The BJT transistor connected as a diode
-=======================================
+Der BJT-Transistor ist als Diode geschaltet
+===========================================
 
-Objective
----------
+Zielsetzung
+-----------
 
-The purpose of this activity is to investigate the forward and reverse
-current vs. voltage characteristics of a bipolar junction transistor
-(BJT) connected as a diode.
+Der Zweck dieser Aktivität besteht darin, die Vorwärts- und
+Rückwärts-Strom-Spannungs-Kennlinie eines Bipolartransistors (BJT) zu
+untersuchen, der als Diode geschaltet ist.
 
-Notes
------
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-[Oscilloscope](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-&
-[Signal](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-[generator](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-application is used for generating and observing signals on the circuit.
-Extension connector pins used for **+5V**, **-3.3V** and **+3.3V**
-voltage supply are show in the documentation
-[here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
+Anmerkungen
+-----------
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+.. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
+.. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+.. _Jupyter: http://jupyter.org/index.html
+.. _Notebook: http://jupyter.org/index.html
 
-Red Pitaya STEMlab outputs can generate voltage signals with maximal
-output range of +/- 1V (2Vpp). For this experiment the higher signal
-amplitudes are required. Because of that we will use an
-[OP484](http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf)
-in the
-[inverting](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier)
-opamp configuration to enable OUT1/OUT2 signal amplification achieving
-voltage swing between +4.7V to -3.2V. An OP484 will be supplied from
-STEMlab +5V and -3.3V voltage rails. Gain of the inverting amplifier
-will be set to \~5, where $R_i  = 2.2k \Omega$ and $R_f  = 10k \Omega$
-Try to answer why we have used an OP484 instead for example OP27 or
-OP97. (hint \"rail-to-rail\").
-:::
 
-The Diode Connected NPN transistor
+In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab-Board-Hardware beziehen.
+
+Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet.
+
+Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
+verwendeten Steckerstifte sind in der Dokumentation hier
+aufgeführt.
+
+
+.. note::
+   Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
+   maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
+   Experiment sind die höheren Signalamplituden erforderlich. Aus
+   diesem Grund werden wir einen OP484_ in der inverting_opamp
+   Konfiguration verwenden, um die Signalverstärkung von OUT1 / OUT2
+   zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
+   erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
+   Spannungsschienen geliefert. Die Verstärkung des invertierenden
+   Verstärkers wird auf ~ 5 gesetzt, wobei gilt:math:`R_i = 2.2k \
+   Omega` und: math:` R_f = 10k \ Omega`
+   
+   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
+   oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
+   
+
+Der Diode Verbunden NPN-Transistor
 ----------------------------------
 
-### Materials
+Materialien
+-----------
 
--   Red Pitaya STEMlab
--   1x
-    [OP484](http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf)
-    quad rail-rail op-amp
--   1x 1kΩ Resistor
--   1x 10kΩ Resistor
--   1x 2.2kΩ Resistor
--   1x small signal NPN transistor (2N3904)
--   1x small signal PNP transistor (2N3906)
--   1x Solder-less Breadboard
--   1x 9V battery
+- Rotes Pitaya STEMlab
+- 1x OP484_ Quad-Rail-Rail-Operationsverstärker
+- 1x 1kΩ Widerstand
+- 1x 10kΩ Widerstand
+- 1x 2,2 kΩ Widerstand
+- 1x kleinsignal NPN-Transistor (2N3904)
+- 1x kleinsignal PNP-Transistor (2N3906)
+- 1x lötfreies Steckbrett
+- 1x 9V Batterie
 
-An NPN transistor connected as is shown on figure 1 will behave as an
-regular diode. We can show that by measuring the NPN response using
-Oscilloscope & Signal generator application.
+Ein NPN-Transistor, der wie in 1 gezeigt angeschlossen ist, verhält
+sich wie eine reguläre Diode. Wir können dies durch Messen der
+NPN-Antwort unter Verwendung der Oszilloskop- &
+Signalgenerator-Anwendung zeigen.
 
-![image](img/Activity_22_Figure_1.png)
 
-Figure 1: NPN as a diode connection diagram
+.. figure:: img/Activity_22_Fig_1.png
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+   Abbildung 1: NPN als Diodenanschlussdiagramm
+   
 
-Note that amplification circuit shown on figure 1 (left) is not the main
-subject of this experiment. This circuit is added only to amplify OUT1
-signal. From here you can consider point $-5xV_{OUT1}$ as your main
-excitation signal.
-:::
+.. note::
+   Beachten Sie, dass die in Abbildung 1 (links) gezeigte
+   Verstärkerschaltung nicht das Hauptthema dieses Experiments
+   ist. Diese Schaltung wird nur hinzugefügt, um das Signal OUT1 zu
+   verstärken.
+   
+   Von hier aus können Sie Punkt:math:`-5xV_ {OUT1}` als Haupterregungssignal betrachten.
 
-### Procedure
 
-1.  Build the circuit from figure 1 on the breadboard. Set R1=2.2kΩ,
-    R2=10kΩ and R3=1kΩ
+Verfahren
+---------
 
-![image](img/Activity_22_Figure_2.png)
+1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem
+   Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein
+   
 
-Figure 2: NPN as a diode connection on the breadboard
+.. figure:: img/Activity_22_Fig_2.png
 
-::: {.warning}
-::: {.admonition-title}
-Warning
-:::
+   Abbildung 2: NPN als Diodenverbindung auf dem Steckbrett
+   
 
-Before connecting the circuit to the STEMlab -3.3V and +3.3V pins double
-check your circuit. The -3.3V and +3.3V voltage supply pins do not have
-short circuit handling and they can be damaged in case of short circuit.
-:::
+.. hint::
+   Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+   anschließen, überprüfen Sie Ihren Stromkreis. Die
+   Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+   Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+   werden. 
 
-2.  Start the Oscilloscope & Signal generator application
-3.  In the OUT1 settings menu set Amplitude value to 0.8V, DC offset to
-    -0.12 V, Frequency to 1kHz to apply the input voltage. From the
-    waveform menu select TRIANGLE, deselect SHOW and select enable.
-4.  On the left bottom of the screen be sure that IN1, IN2 and MATH
-    V/div are set to 1V/div (You can set V/div by selecting the desired
-    channel and using vertical +/- controls)
-5.  Set t/div value to 200us/div (You can set t/div using horizontal +/-
-    controls)
-6.  Under MATH channel settings set $IN1-IN2$ and select ENABLE.
-7.  Under IN1 and IN2 menu settings set probe to x10 and vertical offset
-    to 0.
+2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
+   
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,8
+   V, den DC-Offset auf -0,12 V und die Frequenz auf 1 kHz ein, um die
+   Eingangsspannung anzulegen.
+   
+   Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie SHOW und
+   wählen Sie enable.
+   
+4. Stellen Sie sicher, dass IN1, IN2 und MATH V / div auf der linken
+   unteren Seite des Bildschirms auf 1V / div eingestellt sind (Sie
+   können V / div einstellen, indem Sie die gewünschte Option
+   auswählen Kanal und mit vertikalen +/- Kontrollen)
+   
+5. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
+   horizontalen +/- Kontrollen einstellen)
+   
+6. Stellen Sie unter MATH-Kanaleinstellungen folgendes ein: math:
+   `IN1-IN2` und wählen Sie ENABLE.
+   
+7. Stellen Sie unter den Menüeinstellungen IN1 und IN2 den Messtaster
+   auf x10 und den vertikalen Offset auf 0.
+   
 
-![image](img/Activity_22_Figure_3.png)
+.. figure:: img/Activity_22_Fig_3.png
 
-Figure 3: NPN as a diode measurements
+   Abbildung 3: NPN als Diodenmessungen
 
-From figure 3 we can see that NPN BJT transistor in configuration shown
-on figure 1 behaves as an diode. Compare results with the diode
-measurements form
-[previous](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity19_Diodes.html#procedure-time-domain-measurements)
+   
+.. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity19_Diodes.html#procedure-time-domain-measurements
+
+Aus Fig. 3 können wir sehen, dass der NPN BJT-Transistor in der in
+Fig. 1 gezeigten Konfiguration sich wie eine Diode verhält.
+
+Vergleichen Sie die Ergebnisse mit den Diodenmessungen von previous_
 experiment.
 
-### VI curve measurements
 
-Since BJT can behave as an diode (configuration shown on figure 1) we
-can measure its VI characteristic as we did when performing diode
-measurements. For this task we will use Jupyter Notebook Web
-application. How to start Jupyter Notebook and create new project is
-shown on figure 4 flow chart.
+VI-Kurvenmessungen
+------------------
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+Da sich BJT wie eine Diode verhalten kann (Konfiguration in Abbildung
+1), können wir die VI-Charakteristik wie bei Diodenmessungen messen.
 
-The [Jupyter](http://jupyter.org/index.html)
-[Notebook](http://jupyter.org/index.html) is a web application that
-allows you to create and share documents that contain live code,
-equations, visualizations and explanatory text. They have also ensured
-support for the Jupyter application with Red Pitaya libraries enabling
-control of all features of the STEMlab boards such as: signal
-acquisition, signal generation, digital signal control, communication
-etc. The Jupyter Notebook is started on the same way as any other
-applications. After starting Jupyter application a web based notebook is
-opened. This combination of the notebook, STEMlab and Python features
-makes the STEMlab an excellent tool for prototyping and quick
-programing. Since Jupyter Notebook enables text, equation and picture
-editing this is a perfect tool for tutorials, examples and ect.
-:::
+Für diese Aufgabe verwenden wir die Jupyter Notebook
+Web-Anwendung. Wie man Jupyter Notebook startet und ein neues Projekt
+erstellt, ist in Abbildung 4 dargestellt.
 
-![image](img/Activity_19_Figure_7.png)
 
-Figure 4: Creating new Jupyter notebook
+.. note::
+   Das Jupyter_ Notebook_ ist eine Webanwendung, mit der Sie Dokumente
+   erstellen und freigeben können, die Live-Code, Gleichungen,
+   Visualisierungen und erklärenden Text enthalten. Sie haben auch die
+   Unterstützung der Jupyter-Anwendung mit Red Pitaya-Bibliotheken
+   sichergestellt, die die Steuerung aller Funktionen der
+   STEMlab-Boards ermöglichen: Signalerfassung, Signalerzeugung,
+   digitale Signalsteuerung, Kommunikation usw. Das Jupyter-Notebook
+   wird auf die gleiche Weise gestartet wie jedes andere
+   Anwendungen. Nach dem Start der Jupyter-Anwendung wird ein
+   webbasiertes Notizbuch geöffnet. Diese Kombination aus Notebook,
+   STEMlab und Python macht das STEMlab zu einem hervorragenden
+   Werkzeug für das Prototyping und die schnelle Programmierung. Seit
+   Jupyter Notebook ermöglicht Text, Gleichung und Bildbearbeitung ist
+   dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.
+   
 
-If you have successfully created new Jupyter notebook then copy-paste
-code bellow and run it. Code bellow will generate same signal as from
-figure 6 but it will plot them in XY graph. For measuring $VI$ curve an
-\"XY\" plot is required where x-axis will represent diode voltage $IN_2$
-and y-axis a diode current $(IN_1 - IN_2) / R_3$.
+.. figure:: img/Activity_19_Fig_7.png
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+   Abbildung 4: Erstellen eines neuen Jupyter-Notebooks
 
-Copy code from below into cell 1
+   
+Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
+kopieren Sie den Code und fügen Sie ihn ein.
 
-``` {.sourceCode .python}
-# Import libraries 
-from redpitaya.overlay.mercury import mercury as overlay
+Der Code unten erzeugt das gleiche Signal wie in Abbildung 6, aber es
+wird sie im XY-Diagramm darstellen.
 
-from bokeh.io import push_notebook, show, output_notebook
-from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
-from bokeh.plotting import figure, output_file, show
-from bokeh.resources import INLINE 
-output_notebook(resources=INLINE)
+Zum Messen :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei
+die x-Achse die Diodenspannung darstellt :math:`IN_2` und y-Achse
+ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
 
-import numpy as np
+.. note:: Kopieren Sie den Code von unten in die Zelle 1
 
-# Initialize fpga modules
-fpga = overlay()
-gen0 = fpga.gen(0)
-osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
+	  
+.. code-block:: python
 
-# Configure OUT1 generator channel 
-gen0.amplitude = 0.8
-gen0.offset    = -0.12
-gen0.waveform  = gen0.sawtooth(0.5)
-gen0.frequency = 2000
-gen0.start()
-gen0.enable = True
-gen0.trigger()
+   # Import libraries
+   from redpitaya.overlay.mercury import mercury as overlay
 
-# R1 resistor value
-R1=1000
+   from bokeh.io import push_notebook, show, output_notebook
+   from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
+   from bokeh.plotting import figure, output_file, show
+   from bokeh.resources import INLINE
+   output_notebook(resources=INLINE)
 
-# Configure IN1 and IN2 oscilloscope input channels
-for ch in osc:
-    ch.filter_bypass = True
-    # data rate decimation 
-    ch.decimation = 10
-    # trigger timing [sample periods]
-    N = ch.buffer_size
-    ch.trigger_pre  = 0
-    ch.trigger_post = N
-    # osc0 is controlling both channels
-    ch.sync_src = fpga.sync_src["osc0"]
-    ch.trig_src = fpga.trig_src["osc0"]
-    # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
-    ch.level   = 0.01
-    ch.edg     = 'pos'
-    ch.holdoff = 0
+   import numpy as np
 
-# Initialize diode current and voltage
-V = I = np.zeros(N)
+   # Initialize fpga modules
+   fpga = overlay()
+   gen0 = fpga.gen(0)
+   osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
 
-# Plotting
-hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
-tools = "wheel_zoom,box_zoom,reset,pan" 
-p = figure(plot_height=500, plot_width=900, title="XY plot of transistor VI characteristic", toolbar_location="right", tools=(tools, hover))
-p.xaxis.axis_label='Voltage [V]'
-p.yaxis.axis_label='Current [mA]'
-r = p.line(V,I, line_width=1, line_alpha=0.7, color ="blue")
-# get and explicit handle to update the next show cell 
-target = show(p,notebook_handle=True)
-```
-:::
+   # Configure OUT1 generator channel
+   gen0.amplitude = 0.8
+   gen0.offset = -0.12
+   gen0.waveform = gen0.sawtooth(0.5)
+   gen0.frequency = 2000
+   gen0.start()
+   gen0.enable = True
+   gen0.trigger()
 
-> Create new cell (Insert -\> Cell Below) and copy code from below into
-> it.
->
-> > ``` {.sourceCode .python}
-> > # Measuring I , V  and re-plotting
-> > while True:
-> >     # reset and start
-> >     osc[0].reset()
-> >     osc[0].start()
-> >     # wait for data
-> >     while (osc[0].status_run()): pass
-> >     V0=osc[0].data(N-100)*10  # IN1 signal
-> >     V1=osc[1].data(N-100)*10  # IN2 signal
-> >     I=((V0-V1)/R1)*1E3        # 1E3 convert to mA
-> >     r.data_source.data['x'] = V0
-> >     r.data_source.data['y'] = I
-> >     push_notebook(handle=target)
-> > ```
->
-> Run Cell 1 and Cell 2. Notice cell 2 is a main loop for the
-> acquisition and re-plotting. If you stop the acquisition just run only
-> cell 2 for starting measurements again.
+   # R1 resistor value
+   R1 = 1000
 
-After running the code above you should get diode VI characteristic as
-is shown on figure 5.
+   # Configure IN1 and IN2 oscilloscope input channels
+   for ch in osc:
+       ch.filter_bypass = True
+       # data rate decimation
+       ch.decimation = 10
+       # trigger timing [sample periods]
+       N = ch.buffer_size
+       ch.trigger_pre = 0
+       ch.trigger_post = N
+       # osc0 is controlling both channels
+       ch.sync_src = fpga.sync_src["osc0"]
+       ch.trig_src = fpga.trig_src["osc0"]
+       # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
+       ch.level = 0.01
+       ch.edg = 'pos'
+       ch.holdoff = 0
 
-![image](img/Activity_22_Figure_5.png)
 
-Figure 5: BJT VI characteristic measured using Jupyter Notebook
+   # Initialize diode current and voltage
+   V = I = np.zeros(N)
 
-On figure 5 BJT VI characteristic measured in a diode configuration is
-shown. Compare this results with diode VI characteristic. Again we can
-see hysteresis appearing. Explain why we want to use transistors as
-diodes?
 
-### Reverse Breakdown Characteristics
+   # Plotting
+   hover = HoverTool(mode='vline', tooltips=[("V", "@x"), ("I", "@y")])
+   tools = "wheel_zoom, box_zoom, reset,pan"
+   p = figure(plot_height=500,
+              plot_width=900,
+              title="XY plot of transistor VI characteristic",
+              toolbar_location="right",
+              tools=(tools, hover))
+   p.xaxis.axis_label = 'Voltage [V]'
+   p.yaxis.axis_label = 'Current [mA]'
+   r = p.line(V, I, line_width=1, line_alpha=0.7, color="blue")
+   # get and explicit handle to update the next show cell
+   target = show(p, notebook_handle=True)
 
-Here we will investigate the reverse break down voltage characteristics
-of the emitter base junction of a bipolar junction transistor (BJT)
-connected as a diode.
 
-Set up the breadboard as it is shown on figure 6. **The emitter is
-connected to the positive battery terminal.** The the NPN\'s is likely
-to have breakdown voltage higher then 10 V and it may happen that our
-maximum voltage range will not be sufficient i.e we will not be able to
-reverse polarize Q1 above breakdown voltage. Because of that we have
-added additional battery to bring up emitter potential close to the
-breakdown voltage so when, at some point our $V_{OUT}$ signal goes
-NEGATIVE the transistor will be REVERSED PLOARIZIED but differential
-voltage $V_{E-BC} = V_E - V_{BC}$ will be larger than BREAKDOWN voltage
-and transistor will starts conducting.
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code von unten hinein.
 
-For example without battery i.e when emitter is on GND we can reverse
-polarize Q1 by amount:
 
-$$V_{E-BC} = V_E - V_{BC} = 0 - (-3.3V) = 3.3V  \quad \text{of} \quad \text{reverse polarization}$$
+ 
+.. code-block:: python
 
-With battery added we can achieve reversed polarization by maximal
-amount
+   # Measuring I, V  and re-plotting
+   while True:
+       # reset and start
+       osc[0].reset()
+       osc[0].start()
+       # wait for data
+       while (osc[0].status_run()):
+           pass
+       V0 = osc[0].data(N-100)*10  # IN1 signal
+       V1 = osc[1].data(N-100)*10  # IN2 signal
+       I = ((V0-V1)/R1)*1E3        # 1E3 convert to mA
+       r.data_source.data['x'] = V0
+       r.data_source.data['y'] = I
+       push_notebook(handle=target)
 
-$$V_{E-BC} = V_E - V_{BC} = 9 - (-3.3V) = 12.3V  \quad \text{of} \quad \text{reverse polarization}$$
 
-Where $V_{BC}$ is maximal negative swing of our excitation voltage
-signal $V_{OUT}$.
 
-![image](img/Activity_22_Figure_6.png)
+Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
+Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
+Erfassung stoppen, führen Sie nur die Zelle 2 aus  um die Messung
+erneut zu starten.
+ 
 
-Figure 6: NPN Emitter Base Reverse breakdown configuration
+Nach dem Ausführen des obigen Codes sollten Sie die Diode
+VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
-### Procedure
 
-Build the circuit from the figure 6 on the breadboard and continue with
-the measurements.
+.. figure:: img/Activity_22_Fig_5.png
 
-![image](img/Activity_22_Figure_7.png)
+   Abbildung 5: BJT VI-Charakteristik gemessen mit Jupyter Notebook
+   
 
-Figure 7: NPN Emitter Base Reverse breakdown configuration on the
-breadboard
+In 5 ist die BJT VI-Charakteristik, gemessen in einer
+Diodenkonfiguration, gezeigt. Vergleichen Sie diese Ergebnisse mit der
+Charakteristik der Diode VI.
 
-For this task we will use Jupyter Notebook Web application. How to start
-Jupyter Notebook and create new project is shown on figure 4 flow chart.
-Since you already have Jupyter Notebook running from previews example
-only small update of the code is needed.
+Wiederum können wir eine Hysterese sehen. Erklären Sie, warum wir
+Transistoren als Dioden verwenden wollen?
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
 
-You should stop Jupyter Notebook by selecting **Stop** icon on the menu
-bar. After that update **Cell 2** as is shown bellow:
+Reverse Breakdown-Eigenschaften
+-------------------------------
 
-``` {.sourceCode .python}
-# Measuring I , V  and re-plotting
-while True:
-   # reset and start
-   osc[0].reset()
-   osc[0].start()
-   # wait for data
-   while (osc[0].status_run()): pass
-   V0=osc[0].data(N-100)*10 - 9 # IN1 signal
-   V1=osc[1].data(N-100)*10 - 9 # IN2 signal
-   I=((V0-V1)/R1)*1E3        # 1E3 convert to mA
-   r.data_source.data['x'] = V0
-   r.data_source.data['y'] = I
-   push_notebook(handle=target)
-```
-:::
+Hier untersuchen wir die umgekehrte Durchbruchspannungskennlinie des
+Emitter-Basis-Übergangs eines Bipolartransistors (BJT), der als Diode
+geschaltet ist.
 
-> As you can see from code above **we have only added \"-9\"** in order
-> to take into account battery potential when plotting is executed.
-> Select Cell 2 and pres **Play** icon on the menu bar. Notice, cell 2
-> is a main loop for the acquisition and re-plotting. If you stop the
-> acquisition just run only cell 2 for starting measurements again.
 
-Be sure to measure the actual battery voltage for the most accurate
-measurements. If you have updated Jupyter Notebook code and run it
-correctly you should get results similar as is shown on figure 8.
+Stellen Sie das Steckbrett so ein, wie es in Abbildung 6 dargestellt
+ist. **Der Sender ist mit dem positiven Batteriepol verbunden.**
 
-![image](img/Activity_22_Figure_8.png)
+Die NPNs haben wahrscheinlich eine Durchbruchspannung von mehr als 10
+V und es kann vorkommen, dass unser maximaler Spannungsbereich nicht
+ausreichend ist, d. H. Wir werden nicht in der Lage sein, Q1 oberhalb
+der Durchbruchspannung umzupolen. Aus diesem Grund haben wir eine
+zusätzliche Batterie hinzugefügt, um das Emitterpotential in der Nähe
+der Durchbruchsspannung zu erhöhen. Wenn also unser :math:`V_ {OUT}`
+Signal NEGATIV wird, wird der Transistor REVERSED PLOARIZED aber
+differentielle Spannung :math:`V_ {E-BC} = V_E - V_ {BC}` ist größer
+als die BREAKDOWN-Spannung und der Transistor beginnt zu leiten.
 
-Figure 8: NPN Emitter Base Reverse breakdown voltage measurements
 
-From figure 8 we can see that reversed breakdown voltage of NPN BJT
-2N3904 transistor is around 10V.
+Zum Beispiel ohne Batterie, d. H. Wenn der Emitter auf GND ist, können
+wir Q1 um den Betrag polarisieren:
 
-### Questions
 
-1.  Disconnect the collector of Q1 and leave it open. How does this
-    change the breakdown voltage?
+.. math::
+   V_ {E-BC} = V_E - V_ {BC} = 0 - (-3,3 V) = 3,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}
 
-Lowering the effective forward voltage of the diode
+Mit der Batterie können wir die umgekehrte Polarisation um den maximalen Betrag erreichen
+
+.. math::
+   V_ {E-BC} = V_E - V_ {BC} = 9 - (-3,3 V) = 12,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}
+
+
+Wobei :math:`V_ {BC}` der maximale negative Swing unseres
+Anregungsspannungssignals ist :math:`V_ {OUT}`.
+
+.. figure:: img/Activity_22_Fig_6.png
+
+   Abbildung 6: NPN-Emitter Base Reverse-Durchbruchkonfiguration
+
+
+Verfahren
+---------
+
+Baue die Schaltung aus der Abbildung 6 auf dem Steckbrett und fahre
+mit den Messungen fort.
+
+
+
+.. figure:: img/Activity_22_Fig_7.png
+
+   Abbildung 7: NPN-Emitter Base Reverse-Durchbruchkonfiguration auf dem Steckbrett
+
+   
+Für diese Aufgabe verwenden wir die Jupyter Notebook
+Web-Anwendung. Wie man Jupyter Notebook startet und ein neues Projekt
+erstellt, ist in Abbildung 4 dargestellt.
+
+Da Sie Jupyter Notebook bereits von Previews aus ausführen, wird nur
+ein kleines Update des Codes benötigt.
+
+
+.. note::
+   Sie sollten Jupyter Notebook anhalten, indem Sie das Symbol ** Stop
+   ** in der Menüleiste auswählen.
+   
+   Nach diesem Update ** Zelle 2 ** wie unten gezeigt:
+    
+.. code-block:: python
+
+   # Measuring I , V  and re-plotting
+   while True:
+     # reset and start
+     osc[0].reset()
+     osc[0].start()
+     # wait for data
+     while (osc[0].status_run()): pass
+     V0 = osc[0].data(N-100)*10 - 9 # IN1 signal
+     V1 = osc[1].data(N-100)*10 - 9 # IN2 signal
+     I = ((V0-V1)/R1)*1E3        # 1E3 convert to mA
+     r.data_source.data['x'] = V0
+     r.data_source.data['y'] = I
+     push_notebook(handle=target)
+
+
+Wie Sie aus dem obigen Code sehen können **haben wir nur "-9"**
+hinzugefügt, um das Potential der Batterie bei der Ausführung des
+Plottings zu berücksichtigen.
+   
+Wählen Sie Zelle 2 und drücken Sie ** Play ** in der
+Menüleiste. Beachten Sie, Zelle 2 ist eine Hauptschleife für die
+Erfassung und das erneute Plotten. Wenn Sie die Erfassung stoppen,
+führen Sie nur die Zelle 2 aus, um die Messungen erneut zu starten.
+   
+
+Achten Sie darauf, die tatsächliche Batteriespannung für die
+genauesten Messungen zu messen.
+
+Wenn Sie den Jupyter Notebook-Code aktualisiert und korrekt ausgeführt
+haben, sollten Sie ähnliche Ergebnisse wie in Abbildung 8 erhalten.
+
+
+.. figure:: img/Activity_22_Fig_8.png
+
+   Abbildung 8: Messung der NPN-Emitter-Basis-Durchbruchspannung
+   
+
+Aus Fig. 8 können wir sehen, dass die umgekehrte Durchbruchspannung
+des NPN BJT 2N3904-Transistors etwa 10 V beträgt.
+
+
+Fragen
+------
+1. Trennen Sie den Kollektor von Q1 und lassen Sie ihn offen. Wie
+   ändert sich die Durchbruchspannung?
+   
+
+
+Absenken der effektiven Durchlassspannung der Diode
 ---------------------------------------------------
 
-Here we will investigate a circuit configuration with smaller forward
-voltage characteristics than that of a bipolar junction transistor (BJT)
-connected as a diode. The turn on voltage of the "diode" is should be
-about \~0.1V compared to \~0.7V for the simple diode connection in the
-first example.
+Hier untersuchen wir eine Schaltungskonfiguration mit kleineren
+Vorwärtsspannungseigenschaften als die eines bipolaren
 
-![image](img/Activity_22_Figure_9.png)
+Sperrschichttransistor (BJT) als Diode geschaltet. Die
+Einschaltspannung der "Diode" sollte etwa 0,1 V betragen im Vergleich
+zu 0,7 V für die einfache Diodenverbindung im ersten Beispiel.
 
-Figure 9: Configuration to lower effective forward voltage drop of diode
 
-### Procedure
+.. figure:: img/Activity_22_Fig_9.png
 
-1.  Build the circuit from figure 9 on the breadboard. Set
-    R3=1kΩ,R4=100kΩ and use for Q1 2N3904 NPN and for Q2 2N3904 PNP
-    transistor.
+   Abbildung 9: Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
 
-![image](img/Activity_22_Figure_10.png)
 
-Figure 10: Configuration to lower effective forward voltage drop of
-diode on the breadboard
+Verfahren
+---------
+1. Erstellen Sie die Schaltung aus Abbildung 9 auf dem
+   Steckbrett. Setze R3 = 1kΩ, R4 = 100kΩ und verwende für Q1 2N3904
+   NPN und für Q2 2N3904 PNP-Transistor.
+   
 
-::: {.warning}
-::: {.admonition-title}
-Warning
-:::
+.. figure:: img/Activity_22_Fig_10.png
 
-Before connecting the circuit to the STEMlab -3.3V and +3.3V pins double
-check your circuit. The -3.3V and +3.3V voltage supply pins do not have
-short circuit handling and they can be damaged in case of short circuit.
-:::
+   Abbildung 10: Konfiguration zur Verringerung des effektiven Durchlassspannungsabfalls der Diode auf dem Steckbrett
 
-2.  Start the Oscilloscope & Signal generator application
-3.  In the OUT1 settings menu set Amplitude value to 0.8V, DC offset to
-    -0.12 V, Frequency to 1kHz to apply the input voltage. From the
-    waveform menu select TRIANGLE, deselect SHOW and select enable.
-4.  On the left bottom of the screen be sure that IN1 V/div is set to
-    1V/div and IN2 V/div is set to 500mV/div (You can set V/div by
-    selecting the desired channel and using vertical +/- controls)
-5.  Set t/div value to 200us/div (You can set t/div using horizontal +/-
-    controls)
-6.  Under IN1 and IN2 menu settings set probe to x10 and vertical offset
-    to 0.
-7.  Under MATH menu settings set vertical offset to 0.
+.. warning::
+   Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+   anschließen, überprüfen Sie Ihren Stromkreis. Die
+   Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+   Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+   werden.
+   
 
-![image](img/Activity_22_Figure_11.png)
+2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
+   
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,8
+   V, den DC-Offset auf -0,12 V und die Frequenz auf 1 kHz ein, um die
+   Eingangsspannung anzulegen.
+   
+   Wählen Sie im Wellenform-Menü TRIANGLE, deaktivieren Sie SHOW und
+   wählen Sie enable.
+   
+4. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
+   dass IN1 V / div auf 1 V / div und IN2 V / div auf 500 mV / div
+   eingestellt ist (Sie können V / div einstellen, indem Sie die
+   gewünschte Option auswählen Kanal und mit vertikalen +/-
+   Kontrollen)
+   
+5. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit
+   horizontalen +/- Kontrollen einstellen)
+   
+6. Stellen Sie unter den Menüeinstellungen IN1 und IN2 den Messtaster
+   auf x10 und den vertikalen Offset auf 0.
+   
+7. Stellen Sie unter MATH-Menüeinstellungen den vertikalen Offset auf
+   0 ein.
+   
 
-Figure 11: Lower effective forward voltage drop of diode measurements
+.. figure:: img/Activity_22_Fig_11.png
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+   Abbildung 11: Geringerer effektiver Vorwärtsspannungsabfall von Diodenmessungen
 
-As you can see from the figure 11 the forward voltage drop is about
-100mV. You can also notice that Q2 is not necessary to lower drop-down
-voltage of the Q1. The main role here plays resistor R4 connected to the
-base of the Q1. Try to remove Q2 and observe results.
-:::
+   
+.. warning::
+   Wie Sie der Abbildung 11 entnehmen können, beträgt der
+   Vorwärtsspannungsabfall etwa 100 mV. Sie können auch feststellen,
+   dass Q2 nicht notwendig ist, um die Drop-Down-Spannung des Q1 zu
+   senken.
+   
+   Die Hauptrolle spielt hier der Widerstand R4, der mit der Basis von
+   Q1 verbunden ist. Versuchen Sie, Q2 zu entfernen und die Ergebnisse
+   zu beobachten.
+   
 
-### Questions
+Fragen
+------
 
-1.  Could the collector of the PNP Q2 be connected to some other node
-    such as a negative supply voltage? And what would be the effect?
+1. Könnte der Kollektor des PNP Q2 mit einem anderen Knoten wie einer
+   negativen Versorgungsspannung verbunden sein? Und was wäre der
+   Effekt?
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

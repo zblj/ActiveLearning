@@ -23,13 +23,22 @@ Hintergrund
 
 In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme geprüft, indem sie auf die nachfolgend dargestellten Schaltungen angewendet werden Zahlen. 
 
-1. Der Proportionalitätstheorem besagt, dass die Reaktion einer Schaltung ist proportional zur Quelle, die auf die Schaltung wirkt. Dies ist auch der Fall bekannt als *Linearität*. Die Proportionalitätskonstante A bezieht sich auf die Eingangsspannung zur Ausgangsspannung als: 
+1. Der Proportionalitätstheorem besagt, dass die Reaktion einer
+   Schaltung ist proportional zur Quelle, die auf die Schaltung
+   wirkt. Dies ist auch der Fall bekannt als *Linearität*. Die
+   Proportionalitätskonstante A bezieht sich auf die Eingangsspannung
+   zur Ausgangsspannung als:  
 
    .. math:: 
 	
       V_{out} = Ein \cdot V_{in} 
 
-   Der Proportionalitätsfaktor A wird manchmal als der sogenannte Verstärkung einer Schaltung. Für die Schaltung in Fig. 1 ist die Quelle Die Spannung ist V\ :sub:`in`\. Die Antwort V\ :sub:`out`\ ist across der :math:`4,7 k\Omega` Widerstand. Das wichtigste Ergebnis der Linearität ist Überlagerung.
+   Der Proportionalitätsfaktor A wird manchmal als der sogenannte
+   Verstärkung einer Schaltung. Für die Schaltung in Fig. 1 ist die
+   Quelle Die Spannung ist V\ :sub:`in`\. Die Antwort V\ :sub:`out`\
+   ist across der :math:`4,7 k\Omega` Widerstand. Das wichtigste
+   Ergebnis der Linearität ist Überlagerung.
+   
 
    .. figure:: img/Activity_04_Fig_01.png
       :align: center 
@@ -37,7 +46,15 @@ In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme geprüft,
       Abbildung 1: Widerstandsschaltung mit 5V Spannungsquelle
 
 
-2. Der Überlagerungssatz besagt, dass die Reaktion eines linearen Schaltung mit mehreren unabhängigen Quellen, wie in Figur 2, kann erhalten werden, indem man die einzelnen Antworten addiert, die durch die einzelne Quellen, die allein handeln. Für eine unabhängige Quelle, die handelt. allein, alle anderen unabhängigen Spannungsquellen im Stromkreis sind ersetzt durch Kurzschlüsse und alle anderen unabhängigen Ströme. Quellen werden durch offene Stromkreise ersetzt, wie in Abbildung 3 dargestellt.
+2. Der Überlagerungssatz besagt, dass die Reaktion eines linearen
+   Schaltung mit mehreren unabhängigen Quellen, wie in Figur 2, kann
+   erhalten werden, indem man die einzelnen Antworten addiert, die
+   durch die einzelne Quellen, die allein handeln. Für eine
+   unabhängige Quelle, die handelt. allein, alle anderen unabhängigen
+   Spannungsquellen im Stromkreis sind ersetzt durch Kurzschlüsse und
+   alle anderen unabhängigen Ströme. Quellen werden durch offene
+   Stromkreise ersetzt, wie in Abbildung 3 dargestellt.
+   
 
    .. figure:: img/Activity_04_Fig_02.png
       :align: center 
@@ -69,15 +86,25 @@ Vorgehensweise
 
 - Konstruieren Sie die Schaltung aus Figur 1.
 
-- Fall 1: Für die Spannungsquelle "V\ :sub:`in`\=5V", dargestellt in Abbildung 1. Verwenden Sie den STEMlab-Spannungsstift am Erweiterungsstecker E2_.  
+- Fall 1: Für die Spannungsquelle "V\ :sub:`in`\=5V", dargestellt in
+  Abbildung 1. Verwenden Sie den STEMlab-Spannungsstift am
+  Erweiterungsstecker E2_. 
   
-- Fall 2: Für die Spannungsquelle "V\ :sub:`in`\=3.3V", dargestellt in der Abbildung.1. Verwenden Sie den STEMlab-Spannungsstift am Erweiterungsstecker E1_. 
+- Fall 2: Für die Spannungsquelle "V\ :sub:`in`\=3.3V", dargestellt in
+  der Abbildung.1. Verwenden Sie den STEMlab-Spannungsstift am
+  Erweiterungsstecker E1_.  
 
-- Fall 3: Für die Spannungsquelle "V\ :sub:`in`\=-3.3V", dargestellt in der Abbildung. 1 Verwenden Sie den STEMlab-Spannungsstift am Erweiterungsstecker E2_.  
+- Fall 3: Für die Spannungsquelle "V\ :sub:`in`\=-3.3V", dargestellt
+  in der Abbildung. 1 Verwenden Sie den STEMlab-Spannungsstift am
+  Erweiterungsstecker E2_.
+  
 
-- Stellen Sie die Sondendämpfung auf x10 ein (an der Oszilloskopsonde und an der Oszilloskop IN1 Menüeinstellungen) 
+- Stellen Sie die Sondendämpfung auf x10 ein (an der Oszilloskopsonde
+  und an der Oszilloskop IN1 Menüeinstellungen)
+  
 
-- Messen Sie V\ :sub:`out`\ mit dem Oszilloskop genau Anwendung. 
+- Messen Sie V\ :sub:`out`\ mit dem Oszilloskop genau Anwendung.
+  
   
 - Sie sollten die tatsächlichen festen Netzspannungen messen und aufzeichnen auch. 
 
@@ -99,24 +126,44 @@ Vorgehensweise
  
 - Berechnen Sie den Wert von A jeweils mit Äquivalent (1).
 
-- Zeichne ein Diagramm mit V\ :sub:`in`\ auf der x-Achse und V\ :sub:`out`\ auf der y-Achse.
+- Zeichne ein Diagramm mit V\ :sub:`in`\ auf der x-Achse und V\
+  :sub:`out`\ auf der y-Achse.
+       
 
 - Überprüfen des Überlagerungssatzes:
 
-  - Konstruieren Sie die Schaltung von Fig. 2. Messen und protokollieren Sie die Spannung über dem :math:`4,7 k\Omega` Widerstand.
+  - Konstruieren Sie die Schaltung von Fig. 2. Messen und
+    protokollieren Sie die Spannung über dem :math:`4,7 k\Omega`
+    Widerstand.
+    
 
-  - Konstruieren Sie die Schaltung von Fig. 3. Messen und protokollieren Sie die Spannung über dem :math:`4,7 k\Omega` Widerstand.
+  - Konstruieren Sie die Schaltung von Fig. 3. Messen und
+    protokollieren Sie die Spannung über dem :math:`4,7 k\Omega`
+    Widerstand.
+    
 
     
-.. note:: Die Messung des Spannungsabfalls am gewünschten Widerstand erfolgt in den Bereiche so, dass die Oszilloskop-Sonde von IN1 mit dem Gerät verbunden ist eine Seite des Widerstandes und der Oszilloskop-Sonde von IN2 ist die mit einer anderen Seite des Widerstandes verbunden sind. Spannung Unterschied V\ :sub:`in1`\-V\ :sub:`in2`\ gibt einen Spannung am gemessenen Widerstand. 
+.. note:: Die Messung des Spannungsabfalls am gewünschten Widerstand
+	  erfolgt in den Bereiche so, dass die Oszilloskop-Sonde von
+	  IN1 mit dem Gerät verbunden ist eine Seite des Widerstandes
+	  und der Oszilloskop-Sonde von IN2 ist die mit einer anderen
+	  Seite des Widerstandes verbunden sind. Spannung Unterschied
+	  V\ :sub:`in1`\-V\ :sub:`in2`\ gibt einen Spannung am
+	  gemessenen Widerstand.
+	  
 
 
-- Berechnen Sie die Gesamtreaktion "V\ :sub:`out`\" für die Schaltung der Figur 2 durch Hinzufügen der Antworten aus der Messung der Schaltung von Figur 1 und Messung der Schaltung von Figur 3. 
+- Berechnen Sie die Gesamtreaktion "V\ :sub:`out`\" für die Schaltung
+  der Figur 2 durch Hinzufügen der Antworten aus der Messung der
+  Schaltung von Figur 1 und Messung der Schaltung von Figur 3.
+  
 
   V\ :sub:`out`\(figure 2) = V\ :sub:`out`\(figure 1) + V\ :sub:`out`\(figure 3) = _______________
 
 
-- Vergleichen Sie Ihr berechnetes Ergebnis mit dem, was Sie in Schritt 2a gemessen haben. Erklären Sie eventuelle Unterschiede.
+- Vergleichen Sie Ihr berechnetes Ergebnis mit dem, was Sie in Schritt
+  2a gemessen haben. Erklären Sie eventuelle Unterschiede.
+  
 
   .. figure:: img/Activity_04_Fig_04.png
      :align: center  
@@ -127,9 +174,16 @@ Vorgehensweise
 Fragen zu
 ---------
 
-1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die Steigung des Diagramm an beliebiger Stelle und vergleichen Sie es mit dem Wert von K, der sich ergibt aus die Messungen. Erklären Sie eventuelle Unterschiede.
+1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die
+   Steigung des Diagramm an beliebiger Stelle und vergleichen Sie es
+   mit dem Wert von K, der sich ergibt aus die Messungen. Erklären Sie
+   eventuelle Unterschiede.
    
-2. Für jeden der drei Schaltkreise, die du für die Überlagerung gebaut hast.Experiment, wie gut die berechneten und gemessenen Ergebnisse waren vergleichen? Erklären Sie eventuelle Unterschiede.
+   
+2. Für jeden der drei Schaltkreise, die du für die Überlagerung gebaut
+   hast.Experiment, wie gut die berechneten und gemessenen Ergebnisse
+   waren vergleichen? Erklären Sie eventuelle Unterschiede.
+   
 
 
 

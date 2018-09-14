@@ -1,239 +1,515 @@
-OPAMP Open Loop Gain
-====================
+OPAMP Open Loop Verstärkung
+======================
 
-Objective
+Zielsetzung
 ---------
 
-The objective of this experiment is to measure the open‐loop gain
-characteristics of a OP27 opamp.
+Das Ziel dieses Experiments ist es, die Verstärkung des offenen Regelkreises zu messen
+Eigenschaften eines OP27-Operationsverstärkers.
 
-Notes
+Anmerkungen
 -----
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
+..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 
-[Oscilloscope](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-&
-[Signal](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-[generator](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-application is used for generating and observing signals on the circuit.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch
+wenn man sich auf die Verbindungen zum Red Pitaya STEMlab Board bezieht
+Hardware_.
 
-Extension connector pins used for **-3.3V** and **+3.3V** voltage supply
-are show in the documentation
-[here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
+Oscilloscope_ & Signal_ generator_ Anwendung wird zum Generieren verwendet
+und Beobachten von Signalen auf der Schaltung.
 
-Materials
+Erweiterungssteckerstifte für ** - 3.3V ** und ** + 3.3V ** Spannung
+Versorgung finden Sie in der Dokumentation here_.
+
+Materialien
 ---------
 
--   **Red Pitaya STEMlab 125-14**. An Red Pitaya STEMlab 125-10 is not
-    suitable for this measurement due to ADC resolution!
--   OPAMP: 1x OP27
--   OPAMP: 1x OP97
--   Resistor: 2x 100 $\Omega$
--   Resistor: 2x 200 $k \Omega$
--   Resistor: 1x 100 $k \Omega$
--   Capacitor: 2x 0.1 $\mu F$
--   Capacitor: 1x 10 $\mu F$
+- ** Red Pitaya STEMlab 125-14 **. Ein Red Pitaya STEMlab 125-10 ist aufgrund der ADC-Auflösung für diese Messung nicht geeignet!
+- OPAMP: 1x OP27
+- OPAMP: 1x OP97
+- Widerstand: 2x 100: Mathe: `\ Omega`
+- Widerstand: 2x 200 :math:`k \ Omega`
+- Widerstand: 1x 100 :math:`k \ Omega`
+- Kondensator: 2x 0.1 :math:`\ mu F`
+- Kondensator: 1x 10 :math:`\ mu F`
 
-Background
+
+Hintergrund
 ----------
 
-Unlike the ideal op amp, a practical op amp has a finite gain. The
-open-loop DC gain (usually referred to as $A_{VOL}$ and sometimes as
-**forward gain**) is the gain of the amplifier without the feedback loop
-being closed, hence the name "open-loop." For a precision op amp this
-gain can be very high, on the order of 160 dB (100 million) or more. The
-open loop gain of the
-[OP27](http://www.analog.com/media/en/technical-documentation/data-sheets/OP27.pdf)
-amplifier is arround 1.8 million.
+.. _OP27: http://www.analog.com/media/en/technical-documentation/data-sheets/OP27.pdf
+.. _tutorial: http://www.analog.com/media/en/training-seminars/tutorials/MT-044.pdf
 
-![Figure 1: OP27 datasheet and Open Loop Gain value
-marked](img/Activity_14_Figure_1.png)
+Anders als der ideale Operationsverstärker hat ein praktischer Operationsverstärker eine begrenzte Verstärkung. Das
+Open-Loop-DC-Verstärkung (normalerweise bezeichnet als :math:`A_ {VOL}` und
+manchmal als ** forward gain **) ist die Verstärkung des Verstärkers ohne
+die Rückkopplungsschleife ist geschlossen, daher der Name "open-loop". Für a
+Präzisionsverstärker kann diese Verstärkung sehr hoch sein, in der Größenordnung von 160 dB
+(100 Millionen) oder mehr. Die offene Schleifenverstärkung des OP27_-Verstärkers ist
+rund 1,8 Millionen.
 
-The definition of open-loop gain is
+.. Abbildung :: img/ Activity_14_Fig_1.png
 
-$$A_{OL} = \frac{V_{out}}{(V^{+} - V^{-})} \quad (1)$$
+   Abbildung 1: OP27 Datenblatt und Open Loop Gain Wert markiert
 
-where $(V^{+} - V^{-})$ is the input voltage difference $V_d$ that is
-being amplified, $V^{+}$ a voltage on non-inverting input and $V^{-}$
-voltage on inverting input.
+   
+Die Definition von Open-Loop-Verstärkung ist
 
-Voltage feedback op amps operate as a **voltage in / voltage out**
-amplifier and the open-loop gain is a **dimensionless ratio**, so no
-units are necessary. However, data sheets sometimes express gain in
-$V/mV$ or $V/ \mu V$ instead of $V/V$, for the convenience of using
-smaller numbers. Or, voltage gain can also be expressed in $dB$ terms,
-as gain in
+.. math::
 
-$$Gain \quad in \quad dB = 20log(A_{VOL})  \quad (2)$$
+   A_ {OL} = \ frac {V_ {out}} {(V ^ {+} - V ^ {-})} \ quad (1)
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+wo :math:`(V ^ {+} - V ^ {-})` ist die Eingangsspannungsdifferenz
+ :math:`V_d`, das verstärkt wird,: math:` V ^ {+} `eine Spannung an
+nichtinvertierender Eingang und :math:`V ^ {-}` Spannung am invertierenden Eingang.
 
-Thus an open-loop gain of
 
-$$1V/ \mu V \quad = \quad   1  \quad million V/V  \quad = \quad 120 dB, \quad etc.$$
+Spannungsrückkopplungs-Operationsverstärker arbeiten als ** Spannungseingang / Spannungsausgang **
+Verstärker und die Open-Loop-Verstärkung ist ein ** dimensionsloses Verhältnis **, also nein
+Einheiten sind notwendig. Datenblätter drücken jedoch manchmal Gewinn aus
+ :math:`V / mV` oder: math:` V / \ mu V` anstatt :math:`V / V`, für die
+Bequemlichkeit der Verwendung kleinerer Zahlen. Oder, Spannungsverstärkung kann auch
+ausgedrückt werden in :math:`dB` Terme, als Gain in
 
-Be sure to read through the
-[tutorial](http://www.analog.com/media/en/training-seminars/tutorials/MT-044.pdf)
-on Open Loop Gain and Open Loop Gain Nonlinearity before doing these
-experiments.
-:::
+.. math::
 
-Procedure
+   Verstärkung \ quad in \ quad dB = 20log (A_ {VOL}) \ quad (2)
+
+.. note::
+
+   Also eine Open-Loop-Verstärkung von
+
+   .. math::
+
+      1V / \ mu V \ quad = \ quad 1 \ quad Millionen V / V \ quad = \ quad 120 dB, \ quad usw.
+      
+   Lesen Sie das Tutorial_ zu Open Loop Gain und Open Loop Gain Nonlinearity, bevor Sie diese Experimente durchführen.
+
+
+Verfahren
 ---------
 
-The dc gain is measured by forcing the output of the DUT(OPAMP under
-test a OP27 in our case) to move by a known amount (1V in our case, look
-at Figure 2) by switching R5 between the DUT output (OP27 pin 6) and a
-1V reference (STEMlab OUT1 output) with switch S. If R5 is at +1V
-(Switch S position POS2), then the DUT output (OP27 pin6) must move to
---1V if the input of the auxiliary amplifier is to remain unchanged near
-zero. The voltage change at auxiliary amplifier output $V_{out}$ (OP97
-pin 6), attenuated by **R3/R1** factor, is the input to the DUT(OP27 pin
-3), which causes a 1V change of output.It is simple to calculate the
-gain from this:
+Die DC - Verstärkung wird gemessen, indem der Ausgang des Prüflings (OPAMP unter
+Testen Sie ein OP27 in unserem Fall) um einen bekannten Betrag zu bewegen (1V in unserem Fall,
+siehe Abbildung 2), indem R5 zwischen den DUT-Ausgang geschaltet wird (OP27 Pin 6)
+und eine 1 V Referenz (STEMlab OUT1 Ausgang) mit Schalter S. Wenn R5 ist
+bei + 1V (Schalter S Position POS2), dann muss der Prüflingsausgang (OP27 Pin6)
+gehe auf -1V, wenn der Eingang des Hilfsverstärkers bleiben soll
+unverändert nahe Null. Die Spannungsänderung am Ausgang des Hilfsverstärkers
+ :math:`V_ {out}` (OP97 Pin 6), abgeschwächt um ** R3 / R1 ** Faktor, ist der
+Eingang zum Prüfling (OP27 Pin 3), der eine Änderung von 1V verursacht
+output.Es ist einfach, den Gewinn daraus zu berechnen:
 
-$$A_{OL} = Gain_{OL} = \frac{R_3}{R_2}  \frac{1V}{V_{out}} \quad (2)$$
+.. math::
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+   A_ {OL} = Verstärkung_ {OL} = \ frac {R_3} {R_2} \ frac {1V} {V_ {out}} \ quad (2)
 
-In other words, DUT input differential voltage $V_d=V^{+}+{V^-}$, (where
-$V^-=0$ and $V_d =
-V^+$), necessary to set DUT output to -1V is $\frac{V_{out}}{A_{OL}}$.
+   
+.. note::
 
-DUT output must go to -1V since our AUX opamp is in feedback loop trying
-to push his $V_d$ to 0V.
-:::
+   Mit anderen Worten, DUT-Eingangsdifferenzspannung
+    :math:`V_d = V ^ {+} + {V ^ -}`, (wobei :math:`V ^ - = 0` und: math:` V_d =
+   V ^ + `), notwendig, um den DUT-Ausgang auf -1 V zu setzen
+    :math:`\ frac {V_ {out}} {A_ {OL}}`.
 
-**Example:**
+   Der DUT-Ausgang muss auf -1 V gehen, da sich unser AUX-Operationsverstärker in der Rückkopplungsschleife befindet
+   versuchen, seine zu schieben :math:`V_d` zu 0V.
 
-If we take $A_{OL} = 1.8E6$ then for 1V on DUT(OP27) output we need to
-have input diferential voltage $V_d$ as folows:
+   
+**Beispiel:**
 
-$$V_d = \frac{1V}{1.8E6} \approx 0.555 \mu V$$
+Wenn wir nehmen :math:`A_ {OL} = 1.8E6` dann für 1V am DUT (OP27) wir ausgeben
+muss Eingangsdifferenzspannung haben :math:`V_d` wie folgt:
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+.. math::
+   
+   V_d = \ frac {1V} {1.8E6} \ ungefähr 0,555 \ mu V
 
-In theory, in order to measure $A_{OL}$ we could only use a signal
-generator (for setting the $V_{d}$) and voltmeter for measurements of
-DUT output. But in practice this is almost not duable dou to
-imperfections, noise levels, offset levels and etc. Because of that we
-are using method shown on figure 2 where we perform the measurements of
-output signal $V_{out}$ which is, through voltage divider (R3/R2)
-related to $V_{d}$ and a few order of magnitudes larger than $V_{d}$ and
-thus measurable with our equipment.
-:::
+   
+.. note::
 
-**Construct the circuit shown in figure 2.** Before inserting the R2 and
-R3 resistors in the circuit, measure and record the values of the two
-resistors using a DMM if available.
+   In der Theorie, um zu messen :math:`A_ {OL}` konnten wir nur eine verwenden
+   Signalgenerator (zum Einstellen von :math:`V_ {d}`) und Voltmeter für
+   Messungen der DUT-Ausgabe. In der Praxis ist dies jedoch fast nicht der Fall
+   duable dou zu Unvollkommenheiten, Rauschlevels, Offset - Niveaus und
+   usw. Deshalb verwenden wir die in Abbildung 2 gezeigte Methode
+   Führen Sie die Messungen des Ausgangssignals durch :math:`V_ {out}` was ist,
+   durch Spannungsteiler (R3 / R2) bezogen auf :math:`V_ {d}` und einige
+   Größenordnung größer als :math:`V_ {d}` und somit messbar
+   mit unserer Ausrüstung.
 
-In our case R3 = 97.3k $\Omega$ and R2 = 99.7 $\Omega$
 
-::: {.warning}
-::: {.admonition-title}
-Warning
-:::
+** Konstruieren Sie die in Abbildung 2 gezeigte Schaltung. ** Vor dem Einsetzen des R2
+und R3 Widerstände in der Schaltung, messen und notieren die Werte der
+zwei Widerstände, die ein DMM verwenden, falls verfügbar.
 
-Before connecting the circuit to the STEMlab -3.3V and +3.3V pins double
-check your circuit. The -3.3V and +3.3V voltage supply pins do not have
-short circuit handling and they can be damaged in case of short circuit.
-:::
+In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7: math:` \ Omega`
 
-![Figure 2: Voltage supply connections and test
-circuit](img/Activity_14_Figure_2.png)
+.. Warnung::
 
-::: {.warning}
-::: {.admonition-title}
-Warning
-:::
+   Vor dem Anschluss der Schaltung an die STEMLab -3.3V und + 3.3V Pins
+   überprüfe deine Schaltung. Die -3,3V und + 3,3V Spannungsversorgung
+   Stifte haben keinen Kurzschluss und können beschädigt werden
+   Kurzschlussfall.
 
-C1 capacitor is used as a feedback impedance on the inverting amplifier
-configuration of the AUX opamp. This is done to attenuate all AC signals
-in the circuit and AUX opamp output. For this reason it is good to have
-large capacitance of C1 in order to eliminate any AC signals.
 
-We chosed 10uF and used polarized(electrolytic) capacitor here. This is
-not an "ok" solution since our capacitor can be subjected to reverse
-polarisation. But for good measurements and short period of measurements
-the electrolytic capacitor can be used.
-:::
+.. Abbildung :: img/ Activity_14_Fig_2.png
 
-Step 1: S is on POS1 (Figure 2)
+   Abbildung 2: Spannungsversorgung und Testschaltung
+
+   
+.. Warnung::
+
+   C1-Kondensator wird als eine Rückkopplungsimpedanz an der Invertierung verwendet
+   Verstärkerkonfiguration des AUX-Operationsverstärkers. Dies wird getan, um zu dämpfen
+   alle AC-Signale im Schaltkreis und AUX-Operationsverstärker-Ausgang. Aus diesem Grund
+   Es ist gut, große Kapazität von C1 zu haben, um zu beseitigen
+   irgendwelche Wechselstromsignale.
+   
+   Wir wählten 10uF und verwendeten polarisierte (elektrolytische) Kondensatoren
+   Hier. Dies ist keine "ok" Lösung, da unser Kondensator sein kann
+   Umkehrpolarisation unterzogen. Aber für gute Messungen und
+   kurzer Zeitraum der Messungen der Elektrolytkondensator sein kann
+   benutzt.
+
+
+Schritt 1: S ist auf POS1 (Abbildung 2)
 -------------------------------
 
-Instead of using switch S, R5 can be manually set on pin6 of DUT on the
-breadboard. Build circuit in the breadboard and set R5 to POS1.
+Anstatt Schalter S zu verwenden, kann R5 manuell auf Pin6 des DUT auf dem Steckbrett gesetzt werden.
+Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 
-**Connect OUT1 to IN1 and set probe attenuations to x1.**
+** Verbinden Sie OUT1 mit IN1 und stellen Sie die Tastkopfdämpfungen auf x1 ein. **
 
-![Figure 3: Test circuit. R5 on POS1 (look at Figure
-2)](img/Activity_14_Figure_3.png)
+.. Abbildung :: img/ Activity_14_Fig_3.png
 
-1.  Start the Oscilloscope & Signal Generator application
-2.  On the left bottom of the screen be sure that IN1 V/div is set to
-    500mV/div and IN2 V/div to 10mV/div (You can set V/div by selecting
-    the desired channel and using vertical +/- controls)
-3.  Using horizontal +/- controls set t/div to 100ms/div
-4.  In the measurement menu select "MEAN", select IN1 and press DONE,
-    select IN2 and press DONE
-5.  **Readout MEAN(IN2): In our case it is -34.2mV**
+   Abbildung 3: Testschaltung. R5 auf POS1 (siehe Abbildung 2)
 
-    ![](img/Activity_14_Figure_4.png)
+   
+1. Starten Sie die Anwendung Oszilloskop & Signalgenerator
 
-    Figure 4: Measurements of $V_{out}$ when R5 is set to POS1 (look at
-    Figure 2)
+2. Vergewissern Sie sich am linken unteren Bildschirmrand, dass IN1 V / div eingestellt ist
+   bis 500mV / Div und IN2 V / Div bis 10mV / Div (Sie können V / div durch
+   Wählen Sie den gewünschten Kanal und verwenden Sie die vertikalen +/- Regler)
+      
+3. Setzen Sie t / div mit horizontalen +/- Bedienelementen auf 100ms / div
 
-Step 2: S is on POS2 (Figure 2)
--------------------------------
+4. Wählen Sie im Messmenü "MEAN", wählen Sie IN1 und drücken Sie FERTIG, wählen Sie IN2 und drücken Sie FERTIG
 
-Build circuit on the breadboard and set R5 to POS2.
+5. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.2mV **
 
-![Figure 5: Test circuit. R5 on POS2 (look at Figure
-2)](img/Activity_14_Figure_5.png)
 
-1.  In the OUT1 settings menu from the waveform menu select DC. Set
-    Amplitude value to 1V to apply a 1V DC voltage to the circuit (R5).
+   .. Abbildung :: img/ Activity_14_Fig_4.png
 
-    Deselect SHOW button and select enable.
+   Abbildung 4: Messungen von :math:`V_ {out}` wenn R5 auf POS1 gesetzt wird (siehe Abbildung 2)
 
-2.  Adjust OUT1 amplitude until MEAN(IN1) shows near 1V.
-3.  **Readout MEAN(IN2): In our case it is -34.8mV**
 
-    ![](img/Activity_14_Figure_6.png)
+Schritt 2: S ist auf POS2 (Abbildung 2)
+--------------------------------
 
-    Figure 6: Measurements of $V_{out}$ when R5 is set to POS2 (look at
-    Figure 2)
+Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
-    ::: {.note}
-    ::: {.admonition-title}
-    Note
-    :::
+.. Abbildung :: img/ Activity_14_Fig_5.png
 
-    As you can see from the measurements there is certain offset on the
-    AUX opamp output (pin 6). Ideally when R5 is set to POS1 (figure 2)
-    $V_{out}$ should be 0.
-    :::
+   Abbildung 5: Testschaltung. R5 auf POS2 (siehe Abbildung 2)
 
-    Nonetheless, during both (POS1 and POS2) measurements the DC offset
-    is the same and it will cancel out when calculating open loop gain.
+1. Wählen Sie im Menü OUT1-Einstellungen im Wellenformmenü die Option DC. einstellen
+   Amplitudenwert auf 1 V, um eine 1 V Gleichspannung an die Schaltung (R5) anzulegen.
 
-    For open loop gain folowing equation 2 we get:
+   Deaktivieren Sie die SHOW-Schaltfläche und wählen Sie Aktivieren.
 
-    $$A_{OL} = \frac{R3}{R2} \frac{1V}{(V_{out_{POS1}}-V_{out_{POS2}})} =$$$$A_{OL} = \frac{93700.0}{99.7} \frac{1V}{(-34.2mV-(-34.8mV))} =$$$$A_{OL} \approx  1566365.764 \approx 1.566 milion$$
+2. Passen Sie die OUT1-Amplitude an, bis MEAN (IN1) nahe 1V erscheint.
 
-    Compare measurements with the datasheet value from Figure 2. Our
-    measurements are very close to the specified value. For more
-    accurate measurement a higher resolution equipment and less noisy
-    environment is necessary.
+3. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.8mV **
+
+   .. Abbildung :: img/ Activity_14_Fig_6.png
+
+   Abbildung 6: Messungen von :math:`V_ {out}` wenn R5 auf POS2 gesetzt ist (siehe Abbildung 2)
+
+   .. note::
+
+      Wie Sie den Messungen entnehmen können, gibt es einen gewissen Offset
+      der AUX-Operationsverstärker-Ausgang (Pin 6). Idealerweise wenn R5 auf POS1 gesetzt ist
+      (Abbildung 2) :math:`V_ {out}` sollte 0 sein.
+      
+   Nichtsdestoweniger, während beider (POS1 und POS2) Messungen der DC
+   Der Offset ist gleich und wird bei der Berechnung von open aufgehoben
+   Kreisverstärkung.
+      
+   Für eine offene Schleifenverstärkung gemäß Gleichung 2 erhalten wir:
+
+   .. math::
+
+      A_ {OL} = \ Frac {R3} {R2} \ Frac {1V} {(V_ {out_ {POS1}} - V_ {out_ {POS2}})} =
+
+      A_ {OL} = \ Frac {93700.0} {99.7} \ Frac {1V} {(- 34.2mV - (- 34.8mV))} =
+
+      A_ {OL} \ ca. 1566365,764 \ ca. 1,566 Millionen
+
+   
+   Vergleichen Sie die Messungen mit dem Datenblattwert aus Abbildung 2.
+   Messungen liegen sehr nahe am angegebenen Wert. Um genauer zu sein
+   Messung einer Ausrüstung mit höherer Auflösung und weniger lauter Umgebung
+   ist notwendig.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

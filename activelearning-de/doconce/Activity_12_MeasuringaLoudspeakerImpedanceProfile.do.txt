@@ -1,209 +1,231 @@
-Measuring a Loudspeaker Impedance Profile
-=========================================
+Messung eines Lautsprecherimpedanzprofils
+##################################################
 
-Objective
----------
+Zielsetzung
+__________
 
-The objective of this experiment is to measure the impedance profile and
-the resonate frequency of a permanent magnet loudspeaker.
+Das Ziel dieses Experiments ist es, das Impedanzprofil und die Resonanzfrequenz eines Permanentmagnet-Lautsprechers zu messen.
 
-Notes
------
+Anmerkungen
+_______
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/index.html).
-[Impedance](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer)
-[analyzer](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer)
-application is used to measure RLC circuit impedane $Z(f)$. **Here we
-use Impedance analyzer application without LCR meter frontend as
-described**
-[HERE](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer).
-The Impedance analyzer application enables measurements of Impedance,
-Phase and other parameters of the selected DUT (Device Under Test).
-Measurements can be performed in the Frequency sweep mode with 1Hz
-frequency resolution or in the Measurements sweep mode with the desired
-number of measurements at constant frequency. The selectable frequency
-range is from 1Hz to 60MHz, although the recommended frequency range is
-up to 1MHz. The impedance range is from 0.1 Ohm to 10 Mohm. When using
-the Impedance analyzer application with the LCR Extension module, insert
-0 in the shunt resistor field.
+..hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _Impedance: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
+.. _analyzer: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
+.. _HERE: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 
-Background
-----------
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya STEMlab-Board-Hardware beziehen.
+Impedance_analysator_ Anwendung wird verwendet, um RLC-Schaltung impedane zu messen :math:`Z (f)`. ** Hier verwenden wir die Impedanzanalysator-Anwendung ohne LCR-Zähler-Frontend wie beschrieben ** HIER_.
+Die Impedanzanalysator-Anwendung ermöglicht Messungen von Impedanz, Phase und anderen Parametern des ausgewählten DUT (Device Under Test). Messungen können im Frequenz-Sweep-Modus mit 1 Hz Frequenzauflösung oder im Sweep-Modus Messungen mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich reicht von 1 Hz bis 60 MHz, obwohl der empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich reicht von 0,1 Ohm bis 10 MOhm. Wenn Sie die Impedanzanalysatoranwendung mit dem LCR-Erweiterungsmodul verwenden, setzen Sie 0 in das Shunt-Widerstandsfeld ein.
 
-The chief electrical characteristic of a dynamic loudspeaker is its
-electrical impedance as a function of frequency. It can be visualized by
-plotting it as a graph, called the impedance curve. The most common type
-of loudspeaker is an electro-mechanical transducer using a voice coil
-connected to a diaphragm or cone. The voice coil in moving coil
-loudspeakers is suspended in a magnetic field provided by a permanent
-magnet. As electric current flows through the voice coil, from an audio
-amplifier, the electro-magnetic field created by the current in the coil
-reacts against the permanent magnet\'s fixed field and moves the voice
-coil (also the cone). Alternating current will move the cone back and
-forth. The movement of the cone vibrates the air producing the sound.
+Hintergrund
+____________
 
-The moving system of the loudspeaker, including the cone, cone
-suspension, spider and the voice coil, has a certain mass and
-compliance. This is most commonly modeled as a simple mass suspended by
-a spring that has a certain resonant frequency at which the system will
-vibrate most freely.
+Die wichtigste elektrische Eigenschaft eines dynamischen Lautsprechers ist seine elektrische Impedanz als Funktion der Frequenz. Es kann visualisiert werden, indem man es als Kurve aufzeichnet, die Impedanzkurve genannt wird.
+Der häufigste Typ von Lautsprecher ist ein elektromechanischer Wandler, der eine Schwingspule verwendet, die mit einer Membran oder einem Konus verbunden ist. Die Schwingspule in Schwingspulenlautsprechern ist in einem von einem Permanentmagneten bereitgestellten Magnetfeld aufgehängt. Wenn elektrischer Strom durch die Schwingspule von einem Audioverstärker fließt, reagiert das durch den Strom in der Spule erzeugte elektromagnetische Feld gegen das feste Feld des Permanentmagneten und bewegt die Schwingspule (auch der Kegel). Wechselstrom wird den Kegel hin und her bewegen. Die Bewegung des Kegels vibriert die Luft, die den Klang erzeugt.
 
-This frequency is known as the "free-space resonance" of the speaker and
-is designated by $F_S$. At this frequency, since the voice coil is
-vibrating with the maximum peak-to-peak amplitude and velocity, the
-back-emf generated by coil motion in a magnetic field is also at its
-maximum. This causes the effective electrical impedance of the speaker
-to be at its maximum at $F_S$, known as $F_{max}$. For frequencies just
-below resonance, the impedance rises rapidly as the frequency approaches
-$F_S$ and is inductive in nature. At resonance, the impedance is purely
-resistive and beyond it, as the impedance drops, it looks capacitive.
-The impedance reaches a minimum value, $Z_{min}$, at some frequency
-where the behavior is mostly (but not perfectly) resistive over some
-range of frequencies. A speaker\'s rated or nominal impedance,
-$Z_{nom}$, is derived from this $Z_{min}$ value.
+Das bewegliche System des Lautsprechers, einschließlich des Konus, der Kegelaufhängung, der Spinne und der Schwingspule, hat eine gewisse Masse und Nachgiebigkeit. Dies wird am häufigsten als einfache Masse modelliert, die an einer Feder aufgehängt ist, die eine bestimmte Resonanzfrequenz aufweist, bei der das System am freiesten schwingt.
 
-Knowing the resonate frequency and the minimum and maximum impedances
-are important when designing cross over filter networks for multiple
-driver speakers and the physical enclosure the speakers are mounted in.
+Diese Frequenz ist als "Freiraumresonanz" des Lautsprechers bekannt und wird bezeichnet durch :math:`F_S`. Da bei dieser Frequenz die Schwingspule mit der maximalen Spitze-zu-Spitze-Amplitude und Geschwindigkeit schwingt, ist auch die durch die Spulenbewegung in einem Magnetfeld erzeugte Gegen-EMK maximal. Dies bewirkt, dass die effektive elektrische Impedanz des Lautsprechers bei :math:`F_S`, bekannt als
+ :math:`F_ {max}`. Für Frequenzen knapp unterhalb der Resonanz steigt die Impedanz schnell an, wenn sich die Frequenz nähert :math:`F_S` und ist induktiv in der Natur. Bei der Resonanz ist die Impedanz rein ohmisch und darüber hinaus, wenn die Impedanz abnimmt, sieht sie kapazitiv aus. Die Impedanz erreicht einen minimalen Wert :math:`Z_ {min}`, bei einer Frequenz, bei der das Verhalten über einen Bereich von Frequenzen größtenteils (aber nicht perfekt) resistiv ist. Die Nenn- oder Nennimpedanz eines Sprechers, :math:`Z_ {nom}`, wird davon abgeleitet :math:`Z_ {min}` value.
 
-Loudspeaker Impedance Model
----------------------------
+Die Kenntnis der Resonanzfrequenz und der minimalen und maximalen Impedanzen ist wichtig, wenn Cross-Over-Filter-Netzwerke für mehrere Treiberlautsprecher und das physische Gehäuse, in dem die Lautsprecher eingebaut sind, entworfen werden.
 
-To help understand the measurements you are about to make, a simplified
-electrical model of a loudspeaker is shown in figure 1.
+Lautsprecherimpedanzmodell
+____________________________
 
-![image](img/Activity_12_Figure_1.png)
+Um Ihnen zu helfen, die Messungen zu verstehen, die Sie machen werden, ist in Abbildung 1 ein vereinfachtes elektrisches Modell eines Lautsprechers dargestellt.
 
-Figure 1: Loudspeaker Impedance Model
 
-The circuit in figure 1 has a dc resistance placed in series with a
-lossy parallel resonant circuit made up of $L$, $R$, and $C$, which
-models the dynamic impedance of the speaker over the frequency range of
-interest.
+.. figure:: img/ Activity_12_Fig_1.png
 
--   $R_{dc}$ is the dc resistance of the loudspeaker as measured with a
-    DC ohmmeter. The dc resistance is often referred to as the $DCR$ in
-    a speaker/subwoofer data sheet. The dc resistance measurement is
-    usually less than the driver\'s nominal impedance $Z_{nom}$.
-    $R_{dc}$ is typically less than the specified loudspeaker impedance
-    and the novice loudspeaker enthusiast may be fearful that the driver
-    amplifier will be overloaded. However, because the inductance $L$ of
-    a speaker increases with an increase in frequency, it is unlikely
-    that the driver amplifier actually sees the dc resistance as its
-    load.
--   $L$ is the voice coil inductance usually measured in milliHenries
-    $mH$. Typically, the industry standard is to measure the voice coil
-    inductance at $1kHz$. As frequencies increase above $0Hz$, there is
-    a rise in impedance above the $R_{dc}$ value. This is because the
-    voice coil acts as an inductor. Consequently, the overall impedance
-    of a loudspeaker is not a constant impedance, but can be represented
-    as a dynamic profile that changes with input frequency as we will
-    see when we make measurements. Maximum impedance, $Z_{max}$, of the
-    loudspeaker occurs at the resonant frequency, $F_s$, of the
-    loudspeaker.
--   $F_s$ is the resonant frequency of a loudspeaker. The impedance of a
-    loudspeaker is a maximum at $Z_s$. The resonant frequency is the
-    point at which the total mass of the moving parts of the loudspeaker
-    become balanced with the force of the speaker suspension when in
-    motion. The resonant frequency information is important to prevent
-    an enclosure from ringing. In general, the mass of the moving parts
-    and the stiffness of the speaker suspension are the key elements
-    that affect the resonant frequency. A vented enclosure (bass reflex)
-    is tuned to $F_s$ so that the two work in unison. As a rule, a
-    speaker with a lower $F_s$ is better for low-frequency reproduction
-    than a speaker with a higher $F_s$.
--   $R$ represents the mechanical resistance of a driver\'s suspension
-    losses.
+Abbildung 1: Lautsprecherimpedanzmodell
 
-Materials
----------
+Die Schaltung in Abbildung 1 hat einen Gleichstromwiderstand, der in Reihe mit einem verlustbehafteten Parallelschwingkreis geschaltet ist, bestehend aus :math:`L`,: math:` R` und :math:`C`, der die dynamische Impedanz des Lautsprecher über den Frequenzbereich von Interesse.
 
--   Red Pitaya STEMlab 125-14 or STEMlab 125-10
--   Resistor - $R_{shunt}$: 10 Ω
--   Loudspeaker, it is best if the speaker is one with a cone diameter
-    larger than 10cm such that is has a relatively low resonant
-    frequency.
+- :math:`R_ {dc}` ist der Gleichstromwiderstand des Lautsprechers, gemessen mit einem DC Ohmmeter. Der DC-Widerstand wird in einem Lautsprecher- / Subwoofer-Datenblatt oft als "math:` DCR "bezeichnet. Die DC-Widerstandsmessung ist normalerweise kleiner als die Nennimpedanz des Treibers :math:`Z_ {nom}`.  :math:`R_ {dc}` ist normalerweise kleiner als die spezifizierte Lautsprecherimpedanz und der unerfahrene Lautsprecherenthusiast kann befürchten, dass der Treiberverstärker überlastet wird. Da jedoch die Induktivität: math: "L" eines Lautsprechers mit einer Zunahme der Frequenz zunimmt, ist es unwahrscheinlich, dass der Treiberverstärker tatsächlich den Gleichstromwiderstand als seine Last betrachtet.
 
-Procedure
----------
+- :math:`L` ist die Schwingspuleninduktivität, die normalerweise in MilliHerren gemessen wird: math:` mH`. Üblicherweise misst der Industriestandard die Schwingspuleninduktivität bei :math:`1kHz`. Wenn sich die Frequenzen erhöhen :math:`0Hz`, steigt die Impedanz über den Wert: math:` R_ {dc} `. Dies liegt daran, dass die Schwingspule als ein Induktor wirkt. Folglich ist die Gesamtimpedanz eines Lautsprechers keine konstante Impedanz, sondern kann als ein dynamisches Profil dargestellt werden, das sich mit der Eingangsfrequenz ändert, wie wir sehen werden, wenn wir Messungen vornehmen. Maximale Impedanz, :math:`Z_ {max}`, des Lautsprechers tritt bei der Resonanzfrequenz auf, :math:`F_s`, des Lautsprechers.
 
-1.  First build the circuit shown in the figure 1 and figure 2. The
-    loudspeaker can be in an enclosure or not.
+- :math:`F_s` ist die Resonanzfrequenz eines Lautsprechers. Die Impedanz eines Lautsprechers ist maximal bei :math:`Z_s`. Die Resonanzfrequenz ist der Punkt, an dem sich die Gesamtmasse der beweglichen Teile des Lautsprechers mit der Kraft der Lautsprechersuspension bei Bewegung ausgleicht. Die Resonanzfrequenzinformation ist wichtig, um zu verhindern, dass ein Gehäuse klingelt. Im Allgemeinen sind die Masse der beweglichen Teile und die Steifigkeit der Lautsprecherfederung die Schlüsselelemente, die die Resonanzfrequenz beeinflussen. Ein belüftetes Gehäuse (Bassreflex) ist abgestimmt auf :math:`F_s`, so dass die beiden im Einklang arbeiten. In der Regel ist ein Lautsprecher mit einem niedrigeren :math:`F_s` besser für die Wiedergabe mit niedriger Frequenz als ein Sprecher mit einem höheren: math:` F_s`.
 
-![image](img/Activity_12_Figure_2.png)
+-: math: "R" steht für den mechanischen Widerstand der Federungsverluste eines Fahrers.
 
-Figure 2: Loudspeaker connections
+Materialien
+__________
 
-![image](img/Activity_12_Figure_3.png)
+- Red Pitaya STEMlab 125-14 oder STEMlab 125-10
+- Widerstand - :math:`R_ {shunt}`: 10 Ω
+- Lautsprecher, ist es am besten, wenn der Lautsprecher mit einem Konusdurchmesser größer als 10 cm ist, so dass er eine relativ niedrige Resonanzfrequenz hat.
 
-Figure 3: STEMlab with shunt resistor Impedance analyzer conection and
-Loudspeaker
+Verfahren
+__________
 
-2.  Start the Impedance analyzer application.
+1. Bauen Sie zuerst die in Abbildung 1 und Abbildung 2 gezeigte Schaltung ein. Der Lautsprecher kann sich in einem Gehäuse befinden oder nicht.
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+.. figure:: img/ Activity_12_Fig_2.png
 
-Impedance analyzer is community application and it needs to be
-downloaded from Application marketplace (bazaar). Click on Application
-marketplace icon and select Install for Impedance analyzer.
-:::
+Abbildung 2: Lautsprecheranschlüsse
 
-3.  
+.. figure:: img/ Activity_12_Fig_3.png
 
-    Start Impedance analyzer and:
+Abbildung 3: STEMlab mit Shunt-Widerstand Impedanzanalysator und Lautsprecher
 
-    :   -   under **Measurement settings menu** set number of steps: 30
-        -   under **Measurement settings menu** set $R_{shunt}$ value to
-            $10 \Omega$
-        -   under **Frequency sweep** set Start frequency to 10Hz and
-            End frequency to 10kHz
-        -   select **Start measurement**
 
-![image](img/Activity_12_Figure_4.png)
+2. Starten Sie die Anwendung Impedanzanalysator.
 
-Figure 4: Graph of the Loudspeaker impedance magnitude taken with
-Impedance analyzer application
+.. note::
+    Der Impedanzanalysator ist eine Gemeinschaftsanwendung und muss vom Application Marketplace (Basar) heruntergeladen werden.
+    Klicken Sie auf Application marketplace icon und wählen Sie Install for Impedance analyzer.
+
+3. Starten Sie den Impedanzanalysator und:
+    - unter ** Menü Messeinstellungen ** Anzahl der Schritte einstellen: 30
+    - unter ** Measurement settings menu ** set :math:`R_ {shunt}` value zu :math:`10 \ Omega`
+    - unter ** Frequenz-Sweep ** Startfrequenz auf 10 Hz und Endfrequenz auf 10 kHz einstellen
+    - Wählen Sie ** Messung starten **
+
+.. figure:: img/ Activity_12_Fig_4.png
+
+Abbildung 4: Grafik der Impedanz der Lautsprecherimpedanz, die mit der Anwendung des Impedanzanalysators aufgenommen wurde
 
 4.Plot mesured Phase
+    - unter ** Grafikeinstellungen ** für ** Y-Achse ** wählen ** P [Grad] **
 
-:   -   under **Plot settings menu** for **Y-axis** select **P\[deg\]**
+.. figure:: img/ Activity_12_Fig_5.png
 
-![image](img/Activity_12_Figure_5.png)
+Abbildung 5: Grafik der Lautsprecherimpedanzphase, die mit der Anwendung des Impedanzanalysators aufgenommen wurde
 
-Figure 5: Graph of the Loudspeaker impedance phase taken with Impedance
-analyzer application
+.. note::
+     Die Frequenz, bei der dies auftritt ** (Phase = 0) ** wird als Resonanzfrequenz bezeichnet.
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+Wie im Lautsprechermodell (Abbildung 1) gezeigt Widerstand :math:`R 'repräsentieren den mechanischen Widerstand eines Fahrers Federungsverluste.
+Um einen Effekt dieses modellierten Widerstandes zu sehen :math:`R` flipover Lautsprecher so, dass seine Membran zur Arbeitsbank zeigt. Damit werden wir uns verändern
+akustisch-mechanische Umgebung des Lautsprechers, die die Lautsprecherimpedanz beeinflusst.
 
-The frequency at which this occurs **(Phase = 0)** is called resonant
-frequency.
-:::
+5. Flipover-Lautsprecher wie in Abbildung 6 gezeigt und Impedanzmessungen wiederholen
 
-As is shown in Loudspeaker model (figure 1) resistance $R$ represent the
-mechanical resistance of a driver\'s suspension losses. To see an effect
-of this modeled resistance $R$ flipover Loudspeaker so its membrane is
-facing working bench. With this we will change acousto-mechanical
-environment of the speaker which will affect the loudspeaker impedance.
+.. figure:: img/ Activity_12_Fig_6.png
 
-5.  Flipover Loudspeaker as is shown in figure 6 and repeat Impedance
-    measurements
+Abbildung 6: Lautsprecher in unterschiedlicher akustisch-mechanischer Umgebung
 
-![image](img/Activity_12_Figure_6.png)
+Wie wir aus Abbildung 7 sehen können, ist die Impedanz des Lautsprechers jetzt anders und der Effekt von
+akustomechanische Umgebung ist deutlich sichtbar.
 
-Figure 6: Loudspeaker in different acousto-mechanical environment
+.. figure:: img/ Activity_12_Fig_7.png
 
-As we can see from figure 7 impedance of loudspeaker is now different
-and effect of acousto-mechanical environment is clearly visible.
+Abbildung 7: Lautsprecherimpedanz in verschiedenen akustisch-mechanischen Umgebungen
 
-![image](img/Activity_12_Figure_7.png)
 
-Figure 7: Loudspeaker impedance at different acousto-mechanical
-environment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

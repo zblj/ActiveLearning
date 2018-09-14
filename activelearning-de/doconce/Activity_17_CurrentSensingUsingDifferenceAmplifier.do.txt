@@ -1,282 +1,555 @@
-Current Sensing using a Difference Amplifier
-============================================
-
-Objective
----------
+Strommessung mit einem Differenzverstärker
+###################################################
 
-The objective of this lab activity is to investigate current sensing
-techniques that use an op-amp configured as a difference amplifier.
 
-Notes
------
+Zielsetzung
+__________
 
-In this tutorials we use the terminology taken from the user manual when
-referring to the connections to the Red Pitaya STEMlab board
-[hardware](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html).
-Extension connector pins used for **-3.3V** and **+3.3V** voltage supply
-are show in the documentation
-[here](http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2).
-[Oscilloscope](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-&
-[Signal](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-[generator](http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html)
-application is used for generating and observing signals on the circuit.
+Das Ziel dieser Laboraktivität ist es, aktuelle Sensortechniken zu untersuchen, die einen als Differenzverstärker konfigurierten Operationsverstärker verwenden.
 
-Background
-----------
+Anmerkungen
+_____
 
-We have investigated the
-[difference](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier)
-[amplifier](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier).
-Now we will use it as a current sense amplifier. One of the major
-applications of the op-amp difference amplifier is in measuring the
-current at point in a circuit other than where it flows into or out of
-ground or the common node. The current to be measured is converted into
-a small voltage by breaking open the current path and inserting a low
-value resistor in series. This resistor is called a current shunt
-resistor or just shunt. The resistance is kept small and the voltage
-drop across the shunt small to reduce any effect this change might have
-on the operation of the circuit. Current going through shunt resistor
-therefore path current is given as
+..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _amplifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier
+.. _difference: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier
+.. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
 
-$$I_{path} = I_{shunt} = \frac{\Delta V}{R_{shunt}} \quad (1)$$
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya STEMlab-Board-Hardware beziehen.
+Die für die Spannungsversorgung ** - 3.3V ** und ** + 3.3V ** verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
+Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
-Since differential voltage across resistor (given as
-$\Delta V = V_{R_{shunt_{node_1}}}-V_{R_{shunt_{node_2}}})$ should be
-measured we can see that a difference amplifier is an ideal circuit for
-that task. The small differential voltage drop across the shunt is
-amplified and converted to a single ended (common referenced) voltage by
-an op-amp difference amplifier.
+Hintergrund
+__________
 
-![image](img/Activity_17_Figure_1.png)
 
-Figure 1: Basic Difference Amplifier in current sensing configuration
+Wir haben den Differenzverstärker untersucht. Jetzt werden wir es als einen Stromleseverstärker verwenden. Eine der Hauptanwendungen des Operationsverstärker-Differenzverstärkers besteht darin, den Strom an einem Punkt in einer Schaltung zu messen, der anders ist als dort, wo er in die Erde oder aus dem Masse- oder dem gemeinsamen Knoten fließt. Der zu messende Strom wird in eine kleine Spannung umgewandelt, indem der Strompfad aufgebrochen wird und ein niederohmiger Widerstand in Reihe geschaltet wird. Dieser Widerstand wird als Strom-Shunt-Widerstand oder einfach Shunt bezeichnet. Der Widerstand wird klein gehalten und der Spannungsabfall über dem Shunt klein gemacht, um jegliche Auswirkungen zu verringern, die diese Änderung auf den Betrieb der Schaltung haben könnte.
+Der durch den Shunt-Widerstand gehende Pfadstrom ist daher als gegeben
 
-From the figure 1 we know that differential voltage $\Delta V$ given as
-$\Delta V = I_L R_s$ is carrying information about LOAD current. Also
-from
-[difference](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier)
-[amplifier](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier)
-theory we know that $\Delta V$ will be somehow related to the $V_{out}$.
-First assumption is as following:
+.. math::
+     
+    I_ {Pfad} = I_ {Shunt} = \ Frac {\ Delta V} {R_ {Shunt}} \ Quad (1)
 
-$$V_{out} \propto \Delta V = I_L R_s  \quad (1)$$
+Da die differentielle Spannung über dem Widerstand (gegeben als: m / V = ​​V_ {R_ {shunt_ {node_1}}} - V_ {R_ {shunt_2}}}) gemessen werden sollte, können wir sehen, dass ein Differenzverstärker ist eine ideale Schaltung für diese Aufgabe. Der kleine differentielle Spannungsabfall über den Shunt wird verstärkt und durch einen Operationsverstärker-Differenzverstärker in eine single-ended (common referenzed) Spannung umgewandelt.
 
-or,
+.. figure:: img/ Activity_17_Fig_1.png
 
-$$I_L \propto \frac{V_{out}}{R_s}$$
+Abbildung 1: Basis-Differenzverstärker in der Stromsensorkonfiguration
 
-In other words; simply by measuring and scaling $V_{out}$ we will
-measure load current, where $R_{s}$ is shunnt resistor. Transfer
-characteristic of
-[difference](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier)
-[amplifier](http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier)
-for circuit shown on figure 1 is:
 
-$$V_{out} = V_+ \bigg( 1 + \frac{R_2}{R_1} \bigg) - V_- \bigg(\frac{R_2}{R_1} \bigg) \quad (2)$$
+Aus der Abbildung 1 wissen wir, dass die differentielle Spannung :math:`Delta V 'gegeben ist als: math:` Delta V = I_L R_s' trägt Informationen über den Strom LOAD. Auch aus der Differenz_Verstärker-Theorie wissen wir, dass :math:`\ Delta V` irgendwie mit dem verwandt wird: math:` V_ {out} `.
+Die erste Annahme ist wie folgt:
 
-Where $V_{+}$ and $V_{-}$ are voltages on noninverting(pin 3) and
-inverting(pin 2) opamp inputs respectively. Substituting $V_{+}$ and
-$V_{-}$ for voltages on shunt resistor nodes we get
+.. math::
+    V_ {out} \ propto \ Delta V = I_L R_s \ quad (1)
 
-$$V_{out} = V_S \bigg( \frac{R_4}{R_3+R_4}\bigg) \bigg( 1 + \frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1} \bigg) \quad (3)$$
+oder,
 
-where $V_S$ is source voltage and $V_L$ load voltage. We can also write
+.. math::
+    I_L \ propto \ frac {V_ {out}} {R_s}
 
-$$V_S = V_{R_{shunt_{node_1}}} \quad V_L = V_{R_{shunt_{node_2}}}$$
+.. math::
 
-and
 
-$$V_S = V_L + \Delta V  \quad   \Delta V= V_S - V_L$$
+Mit anderen Worten; einfach durch Messen und Skalieren :math:`V_ {out}` wir messen den Laststrom,
+wo :math:`R_ {s}` ist Widerstand Widerstand.
+Übertragungskennlinie des Differenzverstärkers für den in 1 gezeigten Schaltkreis ist:
 
-On the first look, by adding resistor $R_4$ to the circuit, shown on
-figure 1, somehow we have complicated transfer function; from equation
-(2) to equation (3). But adding $R_4$ is necessary in order to equalize
-factor $1+R_2/R_1$ to the factor $R_2/R_1$ from the equation (2) in
-order to get opamp input voltages equally amplified and therefore
-enabling simple $\Delta V$ to $V_{out}$ correlation. The important step
-is to select values of $R_3$ and $R_4$ as
+.. math::
+V_ {out} = V_ + \ bigg (1 + \ frac {R_2} {R_1} \ bigg) - V_- \ bigg (\ frac {R_2} {R_1} \ bigg) \ quad (2)
 
-$$R_4=R_2  \quad   R_3=R_1$$
+Wobei :math:`V _ {+}` und :math:`V _ {-}` Spannungen an nicht invertierenden (Pin 3) bzw. invertierenden (Pin 2) Operationsverstärkungseingängen sind.
+Ersetzung :math:`V _ {+}` und :math:`V _ {-}` für Spannungen an Shunt-Widerstandsknoten erhalten wir
 
-Using identities above we can write equation (3) as
+.. math::
+V_ {out} = V_S \ bigg (\ frac {R_4} {R_3 + R_4} \ bigg) \ bigg (1 + \ frac {R_2} {R_1} \ bigg) - V_L \ bigg (\ frac {R_2} {R_1 } \ bigg) \ quad (3)
 
-$$V_{out} = V_S \bigg( \frac{R_2}{R_1+R_2}\bigg) \bigg( 1 + \frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1} \bigg) \quad (4)$$$$.$$$$V_{out} = V_S \bigg( \frac{R_2}{R_1+R_2} + \frac{R_2R_2}{R_1(R_1+R_2)} \bigg) - V_L \bigg(\frac{R_2}{R_1} \bigg)$$
+wo :math:`V_S` ist die Quellspannung und: math:` V_L` Lastspannung. Wir können auch schreiben
 
-It holds that
+.. math::
+V_S = V_ {R_ {shunt_ {Knoten_1}}} \ quad V_L = V_ {R_ {shunt_ {node_2}}}
 
-$$\bigg( \frac{R_2}{R_1+R_2} + \frac{R_2R_2}{R_1(R_1+R_2)} \bigg) = \frac{R_2}{R_1}$$
+und
 
-So we can write equation (4) simple as:
+.. math::
+V_S = V_L + \ Delta V \ Quad \ Delta V = V_S - V_L
 
-$$V_{out} = V_S \bigg(\frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1} \bigg) \quad (5)$$
+Auf den ersten Blick, durch Hinzufügen von Widerstand :math:`R_4` zu der Schaltung, in Abbildung 1 gezeigt, irgendwie haben wir komplizierte Übertragungsfunktion; von Gleichung (2) zu Gleichung (3).
+Aber das Hinzufügen von :math:`R_4` ist notwendig, um den Faktor: math:` 1 + R_2 / R_1` zu dem Faktor :math:`R_2 / R_1` aus der Gleichung (2) auszugleichen, um die Operationsverstärker-Eingangsspannungen gleich zu erhalten verstärkt und damit einfach möglich :math:`\ Delta V` zu: math:` V_ {out} `Korrelation.
+Der wichtige Schritt ist, Werte von :math:`R_3` und: math:` R_4` als zu wählen
 
-Now we have simple equation (5) for our difference amplifier form figure
-1 and the last step is to rewrite it in terms of $\Delta V$ i.e in terms
-of $I_L$
+.. math::
+R_4 = R_2 \ Vierer R_3 = R_1
 
-$$V_{out} = \bigg(\frac{R_2}{R_1} \bigg) (V_S- V_L)$$$$.$$$$V_{out} = \frac{R_2}{R_1} \Delta V$$$$.$$$$V_{out} =  \frac{R_2}{R_1}  I_L R_S \quad (6)$$
+Unter Verwendung der obigen Identitäten können wir Gleichung (3) als schreiben
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+.. math::
+V_ {out} = V_S \ bigg (\ frac {R_2} {R_1 + R_2} \ bigg) \ bigg (1 + \ frac {R_2} {R_1} \ bigg) - V_L \ bigg (\ frac {R_2} {R_1 } \ bigg) \ quad (4)
 
-And for $I_L$ we get:
+.
 
-$$I_L = V_{out} \frac{R_1}{R_2 R_S}  \quad (7)$$
-:::
+V_ {out} = V_S \ bigg (\ frac {R_2} {R_1 + R_2} + \ frac {R_2R_2} {R_1 (R_1 + R_2)} \ bigg) - V_L \ bigg (\ frac {R_2} {R_1} \ bigg)
 
-### **In our example we have**
+Das hält das
 
-$$R_4=R_2 = 100k \Omega , \quad  R_3=R_1 10k \Omega , \quad R_2/R_1=10 , \quad R_S = R_5 = 10 \Omega , \quad I_L = \frac{V_{out}}{10 R_S}$$
+.. math::
+     \ bigg (\ frac {R_2} {R_1 + R_2} + \ frac {R_2R_2} {R_1 (R_1 + R_2)} \ bigg) = \ frac {R_2} {R_1}
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+So können wir Gleichung (4) einfach schreiben als:
 
-**In our example load current is given as**
+.. math::
+V_ {out} = V_S \ bigg (\ frac {R_2} {R_1} \ bigg) - V_L \ bigg (\ frac {R_2} {R_1} \ bigg) \ quad (5)
 
-$$I_L = \frac{V_{out}}{100}  \quad (8)$$
-:::
+Nun haben wir eine einfache Gleichung (5) für unsere Differenzverstärkerform Fig. 1, und der letzte Schritt besteht darin, sie neu zu schreiben in :math:`Delta V ', d. H. In Bezug auf: math:` I_L`
 
-Materials
----------
+.. math::
+V_ {out} = \ bigg (\ frac {R_2} {R_1} \ bigg) (V_S-V_L)
 
--   Red Pitaya STEMlab
--   OPAMP: 1x
-    [OP484](http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf)
-    quad rail to rail amplifier
--   Resistor: 3x 10 $k \Omega$
--   Resistor: 1x 100 $k \Omega$
--   Resistor: 1x 10 $\Omega$
--   Resistor: 1x 220 $\Omega$
--   Capacitor: 1x 0.1 $\mu F$
--   Inductor: 1x 4.7 $mH$
+.
 
-Directions
-----------
+     V_ {out} = \ frac {R_2} {R_1} \ Delta V
 
-Build the current sense amplifier shown in figure 2. R6 is added to
-stabilize the output of the OP484. When using large feedback resistances
-the OP484 can be unstable due to the large input capacitance of the IN2
-input. $V_{S}$ is provided directly from the OUT1 STEMlab output as
-\"power supply\" for the LOAD. The load will consist of different
-impedances such as a resistor, capacitor or inductor. IN2 input voltage
-signal will directly show load current as is shown in the equation 8.
+     .
 
-![image](img/Activity_17_Figure_2.png)
+     V_ {out} = \ frac {R_2} {R_1} I_LR_S \ quad (6)
 
-Figure 2: Difference Amplifier circuit for current sensing
 
-Components values are next:
+.. note::
 
-$$R_4=R_2 = 100k \Omega , \quad  R_3=R_1 = 10k \Omega ,  \quad R_S = R_5 = 10 \Omega , \quad R_6 = 220 \Omega ,$$$$\quad C_1 = 0.1 \mu F , \quad \quad L_1 = 4.7 mH$$
+    Und für: Mathe: `I_L` bekommen wir:
 
-Procedure
----------
+    .. math::
 
-### Resistor LOAD
+        I_L = V_ {Aus} \ Frac {R_1} {R_2 R_S} \ Quad (7)
 
-For LOAD take $470 \Omega$ resistor and build circuit shown on figure 2.
 
-![image](img/Activity_17_Figure_3.png)
+** In unserem Beispiel haben wir **
+---------------------------
 
-Figure 3: Difference Amplifier circuit for current sensing - Resistive
-LOAD
+.. math::
+R_4 = R_2 = 100k \ Omega, \ quad R_3 = R_1 10k \ Omega, \ quad R_2 / R_1 = 10, \ quad R_S = R_5 = 10 \ Omega, \ quad I_L = \ frac {V_ {out}} {10 R_S }
 
-1.  Start the Oscilloscope & Signal Generator application.
-2.  In the OUT1 settings menu set Amplitude value to 0.5V to apply a
-    sine wave as the input voltage $V_{source}$. From the waveform menu
-    select SINE, deselect SHOW button and select enable.
-3.  For the stable acquisition set the trigger source to IN1
-4.  On the left bottom of the screen be sure that IN1 V/div is set to
-    200mV/div (You can set V/div by selecting the desired channel and
-    using vertical +/- controls)
-5.  On the left bottom of the screen be sure that IN2 V/div is set to
-    50mV/div (You can set V/div by selecting the desired channel and
-    using vertical +/- controls)
-6.  In the measurement menu select "MAX" , select IN1 and press DONE
-7.  In the measurement menu select "MAX" , select IN2 and press DONE
-8.  Set t/div value to 200us/div (You can set t/div using horizontal +/-
-    controls)
-9.  Readout measurements of IN2 and calculate load current using
-    equation (8)
 
-![image](img/Activity_17_Figure_4.png)
+.. note::
+     ** In unserem Beispiel wird der Laststrom als ** angegeben.
 
-Figure 4: Resistive LOAD current measurements
+      .. math::
+          I_L = \ frac {V_ {out}} {100} \ quad (8)
+ 
+Materialien
+__________
 
-From the measurements from figure 4 we can calculate max load current
-as:
+- Rotes Pitaya STEMlab
+- OPAMP: 1x OP484_ Quad Rail zu Rail Verstärker
+- Widerstand: 3x 10 :math:`k \ Omega`
+- Widerstand: 1x 100 :math:`k \ Omega`
+- Widerstand: 1x 10 :math:`\ Omega`
+- Widerstand: 1x 220: Mathe: `\ Omega`
+- Kondensator: 1x 0.1 :math:`\ mu F`
+- Induktivität: 1x 4.7 :math:`mH`
 
-$$I_L = \frac{IN2_{max}}{100} = \frac{108.0mV}{100} = 1.08mA$$
+Richtungen
+____________
 
-We can check our measurements by calculating load current as
+Bauen Sie den in Abbildung 2 gezeigten Strommessverstärker auf. R6 wird hinzugefügt, um den Ausgang des OP484 zu stabilisieren. Bei Verwendung großer Rückkopplungswiderstände kann das OP484 aufgrund der großen Eingangskapazität des IN2-Eingangs instabil werden.  :math:`V_ {S}` wird direkt vom OUT1 STEMlab-Ausgang als "Stromversorgung" für den LOAD bereitgestellt.
+Die Last besteht aus verschiedenen Impedanzen wie einem Widerstand, Kondensator oder Induktor.
+Das Eingangsspannungssignal IN2 zeigt direkt den Laststrom, wie in Gleichung 8 gezeigt.
 
-$$I_L = \frac{OUT1_{max}}{R_{load} + R_s } = \frac{0.5V}{470 \Omega+10 \Omega} = 1.04mA$$
 
-We can see that measured current is as what we expected confirming
-correct behaviour of our difference amplifier. The difference of 0.04mA
-between exact and measured value of load current comes from nominal
-tolerances values of load and shunt resistors.
+.. figure:: img/ Activity_17_Fig_2.png
 
-### Capacitance LOAD
+Abbildung 2: Differenzverstärkerschaltung für die Strommessung
 
-For LOAD take $0.1 \mu F$ capacitor and build circuit shown on figure 2.
+Komponentenwerte sind nächste:
 
-![image](img/Activity_17_Figure_5.png)
+.. math::
+     
+     R_4 = R_2 = 100k \ Omega, \ quad R_3 = R_1 = 10k \ Omega, \ quad R_S = R_5 = 10 \ Omega, \ quad R_6 = 220 \ Omega,
 
-Figure 5: Capacitance LOAD
+     \ quad C_1 = 0,1 \ mu F, \ quad \ viereck L_1 = 4,7 mH
 
-![image](img/Activity_17_Figure_6.png)
 
-Figure 6: Capacitance LOAD current measurements
+Verfahren
+__________
 
-From the measurements from figure 6 we can calculate max load current
-as:
+Widerstand LAST
+--------------
 
-$$I_L = \frac{IN2_{max}}{100} = \frac{36.5mV}{100} = 0.36mA$$
+Für LOAD nimm :math:`470 \ Omega` Widerstand und Bau Schaltung in Abbildung 2 gezeigt.
 
-We can check our measurements by calculating load current as
+.. figure:: img/ Activity_17_Fig_3.png
 
-$$I_L = \frac{OUT1_{max}}{Z_{load} + R_s } = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1} C_1}  + R_s } = \frac{0.5V}{1592 \Omega+10 \Omega} = 0.31mA$$
+Abbildung 3: Differenzverstärkerschaltung für Strommessung - Resistive LOAD
 
-### Inductive LOAD
 
-For LOAD take $4.7 mH$ inductor and build circuit shown on figure 2.
+1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+2. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V ein, um eine Sinuswelle als Eingangsspannung zu verwenden :math:`V_ {source}`. Wählen Sie im Wellenformmenü SINE,
+   Deaktivieren Sie den SHOW-Button und wählen Sie enable.
+3. Stellen Sie für die stabile Erfassung die Triggerquelle auf IN1 ein
+4. Stellen Sie sicher, dass IN1 V / div am linken unteren Bildschirmrand auf 200mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+5. Stellen Sie sicher, dass IN2 V / div am linken unteren Bildschirmrand auf 50mV / div gestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+6. Wählen Sie im Messmenü "MAX", wählen Sie IN1 und drücken Sie FERTIG
+7. Wählen Sie im Messmenü "MAX", wählen Sie IN2 und drücken Sie FERTIG
+8. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit horizontalen +/- Kontrollen einstellen)
+9. Auslesen von IN2 und Berechnen des Laststroms unter Verwendung von Gleichung (8)
 
-![image](img/Activity_17_Figure_7.png)
 
-Figure 7: Inductive LOAD
+.. figure:: img/ Activity_17_Fig_4.png
 
-1.  In the OUT1 settings menu set Amplitude value to 0.2V
-2.  On the left bottom of the screen be sure that IN1 V/div is set to
-    50mV/div (You can set V/div by selecting the desired channel and
-    using vertical +/- controls)
-3.  On the left bottom of the screen be sure that IN2 V/div is set to
-    500mV/div (You can set V/div by selecting the desired channel and
-    using vertical +/- controls)
+Abbildung 4: Widerstands-LOAD-Strommessungen
 
-![image](img/Activity_17_Figure_8.png)
+Aus den Messungen von Abbildung 4 können wir den maximalen Laststrom berechnen als:
 
-Figure 8: Inductive LOAD current measurements
+.. math::
+     
+     I_L = \ frac {IN2_ {max}} {100} = \ frac {108,0 mV} {100} = 1,08 mA
 
-From the measurements from figure 8 we can calculate max load current
-as:
+Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
 
-$$I_L = \frac{IN2_{max}}{100} = \frac{620mV}{100} = 6.2mA$$
+.. math::
+     
+     I_L = \ Frac {OUT1_ {max}} {R_ {Laden} + R_s} = \ Frac {0.5V} {470 \ Omega + 10 \ Omega} = 1.04mA
 
-We can check our measurements by calculating load current as
+Wir können sehen, dass der gemessene Strom dem entspricht, was wir erwartet haben, um das korrekte Verhalten unseres Differenzverstärkers zu bestätigen.
+Die Differenz von 0,04 mA zwischen exaktem und gemessenem Wert des Laststroms ergibt sich aus den nominalen Toleranzen der Last und der Shunt-Widerstände.
 
-$$I_L = \frac{OUT1_{max}}{Z_{load} + R_s } = \frac{OUT1_{max}}{2 \pi f_{OUT_1} L_1  + R_s } = \frac{0.2V}{30 \Omega+10 \Omega} = 5.0mA$$
+Kapazität LAST
+------------------
 
-::: {.note}
-::: {.admonition-title}
-Note
-:::
+Für LOAD nehmen Sie :math:`0.1 \ mu F` Kondensator und bauen Schaltung wie in Abbildung 2 gezeigt.
 
-At inductive load we have largest difference in measurements. Try to
-explain why. Hint. parasitics, series resistance of an inductor.
-:::
+.. figure:: img/ Activity_17_Fig_5.png
+
+Abbildung 5: Kapazität LOAD
+
+.. figure:: img/ Activity_17_Fig_6.png
+
+Abbildung 6: Kapazitäts-LOAD-Strommessungen
+
+Aus den Messungen aus Abbildung 6 können wir den maximalen Laststrom berechnen als:
+
+.. math::
+     
+     I_L = \ Frac {IN2_ {max}} {100} = \ frac {36.5mV} {100} = 0.36mA
+
+Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
+
+.. math::
+     
+     I_L = \ Frac {OUT1_ {max}} {Z_ {Laden} + R_s} = \ Frac {OUT1_ {max}} {\ frac {1} {2 \ pi f_ {OUT_1} C_1} + R_s} = \ frac { 0,5 V} {1592 \ Omega + 10 \ Omega} = 0,31 mA
+
+Induktive Last
+------------------
+
+Für LOAD nehmen Sie :math:`4.7 mH` Induktor und bauen Schaltung wie in Abbildung 2 gezeigt.
+
+.. figure:: img/ Activity_17_Fig_7.png
+
+Abbildung 7: Induktive Last
+
+
+1. Stellen Sie im OUT1-Einstellungsmenü den Amplitudenwert auf 0,2 V ein
+2. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms, dass IN1 V / div auf 50 mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+3. Stellen Sie sicher, dass IN2 V / div am linken unteren Bildschirmrand auf 500 mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+
+
+.. figure:: img/ Activity_17_Fig_8.png
+
+Abbildung 8: Induktive LOAD Strommessungen
+
+Aus den Messungen aus Abbildung 8 können wir den maximalen Laststrom berechnen als:
+
+.. math::
+     
+     I_L = \ Frac {IN2_ {max}} {100} = \ frac {620mV} {100} = 6.2mA
+
+Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
+
+.. math::
+     
+     I_L = \ Frac {OUT1_ {max}} {Z_ {Laden} + R_s} = \ Frac {OUT1_ {max}} {2 \ pi f_ {OUT_1} L_1 + R_s} = \ frac {0.2V} {30 \ Omega +10 \ Omega} = 5,0 mA
+
+.. note::
+    Bei der induktiven Last haben wir den größten Unterschied in den Messungen. Versuchen Sie zu erklären, warum.
+    note. Störeffekte, Serienwiderstand eines Induktors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
