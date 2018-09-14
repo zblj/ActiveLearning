@@ -62,7 +62,7 @@ Frequenzgang: Es handelt sich um eine Darstellung der Größe der Ausgangsspannu
    Abbildung 2: Frequenzgang des Parallelschwingkreises
 
    
-Die beiden zusätzlichen Frequenzen ω :sub:`1` und ω :sub:`2` werden ebenfalls angezeigt, die als Halbleistungsfrequenzen bezeichnet werden. Diese Frequenzen lokalisieren diejenigen Punkte auf der Kurve, bei denen der Spannungsverlauf 1/sqrt(2) oder das 0,707-fache des Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des Schwingkreises und ist definiert als:  
+Die beiden zusätzlichen Frequenzen ω :sub:`1` und ω :sub:`2` werden ebenfalls angezeigt, die als Halbleistungsfrequenzen bezeichnet werden. Diese Frequenzen lokalisieren diejenigen Punkte auf der Kurve, bei denen der Spannungsverlauf :math:`1/sqrt(2)` oder das 0,707-fache des Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des Schwingkreises und ist definiert als:  
 
 .. math::
 
