@@ -1,16 +1,16 @@
 BJT-Transistor als Schalter
-#############################
+###########################
 
 Zielsetzung
-__________
+___________
 
 Ein bipolarer Sperrschichttransistor (BJT) kann in vielen Schaltungskonfigurationen verwendet werden, wie einem Verstärker, Oszillator, Filter, Gleichrichter oder einfach als Ein-Aus-Schalter verwendet werden. Wenn der Transistor in den linearen Bereich vorgespannt ist, wird er als ein Verstärker oder eine andere lineare Schaltung arbeiten, wenn er abwechselnd in den Sättigungs- und Sperrbereichen vorgespannt wird, dann wird er als Schalter verwendet, der Strom fließen lässt oder nicht fließt in anderen Teilen der Schaltung. Dieses Experiment beschreibt das BJT, wenn es als Schalter betrieben wird.
 
 
 Anmerkungen
-______
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -55,7 +55,7 @@ Die Merkmale für einen BJT-Schalter gehen davon aus, dass
 Diese Bedingungen können sichergestellt werden, indem die Schaltung so ausgelegt wird, dass:
 
 1. :math:`-V_ {in} = V_ {BE}`
-2. :math:`+ V_ {in} = V_ {BE} + I_B R_B` (: math:` V_ {CC} `ist ein gutes Maximum)
+2. :math:`+ V_ {in} = V_ {BE} + I_B R_B` ( :math:`V_ {CC}` ist ein gutes Maximum)
 3. :math:`I_B> I_ {C_ {sat}} / \ beta`
 
 Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbereich getrieben wird. Die Bedingungen 2 und 3 stellen sicher, dass der Transistor in den Sättigungsbereich getrieben wird. Ein tatsächlicher BJT-Schalter unterscheidet sich von dem idealen Schalter in mehreren Aspekten. In der Praxis gibt es selbst im Sperrbereich einen kleinen Leckstrom durch den Transistor. Auch in der Sättigung fällt immer eine gewisse Spannung über den Innenwiderstand des Transistors ab. In der Regel liegt die Sättigung zwischen 0,2 und 0,4 V, abhängig vom Kollektorstrom und der Größe des Geräts. Diese Abweichungen vom Ideal sind bei einem Gerät mit richtiger Größe im Allgemeinen geringfügig, so dass wir bei der Analyse oder Konstruktion eines BJT-Schaltkreises nahezu ideale Bedingungen annehmen können.
@@ -65,7 +65,7 @@ Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbere
 Abbildung 2: NPN-LED-Schalter
 
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - 1x 1kΩ Widerstand
@@ -75,9 +75,9 @@ __________
 - 1x lötfreies Steckbrett
 
 Verfahren
-___________
+_________
 
-1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set :math:`R_B` = 1kΩ,: math:` R_C` = 100Ω
+1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set :math:`R_B` = 1kΩ, :math:`R_C` = 100Ω
 
 .. figure:: img/ Activity_24_Fig_3.png
 
@@ -101,10 +101,10 @@ In diesem "eingeschalteten" Zustand können wir sehen, dass IN2 (LED-Spannung ni
 
 
 Fragen
-__________
+______
 
-1. Wieviel Strom fließt in den Widerständen :math:`R_C` und: math:`
-   R_B` wenn die LED an ist und wenn die LED aus ist?
+1. Wieviel Strom fließt in den Widerständen :math:`R_C` und :math:`R_B`
+   wenn die LED an ist und wenn die LED aus ist?
    
 2. Berechnen Sie :math:`\ beta`, wenn Q1 gesättigt ist. Wie
    vergleicht sich dieser Wert mit der im Datenblatt angegebenen

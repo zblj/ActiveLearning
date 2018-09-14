@@ -1,16 +1,16 @@
 Strommessung mit einem Differenzverstärker
-###################################################
+##########################################
 
 
 Zielsetzung
-__________
+___________
 
 Das Ziel dieser Laboraktivität ist es, aktuelle Sensortechniken zu untersuchen, die einen als Differenzverstärker konfigurierten Operationsverstärker verwenden.
 
 Anmerkungen
-_____
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -24,7 +24,7 @@ Die für die Spannungsversorgung ** - 3.3V ** und ** + 3.3V ** verwendeten Steck
 Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
 Hintergrund
-__________
+___________
 
 
 Wir haben den Differenzverstärker untersucht. Jetzt werden wir es als einen Stromleseverstärker verwenden. Eine der Hauptanwendungen des Operationsverstärker-Differenzverstärkers besteht darin, den Strom an einem Punkt in einer Schaltung zu messen, der anders ist als dort, wo er in die Erde oder aus dem Masse- oder dem gemeinsamen Knoten fließt. Der zu messende Strom wird in eine kleine Spannung umgewandelt, indem der Strompfad aufgebrochen wird und ein niederohmiger Widerstand in Reihe geschaltet wird. Dieser Widerstand wird als Strom-Shunt-Widerstand oder einfach Shunt bezeichnet. Der Widerstand wird klein gehalten und der Spannungsabfall über dem Shunt klein gemacht, um jegliche Auswirkungen zu verringern, die diese Änderung auf den Betrieb der Schaltung haben könnte.
@@ -41,7 +41,7 @@ Da die differentielle Spannung über dem Widerstand (gegeben als: m / V = ​​
 Abbildung 1: Basis-Differenzverstärker in der Stromsensorkonfiguration
 
 
-Aus der Abbildung 1 wissen wir, dass die differentielle Spannung :math:`Delta V 'gegeben ist als: math:` Delta V = I_L R_s' trägt Informationen über den Strom LOAD. Auch aus der Differenz_Verstärker-Theorie wissen wir, dass :math:`\ Delta V` irgendwie mit dem verwandt wird: math:` V_ {out} `.
+Aus der Abbildung 1 wissen wir, dass die differentielle Spannung :math:`Delta V` gegeben ist als :math:`Delta V = I_L R_s` trägt Informationen über den Strom LOAD. Auch aus der Differenz_Verstärker-Theorie wissen wir, dass :math:`\ Delta V` irgendwie mit dem verwandt wird :math:`V_ {out}`.
 Die erste Annahme ist wie folgt:
 
 .. math::
@@ -79,8 +79,8 @@ und
 V_S = V_L + \ Delta V \ Quad \ Delta V = V_S - V_L
 
 Auf den ersten Blick, durch Hinzufügen von Widerstand :math:`R_4` zu der Schaltung, in Abbildung 1 gezeigt, irgendwie haben wir komplizierte Übertragungsfunktion; von Gleichung (2) zu Gleichung (3).
-Aber das Hinzufügen von :math:`R_4` ist notwendig, um den Faktor: math:` 1 + R_2 / R_1` zu dem Faktor :math:`R_2 / R_1` aus der Gleichung (2) auszugleichen, um die Operationsverstärker-Eingangsspannungen gleich zu erhalten verstärkt und damit einfach möglich :math:`\ Delta V` zu: math:` V_ {out} `Korrelation.
-Der wichtige Schritt ist, Werte von :math:`R_3` und: math:` R_4` als zu wählen
+Aber das Hinzufügen von :math:`R_4` ist notwendig, um den Faktor :math:`1 + R_2 / R_1` zu dem Faktor :math:`R_2 / R_1` aus der Gleichung (2) auszugleichen, um die Operationsverstärker-Eingangsspannungen gleich zu erhalten verstärkt und damit einfach möglich :math:`\ Delta V` zu :math:`V_ {out}` Korrelation.
+Der wichtige Schritt ist, Werte von :math:`R_3` und :math:`R_4` als zu wählen
 
 .. math::
 R_4 = R_2 \ Vierer R_3 = R_1
@@ -104,7 +104,7 @@ So können wir Gleichung (4) einfach schreiben als:
 .. math::
 V_ {out} = V_S \ bigg (\ frac {R_2} {R_1} \ bigg) - V_L \ bigg (\ frac {R_2} {R_1} \ bigg) \ quad (5)
 
-Nun haben wir eine einfache Gleichung (5) für unsere Differenzverstärkerform Fig. 1, und der letzte Schritt besteht darin, sie neu zu schreiben in :math:`Delta V ', d. H. In Bezug auf: math:` I_L`
+Nun haben wir eine einfache Gleichung (5) für unsere Differenzverstärkerform Fig. 1, und der letzte Schritt besteht darin, sie neu zu schreiben in :math:`Delta V`, d. H. In Bezug auf :math:`I_L`
 
 .. math::
 V_ {out} = \ bigg (\ frac {R_2} {R_1} \ bigg) (V_S-V_L)
@@ -141,7 +141,7 @@ R_4 = R_2 = 100k \ Omega, \ quad R_3 = R_1 10k \ Omega, \ quad R_2 / R_1 = 10, \
           I_L = \ frac {V_ {out}} {100} \ quad (8)
  
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - OPAMP: 1x OP484_ Quad Rail zu Rail Verstärker
@@ -153,7 +153,7 @@ __________
 - Induktivität: 1x 4.7 :math:`mH`
 
 Richtungen
-____________
+__________
 
 Bauen Sie den in Abbildung 2 gezeigten Strommessverstärker auf. R6 wird hinzugefügt, um den Ausgang des OP484 zu stabilisieren. Bei Verwendung großer Rückkopplungswiderstände kann das OP484 aufgrund der großen Eingangskapazität des IN2-Eingangs instabil werden.  :math:`V_ {S}` wird direkt vom OUT1 STEMlab-Ausgang als "Stromversorgung" für den LOAD bereitgestellt.
 Die Last besteht aus verschiedenen Impedanzen wie einem Widerstand, Kondensator oder Induktor.
@@ -174,10 +174,10 @@ Komponentenwerte sind nächste:
 
 
 Verfahren
-__________
+_________
 
 Widerstand LAST
---------------
+---------------
 
 Für LOAD nimm :math:`470 \ Omega` Widerstand und Bau Schaltung in Abbildung 2 gezeigt.
 
@@ -218,7 +218,7 @@ Wir können sehen, dass der gemessene Strom dem entspricht, was wir erwartet hab
 Die Differenz von 0,04 mA zwischen exaktem und gemessenem Wert des Laststroms ergibt sich aus den nominalen Toleranzen der Last und der Shunt-Widerstände.
 
 Kapazität LAST
-------------------
+--------------
 
 Für LOAD nehmen Sie :math:`0.1 \ mu F` Kondensator und bauen Schaltung wie in Abbildung 2 gezeigt.
 
@@ -243,7 +243,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
      I_L = \ Frac {OUT1_ {max}} {Z_ {Laden} + R_s} = \ Frac {OUT1_ {max}} {\ frac {1} {2 \ pi f_ {OUT_1} C_1} + R_s} = \ frac { 0,5 V} {1592 \ Omega + 10 \ Omega} = 0,31 mA
 
 Induktive Last
-------------------
+--------------
 
 Für LOAD nehmen Sie :math:`4.7 mH` Induktor und bauen Schaltung wie in Abbildung 2 gezeigt.
 

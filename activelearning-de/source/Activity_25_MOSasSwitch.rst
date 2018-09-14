@@ -1,15 +1,15 @@
 MOSFET-Transistor als Schalter
-###############################
+##############################
 
 Zielsetzung
-__________
+___________
 
 Eine MOSFET-Vorrichtung (NMOS-Vorrichtung) kann in vielen Schaltungskonfigurationen verwendet werden, wie einem Verstärker, einem Oszillator, einem Filter, einem Gleichrichter oder einfach als Ein-Aus-Schalter verwendet werden. Wenn der FET in den Sättigungsbereich vorgespannt ist, arbeitet er als ein Verstärker oder eine andere lineare Schaltung, wenn er abwechselnd in dem linearen (Trioden) -Bereich und dem Sperrbereich vorgespannt wird, dann wird er als Schalter verwendet, der Strom fließen lässt oder nicht in anderen Teilen der Schaltung fließen. Diese Laboraktivität beschreibt das NMOS-Gerät, wenn es als Schalter betrieben wird.
 
 Anmerkungen
-______
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -75,7 +75,7 @@ Ein tatsächlicher NMOS-Schalter unterscheidet sich von dem idealen Schalter in 
 Abbildung 2: NMOS-LED-Schalter
 
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - 1x 10kΩ Widerstand
@@ -85,15 +85,14 @@ __________
 - 1x lötfreies Steckbrett
 
 Verfahren
-___________
+_________
 
 Die übliche Anwendung für einen NMOS (oder irgendeinen anderen) Schalter ist das Ansteuern einer LED. Ein LED-Treiber ist in Fig. 2 gezeigt. Der Treiber, der in dieser Figur gezeigt ist, wird verwendet, um einen Niedrigstromteil der Schaltung an ein Gerät mit relativ hohem Strom (die LED) zu koppeln. Wenn der Ausgang von der Niedrigstromschaltung niedrig ist (0 V), ist der Transistor abgeschaltet und die LED ist aus. Wenn der Ausgang des Niederstromkreises hoch geht (oben :math:`V_ {TH}`), wird der Transistor in Triode getrieben und die LED leuchtet. Der Treiber wird verwendet, da der stromsparende Teil der Schaltung möglicherweise nicht über die Stromfähigkeit verfügt, um die 20 mA (typisch) zu liefern, die erforderlich sind, um die LED auf volle Helligkeit zu bringen.
 
 
 1. Bauen Sie den LED-Schalter-Schaltkreis, der in Abbildung 2 gezeigt wird, auf Ihrem lötfreien Steckbrett auf.  :math:`R_D` dient zur Begrenzung des Stroms, der in der LED von der +5 V-Spannung fließt
    liefern. Der Schalter wird durch den Spannungsausgang OUT1 gesteuert, der durch den invertierenden Verstärker OP484 verstärkt wird. Der Scope-Kanal IN zeigt die Spannung an der LED an, wie in Abbildung 2 dargestellt.
-2. Für :math:`R_D` nehmen 100: math:` \ Omega` Widerstand. Für :math:`R_G` nehmen Sie 10: math:` k \ Omega`. Gate-Widerstand mit der GND verbunden ist eine gute Praxis, um
-   verhindert eine unerwünschte Transistorumschaltung durch statische Elektrizität.
+2. Für :math:`R_D` nehmen 100 :math:`\ Omega` Widerstand. Für :math:`R_G` nehmen Sie 10 :math:`k \ Omega`. Gate-Widerstand mit der GND verbunden ist eine gute Praxis, um verhindert eine unerwünschte Transistorumschaltung durch statische Elektrizität.
 
 .. figure:: img/ Activity_25_Fig_3.png
 

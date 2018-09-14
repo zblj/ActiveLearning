@@ -1,15 +1,15 @@
 DC-DC-Aufwärtswandler
-##########################
+#####################
 
 Zielsetzung
-__________
+___________
 
 Hier werden wir eine induktivitätsbasierte Schaltung untersuchen, die eine Ausgangsspannung erzeugen kann, die höher als die zugeführte Spannung ist. Diese Klasse von Schaltungen wird als DC / DC-Wandler oder Boost-Regler bezeichnet. In diesem Experiment wird die Spannung von einer 1,5-V-Versorgung (Batterie) auf eine Spannung erhöht, die hoch genug ist (~ 5 V), um zwei LEDs in Reihe zu treiben. ** Beachten Sie, dass die Vorwärtsspannung der LED typischerweise 1,8 V beträgt, obwohl sie für einige Dioden bis zu 3,3 V (blaue LED) reichen kann **
 
 Anmerkungen
-_____
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -25,7 +25,7 @@ Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von 
 Die für die Spannungsversorgung ** + 5V **, ** - 3.3V ** und ** + 3.3V ** verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
 
 Hintergrundgrundlagen
-__________________
+_____________________
 
 Schließen Sie vorübergehend eine Ihrer LEDs an die 1,5-V-Batterie an. Achten Sie darauf, die Polarität der Diode zu beachten, damit sie in Vorwärtsrichtung vorgespannt ist. Leuchtet es? Wahrscheinlich nicht seit 1,5 V reicht im Allgemeinen nicht aus, um eine LED einzuschalten. Wir brauchen einen Weg, um die 1,5 V auf eine höhere Spannung zu erhöhen, um eine einzelne LED zu beleuchten, geschweige denn zwei in Reihe geschaltete LEDs.
 
@@ -35,7 +35,7 @@ Ein Aufwärtswandler (Hochsetzsteller) ist ein DC / DC-Leistungswandler, der die
     Die Funktionsweise des DC - DC - Boost - Konverters wird in diesem Wikipedia - Artikel erklärt. Vor dem Experiment wird ein kurzer Überblick über die Theorie empfohlen.
 
 Die klassische DC-DC-Aufwärtswandlerschaltung ist in Fig. 1 gezeigt. Abhängig von der gewünschten Betriebsfrequenz (Schaltfrequenz) und der maximalen Stromstärke des Induktors
- :math:`L_1` sollte ausgewählt sein. In diesem Experiment für :math:`L_1` wird ein: math:` 100 \ mu H'-Leistungsinduktor mit 1A Nennstrom verwendet. Die Betriebsfrequenz (Schaltfrequenz) sollte im Bereich von: "10 - 50 kHz" liegen. Für den Gleichrichter :math:`D_1` und den Snubber: math:` D_2` können die klassischen Dioden 1N4001_ oder 1N3064 verwendet werden.
+ :math:`L_1` sollte ausgewählt sein. In diesem Experiment für :math:`L_1` wird ein :math:`100 \ mu H` -Leistungsinduktor mit 1A Nennstrom verwendet. Die Betriebsfrequenz (Schaltfrequenz) sollte im Bereich von: "10 - 50 kHz" liegen. Für den Gleichrichter :math:`D_1` und den Snubber: math:` D_2` können die klassischen Dioden 1N4001_ oder 1N3064 verwendet werden.
 Für den :math:`M_1` Transistor werden wir IRLU120N_ verwenden. Wir haben diesen Leistungs-MOSFET-Transistor gewählt, da er eine niedrige Schwellenspannung hat :math:`V_ {TH}`. Wenn Sie FET-Transistoren mit hoher Schwellenspannung und ein Niederspannungstreibersignal (Gatesignal) verwenden, könnte das Schalten des MOSFET nicht optimal sein. Ausgewählter MOSFET hat bereits eine integrierte Snubber-Diode, also externe Diode :math:`D_2` ist nicht notwendig.
 
 .. note::
@@ -60,7 +60,7 @@ Der Grund, warum zwei NPN-Transistoren verwendet werden, besteht darin, dass das
     Beachten Sie, dass die + 5V-Spannungsschiene vom STEMlab nur für die Transistorschaltung und nicht für die Lastversorgung verwendet wird. Die elektrische Energie fließt von der Batterie zur LAST und den LEDs.
 
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - 1x 1kΩ Widerstand
@@ -77,7 +77,7 @@ __________
 - 1x lötfreies Steckbrett
 
 Verfahren
-_____________
+_________
 
 1. Nach den obigen Anweisungen und den Schaltplänen von Abbildung 1 bauen Sie die Schaltung auf dem Steckbrett auf.
 
@@ -93,7 +93,7 @@ Abbildung 2: DC - DC Boost Converter auf dem Steckbrett
 6. Wählen Sie im Menü MESSUNGEN MEAN-Messungen für IN1 und IN2
 7. Was sind die Werte der Gleichspannung an Punkt 3 und 5 (Bild 1)?
 
-Wenn zu diesem Zeitpunkt das OUT1-Schaltsignal deaktiviert ist, ist der DC-DC-Aufwärtswandler nicht funktionsfähig. Transistor :math:`M_1` ist ausgeschaltet (Leerlauf) und Batteriespannung ist über Induktor: math:` L_1` und Diode :math:`D_1`, übertragen auf die Lastseite (Punkt 5, Abbildung 1). Für DC-Signale (keine Umschaltung) verhält sich die :math:`L_1'-Induktivität wie ein Kurzschluss, daher ist die Ausgangsspannung die Batteriespannung, die sich verringert durch: math:` D_1` Dioden-Durchlassspannung: :math:`V_ {out} = V_ { Batterie} - V_ {Diode} `. Dieser Zustand wird in den Messungen in Abbildung 3 gezeigt. Wie wir erwartet haben, sind :math:`LED_1` und: math:` LED_2` ausgeschaltet, da die Ausgangsspannung unter der Durchlassspannung der LEDs liegt (2x1.8V).
+Wenn zu diesem Zeitpunkt das OUT1-Schaltsignal deaktiviert ist, ist der DC-DC-Aufwärtswandler nicht funktionsfähig. Transistor :math:`M_1` ist ausgeschaltet (Leerlauf) und Batteriespannung ist über Induktor: math:` L_1` und Diode :math:`D_1`, übertragen auf die Lastseite (Punkt 5, Abbildung 1). Für DC-Signale (keine Umschaltung) verhält sich die :math:`L_1` -Induktivität wie ein Kurzschluss, daher ist die Ausgangsspannung die Batteriespannung, die sich verringert durch :math:`D_1` Dioden-Durchlassspannung: :math:`V_ {out} = V_ { Batterie} - V_ {Diode}`. Dieser Zustand wird in den Messungen in Abbildung 3 gezeigt. Wie wir erwartet haben, sind :math:`LED_1` und :math:`LED_2` ausgeschaltet, da die Ausgangsspannung unter der Durchlassspannung der LEDs liegt (2x1.8V).
 
 .. figure:: img/ Activity_28_Fig_3.png
 
@@ -111,8 +111,8 @@ Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
 
 .. note::
     Spannungswelligkeitswerte sind einer der Hauptparameter der DC-DC-Wandlerqualität. Geringere Ausgangswelligkeit entspricht einem besseren DC-DC-Aufwärtswandler.
-    Kondensator :math:`C_1` wird daher benötigt, um die an der Induktivität erscheinende Schaltspannung zu kompensieren und zu glätten: math:` L_1` und diode :math:`D_1`.
-    Versuche zu entfernen :math:`C_1` und beobachte: math:` V_ {out} `.
+    Kondensator :math:`C_1` wird daher benötigt, um die an der Induktivität erscheinende Schaltspannung zu kompensieren und zu glätten :math:`L_1` und diode :math:`D_1`.
+    Versuche zu entfernen :math:`C_1` und beobachte :math:`V_ {out}`.
 
 
 11. Um die Schaltspannungen von :math:`M_1` zu beobachten, stellen Sie die IN1-Sonde auf den Punkt 2 (Abbildung 1) und die IN2-Sonde auf den Punkt 4 (Abbildung 1).
@@ -124,8 +124,8 @@ Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
 
 Abbildung 5: M1 Schaltspannungen
 
-In der Abbildung 5 sind math: `M_1` Gate- und Drain-Signale dargestellt. Aus Fig. 5 können wir sehen, dass das Gate-Signal eine schaltende Rechteckwelle ist, die den Transistor steuert.
-Das Drain-Signal entspricht den "Offen / Geschlossen" -Zuständen des Transistors :math:`M_1`, aber während des" Off "-Zustandes sind signifikante Oszillationen sichtbar. Dies ist der Einfluss des Induktors :math:`L_1`, da er jede Änderung des Stroms durch ihn beeinflusst, die die Drain-Spannung von: math:` M_1` beeinflusst.
+In der Abbildung 5 sind :math:`M_1` Gate- und Drain-Signale dargestellt. Aus Fig. 5 können wir sehen, dass das Gate-Signal eine schaltende Rechteckwelle ist, die den Transistor steuert.
+Das Drain-Signal entspricht den "Offen / Geschlossen" -Zuständen des Transistors :math:`M_1`, aber während des" Off "-Zustandes sind signifikante Oszillationen sichtbar. Dies ist der Einfluss des Induktors :math:`L_1`, da er jede Änderung des Stroms durch ihn beeinflusst, die die Drain-Spannung von :math:`M_1` beeinflusst.
 
 .. note::
    Der DC-DC-Boost-Wandler-Ausgangsspannungswert wird häufig gesteuert mit: math: "Duty-Cycle" des Schaltsignals.
@@ -146,7 +146,7 @@ Abbildung 5: Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten: Ausgangsspann
 
 
 Fragen
-__________
+______
 
 1. Ändern Sie den Ladewert in :math:`470 \ Omega` und beobachten Sie
    die Ergebnisse.

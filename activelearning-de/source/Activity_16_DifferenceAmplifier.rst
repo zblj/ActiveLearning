@@ -1,16 +1,16 @@
 Differenzverstärker
-######################
+###################
 
 Zielsetzung
-__________
+___________
 
 Das Hinzufügen und / oder Subtrahieren von analogen Signalen ist möglicherweise die üblichste Funktion, die von einem Operationsverstärker ausgeführt wird. Diese Aktivität untersucht einzelne Operationsverstärkerschaltungen zum Subtrahieren zweier analoger Signale.
 Wir haben bereits Summing_ Amplifier_ circuit besprochen; ein einzelner Operationsverstärker zum Hinzufügen von zwei (oder mehr) analogen Signalen. Dasselbe Verhalten erwarten wir auch hier, während Signale in den Operationsverstärker-Eingängen subtrahiert und nicht summiert werden sollten.
 
 Anmerkungen
-______
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -25,7 +25,7 @@ Die für die Spannungsversorgung ** - 3.3V ** und ** + 3.3V ** verwendeten Steck
 Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
 Kurzer Hintergrund
-_________________
+__________________
 
 Der grundlegende Unterschied Opamp Schaltung ist in Abbildung 1 dargestellt. Um für die Übertragungsfunktion zu lösen :math:`V_ {out} = f (V_1, V_2)` des Differenzverstärkers können wir ein Superpositionsprinzip verwenden.
 
@@ -60,14 +60,14 @@ V_ {out} = 2V_2 -V_1 \ quad (4)
 
 
 Materialien
-__________
+___________
 
-- Rotes Pitaya STEMlab
+- Red Pitaya STEMlab
 - OPAMP: 1x OP484
 - Widerstand: 4x 10 :math:`k \ Omega`
 
 Verfahren
-___________
+_________
 
 Bauen Sie den in Abbildung 2 gezeigten Differenzverstärker auf. R3 und R4 werden als Spannungsteiler addiert, um :math:`V_2 ^ *` Eingangssignal um die Hälfte zu dämpfen.
 Mit dem hinzugefügten Spannungsteiler (R3, R4) für die in 2 gezeigte Schaltung und aus Gleichung (4) erhalten wir

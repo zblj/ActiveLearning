@@ -1,8 +1,8 @@
 Bandpassfilter
-=================
+==============
 
 Zielsetzung
----------
+-----------
 
 Das Ziel dieser Labortätigkeit ist es,: 
 
@@ -12,9 +12,9 @@ Das Ziel dieser Labortätigkeit ist es,:
 
 
 Notizen
------
+-------
 
-.. Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html 
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch.
@@ -37,7 +37,7 @@ Ultraschall- und Piezoelektriksysteme und dergleichen.
 
 
 Hintergrund
-----------
+-----------
 
 Ein Bandpassfilter ermöglicht den Durchgang eines bestimmten Frequenzbereichs,
 beim Blockieren oder Dämpfen niedrigerer und höherer Frequenzen. Es geht vorbei
@@ -51,25 +51,25 @@ kann durch Kaskadierung eines Hochpass-RL-Filters mit einem Abrollvorgang konstr
 Frequenz :math:`f_L` und ein Tiefpassfilter mit einem Roll-off
 Frequenz :math:`f_H`, so dass:
 
-... Mathe:...:	
+.. math::	
 
    f_L < f_H 
 
 Die untere Grenzfrequenz wird als: 
 
-... Mathe:...:	
+.. math::	
 
    f_L = \frac{R}{2 \pi L} \quad (1)
 
 Die höhere Grenzfrequenz wird als: 
 
-... Mathe:...:
+.. math::
 
    f_H = \frac{1}{2 \pi RC} \quad (2) 
 
 Die **Bandbreite** der übergebenen Frequenzen wird durch: 
 
-... Mathe:...:
+.. math::
 
    BW = f_L < f_{BW} < f_H \quad (3) 
 
@@ -78,13 +78,13 @@ Alle Signalfrequenzen :math:`f` unterhalb :math:`f_L` und darüber
 den Filter.
       
 
-... Abbildung:: img/Aktivität_10_Figur_1.png
+.. figure:: img/Activity_10_Fig_1.png
 
    Abbildung 1: Bandpass-Filterschaltung 
 
    
 Frequenzgang
-------------------
+------------
 
 Um zu zeigen, wie eine Schaltung auf einen Frequenzbereich reagiert, wird eine Darstellung der
 Größe ( Amplitude) der Ausgangsspannung des Filters als
@@ -94,16 +94,16 @@ um darin zu operieren. Abbildung 2 zeigt einen typischen Frequenzgang eines
 Bandpassfilter.
 
 
-... Abbildung:: img/Aktivität_10_Figur_2.png
+.. figure:: img/Activity_10_Fig_2.png
 
    Abbildung 2: Bandpassfilter Frequenzgang
 
    
 Materialien:
-----------
+------------
 
 
-- Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
+- Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 - Widerstand: 1 KΩ 
 
@@ -113,21 +113,21 @@ Materialien:
 
 
 Vorgehensweise
----------
+--------------
 
 
 1. Stellen Sie den Filterschaltkreis wie in Abbildung 1 und Abbildung 3 an Ihrem
    lötfreie Lochrasterplatine, mit den Bauteilwerten R1 = 1 KΩ, C1 =
    0,047 µF, L1 =22 mH.
 
-   ... Abbildung:: img/Aktivität_10_Figur_3.png
+   .. figure:: img/Activity_10_Fig_3.png
 
    Abbildung 3: Bandpassfilter auf lötfreier Leiterplatte
 
 2. Starten Sie die Anwendung Bode analyzer. Die Bode Analysator-Anwendung
    wird einen Frequenzdurchlauf machen, so dass er Sinus erzeugt.
    Signal auf :math:`OUT1` innerhalb des von uns gewählten Frequenzbereichs (in
-   :math:`IN1`Eingangssignal ist direkt verbunden mit dem
+   :math:`IN1` Eingangssignal ist direkt verbunden mit dem
    :math:`OUT_1` nach diesem :math:`IN1=V_{in}`. :math:`IN2` ist
    die auf der anderen Seite des Filters und davon ausgehend angeschlossen sind.
    :math:`IN2=V_{out}`. Bode Analysator Anwendung wird dann für die
@@ -147,13 +147,13 @@ Vorgehensweise
 
    - RUN-Taste auswählen
 
-   ... Abbildung:: img/Aktivität_10_Figur_4.png
+   .. figure:: img/Activity_10_Fig_4.png
 
    Abbildung 4: Bandpassfilter **gemessen** Frequenzgang
 
    
 Fragen:
-----------
+-------
 
 1. Berechnung der Grenzfrequenzen für jeden Bandpassfilter
    konstruiert unter Verwendung der Formel in den Gleichungen (1) und (2). Vergleichen Sie

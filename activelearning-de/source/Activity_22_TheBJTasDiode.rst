@@ -46,8 +46,8 @@ aufgeführt.
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
    Spannungsschienen geliefert. Die Verstärkung des invertierenden
-   Verstärkers wird auf ~ 5 gesetzt, wobei gilt:math:`R_i = 2.2k \
-   Omega` und: math:` R_f = 10k \ Omega`
+   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \ Omega`
+   und :math:`R_f = 10k \ Omega`
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
    oder OP97 verwendet haben. (note "Schiene-zu-Schiene").

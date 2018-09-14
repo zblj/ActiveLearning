@@ -1,5 +1,5 @@
 Grundlegende OP-Verstärkerkonfigurationen
-#############################
+#########################################
 
 Zielsetzung
 __________
@@ -7,9 +7,9 @@ __________
 In diesem Labor stellen wir den Operationsverstärker (Operationsverstärker) vor, eine aktive Schaltung, die mit bestimmten Eigenschaften (hoher Eingangswiderstand, niedriger Ausgangswiderstand und eine große differentielle Verstärkung) entworfen ist, die sie zu einem nahezu idealen Verstärker und nützlichen Baustein macht viele Schaltungsanwendungen. In dieser Übung lernen Sie die DC-Vorspannung für aktive Schaltungen kennen und erkunden einige der grundlegenden funktionalen Operationsverstärkerschaltungen. Wir werden dieses Labor auch nutzen, um Fähigkeiten mit der Laborhardware weiterzuentwickeln.
 
 Anmerkungen
-__________
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -20,7 +20,7 @@ Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von 
 Erweiterungssteckerstift, der als 5V-Spannungsquelle verwendet wird, finden Sie in der Dokumentation here_.
 
 Materialien
-__________
+___________
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 - OPAMP: 1x AD8541 (CMOS-Rail-to-Rail-Verstärker)
@@ -32,7 +32,7 @@ __________
 - Kondensator: 1x 1 :math:`\ mu F`
 
 Operationsverstärker-Grundlagen
-______________
+_______________________________
 
 .. _LM317: http://www.ti.com/lit/ds/symlink/lm317.pdf
 .. _adjustable: http://www.ti.com/lit/ds/symlink/lm317.pdf
@@ -41,7 +41,7 @@ ______________
 .. _connector: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 
 Erster Schritt: Anschließen der Gleichstromversorgung
---------------------------------
+-----------------------------------------------------
 Operationsverstärker müssen immer mit Gleichstrom versorgt werden. Daher sollten diese Verbindungen zuerst konfiguriert werden, bevor weitere Schaltungsbauteile hinzugefügt werden. Abbildung 1 zeigt eine mögliche Leistungsanordnung auf Ihrem lötfreien Steckbrett. Wir verwenden zwei der langen Schienen für die positive Versorgungsspannung und Masse. Mit dem LM317_ adjustable_ regulator_ stellen wir eine eventuell benötigte 2,5 V Mittelversorgungsschiene zur Verfügung.
 
 .. note::
@@ -68,7 +68,7 @@ Denken Sie daran, dass Sie das STEMlab einschalten müssen, bevor Sie die Spannu
 Abbildung 2: Stromanschlüsse
 
 Erster Schritt: Unity-Gain Amplifier (Spannungsfolger)
--------------------------------------------------- -
+------------------------------------------------------
 
 Unsere erste Operationsverstärkerschaltung ist eine einfache, in Abbildung 3 gezeigte Schaltung. Dies wird als Puffer mit Einheitsverstärkung oder manchmal nur als Spannungsfolger bezeichnet, der durch die Übertragungsfunktion definiert ist :math:`V_ {out} = V_ {in}` . Auf den ersten Blick mag es wie ein nutzloses Gerät erscheinen, aber wie wir später zeigen werden, findet es wegen seines hohen ** Eingangswiderstands ** und ** niedrigen Ausgangswiderstands ** Anwendung.
 
@@ -93,7 +93,7 @@ In der Realität hat ein Spannungsfolger, der in 3 gezeigt ist, seine Grenzen im
 Versuchen Sie, die Frequenz des Signalgenerators (OUT1) auf 100 kHz oder 1 MHz zu erhöhen und beobachten Sie die Signale IN1 und IN2. Eine bestimmte Verzögerung des Signals IN2 wird angezeigt, die anzeigt, dass der Spannungsfolger eine Zeitverzögerung zwischen dem Eingangssignal (IN1) und dem Ausgangssignal (IN2) einfügt.
 
 Pufferungsbeispiel
--------------------
+------------------
 Der hohe Eingangswiderstand des Operationsverstärkers (Nulleingangsstrom) bedeutet, dass der Generator nur sehr wenig belastet wird; h., es wird kein Strom von der Quellenschaltung bezogen, und daher fällt keine Spannung an irgendeinem internen Widerstand (Thevenin) ab. In dieser Konfiguration wirkt der Operationsverstärker also wie ein "Puffer", um die Quelle vor den Ladeeffekten von anderen Teilen des Systems zu schützen. Aus Sicht des Lastkreises transformiert der Puffer eine nicht ideale Spannungsquelle in eine nahezu ideale Quelle. Abbildung 5 beschreibt eine einfache Schaltung, mit der wir dieses Merkmal eines Puffers mit Einheitsverstärkung demonstrieren können. Hier wird der Puffer zwischen einer Spannungsteilerschaltung und einem "Last" -Widerstand, dem 10K-Widerstand, eingefügt.
 
 
@@ -131,10 +131,10 @@ Im Fall 3, dass ein 1K Widerstand zwischen Pin 3 ("+") und 2.5V addiert wird, be
 
 
 Grundlagen Verstärkerkonfigurationen
-________________________________
+____________________________________
 
 Invertierender Verstärker
---------------------
+-------------------------
 
 Fig. 7 zeigt die herkömmliche Konfiguration eines invertierenden Verstärkers mit einem 10 KΩ "Last" -Widerstand am Ausgang.
 
@@ -166,7 +166,7 @@ Abbildung 8: Messungen der invertierenden Verstärkerkonfiguration
 V_ {out} = - \ bigg (\ frac {R2} {R1} \ bigg) V_ {in} \ quad (2)
 
 Nicht invertierender Verstärker
-------------------------
+-------------------------------
 
 Die Konfiguration des nicht invertierenden Verstärkers ist in 9 gezeigt. Wie der Puffer mit Einheitsverstärkung hat diese Schaltung die (üblicherweise) wünschenswerte Eigenschaft eines hohen Eingangswiderstands, so dass sie zum Puffern von nicht idealen Quellen geeignet ist, jedoch mit einer Verstärkung größer als ein.
 
@@ -250,7 +250,7 @@ Um die obige Gleichung nachzuweisen, versuchen Sie, OUT2 zu deaktivieren und den
 
 
 Verwenden eines Operationsverstärkers als Vergleicher
----------------------------------
+-----------------------------------------------------
 
 Die hohe Eigenverstärkung des Operationsverstärkers und die Ausgangssättigungseffekte können ausgenutzt werden, indem der Operationsverstärker als ein Komparator wie in 14 konfiguriert wird. Dies ist im Wesentlichen eine Entscheidungsschaltung mit binärem Zustand: Wenn die Spannung an der "+ "Terminal ist größer als die Spannung am" - "terminal,: math:` V_ {in} `>: math:` V_ {ref} `, der Ausgang geht auf" high "(sättigt bei seinem Maximalwert). Wenn umgekehrt :math:`V_ {in}` < :math:`V_ {ref}` wird der Ausgang "low". Die Schaltung vergleicht die Spannungen an den zwei Eingängen und erzeugt eine Ausgabe basierend auf den relativen Werten. Im Gegensatz zu allen vorherigen Schaltungen gibt es keine Rückkopplung zwischen dem Eingang und dem Ausgang; wir sagen, dass die Schaltung "open-loop" arbeitet.
 
@@ -283,7 +283,7 @@ Abbildung 15: Op-Amp als Komparatormessungen
           if \ quad V_ {in} <V_ {ref} \ quad; \ quad V_ {out} = V _ {-}
 
 Fragen
---------------
+------
 
 - Anstiegsrate: Besprechen Sie, wie Sie die Anstiegsgeschwindigkeit in der Einheit-Verstärkungs-Pufferkonfiguration gemessen und berechnet haben, und vergleichen Sie dies mit dem Wert, der im OP97-Datenblatt aufgeführt ist.
 - Pufferung: Erklären Sie, warum der Pufferverstärker in Abbildung 5 die Funktion der Spannungsteilerschaltung bei unterschiedlichen Lastwiderständen ermöglicht.

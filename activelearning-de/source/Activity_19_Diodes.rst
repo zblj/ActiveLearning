@@ -47,7 +47,7 @@ beschrieben werden:
 
    I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (1)
 
-wo :math: `I_ {S}` und n sind Skalierungsfaktoren und :math:`kT / q`
+wo :math:`I_ {S}` und n sind Skalierungsfaktoren und :math:`kT / q`
 (25,4 mV bei Raumtemperatur) ist die sogenannte thermische
 Spannung :math:`{V_T}`.
 
@@ -69,13 +69,13 @@ die Diode würde einen Photodioden-Lichtdetektor darstellen.
 Abbildung 1: Diodeschemasymbole
 
 Zener-Dioden-Grundlagen
-------------------------
+-----------------------
 
 Eine Zener-Diode ist im Aufbau und in der Funktionsweise ähnlich
 Diode. Im Gegensatz zu einer herkömmlichen Diode, bei der die beabsichtigte Verwendung ist
 Strom in umgekehrter Richtung verhindern, wird meistens eine Zenerdiode verwendet
-im umgekehrten Bereich oberhalb der Durchbruchspannung. Es ist: Mathe: `I` vs,
- :math: `V'-Kennlinie ist ähnlich wie eine gewöhnliche Diode. Durch
+im umgekehrten Bereich oberhalb der Durchbruchspannung. Es ist :math:`I` vs,
+ :math:`V` -Kennlinie ist ähnlich wie eine gewöhnliche Diode. Durch
 das Einstellen der Dotierung der P- und N-Seiten der Kreuzung ist es
 möglich, eine Zener-Diode zu entwerfen, die irgendwo aufbricht
 von ein paar Volt bis zu einigen hundert Volt. Siehe Abbildung 2. In diesem
@@ -91,13 +91,13 @@ Abbildung 2: Vorwärts- und Rückwärts-Zenerdiode :math: `I / V`-Charakteristik
 
 Bei Spannungen oberhalb des Ausbruchsbeginns wurde ein Anstieg angewendet
 Spannung wird dazu führen, dass mehr Strom in der Diode fließt, aber die Spannung
-über die Diode bleibt fast bei :math: `V_Z`. Eine Zener-Diode
+über die Diode bleibt fast bei :math:`V_Z`. Eine Zener-Diode
 im Rückwärtsbetrieb betriebene Breakdown kann eine Referenzspannung für liefern
 Systeme wie Spannungsregler oder Spannungsvergleicher.
 
 
 Schottky-Dioden-Grundlagen
----------------------------
+--------------------------
 
 Eine Schottky-Diode verwendet einen gleichrichtenden Metall-Halbleiter
 Verbindung, die durch Plattieren, Verdampfen oder Sputtern von einer Vielzahl gebildet wird
@@ -110,7 +110,7 @@ Träger. Schottky-Dioden sind Majority-Carrier-Geräte, die sein können
 schnell umgeschaltet von Vorwärts- zu Sperrspannung ohne Minoritätsträger
 Speichereffekte.
 
-Der normale Strom gegen Spannung :math: `I / V'-Kurve einer Schottky-Barriere
+Der normale Strom gegen Spannung :math:`I / V` -Kurve einer Schottky-Barriere
 Diode ähnelt der einer PN-Diode mit dem folgenden
 Ausnahmen:
 
@@ -151,7 +151,7 @@ Woher:
 * :math:`A ^ *` = modifizierte Richardson-Konstante (der Wert variiert
   je nach Material und Dotierstoff) = :math:`110 A / (° K ^ 2-cm ^ 2)` für Si vom n-Typ
   
-* :math:`T` = absolute Temperatur in :math:` K` (Kelvins)
+* :math:`T` = absolute Temperatur in :math:`K` (Kelvins)
   
 * :math:`q` = elektronische Ladung = :math:`1.6E-19 \ quad C`
   

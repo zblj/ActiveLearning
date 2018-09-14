@@ -390,7 +390,7 @@ Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
 
 
 Verfahren
-__________
+_________
 
 
 Fügen Sie die beiden positiven Rückkopplungswiderstände zu Ihrer

@@ -54,6 +54,7 @@ aufgeführt.
    Spannungsschienen geliefert. Die Verstärkung des invertierenden
    Verstärkers wird auf ~ 5 gesetzt, wobei gilt
    :math:`R_i = 2.2k \Omega` und :math:`R_f = 10k \ Omega`
+
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
    oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
@@ -161,7 +162,7 @@ Verfahren
 
    
 VI-Kurvenmessungen
-----------------------
+------------------
 
 Da sich NMOS wie eine Diode mit einer Vorwärtsspannung verhalten kann,
 die der folgenden Gleichung entspricht :math:`V_ {TH}` (Konfiguration
@@ -200,9 +201,16 @@ kopieren Sie den Code und fügen Sie ihn ein.
 Der Code unten erzeugt das gleiche Signal wie in Abbildung 4, aber es
 wird sie im XY-Diagramm darstellen.
 
+<<<<<<< HEAD
 Zum Messen VI-Kurve wird ein "XY"-Plot benötigt, wobei die
 x-Achse die Diodenspannung darstellt
 :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
+=======
+Zum Messen :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei die
+x-Achse die Diodenspannung darstellt
+
+ :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
+>>>>>>> 0ec086d13669d0e22791877a71d64de73b4932b8
 
 
 .. note:: Kopieren Sie den Code von unten in die Zelle 1
@@ -311,7 +319,7 @@ VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
    
    
 PMOS als Diode
-----------------
+--------------
 
 Gleiche Maße können auch für PMOS-Transistor gelten. Beim
 PMOS-Transistor ist die Polarität der Spannung umgekehrt, so dass die
