@@ -1,16 +1,16 @@
 BJT-Transistor als Schalter
-#############################
+###########################
 
 Zielsetzung
-__________
+___________
 
 Ein bipolarer Sperrschichttransistor (BJT) kann in vielen Schaltungskonfigurationen verwendet werden, wie einem Verstärker, Oszillator, Filter, Gleichrichter oder einfach als Ein-Aus-Schalter verwendet werden. Wenn der Transistor in den linearen Bereich vorgespannt ist, wird er als ein Verstärker oder eine andere lineare Schaltung arbeiten, wenn er abwechselnd in den Sättigungs- und Sperrbereichen vorgespannt wird, dann wird er als Schalter verwendet, der Strom fließen lässt oder nicht fließt in anderen Teilen der Schaltung. Dieses Experiment beschreibt das BJT, wenn es als Schalter betrieben wird.
 
 
 Anmerkungen
-______
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -65,7 +65,7 @@ Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbere
 Abbildung 2: NPN-LED-Schalter
 
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - 1x 1kΩ Widerstand
@@ -75,7 +75,7 @@ __________
 - 1x lötfreies Steckbrett
 
 Verfahren
-___________
+_________
 
 1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set :math:`R_B` = 1kΩ,: math:` R_C` = 100Ω
 
@@ -101,7 +101,7 @@ In diesem "eingeschalteten" Zustand können wir sehen, dass IN2 (LED-Spannung ni
 
 
 Fragen
-__________
+______
 
 1. Wieviel Strom fließt in den Widerständen :math:`R_C` und: math:`
    R_B` wenn die LED an ist und wenn die LED aus ist?
