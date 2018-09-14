@@ -1,15 +1,15 @@
 DC-DC-Aufwärtswandler
-##########################
+#####################
 
 Zielsetzung
-__________
+___________
 
 Hier werden wir eine induktivitätsbasierte Schaltung untersuchen, die eine Ausgangsspannung erzeugen kann, die höher als die zugeführte Spannung ist. Diese Klasse von Schaltungen wird als DC / DC-Wandler oder Boost-Regler bezeichnet. In diesem Experiment wird die Spannung von einer 1,5-V-Versorgung (Batterie) auf eine Spannung erhöht, die hoch genug ist (~ 5 V), um zwei LEDs in Reihe zu treiben. ** Beachten Sie, dass die Vorwärtsspannung der LED typischerweise 1,8 V beträgt, obwohl sie für einige Dioden bis zu 3,3 V (blaue LED) reichen kann **
 
 Anmerkungen
-_____
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -25,7 +25,7 @@ Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und Beobachten von 
 Die für die Spannungsversorgung ** + 5V **, ** - 3.3V ** und ** + 3.3V ** verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
 
 Hintergrundgrundlagen
-__________________
+_____________________
 
 Schließen Sie vorübergehend eine Ihrer LEDs an die 1,5-V-Batterie an. Achten Sie darauf, die Polarität der Diode zu beachten, damit sie in Vorwärtsrichtung vorgespannt ist. Leuchtet es? Wahrscheinlich nicht seit 1,5 V reicht im Allgemeinen nicht aus, um eine LED einzuschalten. Wir brauchen einen Weg, um die 1,5 V auf eine höhere Spannung zu erhöhen, um eine einzelne LED zu beleuchten, geschweige denn zwei in Reihe geschaltete LEDs.
 
@@ -60,7 +60,7 @@ Der Grund, warum zwei NPN-Transistoren verwendet werden, besteht darin, dass das
     Beachten Sie, dass die + 5V-Spannungsschiene vom STEMlab nur für die Transistorschaltung und nicht für die Lastversorgung verwendet wird. Die elektrische Energie fließt von der Batterie zur LAST und den LEDs.
 
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - 1x 1kΩ Widerstand
@@ -77,7 +77,7 @@ __________
 - 1x lötfreies Steckbrett
 
 Verfahren
-_____________
+_________
 
 1. Nach den obigen Anweisungen und den Schaltplänen von Abbildung 1 bauen Sie die Schaltung auf dem Steckbrett auf.
 
@@ -146,7 +146,7 @@ Abbildung 5: Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten: Ausgangsspann
 
 
 Fragen
-__________
+______
 
 1. Ändern Sie den Ladewert in :math:`470 \ Omega` und beobachten Sie
    die Ergebnisse.
