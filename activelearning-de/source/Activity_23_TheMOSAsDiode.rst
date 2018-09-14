@@ -52,8 +52,8 @@ aufgeführt.
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
    Spannungsschienen geliefert. Die Verstärkung des invertierenden
-   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \
-   Omega` und: math:` R_f = 10k \ Omega`
+   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \Omega`
+   und :math:`R_f = 10k \ Omega`
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
    oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
@@ -158,7 +158,7 @@ Verfahren
 
    
 VI-Kurvenmessungen
-----------------------
+------------------
 
 Da sich NMOS wie eine Diode mit einer Vorwärtsspannung verhalten kann,
 die der folgenden Gleichung entspricht :math:`V_ {TH}` (Konfiguration
@@ -197,10 +197,10 @@ kopieren Sie den Code und fügen Sie ihn ein.
 Der Code unten erzeugt das gleiche Signal wie in Abbildung 4, aber es
 wird sie im XY-Diagramm darstellen.
 
-Zum Messen :math:`VI`-Kurve wird ein "XY"-Plot benötigt, wobei die
+Zum Messen :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei die
 x-Achse die Diodenspannung darstellt
 
- :math:`IN_2` und y-Achse ein Diodenstrom: math:` (IN_1 - IN_2) / R_3`.
+ :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
 
 
 .. note:: Kopieren Sie den Code von unten in die Zelle 1
@@ -302,7 +302,7 @@ VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
    
 PMOS als Diode
-----------------
+--------------
 
 Gleiche Maße können auch für PMOS-Transistor gelten. Beim
 PMOS-Transistor ist die Polarität der Spannung umgekehrt, so dass die
