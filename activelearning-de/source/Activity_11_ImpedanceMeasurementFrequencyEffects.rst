@@ -14,11 +14,11 @@ Das Ziel dieser Aktivität ist:
    
 
 Anmerkungen
-_______
+___________
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
 .. _Impedance: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
-.. _analyzer: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
+.. _analysator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 .. _LCR: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 .. _meter: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 .. _frontend: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
@@ -27,7 +27,7 @@ In diesen Tutorials verwenden wir die Terminologie aus dem
 Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
 STEMlab-Board-Hardware beziehen.
 
-Impedance_analysator_ Anwendung wird verwendet, um RLC-Schaltung
+Impedance_ analysator_ Anwendung wird verwendet, um RLC-Schaltung
 impedane zu messen :math:`Z (f)`. Neben Impedanzanalysator zur
 Impedanzmessung
 
@@ -121,7 +121,7 @@ Verfahren
 ---------
 
 Komponenten messen
----------------------
+------------------
 
 Mit LCR-Meter-Anwendung können wir Induktivität, Widerstand und
 Kapazität unserer Elemente in der Schaltung bei ausgewählter Frequenz

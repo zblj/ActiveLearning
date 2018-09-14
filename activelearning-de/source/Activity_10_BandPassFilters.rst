@@ -78,7 +78,7 @@ Alle Signalfrequenzen :math:`f` unterhalb :math:`f_L` und darüber
 den Filter.
       
 
-.. figure:: img/Activity_10_Fig_01.png
+.. figure:: img/Activity_10_Fig_1.png
 
    Abbildung 1: Bandpass-Filterschaltung 
 
@@ -94,7 +94,7 @@ um darin zu operieren. Abbildung 2 zeigt einen typischen Frequenzgang eines
 Bandpassfilter.
 
 
-.. figure:: img/Activity_10_Fig_02.png
+.. figure:: img/Activity_10_Fig_2.png
 
    Abbildung 2: Bandpassfilter Frequenzgang
 
@@ -120,7 +120,7 @@ Vorgehensweise
    lötfreie Lochrasterplatine, mit den Bauteilwerten R1 = 1 KΩ, C1 =
    0,047 µF, L1 =22 mH.
 
-   .. figure:: img/Activity_10_Fig_03.png
+   .. figure:: img/Activity_10_Fig_3.png
 
    Abbildung 3: Bandpassfilter auf lötfreier Leiterplatte
 
@@ -147,7 +147,7 @@ Vorgehensweise
 
    - RUN-Taste auswählen
 
-   .. figure:: img/Activity_10_Fig_04.png
+   .. figure:: img/Activity_10_Fig_4.png
 
    Abbildung 4: Bandpassfilter **gemessen** Frequenzgang
 
