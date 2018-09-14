@@ -1,16 +1,16 @@
 OPAMP Open Loop Verstärkung
-======================
+===========================
 
 Zielsetzung
----------
+-----------
 
 Das Ziel dieses Experiments ist es, die Verstärkung des offenen Regelkreises zu messen
 Eigenschaften eines OP27-Operationsverstärkers.
 
 Anmerkungen
------
+-----------
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -27,12 +27,12 @@ Erweiterungssteckerstifte für ** - 3.3V ** und ** + 3.3V ** Spannung
 Versorgung finden Sie in der Dokumentation here_.
 
 Materialien
----------
+-----------
 
 - ** Red Pitaya STEMlab 125-14 **. Ein Red Pitaya STEMlab 125-10 ist aufgrund der ADC-Auflösung für diese Messung nicht geeignet!
 - OPAMP: 1x OP27
 - OPAMP: 1x OP97
-- Widerstand: 2x 100: Mathe: `\ Omega`
+- Widerstand: 2x 100 :math:`\ Omega`
 - Widerstand: 2x 200 :math:`k \ Omega`
 - Widerstand: 1x 100 :math:`k \ Omega`
 - Kondensator: 2x 0.1 :math:`\ mu F`
@@ -40,7 +40,7 @@ Materialien
 
 
 Hintergrund
-----------
+-----------
 
 .. _OP27: http://www.analog.com/media/en/technical-documentation/data-sheets/OP27.pdf
 .. _tutorial: http://www.analog.com/media/en/training-seminars/tutorials/MT-044.pdf
@@ -53,7 +53,7 @@ Präzisionsverstärker kann diese Verstärkung sehr hoch sein, in der Größenor
 (100 Millionen) oder mehr. Die offene Schleifenverstärkung des OP27_-Verstärkers ist
 rund 1,8 Millionen.
 
-.. Abbildung :: img/ Activity_14_Fig_1.png
+.. figure:: img/ Activity_14_Fig_1.png
 
    Abbildung 1: OP27 Datenblatt und Open Loop Gain Wert markiert
 
@@ -65,14 +65,14 @@ Die Definition von Open-Loop-Verstärkung ist
    A_ {OL} = \ frac {V_ {out}} {(V ^ {+} - V ^ {-})} \ quad (1)
 
 wo :math:`(V ^ {+} - V ^ {-})` ist die Eingangsspannungsdifferenz
- :math:`V_d`, das verstärkt wird,: math:` V ^ {+} `eine Spannung an
+ :math:`V_d`, das verstärkt wird, :math:`V ^ {+}` eine Spannung an
 nichtinvertierender Eingang und :math:`V ^ {-}` Spannung am invertierenden Eingang.
 
 
 Spannungsrückkopplungs-Operationsverstärker arbeiten als ** Spannungseingang / Spannungsausgang **
 Verstärker und die Open-Loop-Verstärkung ist ein ** dimensionsloses Verhältnis **, also nein
 Einheiten sind notwendig. Datenblätter drücken jedoch manchmal Gewinn aus
- :math:`V / mV` oder: math:` V / \ mu V` anstatt :math:`V / V`, für die
+ :math:`V / mV` oder :math:`V / \ mu V` anstatt :math:`V / V`, für die
 Bequemlichkeit der Verwendung kleinerer Zahlen. Oder, Spannungsverstärkung kann auch
 ausgedrückt werden in :math:`dB` Terme, als Gain in
 
@@ -148,7 +148,7 @@ muss Eingangsdifferenzspannung haben :math:`V_d` wie folgt:
 und R3 Widerstände in der Schaltung, messen und notieren die Werte der
 zwei Widerstände, die ein DMM verwenden, falls verfügbar.
 
-In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7: math:` \ Omega`
+In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7 :math:`\ Omega`
 
 .. Warnung::
 
@@ -158,7 +158,7 @@ In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7: math:` \ Omega`
    Kurzschlussfall.
 
 
-.. Abbildung :: img/ Activity_14_Fig_2.png
+.. figure:: img/ Activity_14_Fig_2.png
 
    Abbildung 2: Spannungsversorgung und Testschaltung
 
@@ -179,14 +179,14 @@ In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7: math:` \ Omega`
 
 
 Schritt 1: S ist auf POS1 (Abbildung 2)
--------------------------------
+---------------------------------------
 
 Anstatt Schalter S zu verwenden, kann R5 manuell auf Pin6 des DUT auf dem Steckbrett gesetzt werden.
 Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 
 ** Verbinden Sie OUT1 mit IN1 und stellen Sie die Tastkopfdämpfungen auf x1 ein. **
 
-.. Abbildung :: img/ Activity_14_Fig_3.png
+.. figure:: img/ Activity_14_Fig_3.png
 
    Abbildung 3: Testschaltung. R5 auf POS1 (siehe Abbildung 2)
 
@@ -204,17 +204,17 @@ Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 5. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.2mV **
 
 
-   .. Abbildung :: img/ Activity_14_Fig_4.png
+   .. figure:: img/ Activity_14_Fig_4.png
 
    Abbildung 4: Messungen von :math:`V_ {out}` wenn R5 auf POS1 gesetzt wird (siehe Abbildung 2)
 
 
 Schritt 2: S ist auf POS2 (Abbildung 2)
---------------------------------
+---------------------------------------
 
 Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
-.. Abbildung :: img/ Activity_14_Fig_5.png
+.. figure:: img/ Activity_14_Fig_5.png
 
    Abbildung 5: Testschaltung. R5 auf POS2 (siehe Abbildung 2)
 
@@ -227,7 +227,7 @@ Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
 3. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.8mV **
 
-   .. Abbildung :: img/ Activity_14_Fig_6.png
+   .. figure:: img/ Activity_14_Fig_6.png
 
    Abbildung 6: Messungen von :math:`V_ {out}` wenn R5 auf POS2 gesetzt ist (siehe Abbildung 2)
 
