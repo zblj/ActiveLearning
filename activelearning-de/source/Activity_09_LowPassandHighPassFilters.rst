@@ -27,7 +27,7 @@ wird zur Messung des Frequenzgangs von Tiefpass- und Hochpassfiltern verwendet.
 
 
 Hintergrund
-----------
+-----------
 
 Die Impedanz eines Induktors ist proportional zur Frequenz und die Impedanz des Induktors ist proportional.
 Die Impedanz eines Kondensators ist umgekehrt proportional zur Frequenz. Diese
@@ -83,7 +83,7 @@ um darin zu operieren.
 
    
 Materialien:
-----------
+------------
 
 - Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
 - Widerstände: 1 KΩ 
@@ -161,7 +161,7 @@ Hochpass-RL-Filter:**Hochpass-RL-Filter:**
    - Stellen Sie die Oszilloskopdämpfung auf x1 ein.
 
      
-.. figure:: img/Activity_09_Figur_7.png
+.. figure:: img/Activity_09_Fig_07.png
 
    Abbildung 7: Hochpass RL-Filter Breadboard-Schaltung
 
