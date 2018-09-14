@@ -41,9 +41,8 @@ Versatz, der definiert eine Phasenverschiebung in der Funktion.
 Die Sinusfunktion ergibt Werte von 1 bis -1. Erstes Set
 Zeitvariable :math:`t` gleich einer Konstante, sagen wir 1. Das
 Argument, :math:`\omega t`, ist jetzt nicht länger eine Funktion der
-Zeit. Mit :math:`\omega` im Bogenmaß, :math:`\sin(\frac{\pi}{4})
-<<<<<<< HEAD
-\approx 0.7071`.
+Zeit. Mit :math:`\omega` im Bogenmaß,
+:math:`\sin(\frac{\pi}{4})\approx 0.7071`.
 
 
 :math:`2\pi` radians ist gleich :math:`360^{\circ}`, so
@@ -71,14 +70,12 @@ gezeigt.
 .. figure:: img/ Activity_01_Fig_01.png
    :align: center
 
-   Abbildung 1: 2 Zyklen von :math:`\sin(t)`
-=======
-\ca. 0,7071`. 
+   Abbildung 1: 2 Zyklen von :math:`\sin(t)\ca. 0,7071`. 
 
 
 :math:`2\pi` radians ist gleich :math:`360^{\circ}`, so
-: math: `\ frac {\ pi} {4}` im Bogenmaß entspricht
-: math: `45 ^ {\ circ}`; : math: `\ sin (45 ^ {\ circ}) = 0.7071`
+:math:`\frac{\pi}{4}` im Bogenmaß entspricht
+:math:`45^{\ circ}`; :math:`\sin(45^{\circ}) = 0.7071`
 auch. 
 
 
@@ -102,14 +99,10 @@ keine Phase Offset. Beachten Sie, dass bei Verwendung von Graden
       
 .. figure:: img/Activity_01_Fig_01.png
    :align: center
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 
    Abbildung 1: 2 Zyklen von :math:`\sin (t)`
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 Als Randnotiz: Was passiert, wenn :math:`\omega t > 2\pi`?
 
 Geben Sie :math:`2.5\pi` in einen Taschenrechner und sehen Sie
@@ -150,17 +143,14 @@ besonders häufig gewählt Offset von :math:`90^{\circ}`. Der
 Phasenversatz zwischen einer Sinuswelle und Kosinuswelle ist
 :math:`90^{\circ}`. Der Versatzwinkel ist fast immer
 nicht 90. In der Tat ist es oft eine Funktion der
-Häufigkeit (:math:`f`). 
-
-=======
-Zeit. Da der Offset konstant ist, sehen wir die ursprüngliche Sinuswelle
-zeitlich um einen Wert von: math: `\ theta` verschoben, was: math:` 1 / 4` von
-der Zeitraum in diesem Beispiel.
+Häufigkeit (:math:`f`) Zeit. Da der Offset konstant ist, sehen wir die
+ursprüngliche Sinuswelle zeitlich um einen Wert von: math: `\ theta`
+verschoben, was :math:`1/4` von der Zeitraum in diesem Beispiel.
 
 .. figure:: img/Activity_01_Fig_02.png
    :align: center
 	   
-      Abbildung 2: grün -:math:`\sin(t)`, orange -:math:`\sin(t+\pi/4)`.
+   Abbildung 2: grün -:math:`\sin(t)`, orange -:math:`\sin(t+\pi/4)`.
 
 :math:`\theta` ist Zeitverschiebung oder Phasenanteil von Gl. (1). Der
 Phasenwinkel definiert den zeitlichen Versatz und umgekehrt. Gl. (2)
@@ -171,42 +161,32 @@ ist fast immer nicht 90. In der Tat ist es oft eine Funktion der
 Häufigkeit (:math:`f`). 
 
 
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 Wenn zwei Sinuswellen vorhanden sind, z.B. Auf einem Scope wird die
 Phase angezeigt Der Winkel kann durch Messen der Zeit zwischen den
 beiden Wellenformen berechnet werden (negative bis positive
 Nulldurchgänge oder "steigende Kanten") können verwendet werden als
 Zeitmessung Referenzpunkte in der Wellenform). Eine volle Periode der
-<<<<<<< HEAD
 Sinuswelle in der Zeit ist das gleiche wie :math:`360^{\circ}`. Nehmen
 die Verhältnis der Zeit zwischen den beiden Wellenformen als
 :math:`Delta t`, und die Zeit in einer Periode einer vollen Sinuswelle
 als :math:`T`, du kannst Bestimmen Sie den Winkel zwischen
 ihnen. Gl. (2) gibt die genaue Beziehung an. 
-=======
+
 Sinuswelle in der Zeit ist das gleiche wie :math:`360^{\circ}`.
 Nehmen die Verhältnis der Zeit zwischen den beiden Wellenformen als
 :math:`Delta T`, und die Zeit in einer Periode einer vollen Sinuswelle
 als :math:`T`, du kannst Bestimmen Sie den Winkel zwischen ihnen.
 Gl. (2) gibt die genaue Beziehung an.
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 
 
 Phase
 -----
 
 .. math::
+   \theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi \, rad = \Delta t f 2 \pi \, rad;
 
-<<<<<<< HEAD
-   \theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi
-   \, rad = \Delta t f 2 \pi \, rad;
-=======
-   \theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\ Delta t}{T} 2\pi \, rad = \ Delta t f2 \ pi \, rad;
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 
 Wobei :math:`T` ist die Periode der Sinuswelle.
-
-
 
 **Natürlich auftretende Zeitverschiebungen in Sinuswellen.**
 
@@ -216,21 +196,13 @@ die Spannung gezeigt über und der Strom durch einen Widerstand war
 eine einfache Zeit unabhängige Beziehung. :math:`V / I = R`, wobei
 :math:`R` real ist und in Ohm. Also die Spannung über und Strom durch
 einen Widerstand sind immer in Phase.
-<<<<<<< HEAD
 
 Für Kondensatoren und Induktivitäten ist die Gleichung in Bezug auf
 Spannung :math:`V` zu aktuell :math:`I` ist ähnlich. :math:`V / I =
 Z`, wobei :math:`Z` ein ist komplexe Impedanz mit realen und
 imaginären Teilen. Wir schauen nur bei einem Kondensator in diesem
 Labor. 
-=======
 
-Für Kondensatoren und Induktivitäten ist die Gleichung in Bezug auf
-Spannung :math:`V` zu aktuell :math:`I` ist ähnlich. :math:`V/I = Z`,
-wobei :math:`Z` ein ist komplexe Impedanz mit realen und imaginären
-Teilen. Wir schauen nur bei einem Kondensator in diesem Labor.
-
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 
 Im Allgemeinen bestehen die Kondensatoren aus zwei leitenden Platten,
 die durch ein Paar voneinander getrennt sind dielektrisches
@@ -259,32 +231,36 @@ werden dieses Verhalten in späteren Labors beobachten. Die Impedanz
 von a Kondensator ist eine Funktion der Frequenz. Die Impedanz sinkt
 mit umgekehrt ist die Frequenz um so niedriger, je höher die Frequenz
 ist Impedanz. 
-=======
-Kondensator. Die Änderungsrate der Spannung (: math: `dv_C / dt`) hängt davon ab
+
+Kondensator. Die Änderungsrate der Spannung (:math:`dv_C / dt`) hängt davon ab
 über die Größe des Stromes. Für einen idealen Kondensator den Strom
-: math: `i_C (t)` ist mit der Spannung durch die folgende Formel verbunden:
+:math:`i_C (t)` ist mit der Spannung durch die folgende Formel verbunden:
 
+      
 .. math::
 
-i_C (t) = C \ frac {dv_C (t)} {dt}
+   i_C (t) = C \ frac {dv_C (t)} {dt}
 
+   
 Im Moment sind die Auswirkungen davon nicht zu verstehen
-Labor. Sie werden dieses Verhalten in späteren Labors beobachten. Die Impedanz von a
-Kondensator ist eine Funktion der Frequenz. Die Impedanz sinkt mit
-umgekehrt ist die Frequenz um so niedriger, je höher die Frequenz ist
-Impedanz.
+Labor. Sie werden dieses Verhalten in späteren Labors beobachten. Die
+Impedanz von a Kondensator ist eine Funktion der Frequenz. Die
+Impedanz sinkt mit umgekehrt ist die Frequenz um so niedriger, je
+höher die Frequenz ist Impedanz.
 
 .. math::
 
-Z_C = \ frac {1} {j \ omega C},
+   Z_C = \ frac {1} {j \ omega C},
 
-Dabei gilt: math: `\ omega = 2 \ pi f` ist definiert als Winkelgeschwindigkeit.
+   
+Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
 
 
 Eine subtile Sache über Gl. (4) ist der imaginäre Operator: math: `j`.
-Wenn wir auf einen Widerstand schauen, d. H. Es befindet sich kein imaginärer Operator darin
-die Gleichung für die Impedanz. Der sinusförmige Strom durch a
-Widerstand und die Spannung über einen Widerstand haben keinen Zeitversatz zwischen
+Wenn wir auf einen Widerstand schauen, d. H. Es befindet sich kein
+imaginärer Operator darin die Gleichung für die Impedanz. Der
+sinusförmige Strom durch a Widerstand und die Spannung über einen
+Widerstand haben keinen Zeitversatz zwischen
 sie, als die Beziehung ist wirklich real. Der einzige Unterschied
 ist in der Amplitude. Die Spannung ist sinusförmig und ist in Phase mit der
 aktuelle Sinuskurve. Dies ist bei einem Kondensator nicht der Fall. Wenn wir schauen
@@ -292,7 +268,7 @@ bei der Wellenform einer sinusförmigen Spannung über einen Kondensator wird es
 Zeit verschoben im Vergleich zu dem Strom durch den Kondensator. Das
 imaginärer Operator: math: `j` ist dafür verantwortlich. Betrachten wir Fig. 3, wir
 kann beobachten, dass die aktuelle Wellenform eine Spitze (Maximum) hat, wenn die
-Steigung der Spannungswellenform (: math: `dv / dt`) ist maximal.
+Steigung der Spannungswellenform (:math:`dv / dt`) ist maximal.
 
 Die Zeitdifferenz kann als ein Phasenwinkel zwischen den beiden ausgedrückt werden
 Wellenformen wie in Gl. (2).
@@ -306,17 +282,17 @@ Wellenformen wie in Gl. (2).
 Sie haben wahrscheinlich Schaltungen gesehen, die vollständig aus
 Widerständen bestehen. Diese Schaltungen haben nur echte Impedanz, was
 bedeutet, dass Spannungen während der gesamten Schaltung sind alle in
-Phase (d.h.: math: `\ theta = 0 ' Grad.), da es die komplexe Impedanz
+Phase (d.h. :math:`\theta = 0` Grad.), da es die komplexe Impedanz
 ist, die den Strom in der Zeit verschiebt in Bezug auf die
 Spannung. Beachten Sie, dass die Impedanz eines Kondensators 
 ist rein imaginär. Widerstände haben echte Impedanzen, also
 Shaltungen, die enthalten beide, Widerstände und Kondensatoren, werden
 komplexe Impedanzen haben. 
 
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
-
 .. math::
+
    Z_C = \frac{1}{j \omega C},
+
 
 Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
 
@@ -361,12 +337,8 @@ Um den theoretischen Phasenwinkel zwischen Spannung (V) und Strom (I)
 in einer RC-Schaltung: 
 
 .. math::
-<<<<<<< HEAD
 
    i(t) = \frac{v(t)}{Z_{tot}},
-=======
-   i(t) = \frac{v (t)}{Z_ {tot}},
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 
 
 wo :math:`Z_ {tot}` ist die Gesamtkreisimpedanz.
@@ -377,12 +349,8 @@ Zahlen. Die Phasenbeziehung der Strom in Bezug auf die Spannung ist
 dann: 
 
 .. math::
-<<<<<<< HEAD
 
    \theta = \arctan\left(\frac{b}{a}\right).
-=======
-   \theta = \arctan \left( \frac{b}{a} \right).
->>>>>>> 5c24a0ff57625cb72b434b2b4d65d24fae1ad0ac
 
 
 **Materialien**
@@ -402,7 +370,7 @@ dann:
 Sie werden das STEMlab-Board von Red Pitaya und das Oszilloskop
 verwenden & Signalgenerator-Anwendung. Bedienungsanleitung für den
 Start der Red Pitaya STEMlab Board kann bei quickstart_ gefunden
-werden, während Oscilloscope & Signal Generator-Anwendung wird hier_
+werden, während Oscilloscope & Signal Generator-Anwendung wird here_
 erläutert.
 
 
@@ -422,11 +390,8 @@ Verfahren
 ---------
 
 - Stellen Sie sicher, dass das STEMlab an ein lokales Netzwerk
-<<<<<<< HEAD
   angeschlossen ist und starten Sie das Web-Schnittstelle mit
   Webbrowser. 
-=======
-  angeschlossen ist und starten Sie das Web-Schnittstelle mit Webbrowser.
 
 - Starten Sie die Anwendung Oszilloskop und Signalgenerator. Die
   Hauptsache Der Bildschirm sollte wie ein Oszilloskop mit

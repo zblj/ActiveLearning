@@ -1,8 +1,8 @@
 Der MOS-Transistor ist als Diode geschaltet
-###########################################
+===========================================
 
 Zielsetzung
-___________
+-----------
 
 Der Zweck dieser Experimente besteht darin, die
 Vorwärtsstrom-Spannungs-Charakteristik eines MOS-Feldeffekttransistors
@@ -13,10 +13,10 @@ untersuchen. Bevor dieses Experiment durchgeführt wird, wird ein
 
 
 Anmerkungen
-___________
+-----------
 
-.. -hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Oscilloskope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
@@ -29,6 +29,7 @@ ___________
 .. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
 .. _ZVP211: https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf
 .. _empfohlen: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html
+
 
 In diesen Tutorials verwenden wir die Terminologie aus dem
 Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
