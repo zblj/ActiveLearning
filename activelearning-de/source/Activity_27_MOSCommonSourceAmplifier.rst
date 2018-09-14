@@ -1,15 +1,15 @@
 MOS-Transistor-Source-Verstärker
-#######################################
+################################
 
 Zielsetzung
-__________
+___________
 
 Der Zweck dieser Untersuchung besteht darin, die gemeinsame Source-Konfiguration des MOS-Transistors zu untersuchen.
 
 Anmerkungen
-______
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -17,7 +17,7 @@ ______
 .. _BJT gemeinsamer Emitterverstärker: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity26_BJTCommonEmitterAmplifier.html#bjt-common-emitter-amplifier
 .. _Wikipedia Gemeinsame Quelle: https://en.wikipedia.org/wiki/Common_source
 .. _Common Source Amplifier Tutorial 1: http://www.electronics-tutorials.ws/amplifier/amp_3.html
-.. _MIT Common Source Amplifier Vortrag: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-012-microelectronic-devices-and-circuits-fall-2005/lecture-notes/ Vortrag19annotat.pdf
+.. _MIT Common Source Amplifier Vortrag: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-012-microelectronic-devices-and-circuits-fall-2005/lecture-notes/Vortrag19annotat.pdf
 .. _Common Source Amplifier mit Source Degeneration: http://examcrazy.com/Engineering/Electronics-Communication/Common_Source_Amplifier_with_Source_Degeneration.asp
 .. _Common Source Amplifier Tutorial 2: https://www.slideshare.net/yordibautista/fet-basics1
 .. _Transconductance: https://en.wikipedia.org/wiki/Transconductance
@@ -90,7 +90,7 @@ wobei :math:`Z_ {iss}` ist die Eingangs-Gate-Impedanz aufgrund der Eingangskapaz
     Hier wird angenommen, dass das :math:`C_ {iss}` ein konstanter Wert ist.  :math:`C_ {iss}` und :math:`g_m` Werte werden üblicherweise im Datenblatt des Transistors angegeben.
 
 Materialien
-__________
+___________
 
 - Rotes Pitaya STEMlab
 - 4x 1MΩ Widerstand
@@ -105,7 +105,7 @@ __________
 
 
 Verfahren
-_____________
+_________
 
 
 Angenommen, wir möchten einen Verstärker mit der Verstärkung :math:`A_v = 5` und: math:` I_L = 5mA` mit dem Transistor ZVN211_ und der Spannungsversorgung :math:`V_ {DD} = 5V`.
@@ -233,7 +233,7 @@ Abbildung 5: Gemeinsame Quellenverstärkung bei 5 kHz Frequenz von :math:`V_ {in
     hätte viel weniger Einfluss auf den Gewinn. Die Eingangssignalfrequenz hätte weniger Einfluss auf die Verstärkung des Verstärkers.
 
 Fragen
-__________
+______
 
 1. Versuchen Sie Folgendes hinzuzufügen :math:`1M` Widerstand in
    Reihe mit dem Transistor-Gate-Pin. Messverstärkerverstärkung
