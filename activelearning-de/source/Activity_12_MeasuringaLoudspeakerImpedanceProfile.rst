@@ -1,15 +1,15 @@
 Messung eines Lautsprecherimpedanzprofils
-##################################################
+#########################################
 
 Zielsetzung
-__________
+___________
 
 Das Ziel dieses Experiments ist es, das Impedanzprofil und die Resonanzfrequenz eines Permanentmagnet-Lautsprechers zu messen.
 
 Anmerkungen
-_______
+___________
 
-..hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
 .. _Impedance: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 .. _analyzer: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 .. _HERE: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
@@ -19,7 +19,7 @@ Impedance_analysator_ Anwendung wird verwendet, um RLC-Schaltung impedane zu mes
 Die Impedanzanalysator-Anwendung ermöglicht Messungen von Impedanz, Phase und anderen Parametern des ausgewählten DUT (Device Under Test). Messungen können im Frequenz-Sweep-Modus mit 1 Hz Frequenzauflösung oder im Sweep-Modus Messungen mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich reicht von 1 Hz bis 60 MHz, obwohl der empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich reicht von 0,1 Ohm bis 10 MOhm. Wenn Sie die Impedanzanalysatoranwendung mit dem LCR-Erweiterungsmodul verwenden, setzen Sie 0 in das Shunt-Widerstandsfeld ein.
 
 Hintergrund
-____________
+___________
 
 Die wichtigste elektrische Eigenschaft eines dynamischen Lautsprechers ist seine elektrische Impedanz als Funktion der Frequenz. Es kann visualisiert werden, indem man es als Kurve aufzeichnet, die Impedanzkurve genannt wird.
 Der häufigste Typ von Lautsprecher ist ein elektromechanischer Wandler, der eine Schwingspule verwendet, die mit einer Membran oder einem Konus verbunden ist. Die Schwingspule in Schwingspulenlautsprechern ist in einem von einem Permanentmagneten bereitgestellten Magnetfeld aufgehängt. Wenn elektrischer Strom durch die Schwingspule von einem Audioverstärker fließt, reagiert das durch den Strom in der Spule erzeugte elektromagnetische Feld gegen das feste Feld des Permanentmagneten und bewegt die Schwingspule (auch der Kegel). Wechselstrom wird den Kegel hin und her bewegen. Die Bewegung des Kegels vibriert die Luft, die den Klang erzeugt.
@@ -32,7 +32,7 @@ Diese Frequenz ist als "Freiraumresonanz" des Lautsprechers bekannt und wird bez
 Die Kenntnis der Resonanzfrequenz und der minimalen und maximalen Impedanzen ist wichtig, wenn Cross-Over-Filter-Netzwerke für mehrere Treiberlautsprecher und das physische Gehäuse, in dem die Lautsprecher eingebaut sind, entworfen werden.
 
 Lautsprecherimpedanzmodell
-____________________________
+__________________________
 
 Um Ihnen zu helfen, die Messungen zu verstehen, die Sie machen werden, ist in Abbildung 1 ein vereinfachtes elektrisches Modell eines Lautsprechers dargestellt.
 
@@ -49,17 +49,17 @@ Die Schaltung in Abbildung 1 hat einen Gleichstromwiderstand, der in Reihe mit e
 
 - :math:`F_s` ist die Resonanzfrequenz eines Lautsprechers. Die Impedanz eines Lautsprechers ist maximal bei :math:`Z_s`. Die Resonanzfrequenz ist der Punkt, an dem sich die Gesamtmasse der beweglichen Teile des Lautsprechers mit der Kraft der Lautsprechersuspension bei Bewegung ausgleicht. Die Resonanzfrequenzinformation ist wichtig, um zu verhindern, dass ein Gehäuse klingelt. Im Allgemeinen sind die Masse der beweglichen Teile und die Steifigkeit der Lautsprecherfederung die Schlüsselelemente, die die Resonanzfrequenz beeinflussen. Ein belüftetes Gehäuse (Bassreflex) ist abgestimmt auf :math:`F_s`, so dass die beiden im Einklang arbeiten. In der Regel ist ein Lautsprecher mit einem niedrigeren :math:`F_s` besser für die Wiedergabe mit niedriger Frequenz als ein Sprecher mit einem höheren: math:` F_s`.
 
--: math: "R" steht für den mechanischen Widerstand der Federungsverluste eines Fahrers.
+- :math:`R` steht für den mechanischen Widerstand der Federungsverluste eines Fahrers.
 
 Materialien
-__________
+___________
 
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 - Widerstand - :math:`R_ {shunt}`: 10 Ω
 - Lautsprecher, ist es am besten, wenn der Lautsprecher mit einem Konusdurchmesser größer als 10 cm ist, so dass er eine relativ niedrige Resonanzfrequenz hat.
 
 Verfahren
-__________
+_________
 
 1. Bauen Sie zuerst die in Abbildung 1 und Abbildung 2 gezeigte Schaltung ein. Der Lautsprecher kann sich in einem Gehäuse befinden oder nicht.
 
@@ -98,9 +98,8 @@ Abbildung 5: Grafik der Lautsprecherimpedanzphase, die mit der Anwendung des Imp
 .. note::
      Die Frequenz, bei der dies auftritt ** (Phase = 0) ** wird als Resonanzfrequenz bezeichnet.
 
-Wie im Lautsprechermodell (Abbildung 1) gezeigt Widerstand :math:`R 'repräsentieren den mechanischen Widerstand eines Fahrers Federungsverluste.
-Um einen Effekt dieses modellierten Widerstandes zu sehen :math:`R` flipover Lautsprecher so, dass seine Membran zur Arbeitsbank zeigt. Damit werden wir uns verändern
-akustisch-mechanische Umgebung des Lautsprechers, die die Lautsprecherimpedanz beeinflusst.
+Wie im Lautsprechermodell (Abbildung 1) gezeigt Widerstand :math:`R` repräsentieren den mechanischen Widerstand eines Fahrers Federungsverluste.
+Um einen Effekt dieses modellierten Widerstandes zu sehen :math:`R` flipover Lautsprecher so, dass seine Membran zur Arbeitsbank zeigt. Damit werden wir uns verändern akustisch-mechanische Umgebung des Lautsprechers, die die Lautsprecherimpedanz beeinflusst.
 
 5. Flipover-Lautsprecher wie in Abbildung 6 gezeigt und Impedanzmessungen wiederholen
 
