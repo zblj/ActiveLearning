@@ -12,7 +12,7 @@ Notizen
 -------
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
-.. _Oscillosope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -27,7 +27,7 @@ wird zur Messung des Frequenzgangs von Tiefpass- und Hochpassfiltern verwendet.
 
 
 Hintergrund
-----------
+-----------
 
 Die Impedanz eines Induktors ist proportional zur Frequenz und die Impedanz des Induktors ist proportional.
 Die Impedanz eines Kondensators ist umgekehrt proportional zur Frequenz. Diese
@@ -83,7 +83,7 @@ um darin zu operieren.
 
    
 Materialien:
-----------
+------------
 
 - Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
 - Widerstände: 1 KΩ 
@@ -94,10 +94,11 @@ Materialien:
 Vorgehensweise
 --------------
 
-Tiefpassfilter für RC-Filter:***
+***RC-Tiefpassfilter:***
 
 1. Richten Sie die RC-Schaltung wie in Abbildung 1 auf Ihrer lötfreien
-   Leiterplatte mit den Bauteilwerten R1 = 1 KΩ, C1 = 1 µF ein:
+   Leiterplatte mit den Bauteilwerten :math:`R_1 = 1 k\Omega`,
+   :math:`C_1 = 1 \mu F` ein
    
 
 2. Verbinden Sie die STEMlab-Platine mit Ihrer Schaltung:
@@ -161,7 +162,7 @@ Hochpass-RL-Filter:**Hochpass-RL-Filter:**
    - Stellen Sie die Oszilloskopdämpfung auf x1 ein.
 
      
-.. figure:: img/Activity_09_Figur_7.png
+.. figure:: img/Activity_09_Fig_07.png
 
    Abbildung 7: Hochpass RL-Filter Breadboard-Schaltung
 
@@ -188,7 +189,7 @@ Hochpass-RL-Filter:**Hochpass-RL-Filter:**
 Frequenzgang-Diagramme mit Bode Analayzer**
 
 Die Bode Analysator-Anwendung führt einen Frequenz-Sweep durch.
-es erzeugt ein Sinussignal auf OUT1 innerhalb des gewählten Frequenzbereichs.
+xes erzeugt ein Sinussignal auf OUT1 innerhalb des gewählten Frequenzbereichs.
 von uns (im Einstellungsmenü). Das Eingangssignal IN1 ist direkt mit dem folgenden Gerät verbunden
 OUT1 folgt auf IN1=Vin. IN2 ist auf der anderen Seite des Gerätes angeschlossen.
 RL(RC)-Filter und daraus IN2=Vout. Bode Analysator Anwendung wird

@@ -14,14 +14,23 @@ Notizen
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya STEMlab-Karte geht.
-Hardware_. Verlängerungsstecker-Pins, die als 5V- und 3,3V-Spannungsquelle verwendet werden sind in der Dokumentation zu den Steckverbindern E1_ und E2_ aufgeführt. 
+In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya
+STEMlab-Karte geht.
+
+Hardware_. Verlängerungsstecker-Pins, die als 5V- und
+3,3V-Spannungsquelle verwendet werden sind in der Dokumentation zu den
+Steckverbindern E1_ und E2_ aufgeführt.
+
 
 
 Hintergrund
 -----------
 
-In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme geprüft, indem sie auf die nachfolgend dargestellten Schaltungen angewendet werden Zahlen. 
+In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme
+geprüft, indem sie auf die nachfolgend dargestellten Schaltungen
+angewendet werden Zahlen.
+
 
 1. Der Proportionalitätstheorem besagt, dass die Reaktion einer
    Schaltung ist proportional zur Quelle, die auf die Schaltung
@@ -67,7 +76,8 @@ In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme geprüft,
 	
       Abbildung 3. Schaltung zur Reaktion von nur einer Quelle
 
-      
+
+
 Materialien
 -----------
 
@@ -82,12 +92,12 @@ Materialien
 Vorgehensweise
 --------------
 
-Überprüfen Sie den Satz des Proportionalitätssatzes:
+Überprüfen Sie den Proportionalitätssatz:
 
-- Konstruieren Sie die Schaltung aus Figur 1.
+- Konstruieren Sie die Schaltung aus Abb. 1.
 
 - Fall 1: Für die Spannungsquelle "V\ :sub:`in`\=5V", dargestellt in
-  Abbildung 1. Verwenden Sie den STEMlab-Spannungsstift am
+  Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
   Erweiterungsstecker E2_. 
   
 - Fall 2: Für die Spannungsquelle "V\ :sub:`in`\=3.3V", dargestellt in

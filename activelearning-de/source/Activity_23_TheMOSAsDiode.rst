@@ -16,7 +16,7 @@ Anmerkungen
 -----------
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloskope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
@@ -38,8 +38,8 @@ STEMlab-Board-Hardware beziehen.
 Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
 Beobachten von Signalen auf der Schaltung verwendet.
 
-Die für die Spannungsversorgung ** + 5V **, ** - 3.3V ** und ** + 3.3V
-** verwendeten Steckerstifte sind in der Dokumentation hier
+Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
+verwendeten Steckerstifte sind in der Dokumentation hier
 aufgeführt.
 
 
@@ -52,8 +52,8 @@ aufgeführt.
    zu ermöglichen und einen Spannungshub von +4,7V bis -3,2V zu
    erreichen. Ein OP484 wird von STEMlab + 5V und -3.3V
    Spannungsschienen geliefert. Die Verstärkung des invertierenden
-   Verstärkers wird auf ~ 5 gesetzt, wobei gilt :math:`R_i = 2.2k \
-   Omega` und: math:` R_f = 10k \ Omega`
+   Verstärkers wird auf ~ 5 gesetzt, wobei gilt
+   :math:`R_i = 2.2k \Omega` und :math:`R_f = 10k \ Omega`
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
    oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
@@ -107,14 +107,17 @@ Auf dem Steckbrett die Schaltung aus Abbildung 2 aufbauen und mit den Messungen 
 Verfahren
 ----------
 
-1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für M1 nehmen Sie ZVN211.
+1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem
+   Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
+   M1 nehmen Sie ZVN211.
+   
 
 .. figure:: img/Activity_22_Fig_3.png
 
    Abbildung 3: NMOS-Diodenverbindung auf dem Steckbrett
 
    
-.. Warnung::
+.. warning::
    Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
    anschließen, überprüfen Sie Ihren Stromkreis. Die
    Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
@@ -186,7 +189,7 @@ Projekt erstellt, zeigt das Flussdiagramm in Abbildung 5.
    
 
 
-.. figure:: img/ Activity_19_Fig_7.png
+.. figure:: img/Activity_19_Fig_7.png
 
    Abbildung 5: Erstellen eines neuen Jupyter-Notebooks
 
@@ -197,99 +200,104 @@ kopieren Sie den Code und fügen Sie ihn ein.
 Der Code unten erzeugt das gleiche Signal wie in Abbildung 4, aber es
 wird sie im XY-Diagramm darstellen.
 
-Zum Messen :math:`VI`-Kurve wird ein "XY"-Plot benötigt, wobei die
+Zum Messen VI-Kurve wird ein "XY"-Plot benötigt, wobei die
 x-Achse die Diodenspannung darstellt
-
- :math:`IN_2` und y-Achse ein Diodenstrom: math:` (IN_1 - IN_2) / R_3`.
+:math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
 
 
 .. note:: Kopieren Sie den Code von unten in die Zelle 1
 
 .. code-block:: python
-      
-      # Bibliotheken importieren
-      von redpitaya.overlay.quecksilber importieren Quecksilber als Overlay
 
-      von bokeh.io import push_notebook, anzeigen, output_notebook
-      aus bokeh.models importieren HoverTool, Range1d, LinearAxis, LabelSet, Label
-      aus bokeh.plotting Importfigur, Ausgabedatei, anzeigen
-      aus bokeh.resources importieren INLINE
-      output_notebook (Ressourcen = INLINE)
+   # Import libraries 
+   from redpitaya.overlay.mercury import mercury as overlay
 
-      importiere numpy als np
+   from bokeh.io import push_notebook, show, output_notebook
+   from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
+   from bokeh.plotting import figure, output_file, show
+   from bokeh.resources import INLINE 
+   output_notebook(resources=INLINE)
+
+   import numpy as np
       
-      # Initialisiere fpga-Module
-      fpga = Überlagerung ()
-      gen0 = fpga.gen (0)
-      osc = [fpga.osc (ch, 1.0) für ch im Bereich (fpga.MNO)]
+   # Initialize fpga modules
+   fpga = overlay()
+   gen0 = fpga.gen(0)
+   osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
       
-      # Konfigurieren Sie den Generatorkanal OUT1
-      gen0.amplitude = 0,45
-      gen0.offset = -0,45
-      gen0.waveform = gen0.sawzahn (0.5)
-      gen0.frequency = 2000
-      gen0.start ()
-      gen0.enable = Wahr
-      gen0.trigger ()
+   # Configure OUT1 generator channel 
+   gen0.amplitude = 0.45
+   gen0.offset = -0.45
+   gen0.waveform = gen0.sawtooth(0.5)
+   gen0.frequency = 2000
+   gen0.start()
+   gen0.enable = True
+   gen0.trigger()
     
-      # R1 Widerstandswert
-      R3 = 1000
+   # R1 resistor value
+   R3 = 1000
 
-      # Konfigurieren Sie die Eingangskanäle IN1 und IN2 des Oszilloskops
-      für ch in osc:
-          ch.filter_bypass = Wahr
-          # Datenrate Dezimierung
-          ch.decimation = 10
-          # Trigger-Timing [Beispielperioden]
-          N = ch.buffer_size
-          ch.trigger_pre = 0
-          ch.trigger_post = N
-          # osc0 steuert beide Kanäle
-          ch.sync_src = fpga.sync_src ["osc0"]
-          ch.trig_src = fpga.trig_src ["osc0"]
-          # Triggerpegel [V], Flanke ['neg', 'pos'] und Haltezeit [Abtastperioden]
-          ch.level = 0,01
-          ch.edg = 'pos'
-          ch.holdoff = 0
+   # Configure IN1 and IN2 oscilloscope input channels
+   for ch in osc:
+       ch.filter_bypass = True
+       # data rate decimation 
+       ch.decimation = 10
+       # trigger timing [sample periods]
+       N = ch.buffer_size
+       ch.trigger_pre = 0
+       ch.trigger_post = N
+       # osc0 is controlling both channels
+       ch.sync_src = fpga.sync_src["osc0"]
+       ch.trig_src = fpga.trig_src["osc0"]
+       # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
+       ch.level = 0.01
+       ch.edge = 'pos'
+       ch.holdoff = 0
        
-      # Diodenstrom und -spannung initialisieren
-      V = I = np.zeros (N)
+   # Initialize diode current and voltage
+   V = I = np.zeros(N)
 
-      # Plotten
-      hover = HoverTool (Modus = 'vline', Tooltips = [("V", "@x"), ("I", "@y")])
-      tools = "rad_zoom, box_zoom, zurücksetzen, schwenken"
-      p = Zahl (plot_height = 500, plot_width = 900, title = "XY-Plot der Charakteristik des NMOS-Transistors VI", toolbar_location = "right", tools = (Werkzeuge, Hover))
-      p.xaxis.axis_label = 'Spannung [V]'
-      p.yaxis.axis_label = 'Strom [mA]'
-      r = p.line (V, I, Zeilenbreite = 1, Zeilenfarbe = 0.7, Farbe = "Blau")
-      # Get und explizite Handle um die nächste Show Zelle zu aktualisieren
-      Ziel = anzeigen (p, notebook_handle = True)
+   # Plotting
+   hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
+   tools = "wheel_zoom, box_zoom, reset,pan" 
+   p = figure(plot_height=500,
+	      plot_width=900,
+	      title="XY plot of NMOS transistor VI characteristic",
+	      toolbar_location="right",
+	      tools=(tools, hover))
+   p.xaxis.axis_label = 'Voltage [V]'
+   p.yaxis.axis_label = 'Current [mA]'
+   r = p.line(V,I, line_width=1, line_alpha=0.7, color ="blue")
+   # get and explicit handle to update the next show cell 
+   target = show(p, notebook_handle=True)
 
  
- Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere
- Code von unten hinein.
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere
+Code von unten hinein.
  
 
- .. code-block:: python
+.. code-block:: python
 
-      # Messen von I, V und Neuplotten
-      wahr:
-          # zurücksetzen und starten
-          osc [0] .reset ()
-          osc [0] .start ()
-          # warte auf Daten
-          while (osc [0] .status_run ()): passiere
-          V0 = osz [0] .data (N-100) * 10 # IN1-Signal
-          V1 = osz [1] .data (N-100) * 10 # IN2-Signal
-          I = ((V0-V1) / R3) * 1E3 # 1E3 Umwandlung in mA
-          r.data_source.data ['x'] = V0
-          r.data_source.data ['y'] = I
-          push_notebook (handle = Ziel)
+   # Measuring I, V and re-plotting
+   while True:
+       # reset and start
+       osc[0].reset()
+       osc[0].start()
+       
+       # wait for data
+       while (osc[0].status_run()): pass
+       V0 = osc[0].data(N-100)*10  # IN1 signal
+       V1 = osc[1].data(N-100)*10  # IN2 signal
+       I = ((V0-V1)/R3)*1E3        # 1E3 convert to mA
+       r.data_source.data['x'] = V0
+       r.data_source.data['y'] = I
+       push_notebook(handle=target)
+
 
 	  
- Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
- Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
- Erfassung stoppen, führen Sie nur die Zelle 2 aus um die Messung erneut zu starten.
+Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
+Hauptschleife für die Erfassung und das erneute Plotten. Wenn Sie die
+Erfassung stoppen, führen Sie nur die Zelle 2 aus um die Messung erneut zu starten.
 
 
 Nach dem Ausführen des obigen Codes sollten Sie die Diode
@@ -300,6 +308,7 @@ VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
    Abbildung 6: NMOS VI-Kennlinie gemessen mit Jupyter Notebook
 
+   
    
 PMOS als Diode
 ----------------
@@ -320,14 +329,16 @@ Konfiguration der PMOS-Diode ist in Abbildung 7 dargestellt.
 Verfahren
 ---------
 
-1. Erstellen Sie die Schaltung aus Abbildung 7 auf dem Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für M1 nimm ZVP211.
+1. Erstellen Sie die Schaltung aus Abbildung 7 auf dem
+   Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
+   M1 nimm ZVP211.
 
 .. warning::
-   Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
-   anschließen, überprüfen Sie Ihren Stromkreis. Die
-   Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
-   Kurzschluss und können im Falle eines Kurzschlusses beschädigt
-   werden.
+   Bevor Sie den Stromkreis an die STEMlab :math:`-3.3\,\text{V}` und
+   :math:`+3.3\,\text{V}` Anschlüsse anschließen, überprüfen Sie Ihren
+   Stromkreis. Die Spannungsversorgungsstifte -3,3 V und +3,3 V haben
+   keinen Kurzschluss und können im Falle eines Kurzschlusses
+   beschädigt werden.
    
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
