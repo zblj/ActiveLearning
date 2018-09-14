@@ -15,9 +15,9 @@ Anmerkungen
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch wenn man sich auf die Verbindungen zum Red Pitaya
-STEMlab Board bezieht hardware_.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. 
+
 
 
 Hintergrund
@@ -167,51 +167,29 @@ imaginären Teilen. Wir schauen nur bei einem Kondensator in diesem
 Labor. 
 
 
-Im Allgemeinen bestehen die Kondensatoren aus zwei leitenden Platten,
-die durch ein Paar voneinander getrennt sind dielektrisches
-Material. Wenn eine potentielle Differenz über die Platten, daher wird
-ein elektrisches Feld zwischen den Platten erzeugt. Kondensator
-Dielektrika können aus vielen Materialien bestehen, einschließlich
-dünner isolierender Materialien Filme und Keramik. Das
-Unterscheidungsmerkmal eines Kondensators ist sein Kapazität (C),
-gemessen in Farad (F), die das Verhältnis misst zwischen Spannung und
-Ladungsaufbau. 
+Im Allgemeinen bestehen Kondensatoren aus zwei leitenden Platten,
+die durch ein dielektrisches Material getrennt sind.
+Wenn eine Potentialdifferenz über die Platten angelegt wird,
+entsteht somit ein elektrisches Feld zwischen den Platten.
+Dielektrika von Kondensatoren können aus vielen Materialien
+hergestellt werden, darunter dünne isolierende Schichten und Keramik.
+Das Unterscheidungsmerkmal eines Kondensators ist seine Kapazität (C),
+gemessen in Farads (F), die das Verhältnis zwischen Spannung und Ladungsaufbau misst.
+ 
 
-Die Grundregel für Kondensatoren ist die Spannung am Kondensator
-ändert sich nicht, es sei denn, es fließt Strom in die
-Kondensator. Die Änderungsrate der Spannung (:math:`dv_C/dt`) hängt
-davon ab über die Größe des Stromes. Für einen idealen Kondensator den
-Strom :math:`i_C(t)` ist mit der Spannung durch die folgende Formel
-verbunden: 
+Die Grundregel für Kondensatoren ist, dass sich die Spannung am Kondensator nicht ändert, wenn kein Strom in den Kondensator fließt. Die Änderungsrate der Spannung (:math:`dv_C/dt`) ist abhängig von der Größe des Stroms. Für einen idealen Kondensator wird der Strom :math:`i_C(t)` durch die folgende Formel auf die Spannung bezogen:  
       
 .. math::
    i_C(t) = C \frac{dv_C(t)}{dt}
 
    
-Im Moment sind die Auswirkungen davon nicht zu verstehen Labor. Sie
-werden dieses Verhalten in späteren Labors beobachten. Die Impedanz
-von a Kondensator ist eine Funktion der Frequenz. Die Impedanz sinkt
-mit umgekehrt ist die Frequenz um so niedriger, je höher die Frequenz
-ist Impedanz. 
+Im Moment sind die vollen Auswirkungen davon außerhalb des Rahmens dieses Labors. Sie werden dieses Verhalten in späteren Labors beobachten. Die Impedanz eines Kondensators ist eine Funktion der Frequenz. Die Impedanz sinkt mit der Frequenz umgekehrt, je niedriger die Frequenz, desto höher die Impedanz. 
 
 Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
 
-Eine subtile Sache über Gl. (4) ist der imaginäre Operator: math: `j`.
-Wenn wir auf einen Widerstand schauen, d. H. Es befindet sich kein
-imaginärer Operator darin die Gleichung für die Impedanz. Der
-sinusförmige Strom durch a Widerstand und die Spannung über einen
-Widerstand haben keinen Zeitversatz zwischen
-sie, als die Beziehung ist wirklich real. Der einzige Unterschied
-ist in der Amplitude. Die Spannung ist sinusförmig und ist in Phase mit der
-aktuelle Sinuskurve. Dies ist bei einem Kondensator nicht der Fall. Wenn wir schauen
-bei der Wellenform einer sinusförmigen Spannung über einen Kondensator wird es sein
-Zeit verschoben im Vergleich zu dem Strom durch den Kondensator. Das
-imaginärer Operator: math: `j` ist dafür verantwortlich. Betrachten wir Fig. 3, wir
-kann beobachten, dass die aktuelle Wellenform eine Spitze (Maximum) hat, wenn die
-Steigung der Spannungswellenform (:math:`dv / dt`) ist maximal.
+Eine subtile Sache an Äquivalent (4) ist der imaginäre Operator :math:`j`. Wenn wir uns einen Widerstand ansehen, gibt es keinen imaginären Operator in der Gleichung für die Impedanz. Der sinusförmige Strom durch einen Widerstand und die Spannung an einem Widerstand haben keinen zeitlichen Versatz zwischen ihnen, da die Beziehung völlig real ist. Der einzige Unterschied besteht in der Amplitude. Die Spannung ist sinusförmig und steht in Phase mit dem Strom sinusförmig. Dies ist bei einem Kondensator nicht der Fall. Wenn wir die Wellenform einer sinusförmigen Spannung an einem Kondensator betrachten, wird sie im Vergleich zum Strom durch den Kondensator zeitlich verschoben. Der imaginäre Operator :math:`j` ist dafür verantwortlich. Betrachtet man Abb. 3, so kann man feststellen, dass die aktuelle Wellenform eine Spitze (maximal) hat, wenn die Steigung der Spannungswellenform (:math:`dv/dt`) maximal ist. 
 
-Die Zeitdifferenz kann als ein Phasenwinkel zwischen den beiden ausgedrückt werden
-Wellenformen wie in Gl. (2).
+Die Zeitdifferenz kann als Phasenwinkel zwischen den beiden ausgedrückt werden. Wellenformen, wie in Gl. (2) definiert.
 
 .. figure:: img/Activity_01_Fig_03.png
    :align: center
