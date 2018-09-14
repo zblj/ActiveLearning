@@ -35,7 +35,7 @@ Ein Aufwärtswandler (Hochsetzsteller) ist ein DC / DC-Leistungswandler, der die
     Die Funktionsweise des DC - DC - Boost - Konverters wird in diesem Wikipedia - Artikel erklärt. Vor dem Experiment wird ein kurzer Überblick über die Theorie empfohlen.
 
 Die klassische DC-DC-Aufwärtswandlerschaltung ist in Fig. 1 gezeigt. Abhängig von der gewünschten Betriebsfrequenz (Schaltfrequenz) und der maximalen Stromstärke des Induktors
- :math:`L_1` sollte ausgewählt sein. In diesem Experiment für :math:`L_1` wird ein: math:` 100 \ mu H'-Leistungsinduktor mit 1A Nennstrom verwendet. Die Betriebsfrequenz (Schaltfrequenz) sollte im Bereich von: "10 - 50 kHz" liegen. Für den Gleichrichter :math:`D_1` und den Snubber: math:` D_2` können die klassischen Dioden 1N4001_ oder 1N3064 verwendet werden.
+ :math:`L_1` sollte ausgewählt sein. In diesem Experiment für :math:`L_1` wird ein :math:`100 \ mu H` -Leistungsinduktor mit 1A Nennstrom verwendet. Die Betriebsfrequenz (Schaltfrequenz) sollte im Bereich von: "10 - 50 kHz" liegen. Für den Gleichrichter :math:`D_1` und den Snubber: math:` D_2` können die klassischen Dioden 1N4001_ oder 1N3064 verwendet werden.
 Für den :math:`M_1` Transistor werden wir IRLU120N_ verwenden. Wir haben diesen Leistungs-MOSFET-Transistor gewählt, da er eine niedrige Schwellenspannung hat :math:`V_ {TH}`. Wenn Sie FET-Transistoren mit hoher Schwellenspannung und ein Niederspannungstreibersignal (Gatesignal) verwenden, könnte das Schalten des MOSFET nicht optimal sein. Ausgewählter MOSFET hat bereits eine integrierte Snubber-Diode, also externe Diode :math:`D_2` ist nicht notwendig.
 
 .. note::
@@ -93,7 +93,7 @@ Abbildung 2: DC - DC Boost Converter auf dem Steckbrett
 6. Wählen Sie im Menü MESSUNGEN MEAN-Messungen für IN1 und IN2
 7. Was sind die Werte der Gleichspannung an Punkt 3 und 5 (Bild 1)?
 
-Wenn zu diesem Zeitpunkt das OUT1-Schaltsignal deaktiviert ist, ist der DC-DC-Aufwärtswandler nicht funktionsfähig. Transistor :math:`M_1` ist ausgeschaltet (Leerlauf) und Batteriespannung ist über Induktor: math:` L_1` und Diode :math:`D_1`, übertragen auf die Lastseite (Punkt 5, Abbildung 1). Für DC-Signale (keine Umschaltung) verhält sich die :math:`L_1'-Induktivität wie ein Kurzschluss, daher ist die Ausgangsspannung die Batteriespannung, die sich verringert durch: math:` D_1` Dioden-Durchlassspannung: :math:`V_ {out} = V_ { Batterie} - V_ {Diode} `. Dieser Zustand wird in den Messungen in Abbildung 3 gezeigt. Wie wir erwartet haben, sind :math:`LED_1` und: math:` LED_2` ausgeschaltet, da die Ausgangsspannung unter der Durchlassspannung der LEDs liegt (2x1.8V).
+Wenn zu diesem Zeitpunkt das OUT1-Schaltsignal deaktiviert ist, ist der DC-DC-Aufwärtswandler nicht funktionsfähig. Transistor :math:`M_1` ist ausgeschaltet (Leerlauf) und Batteriespannung ist über Induktor: math:` L_1` und Diode :math:`D_1`, übertragen auf die Lastseite (Punkt 5, Abbildung 1). Für DC-Signale (keine Umschaltung) verhält sich die :math:`L_1` -Induktivität wie ein Kurzschluss, daher ist die Ausgangsspannung die Batteriespannung, die sich verringert durch :math:`D_1` Dioden-Durchlassspannung: :math:`V_ {out} = V_ { Batterie} - V_ {Diode}`. Dieser Zustand wird in den Messungen in Abbildung 3 gezeigt. Wie wir erwartet haben, sind :math:`LED_1` und :math:`LED_2` ausgeschaltet, da die Ausgangsspannung unter der Durchlassspannung der LEDs liegt (2x1.8V).
 
 .. figure:: img/ Activity_28_Fig_3.png
 
@@ -111,8 +111,8 @@ Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
 
 .. note::
     Spannungswelligkeitswerte sind einer der Hauptparameter der DC-DC-Wandlerqualität. Geringere Ausgangswelligkeit entspricht einem besseren DC-DC-Aufwärtswandler.
-    Kondensator :math:`C_1` wird daher benötigt, um die an der Induktivität erscheinende Schaltspannung zu kompensieren und zu glätten: math:` L_1` und diode :math:`D_1`.
-    Versuche zu entfernen :math:`C_1` und beobachte: math:` V_ {out} `.
+    Kondensator :math:`C_1` wird daher benötigt, um die an der Induktivität erscheinende Schaltspannung zu kompensieren und zu glätten :math:`L_1` und diode :math:`D_1`.
+    Versuche zu entfernen :math:`C_1` und beobachte :math:`V_ {out}`.
 
 
 11. Um die Schaltspannungen von :math:`M_1` zu beobachten, stellen Sie die IN1-Sonde auf den Punkt 2 (Abbildung 1) und die IN2-Sonde auf den Punkt 4 (Abbildung 1).
@@ -124,8 +124,8 @@ Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
 
 Abbildung 5: M1 Schaltspannungen
 
-In der Abbildung 5 sind math: `M_1` Gate- und Drain-Signale dargestellt. Aus Fig. 5 können wir sehen, dass das Gate-Signal eine schaltende Rechteckwelle ist, die den Transistor steuert.
-Das Drain-Signal entspricht den "Offen / Geschlossen" -Zuständen des Transistors :math:`M_1`, aber während des" Off "-Zustandes sind signifikante Oszillationen sichtbar. Dies ist der Einfluss des Induktors :math:`L_1`, da er jede Änderung des Stroms durch ihn beeinflusst, die die Drain-Spannung von: math:` M_1` beeinflusst.
+In der Abbildung 5 sind :math:`M_1` Gate- und Drain-Signale dargestellt. Aus Fig. 5 können wir sehen, dass das Gate-Signal eine schaltende Rechteckwelle ist, die den Transistor steuert.
+Das Drain-Signal entspricht den "Offen / Geschlossen" -Zuständen des Transistors :math:`M_1`, aber während des" Off "-Zustandes sind signifikante Oszillationen sichtbar. Dies ist der Einfluss des Induktors :math:`L_1`, da er jede Änderung des Stroms durch ihn beeinflusst, die die Drain-Spannung von :math:`M_1` beeinflusst.
 
 .. note::
    Der DC-DC-Boost-Wandler-Ausgangsspannungswert wird häufig gesteuert mit: math: "Duty-Cycle" des Schaltsignals.
