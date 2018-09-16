@@ -4,7 +4,7 @@ Was ist Phase?
 Zielsetzung
 -----------
 
-Das Ziel dieser Laboraufgabe ist es zu verstehen, was Phasenbeziehung
+Das Ziel dieses Labors ist es zu verstehen, was Phasenbeziehung
 zwischen Signalen bedeutet und zu prüfen, wie Theorie mit der Praxis
 übereinstimmen. Des Weiteren soll ein erstes Verständnis der Red
 Pitaya STEMlab Hardware und Software gewonnen werden.
@@ -23,11 +23,7 @@ wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht.
 Hintergrund
 -----------
 
-Wir werden das Konzept der Phase untersuchen, indem wir die
-Sinuswellen und betrachten passive Komponenten, mit denen wir die
-Phasenverschiebung mit real beobachten können Signale. Zuerst
-betrachten wir eine Sinuswelle und den Phasenterm in der Streit. Sie
-sollten mit der Gleichung vertraut sein: 
+Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen und passive Komponenten betrachten, die es uns ermöglichen, die Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Du solltest mit der Gleichung vertraut sein: 
 
 .. math::
 
