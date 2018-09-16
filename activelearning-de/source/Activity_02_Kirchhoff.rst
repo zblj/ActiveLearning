@@ -4,7 +4,7 @@ Kirchhoffs Spannungs- und Stromgesetze
 Zielsetzung
 ___________
 
-Ziel dieser Labortätigkeit ist es, Kirchhoffs Spannungsgesetz (KVL) und Kirchhoffs Aktuelles Gesetz (KCL) mittels Netz- und Knotenanalyse der gegebenen Schaltung zu überprüfen.
+Ziel dieses Labors ist es, Kirchhoffs Spannungsgesetz (Maschenregel) und Kirchhoffs Stromgesetz (Knotenregel) mittels Maschen- und Knotenanalyse der gegebenen Schaltung zu überprüfen.
 
 Notizen
 _______
@@ -17,7 +17,7 @@ In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wen
 Hintergrund
 ___________
 
-1. Kirchhoffs Spannungsgesetz besagt, dass die algebraische Summe aller Spannungen um jeden geschlossenen Weg (Schleife oder Netz) Null ist. Wenn wir die Spannungen an jedem Widerstand R1 bis R5 als V1 bis V5 definieren, ergibt sich die Anwendung des Kirchhoff-Spannungsgesetzes auf die erste und zweite Schleife in der in Figur 1 dargestellten Schaltung: 
+1. Kirchhoffs Spannungsgesetz besagt, dass die algebraische Summe aller Spannungen in jeden geschlossenen Kreis (Schleife oder Masche) Null ist. Wenn wir die Spannungen an jedem Widerstand R1 bis R5 als V1 bis V5 definieren (Abbildung 1), ergibt sich nach Anwendung des Kirchhoff-Spannungsgesetzes für die Masche 1 und Masche 2 : 
 
 Masche 1
 
@@ -33,7 +33,7 @@ Masche 2
 
 	Abbildung 1: Kirchhoffs Spannungsgesetz
 
-2. Kirchhoffs Aktuelles Gesetz besagt, dass die algebraische Summe aller Ströme an einem Knoten Null ist. Wenn wir die Ströme durch jeden Widerstand R1 bis R5 als I1 bis I5 definieren, ergibt die Anwendung des Kirchhoffschen Stromgesetzes auf die ersten vier Knoten in der in Figur 1 dargestellten Schaltung die folgenden Gleichungen; 
+2. Kirchhoffs-Stromgesetz besagt, dass die algebraische Summe aller Ströme an einem Knoten Null ist. Wenn wir die Ströme durch jeden Widerstand R1 bis R5 als I1 bis I5 definieren, ergibt die Anwendung des Kirchhoffschen Stromgesetzes auf die ersten vier Knoten in der in Abbildung 1 dargestellten Schaltung die folgenden Gleichungen; 
 
 *Knoten a:*
 	
@@ -63,7 +63,7 @@ Masche 2
 Materialien
 ___________
 
-Rote Pitaya STEMlab 125-14 oder STEMlab 125-10 
+Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 Verschiedene Widerstände:
 
@@ -91,7 +91,7 @@ Schritt 1.
 
 Schritt 2. 
 	
-	Verwenden Sie das color_coding_tool_, um die richtigen Widerstände aus Ihrem Kit auszuwählen. Verwenden Sie Multimeter, Widerstandsmessungen, um die aktuellen Widerstandswerte zu überprüfen.
+	Verwenden Sie das color_coding_tool_, um die richtigen Widerstände aus Ihrem Kit auszuwählen. Verwenden Sie Multimeter mit Widerstandsmessung, um die aktuellen Widerstandswerte zu überprüfen.
 
 Schritt 3. 
 
@@ -102,7 +102,7 @@ Schritt 3.
 	
 	    Abbildung 2: Leistungsanschlüsse
 
-Die Schaltung auf der Platine ist in der folgenden Abbildung dargestellt.
+Die Schaltung auf der Steckplatine ist in der folgenden Abbildung dargestellt.
 
 .. figure:: img/Activity_02_Fig_03.png
 	
@@ -112,7 +112,7 @@ Schritt 4.
 	
 	Messen Sie alle Spannungen genau und berechnen Sie Ströme in der Schaltung mit der Oszilloskopanwendung.
 	
-	Das Messen des Spannungsabfalls am gewünschten Widerstand erfolgt so, dass die Oszilloskopsonde von IN1 mit der einen Seite des Widerstands und die Oszilloskopsonde von IN2 mit der anderen Seite des Widerstands verbunden ist. Die Spannungsdifferenz VIN1-VIN2 liefert eine Spannung am gemessenen Widerstand.
+	Das Messen des Spannungsabfalls am gewünschten Widerstand erfolgt, in dem man die Oszilloskopsonde von IN1 mit der einen Seite des Widerstands und die Oszilloskopsonde von IN2 mit der anderen Seite des Widerstands verbunden ist. Die Spannungsdifferenz VIN1-VIN2 liefert eine Spannung am gemessenen Widerstand.
 	
 	- Stellen Sie die Dämpfung der Sonden auf x10 ein.
 	
@@ -138,7 +138,7 @@ Schritt 4.
 
 V\ :sub:`R1`\ = MEAN( IN1 ) - MEAN( IN2 )
 
-I\ :sub:`R1`\ = V\ \ :sub:`R1`\ / R\ :sub:`1`\.
+I\ :sub:`R1`\ = V\ :sub:`R1`\ / R\ :sub:`1`\.
 
 .. note:: 
 	
@@ -168,11 +168,11 @@ Schritt 5.
  
  Schritt 6. 
 
-	Überprüfen Sie KVL für die Schleifen im Stromkreis anhand der Schleifenformeln 1 und 2.
+	Überprüfen Sie Kirchhoffs-Maschensatz für die Maschen im Stromkreis anhand der Schleifenformeln 1 und 2.
 
  Schritt 7.
   
-	Überprüfen Sie KCL für die Knoten in der Schaltung unter Verwendung der Knotengleichungen a, b, c und d.
+	Überprüfen Sie Kirchhoffs-Knotensatz für die Knoten in der Schaltung unter Verwendung der Knotengleichungen a, b, c und d.
 
 
 
