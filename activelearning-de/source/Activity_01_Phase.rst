@@ -30,77 +30,61 @@ Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen und passive 
    f(t) = \sin(\omega t + \theta)
 
    
-:math:`\omega` setzt die Frequenz der Sinuswelle als :math:`t`
-fortschreitet und :math:`\theta` definiert einen zeitlichen
-Versatz, der definiert eine Phasenverschiebung in der Funktion.
+:math:`\omega` stellt die Frequenz der sinusförmigen Welle im zeitlichen Verlauf :math:`t` ein,
+und :math:`\theta` definiert einen Zeitversatz, der eine Phasenverschiebung in der Funktion definiert.
 
-Die Sinusfunktion ergibt Werte von 1 bis -1. Erstes Set
-Zeitvariable :math:`t` gleich einer Konstante, sagen wir 1. Das
+Die Sinusfunktion hat einen Wertebereich von 1 bis -1 zur Folge. Nehmen Sie zunächst
+die Zeitvariable :math:`t` als konstand an, sagen wir 1. Das
 Argument, :math:`\omega t`, ist jetzt nicht länger eine Funktion der
-Zeit. Mit :math:`\omega` im Bogenmaß,
-:math:`\sin(\frac{\pi}{4})\approx 0.7071`.
+Zeit. Mit :math:`\omega` im Bogenmaß, ergibt sich für :math:`\sin(\frac{\pi}{4})\approx 0.7071`.
 
 
-:math:`2\pi` radians ist gleich :math:`360^{\circ}`, so
-:math:`\frac{\pi}{4}` im Bogenmaß entspricht
-:math:`45^{\circ}`; :math:`\sin(45^{\circ}) = 0.7071` auch.
+:math:`2\pi` im Bogenmaß entsricht :math:`360^{\circ}`, so
+so ergibt sich für :math:`\frac{\pi}{4}` im Bogemaß 
+:math:`45^{\circ}` bzw. :math:`\sin(45^{\circ}) = 0.7071` entsprechend.
 
 
 Lassen Sie nun :math:`t` mit der Zeit variieren, wie es normalerweise
-der Fall ist. Wenn der Wert von :math:`\omega t` ändert sich linear
-mit der Zeit ergibt es eine Sinuswelle wie in Abb. 1. Wie
-:math:`\omega t` geht von 0 bis :math:`2 \pi` die Sinuswelle geht von
-0 bis 1, runter bis -1 und zurück bis 0. Das ist ein Zyklus oder
-eine Periode, :math:`T`, einer Sinuswelle. Die X-Achse ist die
-Zeit variierendes Argument / Winkel, :math:`\omega t`, das von 0
-bis variiert :math:`2\pi`. 
+der Fall ist. Wenn der Wert von :math:`\omega t` mit der Zit linear ändert,
+ergibt es eine Sinuswelle wie in Abb. 1 dargestellt. Da
+:math:`\omega t` von 0 bis :math:`2 \pi` geht, verläuft die Sinuswelle von 0 bis 1,
+fällt auf -1 und geht zurück auf die 0. Diesen Abschnitt nennt man ein Zyklus oder
+eine Periode :math:`T`, einer Sinuswelle. Die X-Achse ist die das
+zeitvareable Argument / Winkel von :math:`\omega t`, das von 0
+bis :math:`2\pi` variiert. 
 
-Der Wert von :math:`\theta` ist 0 in der Funktion, die in gezeichnet
-wird Abb. 1. Seit dem :math:`sin(0) = 0` beginnt die Handlung
-bei 0. Die ist a einfache Sinuswelle ohne zeitlichen Versatz, also
-keine Phase Offset. Beachten Sie, dass bei Verwendung von Graden
-:math:`\omega t` in einem Bereich von 0 bis :math:`2 \pi` oder 0 bis
-:math:`360^{\circ}` um den Sinus zu erhalten Welle in Fig. 1
-gezeigt. 
+Der Wert von :math:`\theta` ist, in der in Abbildung 1 dargestellten Funktion, 0. Aufgrund von :math:`sin(0) = 0` beginnt die
+die Funktion im Koordinatenursprung bei 0. Dies ist eine einfache Sinuswelle
+ohne Zeitversatz, also ohne Phaseverschiebung. Beachten Sie, dass bei Verwendung von bei :math:`\omega t`,
+wir uns in einem Bereich von 0 bis :math:`2 \pi` oder 0 bis
+:math:`360^{\circ}` bewegen, um die in der Abbildung 1 dargestellte Sinuswelle zu erhalten.  
 
 .. figure:: img/ Activity_01_Fig_01.png
    :align: center
 
-   Abbildung 1: 2 Zyklen von :math:`\sin(t)\ca. 0,7071`. 
-
-
-:math:`2\pi` radians ist gleich :math:`360^{\circ}`, so
-:math:`\frac{\pi}{4}` im Bogenmaß entspricht
-:math:`45^{\ circ}`; :math:`\sin(45^{\circ}) = 0.7071`
-auch. 
-
+   Abbildung 1: 2 Zyklen von :math:`\sin(t)\ca. 0,7071`.  
 
 Als Randnotiz: Was passiert, wenn :math:`\omega t > 2\pi`?
 
-Geben Sie :math:`2.5\pi` in einen Taschenrechner und sehen Sie
-selbst. Wie du sollte wissen, die Sinusfunktion wiederholt sich alle
-:math:`2\pi` Radiant oder :math:`360^{\circ}`. Es ähnelt dem
-Subtrahieren :math:`2\pi(I)` radians aus dem Argument, wo ich
-die größte Ganzzahl ist, die ein ergibt nicht negatives
-Ergebnis. 
+Geben Sie :math:`2.5\pi` in Ihren Taschenrechner und sehen Sie
+selbst. Wie Sie wissen sollten, wiederholt sich die Sinusfunktion alle :math:`2\pi` Radien oder :math:`360^{\circ}`.
+Es ist ähnlich wie Subtrahieren von :math:`2\pi(I)` Bogenmaß von Argument, wobei :math:`(I)` die größte ganze Zahl ist,
+die ein nicht-negatives Ergebnis liefert. 
 
-Was passiert, wenn wir eine zweite Sinuswelle mit derselben in Fig. 1
-einzeichnen :math:`\omega` value und :math:`\theta = 0`?
+Was passiert, wenn wir eine zweite Sinuswelle in Abbildung 1,
+mit dem gleichen :math:`\omega` -Wert und :math:`\theta = 0` einzeichnen?
 
-Wir haben eine andere Sinuswelle, die auf dem ersten Sinus landet
-Welle. Da :math:`\theta = 0` gibt es keine Phasendifferenz zwischen
-die Sinuswellen und sie sehen in der Zeit gleich aus.
+Wir bekommen eine weitere Sinuswelle, die über der ersten Sinuswelle liegt.
+Aufgrund von :math:`\theta = 0` gibt es keine Phasendifferenz zwischen
+den Sinuswellen und sie sehen im zeitlichen Verlauf gleich aus.
 
-Jetzt ändere :math:`\theta` zu :math:`\pi / 2` rad oder
+Ändern Sie nun :math:`\theta` auf :math:`\pi / 2` rad oder
 :math:`90^{\circ}` für die zweite Sinuswelle. Wir sehen die
-ursprüngliche Sinuswelle und einen zweiten Sinus Welle nach
-links verschoben. Fig. 2 zeigt die ursprüngliche Sinuswelle
-(grün) und die zweite Sinuswelle (orange) mit einem Offset in
-<<<<<<< HEAD
-Zeit. Da der Offset konstant ist, sehen wir die ursprüngliche
+ursprüngliche Sinuswelle und eine zweite Sinuswelle, die
+dich mit der Zeit nach links verschoben hat. Abbildung 2 zeigt die ursprüngliche Sinuswelle
+(grün) und die zweite Sinuswelle (orange) mit einem Zeitversatz. Da der Offset konstant ist, sehen wir die ursprüngliche
 Sinuswelle zeitlich um einen Wert von :math:`\ theta`
-verschoben, was :math:`1/4` von der Zeitraum in diesem
-Beispiel. 
+verschoben, was :math:`1/4` der Periode in diesem Beispiel entspricht.
 
 .. figure:: img/ Activity_01_Fig_02.png
    :align: center
@@ -108,35 +92,16 @@ Beispiel.
    Abbildung 2: grün - :math:`\sin(t)`, orange - :math:`\sin(t + \pi/4)`.
 
    
-:math:`\theta` ist Zeitverschiebung oder Phasenanteil von Gl. (1). Der
+:math:`\theta` ist Zeitversatz oder Phasenanteil von Gl. (1). Der
 Phasenwinkel definiert den zeitlichen Versatz und
-umgekehrt. Gl. (2) zeigt die Beziehung. Wir haben zufällig ein
-besonders häufig gewählt Offset von :math:`90^{\circ}`. Der
+umgekehrt. Gl. (2) zeigt die Beziehung. Wir haben uns für einen
+besonders häufig gewählten Phasenversatz von :math:`90^{\circ}`. Der
 Phasenversatz zwischen einer Sinuswelle und Kosinuswelle ist
 :math:`90^{\circ}`. Der Versatzwinkel ist fast immer
-nicht 90. In der Tat ist es oft eine Funktion der
-Häufigkeit (:math:`f`) Zeit. Da der Offset konstant ist, sehen wir die
-ursprüngliche Sinuswelle zeitlich um einen Wert von: math: `\ theta`
-verschoben, was :math:`1/4` von der Zeitraum in diesem Beispiel.
+nicht 90. Tatsächlich ist es oft eine Funktion der Frequenz (:math:`f`). 
 
 
-Wenn zwei Sinuswellen vorhanden sind, z.B. Auf einem Scope wird die
-Phase angezeigt Der Winkel kann durch Messen der Zeit zwischen den
-beiden Wellenformen berechnet werden (negative bis positive
-Nulldurchgänge oder "steigende Kanten") können verwendet werden als
-Zeitmessung Referenzpunkte in der Wellenform). Eine volle Periode der
-Sinuswelle in der Zeit ist das gleiche wie :math:`360^{\circ}`. Nehmen
-die Verhältnis der Zeit zwischen den beiden Wellenformen als
-:math:`Delta t`, und die Zeit in einer Periode einer vollen Sinuswelle
-als :math:`T`, du kannst Bestimmen Sie den Winkel zwischen
-ihnen. Gl. (2) gibt die genaue Beziehung an. 
-
-Sinuswelle in der Zeit ist das gleiche wie :math:`360^{\circ}`.
-Nehmen die Verhältnis der Zeit zwischen den beiden Wellenformen als
-:math:`Delta T`, und die Zeit in einer Periode einer vollen Sinuswelle
-als :math:`T`, du kannst Bestimmen Sie den Winkel zwischen ihnen.
-Gl. (2) gibt die genaue Beziehung an.
-
+Bei zwei Sinuswellen, die z.B. auf einem Scope angezeigt werden, kann der Phasenwinkel durch Messung der Zeit zwischen den beiden Wellenformen berechnet werden (negative bis positive Nulldurchgänge oder "steigende Flanken", können als Bezugspunkte für die Zeitmessung in der Wellenform verwendet werden). Eine volle Periode der Sinuswelle in der Zeit ist die gleiche wie :math:`360^{\circ}`. Wenn man das Verhältnis der Zeit zwischen den beiden Wellenformen als :math:`\Delta t` und der Zeit in einer Periode einer vollen Sinuswelle als :math:`T` nimmt, kann man den Winkel zwischen ihnen bestimmen. Gleichung (2) gibt die genaue Beziehung an.
 
 Phase
 -----
