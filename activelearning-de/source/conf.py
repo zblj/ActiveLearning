@@ -241,7 +241,7 @@ html_static_path = ['_static']
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr', 'zh'
 #
-# html_search_language = 'en'
+html_search_language = 'de'
 
 # A dictionary with options for the search language support, empty by default.
 # 'ja' uses this config value.
@@ -262,11 +262,11 @@ htmlhelp_basename = 'doctutdoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'a4paper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
+    'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
     #
@@ -274,7 +274,7 @@ latex_elements = {
 
     # Latex figure (float) alignment
     #
-    # 'figure_align': 'htbp',
+    'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -282,7 +282,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'doctut.tex', u'RedPitaya',
-     u'Aktives Lernen mit Elektronik', 'How-to'),
+     u'Red Pitaya\'s aktives Lernen', 'How-to'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -323,7 +323,7 @@ latex_logo = "img/RedPitayaLogo.png"
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'doctut', u'RedPitaya Aktives Lernen',
+    (master_doc, 'doctut', u'Red Pitaya\'s aktives Lernen',
      [author], 1)
 ]
 
