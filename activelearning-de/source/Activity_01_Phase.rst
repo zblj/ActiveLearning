@@ -110,22 +110,24 @@ Phase
    \theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi \, rad = \Delta t f 2 \pi \, rad;
 
 
-Wobei :math:`T` ist die Periode der Sinuswelle.
+Wobei :math:`T` die Periode der Sinuswelle ist.
+
+
 
 **Natürlich auftretende Zeitverschiebungen in Sinuswellen.**
 
-Einige passive Komponenten ergeben einen Zeitversatz zwischen der
-Spannung über sie und die Strömung durch sie. Im Unterricht haben wir
-die Spannung gezeigt über und der Strom durch einen Widerstand war
-eine einfache Zeit unabhängige Beziehung. :math:`V / I = R`, wobei
-:math:`R` real ist und in Ohm. Also die Spannung über und Strom durch
-einen Widerstand sind immer in Phase.
+Bei einigen passiven elektronischen Komponenten findet ein zeitlicher Versatz
+zwischen der, über das jeweilige Bauteil, abfallenden Spannung und dem, dieses
+Bauteile durchfließenden Strom. Im Grundlagenunterricht wird oft die Spannung
+und der Strom einer linearen Widerstandes behandelt, in dem auf die einfache
+zeitunabhängige Beziehung der Beiden hingewiesen wird. Die Beziehung zwischen
+Strom und Spannung eines Widerstandes ist :math:`V / I = R`, wobei
+:math:`R` real ist und in Ohm angegeben wird. Darau ergibt sich, dass die
+Spannung über, und der Strom in einem Widerstand immer in Phase sind. 
 
-Für Kondensatoren und Induktivitäten ist die Gleichung in Bezug auf
-Spannung :math:`V` zu aktuell :math:`I` ist ähnlich. :math:`V / I =
-Z`, wobei :math:`Z` ein ist komplexe Impedanz mit realen und
-imaginären Teilen. Wir schauen nur bei einem Kondensator in diesem
-Labor. 
+Für Kondensatoren und Induktivitäten ist die Gleichung bezüglich der Spannung :math:`V`
+zu Strom :math:`I` ähnlich. :math:`V/I=Z`, wobei :math:`Z` eine komplexe Impedanz mit Real- und Imaginärteilen ist.
+Wir sehen uns in diesem Labor nur einen Kondensator an. 
 
 
 Im Allgemeinen bestehen Kondensatoren aus zwei leitenden Platten,
@@ -135,7 +137,7 @@ entsteht somit ein elektrisches Feld zwischen den Platten.
 Dielektrika von Kondensatoren können aus vielen Materialien
 hergestellt werden, darunter dünne isolierende Schichten und Keramik.
 Das Unterscheidungsmerkmal eines Kondensators ist seine Kapazität (C),
-gemessen in Farads (F), die das Verhältnis zwischen Spannung und Ladungsaufbau misst.
+gemessen in Farads (F), die das Verhältnis zwischen Spannung und Ladung angibt.
  
 
 Die Grundregel für Kondensatoren ist, dass sich die Spannung am Kondensator nicht ändert, wenn kein Strom in den Kondensator fließt. Die Änderungsrate der Spannung (:math:`dv_C/dt`) ist abhängig von der Größe des Stroms. Für einen idealen Kondensator wird der Strom :math:`i_C(t)` durch die folgende Formel auf die Spannung bezogen:  
@@ -144,13 +146,14 @@ Die Grundregel für Kondensatoren ist, dass sich die Spannung am Kondensator nic
    i_C(t) = C \frac{dv_C(t)}{dt}
 
    
-Im Moment sind die vollen Auswirkungen davon außerhalb des Rahmens dieses Labors. Sie werden dieses Verhalten in späteren Labors beobachten. Die Impedanz eines Kondensators ist eine Funktion der Frequenz. Die Impedanz sinkt mit der Frequenz umgekehrt, je niedriger die Frequenz, desto höher die Impedanz. 
+An dieser Stelle wird auf die genaue Funktionsweise nicht weiter eingegangen. Sie werden die Verhaltensweisen dieses Bauelements in späteren Labors beobachten. Die Impedanz eines Kondensators ist eine Funktion der Frequenz. Die Impedanz sinkt mit steigender Frequenz, d.h je niedriger die Frequenz, desto höher die Impedanz. 
 
 Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
 
-Eine subtile Sache an Äquivalent (4) ist der imaginäre Operator :math:`j`. Wenn wir uns einen Widerstand ansehen, gibt es keinen imaginären Operator in der Gleichung für die Impedanz. Der sinusförmige Strom durch einen Widerstand und die Spannung an einem Widerstand haben keinen zeitlichen Versatz zwischen ihnen, da die Beziehung völlig real ist. Der einzige Unterschied besteht in der Amplitude. Die Spannung ist sinusförmig und steht in Phase mit dem Strom sinusförmig. Dies ist bei einem Kondensator nicht der Fall. Wenn wir die Wellenform einer sinusförmigen Spannung an einem Kondensator betrachten, wird sie im Vergleich zum Strom durch den Kondensator zeitlich verschoben. Der imaginäre Operator :math:`j` ist dafür verantwortlich. Betrachtet man Abb. 3, so kann man feststellen, dass die aktuelle Wellenform eine Spitze (maximal) hat, wenn die Steigung der Spannungswellenform (:math:`dv/dt`) maximal ist. 
+Eine wesentliche Eigenschaft von Gl. (4) ist der imaginäre Operator :math:`j`. Wenn wir uns einen Widerstand anschauen, gibt es keinen imaginären Operator in der Gleichung für die Impedanz. Der sinusförmige Strom durch einen Widerstand und die Spannung an einem Widerstand haben keinen zeitlichen Versatz zwischen ihnen, da die Beziehung völlig real ist. Der einzige Unterschied besteht in der Amplitude. Die Spannung ist sinusförmig und steht in Phase mit dem sinusförmigen Strom. Dies ist bei einem Kondensator nicht der Fall. Wenn wir die Wellenform einer sinusförmigen Spannung an einem Kondensator betrachten, wird sie im Vergleich zum Strom durch den Kondensator zeitlich verschoben. Dafür ist der imaginäre Operator :math:`j` verantwortlich. Betrachtet man Abb. 3, so kann man feststellen, dass die Stromwellenform eine Spitze (Maxima) aufweist, wenn die Steigung der Spannungswelle :math:`(dv/dt)` maximal ist.
+ 
 
-Die Zeitdifferenz kann als Phasenwinkel zwischen den beiden ausgedrückt werden. Wellenformen, wie in Gl. (2) definiert.
+Die Zeitdifferenz zwischen den beiden Wellen kann als Phasenwinkel ausgedrückt werden, wie in Gl. (2) definiert.
 
 .. figure:: img/Activity_01_Fig_03.png
    :align: center
@@ -158,28 +161,20 @@ Die Zeitdifferenz kann als Phasenwinkel zwischen den beiden ausgedrückt werden.
    Abbildung 3: Phasenwinkelbestimmung zwischen Spannung (V) und Strom (I).
 
    
-Sie haben wahrscheinlich Schaltungen gesehen, die vollständig aus
-Widerständen bestehen. Diese Schaltungen haben nur echte Impedanz, was
-bedeutet, dass Spannungen während der gesamten Schaltung sind alle in
-Phase (d.h. :math:`\theta = 0` Grad.), da es die komplexe Impedanz
-ist, die den Strom in der Zeit verschiebt in Bezug auf die
-Spannung. Beachten Sie, dass die Impedanz eines Kondensators 
-ist rein imaginär. Widerstände haben echte Impedanzen, also
-Shaltungen, die enthalten beide, Widerstände und Kondensatoren, werden
-komplexe Impedanzen haben. 
+Sie haben wahrscheinlich schon einmal Schaltungen gesehen, die vollständig aus Widerständen bestehen. Diese Schaltungen haben nur eine reale Impedanz, was bedeutet, dass die Spannungen in der gesamten Schaltung phasengleich sind (d.h :math:`θ=0` grad), da es die komplexe Impedanz ist, die den Strom in Bezug auf die Spannung zeitlich verschiebt. Beachten Sie, dass die Impedanz eines Kondensators rein imaginär ist. Widerstände haben reale Impedanzen, so dass Schaltungen, die sowohl Widerstände als auch Kondensatoren enthalten, komplexe Impedanzen aufweisen.
+ 
 
-Um den theoretischen Phasenwinkel zwischen Spannung (V) und Strom (I)
-in einer RC-Schaltung: 
+Um den theoretischen Phasenwinkel zwischen Spannung (V) und Strom (I) in einer RC-Schaltung zu berechnen, wird folgende Formel einngesetzt: 
 
 .. math::
    i(t) = \frac{v(t)}{Z_{tot}},
 
 
-wo :math:`Z_ {tot}` ist die Gesamtkreisimpedanz.
+wo :math:`Z_ {tot}` ist die Gesamtimpedaz der Schaltung ist.
 
-Ordne die Gleichung neu an, bis sie aussieht
-:math:`Z_ {tot} = a + jb`, wo :math:`a` und :math:`b` sind reelle
-Zahlen. Die Phasenbeziehung der Strom in Bezug auf die Spannung ist
+Stellen Sie die Gleichung soweit um, bis sie aussieht wie 
+:math:`Z_ {tot} = a + jb`, wobei :math:`a` und :math:`b` reelle
+Zahlen sind. Die Phasenbeziehung des Stroms zur Spannung ist
 dann: 
 
 .. math::
