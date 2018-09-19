@@ -13,7 +13,7 @@ Pitaya STEMlab Hardware und Software gewonnen werden.
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
 wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. 
@@ -315,14 +315,13 @@ Wir haben OUT1 direkt mit IN1 verbunden, so dass wir ein reales Spannungssignal 
 - Stellen Sie mit den vertikalen +/- Reglern  200 mV / div für IN1 und
   IN2 ein.
 
-Die Spannungswellenform, die in IN1 (gelb) angezeigt wird, ist die
-Spannung über beide Widerstände (V\ :sub:`R1` \+ V\ :sub:`R2`\). Die
-Wellenform der Spannung in IN2 ist die Spannung über nur R\ :sub:`2`
-\(V\ :sub:`R2` \). Um die Spannung über R\ :sub:`1` anzuzeigen,
-verwenden wir die Mathematische Wellenformanzeigeoptionen. Unter dem
-Mathemenü für Signal1. Wählen Sie IN1, wählen Sie den Operator "-",
-für Signal2 wählen Sie dann IN2 Wählen Sie Aktivieren. Sie sollten nun
-eine dritte Wellenform für die Spannung über R\ :sub:`1` \(V \ :sub:`R1` \).
+Die in IN1 (gelb) angezeigte Sinuswelle ist die Spannung an beiden Widerständen (V\ :sub:`R1` \+ V\ :sub:`R2`\). Die
+in IN2 dargestellte Sinuswelle ist die Spannung an nur R\ :sub:`2`\
+(V\ :sub:`R2` \). Um die Spannung über R\ :sub:`1` anzuzeigen,
+verwenden wir die Math-Funktion der Red Pitayas. Unter dem
+Mathe-Menü für Signal 1 wählen Sie IN1, wählen Sie den Operator "-",
+für Signal2 wählen Sie dann IN2. Nun aktivieren Sie Math. Sie sollten nun
+eine dritte Sinuswelle für die Spannung über R\ :sub:`1` \(V \ :sub:`R1` \).
 
 - Mit den vertikalen +/- Reglern setzen Sie 200 mV / div (0,2 V / div)
   für MATH Spur.
@@ -338,35 +337,25 @@ Mit diesen Einstellungen beobachtest du:
 
 - Notiere V\ :sub:`R1` \ und V\ :sub:`R2` \.
 
-- V\ :sub:`R1` \ _______ V\ :sub:`pp` \.
+  - V\ :sub:`R1` \ _______ V\ :sub:`pp` \.
 
-- V\ :sub:`R2` \ _______ V\ :sub:`pp` \.
+  - V\ :sub:`R2` \ _______ V\ :sub:`pp` \.
 
-- V\ :sub:`R1` \ + V\ :sub:`R2` \ _______ V\ :sub:`pp` \.
+  - V\ :sub:`R1` \ + V\ :sub:`R2` \ _______ V\ :sub:`pp` \.
 
-- Können Sie einen Unterschied zwischen den Nulldurchgängen von V
+- Können Sie einen Unterschied zwischen den Nulldurchgängen von V\ :sub:`R1` \ und V\ :sub:`R1` \
   sehen?
-
-
-  - Können Sie sogar zwei unterschiedliche Sinuswellen sehen?
+  
+- Können Sie sogar zwei unterschiedliche Sinuswellen sehen?
 
     Wahrscheinlich nicht. Es sollte keinen beobachtbaren Zeitversatz geben
     und somit keine Phasenverschiebung.
 
-Sie können sehen, dass MATH (lila) und IN2 (grün) Spur sind
-überlappend. Um beide Spuren zu sehen, können Sie die vertikale
-Position einstellen eines Kanals, um sie zu trennen.
+Sie sehen, dass sich die MATH- (lila) und IN2- (grün) Kurven überlappen. Um beide Spuren zu sehen, können Sie die vertikale Position eines Kanals verschieben, um sie zu trennen.
 
-Dies kann durch Auswahl von Trace Marker (auf der linken Seite der
-Raster) mit der linken Maustaste und dem Verschieben der Spur von oben
-nach unten. Stellen Sie sicher, dass Setzen Sie die vertikale Position
-zurück auf 0, um die Signale neu auszurichten. 
+Dies geschieht, indem Sie den Leiterbahnmarker (auf der linken Seite des Gitters) mit der linken Maustaste auswählen und die Leiterbahn nach oben/unten bewegen. Stellen Sie sicher, dass Sie die vertikale Position wieder auf 0 setzen, um die Signale neu auszurichten. 
 
-Hier haben wir keine Phasenverschiebung und keinen Wert von
-R\ :sub:`1`\ = R\ :sub:`2` \ so die Signalamplituden für
-V\ :sub:`R1`\ und V\ :sub:`R2` \ wird dasselbe sein. Das Ergebnis ist,
-dass wir zwei identische haben Signale (IN2 = V \: sub: `R2` \, MATH =
-V \: sub:` R1` \) auf der Oszilloskop.
+Hier haben wir keine Phasenverschiebung, da Wert von R\ :sub:`1`\ = R\ :sub:`2`\ , so dass die Signalamplituden für VR1 und VR2 gleich sind. Das Ergebnis ist, dass wir zwei identische Signale (IN2=V\ :sub:`R2`\, MATH=V\ :sub:`R1`)` auf dem Oszilloskop haben.
 
 
 Was passiert, wenn du folgendes verwendest :math:`220 \ Omega` Wert für R \: sub:` 2` \?
