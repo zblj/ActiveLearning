@@ -192,50 +192,37 @@ dann:
 
 **Oszilloskop & Signalgenerator**
 
-.. _quickstart: http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Quickstart: http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html
+.. _hier: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 
-Sie werden das STEMlab-Board von Red Pitaya und das Oszilloskop
-verwenden & Signalgenerator-Anwendung. Bedienungsanleitung für den
-Start der Red Pitaya STEMlab Board kann bei quickstart_ gefunden
-werden, während Oscilloscope & Signal Generator-Anwendung wird here_
-erläutert.
+Sie werden das STEMlab-Board von Red Pitaya und die Anwendung Oszilloskop & Signalgenerator verwenden. Eine Anleitung zum Starten des Red Pitaya STEMlab-Boards finden Sie unter Quickstart_, während die Anwendung des Oszilloskops und des Signalgenerators hier_ erläutert wird.
 
 
 
 Lehrziele
 ---------
 
-1. Erforschen Sie die Phasenbeziehung von Spannungen in einer
+1. Untersuchen Sie die Phasenbeziehung von Spannungen in einer
    Widerstandsschaltung. 
 
-2. Erforschen Sie die Phasenbeziehung von Spannungen in einem
+2. Untersuchen Sie die Phasenbeziehung von Spannungen in einem
    RC-Kreis. 
 
    
 
 Verfahren
 ---------
+- Stellen Sie sicher, dass das STEMlab an ein lokales Netzwerk angeschlossen ist und starten Sie die Webschnittstelle über den Webbrowser.
+  
+- Starten Sie die Anwendung Oszilloskop & Signalgenerator. Der Hauptbildschirm sollte wie eine Scope-Anzeige mit einstellbaren Bereichs-, Positions- und Messparametern aussehen. 
 
-- Starten Sie die Anwendung Oszilloskop und Signalgenerator. Die
-  Hauptsache Der Bildschirm sollte wie ein Oszilloskop mit
-  einstellbarer Reichweite aussehen. Positions- und Messparameter. 
+- Stellen Sie am linken unteren Bildschirmrand sicher, dass OUT1 V/div und OUT2 V/div beide auf 200 mV/div eingestellt sind (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden).  
 
-- Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-  dass OUT1 V/div und OUT2 V/div sind beide auf 200 mV/div gesetzt
-  (Sie können V/div einstellen, indem Sie die Taste gewünschter Kanal
-  und vertikale +/- Regler). 
+- Stellen Sie im Menü (Steuerrad) von  OUT1 die Frequenz auf 1000 Hz, die Phase auf 0∘ und Amplitude auf 0,9 V  ein. Wählen Sie die Sinuswellenform und aktivieren Sie die Ausgabe. 
 
-- Stellen Sie im OUT1-Steuermenü die Frequenz von OUT1 mit auf 1000 Hz
-  ein :math:`0^{\circ}` Phase und 0,9 V Amplitude. Wählen Sie
-  Sinus-Wellenform Form und Ausgabe aktivieren. 
+- Stellen Sie im Menü (Steuerrad) von OUT2 die Frequenz auf 1000 Hz und die Amplitude auf 0,9 V ein. Wählen Sie die Sinuswellenform und aktivieren Sie die Ausgabe. 
 
-- Stellen Sie im OUT2-Steuermenü die Frequenz von OUT2 auf 1000 Hz und
-  ein 0,9 V Amplitude. Wählen Sie SINE Wellenform und aktivieren Sie
-  die Ausgabe. 
-
-- Setzen Sie t/div auf 200 us/div (mit horizontalen +/-
-  Kontrollen). 
+- Setzen Sie t/div auf 200 us/div (mit horizontalen +/- Regler). 
 
   
 .. figure:: img/Activity_01_Fig_04.png
@@ -248,22 +235,16 @@ Verfahren
 
 Messen Sie den Phasenwinkel zwischen zwei generierten Wellenformen:
 
-Von den vorherigen Einstellungen sollten Sie sehen, was wie 1 Sinus aussieht
-Welle. Es gibt zwei nur eins ist übereinander - Nullphase Winkel!
+Aufgrund der vorhergegangenen Einstellungen sollten Sie "nur eine" Sinuswelle sehen. Tatsächlich gibt es zwei Sinuswellen, die Aufgrund von Nullphasenwinkel übereinander liegen und nach einer aussehen. 
 
-- Ändern Sie im OUT1-Steuermenü die Phase in :math:`90 ^ {\ circ}`.
+- Ändern Sie im OUT1-Steuermenü die Phase auf :math:`90 ^ {\ circ}`.
 
-- Ändern Sie im OUT2-Steuermenü die Phase in :math:`135 ^ {\ circ}`.
+- Ändern Sie im OUT2-Steuermenü die Phase auf :math:`135 ^ {\ circ}`.
 
-- Welcher Kanal sieht aus wie der Sinus vor dem anderen auftritt?
+- Auf welcher Kanal sieht so aus, als ob der Sinus vor dem anderen steht?
 
 
-Das OUT2 - Signal sollte so aussehen, als ob es vorausgeht (passiert)
-OUT1-Signal. Das OUT2 Signal kreuzt die 0 V Achse von unten nach oben
-vor dem OUT1-Signal. Es ergibt sich ein positives: Mathe: `Theta` ist
-eine Phasenführung genannt. Der Referenzpunkt für die Überfahrt von
-niedrig zu hoch ist willkürlich. Die Hoch-Tief-Kreuzung könnte
-ebenfalls verwendet werden.
+Das OUT2-Signal sollte so aussehen, als ob es das OUT1-Signal anführt (vorläuft). Das Signal OUT2 durchquert die 0-V-Achse (x-Achse) von unten nach oben vor dem Signal OUT1. Es stellt sich heraus, dass eine positive :math:`θ` als Phasenleitung bezeichnet wird. Der Referenzpunkt für die niedrige bis hohe Übergangszeit ist beliebig. Der hohe zu niedrige Übergang könnte ebenfalls genutzt werden.
 
 
 .. figure:: img/Activity_01_Fig_05.png
@@ -273,16 +254,16 @@ ebenfalls verwendet werden.
    Phasendifferenz.
 
 - Ändern Sie die Phase von OUT2 zu :math:`45 ^ {\ circ}`. Jetzt sieht
-  es so aus, als ob das CHB-Signal dem CHA-Signal nacheilt. 
+  es so aus, als ob das OUT2-Signal dem OUT1-Signal nacheilt. 
 
 - Drücken Sie die rote STOP-Taste, um die Erfassung des Oszilloskops
   anzuhalten. 
 
 - Wählen Sie das Menü "CURSOR" und aktivieren Sie die Cursor X1 und X2.
 
-- Mit horizontalen +/- Kontrollen Zeit auf 100 us / div.
+- Mit horizontalen +/- Regler die Zeit auf 100 us / div stellen.
 
-- Mit der Maus und der linken Maustaste halten Sie die
+- Mit der linken Maustaste halten Sie die
   Cursormarkierung gedrückt (weißer Pfeil am Ende der Cursorlinie)
   setze eine Cursorposition so, dass Cursorlinie durch den Punkt, an
   dem OUT1 die 0V-Linie kreuzt.
@@ -291,7 +272,7 @@ ebenfalls verwendet werden.
 Wiederholen Sie den Schritt für den zweiten Cursor und das
 OUT2-Signal.
 
-- Auslesen des Zeitunterschieds zwischen den Cursorn.
+- Lesen Sie die Zeitdifferenz zwischen den Cursorn ab.
 
 - Was ist :math:`\Delta t`?
 
@@ -299,12 +280,7 @@ OUT2-Signal.
   Phase zu berechnen Offset :math:`\theta` in Grad.
 
 
-Beachten Sie, dass Sie die Frequenz eines Signals, das nicht vorhanden
-ist, nicht messen können Mindestens eine volle Periode wird auf dem
-Bildschirm angezeigt. Normalerweise brauchst du mehr als zwei Zyklen,
-um konsistente Ergebnisse zu erhalten. Du erzeugst das Frequenz, so
-dass Sie bereits wissen, was es ist. Sie müssen nicht messen es in
-diesem Teil des Labors. 
+Beachten Sie, dass Sie die Frequenz eines Signals nicht messen können, bei dem nicht mindestens eine volle Periode auf dem Bildschirm angezeigt wird. Normalerweise benötigen Sie mehr als zwei Zyklen, um konstante Ergebnisse zu erzielen. Sie erzeugen ein Sinussignal mit einer, von Ihnen, vorgegeben Frequenz. Sie müssen diese in diesem Teil des Labors nicht messen. 
 
 
 3. Messung der Größe mit einer realen Schaltung.
@@ -314,12 +290,10 @@ diesem Teil des Labors.
 
    Abbildung 6: R-R-Schaltung.
 
-Baue die in Abb. 5 gezeigte Schaltung auf deinem lötfreien Steckbrett
-mit zwei :math:`470 \ Omega` Widerstände, Oszilloskop-Sonden und Red
-Pitaya STEMlab Board.
+Bauen Sie die in Abb. 5 gezeigte Schaltung auf Ihrer lötfreien Leiterplatte mit zwei :math:`470 \Omega` Widerständen, Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.
 
 
-HINWEIS: Verwenden Sie für Erdungsstifte Erdungskabel (Krokodilstecker).
+HINWEIS: Verwenden Sie für Erdungs-Pin Erdungskabel des Messspitzen (Krokodilstecker).
 
 
 .. figure:: img/Activity_01_Fig_07.png
@@ -328,24 +302,18 @@ HINWEIS: Verwenden Sie für Erdungsstifte Erdungskabel (Krokodilstecker).
    Abbildung 7: R-R-Schaltung auf dem Steckbrett.
 
 
-Wir haben OUT1 direkt mit IN1 verbunden, damit wir ein Reales
-beobachten können Spannungssignal über die Widerstände R\ :sub:`1`\
-und R\ :sub:`2`\. 
+Wir haben OUT1 direkt mit IN1 verbunden, so dass wir ein reales Spannungssignal über die Widerstände R1\ :sub:`1`\ und R2\ :sub:`2`\ beobachten können. 
 
 
-- Stellen Sie im OUT1-Steuermenü die Frequenz mit 0 ° auf 200 Hz ein
-  Phase und 0,9 V Amplitude. Deaktivieren Sie die Schaltfläche
-  "Anzeigen" und wählen Sie SINE Wellenform und wählen Sie
-  "ON"-Taste. 
+- Stellen Sie im Menü OUT1 die Frequenz auf 200 Hz mit 0° Phase und 0,9 V Amplitude ein. Deaktivieren Sie die Taste "Show", wählen Sie SINE als Wellenform und aktivieren Sie die Taste "ON". 
 
-- Stellen Sie die horizontale Zeitskala auf 1,0 mS / Div ein, um zwei
-  Zyklen anzuzeigen die Wellenform.
+- Stellen Sie die horizontale Zeitskala auf 1,0 mS/Div ein, um zwei Zyklen der Wellenform anzuzeigen.
 
 - Klicken Sie auf die Schaltfläche Start, wenn sie nicht bereits
   ausgeführt wird. 
 
-- Mit den vertikalen +/- Reglern setzen Sie 200 mV / div für IN1 und
-  IN2 
+- Stellen Sie mit den vertikalen +/- Reglern  200 mV / div für IN1 und
+  IN2 ein.
 
 Die Spannungswellenform, die in IN1 (gelb) angezeigt wird, ist die
 Spannung über beide Widerstände (V\ :sub:`R1` \+ V\ :sub:`R2`\). Die
