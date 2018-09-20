@@ -1,13 +1,13 @@
 MOS transistor common source amplifier
-#######################################
+######################################
 
 Objective
-__________
+_________
 
 The purpose of this experimentis to investigate the common source configuration of the MOS transistor. 
 
 Notes
-______
+_____
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
