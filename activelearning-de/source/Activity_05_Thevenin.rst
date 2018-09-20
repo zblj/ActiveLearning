@@ -20,7 +20,7 @@ In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wen
 Hintergrund
 ___________
 
-Das Thévenin-Theorem ist ein Prozess, bei dem eine komplexe Schaltung auf eine Ersatzschaltung reduziert wird, die aus einer einzelnen Spannungsquelle (V\ :sub:`TH`\) in Reihe mit einem einzelnen Widerstand (R\ :sub:`TH`\) und einem Lastwiderstand (R\ :sub:`L`\) besteht. Nach dem Erstellen des Thévenin-Equivalenzschaltkreises kann die Lastspannung V\ :sub:`L`\ oder der Laststrom Il leicht bestimmt werden. 
+Das Thévenin-Theorem ist ein Prozess, bei dem eine komplexe Schaltung auf eine Ersatzschaltung reduziert wird, die aus einer einzelnen Spannungsquelle (V\ :sub:`TH`\) in Reihe mit einem einzelnen Widerstand (R\ :sub:`TH`\) und einem Lastwiderstand (R\ :sub:`L`\) besteht. Nach dem Erstellen des Thévenin-Equivalenzschaltkreises kann die Lastspannung V\ :sub:`L`\ oder der Laststrom I\ :sub:`L`\ leicht bestimmt werden. 
 
 Eine der Hauptanwendungen des Thévenin-Theorems ist es, einen großen Teil einer Schaltung, oft ein komplizierteres und uninteressanteres Teil, durch ein einfaches Äquivalent zu ersetzen. Die neue einfachere Schaltung ermöglicht eine schnelle Berechnung von Spannung, Strom und Leistung, die die kompliziertere Originalschaltung an eine Last liefern kann. Es hilft auch, den optimalen Wert der Last (Widerstand) für die maximale Leistungsübertragung zu wählen. 
 
@@ -32,7 +32,7 @@ Eine der Hauptanwendungen des Thévenin-Theorems ist es, einen großen Teil eine
 
 	Abbildung 2: Thévenin-Äquivalenzschaltung von Figur 1
 
-2. Der Maximum Power Transfer Theorem besagt, dass eine unabhängige Spannungsquelle in Reihe mit einem Widerstand R\:`s`\ oder eine unabhängige Stromquelle parallel zu einem Widerstand Rs eine maximale Leistung an den Lastwiderstand R\ :sub:`L`\ liefert, wenn R\ :sub:`L`\ = R\ :sub:`s`\.
+2. Der Maximum Power Transfer Theorem besagt, dass eine unabhängige Spannungsquelle in Reihe mit einem Widerstand R\ :sub:`s`\ oder eine unabhängige Stromquelle parallel zu einem Widerstand R\ :sub:`s`\ eine maximale Leistung an den Lastwiderstand R\ :sub:`L`\ liefert, wenn R\ :sub:`L`\ = R\ :sub:`s`\.
 
 In Form einer Thévenin-Äquivalenzschaltung wird die maximale Leistung an den Lastwiderstand R\ :sub:`L`\ abgegeben, wenn R\ :sub:`L`\ gleich dem Thévenin-Äquivalenzwiderstand R\ :sub:`TH`\ der Schaltung ist.
 
@@ -64,7 +64,7 @@ ______________
 
 1. Überprüfung des Thévenin-Theorems:
 
-a) Konstruieren Sie die Schaltung aus Figur 1 mit den folgenden Komponentenwerten:
+a) Bauen Sie die Schaltung aus Abbildung 1 mit den folgenden Komponentenwerten:
  
 R1 = 330 Ω
  
@@ -83,13 +83,13 @@ Vs = +3.3V
 .. note:: 
 	Verwenden Sie anstelle der in Abbildung 1 dargestellten Spannungsquelle "V\ :sub:`s`\" den STEMlab-Spannungsstift am Erweiterungsstecker E1_. 
 
-b) Messen Sie die Spannung V\ :sub:`L`\ über den Lastwiderstand mit Hilfe der Oszilloskopanwendung genau. Oszilloskop-Sondendämpfung einstellen x10 Oszilloskopanwendung starten und im Einstellungsmenü IN1 und IN2 die Sondendämpfung auswählen x10
+b) Messen Sie die Spannung V\ :sub:`L`\ über den Lastwiderstand mit Hilfe der Oszilloskopanwendung. Oszilloskop-Sondendämpfung x10 einstellen, Oszilloskopanwendung starten und im Einstellungsmenü IN1 und IN2 die Sondendämpfung auswählen x10
 
 
-      Verwenden Sie die Oszilloskop-Anwendung, indem Sie den Kanal IN1 mit dem + Knoten von V\ :sub:`L`\ verbinden und den Kanal IN2 mit dem - Knoten verbinden. V\ :sub:`L`\ wird der Unterschied zwischen IN1 Volt und IN2 Volt sein. Dieser Wert wird später mit dem Wert verglichen, den Sie bei Verwendung von Thevenin Equivalent finden.
+      Verwenden Sie die Oszilloskop-Anwendung, indem Sie den Kanal IN1 mit dem + Knoten von V\ :sub:`L`\ verbinden und den Kanal IN2 mit dem - Knoten verbinden. V\ :sub:`L`\ ist die Differenz zwischen IN1 Volt und IN2 Volt. Dieser Wert wird später mit dem Wert verglichen, den Sie bei Verwendung von Thevenin Equivalent finden.
 
 
-c) Finde V\ :sub:`TH`\: Entfernen Sie den Lastwiderstand R\ :sub:`L`\ und messen Sie die Leerlaufspannung VOC an den Klemmen. Verwenden Sie die Oszilloskop-Anwendung, indem Sie den Kanal IN1 mit dem + Knoten von V\ :sub:`OC`\ verbinden und den Kanal IN2 mit dem - Knoten verbinden. V\ :sub:`OC`\ wird der Unterschied zwischen IN1 Volt und IN2 Volt sein. Das ist gleichbedeutend mit V\ :sub:`TH`\. Siehe Abbildung 4
+c) Ermittlung von V\ :sub:`TH`\: Entfernen Sie den Lastwiderstand R\ :sub:`L`\ und messen Sie die Leerlaufspannung VOC an den Klemmen. Verwenden Sie die Oszilloskop-Anwendung, indem Sie den Kanal IN1 mit dem + Knoten von V\ :sub:`OC`\ verbinden und den Kanal IN2 mit dem - Knoten verbinden. V\ :sub:`OC`\ wird die Differenz zwischen IN1 Volt und IN2 Volt sein. Das ist gleichbedeutend mit V\ :sub:`TH`\. Siehe Abbildung 4
 
 .. note:: 
 	Um die Spannungswerte von IN1 und IN2 zu erhalten, wählen Sie das Menü MEAS, wählen Sie MEAN value und wählen Sie DONE.
@@ -99,14 +99,14 @@ c) Finde V\ :sub:`TH`\: Entfernen Sie den Lastwiderstand R\ :sub:`L`\ und messen
 	
 	Abbildung 4: Messung der Thevenin-Spannung
 
-d) Finde R\ :sub:`TH`\: Entfernen Sie die Quellspannung Vs und bauen Sie die Schaltung wie in Abbildung 5 dargestellt auf. Verwenden Sie das Multimeter, um den Widerstand zu messen, indem Sie in die Öffnung schauen, wo R\ :sub:`L`\ war. Das gibt R\ :sub:`TH`\. Vergewissern Sie sich vor der Messung mit dem Multimeter, dass keine Spannung an den Stromkreis angelegt ist und der Erdungsanschluss wie dargestellt bewegt wurde.
+d) Wenn Sie V\ :sub:`TH`\ und R\ :sub:`TH`\ erhalten, bauen Sie die Schaltung von Figur 2 auf. Erstellen Sie den Wert von Rrh mit einer seriellen und/oder parallelen Kombination von Widerständen aus Ihrem Bausatz.
 
 
 .. figure::  img/Activity_05_Fig_05.png
 
 	Abbildung 5: Messung des Thevenin-Widerstandes R\ :sub:`TH`\. 
 	
-e) Erhalten von V\:sub:`TH`\ und R\ :sub:`TH`\, Konstruieren der Schaltung von Figur 2. Schaffen Sie den Wert von R\:sub:`rh`\ mit einer Serien- und/oder Parallelkombination von Widerständen aus Ihrem Bausatz. 
+e) Erhalten von V\ :sub:`TH`\ und R\ :sub:`TH`\, Konstruieren der Schaltung von Figur 2. Schaffen Sie den Wert von R\ :sub:`rh`\ mit einer Serien- und/oder Parallelkombination von Widerständen aus Ihrem Bausatz. 
 
 Verwenden Sie die Anwendung Oszilloskop & Signalgenerator - verbinden Sie Kanal OUT1 mit der Quelle V\ :sub:`TH`\. Wählen Sie im Menü OUT1-Einstellungen die Signalwellenform "DC" und stellen Sie im Feld Amplitude den Wert auf das ein, was Sie für V\ :sub:`TH`\ in Schritt c) gemessen haben.
 Wählen Sie die Schaltfläche "Enable". 
@@ -132,11 +132,13 @@ R\ :sub:`3`\ = 1 KΩ
 
 R\ :sub:`L`\ = Kombinationen von 1 KΩ und 100 Ω Widerständen (Abbildung 8)
 
+
 .. figure::  img/Activity_05_Fig_07.png
 
 Abbildung 8. Rl-Konfigurationen
 
-d) Berechnen Sie die Leistung für jeden Lastwiderstandswert mit;
+
+d) Berechnen Sie die Leistung für jeden Lastwiderstandswert mit 
 
 .. math::
    	P_L = \frac{V_L^{2}}{R_L}
@@ -148,7 +150,7 @@ _________
 
 1. Berechnen Sie die prozentuale Fehlerdifferenz zwischen den für die Schaltungen von Figur 1 und Figur 2 erhaltenen Lastspannungen.
 2. Verwenden Sie die Spannungsteilung für den Stromkreis von Figur 2, berechnen Sie V\ :sub:`L`\. Vergleichen Sie es mit den Messwerten. Erklären Sie eventuelle Unterschiede.
-3. Berechnen Sie die maximale Leistung, die auf die Last Rl übertragen wird, die für die Schaltung in Figur 3 erhalten wurde.
+3. Berechnen Sie die maximale Leistung, die auf die Last R\ :sub:`L`\ übertragen wird, die für die Schaltung in Figur 3 erhalten wurde.
 
 
 
