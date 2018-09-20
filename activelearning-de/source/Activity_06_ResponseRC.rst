@@ -117,7 +117,7 @@ Zum Beispiel: Wenn wir die Impulsbreite Ihres OUT1-Quadratsignals gleich 5 * :ma
 
 .. math::
 
-	\tau = R \cdot C = 2.2E3 \cdot 1E-6 = 2.2E-3-3
+	\tau = R \cdot C = 2.2E^3 \cdot 1E^-6 = 2.2E^-3
 
 .. math::
 
