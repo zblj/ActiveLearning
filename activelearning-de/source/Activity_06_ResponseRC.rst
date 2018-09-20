@@ -42,10 +42,10 @@ Das Verhältnis zwischen Impulsbreite und Frequenz wird dann durch,
 
 Abbildung 1: RC-Beschaltung der Serie.
 
-Aus den Kirchhoffschen Gesetzen lässt sich nachweisen, dass die Ladespannung V\ :sub:`C`\ (t) über dem Kondensator durch gegeben ist als: 
+Aus den Kirchhoffschen Gesetzen lässt sich nachweisen, dass die Ladespannung V\ :sub:`C`\ (t) über dem Kondensator gegeben ist als: 
 
 .. math::	
-	V_C (t) = V( 1- e^{- \frac{t}{RC}}) t >= 0 
+	V_C (t) = V( 1- e^{- \frac{\tau}{RC}}) t >= 0 
 
 wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist, RC = :math:`\tau` die Zeitkonstante ist. Die Ansprechkurve nimmt zu und ist in Abbildung 2 dargestellt. 
 
@@ -57,7 +57,7 @@ Die Entladungsspannung für den Kondensator wird durch die folgende Gleichung an
 
 .. math::
 
-	V_C (t) = V_o e^{-\frac{t}{RC}} ;t >= 0 
+	V_C (t) = V_o e^{-\frac{\tau}{RC}} ;t >= 0 
 
 Dabei ist V\ :sub:`0`\ die im Kondensator gespeicherte Anfangsspannung bei t = 0 und RC = :math:`\tau` die Zeitkonstante. Die Reaktionskurve ist eine abnehmende Exponentialfunktion, wie in Abbildung 3 dargestellt. 
 
@@ -104,20 +104,20 @@ Für die stabile Aufnahme stellen Sie den Triggerpegel im TRIGGER-Menü auf 0,5V
 
 3. Beobachten Sie das Verhalten der Schaltung in den folgenden drei Fällen und notieren Sie die Ergebnisse. 
 
-a. Impulsbreite größer als 5t (z.B. 15t): Stellen Sie die Frequenz des Ausgangs OUT1 so ein, dass der Kondensator bei jedem Zyklus der Rechteckwelle genügend Zeit zum vollständigen Laden und Entladen hat. Lassen Sie also die Impulsbreite 15t betragen und stellen Sie die Frequenz nach Gleichung (2) ein. Der von Ihnen gefundene Wert sollte etwa 15 Hz betragen. 
+a. Impulsbreite größer als 5 :math:`\tau` (z.B. 15 :math:`\tau`): Stellen Sie die Frequenz des Ausgangs OUT1 so ein, dass der Kondensator bei jedem Zyklus der Rechteckwelle genügend Zeit zum vollständigen Laden und Entladen hat. Lassen Sie also die Impulsbreite 15 :math:`\tau` betragen und stellen Sie die Frequenz nach Gleichung (2) ein. Der von Ihnen gefundene Wert sollte etwa 15 Hz betragen. 
 
-Hinweis: Berechnen Sie die Frequenz von OUT1, so dass die Impulsbreite von OUT1 gleich dem Sollwert von x*t nach Gl.2 ist:
-
-.. math::
-
-	f_out = \frac{1}{2 \cdot x \cdot t} 
-
-Zum Beispiel: Wenn wir die Impulsbreite Ihres OUT1-Quadratsignals gleich 5*t haben wollen. 
-(t - Zeitkonstante des RC-Kreises t = R * C)
+Hinweis: Berechnen Sie die Frequenz von OUT1, so dass die Impulsbreite von OUT1 gleich dem Sollwert von x * :math:`\tau` nach Gl.2 ist:
 
 .. math::
 
-	t = R \cdot C = 2.2E3 \cdot 1E-6 = 2.2E-3-3
+	f_out = \frac{1}{2 \cdot x \cdot \tau} 
+
+Zum Beispiel: Wenn wir die Impulsbreite Ihres OUT1-Quadratsignals gleich 5 * :math:`\tau` haben wollen. 
+(:math:`\tau` - Zeitkonstante des RC-Kreises :math:`\tau` = R * C)
+
+.. math::
+
+	\tau = R \cdot C = 2.2E3 \cdot 1E-6 = 2.2E-3-3
 
 .. math::
 
@@ -143,23 +143,23 @@ Um die Cursor genauer einzustellen, stellen Sie die Zeitbasis ein, bis Sie etwa 
 
 .. figure:: img/Activity_06_Fig_07.png
 
-Abbildung 7: Messung der Zeitkonstante t für OUT1 Impulsbreite >> 5t . 
+Abbildung 7: Messung der Zeitkonstante :math:`\tau` für OUT1 Impulsbreite >> 5 :math:`\tau`. 
 
 Setzen Sie den Cursor wie in Abbildung 2 dargestellt, indem Sie die Deltawerte auslesen und die Zeitkonstante berechnen.
 
 
-b. Impulsbreite = 5t: Stellen Sie die Frequenz von OUT1 so ein, dass die Impulsbreite = 5t (dies sollte etwa 45 Hz sein) beträgt. Da die Impulsbreite 5t beträgt, sollte der Kondensator bei jedem Impulszyklus nun vollständig auf- und abgeladen werden können. Mit dem Cursor-Tool bestimmen t.
+b. Impulsbreite = 5 :math:`\tau`: Stellen Sie die Frequenz von OUT1 so ein, dass die Impulsbreite = 5 :math:`\tau` (dies sollte etwa 45 Hz sein) beträgt. Da die Impulsbreite 5 :math:`\tau` beträgt, sollte der Kondensator bei jedem Impulszyklus nun vollständig auf- und abgeladen werden können. Mit dem Cursor-Tool bestimmen t.
 
 .. figure:: img/Activity_06_Fig_08.png
 
 Abbildung 8: Messung der Zeitkonstante t für OUT1 Impulsbreite = 5t
 
 
-c. Impulsbreite kleiner als 5t (z.B. 1t): In diesem Fall hat der Kondensator keine Zeit zum Aufladen, bevor er auf Entladung geschaltet wird, und umgekehrt. Die Impulsbreite soll in diesem Fall nur 1,0t betragen und die Frequenz entsprechend eingestellt werden (diese sollte ca. 240 Hz betragen). 
+c. Impulsbreite kleiner als 5 :math:`\tau` (z.B. 1 :math:`\tau`): In diesem Fall hat der Kondensator keine Zeit zum Aufladen, bevor er auf Entladung geschaltet wird, und umgekehrt. Die Impulsbreite soll in diesem Fall nur 1 :math:`\tau` betragen und die Frequenz entsprechend eingestellt werden (diese sollte ca. 240 Hz betragen). 
 
 .. figure:: img/Activity_06_Fig_09.png
 
-Abbildung 9: Messung der Zeitkonstante t für OUT1 Impulsbreite = 1t
+Abbildung 9: Messung der Zeitkonstante t für OUT1 Impulsbreite = 1 :math:`\tau`
 
 
 4. Wiederholen Sie den Vorgang mit R\ :sub:`1`\ = 10 KΩ und C\ :sub:`1`\= 0,01 µF und notieren Sie die Messungen.
