@@ -1,48 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 BJT gemeinsamer Emitterverstärker
 =================================
 
@@ -56,10 +11,10 @@ Anmerkungen
 -----------
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch
@@ -76,7 +31,9 @@ Hintergrund
 -----------
 
 Die Konfiguration, die in Fig. 1 gezeigt ist, zeigt einen npn-Transistor
-als ein gemeinsamer Emitterverstärker verwendet. Ausgangslastwiderstand :math:`R_L` ist so gewählt, dass für den gewünschten Nennkollektorstrom
+als ein gemeinsamer Emitterverstärker
+verwendet. Ausgangslastwiderstand :math:`R_L` ist so gewählt, dass für
+den gewünschten Nennkollektorstrom
 :math:`I_C`, ungefähr ein Drittel der +5 V Spannung (1,6 V)
 erscheint bei :math:`V_ {CE}` (bei DC-Betriebspunktbedingung). Widerstand
  :math:`R_B` legt den Betriebspunkt für die nominale Vorspannung für die
@@ -84,9 +41,10 @@ Transistor (Basisstrom :math:`I_B`), um den erforderlichen Kollektor zu versenke
 aktuell :math:`I_C`. Das Eingangssignal ist AC-gekoppelt mit der Basis von
 der Transistor mit Kondensator :math:`C_1`, um die DC-Vorspannung nicht zu stören
 Bedingungen**. Spannungsteiler :math:`\ frac {R_1} {R_2}` wird gewählt
-einen selbst vorgespannten DC-Arbeitspunkt bereitstellen. Widerstand :math:`R_E` wird verwendet
-Emitterdegeneration (Stromrückkopplung) hinzufügen, um sich zu stabilisieren
-der DC-Arbeitspunkt.
+einen selbst vorgespannten DC-Arbeitspunkt bereitstellen. Widerstand
+:math:`R_E` wird verwendet Emitterdegeneration (Stromrückkopplung)
+hinzufügen, um sich zu stabilisieren der DC-Arbeitspunkt.
+
 
 Der beste Ansatz für die Auswahl von :math:`R_L` und :math:`R_E`
 ist es, Spannungsabfälle quer zu ermöglichen :math:`Q_1`, :math:`R_L` und
@@ -103,6 +61,7 @@ des Ausgangssignals.
 .. _2N3904: https://www.sparkfun.com/datasheets/Components/2N3904.pdf
 .. _Der Signalpfad: https://www.youtube.com/watch?v=Y2ELwLrZrEM&t=1213s
 
+
 .. note::
     Wie man einen Common-Emitter-Verstärker entwickelt, wird in a gut erklärt
     Video-Tutorial zum `The Signal Path`_ Youtube-Kanal.
@@ -110,8 +69,9 @@ des Ausgangssignals.
 
 .. figure:: img/ Activity_26_Fig_1.png
 
-Abbildung 1: Gemeinsame Emitter-Verstärker-Konfiguration
+   Abbildung 1: Gemeinsame Emitter-Verstärker-Konfiguration
 
+   
 
 Schnelle Berechnung des gemeinsamen Emitterverstärkers
 ------------------------------------------------------
@@ -161,8 +121,8 @@ Es folgt:
       
    A = \ beta \ frac {R_L} {R_B} \ quad (5)
 
-In diesem Schritt müssen wir ** aktuelle Bewertungen unseres Verstärkers einstellen **
-d. h. wir müssen wählen :math:`I_C` um zu berechnen :math:`R_L`.
+In diesem Schritt müssen wir **aktuelle Bewertungen unseres Verstärkers einstellen**
+d.h. wir müssen wählen :math:`I_C` um zu berechnen :math:`R_L`.
 
 Lass uns setzen :math:`I_C = 5 mA`, dann
  
@@ -177,16 +137,17 @@ Um Gl. (2) Daraus folgt:
 
    R_E = R_L, \ quad \ text {d. H.} \ Quad R_E = \ frac {V_ {R_L}} {I_C} = 320 \ Omega. \ quad (7)
 
+   
 Jetzt können wir berechnen :math:`R_ {in}`, d. H . :math:`R_ {B}` Wert als:
-
 
 .. math::
 
    R_ {B} = \ Betafrac {R_L} {A} = 100 \ Frac {320 \ Omega} {5} = 6.4k \ Omega. \ quad (8)
 
 
-Der letzte Schritt besteht darin, Werte von DC-Vorspannungswiderständen zu berechnen
- :math:`R_1` und :math:`R_2`. :math:`R_2` kann erhalten werden von
+Der letzte Schritt besteht darin, Werte von
+DC-Vorspannungswiderständen zu berechnen  :math:`R_1` und
+:math:`R_2`. :math:`R_2` kann erhalten werden von
 "Kochbuch" -Beziehung in Gl. (9) und deshalb :math:`R_1`
 kann aus Gl. (10).
 
@@ -217,7 +178,7 @@ wo :math:`v_ {BE} = 0.6 V`
    der Markt. Daher sollten Widerstandswerte abgerundet oder geändert werden
    um sie an die Schlusswerte von allgemein verfügbaren anzupassen
    Widerstände. Es ist eine gute Übung, zu setzen :math:`R_1` und
-    :math:`R_B` als Potentiometer da wir mit diesen zwei Widerständen können
+   :math:`R_B` als Potentiometer da wir mit diesen zwei Widerständen können
    Tuner manuell einstellen. Tuning des Verstärkers ist notwendig
    da Transistoren sich voneinander unterscheiden können.
 
@@ -229,6 +190,7 @@ wo :math:`v_ {BE} = 0.6 V`
    Impedanz (für AC) nahe bei Null dann :math:`C_E` muss groß sein wie
    möglich. Auch :math:`C_1`, :math:`C_2` sollte groß sein
    verhindern Sie große Spannungsabfälle über sie.
+
 
    
 Materialien
@@ -253,6 +215,7 @@ Materialien
 - 1x lötfreies Steckbrett
 
   
+  
 Verfahren
 ---------
 
@@ -265,15 +228,17 @@ Komponenten wurden berechnet und ausgewählt.
 
 .. figure:: img/ Activity_26_Fig_2.png
 
-Abbildung 2: Gemeinsamer Emitterverstärker mit Komponentenwerten
+   Abbildung 2: Gemeinsamer Emitterverstärker mit Komponentenwerten
 
+   
 
 1. Bauen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett auf.
 
 .. figure:: img/ Activity_26_Fig_3.png
 
-Abbildung 3: Gemeinsamer Emitter-Verstärker auf dem Steckbrett
+   Abbildung 3: Gemeinsamer Emitter-Verstärker auf dem Steckbrett
 
+   
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
 3. Stellen Sie im Einstellungsmenü OUT1 den Amplitudenwert auf 0,1 V, DC-Offset auf ein
@@ -294,8 +259,9 @@ Abbildung 3: Gemeinsamer Emitter-Verstärker auf dem Steckbrett
 
 .. figure:: img/ Activity_26_Fig_4.png
 
-Abbildung 4: Gemeinsame Emitterverstärker-Messungen
+   Abbildung 4: Gemeinsame Emitterverstärker-Messungen
 
+   
 In 3 sind die Messungen des gemeinsamen Emitterverstärkers
 gezeigt. Aus den P2P-Messungen können wir die erzielte Verstärkung und es berechnen
 ist ungefähr :math:`A \ approx 9`.
@@ -324,7 +290,6 @@ P2P (IN2) -Wert sollte sein :math:`0.4 \ mal 9 = 3.6 V`! Aber es ist nicht?
 Signal ist abgeschnitten! Kannst du erklären warum?
 
 .. note::
-   
    Überprüfen Sie die obigen Berechnungen und Spannungen über :math:`V_ {CE}`
 
 

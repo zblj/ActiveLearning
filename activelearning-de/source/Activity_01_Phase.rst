@@ -283,17 +283,17 @@ OUT2-Signal.
 Beachten Sie, dass Sie die Frequenz eines Signals nicht messen können, bei dem nicht mindestens eine volle Periode auf dem Bildschirm angezeigt wird. Normalerweise benötigen Sie mehr als zwei Zyklen, um konstante Ergebnisse zu erzielen. Sie erzeugen ein Sinussignal mit einer, von Ihnen, vorgegeben Frequenz. Sie müssen diese in diesem Teil des Labors nicht messen. 
 
 
-3. Messung der Größe mit einer realen Schaltung.
+3. Messung der Größe mit einer reelen Schaltung.
 
 .. figure:: img/Activity_01_Fig_06.png
    :scale: 50%
 
    Abbildung 6: R-R-Schaltung.
 
-Bauen Sie die in Abb. 5 gezeigte Schaltung auf Ihrer lötfreien Leiterplatte mit zwei :math:`470 \Omega` Widerständen, Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.
+Bauen Sie die in Abb.6 gezeigte Schaltung auf Ihrer lötfreien Leiterplatte mit zwei :math:`470 \Omega` Widerständen, Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.
 
 
-HINWEIS: Verwenden Sie für Erdungs-Pin Erdungskabel des Messspitzen (Krokodilstecker).
+HINWEIS: Verwenden Sie als Erdungs-Pin Erdungskabel des Messspitzen (Krokodilstecker).
 
 
 .. figure:: img/Activity_01_Fig_07.png
@@ -335,7 +335,7 @@ Mit diesen Einstellungen beobachtest du:
 - MATH - Spannungsabfall über R\ :sub:`1` \
 
 
-- Notiere V\ :sub:`R1` \ und V\ :sub:`R2` \.
+- Notieren Sie  V\ :sub:`R1` \ und V\ :sub:`R2` \.
 
   - V\ :sub:`R1` \ _______ V\ :sub:`pp` \.
 
@@ -358,11 +358,12 @@ Dies geschieht, indem Sie den Leiterbahnmarker (auf der linken Seite des Gitters
 Hier haben wir keine Phasenverschiebung, da Wert von R\ :sub:`1`\ = R\ :sub:`2`\ , so dass die Signalamplituden für VR1 und VR2 gleich sind. Das Ergebnis ist, dass wir zwei identische Signale (IN2=V\ :sub:`R2`\, MATH=V\ :sub:`R1`)` auf dem Oszilloskop haben.
 
 
-Was passiert, wenn du folgendes verwendest :math:`220 \ Omega` Wert für R \: sub:` 2` \?
+Was passiert, wenn Sie :math:`220 \ Omega` Wert für R \ :sub:`2` \ einsetzen?
 
-- Messung RC-Schaltung
 
-- Ersetzen Sie R \: sub: `2` \ durch einen 1 μF Kondensator C \: sub:` 1` \.
+- Messung einer RC-Schaltung
+
+- Ersetzen Sie R \ :sub: `2` \ durch einen 1 μF Kondensator C \ :sub:`1` \.
 
 
 .. figure:: img/Activity_01_Fig_08.png
@@ -374,31 +375,19 @@ HINWEIS: Für einen 1 μF-Kondensator wird wahrscheinlich ein Elektrolyt
 verwendet Kondensator.
 
 
-Diese Kondensatoren sind polaritätsempfindlich, d.h. auf dem positiven
-Kondensator Pin die Spannung sollte nie negativ und auf negativen Pin
-(GND) gehen Die Spannung sollte niemals positiv sein.
-
-Vom vorherigen Beispiel (RR-Schaltung) und Oszilloskop & Signal
-Generatoreinstellungen erzeugen wir Sinuswelle, die von geht -0,9 V
-bis 0,9 V, verursacht eine falsche Polarisation des Kondensators (es
-kann einen Kondensator beschädigen) müssen wir unser Ausgangssignal so
-anpassen, dass wir erzeugen ein Sinussignal, das immer positiv ist
-(Sinussignal mit einem Offset). 
+Diese Kondensatoren sind polaritätsempfindlich, d.h. auf dem positiven Kondensator-Pin sollte die Spannung niemals negativ und auf dem negativen Pin (GND) niemals positiv sein.
 
 
-- Stellen Sie im Einstellungsmenü OUT1 Amplitude und Offset auf 0,45 V
-  ein (Jetzt erzeugen wir ein Sinussignal, das herumschwingt 0,45 V
-  DC-Offset-Wert, d.h. sinusförmiges Signal geht von 0 V auf 0,9 V) 
+Aus dem vorherigen Beispiel (RR-Schaltung) und den Einstellungen des Oszilloskop- und Signalgenerators erzeugen wir Sinuswellen, die von -0,9 V bis 0,9 V gehen. Aufgrund der negativen Spannun, wird falsche Polarisation des Kondensators verursacht (es kann einen Kondensator beschädigen). Daher  müssen Sie das Ausgangssignal anpassen, damit Sie ein Sinussignal erzeugen, das immer positiv ist (Sinussignal mit einem Offset). 
 
-  Da kein Gleichstrom durch den Kondensator fließt, sind wir es nicht
-  Interesse an diesem DC-Wert. Um unsere Signale auf die Raster, müssen
-  wir Signale in vertikaler Richtung mit negativen verschieben Offset-Werte.
 
-- Stellen Sie im Einstellungsmenü für IN1 und IN2 den Wert für
-  Vertical Offset ein bis -450 mV
+- Im Menü OUT1 stllen Sie die Amplitude und Offsetwerte auf 0,45 V ein (Jetzt erzeugen wir ein Sinussignal, das um 0,45 V des DC-Offsetwertes oszilliert, d.h. ein sinusförmiges Signal geht von 0 V auf 0,9 V). 
+
+Da es keinen Gleichstrom durch den Kondensator gibt, sind wir an diesem Gleichstromwert nicht interessiert. Um unsere Signale auf dem Raster neu zu zentrieren, müssen wir die Signale mit negativen Offsetwerten in vertikale Richtung verschieben.
+
+- Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Offset auf -450 mV einstellen.
   
-- Stellen Sie für die stabile Aufnahme den Triggerpegel im
-  TRIGGER-Menü auf ein 0,45 V
+- Für eine stabile erfassung den Triggerpegel im Menu TRIGGER auf 0.45 V einstellen.
 
 .. figure:: img/Activity_01_Fig_09.png
    :scale: 50%
@@ -409,7 +398,7 @@ anpassen, dass wir erzeugen ein Sinussignal, das immer positiv ist
 - Messen Sie den Wert von IN1, IN2 und Math P2P (Spitze zu Spitze).
   Welches Signal hat die Math-Wellenform?
 
-- Nimm V\ :sub:`R1` \, V\ :sub:`C1` \ und V\ :sub:`R1` \ + V\ :sub:`C1` \.
+- Nehmen Sie V\ :sub:`R1` \, V\ :sub:`C1` \ und V\ :sub:`R1` \ + V\ :sub:`C1` \ auf.
 
   - V\ :sub:`R1` \ ____________ V\ :sub:`PP` \.
 
@@ -418,100 +407,90 @@ anpassen, dass wir erzeugen ein Sinussignal, das immer positiv ist
   - V\ :sub:`R1` \ + V\ :sub:`C1` \ ____________ V\ :sub:`PP` \.
 
 
-Jetzt etwas mit Phase zu tun. Hoffentlich sehen Sie ein paar
-Sinuswellen mit Zeitversätzen oder Phasenunterschieden, die auf dem
-Gitter angezeigt werden. Lasst uns Messen Sie die Zeitversätze und
-berechnen Sie die Phasendifferenzen. 
+Nun kommen Sie zu etwas, das mit Phase zu tun hat. Hoffentlich sehen Sie ein paar Sinuswellen mit Zeitversatz oder Phasendifferenzen auf dem Gitter. Lassen Sie uns die Zeitverschiebungen messen und die Phasenunterschiede berechnen.. 
 
 
-4. Messen Sie den Zeitunterschied zwischen
-   V\ :sub:`R1` \ und V\ :sub:`C1` \ und berechne die Phasenversätze. 
+4. Messen Sie den Zeitunterschied zwischen V\ :sub:`R1` \ und V\ :sub:`C1` \ und berechne die Phasenversätze. 
 
-   Verwenden Sie Gl. (2) und die gemessenen :math:`\Delta t`, um die
-   Phase zu berechnen Winkel :math:`\theta`.
+   Verwenden Sie Gl. (2) und das gemessene :math:`\Delta t`, zur Berechnung des Phasenwinkels :math:`\theta`.
 
 Die CURSORS sind nützlich für die Bestimmung von :math:`\Delta t`;
-hier ist wie: 
+kurze Erklärung wie: 
 
 - Zeigen Sie mindestens 2 Zyklen der Sinuswellen an.
 
-- Stellen Sie die horizontale Zeit / Div auf 500 us / div ein.
-  Beachten Sie, dass die Delta - Cursor - Anzeige das Vorzeichen des
-  Unterschied.
+- Stellen Sie die horizontale time/Div auf 500 us/div ein.
+  Beachten Sie, dass die Delta - Cursor - Anzeige das Vorzeichen der Differenz anzeigt.
 
 
 Sie können die Messanzeige verwenden, um die Frequenz zu
-ermitteln. Seit du gehst die Frequenz der Quelle, von der du nicht
-wirklich abhängig sein musst Messfenster für diesen Wert.
+ermitteln. Da Sie die Frequenz der Quelle einstellen, müssen Sie den Wert nicht ermittelt. 
 
 
-Nehmen wir an :math:`\Delta t` ist 0, wenn Sie wirklich keinen
-Unterschied sehen können mit 1 oder 2 Zyklen der Sinuswelle auf dem
-Bildschirm. 
+Angenommen, :math:`\Delta t` ist 0, wenn Sie wirklich keinen Unterschied zu 1 oder 2 Zyklen der Sinuswelle auf dem Bildschirm sehen können. 
 
 
-- Setzen Sie einen ersten Cursor auf das Neg. zu
-  pos. Nulldurchgangsstelle für das Signal IN1 (V\ :sub:`R1` \ + V\
-  :sub:`C1` \). Setzen Sie einen zweiten Cursor beim nächsten neg. zu
-  pos. Nulldurchgangsstelle für die math (V\ :sub:`R1` \)
-  Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie
-  den Phasenwinkel. note :math:`\ Delta t` kann eine negative Zahl
-  sein. Heißt das der Phasenwinkel führt oder lagert?
+- Setzen Sie den ersten Cursor auf das neg. zu
+  pos. Nulldurchgang für das Signal IN1 (V\ :sub:`R1` \ + V\
+  :sub:`C1` \). Setzen Sie den zweiten Cursor beim nächsten neg. zu
+  pos. Nulldurchgang für den Math-Signal (V\ :sub:`R1` \). Erfassen Sie die Zeitdifferenz und berechnen Sie
+  den Phasenwinkel. Bitte beachten Sie, dass  :math:`\ Delta t` ein negatives Vorzeichen annehmen kann.
+  Bedeutet das, dass der Phasenwinkel vor- oder nachläuft?
 
   :math:`\ Delta t` _________, :math:`\theta` _________
 
 
-- Setzen Sie einen ersten Cursor auf das Neg. zu
+- Setzen Sie den ersten Cursor auf das Neg. zu
   pos. Nulldurchgangsstelle für das Signal IN1 (V\ :sub:`R1` \ + V\
-  :sub:`C1` \). Setzen Sie einen zweiten Cursor beim nächsten neg. zu
+  :sub:`C1` \). Setzen Sie den zweiten Cursor beim nächsten neg. zu
   pos. Nulldurchgangsstelle für den IN2 (V\ :sub:`C1` \)
-  Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie
+  Signal. Erfassen Sie die Zeitdifferenz und berechnen Sie
   den Phasenwinkel.
 
   :math:`\Delta t` _________, :math:`\theta` _________
 
-- Setzen Sie einen ersten Cursor auf das Neg. zu
+- Setzen Sie den ersten Cursor auf das Neg. zu
   pos. Nulldurchgangsstelle für das Math (V\ :sub:`R1` \)
-  Signal. Setzen Sie einen zweiten Cursor auf die nächstgelegenes
+  Signal. Setzen Sie den zweiten Cursor auf die nächstgelegenes
   neg. zu pos. Nulldurchgangsstelle für den IN2 (V\ :sub:`C1` \)
-  Signal. Den Zeitunterschied aufzeichnen und berechnen der
+  Signal. Erfassen Sie die Zeitdifferenz und berechnen Sie den
   Phasenwinkel.
   
   :math:`\Delta t` _________, :math:`\theta` _________
 
 
-5. Messen Sie den Zeitunterschied und berechnen Sie die Phase
-   :math:`\theta` Offset bei einer anderen Frequenz.
+5. Messen Sie die Zeitdifferenz und berechnen Sie den Phasenversatz
+   :math:`\theta` mit einer anderen Frequenz.
 
-- Stellen Sie die Frequenz OUT1 auf 1000 Hz und die Zeit / Div auf 200
-  us / div. 
+- Stellen Sie die Frequenz von OUT1 auf 1000 Hz und die Time/Div auf 200
+  us/div. 
 
-- Setzen Sie einen ersten Cursor auf das Neg. zu
-  pos. Nulldurchgangsstelle für das Signal IN1 (V\ :sub:`R1` \ + V\
-  :sub:`C1` \). Setzen Sie einen zweiten Cursor beim nächsten
-  neg. zu pos. Nulldurchgangsstelle für die math (V\ :sub:`R1`
-  \) Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie
-  den Phasenwinkel. note :math:`\Delta t` kann eine negative Zahl
-  sein. Tut Das heißt, der Phasenwinkel führt oder hinkt?
+- Setzen Sie den ersten Cursor auf das neg. zu
+  pos. Nulldurchgang für das Signal IN1 (V\ :sub:`R1` \ + V\
+  :sub:`C1` \). Setzen Sie den zweiten Cursor beim nächsten
+  neg. zu pos. Nulldurchgang für das Math-Signal (V\ :sub:`R1`
+  \). Erfassen Sie die Zeitdifferenz  und berechnen Sie
+  den Phasenwinkel. Beachten Sie, dass :math:`\Delta t` ein negatives Vorzeichen annehmen kann.
+  Bedeutet das, dass der Phasenwinkel vor- oder nachläuft?
 
   :math:`\Delta t` _________, :math:`\theta` _________
 
 
-- Setzen Sie einen ersten Cursor auf das Neg. zu
-  pos. Nulldurchgangsstelle für das Signal IN1 (V\ :sub:`R1` \ + V\
-  :sub:`C1` \). Setzen Sie einen zweiten Cursor beim nächsten
-  neg. zu pos. Nulldurchgangsstelle für den IN2 (V\ :sub:`C1` \)
-  Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie den
+- Setzen Sie den ersten Cursor auf das neg. zu
+  pos. Nulldurchgang für das Signal IN1 (V\ :sub:`R1` \ + V\
+  :sub:`C1` \). Setzen Sie den zweiten Cursor beim nächsten
+  neg. zu pos. Nulldurchgang für den IN2 (V\ :sub:`C1` \).
+  Erfassen Sie die Zeitdifferenz und berechnen Sie den
   Phasenwinkel.
 
   :math:`\Delta t` _________, :math:`\theta` _________
 
 
-- Setzen Sie einen ersten Cursor auf das Neg. zu
-  pos. Nulldurchgangsstelle für das mathematische (V\ :sub:`R1` \) 
-  Signal. Setzen Sie einen zweiten Cursor auf die nächstgelegenes
-  neg. zu pos. Nulldurchgangsstelle für den IN2 (V\ :sub:`C1` \)
-  Signal. Zeichnen Sie den Zeitunterschied auf und berechnen Sie den
+- Setzen Sie den ersten Cursor auf das neg. zu
+  pos. Nulldurchgang für das Math-Signal (V\ :sub:`R1` \).
+  Setzen Sie einen zweiten Cursor auf den nächstgelegenen
+  neg. zu pos. Nulldurchgang für den IN2 (V\ :sub:`C1` \).
+  Erfassen Sie die Zeitdifferenz und berechnen Sie den
   Phasenwinkel.
   
   :math:`\Delta t` _________, :math:`\theta` _________
