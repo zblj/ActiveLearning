@@ -62,7 +62,7 @@ wir uns in einem Bereich von 0 bis :math:`2 \pi` oder 0 bis
 .. figure:: img/ Activity_01_Fig_01.png
    :align: center
 
-   Abbildung 1: 2 Zyklen von :math:`\sin(t)\ca. 0,7071`.  
+   Abbildung 1: 2 Zyklen von :math:`\sin(t)`.  
 
 Als Randnotiz: Was passiert, wenn :math:`\omega t > 2\pi`?
 
@@ -237,9 +237,9 @@ Messen Sie den Phasenwinkel zwischen zwei generierten Wellenformen:
 
 Aufgrund der vorhergegangenen Einstellungen sollten Sie "nur eine" Sinuswelle sehen. Tatsächlich gibt es zwei Sinuswellen, die Aufgrund von Nullphasenwinkel übereinander liegen und nach einer aussehen. 
 
-- Ändern Sie im OUT1-Steuermenü die Phase auf :math:`90 ^ {\ circ}`.
+- Ändern Sie im OUT1-Steuermenü die Phase auf :math:`90^{\circ}`.
 
-- Ändern Sie im OUT2-Steuermenü die Phase auf :math:`135 ^ {\ circ}`.
+- Ändern Sie im OUT2-Steuermenü die Phase auf :math:`135^{\circ}`.
 
 - Auf welcher Kanal sieht so aus, als ob der Sinus vor dem anderen steht?
 
@@ -253,7 +253,7 @@ Das OUT2-Signal sollte so aussehen, als ob es das OUT1-Signal anführt (vorläuf
    Bild 5: Oszilloskop-Applikation mit zwei Sinussignalen mit
    Phasendifferenz.
 
-- Ändern Sie die Phase von OUT2 zu :math:`45 ^ {\ circ}`. Jetzt sieht
+- Ändern Sie die Phase von OUT2 zu :math:`45^{\circ}`. Jetzt sieht
   es so aus, als ob das OUT2-Signal dem OUT1-Signal nacheilt. 
 
 - Drücken Sie die rote STOP-Taste, um die Erfassung des Oszilloskops
@@ -324,15 +324,15 @@ für Signal2 wählen Sie dann IN2. Nun aktivieren Sie Math. Sie sollten nun
 eine dritte Sinuswelle für die Spannung über R\ :sub:`1` \(V \ :sub:`R1` \).
 
 - Mit den vertikalen +/- Reglern setzen Sie 200 mV / div (0,2 V / div)
-  für MATH Spur.
+  für MATH-Kurve.
 
 Mit diesen Einstellungen beobachtest du:
 
 - IN1- Eingangserregungssignal
 
-- IN2- Spannungsabfall über R\ :sub:`2` \
+- IN2- Spannung am Widerstand R\ :sub:`2` \
 
-- MATH - Spannungsabfall über R\ :sub:`1` \
+- MATH - Spannung am Widerstand R\ :sub:`1` \
 
 
 - Notieren Sie  V\ :sub:`R1` \ und V\ :sub:`R2` \.
@@ -358,12 +358,12 @@ Dies geschieht, indem Sie den Leiterbahnmarker (auf der linken Seite des Gitters
 Hier haben wir keine Phasenverschiebung, da Wert von R\ :sub:`1`\ = R\ :sub:`2`\ , so dass die Signalamplituden für VR1 und VR2 gleich sind. Das Ergebnis ist, dass wir zwei identische Signale (IN2=V\ :sub:`R2`\, MATH=V\ :sub:`R1`)` auf dem Oszilloskop haben.
 
 
-Was passiert, wenn Sie :math:`220 \ Omega` Wert für R \ :sub:`2` \ einsetzen?
+Was passiert, wenn Sie :math:`220 \Omega` Wert für R \ :sub:`2` \ einsetzen?
 
 
 - Messung einer RC-Schaltung
 
-- Ersetzen Sie R \ :sub: `2` \ durch einen 1 μF Kondensator C \ :sub:`1` \.
+- Ersetzen Sie R \ :sub:`2` \ durch einen 1 μF Kondensator C \ :sub:`1` \.
 
 
 .. figure:: img/Activity_01_Fig_08.png
@@ -402,7 +402,7 @@ Da es keinen Gleichstrom durch den Kondensator gibt, sind wir an diesem Gleichst
 
   - V\ :sub:`R1` \ ____________ V\ :sub:`PP` \.
 
-  - V\ :sub:`C1` \ _______________ V\ :`sub:`PP` \.
+  - V\ :sub:`C1` \ _______________ V\ :sub:`PP` \.
 
   - V\ :sub:`R1` \ + V\ :sub:`C1` \ ____________ V\ :sub:`PP` \.
 
@@ -437,7 +437,7 @@ Angenommen, :math:`\Delta t` ist 0, wenn Sie wirklich keinen Unterschied zu 1 od
   den Phasenwinkel. Bitte beachten Sie, dass  :math:`\ Delta t` ein negatives Vorzeichen annehmen kann.
   Bedeutet das, dass der Phasenwinkel vor- oder nachläuft?
 
-  :math:`\ Delta t` _________, :math:`\theta` _________
+  :math:`\Delta t` _________, :math:`\theta` _________
 
 
 - Setzen Sie den ersten Cursor auf das Neg. zu
