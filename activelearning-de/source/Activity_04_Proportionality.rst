@@ -4,8 +4,7 @@ Proportionalität und Überlagerung
 Zielsetzung
 -----------
 
-Das Ziel dieser Labortätigkeit ist es, die Verhältnismäßigkeit zu überprüfen.
-und Überlagerungssätze. 
+Das Ziel dieser Labortätigkeit ist die Überprüfung des Proportionalität- und  Überlagerungssatzes. 
 
 Notizen
 -------
@@ -27,26 +26,19 @@ Steckverbindern E1_ und E2_ aufgeführt.
 Hintergrund
 -----------
 
-In dieser Tätigkeit sind Proportionalität und Überlagerungstheoreme
-geprüft, indem sie auf die nachfolgend dargestellten Schaltungen
-angewendet werden Zahlen.
+In dieser Übung werden Proportionalitäts- und Überlagerungssätze untersucht, indem sie auf die, in den folgenden Abbildungen dargestellten Schaltungen, angewendet werden.
 
 
-1. Der Proportionalitätstheorem besagt, dass die Reaktion einer
-   Schaltung ist proportional zur Quelle, die auf die Schaltung
-   wirkt. Dies ist auch der Fall bekannt als *Linearität*. Die
-   Proportionalitätskonstante A bezieht sich auf die Eingangsspannung
-   zur Ausgangsspannung als:  
+1. Das Proportionalitätstheorem besagt, dass die Reaktion einer Schaltung proportional zur Quelle ist, die auf diese Schaltung wirkt. Dies wird auch als Linearität bezeichnet. Die Proportionalitätskonstante A bezieht die Eingangsspannung auf die Ausgangsspannung als:  
 
    .. math:: 
 	
       V_{out} = Ein \cdot V_{in} 
 
-   Der Proportionalitätsfaktor A wird manchmal als der sogenannte
-   Verstärkung einer Schaltung. Für die Schaltung in Fig. 1 ist die
-   Quelle Die Spannung ist V\ :sub:`in`\. Die Antwort V\ :sub:`out`\
-   ist across der :math:`4,7 k\Omega` Widerstand. Das wichtigste
-   Ergebnis der Linearität ist Überlagerung.
+   Der Proportionalitätsfaktor A wird manchmal als Verstärkung einer Schaltung bezeichnet.
+   Für die Schaltung in Abb.1 ist die Quellspannung ist V\ :sub:`in`\.
+   Die Antwort V\ :sub:`out`\ liegt über dem Widerstand :math:`4,7 k\Omega`.
+   Das wichtigste Ergebnis der Linearität ist Überlagerung.
    
 
    .. figure:: img/Activity_04_Fig_01.png
@@ -55,15 +47,8 @@ angewendet werden Zahlen.
       Abbildung 1: Widerstandsschaltung mit 5V Spannungsquelle
 
 
-2. Der Überlagerungssatz besagt, dass die Reaktion eines linearen
-   Schaltung mit mehreren unabhängigen Quellen, wie in Figur 2, kann
-   erhalten werden, indem man die einzelnen Antworten addiert, die
-   durch die einzelne Quellen, die allein handeln. Für eine
-   unabhängige Quelle, die handelt. allein, alle anderen unabhängigen
-   Spannungsquellen im Stromkreis sind ersetzt durch Kurzschlüsse und
-   alle anderen unabhängigen Ströme. Quellen werden durch offene
-   Stromkreise ersetzt, wie in Abbildung 3 dargestellt.
-   
+2. Der Überlagerungssatz(Superposition) besagt, dass die Reaktion einer linearen Schaltung mit mehreren unabhängigen Quellen, wie in Abbildung 2, durch Addition der individuellen Reaktionen, die durch die einzelnen Quellen verursacht werden, die allein wirken, erhalten werden kann. Bei einer unabhängigen Quelle, die allein arbeitet, werden alle anderen unabhängigen Spannungsquellen im Stromkreis durch Kurzschlüsse und alle anderen unabhängigen Stromquellen durch Leerläufe ersetzt, wie in Abbildung 3 dargestellt.
+
 
    .. figure:: img/Activity_04_Fig_02.png
       :align: center 
@@ -84,9 +69,9 @@ Materialien
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 - Verschiedene Widerstände:
-  - :math:`1 k\Omega`, 
-  - :math:`2,2 k\Omega`, 
-  - :math:`4,7 k\Omega`.
+ - :math:`1 k\Omega` 
+ - :math:`2,2 k\Omega` 
+ - :math:`4,7 k\Omega`
 
 
 Vorgehensweise
@@ -94,29 +79,29 @@ Vorgehensweise
 
 Überprüfen Sie den Proportionalitätssatz:
 
-- Konstruieren Sie die Schaltung aus Abb. 1.
+- Bauen Sie die Schaltung aus Abb. 1 auf.
 
 - Fall 1: Für die Spannungsquelle "V\ :sub:`in`\=5V", dargestellt in
   Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
   Erweiterungsstecker E2_. 
   
 - Fall 2: Für die Spannungsquelle "V\ :sub:`in`\=3.3V", dargestellt in
-  der Abbildung.1. Verwenden Sie den STEMlab-Spannungsstift am
+  der Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
   Erweiterungsstecker E1_.  
 
 - Fall 3: Für die Spannungsquelle "V\ :sub:`in`\=-3.3V", dargestellt
-  in der Abbildung. 1 Verwenden Sie den STEMlab-Spannungsstift am
+  in der Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
   Erweiterungsstecker E2_.
   
 
 - Stellen Sie die Sondendämpfung auf x10 ein (an der Oszilloskopsonde
-  und an der Oszilloskop IN1 Menüeinstellungen)
+  und an der Oszilloskop IN1 Menu-Einstellung)
   
 
-- Messen Sie V\ :sub:`out`\ mit dem Oszilloskop genau Anwendung.
+- Messen Sie V\ :sub:`out`\ mit der Oszilloskopanwendung genau.
   
   
-- Sie sollten die tatsächlichen festen Netzspannungen messen und aufzeichnen auch. 
+- Sie sollten die tatsächlichen festen Netzspannungen ebenfalls messen und aufzeichnen. 
 
   
   .. table:: Tabelle 1
@@ -134,38 +119,29 @@ Vorgehensweise
 
 
  
-- Berechnen Sie den Wert von A jeweils mit Äquivalent (1).
+- Berechnen Sie den jeweiligen Wert von A mit Hilfe der Gl.(1).
 
-- Zeichne ein Diagramm mit V\ :sub:`in`\ auf der x-Achse und V\
+- Zeichnen Sie ein Diagramm mit V\ :sub:`in`\ auf der x-Achse und V\
   :sub:`out`\ auf der y-Achse.
        
 
 - Überprüfen des Überlagerungssatzes:
 
-  - Konstruieren Sie die Schaltung von Fig. 2. Messen und
-    protokollieren Sie die Spannung über dem :math:`4,7 k\Omega`
+  - Bauen Sie die Schaltung von Abb. 2 auf. Messen und protokollieren Sie die Spannung am :math:`\4.7k\Omega` Widerstand.
+    
+
+  - Bauen Sie die Schaltung von Abb. 3 auf. Messen und
+    protokollieren Sie die Spannung am :math:`4,7 k\Omega`
     Widerstand.
     
 
-  - Konstruieren Sie die Schaltung von Fig. 3. Messen und
-    protokollieren Sie die Spannung über dem :math:`4,7 k\Omega`
-    Widerstand.
     
-
-    
-.. note:: Die Messung des Spannungsabfalls am gewünschten Widerstand
-	  erfolgt in den Bereiche so, dass die Oszilloskop-Sonde von
-	  IN1 mit dem Gerät verbunden ist eine Seite des Widerstandes
-	  und der Oszilloskop-Sonde von IN2 ist die mit einer anderen
-	  Seite des Widerstandes verbunden sind. Spannung Unterschied
-	  V\ :sub:`in1`\-V\ :sub:`in2`\ gibt einen Spannung am
-	  gemessenen Widerstand.
+.. note:: Das Messen des Spannungsabfalls am gewünschten Widerstand erfolgt so, dass die Oszilloskopsonde von IN1 mit der einen Seite des Widerstands und die Oszilloskopsonde von IN2 mit der anderen Seite des Widerstands verbunden ist. Die Spannungsdifferenz V\ :sub:`in1`\-V\ :sub:`in2`\ gibt eine Spannung am gemessenen Widerstand an.
 	  
 
 
 - Berechnen Sie die Gesamtreaktion "V\ :sub:`out`\" für die Schaltung
-  der Figur 2 durch Hinzufügen der Antworten aus der Messung der
-  Schaltung von Figur 1 und Messung der Schaltung von Figur 3.
+  der Figur 2, in dem Sie die Ergebnise aus der Messung der  Schaltung von Figur 1 und Messung der Schaltung von Figur 3 addieren.
   
 
   V\ :sub:`out`\(figure 2) = V\ :sub:`out`\(figure 1) + V\ :sub:`out`\(figure 3) = _______________
@@ -184,15 +160,10 @@ Vorgehensweise
 Fragen zu
 ---------
 
-1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die
-   Steigung des Diagramm an beliebiger Stelle und vergleichen Sie es
-   mit dem Wert von K, der sich ergibt aus die Messungen. Erklären Sie
-   eventuelle Unterschiede.
+1. Ist die erhaltene Grafik eine gerade Linie? Berechnen Sie die Steigung der Grafik an jedem beliebigen Punkt und vergleichen Sie sie mit dem Wert von K, der sich aus den Messungen ergibt. Erklären Sie eventuelle Unterschiede.
    
    
-2. Für jeden der drei Schaltkreise, die du für die Überlagerung gebaut
-   hast.Experiment, wie gut die berechneten und gemessenen Ergebnisse
-   waren vergleichen? Erklären Sie eventuelle Unterschiede.
+2. Wie genau haben sich die berechneten und gemessenen Ergebnisse für jede der drei Schaltungen, die Sie für das Überlagerungsexperiment gebaut haben, verhalten? Erklären Sie eventuelle Unterschiede.
    
 
 
