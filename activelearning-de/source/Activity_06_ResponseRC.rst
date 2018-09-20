@@ -20,7 +20,7 @@ ___________
 
 In dieser Labortätigkeit wenden Sie eine Pulswellenform auf die RC-Schaltung an, um das transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in Bezug auf die Zeitkonstante einer Schaltung bestimmt, wie sie von einer RC-Schaltung beeinflusst wird. 
 
-Zeitkonstante (:math:`\Tau`): Ein Maß für die Zeit, die für bestimmte Änderungen von Spannungen und Strömen in RC- und RL-Kreisen benötigt wird. Im Allgemeinen, wenn die verstrichene Zeit fünf Zeitkonstanten (5t) nach dem Schalten überschreitet, haben die Ströme und Spannungen ihren Endwert erreicht, der auch als stationäre Reaktion bezeichnet wird. 
+Zeitkonstante (:math:`\tau`): Ein Maß für die Zeit, die für bestimmte Änderungen von Spannungen und Strömen in RC- und RL-Kreisen benötigt wird. Im Allgemeinen, wenn die verstrichene Zeit fünf Zeitkonstanten (5t) nach dem Schalten überschreitet, haben die Ströme und Spannungen ihren Endwert erreicht, der auch als stationäre Reaktion bezeichnet wird. 
 
 Die Zeitkonstante einer RC-Schaltung ist das Produkt aus Ersatzkapazität und Thévenin-Widerstand, bezogen auf die Anschlüsse des Ersatzkondensators 
 
