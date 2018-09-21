@@ -68,7 +68,7 @@ Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in Abbildung
 
 .. image:: img/Activity_07_Fig_03.png
 
-Da es nicht möglich ist, den Strom durch die Spule direkt zu messen (Strom, der von OUT1 geliefert wird), wird die Ausgangsspannung über den Widerstand in Reihe mit der Spule gemessen. Die Wellenform des Widerstandes wird die gleiche Form wie der Spulestrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Spule) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`Schaltung` = I :sub:`L` = I :sub:`R`. Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R`ist und damit der Strom durch die Spule multipliziert mit dem Widerstand R.
+Da es nicht möglich ist, den Strom durch die Spule direkt zu messen (Strom, der von OUT1 geliefert wird), wird die Ausgangsspannung über den Widerstand in Reihe mit der Spule gemessen. Die Wellenform des Widerstandes wird die gleiche Form wie der Spulestrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Spule) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`Schaltung` = I :sub:`L` = I :sub:`R`. Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R` ist und damit der Strom durch die Spule multipliziert mit dem Widerstand R.
 
 .. math::
 	
@@ -99,10 +99,11 @@ ______________
 
    Abbildung 5: Versuchsaufbau 
 
-2. Bauen Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH auf. 
+2. Bauen Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH auf.
+   
  - Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
- - Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.  
-
+ - Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.
+   
 Starten Sie die Anwendung Oszilloskop & Signalgenerator.
 
 3. Im Einstellungsmenü OUT1 den DC-Offsetwert auf 0,5 und den Amplitudenwert auf 0,5V einstellen, um eine 1Vp-p Rechteckwelle mit einer Zentrierung von 0,5 V als Eingangsspannung für die Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü SQUARE-Signal, deaktivieren Sie die SHOW-Taste und aktivieren Sie Enable. Stellen Sie sicher, dass IN1 V/div und IN2 V/div beide auf 200mV/div eingestellt sind (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und vertikale +/- Regler verwenden). Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Versatzes auf -500mV einstellen. Für die stabile Aufnahme stellen Sie den Triggerpegel im TRIGGER-Menü auf 0,5V und wählen Sie NORMAL.
