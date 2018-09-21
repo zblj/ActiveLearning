@@ -4,7 +4,7 @@ Resonanz in RLC-Schaltungen
 Zielsetzung
 -----------
 
-Das Ziel dieser Labortätigkeit ist es, das Phänomen des Resonanz in RLC-Schaltungen. Bestimmen Sie die Resonanzfrequenz und die Bandbreite des gegebenen Netzwerks unter Verwendung des Amplitudenverlaufs zu einem sinusförmige Quelle. 
+Das Ziel dieses Versuchs ist es, das Phänomen der Resonanz in RLC-Schaltungen zu untersuchen. Bestimmen Sie die Resonanzfrequenz und Bandbreite des gegebenen Netzwerks anhand des Amplitudengangs zu einer sinusförmigen Quelle. 
 
 Notizen
 -------
@@ -20,7 +20,7 @@ Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten v
 Hintergrund
 -----------
 
-Ein Resonanzkreis, auch Abstimmkreis genannt, besteht aus einem Induktor und einem Kondensator sowie einer Spannungs- oder Stromquelle. Es ist eine der wichtigsten Schaltungen in der Elektronik. Ein Resonanzkreis in einer von vielen Formen ermöglicht es uns beispielsweise, aus der Vielzahl der Signale, die uns jederzeit umgeben, einen gewünschten Radio- oder Fernsehsender einzustellen.
+Ein Resonanzkreis, auch Abstimmkreis genannt, besteht aus einer Induktivität und einem Kondensator sowie einer Spannungs- oder Stromquelle. Es ist eine der wichtigsten Schaltungen in der Elektronik. Ein Resonanzkreis in einer von vielen Formen ermöglicht es uns beispielsweise, aus der Vielzahl der Signale, die uns jederzeit umgeben, einen gewünschten Radio- oder Fernsehsender einzustellen.
 
 Ein Netzwerk ist in Resonanz, wenn Spannung und Strom an den Netzeingangsklemmen in Phase sind und die Eingangsimpedanz des Netzwerks rein ohmscher Natur ist.  
 
@@ -77,11 +77,10 @@ Die beiden zusätzlichen Frequenzen ω :sub:`1` und ω :sub:`2` werden ebenfalls
 Materialien
 -----------
 
-
-Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
-Widerstände 100 Ω, 1 KΩ
-Kondensatoren 0,01 µF
-Induktivitäten 4,7 mH
+- Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
+- Widerstände 100 Ω, 1 KΩ
+- Kondensatoren 0,01 µF
+- Induktivitäten 4,7 mH
 
 
 Vorgehensweise
@@ -95,7 +94,7 @@ Die Admittanz (Y) der Parallelschaltung ist in Gleichung 1 oben angegeben, wobei
        
 .. note:: 
 	
-   Bei dieser Berechnung berücksichtigen wir den Serienwiderstand des Induktors. Dieser Widerstand beeinflusst das Phasenverhalten der RLC-Schaltung bei niedrigeren Frequenzen. Die obige Gleichung wird für ideale Komponenten ohne parasitäre Elemente verwendet. In der Praxis (Messungen) haben wir nur reale Elemente und wir müssen berücksichtigen, dass der Induktor keine reine Induktivität ist, sondern auch einen effektiven Serienwiderstand hat :math:`R_{esr}`, also
+   Bei dieser Berechnung berücksichtigen wir den Serienwiderstand der Spule. Dieser Widerstand beeinflusst das Phasenverhalten der RLC-Schaltung bei niedrigeren Frequenzen. Die obige Gleichung wird für ideale Komponenten ohne parasitäre Elemente verwendet. In der Praxis (Messungen) haben wir nur reale Elemente und müssen berücksichtigen, dass die Spule keine reine Induktivität ist, sondern auch einen effektiven Serienwiderstand hat :math:`R_{esr}`, also
 
    .. math::
 
@@ -109,7 +108,7 @@ Die Admittanz (Y) der Parallelschaltung ist in Gleichung 1 oben angegeben, wobei
 
 .. note::
 
-   Die Resonanzfrequenz ist definiert als die Frequenz, bei der die Impedanz_ der Schaltung minimal ist. Äquivalent kann es definiert werden als die Frequenz, bei der die Impedanz rein real (d.h. rein resistiv) ist. Dies geschieht, weil die Impedanzen von Induktivität und Kondensator bei Resonanz gleich, aber mit entgegengesetztem Vorzeichen sind und sich aufheben. Schaltungen, bei denen L und C parallel und nicht in Reihe geschaltet sind, haben tatsächlich eine maximale Impedanz und keine minimale Impedanz. Aus diesem Grund werden sie oft als Antiresonatoren bezeichnet_, es ist jedoch immer noch üblich, die Frequenz zu benennen. bei dem dies als Resonanzfrequenz geschieht.
+   Die Resonanzfrequenz ist definiert als die Frequenz, bei der die Impedanz_ der Schaltung minimal ist. Äquivalent kann es definiert werden als die Frequenz, bei der die Impedanz rein real (d.h. rein resistiv) ist. Dies geschieht, weil die Impedanzen von Induktivität und Kondensator bei Resonanz gleich, aber mit entgegengesetztem Vorzeichen sind und sich aufheben. Schaltungen, bei denen L und C parallel und nicht in Reihe geschaltet sind, haben tatsächlich eine maximale Impedanz und keine minimale Impedanz. Aus diesem Grund werden sie oft als Antiresonatoren_ bezeichnet, es ist jedoch üblich, die Frequenz, bei der dies geschieht, als Resonanzfrequenz zu bezeichnen.
 
 Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
 
@@ -129,7 +128,7 @@ Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
    %%% Berechnung von Z
    Y1 = 1/R1;
    Y2 = i*2*pi.*f*C1;
-   Y3 = 1./(Rind+i*2*pi.*f*L1);
+   Y3 = 1./(Resr+i*2*pi.*f*L1);
    Y = Y1 + Y2 + Y3;
    Z = 1./Y;
 
@@ -138,7 +137,7 @@ Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
    ylabel(ax(1), 'Realteil von Z / Ohm');
    ylabel(ax(2), 'Realteil von Z / Ohm');
    xlabel('Frequenz / Hz');
-   Gitter ein
+   grid on
 
    
 Wenn wir den obigen Code ausführen, erhalten wir folgende Ergebnisse, die auf dem Bild unten gezeigt werden.
@@ -164,7 +163,7 @@ Bei einer Frequenz f: Wenn der Wert von Z viel kleiner als der Wert von Rs ist, 
 
 Bei einer bestimmten Frequenz f: wenn der Wert von Z viel höher ist als der Wert von Rs, wird die Ausgangsspannungsamplitude nahe der Eingangsspannungsamplitude liegen.
 
-Bei einer bestimmten Frequenz f: wobei Z=Rs das Vout sein wird ½ Vin.  
+Bei einer bestimmten Frequenz f: wobei Z=Rs das Vout ist ½ Vin.  
 
 Bei einer bestimmten Frequenz f: wobei Z maximal ist, ist der Vout auch maximal. Dies ist die Resonanzfrequenz. 
 
@@ -174,7 +173,7 @@ Bei einer bestimmten Frequenz f: wobei Z maximal ist, ist der Vout auch maximal.
    Abbildung 6: Berechnung des Absolutwertes der Impedanz Z für die in Abbildung 3 dargestellte Schaltung. 
 
 
-Verwendung von
+Durch Verwendung von
 
 .. math::
 
@@ -199,7 +198,7 @@ können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5 und 8.
 
 Vorgehensweise:
 
-1. Richten Sie die RLC-Schaltung wie in Abbildung 8 auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten RS = 100 Ω, R1 = 1 KΩ, C1 = 0,1 µF und L1= 4,7 mH ein.
+1. Bauen Sie die RLC-Schaltung wie in Abbildung 8 auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten RS = 100 Ω, R1 = 1 KΩ, C1 = 0,1 µF und L1= 4,7 mH auf.
 
 .. figure:: img/Activity_08_Fig_08.png
 
@@ -213,11 +212,11 @@ Vorgehensweise:
    Abbildung 9: Bode Analysator Anwendung
 
    
-Nachdem die Messungen durchgeführt wurden, sollten Sie den Frequenzgang Ihrer Schaltung erhalten, wie in Abbildung 10q dargestellt.
+Nachdem die Messungen durchgeführt wurden, sollten Sie den Frequenzgang Ihrer Schaltung erhalten, wie in Abbildung 10 dargestellt.
 
 .. figure:: img/Activity_08_Fig_10.png
 
-    Abbildung 10: Frequenzgang der Schaltung aus Abbildung 8 Aufnahme durch Bode Analysator-Anwendung.
+    Abbildung 10: Frequenzgang der Schaltung aus Abbildung 8. Aufnahme durch Bode Analysator-Anwendung.
 
 
 
@@ -225,29 +224,29 @@ Nachdem die Messungen durchgeführt wurden, sollten Sie den Frequenzgang Ihrer S
 
 .. hint:: 
 
-   parasitär
+   Parasitäre Phänomene
 
 
-Die Bode-Analysatoranwendung führt einen Frequenzdurchlauf durch, so dass sie ein Sinussignal auf OUT1 innerhalb des von uns gewählten Frequenzbereichs (im Einstellungsmenü) erzeugt.
+Die Bode-Analysatoranwendung führt einen Frequenzdurchlauf durch, so dass sie ein Sinussignal auf OUT1 innerhalb des von uns gewählten Frequenzbereichs (im Einstellungsmenu) erzeugt.
 
-Das Eingangssignal IN1 ist direkt mit OUT1 verbunden, gefolgt von IN1=Vin. IN2 wird auf der anderen Seite des RLC-Kreises und damit IN2=Vout angeschlossen. Die Anwendung des Bode-Analysators wird dann für jeden Frequenzschritt das Verhältnis von IN1/IN2 nehmen und den Frequenzgang berechnen.  
+Das Eingangssignal IN1 ist direkt mit OUT1 verbunden, gefolgt von IN1=Vin. IN2 wird auf der anderen Seite des RLC-Kreises und damit IN2=Vout angeschlossen. Die Anwendung des Bode-Analysators wird dann für jeden Frequenzschritt das Verhältnis von IN1/IN2 aufnehmen und den Frequenzgang berechnen.  
 
-2. Um zu sehen, wie sich die Signalamplitude von Vout/IN2 in Bezug auf OUT1 ändert, starten Sie die Oszilloskopanwendung, aktivieren Sie in den Einstellungen OUT1 OUT1 OUT1, deaktivieren Sie die SHOW-Taste und betrachten Sie die Signalamplituden von IN1 und IN2. 
+2. Um zu sehen, wie sich die Signalamplitude von Vout/IN2 in Bezug auf OUT1 ändert, starten Sie die Oszilloskopanwendung, aktivieren Sie in den OUT1 Einstellungen OUT1, deaktivieren Sie die SHOW-Taste und betrachten Sie die Signalamplituden von IN1 und IN2. 
 
 
    Ändern Sie die OUT1-Frequenz, stellen Sie den t/div-Wert so ein, dass Sie 2 Zyklen des IN1 haben und beobachten Sie die Amplituden von IN1 und IN2. 
 
 
-   Wiederholen Sie diesen Schritt für die OUT1-Frequenz von 100Hz bis 1MHz und Sie sollten den gleichen Amplitudenverlauf beobachten, wie er mit dem Bode-Messgerät gemessen wird.
+   Wiederholen Sie diesen Schritt für die OUT1-Frequenz von 100Hz bis 1MHz und Sie sollten den gleichen Amplitudenverlauf beobachten, wie er mit dem Bode-Analysator gemessen wurde.
 
 
-   Bode Analysator ist auch die Messphase zwischen IN1 und IN2. Die Phase ist ebenfalls frequenzabhängig.  Das kann man mit der Oszilloskop-Applikation leicht erkennen. 
+   Bode-Analysator misst auch die Phase zwischen IN1 und IN2. Die Phase ist ebenfalls frequenzabhängig. Das kann man mit der Oszilloskop-Applikation leicht erkennen. 
 
 
 3. Wiederholen Sie das Experiment für den Serienschwingkreis in Figur 3 und verwenden Sie L1 = 20 mH und C1 = 0,01 uF und R1 = 1 KΩ. Die Vo-Spannung am Widerstand ist proportional zum Serien-RLC-Schaltstrom. 
 
-Fragen zu
----------
+Fragen zum Versuch
+------------------
 
 Zeichne den Spannungsverlauf der Schaltung auf und erhalte die Bandbreite aus den Halbleistungsfrequenzen unter Verwendung der Gleichung (3).    
 

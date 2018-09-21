@@ -86,8 +86,8 @@ becomes infinite. The frequency response is shown in figure 2.
    
 The two additional frequencies ω :sub: `1` and ω :sub:`2` are also
 indicated which are called half-power frequencies. These frequencies
-locate those points on the curve at which the voltage response is
-1/sqrt(2) or 0.707 times the maximum value. They are used to measure
+locate those points on the curve at which the voltage response is :math:`1/sqrt(2)`
+or 0.707 times the maximum value. They are used to measure
 the band-width of the response curve. This is called the half-power
 bandwidth of the resonant circuit and is defined as:  
 
