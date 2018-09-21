@@ -17,20 +17,20 @@ Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten v
 Hintergrund
 ___________
 
-Diese Labortätigkeit ist ähnlich wie die RC Lab Aktivität 5, nur dass der Kondensator durch einen Induktor ersetzt wird. In diesem Experiment wenden Sie eine rechteckige Wellenform auf die RL-Schaltung an, um das transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in Bezug auf die Zeitkonstante der Schaltung bestimmt, wie sie von der RL-Schaltung beeinflusst wird. 
+Diese Labortätigkeit ist ähnlich wie die RC Lab Aktivität 6, nur dass der Kondensator durch einen Induktor ersetzt wird. In diesem Experiment wenden Sie eine rechteckige Wellenform auf die RL-Schaltung an, um das transiente Verhalten der Schaltung zu analysieren. Die Impulsbreite in Bezug auf die Zeitkonstante der Schaltung bestimmt, wie sie von der RL-Schaltung beeinflusst wird. 
 
-Zeitkonstante (t): Es ist ein Maß für die Zeit, die für bestimmte Änderungen von Spannungen und Strömen in RC- und RL-Kreisen benötigt wird. Im Allgemeinen, wenn die verstrichene Zeit fünf Zeitkonstanten (5t) nach dem Schalten überschreitet, haben die Ströme und Spannungen ihren Endwert erreicht, der auch als stationäre Reaktion bezeichnet wird. 
+Zeitkonstante :math:`\tau` : Es ist ein Maß für die Zeit, die für bestimmte Änderungen von Spannungen und Strömen in RC- und RL-Kreisen benötigt wird. Im Allgemeinen, wenn die verstrichene Zeit fünf Zeitkonstanten (5 :math:`\tau` ) nach dem Schalten überschreitet, haben die Ströme und Spannungen ihren Endwert erreicht, der auch als stationäre Reaktion bezeichnet wird. 
  
-Die Zeitkonstante einer RL-Schaltung ist die äquivalente Induktivität dividiert durch den Thévenin-Widerstand, bezogen auf die Anschlüsse des äquivalenten Induktors. 
+Die Zeitkonstante einer RL-Schaltung ist die äquivalente Induktivität dividiert durch den Thévenin-Widerstand, bezogen auf die Anschlüsse des äquivalenten Gleichstromkreises. 
 
 .. math::
-	f=\frac{L}{R}{R} 
+	f=\frac{L}{R} 
 
 
 
 Ein Impuls ist eine Spannung oder ein Strom, der von einem Niveau zum anderen und wieder zurück wechselt. Wenn die hohe Zeit einer Wellenform gleich ihrer niedrigen Zeit ist, wird sie als Rechteckwelle bezeichnet. Die Länge eines jeden Zyklus einer Impulsfolge ist seine Periode (T). Die Impulsbreite (tp) einer idealen Rechteckwelle entspricht der Hälfte der Zeitspanne. 
 
-Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird durch: 
+Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird durch die folgende Gleichung beschrieben: 
  
 .. math::
 
@@ -41,9 +41,9 @@ Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird d
 
 Abbildung 1: Serien-RL-Schaltung
 
-In einem R-L-Kreis nimmt die Spannung über dem Induktor mit der Zeit ab, während in dem RC-Kreis die Spannung über dem Kondensator mit der Zeit zunimmt. Somit hat der Strom in einer RL-Schaltung die gleiche Form wie die Spannung in einer RC-Schaltung: Sie steigen beide exponentiell auf ihren Endwert an.
+In einem RL-Kreis nimmt die Spannung über der Spule mit der Zeit ab, während in dem RC-Kreis die Spannung über dem Kondensator mit der Zeit zunimmt. Somit hat der Strom in einer RL-Schaltung die gleiche Form wie die Spannung in einer RC-Schaltung: Sie steigen beide exponentiell auf ihren Endwert an.
 
-Der Ausdruck für den Strom im Induktor wird durch:
+Der Ausdruck für den Strom in der Spule ist gegeben durch:
 
 .. math::
 	
@@ -53,18 +53,18 @@ wobei V die an die Schaltung angelegte Quellspannung für t = 0 ist, die Ansprec
 
 .. image:: img/Activity_07_Fig_02.png
 
-Abbildung 2: Der Strom im Induktor steigt in einem Serien-RL-Kreis an.
+Abbildung 2: Der Strom in der Spule steigt in einem Serien-RL-Kreis an.
 
 (Zeitachse normiert um t) 
 
-Der Ausdruck für den Stromabfall über den Induktor wird durch: 
+Der Ausdruck für den Stromabfall über der Spule wird durch: 
  
 .. math:: 
  
 	I_L(t) = I_0 e^{- \frac{R}{L}t} ; t >= 0 
 
-wo, I\ :sub:`0`\ ist der Anfangsstrom, der im Induktor bei t = 0 gespeichert ist.  
-L/R = t ist die Zeitkonstante. 
+wo, I\ :sub:`0`\ der Anfangsstrom ist, der in der Spule bei t = 0 gespeichert ist.  
+L/R = :math:`\tau` ist die Zeitkonstante. 
  
 Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in Abbildung 3 dargestellt. 
 
