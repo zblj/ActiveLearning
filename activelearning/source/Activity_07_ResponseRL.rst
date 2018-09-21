@@ -71,7 +71,7 @@ The response curve is a decaying exponential and is shown in figure 3.
 .. image:: img/Activity_07_Figure_3.png
 
 Since it is not possible to directly measure the current through the Inductor ( current supplied by driving source OUT1 ) with the STEMlab, we will measure output voltage across the Resistor in series with the Inductor. The resistor waveform will be same shape as the inductor current since from Ohm’s law we know that current and voltage through resistor are related with  V :sub:`R` = I :sub:`R` * R. Our circuit has two elements (Resistor and Inductor) in series which means same current is flowing through both components I :sub:`circuit` = I :sub:`L` = I :sub:`R` 
-We know that signal on input IN2 is voltage across resistor V :sub: `R` which is in fact current through inductor multiplied by resistance R.
+We know that signal on input IN2 is voltage across resistor V :sub:`R` which is in fact current through inductor multiplied by resistance R.
 
 .. math::
 	

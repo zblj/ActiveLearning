@@ -68,18 +68,16 @@ Die Reaktionskurve ist eine abklingende Exponentialfunktion und ist in Abbildung
 
 .. image:: img/Activity_07_Fig_03.png
 
-Da es nicht möglich ist, den Strom durch den Induktor direkt zu messen (Strom, der von der Antriebsquelle OUT1 geliefert wird), werden wir die Ausgangsspannung über den Widerstand in Reihe mit dem Induktor messen. Die Wellenform des Widerstandes wird die gleiche Form wie der Induktorstrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Induktor) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`circuit` = I :sub:`L` = I :sub:`R` 
-Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R`, das ist der Strom durch den Induktor multipliziert mit dem Widerstand R.
+Da es nicht möglich ist, den Strom durch die Spule direkt zu messen (Strom, der von OUT1 geliefert wird), wird die Ausgangsspannung über den Widerstand in Reihe mit der Spule gemessen. Die Wellenform des Widerstandes wird die gleiche Form wie der Spulestrom haben, da wir aus dem ohmschen Gesetz wissen, dass Strom und Spannung durch den Widerstand mit V :sub:`R` = I :sub:`R` * R verbunden sind. Unsere Schaltung hat zwei Elemente (Widerstand und Spule) in Reihe, was bedeutet, dass der gleiche Strom durch beide Komponenten fließt I :sub:`Schaltung` = I :sub:`L` = I :sub:`R`. Wir wissen, dass das Signal am Eingang IN2 eine Spannung über dem Widerstand V :sub:`R`ist und damit der Strom durch die Spule multipliziert mit dem Widerstand R.
 
 .. math::
 	
 	IN2 = R \cdot I_L 
 
-Daraus folgt, dass wir bei der Beobachtung des Signals IN2 den Strom durch den Induktor beobachten, und das Einzige, was wir beachten müssen, ist der Skalierungsfaktor - Widerstand R.
+Daraus folgt, dass wir bei der Beobachtung des Signals IN2 den Strom durch den Spule beobachten, und das Einzige, was wir beachten müssen, ist der Skalierungsfaktor - Widerstand R.
      
-Aus den Wellenformen des Scopes sollten wir die Zeitkonstante t messen können, die gleich t = L / R :sub:`total` sein sollte.
-Hier ist R :sub:`total` der Gesamtwiderstand und kann aus R :sub:`total` = R :sub:`Induktivität` + R berechnet werden.
-Die R-Induktivität ist der Messwert des Induktionswiderstandes und kann mit einem Multimeter vor der Durchführung des Experiments gemessen werden. (Messen Sie die R-Induktivität genauso, wie Sie den normalen Widerstand messen würden.)
+Aus den Wellenformen des Scopes sollten wir die Zeitkonstante :math:`\tau` messen können, die gleich :math:`\tau` = L / R :sub:`total` sein sollte. Hier ist R :sub:`total` der Gesamtwiderstand und kann aus R :sub:`total` = R :sub:`Spule` + R berechnet werden.
+Der Wert für R :sub:`Spule` ist der Messwert des Induktionswiderstandes und kann mit einem Multimeter vor der Durchführung des Experiments gemessen werden. (Messen Sie die R :sub:`Spule` genauso, wie Sie den normalen Widerstand messen würden.)
 
 
 Materialien
@@ -89,45 +87,38 @@ Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 
 Widerstand 220 Ω
 
-Induktor 20 mH (2x10 mH in Serie)
+Spule 20 mH (2x10 mH in Serie)
 
 Vorgehensweise
 ______________
 
-1. Messen Sie den kombinierten Induktor- und Widerstandswiderstand R \ :sub:`total` \ mit einem Multimeter.
+1. Messen Sie den kombinierten Spule- und Widerstandswiderstand R \ :sub:`total` \ mit einem Multimeter.
 
-
-
-
+   
 .. figure:: img/Activity_07_Fig_04.png
 
-2. Richten Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH ein. 
--Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
--Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.
+   Abbildung 5: Versuchsaufbau 
 
-Abbildung 5: Versuchsaufbau 
+2. Bauen Sie die in Abbildung 5 dargestellte Schaltung auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten R :sub:`1` = 220 Ω und L :sub:`1` = 20mH auf. 
+ - Schließen Sie die Sonden des Oszilloskops und des Signalgenerators wie in Abbildung 5 dargestellt an.
+ - Stellen Sie die Oszilloskop-Dämpfung auf x1 ein.  
 
 Starten Sie die Anwendung Oszilloskop & Signalgenerator.
 
+3. Im Einstellungsmenü OUT1 den DC-Offsetwert auf 0,5 und den Amplitudenwert auf 0,5V einstellen, um eine 1Vp-p Rechteckwelle mit einer Zentrierung von 0,5 V als Eingangsspannung für die Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü SQUARE-Signal, deaktivieren Sie die SHOW-Taste und aktivieren Sie Enable. Stellen Sie sicher, dass IN1 V/div und IN2 V/div beide auf 200mV/div eingestellt sind (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und vertikale +/- Regler verwenden). Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Versatzes auf -500mV einstellen. Für die stabile Aufnahme stellen Sie den Triggerpegel im TRIGGER-Menü auf 0,5V und wählen Sie NORMAL.
 
-3. Im Einstellungsmenü OUT1 den DC-Offsetwert auf 0,5 und den Amplitudenwert auf 0,5V einstellen, um eine 1Vp-p Rechteckwelle mit einer Zentrierung von 0,5 V als Eingangsspannung für die Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü SQUARE-Signal, deaktivieren Sie die SHOW-Taste und wählen Sie enable. 
-Stellen Sie sicher, dass IN1 V/div und IN2 V/div beide auf 200mV/div eingestellt sind (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und vertikale +/- Regler verwenden).
-Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Versatzes auf -500mV einstellen. 
-Für die stabile Aufnahme stellen Sie den Triggerpegel im TRIGGER-Menü auf 0,5V und wählen Sie NORMAL.
-
-Berechnen Sie die angewandte Frequenz nach Gleichung (2) für tp = 5t . Im Menü OUT1 Einstellungen die Frequenz entsprechend der Berechnung einstellen.
+Berechnen Sie die angewandte Frequenz nach Gleichung (2) für tp = 5 :math:`\tau`. Im Menü OUT1 die Frequenz entsprechend der Berechnung einstellen.
 
 Stellen Sie die Zeitbasis mit der horizontalen +/- Steuerung so ein, dass Sie etwa zwei Zyklen der Rechteckwelle auf dem Anzeigegitter haben. 
 
-
-4. Die VR (IN2) Wellenform hat die gleiche Form wie die IL(t) Wellenform. Messen Sie aus VR die Zeitkonstante t und vergleichen Sie sie mit derjenigen, die Sie aus L/R :sub:`total` berechnet haben. 
+4. Die V :sub:`R` (IN2) Wellenform hat die gleiche Form wie die I :sub:`L` (t) Wellenform. Messen Sie aus V :sub:`R` die Zeitkonstante :math:`\tau` und vergleichen Sie sie mit derjenigen, die Sie aus L/R :sub:`total` berechnet haben. 
 
 .. hint:: 
 	
-	Bei der Messung des RC-Transienteneffekts haben wir den Cursor verwendet, um 0,63*Vc zu finden, hier interessieren wir uns für den Strom I :sub:`L` = IN2/R und nicht für die Spannung.
-	
-	Gemäß der Abbildung 3 sollten Sie den Cursor Y1 auf den Maximalwert von IN2 und den Cursor Y2 auf den Wert 0,37*IN2 stellen. 
-	Die Cursor X1 und X2 auf die Kreuzungspunkte einstellen und die Zeitkonstante messen.
+	Bei der Messung des RC-Transienteneffekts haben wir den Cursor verwendet, um 0,63*Vc zu finden,
+	hier interessieren wir uns für den Strom I :sub:`L` = IN2/R und nicht für die Spannung.
+	Gemäß der Abbildung 3 sollten Sie den Cursor Y1 auf den Maximalwert von IN2 und den Cursor Y2 auf
+	den Wert 0,37*IN2 stellen. Die Cursor X1 und X2 auf die Kreuzungspunkte einstellen und die Zeitkonstante messen.
 
 
 Zur Bestimmung der Zeitkonstante verwenden Sie die Option "CURSOR".
@@ -138,13 +129,13 @@ Steuern/Bewegen von Cursorn mit einem Linksklick+Maussteuerung auf der Cursor-Ma
 Um die Cursor genauer einzustellen, stellen Sie die Zeitbasis ein, bis Sie etwa eine oder die Hälfte des Zyklus der Rechteckwelle auf dem Anzeigegitter haben. 
 
 
-5. Beobachten Sie die Reaktion der Schaltung und notieren Sie die Ergebnisse erneut für tp = 25t und tp = 0,5t.
+5. Beobachten Sie die Reaktion der Schaltung und notieren Sie die Ergebnisse erneut für tp = 25 :math:`\tau` und tp = 0,5 :math:`\tau`.
 
-Fragen zu
-_________
+Fragen zum Versuch:
+___________________
 
-- Fügen Sie Diagramme von IL und VR für verschiedene tp-Werte hinzu, die oben in Verfahren 4 beschrieben sind.
-- Ein Kondensator speichert die Ladung. Was denkst du, was ein Inductor speichert? Antworte kurz.
+- Fügen Sie Diagramme von I :sub:`L` und V :sub:`R` für verschiedene tp-Werte hinzu, die oben in Verfahren 4 beschrieben sind.
+- Ein Kondensator speichert die Ladung. Was denkst du, was eine Spule speichert? Antworte kurz.
 
 
 
