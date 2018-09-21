@@ -26,8 +26,6 @@ Die Zeitkonstante einer RL-Schaltung ist die äquivalente Induktivität dividier
 .. math::
 	f=\frac{L}{R} 
 
-
-
 Ein Impuls ist eine Spannung oder ein Strom, der von einem Niveau zum anderen und wieder zurück wechselt. Wenn die hohe Zeit einer Wellenform gleich ihrer niedrigen Zeit ist, wird sie als Rechteckwelle bezeichnet. Die Länge eines jeden Zyklus einer Impulsfolge ist seine Periode (T). Die Impulsbreite (tp) einer idealen Rechteckwelle entspricht der Hälfte der Zeitspanne. 
 
 Das Verhältnis zwischen Impulsbreite und Frequenz für die Rechteckwelle wird durch die folgende Gleichung beschrieben: 
