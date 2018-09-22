@@ -14,7 +14,7 @@ Das Ziel dieser Aktivität ist:
    
 
 Anmerkungen
-___________
+-----------
 
 .. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
 .. _Impedance: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
@@ -59,8 +59,8 @@ Kombination aus Widerstand ausgedrückt :math:`R` und Reaktanz
  komplexe Menge ausgedrückt werden als:
       
 
-.. math::
-   Z = R + jX \ Quad (1)
+.. math::  Z = R + jX
+   :label: eq_1
 
 Für einen idealen Widerstand ist die Impedanz die gleiche wie der
 DC-Widerstand :math:`Z = R_ {DC}`. Bei einem Kondensator ist die
@@ -69,43 +69,45 @@ und ** negativer ** reaktiver Teil der Impedanz. Die Reaktanz des
 Kondensators hängt von der Frequenz ab und ist gegeben als:
 
 
-.. math::
-   X_C = \ frac {1} {j \ omega C} \ quad (2)
-
+.. math:: X_C = \frac{1}{j \omega C}
+   :label: eq_2
+	   
 Bei einem Induktor ist die Impedanz (oder genauer gesagt die Reaktanz)
 :math:`X_L` ein imaginärer und **positiver** reaktiver Teil der
 Impedanz. Die Reaktanz des Induktors hängt auch von der Frequenz
 ab und ist gegeben als:
       
 
-.. math::
-   X_L = j \ omega L \ quad (3)
+.. math:: X_L = j \omega L
+   :label: eq_3
 
 Die Impedanz einer Reihen-RLC-Schaltung ist die Summe der Impedanzen
 der jeweiligen Komponenten.
 
 
-.. math::
-   Z = R + Z_L + Z_C \ Vierer (4)
+.. math:: Z = R + Z_L + Z_C
+   :label: eq_4
 
 oder
 
-.. math::
-   Z = R + jX_L - jX_C \ quad (5)
+.. math:: Z = R + jX_L - jX_C
+   :label: eq_5
 
 Dies kann auch als ein Zeiger mit **Magnitude** dargestellt werden
 :math:`|Z|` und **phase** :math:`P` wobei :math:`Z=|Z|e^{jP}`
       
 
-.. math::
-   | Z | = \ sqrt {R ^ 2 + (X_L - X_C) ^ 2} \ quad (6)
+.. math:: \lvert Z \lvert = \sqrt{R ^ 2 + (X_L - X_C) ^ 2}
+   :label: eq_6
 
-.. math::
-   P = arctan (\ frac {(X_L - X_C)} {R}) \ quad (7)
+.. math:: P = \arctan\left(\frac{(X_L - X_C)}{R}\right)
+   :label: eq_7
+	   
 
+.. _fig_01:
 .. figure:: img/ Activity_11_Fig_1.png
 
-   Abbildung 1: Serie RLC-Schaltung.
+   RLC-Reihenschaltung.
 
    
 Materialien
@@ -119,9 +121,6 @@ Materialien
   
 Verfahren
 ---------
-
-Komponenten messen
-------------------
 
 Mit LCR-Meter-Anwendung können wir Induktivität, Widerstand und
 Kapazität unserer Elemente in der Schaltung bei ausgewählter Frequenz
@@ -140,86 +139,98 @@ nicht sichtbar / lesbar ist:
 5. Wiederholen Sie die obigen Schritte für Rs, Ls und Cs
 
 
+.. _fig_02:
 .. figure:: img/ Activity_11_Fig_2.png
 
-   Abbildung 2: LCR-Meter-Anwendung
+   LCR-Meter-Anwendung
 
    
-.. note::
-   Tatsächliche (gemessene) Werte der Komponenten Rs, Cs, Ls sind
-   anders als markiert (Farbcode für Widerstand und gedruckte Werte an
-   Induktor und Kondensator). Der Unterschied liegt an den Toleranzen
-   der Komponentenwerte
+   
+.. note:: Tatsächliche (gemessene) Werte der Komponenten Rs, Cs, Ls sind
+	  anders als markiert (Farbcode für Widerstand und gedruckte Werte an
+	  Induktor und Kondensator). Der Unterschied liegt an den Toleranzen
+	  der Komponentenwerte
 
    
 Messreihe RLC-Schaltung Impedanz
 --------------------------------
 
-1. Richten Sie die Schaltung wie in Abbildung 1 und Abbildung 2 auf
+1. Richten Sie die Schaltung wie in :numref:`fig_01` und :numref:`fig_02` auf
    Ihrem lötfreien Steckbrett mit den Komponentenwerten Rs = 1 KΩ, Cs
    = 0,047 μF, Ls = 22 mH ein.
    
 
-.. figure:: img/ Activity_11_Fig_3.png
+   .. _fig_03:
+   .. figure:: img/ Activity_11_Fig_3.png
 
-   Abbildung 3: STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
+   STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
 
    
 2. Starten Sie die Anwendung Impedanzanalysator.
 
-.. note::
-   Der Impedanzanalysator ist eine Gemeinschaftsanwendung und muss
-   vom Application Marketplace (Basar) heruntergeladen werden. 
-   Klicken Sie auf Application marketplace icon und wählen Sie
-   Install for Impedance analyzer.
+   .. note:: Der Impedanzanalysator ist eine Gemeinschaftsanwendung und muss
+	     vom Application Marketplace (Basar) heruntergeladen werden. 
+	     Klicken Sie auf Application marketplace icon und wählen Sie
+	     Install for Impedance analyzer.
     
 
 3. Starten Sie den Impedanzanalysator und:
-    - unter ** Menü Messeinstellungen ** Anzahl der Schritte einstellen: 20
-    - unter ** Frequenz-Sweep ** Legen Sie die Startfrequenz auf 1 kHz und die Endfrequenz auf 50 kHz fest
-    - Wählen Sie ** Messung starten **
+   - unter ** Menü Messeinstellungen ** Anzahl der Schritte einstellen: 20
+   - unter ** Frequenz-Sweep ** Legen Sie die Startfrequenz auf 1 kHz
+     und die Endfrequenz auf 50 kHz fest
+     
+   - Wählen Sie ** Messung starten **
 
-.. figure:: img/ Activity_11_Fig_4.png
+   .. _fig_04:
+   .. figure:: img/ Activity_11_Fig_4.png
+	       
+      Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der
+      Impedanzanalysatoranwendung aufgenommen wurde
+      
 
-Abbildung 4: Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der Impedanzanalysatoranwendung aufgenommen wurde
+4. Plot mesured Phase unter **Grafikeinstellungen** für **Y-Achse**
+   wählen **P [Grad]**
+   
+   .. _fig_05:
+   .. figure:: img/Activity_11_Fig_5.png
 
-4. Plot mesured Phase
-    - unter **Grafikeinstellungen** für **Y-Achse** wählen **P [Grad]**
+   Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
 
-.. figure:: img/Activity_11_Fig_5.png
+   
+   .. note:: Die Frequenz, bei der dies auftritt **(Phase = 0)**
+	     wird als Resonanzfrequenz bezeichnet.
+	     Bei Resonanzfrequenz ist die Gesamtreaktanz Null und die
+	     Schaltung ist rein ohmsch.
+	     
+   Zum
 
-   Abbildung 5: Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
+   .. math:: Z = R + j(X_L - X_C)
+      :label: eq_8
 
-.. note::
-   Die Frequenz, bei der dies auftritt ** (Phase = 0) ** wird als Resonanzfrequenz bezeichnet.
-   Bei Resonanzfrequenz ist die Gesamtreaktanz Null und die Schaltung ist rein ohmsch.
+   Ob
 
-Zum
+   .. math:: X_L - X_C = 0
+      :label: eq_9
 
-.. math::
-   Z = R + j (X_L - X_C) \ Vierer (8)
+   dann
 
-Ob
+   .. math:: Z = R
+      :label: eq_10
+	   
 
-.. math::
-   X_L - X_C = 0 \ Viereck (9)
+   Die Resonanzfrequenz kann mathematisch unter Verwendung der
+   folgenden Gleichung abgeleitet werden:
+   
 
-dann
-
-.. math::
-   Z = R \ Vierer (10)
-
-Die Resonanzfrequenz kann mathematisch unter Verwendung der folgenden Gleichung abgeleitet werden:
-
-.. math::
-     f_0 = \ frac {1} {2 \ pi \ sqrt {LC}} \ quad (11)
+   .. math:: f_0 = \frac{1}{2 \pi \sqrt {LC}}
+      :label: eq_11
 
 
 Fragen
 ------
 
 1. Berechne die Resonanzfrequenz fo für die Serie RLC unter Verwendung
-   von Gleichung (11) und vergleiche sie mit dem gemessenen Wert. Wie
+   von Gl. :eq:`eq_11` und vergleiche sie mit dem gemessenen Wert. Wie
    groß ist der prozentuale Fehler zwischen den beiden?
    
 2. Geben Sie Ihre Schlussfolgerungen aus den Beobachtungen in Schritt
@@ -228,10 +239,6 @@ Fragen
 3. Berechnen Sie die Größe und Phase für die Reihen-RLC-Schaltung,
    wenn die reaktive Komponente gleich der ohmschen Komponente ist.
    
-
-
-
-
 
 
 

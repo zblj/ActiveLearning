@@ -19,6 +19,8 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import sphinx_rtd_theme
+# import guzzle_sphinx_theme
 
 # -- General configuration ------------------------------------------------
 
@@ -139,11 +141,8 @@ math_numfig = True
 # a list of builtin themes.
 #
 # html_theme = 'alabaster' -- original Sphinx
-import sphinx_rtd_theme
-
+# html_theme = 'guzzle_sphinx_theme'
 html_theme = "sphinx_rtd_theme"
-
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -153,7 +152,8 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-# html_theme_path = []
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# html_theme_path = [guzzle_sphinx_theme.html_theme_path()]
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
