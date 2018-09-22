@@ -31,8 +31,8 @@ Ein Netzwerk ist in Resonanz, wenn Spannung und Strom an den Netzeingangsklemmen
    
 Berücksichtigen Sie die parallele RLC-Schaltung von Abb. 1. Die von der Schaltung angebotene stationäre Admittanz ist: 
 
-.. math:: Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)
-	  :label:
+.. math::
+   Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)  :label:
    
 
 Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen phasenrichtig sind. Dies entspricht einem rein realen Zutritt, so dass die notwendige Bedingung gegeben ist:
