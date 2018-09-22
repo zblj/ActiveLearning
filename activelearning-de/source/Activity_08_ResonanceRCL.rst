@@ -40,8 +40,7 @@ Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen phasenrichtig 
 .. math::
 
    \omega C - \frac{1}{\omega L} = 0
-
-   
+ 
 Die Resonanzbedingung kann durch Einstellen von L, C oder :math:`\omega` erreicht werden. Wenn man L und C konstant hält, wird die Resonanzfrequenz :math:`\omega_0` durch:   
 
 
