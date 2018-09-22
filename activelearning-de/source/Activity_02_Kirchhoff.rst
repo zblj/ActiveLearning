@@ -202,7 +202,6 @@ Vorgehensweise
     Schaltung unter Verwendung der Knotengleichungen a, b, c und d.
     
 
-
 Fragen
 ------
 
