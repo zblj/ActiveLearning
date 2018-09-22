@@ -25,9 +25,8 @@ Hintergrund
 
 Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen und passive Komponenten betrachten, die es uns ermöglichen, die Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Du solltest mit der Gleichung vertraut sein: 
 
-.. math::
-
-   f(t) = \sin(\omega t + \theta)
+.. math:: f(t) = \sin(\omega t + \theta)
+   :label: eq_1
 
    
 :math:`\omega` stellt die Frequenz der sinusförmigen Welle im zeitlichen Verlauf :math:`t` ein,
@@ -53,26 +52,34 @@ eine Periode :math:`T`, einer Sinuswelle. Die X-Achse ist die das
 zeitvareable Argument / Winkel von :math:`\omega t`, das von 0
 bis :math:`2\pi` variiert. 
 
-Der Wert von :math:`\theta` ist, in der in Abbildung 1 dargestellten Funktion, 0. Aufgrund von :math:`sin(0) = 0` beginnt die
-die Funktion im Koordinatenursprung bei 0. Dies ist eine einfache Sinuswelle
-ohne Zeitversatz, also ohne Phaseverschiebung. Beachten Sie, dass bei Verwendung von bei :math:`\omega t`,
+Der Wert von :math:`\theta` ist in der in :numref:`fig_01` dargestellten
+Funktion, 0. Aufgrund von :math:`sin(0) = 0` beginnt die
+die Funktion im Koordinatenursprung bei 0. Dies ist eine einfache
+Sinuswelle ohne Zeitversatz, also ohne Phaseverschiebung. Beachten
+Sie, dass bei Verwendung von bei :math:`\omega t`,
 wir uns in einem Bereich von 0 bis :math:`2 \pi` oder 0 bis
-:math:`360^{\circ}` bewegen, um die in der Abbildung 1 dargestellte Sinuswelle zu erhalten.  
-
+:math:`360^{\circ}` bewegen, um die in :numref:`fig_01` dargestellte
+Sinuswelle zu erhalten.
+      
+.. _fig_01:
 .. figure:: img/ Activity_01_Fig_01.png
    :align: center
+   
+   2 Zyklen von :math:`\sin(t)`.  
 
-   Abbildung 1: 2 Zyklen von :math:`\sin(t)`.  
-
+   
 Als Randnotiz: Was passiert, wenn :math:`\omega t > 2\pi`?
 
 Geben Sie :math:`2.5\pi` in Ihren Taschenrechner und sehen Sie
-selbst. Wie Sie wissen sollten, wiederholt sich die Sinusfunktion alle :math:`2\pi` Radien oder :math:`360^{\circ}`.
-Es ist ähnlich wie Subtrahieren von :math:`2\pi(I)` Bogenmaß von Argument, wobei :math:`(I)` die größte ganze Zahl ist,
+selbst. Wie Sie wissen sollten, wiederholt sich die Sinusfunktion alle
+:math:`2\pi` Radien oder :math:`360^{\circ}`.
+Es ist ähnlich wie Subtrahieren von :math:`2\pi(I)` Bogenmaß von
+Argument, wobei :math:`(I)` die größte ganze Zahl ist,
 die ein nicht-negatives Ergebnis liefert. 
 
-Was passiert, wenn wir eine zweite Sinuswelle in Abbildung 1,
-mit dem gleichen :math:`\omega` -Wert und :math:`\theta = 0` einzeichnen?
+Was passiert, wenn wir eine zweite Sinuswelle in :numref:`fig_01` mit
+dem gleichen :math:`\omega` -Wert und :math:`\theta = 0` einzeichnen?
+
 
 Wir bekommen eine weitere Sinuswelle, die über der ersten Sinuswelle liegt.
 Aufgrund von :math:`\theta = 0` gibt es keine Phasendifferenz zwischen
@@ -81,18 +88,20 @@ den Sinuswellen und sie sehen im zeitlichen Verlauf gleich aus.
 Ändern Sie nun :math:`\theta` auf :math:`\pi / 2` rad oder
 :math:`90^{\circ}` für die zweite Sinuswelle. Wir sehen die
 ursprüngliche Sinuswelle und eine zweite Sinuswelle, die
-dich mit der Zeit nach links verschoben hat. Abbildung 2 zeigt die ursprüngliche Sinuswelle
-(grün) und die zweite Sinuswelle (orange) mit einem Zeitversatz. Da der Offset konstant ist, sehen wir die ursprüngliche
-Sinuswelle zeitlich um einen Wert von :math:`\ theta`
+dich mit der Zeit nach links verschoben hat. Abbildung 2 zeigt die
+ursprüngliche Sinuswelle (grün) und die zweite Sinuswelle (orange) mit
+einem Zeitversatz. Da der Offset konstant ist, sehen wir die
+ursprüngliche Sinuswelle zeitlich um einen Wert von :math:`\ theta`
 verschoben, was :math:`1/4` der Periode in diesem Beispiel entspricht.
 
+.. _fig_02:
 .. figure:: img/ Activity_01_Fig_02.png
    :align: center
-
-   Abbildung 2: grün - :math:`\sin(t)`, orange - :math:`\sin(t + \pi/4)`.
+   
+   Funktionsplots von :math:`\sin(t)` und :math:`\sin(t + \pi/4)`.
 
    
-:math:`\theta` ist Zeitversatz oder Phasenanteil von Gl. (1). Der
+:math:`\theta` ist Zeitversatz oder Phasenanteil von :eq:`eq_1`. Der
 Phasenwinkel definiert den zeitlichen Versatz und
 umgekehrt. Gl. (2) zeigt die Beziehung. Wir haben uns für einen
 besonders häufig gewählten Phasenversatz von :math:`90^{\circ}`. Der
@@ -101,17 +110,29 @@ Phasenversatz zwischen einer Sinuswelle und Kosinuswelle ist
 nicht 90. Tatsächlich ist es oft eine Funktion der Frequenz (:math:`f`). 
 
 
-Bei zwei Sinuswellen, die z.B. auf einem Scope angezeigt werden, kann der Phasenwinkel durch Messung der Zeit zwischen den beiden Wellenformen berechnet werden (negative bis positive Nulldurchgänge oder "steigende Flanken", können als Bezugspunkte für die Zeitmessung in der Wellenform verwendet werden). Eine volle Periode der Sinuswelle in der Zeit ist die gleiche wie :math:`360^{\circ}`. Wenn man das Verhältnis der Zeit zwischen den beiden Wellenformen als :math:`\Delta t` und der Zeit in einer Periode einer vollen Sinuswelle als :math:`T` nimmt, kann man den Winkel zwischen ihnen bestimmen. Gleichung (2) gibt die genaue Beziehung an.
+Bei zwei Sinuswellen, die z.B. auf einem Scope angezeigt werden, kann
+der Phasenwinkel durch Messung der Zeit zwischen den beiden
+Wellenformen berechnet werden (negative bis positive Nulldurchgänge
+oder "steigende Flanken", können als Bezugspunkte für die Zeitmessung
+in der Wellenform verwendet werden). Eine volle Periode der Sinuswelle
+in der Zeit ist die gleiche wie :math:`360^{\circ}`. Wenn man das
+Verhältnis der Zeit zwischen den beiden Wellenformen als :math:`\Delta
+t` und der Zeit in einer Periode einer vollen Sinuswelle als :math:`T`
+nimmt, kann man den Winkel zwischen ihnen bestimmen. Gleichung (2)
+gibt die genaue Beziehung an.
+
 
 Phase
 -----
 
 .. math::
-   \theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi \, rad = \Delta t f 2 \pi \, rad;
-
+   \theta &= \frac{\Delta t}{T} 360^{\circ} \\
+   &= \frac{\Delta t}{T} 2\pi \, rad \\
+   &= \Delta t f 2 \pi \, rad;
+   :label: eq_2
+	   
 
 Wobei :math:`T` die Periode der Sinuswelle ist.
-
 
 
 **Natürlich auftretende Zeitverschiebungen in Sinuswellen.**
@@ -125,8 +146,10 @@ Strom und Spannung eines Widerstandes ist :math:`V / I = R`, wobei
 :math:`R` real ist und in Ohm angegeben wird. Darau ergibt sich, dass die
 Spannung über, und der Strom in einem Widerstand immer in Phase sind. 
 
-Für Kondensatoren und Induktivitäten ist die Gleichung bezüglich der Spannung :math:`V`
-zu Strom :math:`I` ähnlich. :math:`V/I=Z`, wobei :math:`Z` eine komplexe Impedanz mit Real- und Imaginärteilen ist.
+Für Kondensatoren und Induktivitäten ist die Gleichung bezüglich der
+Spannung :math:`V` zu Strom :math:`I` ähnlich. :math:`V/I=Z`, wobei
+:math:`Z` eine komplexe Impedanz mit Real- und Imaginärteilen ist.
+
 Wir sehen uns in diesem Labor nur einen Kondensator an. 
 
 
@@ -137,38 +160,80 @@ entsteht somit ein elektrisches Feld zwischen den Platten.
 Dielektrika von Kondensatoren können aus vielen Materialien
 hergestellt werden, darunter dünne isolierende Schichten und Keramik.
 Das Unterscheidungsmerkmal eines Kondensators ist seine Kapazität (C),
-gemessen in Farads (F), die das Verhältnis zwischen Spannung und Ladung angibt.
+gemessen in Farads (F), die das Verhältnis zwischen Spannung und
+Ladung angibt.
+
  
 
-Die Grundregel für Kondensatoren ist, dass sich die Spannung am Kondensator nicht ändert, wenn kein Strom in den Kondensator fließt. Die Änderungsrate der Spannung (:math:`dv_C/dt`) ist abhängig von der Größe des Stroms. Für einen idealen Kondensator wird der Strom :math:`i_C(t)` durch die folgende Formel auf die Spannung bezogen:  
+Die Grundregel für Kondensatoren ist, dass sich die Spannung am
+Kondensator nicht ändert, wenn kein Strom in den Kondensator
+fließt. Die Änderungsrate der Spannung (:math:`dv_C/dt`) ist abhängig
+von der Größe des Stroms. Für einen idealen Kondensator wird der Strom
+:math:`i_C(t)` durch die folgende Formel auf die Spannung bezogen:
       
-.. math::
-   i_C(t) = C \frac{dv_C(t)}{dt}
-
+      
+.. math:: i_C(t) = C \frac{dv_C(t)}{dt}
+   :label: eq_3
+	   
    
-An dieser Stelle wird auf die genaue Funktionsweise nicht weiter eingegangen. Sie werden die Verhaltensweisen dieses Bauelements in späteren Labors beobachten. Die Impedanz eines Kondensators ist eine Funktion der Frequenz. Die Impedanz sinkt mit steigender Frequenz, d.h je niedriger die Frequenz, desto höher die Impedanz. 
+An dieser Stelle wird auf die genaue Funktionsweise nicht weiter
+eingegangen. Sie werden die Verhaltensweisen dieses Bauelements in
+späteren Labors beobachten. Die Impedanz eines Kondensators ist eine
+Funktion der Frequenz. Die Impedanz sinkt mit steigender Frequenz, d.h
+je niedriger die Frequenz, desto höher die Impedanz.
 
-Dabei gilt :math:`\omega = 2 \pi f` ist definiert als Winkelgeschwindigkeit.
 
-Eine wesentliche Eigenschaft von Gl. (4) ist der imaginäre Operator :math:`j`. Wenn wir uns einen Widerstand anschauen, gibt es keinen imaginären Operator in der Gleichung für die Impedanz. Der sinusförmige Strom durch einen Widerstand und die Spannung an einem Widerstand haben keinen zeitlichen Versatz zwischen ihnen, da die Beziehung völlig real ist. Der einzige Unterschied besteht in der Amplitude. Die Spannung ist sinusförmig und steht in Phase mit dem sinusförmigen Strom. Dies ist bei einem Kondensator nicht der Fall. Wenn wir die Wellenform einer sinusförmigen Spannung an einem Kondensator betrachten, wird sie im Vergleich zum Strom durch den Kondensator zeitlich verschoben. Dafür ist der imaginäre Operator :math:`j` verantwortlich. Betrachtet man Abb. 3, so kann man feststellen, dass die Stromwellenform eine Spitze (Maxima) aufweist, wenn die Steigung der Spannungswelle :math:`(dv/dt)` maximal ist.
+Dabei gilt :math:`\omega = 2 \pi f` ist definiert als
+Winkelgeschwindigkeit.
+
+
+Eine wesentliche Eigenschaft von Gl. (4) ist der imaginäre Operator
+:math:`j`. Wenn wir uns einen Widerstand anschauen, gibt es keinen
+imaginären Operator in der Gleichung für die Impedanz. Der
+sinusförmige Strom durch einen Widerstand und die Spannung an
+einem Widerstand haben keinen zeitlichen Versatz zwischen ihnen,
+da die Beziehung völlig real ist. Der einzige Unterschied
+besteht in der Amplitude. Die Spannung ist sinusförmig und steht
+in Phase mit dem sinusförmigen Strom. Dies ist bei einem
+Kondensator nicht der Fall. Wenn wir die Wellenform einer
+sinusförmigen Spannung an einem Kondensator betrachten, wird sie
+im Vergleich zum Strom durch den Kondensator zeitlich
+verschoben. Dafür ist der imaginäre Operator :math:`j`
+verantwortlich. Betrachtet man Abb. 3, so kann man feststellen,
+dass die Stromwellenform eine Spitze (Maxima) aufweist, wenn die
+Steigung der Spannungswelle :math:`(dv/dt)` maximal ist.
+      
  
 
-Die Zeitdifferenz zwischen den beiden Wellen kann als Phasenwinkel ausgedrückt werden, wie in Gl. (2) definiert.
+Die Zeitdifferenz zwischen den beiden Wellen kann als Phasenwinkel
+ausgedrückt werden, wie in Gl. :eq:`eq_2` definiert.
 
+.. _fig_03:
 .. figure:: img/Activity_01_Fig_03.png
    :align: center
 	
-   Abbildung 3: Phasenwinkelbestimmung zwischen Spannung (V) und Strom (I).
+   Phasenwinkelbestimmung zwischen Spannung (V) und Strom (I).
 
    
-Sie haben wahrscheinlich schon einmal Schaltungen gesehen, die vollständig aus Widerständen bestehen. Diese Schaltungen haben nur eine reale Impedanz, was bedeutet, dass die Spannungen in der gesamten Schaltung phasengleich sind (d.h :math:`θ=0` grad), da es die komplexe Impedanz ist, die den Strom in Bezug auf die Spannung zeitlich verschiebt. Beachten Sie, dass die Impedanz eines Kondensators rein imaginär ist. Widerstände haben reale Impedanzen, so dass Schaltungen, die sowohl Widerstände als auch Kondensatoren enthalten, komplexe Impedanzen aufweisen.
+Sie haben wahrscheinlich schon einmal Schaltungen gesehen, die
+vollständig aus Widerständen bestehen. Diese Schaltungen haben nur
+eine reale Impedanz, was bedeutet, dass die Spannungen in der gesamten
+Schaltung phasengleich sind (d.h :math:`\theta=0` Grad), da es die komplexe
+Impedanz ist, die den Strom in Bezug auf die Spannung zeitlich
+verschiebt. Beachten Sie, dass die Impedanz eines Kondensators rein
+imaginär ist. Widerstände haben reale Impedanzen, so dass Schaltungen,
+die sowohl Widerstände als auch Kondensatoren enthalten, komplexe
+Impedanzen aufweisen.
+
  
 
-Um den theoretischen Phasenwinkel zwischen Spannung (V) und Strom (I) in einer RC-Schaltung zu berechnen, wird folgende Formel einngesetzt: 
+Um den theoretischen Phasenwinkel zwischen Spannung (V) und Strom (I)
+in einer RC-Schaltung zu berechnen, wird folgende Formel einngesetzt:
 
-.. math::
-   i(t) = \frac{v(t)}{Z_{tot}},
 
+.. math::  i(t) = \frac{v(t)}{Z_{tot}},
+   :label: eq_4
+	   
 
 wo :math:`Z_ {tot}` ist die Gesamtimpedaz der Schaltung ist.
 
@@ -177,8 +242,9 @@ Stellen Sie die Gleichung soweit um, bis sie aussieht wie
 Zahlen sind. Die Phasenbeziehung des Stroms zur Spannung ist
 dann: 
 
-.. math::
-   \theta = \arctan\left(\frac{b}{a}\right).
+.. math::  \theta = \arctan\left(\frac{b}{a}\right).
+   :label: eq_5
+	   
 
 
 **Materialien**
@@ -212,30 +278,50 @@ Lehrziele
 
 Verfahren
 ---------
-- Stellen Sie sicher, dass das STEMlab an ein lokales Netzwerk angeschlossen ist und starten Sie die Webschnittstelle über den Webbrowser.
+- Stellen Sie sicher, dass das STEMlab an ein lokales Netzwerk
+  angeschlossen ist und starten Sie die Webschnittstelle über den
+  Webbrowser.
   
-- Starten Sie die Anwendung Oszilloskop & Signalgenerator. Der Hauptbildschirm sollte wie eine Scope-Anzeige mit einstellbaren Bereichs-, Positions- und Messparametern aussehen. 
+  
+- Starten Sie die Anwendung Oszilloskop & Signalgenerator. Der
+  Hauptbildschirm sollte wie eine Scope-Anzeige mit einstellbaren
+  Bereichs-, Positions- und Messparametern aussehen.
+  
 
-- Stellen Sie am linken unteren Bildschirmrand sicher, dass OUT1 V/div und OUT2 V/div beide auf 200 mV/div eingestellt sind (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden).  
+- Stellen Sie am linken unteren Bildschirmrand sicher, dass OUT1 V/div
+  und OUT2 V/div beide auf 200 mV/div eingestellt sind (Sie können
+  V/div einstellen, indem Sie den gewünschten Kanal auswählen und die
+  vertikalen +/- Regler verwenden).
+  
 
-- Stellen Sie im Menü (Steuerrad) von  OUT1 die Frequenz auf 1000 Hz, die Phase auf 0∘ und Amplitude auf 0,9 V  ein. Wählen Sie die Sinuswellenform und aktivieren Sie die Ausgabe. 
+- Stellen Sie im Menü (Steuerrad) von  OUT1 die Frequenz auf 1000 Hz,
+  die Phase auf 0∘ und Amplitude auf 0,9 V  ein. Wählen Sie die
+  Sinuswellenform und aktivieren Sie die Ausgabe.
+  
 
-- Stellen Sie im Menü (Steuerrad) von OUT2 die Frequenz auf 1000 Hz und die Amplitude auf 0,9 V ein. Wählen Sie die Sinuswellenform und aktivieren Sie die Ausgabe. 
+- Stellen Sie im Menü (Steuerrad) von OUT2 die Frequenz auf 1000 Hz
+  und die Amplitude auf 0,9 V ein. Wählen Sie die Sinuswellenform und
+  aktivieren Sie die Ausgabe.
+  
 
 - Setzen Sie t/div auf 200 us/div (mit horizontalen +/- Regler). 
 
-  
+
+.. _fig_04:
 .. figure:: img/Activity_01_Fig_04.png
    :scale: 50%
 
-   Abbildung 4: Sinus-Signal erzeugt mit Oszilloskop und Signal
+   Sinussignal erzeugt mit Oszilloskop und Signal
    Generatoranwendungen. Markiert mit Grün - Haupteinstellung und
    Kontrollen.
 
 
 Messen Sie den Phasenwinkel zwischen zwei generierten Wellenformen:
 
-Aufgrund der vorhergegangenen Einstellungen sollten Sie "nur eine" Sinuswelle sehen. Tatsächlich gibt es zwei Sinuswellen, die Aufgrund von Nullphasenwinkel übereinander liegen und nach einer aussehen. 
+Aufgrund der vorhergegangenen Einstellungen sollten Sie "nur eine"
+Sinuswelle sehen. Tatsächlich gibt es zwei Sinuswellen, die Aufgrund
+von Nullphasenwinkel übereinander liegen und nach einer aussehen.
+
 
 - Ändern Sie im OUT1-Steuermenü die Phase auf :math:`90^{\circ}`.
 
@@ -244,15 +330,22 @@ Aufgrund der vorhergegangenen Einstellungen sollten Sie "nur eine" Sinuswelle se
 - Auf welcher Kanal sieht so aus, als ob der Sinus vor dem anderen steht?
 
 
-Das OUT2-Signal sollte so aussehen, als ob es das OUT1-Signal anführt (vorläuft). Das Signal OUT2 durchquert die 0-V-Achse (x-Achse) von unten nach oben vor dem Signal OUT1. Es stellt sich heraus, dass eine positive :math:`θ` als Phasenleitung bezeichnet wird. Der Referenzpunkt für die niedrige bis hohe Übergangszeit ist beliebig. Der hohe zu niedrige Übergang könnte ebenfalls genutzt werden.
+Das OUT2-Signal sollte so aussehen, als ob es das OUT1-Signal anführt
+(vorläuft). Das Signal OUT2 durchquert die 0-V-Achse (x-Achse) von
+unten nach oben vor dem Signal OUT1. Es stellt sich heraus, dass eine
+positive :math:`θ` als Phasenleitung bezeichnet wird. Der
+Referenzpunkt für die niedrige bis hohe Übergangszeit ist
+beliebig. Der hohe zu niedrige Übergang könnte ebenfalls genutzt
+werden.
 
 
+.. _fig_05:
 .. figure:: img/Activity_01_Fig_05.png
    :scale: 50%
 
-   Bild 5: Oszilloskop-Applikation mit zwei Sinussignalen mit
-   Phasendifferenz.
+   Oszilloskop-Applikation mit zwei Sinussignalen mit Phasendifferenz.
 
+   
 - Ändern Sie die Phase von OUT2 zu :math:`45^{\circ}`. Jetzt sieht
   es so aus, als ob das OUT2-Signal dem OUT1-Signal nacheilt. 
 
@@ -280,34 +373,53 @@ OUT2-Signal.
   Phase zu berechnen Offset :math:`\theta` in Grad.
 
 
-Beachten Sie, dass Sie die Frequenz eines Signals nicht messen können, bei dem nicht mindestens eine volle Periode auf dem Bildschirm angezeigt wird. Normalerweise benötigen Sie mehr als zwei Zyklen, um konstante Ergebnisse zu erzielen. Sie erzeugen ein Sinussignal mit einer, von Ihnen, vorgegeben Frequenz. Sie müssen diese in diesem Teil des Labors nicht messen. 
+Beachten Sie, dass Sie die Frequenz eines Signals nicht messen können,
+bei dem nicht mindestens eine volle Periode auf dem Bildschirm
+angezeigt wird. Normalerweise benötigen Sie mehr als zwei Zyklen, um
+konstante Ergebnisse zu erzielen. Sie erzeugen ein Sinussignal mit
+einer, von Ihnen, vorgegeben Frequenz. Sie müssen diese in diesem Teil
+des Labors nicht messen.
+
 
 
 3. Messung der Größe mit einer reelen Schaltung.
 
+.. _fig_06:
 .. figure:: img/Activity_01_Fig_06.png
    :scale: 50%
 
-   Abbildung 6: R-R-Schaltung.
+   R-R-Schaltung.
 
-Bauen Sie die in Abb.6 gezeigte Schaltung auf Ihrer lötfreien Leiterplatte mit zwei :math:`470 \Omega` Widerständen, Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.
+   
+Bauen Sie die in Abb.6 gezeigte Schaltung auf Ihrer lötfreien
+Leiterplatte mit zwei :math:`470 \Omega` Widerständen,
+Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.
 
 
-HINWEIS: Verwenden Sie als Erdungs-Pin Erdungskabel des Messspitzen (Krokodilstecker).
+.. hint:: Verwenden Sie als Erdungs-Pin Erdungskabel des Messspitzen (Krokodilstecker).
 
 
+.. _fig_07:
 .. figure:: img/Activity_01_Fig_07.png
    :scale: 50%
 
-   Abbildung 7: R-R-Schaltung auf dem Steckbrett.
+   R-R-Schaltung auf dem Steckbrett.
 
 
-Wir haben OUT1 direkt mit IN1 verbunden, so dass wir ein reales Spannungssignal über die Widerstände R1\ :sub:`1`\ und R2\ :sub:`2`\ beobachten können. 
+Wir haben OUT1 direkt mit IN1 verbunden, so dass wir ein reales
+Spannungssignal über die Widerstände R1\ :sub:`1`\ und R2\ :sub:`2`\
+beobachten können.
 
 
-- Stellen Sie im Menü OUT1 die Frequenz auf 200 Hz mit 0° Phase und 0,9 V Amplitude ein. Deaktivieren Sie die Taste "Show", wählen Sie SINE als Wellenform und aktivieren Sie die Taste "ON". 
 
-- Stellen Sie die horizontale Zeitskala auf 1,0 mS/Div ein, um zwei Zyklen der Wellenform anzuzeigen.
+- Stellen Sie im Menü OUT1 die Frequenz auf 200 Hz mit 0° Phase und
+  0,9 V Amplitude ein. Deaktivieren Sie die Taste "Show", wählen Sie
+  SINE als Wellenform und aktivieren Sie die Taste "ON".
+  
+
+- Stellen Sie die horizontale Zeitskala auf 1,0 mS/Div ein, um zwei
+  Zyklen der Wellenform anzuzeigen.
+  
 
 - Klicken Sie auf die Schaltfläche Start, wenn sie nicht bereits
   ausgeführt wird. 
@@ -315,8 +427,9 @@ Wir haben OUT1 direkt mit IN1 verbunden, so dass wir ein reales Spannungssignal 
 - Stellen Sie mit den vertikalen +/- Reglern  200 mV / div für IN1 und
   IN2 ein.
 
-Die in IN1 (gelb) angezeigte Sinuswelle ist die Spannung an beiden Widerständen (V\ :sub:`R1` \+ V\ :sub:`R2`\). Die
-in IN2 dargestellte Sinuswelle ist die Spannung an nur R\ :sub:`2`\
+Die in IN1 (gelb) angezeigte Sinuswelle ist die Spannung an beiden
+Widerständen (V\ :sub:`R1` \+ V\ :sub:`R2`\). Die in IN2 dargestellte
+Sinuswelle ist die Spannung an nur R\ :sub:`2`\
 (V\ :sub:`R2` \). Um die Spannung über R\ :sub:`1` anzuzeigen,
 verwenden wir die Math-Funktion der Red Pitayas. Unter dem
 Mathe-Menü für Signal 1 wählen Sie IN1, wählen Sie den Operator "-",
@@ -348,14 +461,25 @@ Mit diesen Einstellungen beobachtest du:
   
 - Können Sie sogar zwei unterschiedliche Sinuswellen sehen?
 
-    Wahrscheinlich nicht. Es sollte keinen beobachtbaren Zeitversatz geben
-    und somit keine Phasenverschiebung.
+  Wahrscheinlich nicht. Es sollte keinen beobachtbaren Zeitversatz geben
+  und somit keine Phasenverschiebung.
 
-Sie sehen, dass sich die MATH- (lila) und IN2- (grün) Kurven überlappen. Um beide Spuren zu sehen, können Sie die vertikale Position eines Kanals verschieben, um sie zu trennen.
+Sie sehen, dass sich die MATH- (lila) und IN2- (grün) Kurven
+überlappen. Um beide Spuren zu sehen, können Sie die vertikale
+Position eines Kanals verschieben, um sie zu trennen.
 
-Dies geschieht, indem Sie den Leiterbahnmarker (auf der linken Seite des Gitters) mit der linken Maustaste auswählen und die Leiterbahn nach oben/unten bewegen. Stellen Sie sicher, dass Sie die vertikale Position wieder auf 0 setzen, um die Signale neu auszurichten. 
 
-Hier haben wir keine Phasenverschiebung, da Wert von R\ :sub:`1`\ = R\ :sub:`2`\ , so dass die Signalamplituden für VR1 und VR2 gleich sind. Das Ergebnis ist, dass wir zwei identische Signale (IN2=V\ :sub:`R2`\, MATH=V\ :sub:`R1`)` auf dem Oszilloskop haben.
+Dies geschieht, indem Sie den Leiterbahnmarker (auf der linken Seite
+des Gitters) mit der linken Maustaste auswählen und die Leiterbahn
+nach oben/unten bewegen. Stellen Sie sicher, dass Sie die vertikale
+Position wieder auf 0 setzen, um die Signale neu auszurichten.
+
+
+Hier haben wir keine Phasenverschiebung, da Wert von R\ :sub:`1`\ = R\
+:sub:`2`\ , so dass die Signalamplituden für VR1 und VR2 gleich
+sind. Das Ergebnis ist, dass wir zwei identische Signale (IN2=V\
+:sub:`R2`\, MATH=V\ :sub:`R1`)` auf dem Oszilloskop haben.
+	  
 
 
 Was passiert, wenn Sie :math:`220 \Omega` Wert für R \ :sub:`2` \ einsetzen?
@@ -366,33 +490,51 @@ Was passiert, wenn Sie :math:`220 \Omega` Wert für R \ :sub:`2` \ einsetzen?
 - Ersetzen Sie R \ :sub:`2` \ durch einen 1 μF Kondensator C \ :sub:`1` \.
 
 
+.. _fig_08:
 .. figure:: img/Activity_01_Fig_08.png
    :scale: 50%
 
-   Abbildung 8: RC-Schaltung an
-
-HINWEIS: Für einen 1 μF-Kondensator wird wahrscheinlich ein Elektrolyt
-verwendet Kondensator.
-
-
-Diese Kondensatoren sind polaritätsempfindlich, d.h. auf dem positiven Kondensator-Pin sollte die Spannung niemals negativ und auf dem negativen Pin (GND) niemals positiv sein.
+   RC-Schaltung an
+   
+.. hint:: Für einen 1 μF-Kondensator wird wahrscheinlich ein
+	  Elektrolyt verwendet Kondensator.
 
 
-Aus dem vorherigen Beispiel (RR-Schaltung) und den Einstellungen des Oszilloskop- und Signalgenerators erzeugen wir Sinuswellen, die von -0,9 V bis 0,9 V gehen. Aufgrund der negativen Spannun, wird falsche Polarisation des Kondensators verursacht (es kann einen Kondensator beschädigen). Daher  müssen Sie das Ausgangssignal anpassen, damit Sie ein Sinussignal erzeugen, das immer positiv ist (Sinussignal mit einem Offset). 
+Diese Kondensatoren sind polaritätsempfindlich, d.h. auf dem positiven
+Kondensator-Pin sollte die Spannung niemals negativ und auf dem
+negativen Pin (GND) niemals positiv sein.
 
 
-- Im Menü OUT1 stllen Sie die Amplitude und Offsetwerte auf 0,45 V ein (Jetzt erzeugen wir ein Sinussignal, das um 0,45 V des DC-Offsetwertes oszilliert, d.h. ein sinusförmiges Signal geht von 0 V auf 0,9 V). 
+Aus dem vorherigen Beispiel (RR-Schaltung) und den Einstellungen des
+Oszilloskop- und Signalgenerators erzeugen wir Sinuswellen, die von
+-0,9 V bis 0,9 V gehen. Aufgrund der negativen Spannun, wird falsche
+Polarisation des Kondensators verursacht (es kann einen Kondensator
+beschädigen). Daher  müssen Sie das Ausgangssignal anpassen, damit Sie
+ein Sinussignal erzeugen, das immer positiv ist (Sinussignal mit einem
+Offset).
 
-Da es keinen Gleichstrom durch den Kondensator gibt, sind wir an diesem Gleichstromwert nicht interessiert. Um unsere Signale auf dem Raster neu zu zentrieren, müssen wir die Signale mit negativen Offsetwerten in vertikale Richtung verschieben.
+
+- Im Menü OUT1 stllen Sie die Amplitude und Offsetwerte auf 0,45 V ein
+  (Jetzt erzeugen wir ein Sinussignal, das um 0,45 V des
+  DC-Offsetwertes oszilliert, d.h. ein sinusförmiges Signal geht von 0
+  V auf 0,9 V).
+  
+
+Da es keinen Gleichstrom durch den Kondensator gibt, sind wir an
+diesem Gleichstromwert nicht interessiert. Um unsere Signale auf dem
+Raster neu zu zentrieren, müssen wir die Signale mit negativen
+Offsetwerten in vertikale Richtung verschieben.
+
 
 - Im Einstellungsmenü IN1 und IN2 den Wert des vertikalen Offset auf -450 mV einstellen.
   
 - Für eine stabile erfassung den Triggerpegel im Menu TRIGGER auf 0.45 V einstellen.
 
+.. _fig_09:
 .. figure:: img/Activity_01_Fig_09.png
    :scale: 50%
 
-   Abbildung 9: Oszilloskop-Signale mit RC-Schaltung.
+   Oszilloskop-Signale mit RC-Schaltung.
 
 
 - Messen Sie den Wert von IN1, IN2 und Math P2P (Spitze zu Spitze).
@@ -407,7 +549,10 @@ Da es keinen Gleichstrom durch den Kondensator gibt, sind wir an diesem Gleichst
   - V\ :sub:`R1` \ + V\ :sub:`C1` \ ____________ V\ :sub:`PP` \.
 
 
-Nun kommen Sie zu etwas, das mit Phase zu tun hat. Hoffentlich sehen Sie ein paar Sinuswellen mit Zeitversatz oder Phasendifferenzen auf dem Gitter. Lassen Sie uns die Zeitverschiebungen messen und die Phasenunterschiede berechnen.. 
+Nun kommen Sie zu etwas, das mit Phase zu tun hat. Hoffentlich sehen
+Sie ein paar Sinuswellen mit Zeitversatz oder Phasendifferenzen auf
+dem Gitter. Lassen Sie uns die Zeitverschiebungen messen und die
+Phasenunterschiede berechnen..
 
 
 4. Messen Sie den Zeitunterschied zwischen V\ :sub:`R1` \ und V\ :sub:`C1` \ und berechne die Phasenversätze. 
@@ -423,11 +568,16 @@ kurze Erklärung wie:
   Beachten Sie, dass die Delta - Cursor - Anzeige das Vorzeichen der Differenz anzeigt.
 
 
-Sie können die Messanzeige verwenden, um die Frequenz zu
-ermitteln. Da Sie die Frequenz der Quelle einstellen, müssen Sie den Wert nicht ermittelt. 
+Sie können die Messanzeige verwenden, um die Frequenz zu ermitteln. Da
+Sie die Frequenz der Quelle einstellen, müssen Sie den Wert nicht
+ermittelt.
 
 
-Angenommen, :math:`\Delta t` ist 0, wenn Sie wirklich keinen Unterschied zu 1 oder 2 Zyklen der Sinuswelle auf dem Bildschirm sehen können. 
+
+Angenommen, :math:`\Delta t` ist 0, wenn Sie wirklich keinen
+Unterschied zu 1 oder 2 Zyklen der Sinuswelle auf dem Bildschirm sehen
+können.
+
 
 
 - Setzen Sie den ersten Cursor auf das neg. zu

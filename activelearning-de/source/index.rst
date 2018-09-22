@@ -2,6 +2,7 @@ Willkommen zu Red Pitaya's aktivem Lernen
 =========================================
 
 .. toctree::
+   :name: mastertoc
    :maxdepth: 1
    :numbered:
 
