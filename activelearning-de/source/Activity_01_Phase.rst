@@ -52,7 +52,7 @@ eine Periode :math:`T`, einer Sinuswelle. Die X-Achse ist die das
 zeitvareable Argument / Winkel von :math:`\omega t`, das von 0
 bis :math:`2\pi` variiert. 
 
-Der Wert von :math:`\theta` ist in der in :numref:`fig_01` dargestellten
+Der Wert von :math:`\theta` ist in der in :numref:`_fig_01` dargestellten
 Funktion, 0. Aufgrund von :math:`sin(0) = 0` beginnt die
 die Funktion im Koordinatenursprung bei 0. Dies ist eine einfache
 Sinuswelle ohne Zeitversatz, also ohne Phaseverschiebung. Beachten
