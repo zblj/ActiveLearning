@@ -123,7 +123,7 @@ Vorgehensweise
    .. _10_fig_04:  
    .. figure:: img/Activity_10_Fig_4.png
 
-   Bandpassfilter **gemessen** Frequenzgang
+	       Bandpassfilter **gemessen** Frequenzgang
 
    
 Fragen:
