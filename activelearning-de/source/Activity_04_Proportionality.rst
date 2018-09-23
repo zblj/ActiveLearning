@@ -69,9 +69,11 @@ Materialien
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 - Verschiedene Widerstände:
- - :math:`1 k\Omega` 
- - :math:`2,2 k\Omega` 
- - :math:`4,7 k\Omega`
+  - :math:`1 k\Omega` 
+
+  - :math:`2,2 k\Omega` 
+
+  - :math:`4,7 k\Omega`
 
 
 Vorgehensweise

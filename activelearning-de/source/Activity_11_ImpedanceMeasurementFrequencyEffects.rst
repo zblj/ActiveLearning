@@ -104,7 +104,7 @@ Dies kann auch als ein Zeiger mit **Magnitude** dargestellt werden
    :label: eq_7
 	   
 
-.. _fig_01:
+.. _11_fig_01:
 .. figure:: img/ Activity_11_Fig_1.png
 
    RLC-Reihenschaltung.
@@ -139,7 +139,7 @@ nicht sichtbar / lesbar ist:
 5. Wiederholen Sie die obigen Schritte für Rs, Ls und Cs
 
 
-.. _fig_02:
+.. _11_fig_02:
 .. figure:: img/ Activity_11_Fig_2.png
 
    LCR-Meter-Anwendung
@@ -155,12 +155,12 @@ nicht sichtbar / lesbar ist:
 Messreihe RLC-Schaltung Impedanz
 --------------------------------
 
-1. Richten Sie die Schaltung wie in :numref:`fig_01` und :numref:`fig_02` auf
+1. Richten Sie die Schaltung wie in :numref:`11_fig_01` und :numref:`11_fig_02` auf
    Ihrem lötfreien Steckbrett mit den Komponentenwerten Rs = 1 KΩ, Cs
    = 0,047 μF, Ls = 22 mH ein.
    
 
-   .. _fig_03:
+   .. _11_fig_03:
    .. figure:: img/ Activity_11_Fig_3.png
 
    STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
@@ -181,7 +181,7 @@ Messreihe RLC-Schaltung Impedanz
      
    - Wählen Sie ** Messung starten **
 
-   .. _fig_04:
+   .. _11_fig_04:
    .. figure:: img/ Activity_11_Fig_4.png
 	       
       Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der
@@ -191,7 +191,7 @@ Messreihe RLC-Schaltung Impedanz
 4. Plot mesured Phase unter **Grafikeinstellungen** für **Y-Achse**
    wählen **P [Grad]**
    
-   .. _fig_05:
+   .. _11_fig_05:
    .. figure:: img/Activity_11_Fig_5.png
 
    Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
@@ -205,17 +205,17 @@ Messreihe RLC-Schaltung Impedanz
    Zum
 
    .. math:: Z = R + j(X_L - X_C)
-      :label: eq_8
+      :label: 11_eq_8
 
    Ob
 
    .. math:: X_L - X_C = 0
-      :label: eq_9
+      :label: 11_eq_9
 
    dann
 
    .. math:: Z = R
-      :label: eq_10
+      :label: 11_eq_10
 	   
 
    Die Resonanzfrequenz kann mathematisch unter Verwendung der
@@ -223,14 +223,14 @@ Messreihe RLC-Schaltung Impedanz
    
 
    .. math:: f_0 = \frac{1}{2 \pi \sqrt {LC}}
-      :label: eq_11
+      :label: 11_eq_11
 
 
 Fragen
 ------
 
 1. Berechne die Resonanzfrequenz fo für die Serie RLC unter Verwendung
-   von Gl. :eq:`eq_11` und vergleiche sie mit dem gemessenen Wert. Wie
+   von Gl. :eq:`11_eq_11` und vergleiche sie mit dem gemessenen Wert. Wie
    groß ist der prozentuale Fehler zwischen den beiden?
    
 2. Geben Sie Ihre Schlussfolgerungen aus den Beobachtungen in Schritt
