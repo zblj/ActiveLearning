@@ -136,8 +136,8 @@ Messreihe RLC-Schaltung Impedanz
    = 0,047 μF, Ls = 22 mH auf.
    
 
-   .. _11_fig_03:
-   .. figure:: img/ Activity_11_Fig_3.png
+.. _11_fig_03:
+.. figure:: img/ Activity_11_Fig_3.png
 
 	       STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
 
@@ -151,12 +151,12 @@ Messreihe RLC-Schaltung Impedanz
     
 
 3. Starten Sie den Impedanzanalysator und:
-   - unter **Menü Messeinstellungen** Anzahl der Schritte einstellen: 20
-   - unter **Frequenz-Sweep** legen Sie die Startfrequenz auf 1 kHz und die Endfrequenz auf 50 kHz fest
-   - Wählen Sie **Messung starten**
+    - unter **Menü Messeinstellungen** Anzahl der Schritte einstellen: 20
+    - unter **Frequenz-Sweep** legen Sie die Startfrequenz auf 1 kHz und die Endfrequenz auf 50 kHz fest
+    - Wählen Sie **Messung starten**
 
-   .. _11_fig_04:
-   .. figure:: img/ Activity_11_Fig_4.png
+.. _11_fig_04:
+.. figure:: img/ Activity_11_Fig_4.png
 	       
 	       Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der Impedanzanalysatoranwendung aufgenommen wurde
       
@@ -164,8 +164,8 @@ Messreihe RLC-Schaltung Impedanz
 4. Ploten gemessener Phase
    - unter **Plot settings Menu** für **Y-Achse**  **P [deg]** wählen
    
-   .. _11_fig_05:
-   .. figure:: img/Activity_11_Fig_5.png
+.. _11_fig_05:
+.. figure:: img/Activity_11_Fig_5.png
 
 	       Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
 
