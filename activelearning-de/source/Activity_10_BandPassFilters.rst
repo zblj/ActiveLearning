@@ -40,7 +40,7 @@ Die untere Grenzfrequenz wird als:
 
 .. math::	
 
-   f_L = \frac{R}{2 \pi L} \quad                                 (1)
+   f_L = \frac{R}{2 \pi L} \quad (1)
 
 Die höhere Grenzfrequenz wird als: 
 
@@ -77,7 +77,6 @@ Um zu zeigen, wie eine Schaltung auf einen Frequenzbereich reagiert, kann ein Di
 Materialien:
 ------------
 
-
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 - Widerstand: 1 KΩ 
@@ -89,7 +88,6 @@ Materialien:
 
 Vorgehensweise
 --------------
-
 
 1. Bauen Sie den Filterschaltkreis nach Abbildung 1 und Abbildung 3 auf Ihrer
    lötfreie Lochrasterplatine mit den Bauteilwerten R1 = 1 KΩ, C1 =
@@ -120,8 +118,9 @@ Vorgehensweise
 
    - RUN-Taste auswählen
 
-   .. _10_fig_04:  
-   .. figure:: img/Activity_10_Fig_4.png
+
+.. _10_fig_04:  
+.. figure:: img/Activity_10_Fig_4.png
 
 	       Bandpassfilter **gemessen** Frequenzgang
 
