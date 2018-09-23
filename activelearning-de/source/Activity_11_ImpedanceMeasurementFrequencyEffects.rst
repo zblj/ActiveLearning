@@ -33,7 +33,7 @@ die totale Widerwirkung, die eine Schaltung dem Stromfluss bei einer
 bestimmten Frequenz bietet. Impedanz :math:`Z` wird als eine
 Kombination aus Widerstand :math:`R` und Reaktanz :math:`X` ausgedrückt und
 wird in :math:`\Omega` gemessen. Es kann als eine komplexe Größe ausgedrückt werden:
-      
+
 
 .. math::  Z = R + jX
    :label: 11_eq_1
@@ -78,7 +78,8 @@ und **phase** :math:`P` dargestellt werden, wobei :math:`Z=|Z|e^{jP}`
 .. math:: P = \arctan\left(\frac{(X_L - X_C)}{R}\right)
    :label: 11_eq_7
 
-	   
+
+
 .. _11_fig_01:
 .. figure:: img/ Activity_11_Fig_1.png
 
@@ -138,7 +139,7 @@ Messreihe RLC-Schaltung Impedanz
    .. _11_fig_03:
    .. figure:: img/ Activity_11_Fig_3.png
 
-   STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
+	       STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
 
    
 2. Starten Sie die Anwendung Impedanzanalysator.
@@ -158,8 +159,7 @@ Messreihe RLC-Schaltung Impedanz
    .. _11_fig_04:
    .. figure:: img/ Activity_11_Fig_4.png
 	       
-      Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der
-      Impedanzanalysatoranwendung aufgenommen wurde
+	       Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der Impedanzanalysatoranwendung aufgenommen wurde
       
 
 4. Ploten gemessener Phase
@@ -168,7 +168,7 @@ Messreihe RLC-Schaltung Impedanz
    .. _11_fig_05:
    .. figure:: img/Activity_11_Fig_5.png
 
-   Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
+	       Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
 
    
    .. note:: Die Frequenz, bei der dies auftritt **(Phase = 0)**
