@@ -152,8 +152,7 @@ Messreihe RLC-Schaltung Impedanz
 
 3. Starten Sie den Impedanzanalysator und:
    - unter **Menü Messeinstellungen** Anzahl der Schritte einstellen: 20
-   - unter **Frequenz-Sweep** legen Sie die Startfrequenz auf 1 kHz
-     und die Endfrequenz auf 50 kHz fest
+   - unter **Frequenz-Sweep** legen Sie die Startfrequenz auf 1 kHz und die Endfrequenz auf 50 kHz fest
    - Wählen Sie **Messung starten**
 
    .. _11_fig_04:
