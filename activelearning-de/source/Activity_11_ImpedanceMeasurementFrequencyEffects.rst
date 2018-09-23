@@ -22,7 +22,7 @@ Anmerkungen
 .. _Meter: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 .. _frontend: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Anwendung des Impedanz_ analysators_  dient zur Messung der RLC-Schaltungsimpedanz :math:`Z(f)`. Neben der Impedanzanalysator-Anwendung zur Impedanzmessung haben wir ein LCR_ Meter_ Frontend_ eingesetzt. Obwohl das Frontend für LCR-Meter bei der Verwendung der LCR-Meteranwendung vorgesehen ist, kann es auch für die Anwendung des Impedanzanalysators verwendet werden. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen :math:`1 \Herz` und :math:`60 \Mega \herz`, obwohl der empfohlene Frequenzbereich bis zu :math:`1 \Mega \herz` beträgt. Der Impedanzbereich liegt zwischen :math:`0,1 \ohm` und :math:`10 \mega \Ohm`. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Shuntwiderstand ein.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Anwendung des Impedanz_ analysators_  dient zur Messung der RLC-Schaltungsimpedanz :math:`Z(f)`. Neben der Impedanzanalysator-Anwendung zur Impedanzmessung haben wir ein LCR_ Meter_ Frontend_ eingesetzt. Obwohl das Frontend für LCR-Meter bei der Verwendung der LCR-Meteranwendung vorgesehen ist, kann es auch für die Anwendung des Impedanzanalysators verwendet werden. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen 1 Hz und 60 MHz, obwohl der empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich liegt zwischen 0.1 Ohm und 10 MOhm. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Shuntwiderstand ein.
 
 
 Hintergrund
@@ -37,7 +37,7 @@ Kombination aus Widerstand ausgedrückt :math:`R` und Reaktanz
       
 
 .. math::  Z = R + jX
-   :label: eq_1
+   :label: 11_eq_1
 
 Für einen idealen Widerstand ist die Impedanz die gleiche wie der
 DC-Widerstand :math:`Z = R_ {DC}`. Bei einem Kondensator ist die
