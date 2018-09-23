@@ -48,15 +48,17 @@ Für RC-Filter:
 
 .. math::
    
-   f_c = \frac{1}{2 \pi RC}    (1) 
-    :label: 09_eq_01
+   f_c = \frac{1}{2 \pi RC} 
+
+      :label: 09_eq_01
    
 Für RL-Filter: 
 
 .. math::	
 
    f_c = \frac{R}{2 \pi L} (2) 
-    :label: 09_eq_02
+
+      :label: 09_eq_02
 
 Frequenzgang: Es ist ein Diagramm der Größe der Ausgangsspannung des Filters in Abhängigkeit von der Frequenz. Es wird im Allgemeinen verwendet, um den Frequenzbereich zu charakterisieren, in dem der Filter für den Betrieb im Inneren ausgelegt ist. 
 
