@@ -49,7 +49,7 @@ it is a high-pass filter. Conversely, if it passes low frequencies and
 rejects high ones, it is a low-pass filter. Filters, like most things,
 aren't perfect. They don't absolutely pass some frequencies and
 absolutely reject others. A frequency is considered passed if its
-magnitude (voltage amplitude) is within 70% or 1/sqrt(2) of the
+magnitude (voltage amplitude) is within 70% or :math:`1/sqrt(2)` of the
 maximum amplitude passed and rejected otherwise. The 70% frequency is
 called corner frequency, roll-off frequency or half-power frequency. 
 
