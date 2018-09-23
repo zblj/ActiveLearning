@@ -6,8 +6,7 @@ Zielsetzung
 
 Das Ziel dieser Aktivität ist:
 
-1. Messen Sie die Impedanz und die Impedanz der Komponente mit der
-   Impedanzanalysator-Anwendung.
+1. Messen Sie die Komponentenimpedanz und die Schaltungsimpedanz mit Hilfe der Impedanzanalysator-Applikation.
    
 2. Untersuchen Sie die Größen- und Phasenänderungen mit der
    Frequenzänderung für eine RLC-Schaltung.
@@ -16,36 +15,14 @@ Das Ziel dieser Aktivität ist:
 Anmerkungen
 -----------
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/index.html
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
 .. _Impedance: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
-.. _analysator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
+.. _analysators: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 .. _LCR: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
-.. _meter: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
+.. _Meter: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 .. _frontend: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
-
-Impedance_ analysator_ Anwendung wird verwendet, um RLC-Schaltung
-impedane zu messen :math:`Z (f)`. Neben Impedanzanalysator zur
-Impedanzmessung
-
-Wir haben ein LCR_ Meter_ Frontend_ verwendet. Obwohl das
-LCR-Meter-Frontend bei der Verwendung von LCR-Meter-Anwendungen
-vorgesehen ist, kann es auch für Impedance-Analyzer-Anwendungen
-verwendet werden.
-
-Die Impedanzanalysator-Anwendung ermöglicht Messungen von Impedanz,
-Phase und anderen Parametern des ausgewählten DUT (Device Under
-Test). Messungen können im Frequenz-Sweep-Modus mit 1 Hz
-Frequenzauflösung oder im Sweep-Modus Messungen mit der gewünschten
-Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der
-wählbare Frequenzbereich reicht von 1 Hz bis 60 MHz, obwohl der
-empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich
-reicht von 0,1 Ohm bis 10 MOhm. Wenn Sie die
-Impedanzanalysatoranwendung mit dem LCR-Erweiterungsmodul verwenden,
-setzen Sie 0 in das Shunt-Widerstandsfeld ein.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Anwendung des Impedanz_ analysators_  dient zur Messung der RLC-Schaltungsimpedanz :math:`Z(f)`. Neben der Impedanzanalysator-Anwendung zur Impedanzmessung haben wir ein LCR_ Meter_ Frontend_ eingesetzt. Obwohl das Frontend für LCR-Meter bei der Verwendung der LCR-Meteranwendung vorgesehen ist, kann es auch für die Anwendung des Impedanzanalysators verwendet werden. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen :math:`1\herz` und :math:`60\Mega\herz`, obwohl der empfohlene Frequenzbereich bis zu :math:`1\Mega\herz` beträgt. Der Impedanzbereich liegt zwischen :math:`0,1\ohm` und :math:`10\mega\ohm`. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Shuntwiderstand ein.
 
 
 Hintergrund
