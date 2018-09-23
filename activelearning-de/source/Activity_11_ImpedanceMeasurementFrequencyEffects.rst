@@ -16,71 +16,69 @@ Anmerkungen
 -----------
 
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/index.html
-.. _Impedance: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
+.. _Impedanz: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 .. _analysators: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/marketplace/marketplace.html#impedance-analyzer
 .. _LCR: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 .. _Meter: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
-.. _frontend: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
+.. _Frontend: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/lcr_meter/lcr_meter.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Anwendung des Impedanz_ analysators_  dient zur Messung der RLC-Schaltungsimpedanz :math:`Z(f)`. Neben der Impedanzanalysator-Anwendung zur Impedanzmessung haben wir ein LCR_ Meter_ Frontend_ eingesetzt. Obwohl das Frontend für LCR-Meter bei der Verwendung der LCR-Meteranwendung vorgesehen ist, kann es auch für die Anwendung des Impedanzanalysators verwendet werden. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen 1 Hz und 60 MHz, obwohl der empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich liegt zwischen 0.1 Ohm und 10 MOhm. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Shuntwiderstand ein.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Anwendung des Impedanz_  analysators_ dient zur Messung der RLC-Schaltungsimpedanz :math:`Z(f)`. Neben der Impedanzanalysator-Anwendung zur Impedanzmessung haben wir ein LCR_ Meter_ Frontend_ eingesetzt. Obwohl das Frontend für LCR-Meter bei der Verwendung der LCR-Meteranwendung vorgesehen ist, kann es auch für die Anwendung des Impedanzanalysators verwendet werden. Die Anwendung Impedanzanalysator ermöglicht Messungen der Impedanz, Phase und anderer Parameter des ausgewählten Prüflings (Device Under Test). Messungen können im Frequenzsweep-Modus mit 1Hz Frequenzauflösung oder im Messsweep-Modus mit der gewünschten Anzahl von Messungen bei konstanter Frequenz durchgeführt werden. Der wählbare Frequenzbereich liegt zwischen 1 Hz und 60 MHz, obwohl der empfohlene Frequenzbereich bis zu 1 MHz beträgt. Der Impedanzbereich liegt zwischen 0.1 Ohm und 10 MOhm. Wenn Sie die Impedanzanalysator-Anwendung mit dem LCR-Erweiterungsmodul verwenden, fügen Sie 0 in das Feld Shuntwiderstand ein.
 
 
 Hintergrund
 -----------
 
-Die Impedanz ist der Widerstand gegen den Wechselstromfluss. Es ist
-die totale Opposition, die eine Schaltung dem Stromfluss bei einer
+Die Impedanz ist ein Widerstand des Wechselstroms. Es ist
+die totale Widerwirkung, die eine Schaltung dem Stromfluss bei einer
 bestimmten Frequenz bietet. Impedanz :math:`Z` wird als eine
-Kombination aus Widerstand ausgedrückt :math:`R` und Reaktanz
-:math:`X` und wird gemessen in :math:`\Omega`. Es kann als eine
- komplexe Menge ausgedrückt werden als:
+Kombination aus Widerstand :math:`R` und Reaktanz :math:`X` ausgedrückt und
+wird in :math:`\Omega` gemessen. Es kann als eine komplexe Größe ausgedrückt werden:
       
 
 .. math::  Z = R + jX
    :label: 11_eq_1
 
-Für einen idealen Widerstand ist die Impedanz die gleiche wie der
-DC-Widerstand :math:`Z = R_ {DC}`. Bei einem Kondensator ist die
-Impedanz (oder genauer gesagt die Reaktanz) :math:`X_C` ein imaginärer
-und ** negativer ** reaktiver Teil der Impedanz. Die Reaktanz des
+Bei einem idealen Widerstand ist die Impedanz gleich dem Gleichstromwiderstand :math:`Z = R_ {DC}`.
+Bei einem Kondensator ist die Impedanz (oder genauer gesagt die Reaktanz) :math:`X_C` der imaginäre
+und **negativ** -reaktive Teil der Impedanz. Die Reaktanz des
 Kondensators hängt von der Frequenz ab und ist gegeben als:
 
 
 .. math:: X_C = \frac{1}{j \omega C}
-   :label: eq_2
+   :label: 11_eq_2
 	   
-Bei einem Induktor ist die Impedanz (oder genauer gesagt die Reaktanz)
-:math:`X_L` ein imaginärer und **positiver** reaktiver Teil der
-Impedanz. Die Reaktanz des Induktors hängt auch von der Frequenz
+Bei einer Induktivität ist die Impedanz (oder genauer gesagt die Reaktanz)
+:math:`X_L` der imaginäre und **positiv** -reaktive Teil der
+Impedanz. Die Reaktanz der Induktivität hängt auch von der Frequenz
 ab und ist gegeben als:
       
 
 .. math:: X_L = j \omega L
-   :label: eq_3
+   :label: 11_eq_3
 
-Die Impedanz einer Reihen-RLC-Schaltung ist die Summe der Impedanzen
+Die Impedanz einer RLC-Reihenschaltung ist die Summe der Impedanzen
 der jeweiligen Komponenten.
 
 
 .. math:: Z = R + Z_L + Z_C
-   :label: eq_4
+   :label: 11_eq_4
 
 oder
 
 .. math:: Z = R + jX_L - jX_C
-   :label: eq_5
+   :label: 11_eq_5
 
-Dies kann auch als ein Zeiger mit **Magnitude** dargestellt werden
-:math:`|Z|` und **phase** :math:`P` wobei :math:`Z=|Z|e^{jP}`
+Dies kann auch mit Hilfe eines komplexen Zeigers, mit der Größe :math:`|Z|`
+und **phase** :math:`P` dargestellt werden, wobei :math:`Z=|Z|e^{jP}`
       
 
 .. math:: \lvert Z \lvert = \sqrt{R ^ 2 + (X_L - X_C) ^ 2}
-   :label: eq_6
+   :label: 11_eq_6
 
 .. math:: P = \arctan\left(\frac{(X_L - X_C)}{R}\right)
-   :label: eq_7
-	   
+   :label: 11_eq_7
 
+	   
 .. _11_fig_01:
 .. figure:: img/ Activity_11_Fig_1.png
 
@@ -101,17 +99,17 @@ Verfahren
 
 Mit LCR-Meter-Anwendung können wir Induktivität, Widerstand und
 Kapazität unserer Elemente in der Schaltung bei ausgewählter Frequenz
-messen. LCR-Meter können Ihnen helfen, jede Komponente separat zu
+messen. LCR-Meter kann Ihnen helfen, jede Komponente einzeln zu
 messen, um ihren Wert zu extrahieren, wenn sie auf der Verpackung
 nicht sichtbar / lesbar ist: 
 
 1. Starten Sie das LCR-Messgerät
    
-2. Schließen Sie die gemessene Komponente an die LCR-Messsonden an
+2. Schließen Sie die zu messenede Komponente an die LCR-Messsonden an
    
-3. Wählen Sie in der LCR-Meter-Anwendung Messmodus / Parameter
+3. Wählen Sie in der LCR-Meter-Anwendung Messmodus/Parameter
    
-4. Wählen Sie die Messfrequenz auf 1 kHz
+4. Stellen Sie die Messfrequenz auf 1 kHz ein
    
 5. Wiederholen Sie die obigen Schritte für Rs, Ls und Cs
 
@@ -132,9 +130,9 @@ nicht sichtbar / lesbar ist:
 Messreihe RLC-Schaltung Impedanz
 --------------------------------
 
-1. Richten Sie die Schaltung wie in :numref:`11_fig_01` und :numref:`11_fig_02` auf
+1. Bauen Sie die Schaltung wie in :numref:`11_fig_01` und :numref:`11_fig_02` auf
    Ihrem lötfreien Steckbrett mit den Komponentenwerten Rs = 1 KΩ, Cs
-   = 0,047 μF, Ls = 22 mH ein.
+   = 0,047 μF, Ls = 22 mH auf.
    
 
    .. _11_fig_03:
@@ -147,16 +145,15 @@ Messreihe RLC-Schaltung Impedanz
 
    .. note:: Der Impedanzanalysator ist eine Gemeinschaftsanwendung und muss
 	     vom Application Marketplace (Basar) heruntergeladen werden. 
-	     Klicken Sie auf Application marketplace icon und wählen Sie
+	     Klicken Sie auf Application-Marketplace-Icon und wählen Sie
 	     Install for Impedance analyzer.
     
 
 3. Starten Sie den Impedanzanalysator und:
-   - unter ** Menü Messeinstellungen ** Anzahl der Schritte einstellen: 20
-   - unter ** Frequenz-Sweep ** Legen Sie die Startfrequenz auf 1 kHz
+   - unter **Menü Messeinstellungen** Anzahl der Schritte einstellen: 20
+   - unter **Frequenz-Sweep** legen Sie die Startfrequenz auf 1 kHz
      und die Endfrequenz auf 50 kHz fest
-     
-   - Wählen Sie ** Messung starten **
+   - Wählen Sie **Messung starten**
 
    .. _11_fig_04:
    .. figure:: img/ Activity_11_Fig_4.png
@@ -165,8 +162,8 @@ Messreihe RLC-Schaltung Impedanz
       Impedanzanalysatoranwendung aufgenommen wurde
       
 
-4. Plot mesured Phase unter **Grafikeinstellungen** für **Y-Achse**
-   wählen **P [Grad]**
+4. Ploten gemessener Phase
+   - unter **Plot settings Menu** für **Y-Achse**  **P [deg]** wählen
    
    .. _11_fig_05:
    .. figure:: img/Activity_11_Fig_5.png
@@ -177,14 +174,14 @@ Messreihe RLC-Schaltung Impedanz
    .. note:: Die Frequenz, bei der dies auftritt **(Phase = 0)**
 	     wird als Resonanzfrequenz bezeichnet.
 	     Bei Resonanzfrequenz ist die Gesamtreaktanz Null und die
-	     Schaltung ist rein ohmsch.
+	     Schaltung ist rein ohmscher Natur.
 	     
-   Zum
+   Also
 
    .. math:: Z = R + j(X_L - X_C)
       :label: 11_eq_8
 
-   Ob
+   Wenn
 
    .. math:: X_L - X_C = 0
       :label: 11_eq_9
@@ -206,7 +203,7 @@ Messreihe RLC-Schaltung Impedanz
 Fragen
 ------
 
-1. Berechne die Resonanzfrequenz fo für die Serie RLC unter Verwendung
+1. Berechne die Resonanzfrequenz :math:`f_{o}` für die Serie RLC unter Verwendung
    von Gl. :eq:`11_eq_11` und vergleiche sie mit dem gemessenen Wert. Wie
    groß ist der prozentuale Fehler zwischen den beiden?
    
