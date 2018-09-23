@@ -31,15 +31,15 @@ Hintergrund
    - Masche 1
      
      .. math:: -V_s + V_1 + V_2 + V_5 = 0
-	:label: eq_1
+	:label: 02_eq_1
 
    - Masche 2
      
      .. math:: -V_2 + V_3 + V_4 = 0
-	:label: eq_2
+	:label: 02_eq_2
 
 		
-   .. _fig_01:
+   .. _02_fig_01:
    .. figure:: img/Activity_02_Fig_01.png
 
       Kirchhoff's Knotenpotentialverfahren 
@@ -54,22 +54,22 @@ Hintergrund
    - Knoten a
      
      .. math:: -I_s + I_1 = 0
-	:label: eq_3
+	:label: 02_eq_3
 		
    - Knoten b
      
      .. math:: - I_1 + I_2 + I_3 = 0
-	:label: eq_4
+	:label: 02_eq_4
 	
    - Knoten c
      
      .. math:: -I_3 + I_4 = 0
-	:label: eq_5
+	:label: 02_eq_5
 	
    - Knoten d
      
      .. math:: -I_2 - I_4 + I_5 = 0
-	:label: eq_6
+	:label: 02_eq_6
 
 
 Materialien
@@ -110,7 +110,7 @@ Vorgehensweise
    Erweiterungsstecker E2_. Verbinden Sie den 5V-Pin mit dem Knoten
    **a** und den Knoten **e** mit dem **GND** -Pin.
 
-   .. _fig_02:
+   .. _02_fig_02:
    .. figure:: img/Activity_02_Fig_02.png
 	       
       Leistungsanschlüsse
@@ -118,7 +118,7 @@ Vorgehensweise
    Die Schaltung auf der Steckplatine ist in der folgenden
    Abbildung dargestellt.
       
-   .. _fig_03:
+   .. _02_fig_03:
    .. figure:: img/Activity_02_Fig_03.png
 	
       Widerstandsschaltung aus der Nähe
@@ -137,7 +137,7 @@ Vorgehensweise
      
    - Schließen Sie die Sonden an den gewünschten Widerstand an. 
 
-   .. _fig_04:
+   .. _02_fig_04:
    .. figure:: img/Activity_02_Fig_04.png
 
       Messkreis
@@ -145,7 +145,7 @@ Vorgehensweise
       
    - Oszilloskop-Anwendung starten 
 	
-     .. _fig_05:
+     .. _02_fig_05:
      .. figure:: img/Activity_02_Fig_05.png
 
 	Oszilloskopanwendung
@@ -195,7 +195,7 @@ Vorgehensweise
  
 
  6. Überprüfen Sie Kirchhoffs-Maschensatz für die Maschen im
-    Stromkreis anhand der Gleichungen :eq:`eq_1` und :eq:`eq_2`.
+    Stromkreis anhand der Gleichungen :eq:`02_eq_1` und :eq:`02_eq_2`.
     
 
  7. Überprüfen Sie Kirchhoffs-Knotensatz für die Knoten in der

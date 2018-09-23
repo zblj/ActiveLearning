@@ -4,7 +4,11 @@ Resonanz in RLC-Schaltungen
 Zielsetzung
 -----------
 
-Das Ziel dieses Versuchs ist es, das Phänomen der Resonanz in RLC-Schaltungen zu untersuchen. Bestimmen Sie die Resonanzfrequenz und Bandbreite des gegebenen Netzwerks anhand des Amplitudengangs zu einer sinusförmigen Quelle. 
+Das Ziel dieses Versuchs ist es, das Phänomen der Resonanz in
+RLC-Schaltungen zu untersuchen. Bestimmen Sie die Resonanzfrequenz und
+Bandbreite des gegebenen Netzwerks anhand des Amplitudengangs zu einer
+sinusförmigen Quelle.
+
 
 Notizen
 -------
@@ -12,70 +16,98 @@ Notizen
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch. wenn es um die Anschlüsse an die Red Pitaya STEMlab-Karte geht. hardware_.
+In diesen Tutorials verwenden wir die Terminologie aus dem
+Benutzerhandbuch. wenn es um die Anschlüsse an die Red Pitaya
+STEMlab-Karte geht. hardware_.
 
-Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet. Die Bode_ Analysatoranwendung wird verwendet, um den Frequenzgang der RLC-Schaltung zu messen. 
+
+Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und
+Beobachten von Signalen auf der Schaltung verwendet. Die Bode_
+Analysatoranwendung wird verwendet, um den Frequenzgang der
+RLC-Schaltung zu messen.
+
 
 
 Hintergrund
 -----------
 
-Ein Resonanzkreis, auch Abstimmkreis genannt, besteht aus einer Induktivität und einem Kondensator sowie einer Spannungs- oder Stromquelle. Es ist eine der wichtigsten Schaltungen in der Elektronik. Ein Resonanzkreis in einer von vielen Formen ermöglicht es uns beispielsweise, aus der Vielzahl der Signale, die uns jederzeit umgeben, einen gewünschten Radio- oder Fernsehsender einzustellen.
+Ein Resonanzkreis, auch Abstimmkreis genannt, besteht aus einer
+Induktivität und einem Kondensator sowie einer Spannungs- oder
+Stromquelle. Es ist eine der wichtigsten Schaltungen in der
+Elektronik. Ein Resonanzkreis in einer von vielen Formen ermöglicht es
+uns beispielsweise, aus der Vielzahl der Signale, die uns jederzeit
+umgeben, einen gewünschten Radio- oder Fernsehsender einzustellen.
 
-Ein Netzwerk ist in Resonanz, wenn Spannung und Strom an den Netzeingangsklemmen in Phase sind und die Eingangsimpedanz des Netzwerks rein ohmscher Natur ist.  
 
-.. fig_01::
+Ein Netzwerk ist in Resonanz, wenn Spannung und Strom an den
+Netzeingangsklemmen in Phase sind und die Eingangsimpedanz des
+Netzwerks rein ohmscher Natur ist.
+
+
+.. _08_fig_01:
 .. figure:: img/Activity_08_Fig_01.png
 
-   Abbildung 1: Parallel-Resonanzkreis
+   Parallel-Resonanzkreis
 
    
-Berücksichtigen Sie die parallele RLC-Schaltung von Abb. 1. Die von der Schaltung angebotene stationäre Admittanz ist: 
+Berücksichtigen Sie die parallele RLC-Schaltung von Abb. 1. Die von
+der Schaltung angebotene stationäre Admittanz ist:
 
-.. math::
-   Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)
-    :label: Gl.1
 
-Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen phasenrichtig sind. Dies entspricht einem rein realen Zutritt, so dass die notwendige Bedingung gegeben ist:
+.. math:: Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)
+   :label: Gl.1
 
-.. math::
-   \omega C - \frac{1}{\omega L} = 0
-    :label: Gl.2
+Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen
+phasenrichtig sind. Dies entspricht einem rein realen Zutritt, so dass
+die notwendige Bedingung gegeben ist:
+
+
+.. math:: \omega C - \frac{1}{\omega L} = 0
+   :label: Gl.2
  
-Die Resonanzbedingung kann durch Einstellen von L, C oder :math:`\omega` erreicht werden. Wenn man L und C konstant hält, wird die Resonanzfrequenz :math:`\omega_0` durch:   
+Die Resonanzbedingung kann durch Einstellen von L, C oder
+:math:`\omega` erreicht werden. Wenn man L und C konstant hält, wird
+die Resonanzfrequenz :math:`\omega_0` durch:
+      
 
 
-.. math::
-
-   \omega_0 = \frac{1}{\sqrt{LC}} \, rad/s (1)
-    :label: Gl.3
+.. math:: \omega_0 = \frac{1}{\sqrt{LC}} \, rad/s (1)
+   :label: Gl.3
 
 oder 
 
-.. math::
+.. math:: f_0 = \frac {1}{2 \pi \sqrt{LC}} \, Hz (2)
+   :label: Gl.4
 
-   f_0 = \frac {1}{2 \pi \sqrt{LC}} \, Hz (2)
-    :label: Gl.4
+Frequenzgang: Es handelt sich um eine Darstellung der Größe der
+Ausgangsspannung eines Resonanzkreises als Funktion der Frequenz. Die
+Reaktion beginnt natürlich bei Null, erreicht einen Maximalwert in der
+Nähe der Eigenresonanzfrequenz und fällt dann wieder auf Null, wenn ω
+unendlich wird. Der Frequenzgang ist in Abbildung 2 dargestellt.
 
-Frequenzgang: Es handelt sich um eine Darstellung der Größe der Ausgangsspannung eines Resonanzkreises als Funktion der Frequenz. Die Reaktion beginnt natürlich bei Null, erreicht einen Maximalwert in der Nähe der Eigenresonanzfrequenz und fällt dann wieder auf Null, wenn ω unendlich wird. Der Frequenzgang ist in Abbildung 2 dargestellt.  
 
-.. fig_2::
+.. _08_fig_02:
 .. figure:: img/Activity_08_Fig_02.png
 
-   Abbildung 2: Frequenzgang des Parallelschwingkreises
+   Frequenzgang des Parallelschwingkreises
 
    
-Die beiden zusätzlichen Frequenzen ω :sub:`1` und ω :sub:`2` werden ebenfalls angezeigt, die als Halbleistungsfrequenzen bezeichnet werden. Diese Frequenzen lokalisieren diejenigen Punkte auf der Kurve, bei denen der Spannungsverlauf :math:`1/sqrt(2)` oder das 0,707-fache des Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des Schwingkreises und ist definiert als:  
+Die beiden zusätzlichen Frequenzen ω :sub:`1` und ω :sub:`2` werden
+ebenfalls angezeigt, die als Halbleistungsfrequenzen bezeichnet
+werden. Diese Frequenzen lokalisieren diejenigen Punkte auf der Kurve,
+bei denen der Spannungsverlauf :math:`1/sqrt(2)` oder das 0,707-fache
+des Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der
+Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des
+Schwingkreises und ist definiert als:
 
-.. math::
 
-   \beta = \omega_2 - \omega_1 (3)
-    :label: Gl.5
+.. math:: \beta = \omega_2 - \omega_1 (3)
+   :label: Gl.5
 
-.. fig_3::   
+.. _08_fig_03:   
 .. figure:: img/Activity_08_Fig_03.png
 
-   Bild 3: Serien-Resonanzkreis
+   Serien-Resonanzkreis
 
    
 Materialien
@@ -91,28 +123,47 @@ Vorgehensweise
 --------------
 
 Zusätzliche Kalkulation: 
-Mit einem der sw-Tools wie Matlab oder Python können wir die Impedanz der parallelen RLC-Schaltung aus Figur 1 berechnen.
+Mit einem der sw-Tools wie Matlab oder Python können wir die Impedanz
+der parallelen RLC-Schaltung aus Figur 1 berechnen.
 
-Die Admittanz (Y) der Parallelschaltung ist in Gleichung 1 oben angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
+
+Die Admittanz (Y) der Parallelschaltung ist in Gleichung 1 oben
+angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
+
        
        
-.. note:: 
-	
-   Bei dieser Berechnung berücksichtigen wir den Serienwiderstand der Spule. Dieser Widerstand beeinflusst das Phasenverhalten der RLC-Schaltung bei niedrigeren Frequenzen. Die obige Gleichung wird für ideale Komponenten ohne parasitäre Elemente verwendet. In der Praxis (Messungen) haben wir nur reale Elemente und müssen berücksichtigen, dass die Spule keine reine Induktivität ist, sondern auch einen effektiven Serienwiderstand hat :math:`R_{esr}`, also
+.. note:: Bei dieser Berechnung berücksichtigen wir den
+	  Serienwiderstand der Spule. Dieser Widerstand beeinflusst
+	  das Phasenverhalten der RLC-Schaltung bei niedrigeren
+	  Frequenzen. Die obige Gleichung wird für ideale Komponenten
+	  ohne parasitäre Elemente verwendet. In der Praxis
+	  (Messungen) haben wir nur reale Elemente und müssen
+	  berücksichtigen, dass die Spule keine reine Induktivität
+	  ist, sondern auch einen effektiven Serienwiderstand hat
+	  :math:`R_{esr}`, also
+		
 
-   .. math::
-
-      Y_{L} = \frac{1}{(R_{esr} + j 2 \pi f L)}.
-       :label: Gl.6
+   .. math:: Y_{L} = \frac{1}{(R_{esr} + j 2 \pi f L)}.
+      :label: Gl.6
 
       
 .. _Impedanz: https://en.wikipedia.org/wiki/Electrical_Impedanz
 .. _Antiresonatoren: https://en.wikipedia.org/wiki/Antiresonance
 
 
-.. note::
-
-   Die Resonanzfrequenz ist definiert als die Frequenz, bei der die Impedanz_ der Schaltung minimal ist. Äquivalent kann es definiert werden als die Frequenz, bei der die Impedanz rein real (d.h. rein resistiv) ist. Dies geschieht, weil die Impedanzen von Induktivität und Kondensator bei Resonanz gleich, aber mit entgegengesetztem Vorzeichen sind und sich aufheben. Schaltungen, bei denen L und C parallel und nicht in Reihe geschaltet sind, haben tatsächlich eine maximale Impedanz und keine minimale Impedanz. Aus diesem Grund werden sie oft als Antiresonatoren_ bezeichnet, es ist jedoch üblich, die Frequenz, bei der dies geschieht, als Resonanzfrequenz zu bezeichnen.
+.. note:: Die Resonanzfrequenz ist definiert als die Frequenz, bei der
+	  die Impedanz_ der Schaltung minimal ist. Äquivalent kann es
+	  definiert werden als die Frequenz, bei der die Impedanz rein
+	  real (d.h. rein resistiv) ist. Dies geschieht, weil die
+	  Impedanzen von Induktivität und Kondensator bei Resonanz
+	  gleich, aber mit entgegengesetztem Vorzeichen sind und sich
+	  aufheben. Schaltungen, bei denen L und C parallel und nicht
+	  in Reihe geschaltet sind, haben tatsächlich eine maximale
+	  Impedanz und keine minimale Impedanz. Aus diesem Grund
+	  werden sie oft als Antiresonatoren_ bezeichnet, es ist
+	  jedoch üblich, die Frequenz, bei der dies geschieht, als
+	  Resonanzfrequenz zu bezeichnen.
+	  
 
 Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
 
@@ -144,120 +195,171 @@ Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
    grid on
 
    
-Wenn wir den obigen Code ausführen, erhalten wir folgende Ergebnisse, die auf dem Bild unten gezeigt werden.
+Wenn wir den obigen Code ausführen, erhalten wir folgende Ergebnisse,
+die auf dem Bild unten gezeigt werden.
 
-.. fig_4::
+
+.. _08_fig_04:
 .. figure:: img/Activity_08_Fig_04.png
  
-   Abbildung 4: Berechnung der Impedanz Z der parallelen RLC-Schaltung.
-   Blaue Spur reeller/resistiver Teil von Z, grüne Spur imaginärer/reaktiver Teil von Z. 
-
+   Berechnung der Impedanz Z der parallelen RLC-Schaltung. Blaue Spur
+   reeller/resistiver Teil von Z, grüne Spur imaginärer/reaktiver Teil
+   von Z.
    
-Wir können auch den Absolutwert von Z berechnen, der die kombinierte Impedanz der RLC-Schaltung aus Figur 1 ist.  Der Absolutwert der Impedanz Z ist die Parameterform, mit der wir vorhersagen können, wie die Messungen aussehen sollen.
+
+ 
+Wir können auch den Absolutwert von Z berechnen, der die kombinierte
+Impedanz der RLC-Schaltung aus Figur 1 ist.  Der Absolutwert der
+Impedanz Z ist die Parameterform, mit der wir vorhersagen können, wie
+die Messungen aussehen sollen.
+
 
 
 Wir können die Schaltung aus Figur 8 modellieren, wie in der folgenden Abbildung gezeigt, wobei Z = 1/Y und Y in Gleichung 1 angegeben ist. 
 
-.. fig_5::
+.. _08_fig_05:
 .. figure:: img/Activity_08_Fig_05.png
 
-   Abbildung 5: Darstellung der parallelen RLC-Schaltung als komplexe Impedanz Z
+   Darstellung der parallelen RLC-Schaltung als komplexe Impedanz Z
 
-Aus Abbildung 5 oben können wir deutlich erkennen, dass unsere Schaltung ein einfacher Spannungsteiler ist, wobei Vout=Vin*Z/(Rs+Z). Da das Z jedoch frequenzabhängig ist, ist das Verhältnis zwischen Z und Rs frequenzabhängig und damit das Vin/Vout-Verhältnis.
+   
+Aus Abbildung 5 oben können wir deutlich erkennen, dass unsere
+Schaltung ein einfacher Spannungsteiler ist, wobei
+Vout=Vin*Z/(Rs+Z). Da das Z jedoch frequenzabhängig ist, ist das
+Verhältnis zwischen Z und Rs frequenzabhängig und damit das
+Vin/Vout-Verhältnis.
 
-Bei einer Frequenz f: Wenn der Wert von Z viel kleiner als der Wert von Rs ist, ist die Ausgangsspannungsamplitude viel kleiner als die Eingangsspannungsamplitude.
 
-Bei einer bestimmten Frequenz f: wenn der Wert von Z viel höher ist als der Wert von Rs, wird die Ausgangsspannungsamplitude nahe der Eingangsspannungsamplitude liegen.
+Bei einer Frequenz f: Wenn der Wert von Z viel kleiner als der Wert
+von Rs ist, ist die Ausgangsspannungsamplitude viel kleiner als die
+Eingangsspannungsamplitude.
+
+
+Bei einer bestimmten Frequenz f: wenn der Wert von Z viel höher ist
+als der Wert von Rs, wird die Ausgangsspannungsamplitude nahe der
+Eingangsspannungsamplitude liegen.
+
 
 Bei einer bestimmten Frequenz f: wobei Z=Rs das Vout ist ½ Vin.  
 
-Bei einer bestimmten Frequenz f: wobei Z maximal ist, ist der Vout auch maximal. Dies ist die Resonanzfrequenz. 
+Bei einer bestimmten Frequenz f: wobei Z maximal ist, ist der Vout
+auch maximal. Dies ist die Resonanzfrequenz.
 
-.. fig_6::
+
+.. _08_fig_06:
 .. figure:: img/Activity_08_Fig_06.png
 
-   Abbildung 6: Berechnung des Absolutwertes der Impedanz Z für die in Abbildung 3 dargestellte Schaltung. 
+   Berechnung des Absolutwertes der Impedanz Z für die in Abbildung 3 dargestellte Schaltung. 
 
 
 Durch Verwendung von
 
-.. math::
+.. math:: V_{out} = V_{in} \frac{Z}{R_s + Z}
+   :label: Gl.7
 
-   V_{out} = V_{in} \frac{Z}{R_s + Z}
-    :label: Gl.7
+können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5
+und 8.
 
-können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5 und 8.
 
-.. note::
-
-   Größenänderung in Dezibel (dB)
+.. note:: Größenänderung in Dezibel (dB)
    
-   .. math::
+	  .. math::  H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.
+	     :label: Gl.8
 
-      H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.
-       :label: Gl.8
-
-.. fig_7::
+		  
+.. _08_fig_07:
 .. figure:: img/Activity_08_Fig_07.png
 
-   Abbildung 7: Berechnung des Frequenzgangs (Vout/Vin) für die Schaltung in Abbildung 5.
+   Berechnung des Frequenzgangs (Vout/Vin) für die Schaltung in Abbildung 5.
 
 
 Vorgehensweise:
 
-1. Bauen Sie die RLC-Schaltung wie in Abbildung 8 auf Ihrer lötfreien Leiterplatte mit den Bauteilwerten RS = 100 Ω, R1 = 1 KΩ, C1 = 0,1 µF und L1= 4,7 mH auf.
+1. Bauen Sie die RLC-Schaltung wie in Abbildung 8 auf Ihrer lötfreien
+   Leiterplatte mit den Bauteilwerten RS = 100 Ω, R1 = 1 KΩ, C1 = 0,1
+   µF und L1= 4,7 mH auf.
+   
 
-.. fig_8::
+.. _08_fig_08:
 .. figure:: img/Activity_08_Fig_08.png
 
-   Abbildung 8: Parallele RLC-Schaltung für die Messungen.
+   Parallele RLC-Schaltung für die Messungen.
 
 
-2. Öffnen Sie die Anwendung Bode analyzer. Im Menü "Einstellungen" die Startfrequenz auf 100Hz, die Endfrequenz auf 1MHz und die Schrittzahl auf 50 einstellen. Und klicken Sie auf die Schaltfläche "RUN". 
+2. Öffnen Sie die Anwendung Bode analyzer. Im Menü "Einstellungen" die
+   Startfrequenz auf 100Hz, die Endfrequenz auf 1MHz und die
+   Schrittzahl auf 50 einstellen. Und klicken Sie auf die Schaltfläche
+   "RUN".
+   
 
-.. fig_9::
+.. _08_fig_09:
 .. figure:: img/Activity_08_Fig_09.png
 
-   Abbildung 9: Bode Analysator Anwendung
+   Bode Analysator Anwendung
 
    
-Nachdem die Messungen durchgeführt wurden, sollten Sie den Frequenzgang Ihrer Schaltung erhalten, wie in Abbildung 10 dargestellt.
+Nachdem die Messungen durchgeführt wurden, sollten Sie den
+Frequenzgang Ihrer Schaltung erhalten, wie in Abbildung 10
+dargestellt.
 
-.. fig_10::
+
+.. _08_fig_10:
 .. figure:: img/Activity_08_Fig_10.png
 
-    Abbildung 10: Frequenzgang der Schaltung aus Abbildung 8. Aufnahme durch Bode Analysator-Anwendung.
+   Frequenzgang der Schaltung aus Abbildung 8. Aufnahme durch Bode
+   Analysator-Anwendung.
+   
+
+- Vergleichen Sie Messungen und Berechnungen. Wenn es einen
+  Unterschied gibt, versuchen Sie zu erklären, warum.
+  
+
+.. hint:: Parasitäre Phänomene
 
 
-
-- Vergleichen Sie Messungen und Berechnungen. Wenn es einen Unterschied gibt, versuchen Sie zu erklären, warum.
-
-.. hint:: 
-
-   Parasitäre Phänomene
+Die Bode-Analysatoranwendung führt einen Frequenzdurchlauf durch, so
+dass sie ein Sinussignal auf OUT1 innerhalb des von uns gewählten
+Frequenzbereichs (im Einstellungsmenu) erzeugt.
 
 
-Die Bode-Analysatoranwendung führt einen Frequenzdurchlauf durch, so dass sie ein Sinussignal auf OUT1 innerhalb des von uns gewählten Frequenzbereichs (im Einstellungsmenu) erzeugt.
-
-Das Eingangssignal IN1 ist direkt mit OUT1 verbunden, gefolgt von IN1=Vin. IN2 wird auf der anderen Seite des RLC-Kreises und damit IN2=Vout angeschlossen. Die Anwendung des Bode-Analysators wird dann für jeden Frequenzschritt das Verhältnis von IN1/IN2 aufnehmen und den Frequenzgang berechnen.  
-
-2. Um zu sehen, wie sich die Signalamplitude von Vout/IN2 in Bezug auf OUT1 ändert, starten Sie die Oszilloskopanwendung, aktivieren Sie in den OUT1 Einstellungen OUT1, deaktivieren Sie die SHOW-Taste und betrachten Sie die Signalamplituden von IN1 und IN2. 
-
-
-   Ändern Sie die OUT1-Frequenz, stellen Sie den t/div-Wert so ein, dass Sie 2 Zyklen des IN1 haben und beobachten Sie die Amplituden von IN1 und IN2. 
+Das Eingangssignal IN1 ist direkt mit OUT1 verbunden, gefolgt von
+IN1=Vin. IN2 wird auf der anderen Seite des RLC-Kreises und damit
+IN2=Vout angeschlossen. Die Anwendung des Bode-Analysators wird dann
+für jeden Frequenzschritt das Verhältnis von IN1/IN2 aufnehmen und den
+Frequenzgang berechnen.
 
 
-   Wiederholen Sie diesen Schritt für die OUT1-Frequenz von 100Hz bis 1MHz und Sie sollten den gleichen Amplitudenverlauf beobachten, wie er mit dem Bode-Analysator gemessen wurde.
+3. Um zu sehen, wie sich die Signalamplitude von Vout/IN2 in Bezug auf
+   OUT1 ändert, starten Sie die Oszilloskopanwendung, aktivieren Sie
+   in den OUT1 Einstellungen OUT1, deaktivieren Sie die SHOW-Taste und
+   betrachten Sie die Signalamplituden von IN1 und IN2.
+   
+   Ändern Sie die OUT1-Frequenz, stellen Sie den t/div-Wert so ein,
+   dass Sie 2 Zyklen des IN1 haben und beobachten Sie die Amplituden
+   von IN1 und IN2.
+   
+   Wiederholen Sie diesen Schritt für die OUT1-Frequenz von 100Hz bis
+   1MHz und Sie sollten den gleichen Amplitudenverlauf beobachten, wie
+   er mit dem Bode-Analysator gemessen wurde.
+   
+   Bode-Analysator misst auch die Phase zwischen IN1 und IN2. Die
+   Phase ist ebenfalls frequenzabhängig. Das kann man mit der
+   Oszilloskop-Applikation leicht erkennen.
+   
 
+4. Wiederholen Sie das Experiment für den Serienschwingkreis in Figur
+   3 und verwenden Sie L1 = 20 mH und C1 = 0,01 uF und R1 = 1 KΩ. Die
+   Vo-Spannung am Widerstand ist proportional zum
+   Serien-RLC-Schaltstrom.
+   
 
-   Bode-Analysator misst auch die Phase zwischen IN1 und IN2. Die Phase ist ebenfalls frequenzabhängig. Das kann man mit der Oszilloskop-Applikation leicht erkennen. 
-
-
-3. Wiederholen Sie das Experiment für den Serienschwingkreis in Figur 3 und verwenden Sie L1 = 20 mH und C1 = 0,01 uF und R1 = 1 KΩ. Die Vo-Spannung am Widerstand ist proportional zum Serien-RLC-Schaltstrom. 
-
+   
 Fragen zum Versuch
 ------------------
 
-Zeichne den Spannungsverlauf der Schaltung auf und erhalte die Bandbreite aus den Halbleistungsfrequenzen unter Verwendung der Gleichung (3).    
+Zeichne den Spannungsverlauf der Schaltung auf und erhalte die
+Bandbreite aus den Halbleistungsfrequenzen unter Verwendung der
+Gleichung (3).
+
 
 

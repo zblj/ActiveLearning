@@ -26,7 +26,7 @@ Hintergrund
 Wir werden das Konzept der Phase untersuchen, indem wir Sinuswellen und passive Komponenten betrachten, die es uns ermöglichen, die Phasenverschiebung mit realen Signalen zu beobachten. Zuerst werden wir uns eine Sinuswelle und den Phasenausdruck im Argument ansehen. Du solltest mit der Gleichung vertraut sein: 
 
 .. math:: f(t) = \sin(\omega t + \theta)
-   :label: eq_1
+   :label: 01_eq_1
 
    
 :math:`\omega` stellt die Frequenz der sinusförmigen Welle im zeitlichen Verlauf :math:`t` ein,
@@ -52,16 +52,16 @@ eine Periode :math:`T`, einer Sinuswelle. Die X-Achse ist die das
 zeitvareable Argument / Winkel von :math:`\omega t`, das von 0
 bis :math:`2\pi` variiert. 
 
-Der Wert von :math:`\theta` ist in der in :numref:`fig_01` dargestellten
+Der Wert von :math:`\theta` ist in der in :numref:`01_fig_01` dargestellten
 Funktion, 0. Aufgrund von :math:`sin(0) = 0` beginnt die
 die Funktion im Koordinatenursprung bei 0. Dies ist eine einfache
 Sinuswelle ohne Zeitversatz, also ohne Phaseverschiebung. Beachten
 Sie, dass bei Verwendung von bei :math:`\omega t`,
 wir uns in einem Bereich von 0 bis :math:`2 \pi` oder 0 bis
-:math:`360^{\circ}` bewegen, um die in :numref:`fig_01` dargestellte
+:math:`360^{\circ}` bewegen, um die in :numref:`01_fig_01` dargestellte
 Sinuswelle zu erhalten.
       
-.. _fig_01:
+.. _01_fig_01:
 .. figure:: img/ Activity_01_Fig_01.png
    :align: center
    
@@ -77,7 +77,7 @@ Es ist ähnlich wie Subtrahieren von :math:`2\pi(I)` Bogenmaß von
 Argument, wobei :math:`(I)` die größte ganze Zahl ist,
 die ein nicht-negatives Ergebnis liefert. 
 
-Was passiert, wenn wir eine zweite Sinuswelle in :numref:`fig_01` mit
+Was passiert, wenn wir eine zweite Sinuswelle in :numref:`01_fig_01` mit
 dem gleichen :math:`\omega` -Wert und :math:`\theta = 0` einzeichnen?
 
 
@@ -94,14 +94,14 @@ einem Zeitversatz. Da der Offset konstant ist, sehen wir die
 ursprüngliche Sinuswelle zeitlich um einen Wert von :math:`\ theta`
 verschoben, was :math:`1/4` der Periode in diesem Beispiel entspricht.
 
-.. _fig_02:
+.. _01_fig_02:
 .. figure:: img/ Activity_01_Fig_02.png
    :align: center
    
    Funktionsplots von :math:`\sin(t)` und :math:`\sin(t + \pi/4)`.
 
    
-:math:`\theta` ist Zeitversatz oder Phasenanteil von :eq:`eq_1`. Der
+:math:`\theta` ist Zeitversatz oder Phasenanteil von :eq:`01_eq_1`. Der
 Phasenwinkel definiert den zeitlichen Versatz und
 umgekehrt. Gl. (2) zeigt die Beziehung. Wir haben uns für einen
 besonders häufig gewählten Phasenversatz von :math:`90^{\circ}`. Der
@@ -129,7 +129,7 @@ Phase
    \theta &= \frac{\Delta t}{T} 360^{\circ} \\
    &= \frac{\Delta t}{T} 2\pi \, rad \\
    &= \Delta t f 2 \pi \, rad;
-   :label: eq_2
+   :label: 01_eq_2
 	   
 
 Wobei :math:`T` die Periode der Sinuswelle ist.
@@ -173,7 +173,7 @@ von der Größe des Stroms. Für einen idealen Kondensator wird der Strom
       
       
 .. math:: i_C(t) = C \frac{dv_C(t)}{dt}
-   :label: eq_3
+   :label: 01_eq_3
 	   
    
 An dieser Stelle wird auf die genaue Funktionsweise nicht weiter
@@ -206,9 +206,9 @@ Steigung der Spannungswelle :math:`(dv/dt)` maximal ist.
  
 
 Die Zeitdifferenz zwischen den beiden Wellen kann als Phasenwinkel
-ausgedrückt werden, wie in Gl. :eq:`eq_2` definiert.
+ausgedrückt werden, wie in Gl. :eq:`01_eq_2` definiert.
 
-.. _fig_03:
+.. _01_fig_03:
 .. figure:: img/Activity_01_Fig_03.png
    :align: center
 	
@@ -232,7 +232,7 @@ in einer RC-Schaltung zu berechnen, wird folgende Formel einngesetzt:
 
 
 .. math::  i(t) = \frac{v(t)}{Z_{tot}},
-   :label: eq_4
+   :label: 01_eq_4
 	   
 
 wo :math:`Z_ {tot}` ist die Gesamtimpedaz der Schaltung ist.
@@ -243,7 +243,7 @@ Zahlen sind. Die Phasenbeziehung des Stroms zur Spannung ist
 dann: 
 
 .. math::  \theta = \arctan\left(\frac{b}{a}\right).
-   :label: eq_5
+   :label: 01_eq_5
 	   
 
 
@@ -307,7 +307,7 @@ Verfahren
 - Setzen Sie t/div auf 200 us/div (mit horizontalen +/- Regler). 
 
 
-.. _fig_04:
+.. _01_fig_04:
 .. figure:: img/Activity_01_Fig_04.png
    :scale: 50%
 
@@ -339,7 +339,7 @@ beliebig. Der hohe zu niedrige Übergang könnte ebenfalls genutzt
 werden.
 
 
-.. _fig_05:
+.. _01_fig_05:
 .. figure:: img/Activity_01_Fig_05.png
    :scale: 50%
 
@@ -384,7 +384,7 @@ des Labors nicht messen.
 
 3. Messung der Größe mit einer reelen Schaltung.
 
-.. _fig_06:
+.. _01_fig_06:
 .. figure:: img/Activity_01_Fig_06.png
    :scale: 50%
 
@@ -399,7 +399,7 @@ Oszilloskop-Sonden und Red Pitaya STEMlab-Platine auf.
 .. hint:: Verwenden Sie als Erdungs-Pin Erdungskabel des Messspitzen (Krokodilstecker).
 
 
-.. _fig_07:
+.. _01_fig_07:
 .. figure:: img/Activity_01_Fig_07.png
    :scale: 50%
 
@@ -490,7 +490,7 @@ Was passiert, wenn Sie :math:`220 \Omega` Wert für R \ :sub:`2` \ einsetzen?
 - Ersetzen Sie R \ :sub:`2` \ durch einen 1 μF Kondensator C \ :sub:`1` \.
 
 
-.. _fig_08:
+.. _01_fig_08:
 .. figure:: img/Activity_01_Fig_08.png
    :scale: 50%
 
@@ -530,7 +530,7 @@ Offsetwerten in vertikale Richtung verschieben.
   
 - Für eine stabile erfassung den Triggerpegel im Menu TRIGGER auf 0.45 V einstellen.
 
-.. _fig_09:
+.. _01_fig_09:
 .. figure:: img/Activity_01_Fig_09.png
    :scale: 50%
 
