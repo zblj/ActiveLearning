@@ -55,7 +55,7 @@ der Schaltung angebotene stationäre Admittanz ist:
 
 
 .. math:: Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)
-   :label: Gl.1
+   :label: eq_1
 
 Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen
 phasenrichtig sind. Dies entspricht einem rein realen Zutritt, so dass
@@ -63,7 +63,7 @@ die notwendige Bedingung gegeben ist:
 
 
 .. math:: \omega C - \frac{1}{\omega L} = 0
-   :label: Gl.2
+   :label: eq_2
  
 Die Resonanzbedingung kann durch Einstellen von L, C oder
 :math:`\omega` erreicht werden. Wenn man L und C konstant hält, wird
@@ -72,12 +72,12 @@ die Resonanzfrequenz :math:`\omega_0` durch:
 
 
 .. math:: \omega_0 = \frac{1}{\sqrt{LC}} \, rad/s (1)
-   :label: Gl.3
+   :label: eq_3
 
 oder 
 
 .. math:: f_0 = \frac {1}{2 \pi \sqrt{LC}} \, Hz (2)
-   :label: Gl.4
+   :label: eq_4
 
 Frequenzgang: Es handelt sich um eine Darstellung der Größe der
 Ausgangsspannung eines Resonanzkreises als Funktion der Frequenz. Die
@@ -102,7 +102,7 @@ Schwingkreises und ist definiert als:
 
 
 .. math:: \beta = \omega_2 - \omega_1 (3)
-   :label: Gl.5
+   :label: eq_5
 
 .. _08_fig_03:   
 .. figure:: img/Activity_08_Fig_03.png
@@ -144,7 +144,7 @@ angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
 		
 
    .. math:: Y_{L} = \frac{1}{(R_{esr} + j 2 \pi f L)}.
-      :label: Gl.6
+      :label: eq_6
 
       
 .. _Impedanz: https://en.wikipedia.org/wiki/Electrical_Impedanz
@@ -167,7 +167,8 @@ angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
 
 Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
 
-.. code-block:: Matlab
+.. code-block:: matlab
+   :linenos:
 
    close all
    clear all
@@ -175,12 +176,12 @@ Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
    Rs = 100;
    R1 = 1E3;
    L1 = 4.7E-3;
-   C1 = 0,1E-6;
-   Resr = 6,5;          % Induktor-Serienwiderstand in Ohm
+   C1 = 0.1E-6;
+   Resr = 6.5;          % Induktor-Serienwiderstand in Ohm
    Vin = 1;
    f = 100:100:1E6;     % Frequenzbereich für die Berechnung
 
-   %%% Berechnung von Z
+   %% Berechnung von Z
    Y1 = 1/R1;
    Y2 = i*2*pi.*f*C1;
    Y3 = 1./(Resr+i*2*pi.*f*L1);
@@ -189,9 +190,9 @@ Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
 
    %% Plotting
    ax = plotyy(f,real(Z),f,imag(Z),'semilogx','semilogx','semilogx');
-   ylabel(ax(1), 'Realteil von Z / Ohm');
-   ylabel(ax(2), 'Realteil von Z / Ohm');
-   xlabel('Frequenz / Hz');
+   ylabel(ax(1), 'Re{Z} / Ohm');
+   ylabel(ax(2), 'Im{Z} / Ohm');
+   xlabel('Frequenz f / Hz');
    grid on
 
    
@@ -255,7 +256,7 @@ auch maximal. Dies ist die Resonanzfrequenz.
 Durch Verwendung von
 
 .. math:: V_{out} = V_{in} \frac{Z}{R_s + Z}
-   :label: Gl.7
+   :label: eq_7
 
 können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5
 und 8.
@@ -264,7 +265,7 @@ und 8.
 .. note:: Größenänderung in Dezibel (dB)
    
 	  .. math::  H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.
-	     :label: Gl.8
+	     :label: eq_8
 
 		  
 .. _08_fig_07:
