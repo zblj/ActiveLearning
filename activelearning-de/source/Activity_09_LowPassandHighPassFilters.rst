@@ -33,10 +33,12 @@ Die Impedanz einer Induktivität ist proportional zur Frequenz und die Impedanz 
 
 .. _09_fig_01:
 .. figure:: img/Activity_09_Fig_01.png
+
 	    Tiefpassfilter RC.
 
 .. _09_fig_02:   
 .. figure:: img/Activity_09_Fig_02.png
+
 	    Hochpass-RL-Filter.
 
    
