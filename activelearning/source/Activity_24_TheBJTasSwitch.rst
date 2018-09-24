@@ -42,7 +42,7 @@ When the input equals :math:`+V_{in}`, the transistor is driven into saturation 
 
 This state is similar to a closed switch connecting the bottom of :math:`R_C` to ground. 
 
-.. image:: img/Activity_24_Fig_01.png
+.. figure:: img/Activity_24_Fig_01.png
 
 Figure 1: NPN BJT switch and its load line
 
@@ -60,7 +60,7 @@ These conditions can be assured by designing the circuit so that:
 
 Condition 1 guarantees that the circuit is driven into the cutoff region by the input. Conditions 2 and 3 assure that the transistor will be driven into the saturation region. An actual BJT switch differs from the ideal switch in several aspects. In practice, even in cutoff there is some small leakage current through the transistor. Also, in saturation, there is always some voltage dropped across the transistor's internal resistance. Typically, this will be between 0.2 and 0.4 V in saturation depending on the collector current and size of the device. These variations from the ideal are generally minor with a properly sized device, so we can assume near ideal conditions when analyzing or designing a BJT switch circuit. 
 
-.. image:: img/Activity_24_Fig_02.png
+.. figure:: img/Activity_24_Fig_02.png
 
 Figure 2: NPN LED switch 
 
@@ -79,7 +79,7 @@ ___________
 
 1. Build the circuit from figure 2 on the breadboard. Set :math:`R_B` = 1kΩ, :math:`R_C` = 100Ω 
 
-.. image:: img/Activity_24_Fig_03.png
+.. figure:: img/Activity_24_Fig_03.png
 
 Figure 3:  NPN LED switch on the breadboard 
 
@@ -92,7 +92,7 @@ Figure 3:  NPN LED switch on the breadboard
 6. Under IN2 menu settings set probe to x10 and vertical offset to 0.
 7. Under IN1 set vertical offset to 0.
 
-.. image:: img/Activity_24_Fig_04.png
+.. figure:: img/Activity_24_Fig_04.png
 
 Figure 4:  NPN as a switch measurements
 

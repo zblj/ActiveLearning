@@ -19,6 +19,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import sphinx_rtd_theme
 
 # -- General configuration ------------------------------------------------
 
@@ -127,6 +128,11 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+# Configure math and equations
+numfig = True
+math_numfig = True
+numfig_secnum_depth = 1
+math_eqref_format = "Eq. {number}"
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -134,12 +140,7 @@ todo_include_todos = False
 # a list of builtin themes.
 #
 # html_theme = 'alabaster' -- original Sphinx
-import sphinx_rtd_theme
-
 html_theme = "sphinx_rtd_theme"
-
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -149,6 +150,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = []
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
@@ -260,21 +262,21 @@ htmlhelp_basename = 'doctutdoc'
 # -- Options for LaTeX output ---------------------------------------------
 
 latex_elements = {
-     # The paper size ('letterpaper' or 'a4paper').
-     #
-     # 'papersize': 'letterpaper',
+    # The paper size ('letterpaper' or 'a4paper').
+    #
+    'papersize': 'a4paper',
 
-     # The font size ('10pt', '11pt' or '12pt').
-     #
-     # 'pointsize': '10pt',
+    # The font size ('10pt', '11pt' or '12pt').
+    #
+    'pointsize': '10pt',
 
-     # Additional stuff for the LaTeX preamble.
-     #
-     # 'preamble': '',
+    # Additional stuff for the LaTeX preamble.
+    #
+    # 'preamble': '',
 
-     # Latex figure (float) alignment
-     #
-     # 'figure_align': 'htbp',
+    # Latex figure (float) alignment
+    #
+    'figure_align': 'htbp',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -282,7 +284,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'doctut.tex', u'RedPitaya',
-     u'electronic active learning','howto'),
+     u'electronic active learning', 'howto'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -339,7 +341,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'doctut', u'RedPitaya electronic engineering education tutorials',
-    author, 'doctut', 'RedPitaya electronic engineering education tutorials',
+     author, 'doctut', 'RedPitaya electronic engineering education tutorials',
      'Miscellaneous'),
 ]
 

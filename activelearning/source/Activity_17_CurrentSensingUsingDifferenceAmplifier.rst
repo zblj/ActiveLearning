@@ -36,7 +36,7 @@ Current going through shunt resistor therefore path current is given as
 
 Since differential voltage across resistor (given as :math:`\Delta V = V_{R_{shunt_{node_1}}}-V_{R_{shunt_{node_2}}})` should be measured we can see that a difference amplifier is an ideal circuit for that task. The small differential voltage drop across the shunt is amplified and converted to a single ended (common referenced) voltage by an op-amp difference amplifier.
 
-.. image:: img/Activity_17_Fig_01.png
+.. figure:: img/Activity_17_Fig_01.png
 
 Figure 1: Basic Difference Amplifier in current sensing configuration
 
@@ -160,7 +160,7 @@ The load will consist of different impedances such as a resistor, capacitor or i
 IN2 input voltage signal will directly show load current as is shown in the equation 8.
 
 
-.. image:: img/Activity_17_Fig_02.png
+.. figure:: img/Activity_17_Fig_02.png
 
 Figure 2: Difference Amplifier circuit for current sensing
 
@@ -181,7 +181,7 @@ Resistor LOAD
 
 For LOAD take  :math:`470 \Omega`  resistor and build circuit shown on figure 2.
 
-.. image:: img/Activity_17_Fig_03.png
+.. figure:: img/Activity_17_Fig_03.png
 
 Figure 3: Difference Amplifier circuit for current sensing - Resistive LOAD
 
@@ -198,7 +198,7 @@ Figure 3: Difference Amplifier circuit for current sensing - Resistive LOAD
 9. Readout measurements of IN2 and calculate load current using equation (8)
 
 
-.. image:: img/Activity_17_Fig_04.png
+.. figure:: img/Activity_17_Fig_04.png
 
 Figure 4: Resistive LOAD current measurements
 
@@ -222,11 +222,11 @@ Capacitance LOAD
 
 For LOAD take  :math:`0.1 \mu F` capacitor and build circuit shown on figure 2.
 
-.. image:: img/Activity_17_Fig_05.png
+.. figure:: img/Activity_17_Fig_05.png
 
 Figure 5: Capacitance  LOAD 
 
-.. image:: img/Activity_17_Fig_06.png
+.. figure:: img/Activity_17_Fig_06.png
 
 Figure 6: Capacitance LOAD current measurements
 
@@ -247,7 +247,7 @@ Inductive LOAD
 
 For LOAD take  :math:`4.7 mH` inductor and build circuit shown on figure 2.
 
-.. image:: img/Activity_17_Fig_07.png
+.. figure:: img/Activity_17_Fig_07.png
 
 Figure 7: Inductive LOAD 
 
@@ -257,7 +257,7 @@ Figure 7: Inductive LOAD
 3. On the left bottom of the screen be sure that  IN2 V/div is set to 500mV/div (You can set V/div by selecting the desired channel and using vertical +/- controls) 
 
 
-.. image:: img/Activity_17_Fig_08.png
+.. figure:: img/Activity_17_Fig_08.png
 
 Figure 8: Inductive LOAD current measurements
 

@@ -39,7 +39,7 @@ The relation between pulse width and frequency is then given by,
 	
 	f = \frac{1}{2t_p} 
 
-.. image:: img/Activity_06_Fig_01.png
+.. figure:: img/Activity_06_Fig_01.png
 
 Figure 1: Series RC circuit.
 
@@ -50,7 +50,7 @@ From Kirchhoff's laws, it can be shown that the charging voltage V\ :sub:`C`\ (t
 
 where, V is the applied source voltage to the circuit for t = 0. RC = t is the time constant. The response curve is increasing and is shown in figure 2. 
 
-.. image:: img/Activity_06_Fig_02.png
+.. figure:: img/Activity_06_Fig_02.png
 
 Figure 2: Capacitor charging for Series RC circuit to a step input with time axis normalized by t
 
@@ -62,7 +62,7 @@ The discharge voltage for the capacitor is given by:
 
 Where V\ :sub:`0`\  is the initial voltage stored in capacitor at t = 0, and RC = t is time constant. The response curve is a decaying exponential as shown in figure 3. 
 
-.. image:: img/Activity_06_Fig_03.png
+.. figure:: img/Activity_06_Fig_03.png
 
 Figure 3: Capacitor Discharging for Series RC circuit
 

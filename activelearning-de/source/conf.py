@@ -132,8 +132,8 @@ todo_include_todos = False
 # Configure math and equations
 numfig = True
 math_numfig = True
-# numfig_secnum_depth = 1
-# math_eqref_format = "Gl.{number}"
+numfig_secnum_depth = 1
+math_eqref_format = "Gl. {number}"
 
 # -- Options for HTML output ----------------------------------------------
 

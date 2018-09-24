@@ -60,7 +60,7 @@ This can also be represented as a phasor with **magnitude** :math:`|Z|` and **ph
 .. math::	
 	P = arctan(\frac{(X_L - X_C )}{R}) \quad (7)
 
-.. image:: img/Activity_11_Fig_01.png
+.. figure:: img/Activity_11_Fig_01.png
 
 Figure 1: Series RLC circuit. 
 
@@ -87,7 +87,7 @@ With LCR meter application we can measure inductance, resistance and capacitance
 5. Repeat steps above for Rs, Ls and Cs
 
 
-.. image:: img/Activity_11_Fig_02.png
+.. figure:: img/Activity_11_Fig_02.png
 
 Figure 2: LCR meter application
 
@@ -99,7 +99,7 @@ Measuring series RLC circuit Impedance
 
 1. Set up the circuit as shown in figure 1 and figure 2 on your solderless breadboard, with the component values Rs = 1 KΩ, Cs = 0.047 µF, Ls = 22 mH. 
 
-.. image:: img/Activity_11_Fig_03.png
+.. figure:: img/Activity_11_Fig_03.png
 
 Figure 3: STEMlab with LCR meter frontend and series RLC circuit 
 
@@ -114,14 +114,14 @@ Figure 3: STEMlab with LCR meter frontend and series RLC circuit
     - under **Frequency sweep** set  Start frequency to 1kHz and End frequency to 50kHz
     - select **Start measurement**
 
-.. image:: img/Activity_11_Fig_04.png
+.. figure:: img/Activity_11_Fig_04.png
 
 Figure 4: Graph of the RLC circuit impedance magnitude taken with Impedance analyzer application
 
 4.Plot mesured Phase
     - under **Plot settings menu** for **Y-axis** select **P[deg]**
 
-.. image:: img/Activity_11_Fig_05.png
+.. figure:: img/Activity_11_Fig_05.png
 
 Figure 5: Graph of the RLC circuit impedance phase taken with Impedance analyzer application
 
