@@ -44,6 +44,7 @@ Diodenspannung und -strom kann durch eine exponentielle Beziehung
 beschrieben werden: 
 
 .. math::
+   :label: 19_eq_01
 
    I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (1)
 
@@ -65,17 +66,20 @@ die Diode würde einen Photodioden-Lichtdetektor darstellen.
 
 
 .. figure:: img/Activity_19_Fig_1.png
+   :name: 19_fig_01
+   :align: center
 
-Abbildung 1: Diodeschemasymbole
+   Diodeschemasymbole
 
+   
 Zener-Dioden-Grundlagen
 -----------------------
-
 Eine Zener-Diode ist im Aufbau und in der Funktionsweise ähnlich
-Diode. Im Gegensatz zu einer herkömmlichen Diode, bei der die beabsichtigte Verwendung ist
-Strom in umgekehrter Richtung verhindern, wird meistens eine Zenerdiode verwendet
-im umgekehrten Bereich oberhalb der Durchbruchspannung. Es ist :math:`I` vs,
- :math:`V` -Kennlinie ist ähnlich wie eine gewöhnliche Diode. Durch
+Diode. Im Gegensatz zu einer herkömmlichen Diode, bei der die
+beabsichtigte Verwendung ist Strom in umgekehrter Richtung verhindern,
+wird meistens eine Zenerdiode verwendet im umgekehrten Bereich
+oberhalb der Durchbruchspannung. Es ist :math:`I` vs,
+:math:`V` -Kennlinie ist ähnlich wie eine gewöhnliche Diode. Durch 
 das Einstellen der Dotierung der P- und N-Seiten der Kreuzung ist es
 möglich, eine Zener-Diode zu entwerfen, die irgendwo aufbricht
 von ein paar Volt bis zu einigen hundert Volt. Siehe Abbildung 2. In diesem
@@ -85,9 +89,13 @@ maximales Sperrspannungspotential, das vorher angewendet werden kann
 Das Eintreten in die Zener-Region wird als Peak Inverse Voltage bezeichnet
 (PIV) oder die Spitzensperrspannung (PRV).
 
-.. figure:: img/Activity_19_Fig_2.png
 
-Abbildung 2: Vorwärts- und Rückwärts-Zenerdiode :math: `I / V`-Charakteristik
+.. figure:: img/Activity_19_Fig_2.png
+   :name: 19_fig_02
+   :align: center
+
+   Vorwärts- und Rückwärts-Zenerdiode :math:`I/V` -Charakteristik
+   
 
 Bei Spannungen oberhalb des Ausbruchsbeginns wurde ein Anstieg angewendet
 Spannung wird dazu führen, dass mehr Strom in der Diode fließt, aber die Spannung
@@ -110,7 +118,7 @@ Träger. Schottky-Dioden sind Majority-Carrier-Geräte, die sein können
 schnell umgeschaltet von Vorwärts- zu Sperrspannung ohne Minoritätsträger
 Speichereffekte.
 
-Der normale Strom gegen Spannung :math:`I / V` -Kurve einer Schottky-Barriere
+Der normale Strom gegen Spannung :math:`I/V` -Kurve einer Schottky-Barriere
 Diode ähnelt der einer PN-Diode mit dem folgenden
 Ausnahmen:
 
@@ -136,10 +144,12 @@ Ausnahmen:
    
 
 .. math::
+   :label: 19_eq_02
 
    I_D = I_S \ bigg (e ^ {\ frac {V_Dq} {nkT}} - 1 \ bigg) \ quad (2)
 
 .. math::
+   :label: 19_eq_03
 
    I_S = A A ^ * T ^ 2 e ^ {- \ Frac {q \ Phi B} {kT}} \ quad (3)
 
@@ -162,6 +172,7 @@ Woher:
 * :math:`n` = Idealitätsfaktor (Vorwärtsneigungsfaktor, bestimmt durch
   Metall-Halbleiter-Schnittstelle) 
 
+  
 
 LED-Grundlagen
 --------------
@@ -181,8 +192,10 @@ Abbildung 3 gezeigt.
 
 
 .. figure:: img/Activity_19_Fig_3.png
+   :name: 19_fig_03
+   :align: center
 
-   Abbildung 3: Leuchtdioden
+   Leuchtdioden
 
 Eine LED ist ein Halbleitergerät, das elektromagnetische Strahlung emittiert
 bei optischen und Infrarotfrequenzen. Das Gerät ist eine PN-Diode
@@ -208,10 +221,12 @@ Energie oder des Photons haben eine Energie :math:`E = hf`. Die
 Beziehung zwischen der Photonenenergie und der Einschaltspannung
 :math:`V_0`, ist: 
 
+      
 .. math::
    
    eV_0 = E_g = hf = \ frac {hc} {\ lambda} \ quad (4)
 
+   
 woher:
 
 * :math:`E_g` ist die Größe der Energielücke
@@ -228,13 +243,10 @@ woher:
 * :math:`h` ist Plancks Konstante
 
   
-Experimente
------------
+pn-Flächendiode I/V-Charakteristik
+----------------------------------
 
-PN-Flächendiode VI-Charakteristik
----------------------------------
-
-Die Strom-Spannungs-Kennlinie der PN-Diode kann gemessen werden mit
+Die Strom-Spannungs-Kennlinie der pn-Diode kann gemessen werden mit
 dem STEMlab und den folgenden Verbindungen in Abbildung 4. Stellen Sie
 das Steckbrett mit dem OUT1-Ausgang des Generators ein an einem Ende
 des Widerstands angebracht. Das andere Ende des Widerstands ist
@@ -251,8 +263,10 @@ angegeben wie:
 
    
 .. figure:: img/Activity_19_Fig_4.png
+   :name: 19_fig_04
+   :align: center
 
-   Abbildung 4: Anschlussplan für Dioden I- und V-Kurven
+   Anschlussplan für Dioden I- und V-Kurven
 
 Zur Messung der Strom-Spannungs-Kennlinie des PN-Übergangs
 Diode OUT1 Generator sollte als 1kHz Dreieckswelle mit 1 konfiguriert
@@ -277,6 +291,7 @@ Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
    ermöglicht Text, Gleichung und Bildbearbeitung ist dies ein
    perfektes Werkzeug für Tutorials, Beispiele usw.
 
+   
 Aber bevor Sie messen VI-Kurve sollten Sie Spannungen überprüfen
 Signale mit Oszilloskop & Signalgenerator Anwendung.
 
@@ -292,15 +307,18 @@ Materialien
 - Herkömmliche Diode (1N4001 oder ähnlich)
   
 
-Prozedur - Zeitbereichsmessungen
---------------------------------
+Zeitbereichsmessungen
+---------------------
 
 1. Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett
 
-.. figure:: img/Activity_19_Fig_5.png
+   .. figure:: img/Activity_19_Fig_5.png
+      :name: 19_fig_05
+      :align: center
 
-   Abbildung 5: Verbindungen auf dem Steckbrett
+      Verbindungen auf dem Steckbrett
 
+      
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
    
 3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V, DC-Offset auf ein
@@ -323,10 +341,12 @@ Prozedur - Zeitbereichsmessungen
    Spur mit Faktor R1 skaliert Diodenstrom **
    
 
+   .. figure:: img/Activity_19_Fig_6.png
+      :name: 19_fig_06
+      :align: center
 
-.. figure:: img/Activity_19_Fig_6.png
-
-   Abbildung 6: Spannungen und Strom auf der Diode (zeitabhängig)
+      Spannungen und Strom auf der Diode (zeitabhängig)
+      
 
 Aus Abbildung 6 können wir sehen, dass die Diode bei der Spannung
 leitend wird darauf überschreiten Diodenspannung, die etwa 0,6 V ist. 
@@ -346,8 +366,11 @@ Wie man Jupyter Notebook startet und ein neues Projekt erstellt, zeigt
 das Flussdiagramm in Abbildung 7. 
 
 .. figure:: img/Activity_19_Fig_7.png
+   :name: 19_fig_07
+   :align: center
 
-Abbildung 7: Erstellen eines neuen Jupyter-Notebooks
+   Erstellen eines neuen Jupyter-Notebooks.
+   
 
 Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
 kopieren und einfügen Code unten und führen Sie es aus. Code unten
@@ -356,93 +379,21 @@ XY-Graphen darstellen. Zum Messen :math:`VI` Kurve ein "XY"
 Diagramm ist erforderlich, wo x-Achse Diode darstellt Spannung
 :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2)/R_1`. 
 
-.. note:: Kopieren Sie den Code von unten in die Zelle 1.
+Kopieren Sie den Code von unten in die Zelle 1.
+  
+.. literalinclude:: code/Activity_19_Code_01.py
+   :language: python
+   :linenos:
 
-.. code-block:: python
 
-   # Import libraries 
-   from redpitaya.overlay.mercury import mercury as overlay
-
-   from bokeh.io import push_notebook, show, output_notebook
-   from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
-   from bokeh.plotting import figure, output_file, show
-   from bokeh.resources import INLINE 
-   output_notebook(resources=INLINE)
-
-   import numpy as np
       
-   # Initialize fpga modules
-   fpga = overlay()
-   gen0 = fpga.gen(0)
-   osc = [fpga.osc(ch, 1.0) for ch in range(fpga._MNO)]
-   
-   # Configure OUT1 generator channel 
-   gen0.amplitude = 0.5
-   gen0.offset = 0.5
-   gen0.waveform = gen0.sawtooth(0.5)
-   gen0.frequency = 2000
-   gen0.start()
-   gen0.enable = True
-   gen0.trigger()
-    
-   # R1 resistor value
-   R1 = 10
-
-   # Configure IN1 and IN2 oscilloscope input channels
-   for ch in osc:
-   ch.filter_bypass = True
-   # data rate decimation 
-   ch.decimation = 10
-   # trigger timing [sample periods]
-   N = ch.buffer_size
-   ch.trigger_pre  = 0
-   ch.trigger_post = N
-   # osc0 is controlling both channels
-   ch.sync_src = fpga.sync_src["osc0"]
-   ch.trig_src = fpga.trig_src["osc0"]
-   # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
-   ch.level = 0.5
-   ch.edg = 'pos'
-   ch.holdoff = 0
-       
-   # Initialize diode current and voltage
-   V = I = np.zeros(N)
-
-   # Plotting
-   hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
-   tools = "wheel_zoom,box_zoom,reset,pan" 
-   p = figure(plot_height=500, plot_width=900,
-	      title="XY plot of diodes VI characteristic",
-	      toolbar_location="right",
-	      tools=(tools, hover))
-   p.xaxis.axis_label = 'Voltage [V]'
-   p.yaxis.axis_label = 'Current [mA]'
-   r = p.line(V,I, line_width=1, line_alpha=0.7, color="blue")
-		
-   # get and explicit handle to update the next show cell 
-   target = show(p,notebook_handle=True)
-
- 
 Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code
 von unten in es.
 
-.. code-block:: python
+.. literalinclude:: code/Activity_19_Code_02.py
+   :language: python
+   :linenos:
 
-   # Measuring I, V and re-plotting
-   while True:
-   # reset and start
-   osc[0].reset()
-   osc[0].start()
-   # wait for data
-   while (osc[0].status_run()): pass
-   V0 = osc[0].data(N-100)  # IN1 signal
-   V1 = osc[1].data(N-100)  # IN2 signal
-   I=((V0-V1)/R1)*1E3     # 1E3 convert to mA
-   r.data_source.data['x'] = V0
-   r.data_source.data['y'] = I
-   push_notebook(handle=target)
-
-   
    
 Führen Sie Zelle 1 und Zelle 2 aus. note Zelle 2 ist eine
 Hauptschleife für die Akquisition und Neuplanung. Wenn Sie die
@@ -454,8 +405,10 @@ Nach dem Ausführen des obigen Codes sollten Sie die Diode VI als
 charakteristisch erhalten ist in Abb. 8 dargestellt.
 
 .. figure:: img/Activity_19_Fig_8.png
+   :name: 19_fig_08
+   :allign: center
 
-   Abbildung 8: Didoes VI-Charakteristik gemessen mit Jupyter Notebook
+   Didoes VI-Charakteristik gemessen mit Jupyter Notebook
 
 Aus der Abbildung 8 ist die typische Dioden-VI-Charakteristik
 ersichtlich. Von die Zahl 8 können wir sehen, wie die Spannung an der
@@ -473,7 +426,3 @@ Diodenzustände aber nur auf der Diodenspannung.
 
 .. note::
    Versuchen Sie zu beantworten, was die Diodenhysterese verursacht.
-
-
-
-

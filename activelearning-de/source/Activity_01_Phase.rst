@@ -10,13 +10,12 @@ zwischen Signalen bedeutet und zu prüfen, wie Theorie mit der Praxis
 Pitaya STEMlab Hardware und Software gewonnen werden.
 
 
-Anmerkungen
------------
+.. note::
 
-.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+   .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
-wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. 
+   In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch,
+   wenn es um die Verbindungen zur Red Pitaya STEMlab-Board Hardware_ geht. 
 
 
 

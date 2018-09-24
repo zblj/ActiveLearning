@@ -4,62 +4,79 @@ Proportionalität und Überlagerung
 Zielsetzung
 -----------
 
-Das Ziel dieser Labortätigkeit ist die Überprüfung des Proportionalität- und  Überlagerungssatzes. 
-
-Notizen
--------
+Das Ziel dieser Labortätigkeit ist die Überprüfung des
+Proportionalität- und  Überlagerungssatzes (Superposition).
 
 .. _E1: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e1
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya
-STEMlab-Karte geht.
-
-Hardware_. Verlängerungsstecker-Pins, die als 5V- und
-3,3V-Spannungsquelle verwendet werden sind in der Dokumentation zu den
-Steckverbindern E1_ und E2_ aufgeführt.
-
+.. note:: In diesen Tutorials verwenden wir die Terminologie aus dem
+	  Benutzerhandbuch wenn es um die Anschlüsse an die Red Pitaya
+	  STEMlab-Karte geht. Hardware_. Verlängerungsstecker-Pins,
+	  die als 5V- und 3,3V-Spannungsquelle verwendet werden sind
+	  in der Dokumentation zu den Steckverbindern E1_ und E2_ aufgeführt.
 
 
 Hintergrund
 -----------
+In dieser Übung werden Proportionalitäts- und Überlagerungssätze
+untersucht, indem sie auf die, in den folgenden Abbildungen
+dargestellten Schaltungen, angewendet werden.
 
-In dieser Übung werden Proportionalitäts- und Überlagerungssätze untersucht, indem sie auf die, in den folgenden Abbildungen dargestellten Schaltungen, angewendet werden.
 
 
-1. Das Proportionalitätstheorem besagt, dass die Reaktion einer Schaltung proportional zur Quelle ist, die auf diese Schaltung wirkt. Dies wird auch als Linearität bezeichnet. Die Proportionalitätskonstante A bezieht die Eingangsspannung auf die Ausgangsspannung als:  
-
-   .. math:: 
-	
-      V_{out} = Ein \cdot V_{in} 
-
-   Der Proportionalitätsfaktor A wird manchmal als Verstärkung einer Schaltung bezeichnet.
-   Für die Schaltung in Abb.1 ist die Quellspannung ist V\ :sub:`in`\.
-   Die Antwort V\ :sub:`out`\ liegt über dem Widerstand :math:`4,7 k\Omega`.
-   Das wichtigste Ergebnis der Linearität ist Überlagerung.
+1. Das Proportionalitätstheorem besagt, dass die Reaktion einer
+   Schaltung proportional zur Quelle ist, die auf diese Schaltung
+   wirkt. Dies wird auch als Linearität bezeichnet. Die
+   Proportionalitätskonstante A bezieht die Eingangsspannung auf die
+   Ausgangsspannung als:
    
 
+   .. math:: V_{out} = Ein \cdot V_{in}
+      :label: 04_eq_01
+
+   Der Proportionalitätsfaktor A wird manchmal als Verstärkung einer
+   Schaltung bezeichnet.
+   
+   Für die Schaltung in Abb. :numref:`04_fig_01` ist die
+   Spannungsquelle :math:`V_{in}` die Quellspannung.
+   
+   Die Ausgangsspannung :math:`V_{out}` liegt über dem :math:`4,7
+   k\Omega` Widerstand. Das wichtigste Ergebnis der Linearität ist
+   Überlagerung.
+   
+   
+   .. _04_fig_01:
    .. figure:: img/Activity_04_Fig_01.png
       :align: center 
 	
-      Abbildung 1: Widerstandsschaltung mit 5V Spannungsquelle
+      Widerstandsschaltung mit :math:`5V` Spannungsquelle.
 
 
-2. Der Überlagerungssatz(Superposition) besagt, dass die Reaktion einer linearen Schaltung mit mehreren unabhängigen Quellen, wie in Abbildung 2, durch Addition der individuellen Reaktionen, die durch die einzelnen Quellen verursacht werden, die allein wirken, erhalten werden kann. Bei einer unabhängigen Quelle, die allein arbeitet, werden alle anderen unabhängigen Spannungsquellen im Stromkreis durch Kurzschlüsse und alle anderen unabhängigen Stromquellen durch Leerläufe ersetzt, wie in Abbildung 3 dargestellt.
+2. Der Überlagerungssatz (Superposition) besagt, dass die Reaktion
+   einer linearen Schaltung mit mehreren unabhängigen Quellen, wie in
+   :numref:`04_fig_02`, durch Addition der individuellen Reaktionen,
+   die durch die einzelnen Quellen verursacht werden, die allein
+   wirken, erhalten werden kann. Bei einer unabhängigen Quelle, die
+   allein arbeitet, werden alle anderen unabhängigen Spannungsquellen
+   im Stromkreis durch Kurzschlüsse und alle anderen unabhängigen
+   Stromquellen durch Leerläufe ersetzt, wie in Abbildung 3
+   dargestellt.
+   
 
-
+   .. _04_fig_02:
    .. figure:: img/Activity_04_Fig_02.png
       :align: center 
 
-      Abbildung 2. Schaltung mit zwei Spannungsquellen 
+      Schaltung mit zwei Spannungsquellen.
 
       
+   .. _04_fig_03:
    .. figure:: img/Activity_04_Fig_03.png
       :align: center 
 	
-      Abbildung 3. Schaltung zur Reaktion von nur einer Quelle
+      Schaltung zur Reaktion von nur einer Quelle.
 
 
 
@@ -69,6 +86,7 @@ Materialien
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10 
 
 - Verschiedene Widerstände:
+  
   - :math:`1 k\Omega` 
 
   - :math:`2,2 k\Omega` 
@@ -81,29 +99,33 @@ Vorgehensweise
 
 Überprüfen Sie den Proportionalitätssatz:
 
-- Bauen Sie die Schaltung aus Abb. 1 auf.
+1. Bauen Sie die Schaltung aus Abb. :numref:`04_fig_01` auf.
 
-- Fall 1: Für die Spannungsquelle "V\ :sub:`in`\=5V", dargestellt in
-  Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
-  Erweiterungsstecker E2_. 
+2. Im ersten Fall verwenden Sie als Spannungsquelle
+   :math:`V_{in} = 5V` den STEMlab-Spannungsstift am
+   Erweiterungsstecker E2_.
+	 
   
-- Fall 2: Für die Spannungsquelle "V\ :sub:`in`\=3.3V", dargestellt in
-  der Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
-  Erweiterungsstecker E1_.  
+3. Im zweiten Fall verwenden Sie als Spannungsquelle
+   :math:`V_{in}=3.3V` den STEMlab-Spannungsstift am
+   Erweiterungsstecker E1_.
+	 
 
-- Fall 3: Für die Spannungsquelle "V\ :sub:`in`\=-3.3V", dargestellt
-  in der Abb. 1, verwenden Sie den STEMlab-Spannungsstift am
-  Erweiterungsstecker E2_.
-  
-
-- Stellen Sie die Sondendämpfung auf x10 ein (an der Oszilloskopsonde
-  und an der Oszilloskop IN1 Menu-Einstellung)
+4. Im dritten Fall verwenden Sie als Spannungsquelle
+   :math:`V_{in} = -3.3V` den STEMlab-Spannungsstift am
+   Erweiterungsstecker E2_.
   
 
-- Messen Sie V\ :sub:`out`\ mit der Oszilloskopanwendung genau.
+5. Stellen Sie die Sondendämpfung sowohl an der Oszilloskopsonde als
+   auch in der Menü-Einstellung des IN1 in der Oszilloskopanwendung
+   auf :math:`\times 10` ein. 
+
+6. Messen Sie :math:`V_{out}` mit der Oszilloskopanwendung.
   
   
-- Sie sollten die tatsächlichen festen Netzspannungen ebenfalls messen und aufzeichnen. 
+7. Sie sollten die tatsächlichen festen Netzspannungen ebenfalls
+   messen und aufzeichnen.
+   
 
   
   .. table:: Tabelle 1

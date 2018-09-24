@@ -10,21 +10,20 @@ Bandbreite des gegebenen Netzwerks anhand des Amplitudengangs zu einer
 sinusförmigen Quelle.
 
 
-Notizen
--------
+.. note::
 
-.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
+   .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+   .. _Bode: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/bode/bode.html
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch. wenn es um die Anschlüsse an die Red Pitaya
-STEMlab-Karte geht. hardware_.
+   In diesen Tutorials verwenden wir die Terminologie aus dem
+   Benutzerhandbuch. wenn es um die Anschlüsse an die Red Pitaya
+   STEMlab-Karte geht. hardware_.
 
 
-Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet. Die Bode_
-Analysatoranwendung wird verwendet, um den Frequenzgang der
-RLC-Schaltung zu messen.
+   Die Oszilloskop- und Signalgeneratoranwendung wird zum Erzeugen und
+   Beobachten von Signalen auf der Schaltung verwendet. Die Bode_
+   Analysatoranwendung wird verwendet, um den Frequenzgang der
+   RLC-Schaltung zu messen.
 
 
 
@@ -47,15 +46,15 @@ Netzwerks rein ohmscher Natur ist.
 .. _08_fig_01:
 .. figure:: img/Activity_08_Fig_01.png
 
-   Parallel-Resonanzkreis
+	    Parallel-Resonanzkreis
 
    
-Berücksichtigen Sie die parallele RLC-Schaltung von Abb. 1. Die von
+Berücksichtigen Sie die parallele RLC-Schaltung von :numref:`08_fig_01`. Die von
 der Schaltung angebotene stationäre Admittanz ist:
 
 
 .. math:: Y = \frac{1}{R} + j \left( \omega C - \frac{1}{\omega L} \right)
-   :label: eq_1
+   :label: 08_eq_01
 
 Resonanz entsteht, wenn Spannung und Strom an den Eingangsklemmen
 phasenrichtig sind. Dies entspricht einem rein realen Zutritt, so dass
@@ -63,51 +62,55 @@ die notwendige Bedingung gegeben ist:
 
 
 .. math:: \omega C - \frac{1}{\omega L} = 0
-   :label: eq_2
+   :label: 08_eq_02
  
 Die Resonanzbedingung kann durch Einstellen von L, C oder
 :math:`\omega` erreicht werden. Wenn man L und C konstant hält, wird
 die Resonanzfrequenz :math:`\omega_0` durch:
-      
-
 
 .. math:: \omega_0 = \frac{1}{\sqrt{LC}} \, rad/s (1)
-   :label: eq_3
+   :label: 08_eq_03
 
 oder 
 
 .. math:: f_0 = \frac {1}{2 \pi \sqrt{LC}} \, Hz (2)
-   :label: eq_4
+   :label: 08_eq_04
 
-Frequenzgang: Es handelt sich um eine Darstellung der Größe der
-Ausgangsspannung eines Resonanzkreises als Funktion der Frequenz. Die
-Reaktion beginnt natürlich bei Null, erreicht einen Maximalwert in der
-Nähe der Eigenresonanzfrequenz und fällt dann wieder auf Null, wenn ω
-unendlich wird. Der Frequenzgang ist in Abbildung 2 dargestellt.
+.. hint:: **Frequenzgang**
+
+	  Es handelt sich um eine Darstellung der Größe der
+	  Ausgangsspannung eines Resonanzkreises als Funktion der
+	  Frequenz. Die Reaktion beginnt natürlich bei Null, erreicht
+	  einen Maximalwert in der Nähe der Eigenresonanzfrequenz und
+	  fällt dann wieder auf Null, wenn :math:`omega` unendlich
+	  wird. Der Frequenzgang ist in :numref:`08_fig_02`
+	  dargestellt. 
 
 
-.. _08_fig_02:
-.. figure:: img/Activity_08_Fig_02.png
-
-   Frequenzgang des Parallelschwingkreises
+	  .. _08_fig_02:
+	  .. figure:: img/Activity_08_Fig_02.png
+		    
+		      Frequenzgang des Parallelschwingkreises
 
    
-Die beiden zusätzlichen Frequenzen ω :sub:`1` und ω :sub:`2` werden
-ebenfalls angezeigt, die als Halbleistungsfrequenzen bezeichnet
-werden. Diese Frequenzen lokalisieren diejenigen Punkte auf der Kurve,
-bei denen der Spannungsverlauf :math:`1/sqrt(2)` oder das 0,707-fache
-des Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der
-Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des
+Die beiden zusätzlichen Frequenzen :math:`\omega_1` und
+:math:`\omega_2` werden ebenfalls angezeigt, die als
+Halbleistungsfrequenzen bezeichnet werden. Diese Frequenzen
+lokalisieren diejenigen Punkte auf der Kurve, bei denen der
+Spannungsverlauf :math:`1/sqrt(2)` oder das 0,707-fache des
+Maximalwertes beträgt. Sie dienen zur Messung der Bandbreite der
+Ansprechkurve. Dies wird als Halbwertszeit bezeichnet. Bandbreite des 
 Schwingkreises und ist definiert als:
 
 
 .. math:: \beta = \omega_2 - \omega_1 (3)
-   :label: eq_5
+   :label: 08_eq_05
 
+	   
 .. _08_fig_03:   
 .. figure:: img/Activity_08_Fig_03.png
 
-   Serien-Resonanzkreis
+	    Serien-Resonanzkreis
 
    
 Materialien
@@ -127,8 +130,9 @@ Mit einem der sw-Tools wie Matlab oder Python können wir die Impedanz
 der parallelen RLC-Schaltung aus Figur 1 berechnen.
 
 
-Die Admittanz (Y) der Parallelschaltung ist in Gleichung 1 oben
-angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
+Die Admittanz, :math:`Y` der Parallelschaltung ist in
+Gl. :eq:`08_eq_01` angegeben, wobei die Impedanz :math:`Z` als
+Kehrwert der Admittanz, :math:`Z = 1 / Y` angegeben ist.
 
        
        
@@ -144,7 +148,7 @@ angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
 		
 
    .. math:: Y_{L} = \frac{1}{(R_{esr} + j 2 \pi f L)}.
-      :label: eq_6
+      :label: 08_eq_06
 
       
 .. _Impedanz: https://en.wikipedia.org/wiki/Electrical_Impedanz
@@ -167,33 +171,10 @@ angegeben, wobei die Impedanz Z als Z = 1 / Y angegeben ist.
 
 Matlab-Code zur Berechnung von :math:`Z` ist unten aufgeführt.
 
-.. code-block:: matlab
+.. literalinclude:: code/Activity_08_Code_01.m
+   :language: matlab
    :linenos:
-
-   close all
-   clear all
-   clc
-   Rs = 100;
-   R1 = 1E3;
-   L1 = 4.7E-3;
-   C1 = 0.1E-6;
-   Resr = 6.5;          % Induktor-Serienwiderstand in Ohm
-   Vin = 1;
-   f = 100:100:1E6;     % Frequenzbereich für die Berechnung
-
-   %% Berechnung von Z
-   Y1 = 1/R1;
-   Y2 = i*2*pi.*f*C1;
-   Y3 = 1./(Resr+i*2*pi.*f*L1);
-   Y = Y1 + Y2 + Y3;
-   Z = 1./Y;
-
-   %% Plotting
-   ax = plotyy(f,real(Z),f,imag(Z),'semilogx','semilogx','semilogx');
-   ylabel(ax(1), 'Re{Z} / Ohm');
-   ylabel(ax(2), 'Im{Z} / Ohm');
-   xlabel('Frequenz f / Hz');
-   grid on
+   
 
    
 Wenn wir den obigen Code ausführen, erhalten wir folgende Ergebnisse,
@@ -203,32 +184,32 @@ die auf dem Bild unten gezeigt werden.
 .. _08_fig_04:
 .. figure:: img/Activity_08_Fig_04.png
  
-   Berechnung der Impedanz Z der parallelen RLC-Schaltung. Blaue Spur
-   reeller/resistiver Teil von Z, grüne Spur imaginärer/reaktiver Teil
-   von Z.
-   
-
+	    Berechnung der Impedanz Z der parallelen RLC-Schaltung.
+	    
  
 Wir können auch den Absolutwert von Z berechnen, der die kombinierte
-Impedanz der RLC-Schaltung aus Figur 1 ist.  Der Absolutwert der
-Impedanz Z ist die Parameterform, mit der wir vorhersagen können, wie
-die Messungen aussehen sollen.
+Impedanz der RLC-Schaltung aus :numref:`08_fig_01` ist.  Der
+Absolutwert der Impedanz Z ist die Parameterform, mit der wir
+vorhersagen können, wie die Messungen aussehen sollen.
 
-
-
-Wir können die Schaltung aus Figur 8 modellieren, wie in der folgenden Abbildung gezeigt, wobei Z = 1/Y und Y in Gleichung 1 angegeben ist. 
+Wir können die Schaltung aus :numref:`08_fig_08` modellieren, wie
+in der folgenden Abbildung gezeigt, wobei :math:`Z = 1/Y` und
+:math:`Y` in Gl. :eq:`08_eq_01` angegeben ist.
 
 .. _08_fig_05:
 .. figure:: img/Activity_08_Fig_05.png
 
-   Darstellung der parallelen RLC-Schaltung als komplexe Impedanz Z
+	    Darstellung der parallelen RLC-Schaltung als komplexe
+	    Impedanz Z.
+	    
 
    
-Aus Abbildung 5 oben können wir deutlich erkennen, dass unsere
+Aus :numref:`08_fig_05` können wir deutlich erkennen, dass unsere
 Schaltung ein einfacher Spannungsteiler ist, wobei
-Vout=Vin*Z/(Rs+Z). Da das Z jedoch frequenzabhängig ist, ist das
-Verhältnis zwischen Z und Rs frequenzabhängig und damit das
-Vin/Vout-Verhältnis.
+:math:`V_{out} = V_{in} * Z / (R_s + Z)`. Da die Impedanz :math:`Z`
+jedoch frequenzabhängig ist, ist das Verhältnis zwischen der Impedanz
+:math:`Z` und dem Serienwiderstand :math:`R_s` frequenzabhängig und
+damit das Spannungsübertragungsverhältnis :math:`V_{out}/V){in}`.
 
 
 Bei einer Frequenz f: Wenn der Wert von Z viel kleiner als der Wert
@@ -241,22 +222,25 @@ als der Wert von Rs, wird die Ausgangsspannungsamplitude nahe der
 Eingangsspannungsamplitude liegen.
 
 
-Bei einer bestimmten Frequenz f: wobei Z=Rs das Vout ist ½ Vin.  
+Bei einer bestimmten Frequenz :math:`f`, wobei :math:`Z = R_s` ist
+:math:`V_out = \frac{1}{2} V_in`.  
 
-Bei einer bestimmten Frequenz f: wobei Z maximal ist, ist der Vout
-auch maximal. Dies ist die Resonanzfrequenz.
+Bei einer bestimmten Frequenz :math:`f`, wobei :math:`Z` maximal ist,
+ist :math:`V_out` auch maximal. Dies ist die Resonanzfrequenz.
 
 
 .. _08_fig_06:
-.. figure:: img/Activity_08_Fig_06.png
+.. figure::  img/Activity_08_Fig_06.png
 
-   Berechnung des Absolutwertes der Impedanz Z für die in Abbildung 3 dargestellte Schaltung. 
+	     Berechnung des Absolutwertes der Impedanz Z für die in
+	     :numref:`08_fig_03` dargestellte Schaltung.
+	    
 
 
 Durch Verwendung von
 
 .. math:: V_{out} = V_{in} \frac{Z}{R_s + Z}
-   :label: eq_7
+   :label: 08_eq_07
 
 können wir den Frequenzgang unserer RLC-Schaltung berechnen. Abb. 5
 und 8.
@@ -265,13 +249,14 @@ und 8.
 .. note:: Größenänderung in Dezibel (dB)
    
 	  .. math::  H_v = 20 \cdot \log_{10}\left\lvert \frac{V_{out}}{V_{in}} \right\lvert.
-	     :label: eq_8
+	     :label: 08_eq_08
 
 		  
 .. _08_fig_07:
 .. figure:: img/Activity_08_Fig_07.png
 
-   Berechnung des Frequenzgangs (Vout/Vin) für die Schaltung in Abbildung 5.
+	    Berechnung des Frequenzgangs (Vout/Vin) für die Schaltung
+	    in Abbildung 5. 
 
 
 Vorgehensweise:
@@ -283,8 +268,8 @@ Vorgehensweise:
 
 .. _08_fig_08:
 .. figure:: img/Activity_08_Fig_08.png
-
-   Parallele RLC-Schaltung für die Messungen.
+	    
+	    Parallele RLC-Schaltung für die Messungen.
 
 
 2. Öffnen Sie die Anwendung Bode analyzer. Im Menü "Einstellungen" die
@@ -296,7 +281,7 @@ Vorgehensweise:
 .. _08_fig_09:
 .. figure:: img/Activity_08_Fig_09.png
 
-   Bode Analysator Anwendung
+	    Bode Analysator Anwendung
 
    
 Nachdem die Messungen durchgeführt wurden, sollten Sie den
@@ -307,8 +292,8 @@ dargestellt.
 .. _08_fig_10:
 .. figure:: img/Activity_08_Fig_10.png
 
-   Frequenzgang der Schaltung aus Abbildung 8. Aufnahme durch Bode
-   Analysator-Anwendung.
+	    Frequenzgang der Schaltung aus Abbildung 8. Aufnahme durch
+	    Bode Analysator-Anwendung.
    
 
 - Vergleichen Sie Messungen und Berechnungen. Wenn es einen
@@ -355,12 +340,12 @@ Frequenzgang berechnen.
    
 
    
-Fragen zum Versuch
-------------------
+Fragen
+------
 
 Zeichne den Spannungsverlauf der Schaltung auf und erhalte die
 Bandbreite aus den Halbleistungsfrequenzen unter Verwendung der
-Gleichung (3).
+Gl. :eq:`08_eq_03`.
 
 
 

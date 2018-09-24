@@ -9,13 +9,15 @@ und Kirchhoffs Stromgesetz (Knotenregel) mittels Maschen- und
 Knotenanalyse der gegebenen Schaltung zu überprüfen.
 
 
-.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. note::
+   
+   .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+   .. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya
-STEMlab-Board Hardware_ geht. Die als 5V-Spannungsquelle verwendeten
-Verlängerungsstecker-Pins sind in der Dokumentation hier_ dargestellt.
+   In diesen Tutorials verwenden wir die Terminologie aus dem
+   Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya
+   STEMlab-Board Hardware_ geht. Die als 5V-Spannungsquelle verwendeten
+   Verlängerungsstecker-Pins sind in der Dokumentation hier_ dargestellt.
 
 
 Hintergrund
@@ -28,12 +30,12 @@ Hintergrund
    Anwendung des Kirchhoff-Spannungsgesetzes für die Maschen 1 und 2:
      
 
-   - Masche 1
+   - **Masche 1**
      
      .. math:: -V_s + V_1 + V_2 + V_5 = 0
 	:label: 02_eq_1
 
-   - Masche 2
+   - **Masche 2**
      
      .. math:: -V_2 + V_3 + V_4 = 0
 	:label: 02_eq_2
@@ -51,22 +53,22 @@ Hintergrund
    in Abbildung 1 dargestellten Schaltung die folgenden Gleichungen;
    
 
-   - Knoten a
+   - **Knoten a**
      
      .. math:: -I_s + I_1 = 0
 	:label: 02_eq_3
 		
-   - Knoten b
+   - **Knoten b**
      
      .. math:: - I_1 + I_2 + I_3 = 0
 	:label: 02_eq_4
 	
-   - Knoten c
+   - **Knoten c**
      
      .. math:: -I_3 + I_4 = 0
 	:label: 02_eq_5
 	
-   - Knoten d
+   - **Knoten d**
      
      .. math:: -I_2 - I_4 + I_5 = 0
 	:label: 02_eq_6
@@ -133,9 +135,9 @@ Vorgehensweise
    liefert eine Spannung am gemessenen Widerstand.
    
 	
-   - Stellen Sie die Dämpfung der Sonden auf x10 ein.
+   * Stellen Sie die Dämpfung der Sonden auf x10 ein.
      
-   - Schließen Sie die Sonden an den gewünschten Widerstand an. 
+   * Schließen Sie die Sonden an den gewünschten Widerstand an. 
 
    .. _02_fig_04:
    .. figure:: img/Activity_02_Fig_04.png
@@ -143,7 +145,7 @@ Vorgehensweise
       Messkreis
 
       
-   - Oszilloskop-Anwendung starten 
+   * Oszilloskop-Anwendung starten 
 	
      .. _02_fig_05:
      .. figure:: img/Activity_02_Fig_05.png
@@ -151,11 +153,11 @@ Vorgehensweise
 	Oszilloskopanwendung
 
       
-   - Im Einstellungsmenü IN1 und IN2 die Option Sondendämpfung x10 auswählen.
+   * Im Einstellungsmenü IN1 und IN2 die Option Sondendämpfung x10 auswählen.
 	
-   - Im Messmenü "MEAN" auswählen, IN1 auswählen und DONE drücken.
+   * Im Messmenü "MEAN" auswählen, IN1 auswählen und DONE drücken.
 
-   - Im Messmenü "MEAN" auswählen, IN2 auswählen und DONE drücken.
+   * Im Messmenü "MEAN" auswählen, IN2 auswählen und DONE drücken.
 
      Nach dem Anklicken von "Fertig" werden die Messungen des
      Mittelwertes von IN1 und IN2 angezeigt. Verwenden Sie diese
@@ -176,22 +178,21 @@ Vorgehensweise
 5. Protokollieren Sie die Messungen in tabellarischer Form mit den
    gemessenen Spannungs- und Stromwerten wie unten gezeigt.
    
-
- +------------------------------+-------------------+----------------+-------------+-------------+	
- |          Abzweig             |  Strom/Spannung   |   V [Volt ]    |   I [mA]    |   R [KΩ]    |    
- +------------------------------+-------------------+----------------+-------------+-------------+
- | V\ :sub:`1`\, I\ :sub:`1`\   |                   |                |             |             | 	
- +------------------------------+-------------------+----------------+-------------+-------------+
- | V\ :sub:`2`\, I\ :sub:`2`\   |                   |                |             |             |                             
- +------------------------------+-------------------+----------------+-------------+-------------+
- | V\ :sub:`3`\, I\ :sub:`3`\   |                   |                |             |             |
- +------------------------------+-------------------+----------------+-------------+-------------+
- | V\ :sub:`4`\, I\ :sub:`4`\   |                   |                |             |             | 
- +------------------------------+-------------------+----------------+-------------+-------------+
- | V\ :sub:`5`\, I\ :sub:`5`\   |                   |                |             |             |
- +------------------------------+-------------------+----------------+-------------+-------------+
- | V\ :sub:`s`\, I\ :sub:`s`\   |                   |                |             |             |
- +------------------------------+-------------------+----------------+-------------+-------------+
+ +--------------------------+-----------------+----------+--------+---------------------+
+ |           Abzweig        |  Strom/Spannung |   V/Volt |   I/mA |   R/:math:`k\Omega` |
+ +--------------------------+-----------------+----------+--------+---------------------+
+ | :math:`V_1`, :math:`I_1` |                 |          |        |                     |
+ |                          |                 |          |        |                     |
+ | :math:`V_2`, :math:`I_2` |                 |          |        |                     |
+ |                          |                 |          |        |                     |
+ | :math:`V_3`, :math:`I_3` |                 |          |        |                     |
+ |                          |                 |          |        |                     |
+ | :math:`V_4`, :math:`I_4` |                 |          |        |                     |
+ |                          |                 |          |        |                     |
+ | :math:`V_5`, :math:`I_5` |                 |          |        |                     |
+ |                          |                 |          |        |                     |
+ | :math:`V_s`, :math:`I_s` |                 |          |        |                     |
+ +--------------------------+-----------------+----------+--------+---------------------+
  
 
  6. Überprüfen Sie Kirchhoffs-Maschensatz für die Maschen im

@@ -9,35 +9,34 @@ Rückwärts-Strom-Spannungs-Kennlinie eines Bipolartransistors (BJT) zu
 untersuchen, der als Diode geschaltet ist.
 
 
-Anmerkungen
------------
-
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
-.. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
-.. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
-.. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
-.. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-.. _Jupyter: http://jupyter.org/index.html
-.. _Notebook: http://jupyter.org/index.html
-
-
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
-
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
-
-Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-verwendeten Steckerstifte sind in der Dokumentation hier
-aufgeführt.
-
-
 .. note::
+
+   .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+   .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+   .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+   .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+   .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+   .. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+   .. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+   .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
+   .. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+   .. _Jupyter: http://jupyter.org/index.html
+   .. _Notebook: http://jupyter.org/index.html
+
+
+   In diesen Tutorials verwenden wir die Terminologie aus dem
+   Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+   STEMlab-Board-Hardware beziehen.
+
+   Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
+   Beobachten von Signalen auf der Schaltung verwendet.
+
+   Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
+   verwendeten Steckerstifte sind in der Dokumentation hier
+   aufgeführt.
+
+
+.. hint::
    Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
    maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
    Experiment sind die höheren Signalamplituden erforderlich. Aus

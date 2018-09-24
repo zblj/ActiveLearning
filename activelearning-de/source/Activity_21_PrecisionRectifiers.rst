@@ -89,10 +89,20 @@ Verfahren
 Abbildung 2: Verbindungen auf dem Steckbrett
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
-3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V, den DC-Offset auf 0,1 V und die Frequenz auf 100 Hz ein, um die Eingangsspannung anzulegen.
-   Wählen Sie im Wellenform-Menü SINE, deaktivieren Sie SHOW und wählen Sie enable.
-4. Stellen Sie sicher, dass IN1 und IN2 V / div auf der linken unteren Seite des Bildschirms auf 200mV / div eingestellt sind (Sie können V / div einstellen, indem Sie die gewünschte Option auswählen
+   
+3. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5
+   V, den DC-Offset auf 0,1 V und die Frequenz auf 100 Hz ein, um die
+   Eingangsspannung anzulegen.
+   
+   Wählen Sie im Wellenform-Menü SINE, deaktivieren Sie SHOW und
+   wählen Sie enable.
+   
+4. Stellen Sie sicher, dass IN1 und IN2 V / div auf der linken unteren
+   Seite des Bildschirms auf 200mV / div eingestellt sind (Sie können
+   V / div einstellen, indem Sie die gewünschte Option auswählen
+   
    Kanal und mit vertikalen +/- Kontrollen
+   
 5. Setze t / div Wert auf 2ms / div (Du kannst t / div mit horizontalen +/- Kontrollen einstellen)
 
 
@@ -103,8 +113,15 @@ Abbildung 3: Präzisions-Einweggleichrichtermessungen
 
 .. note::
     Aus den Messungen auf Bild 3 können wir folgendes beobachten:
-    Die Spitze des gleichgerichteten Ausgangs sollte jetzt gleich dem Spitzenwert des Eingangs sein (nur AC-Spitze, beachten Sie, dass der DC-Pegel des Eingangssignals nicht zum Ausgang übertragen wird). Es gibt auch einen scharfen Übergang, da der Eingang Null kreuzt. Der Experimentator sollte die Wellenformen an verschiedenen Punkten der Schaltung untersuchen, um zu erklären, warum diese Schaltung besser funktioniert als der einfache Dioden-Halbwellengleichrichter.
-
+    Die Spitze des gleichgerichteten Ausgangs sollte jetzt gleich dem
+    Spitzenwert des Eingangs sein (nur AC-Spitze, beachten Sie, dass
+    der DC-Pegel des Eingangssignals nicht zum Ausgang übertragen
+    wird). Es gibt auch einen scharfen Übergang, da der Eingang Null
+    kreuzt. Der Experimentator sollte die Wellenformen an
+    verschiedenen Punkten der Schaltung untersuchen, um zu erklären,
+    warum diese Schaltung besser funktioniert als der einfache
+    Dioden-Halbwellengleichrichter.
+    
 
 
 Für dieses Experiment sollten Sie:
@@ -132,9 +149,9 @@ d) Messen und notieren Sie sorgfältig die Spannungen an allen Knoten
 
 Fragen
 ------
-1. Was passiert, wenn die Richtung der Dioden umgekehrt wird?
-   Wiederholen Sie den Versuch mit umgekehrter Richtung der beiden
-   Dioden.
+Was passiert, wenn die Richtung der Dioden umgekehrt wird?
+Wiederholen Sie den Versuch mit umgekehrter Richtung der beiden
+Dioden.
    
 
 Vollwellengleichrichter
