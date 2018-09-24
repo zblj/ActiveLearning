@@ -4,36 +4,25 @@ Grundlegende OP-Verstärkerkonfigurationen
 Zielsetzung
 -----------
 
-In diesem Labor stellen wir den Operationsverstärker
-(Operationsverstärker) vor, eine aktive Schaltung, die mit bestimmten
-Eigenschaften (hoher Eingangswiderstand, niedriger Ausgangswiderstand
-und eine große differentielle Verstärkung) entworfen ist, die sie zu
-einem nahezu idealen Verstärker und nützlichen Baustein macht viele
-Schaltungsanwendungen. In dieser Übung lernen Sie die DC-Vorspannung
-für aktive Schaltungen kennen und erkunden einige der grundlegenden
-funktionalen Operationsverstärkerschaltungen. Wir werden dieses Labor
-auch nutzen, um Fähigkeiten mit der Laborhardware weiterzuentwickeln.
+In diesem Labor stellen wir den Operationsverstärker (Opams) vor, eine aktive Schaltung, die mit bestimmten Eigenschaften (hoher Eingangswiderstand, niedriger Ausgangswiderstand und große Differenzverstärkung) ausgestattet ist, die ihn zu einem nahezu idealen Verstärker und nützlichen Baustein in vielen Schaltungsanwendungen macht. In diesem Labor erfahren Sie mehr über DC-Vorspannung für aktive Schaltungen und erkunden einige der grundlegenden funktionalen Operationsverstärker-Schaltungen. Wir werden dieses Labor auch nutzen, um die Fähigkeiten mit der Laborhardware weiterzuentwickeln.
 
 
 Anmerkungen
 ___________
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extent.html#extension-connector-e2
 .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 
 
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+STEMlab - Board - Hardware_ beziehen.
 
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
+Oscilloscope_ & Signal_ generator_ Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
-Erweiterungssteckerstift, der als 5V-Spannungsquelle verwendet wird,
-finden Sie in der Dokumentation here_.
+Erweiterungssteckerstift, der als 5V-Spannungsquelle verwendet wird, finden Sie in der Dokumentation hier_.
 
 
 Materialien
@@ -53,80 +42,38 @@ Operationsverstärker-Grundlagen
 -------------------------------
 
 .. _LM317: http://www.ti.com/lit/ds/symlink/lm317.pdf
-.. _adjustable: http://www.ti.com/lit/ds/symlink/lm317.pdf
-.. _regulator: http://www.ti.com/lit/ds/symlink/lm317.pdf
+.. _einstelbaren: http://www.ti.com/lit/ds/symlink/lm317.pdf
+.. _Spannungsregler: http://www.ti.com/lit/ds/symlink/lm317.pdf
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _connector: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _Anschluss: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 
 Erster Schritt: Anschließen der Gleichstromversorgung
 -----------------------------------------------------
-Operationsverstärker müssen immer mit Gleichstrom versorgt
-werden. Daher sollten diese Verbindungen zuerst konfiguriert werden,
-bevor weitere Schaltungsbauteile hinzugefügt werden. Abbildung 1 zeigt
-eine mögliche Leistungsanordnung auf Ihrem lötfreien Steckbrett. Wir
-verwenden zwei der langen Schienen für die positive
-Versorgungsspannung und Masse. Mit dem LM317_ adjustable_ regulator_
-stellen wir eine eventuell benötigte 2,5 V Mittelversorgungsschiene
-zur Verfügung.
+Operationsverstärker müssen immer mit Gleichstrom versorgt werden, daher ist es ratsam, diese Anschlüsse zuerst zu konfigurieren, bevor andere Schaltungskomponenten hinzugefügt werden. :numref:`13_fig_01` zeigt eine mögliche Leistungsanordnung auf Ihrer Steckplatine. Wir verwenden zwei der langen Schienen für die positive Versorgungsspannung und Masse. Mit dem einstellbaren_ Spannungsregler_ LM317_ stellen wir eine 2,5 V mittlere Versorgungsschiene zur Verfügung, die eventuell benötigt wird.
 
 
 .. note::
-   STEMlab Boards haben keinen 2.5V DC Ausgang Pin, so dass wir LM317
-   einstellbaren Regler verwenden, um 2,5V DC Schiene von 5V eins zu
-   liefern.
-   
-   Der Anschluss des LM317 ist sehr einfach und wird im Folgenden
-   beschrieben. Gleichung zur Berechnung der Ausgangsspannung ist
-   gegeben als:
-   
-     
+   STEMlab-Boards haben keinen 2,5V DC-Ausgangspin, daher verwenden wir den einstellbaren Regler LM317, um eine 2,5V DC-Schiene aus einer 5V-Schiene bereitzustellen. Der Anschluss des LM317 ist sehr einfach und wird im Folgenden beschrieben. Die Gleichung zur Berechnung der Ausgangsspannung ist gegeben als:
+      
    .. math::
       V_ {out} = 1.25 \ bigg (1+ \ frac {R_2} {R_1} \ bigg) \ quad (1).
 
 
-Enthalten ist der sogenannte "Versorgungs-Entkopplungs" -Kondensator,
-der zwischen die Stromversorgung und die Erdungsschienen geschaltet
-ist. Es ist zu früh, den Zweck dieser Kondensatoren im Detail zu
-diskutieren, aber sie werden verwendet, um das Rauschen auf den
-Versorgungsleitungen zu reduzieren und parasitäre Schwingungen zu
-vermeiden. Es wird als gute Praxis im analogen Schaltungsdesign
-angesehen, immer kleine Bypass-Kondensatoren in der Nähe der
-Versorgungspins jedes Operationsverstärkers in Ihrer Schaltung
-vorzusehen.
+Dazu gehört der so genannte " Netzentkopplungs- " Kondensator, der zwischen Netzteil und Erdungsschienen geschaltet ist. Es ist noch zu früh, um den Zweck dieser Kondensatoren ausführlich zu diskutieren, aber sie werden verwendet, um das Rauschen auf den Versorgungsleitungen zu reduzieren und parasitäre Schwingungen zu vermeiden. Es gilt als gute Praxis im analogen Schaltungsdesign, immer kleine Bypass-Kondensatoren in der Nähe der Versorgungsanschlüsse jedes Operationsverstärkers in Ihrer Schaltung zu verwenden.
 
-
+.. _13_fig_01:
 .. figure:: img/ Activity_13_Fig_01.png
 
-   Abbildung 1: Stromanschlüsse mit 5-V-Stromanschluss von E2_-Anschluss_ und LM317_ einstellbar_ Regler_
+	    Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_ einstellbar_ Spannungsregler_
 
-Es ist eine gute Übung, die Stromversorgung anzuzeigen. Dazu verwenden
-wir eine LED, die an die 2,5 V-Schiene angeschlossen ist. Wenn die
-Spannung an dieser Schiene anliegt, leuchtet die LED. Da 2,5 V von der
-5-V-Schiene bereitgestellt werden, zeigt die gleiche LED auch den
-"OK" -Status der 5-V-Stromversorgung an. Setzen Sie den LM317 und den
-Operationsverstärker in Ihr Steckbrett und fügen Sie die Drähte,
-Widerstände, LED und Versorgungskondensatoren wie in Abbildung 1
-gezeigt hinzu. Um später Probleme zu vermeiden, können Sie ein kleines
-Etikett am Steckbrett anbringen, um anzuzeigen, welche Schienen +5 V
-entsprechen , +2,5 V und GND.
+Es ist eine gute Praxis, die Anzeige der Stromversorgung zu haben. Dazu verwenden wir LED, die an die 2,5V-Schiene angeschlossen sind. Wenn die Spannung an dieser Schiene anliegt, leuchtet die LED auf. Da 2,5V von der 5V-Schiene geliefert werden, zeigt die gleiche LED auch den "OK"-Status der 5V-Versorgung an. Stecken Sie den LM317 und den Operationsverstärker in Ihre Leiterplatte und fügen Sie die Drähte, Widerstände, LED- und Versorgungskondensatoren hinzu, wie in :numref:`13_fig_01` dargestellt. Um später Probleme zu vermeiden, können Sie ein kleines Etikett auf der Lochrasterplatine anbringen, das angibt, welche Schienen +5 V, +2,5 V und GND entsprechen.
 
+Als nächstes verbinden Sie die +5 V Versorgungs- und GND-Anschlüsse von der STEMlab-Platine mit den Klemmen auf Ihrer Lochrasterplatine. Verwenden Sie Brückendrähte, um die Schienen mit Strom zu versorgen. Denken Sie daran, dass die GND-Klemme der Stromversorgung unsere Referenz für die "Masse" der Schaltung ist. Sobald Sie Ihre Versorgungsanschlüsse haben, können Sie ein DMM verwenden, um die IC-Pins direkt zu messen, um sicherzustellen, dass Pin 7 bei +5 V liegt, Pin 4 bei 0 V (Masse) und 2,5 V Schiene zu überprüfen. Denken Sie daran, dass Sie das STEMlab einschalten müssen, bevor Sie die Spannungen mit dem Spannungsmesser messen.
 
-Als nächstes verbinden Sie die +5-V-Versorgung und GND-Verbindungen
-von der STEMlab-Platine mit den Anschlüssen auf Ihrem
-Steckbrett. Verwenden Sie Jumper-Drähte, um die Schienen zu
-versorgen. Denken Sie daran, dass der GND-Anschluss der
-Stromversorgung unser Bezugspunkt für die Erdung sein wird. Sobald Sie
-Ihre Versorgungsanschlüsse haben, können Sie ein DMM verwenden, um die
-IC-Pins direkt zu prüfen, um sicherzustellen, dass Pin 7 auf +5 V, Pin
-4 auf 0 V (Masse) und überprüfen Sie 2,5 Stromschiene.
-
-Denken Sie daran, dass Sie das STEMlab einschalten müssen, bevor Sie
-die Spannungen mit dem Voltmeter messen.
-
-
+.. _13_fig_02:
 .. figure:: img/ Activity_13_Fig_02.png
 
-   Abbildung 2: Stromanschlüsse
+	    Stromanschlüsse
 
    
 Erster Schritt: Unity-Gain Amplifier (Spannungsfolger)
@@ -141,10 +88,10 @@ erscheinen, aber wie wir später zeigen werden, findet es wegen seines
 hohen ** Eingangswiderstands ** und ** niedrigen Ausgangswiderstands
 ** Anwendung.
 
-
+.. _13_fig_03:
 .. figure:: img/ Activity_13_Fig_03.png
 
-   Abbildung 3: Unity Gain Follower
+	    Unity Gain Follower(Spannungsfolger)
 
    
 Verwenden Sie das Steckbrett und die STEMlab-Netzteile und
