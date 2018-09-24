@@ -30,14 +30,14 @@ Die Kenntnis der Resonanzfrequenz sowie der minimalen und maximalen Impedanzen i
 Lautsprecherimpedanzmodell
 __________________________
 
-Um Ihnen zu helfen, die Messungen zu verstehen, die Sie machen werden, ist in Abbildung 1 ein vereinfachtes elektrisches Modell eines Lautsprechers dargestellt.
+Um Ihnen zu helfen, die Messungen zu verstehen, die Sie machen werden, ist in :numref:`12_fig_01` ein vereinfachtes elektrisches Modell eines Lautsprechers dargestellt.
 
 .. _12_fig_01:
 .. figure:: img/ Activity_12_Fig_1.png
 
 	    Lautsprecherimpedanzmodell
 
-Die Schaltung in Abbildung 1 hat einen Gleichstromwiderstand, der in Reihe mit einem verlustbehafteten Parallelschwingkreis geschaltet ist, bestehend aus :math:`L`, :math:`R` und :math:`C`, der die dynamische Impedanz des Lautsprecher über den interessierenden Frequenzbereich modelliert.
+Die Schaltung in :numref:`12_fig_01` hat einen Gleichstromwiderstand, der in Reihe mit einem verlustbehafteten Parallelschwingkreis geschaltet ist, bestehend aus :math:`L`, :math:`R` und :math:`C`, der die dynamische Impedanz des Lautsprecher über den interessierenden Frequenzbereich modelliert.
 
 - :math:`R_ {dc}` ist der Gleichstromwiderstand des Lautsprechers, gemessen mit einem DC Ohmmeter.
   Der DC-Widerstand wird in einem Lautsprecher- / Subwoofer-Datenblatt oft als :math:`DCR` bezeichnet.
@@ -61,7 +61,7 @@ ___________
 Verfahren
 _________
 
-1. Bauen Sie zuerst die in Abbildung 1 und Abbildung 2 gezeigte Schaltung auf. Der Lautsprecher kann sich in einem Gehäuse befinden oder nicht.
+1. Bauen Sie zuerst die in :numref:`12_fig_01` und :numref:`12_fig_02` gezeigte Schaltung auf. Der Lautsprecher kann sich in einem Gehäuse befinden oder nicht.
 
 .. _12_fig_02:
 .. figure:: img/ Activity_12_Fig_2.png
