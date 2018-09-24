@@ -101,7 +101,7 @@ _________
 .. note::
      Die Frequenz, bei der **(Phase = 0)** auftritt, wird als Resonanzfrequenz bezeichnet.
 
-Wie im Lautsprecher-Modell (:ref:`12_fig_01`) dargestellt, stellt der Widerstand :math:`R` den mechanischen Verluste des Schwingsystems dar. Um einen Effekt dieses modellierten Widerstandes zu sehen, drehen Sie den Lautsprecher um,so dass seine Membran zur Werkbank zeigt. Damit werden wir die akustisch-mechanische Umgebung des Lautsprechers verändern, was sich auf die Lautsprecherimpedanz auswirkt.
+Wie im Lautsprecher-Modell (:numref:`12_fig_01`) dargestellt, stellt der Widerstand :math:`R` den mechanischen Verluste des Schwingsystems dar. Um einen Effekt dieses modellierten Widerstandes zu sehen, drehen Sie den Lautsprecher um,so dass seine Membran zur Werkbank zeigt. Damit werden wir die akustisch-mechanische Umgebung des Lautsprechers verändern, was sich auf die Lautsprecherimpedanz auswirkt.
 
 5. Flipover-Lautsprecher wie in Abbildung 6 gezeigt und Impedanzmessungen wiederholen
 
@@ -110,7 +110,7 @@ Wie im Lautsprecher-Modell (:ref:`12_fig_01`) dargestellt, stellt der Widerstand
 
 	    Lautsprecher in unterschiedlicher akustisch-mechanischer Umgebung
 
-Wie wir aus :ref:`12_fig_07` sehen können, ist die Impedanz des Lautsprechers jetzt anders und der Effekt von
+Wie wir aus :numref:`12_fig_07` sehen können, ist die Impedanz des Lautsprechers jetzt anders und der Effekt von
 akustomechanische Umgebung ist deutlich sichtbar.
 
 .. _12_fig_07:
