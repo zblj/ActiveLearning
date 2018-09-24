@@ -36,7 +36,7 @@ Der durch den Shunt-Widerstand gehende Pfadstrom ist daher als gegeben
 
 Da die differentielle Spannung über dem Widerstand (gegeben als: m / V = ​​V_ {R_ {shunt_ {node_1}}} - V_ {R_ {shunt_2}}}) gemessen werden sollte, können wir sehen, dass ein Differenzverstärker ist eine ideale Schaltung für diese Aufgabe. Der kleine differentielle Spannungsabfall über den Shunt wird verstärkt und durch einen Operationsverstärker-Differenzverstärker in eine single-ended (common referenzed) Spannung umgewandelt.
 
-.. figure:: img/ Activity_17_Fig_1.png
+.. figure:: img/ Activity_17_Fig_01.png
 
 Abbildung 1: Basis-Differenzverstärker in der Stromsensorkonfiguration
 
@@ -160,7 +160,7 @@ Die Last besteht aus verschiedenen Impedanzen wie einem Widerstand, Kondensator 
 Das Eingangsspannungssignal IN2 zeigt direkt den Laststrom, wie in Gleichung 8 gezeigt.
 
 
-.. figure:: img/ Activity_17_Fig_2.png
+.. figure:: img/ Activity_17_Fig_02.png
 
 Abbildung 2: Differenzverstärkerschaltung für die Strommessung
 
@@ -181,7 +181,7 @@ Widerstand LAST
 
 Für LOAD nimm :math:`470 \ Omega` Widerstand und Bau Schaltung in Abbildung 2 gezeigt.
 
-.. figure:: img/ Activity_17_Fig_3.png
+.. figure:: img/ Activity_17_Fig_03.png
 
 Abbildung 3: Differenzverstärkerschaltung für Strommessung - Resistive LOAD
 
@@ -198,7 +198,7 @@ Abbildung 3: Differenzverstärkerschaltung für Strommessung - Resistive LOAD
 9. Auslesen von IN2 und Berechnen des Laststroms unter Verwendung von Gleichung (8)
 
 
-.. figure:: img/ Activity_17_Fig_4.png
+.. figure:: img/ Activity_17_Fig_04.png
 
 Abbildung 4: Widerstands-LOAD-Strommessungen
 
@@ -222,11 +222,11 @@ Kapazität LAST
 
 Für LOAD nehmen Sie :math:`0.1 \ mu F` Kondensator und bauen Schaltung wie in Abbildung 2 gezeigt.
 
-.. figure:: img/ Activity_17_Fig_5.png
+.. figure:: img/ Activity_17_Fig_05.png
 
 Abbildung 5: Kapazität LOAD
 
-.. figure:: img/ Activity_17_Fig_6.png
+.. figure:: img/ Activity_17_Fig_06.png
 
 Abbildung 6: Kapazitäts-LOAD-Strommessungen
 
@@ -247,7 +247,7 @@ Induktive Last
 
 Für LOAD nehmen Sie :math:`4.7 mH` Induktor und bauen Schaltung wie in Abbildung 2 gezeigt.
 
-.. figure:: img/ Activity_17_Fig_7.png
+.. figure:: img/ Activity_17_Fig_07.png
 
 Abbildung 7: Induktive Last
 
@@ -257,7 +257,7 @@ Abbildung 7: Induktive Last
 3. Stellen Sie sicher, dass IN2 V / div am linken unteren Bildschirmrand auf 500 mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
 
 
-.. figure:: img/ Activity_17_Fig_8.png
+.. figure:: img/ Activity_17_Fig_08.png
 
 Abbildung 8: Induktive LOAD Strommessungen
 

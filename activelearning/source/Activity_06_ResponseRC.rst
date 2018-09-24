@@ -39,7 +39,7 @@ The relation between pulse width and frequency is then given by,
 	
 	f = \frac{1}{2t_p} 
 
-.. image:: img/Activity_06_Figure_1.png
+.. image:: img/Activity_06_Fig_01.png
 
 Figure 1: Series RC circuit.
 
@@ -50,7 +50,7 @@ From Kirchhoff's laws, it can be shown that the charging voltage V\ :sub:`C`\ (t
 
 where, V is the applied source voltage to the circuit for t = 0. RC = t is the time constant. The response curve is increasing and is shown in figure 2. 
 
-.. image:: img/Activity_06_Figure_2.png
+.. image:: img/Activity_06_Fig_02.png
 
 Figure 2: Capacitor charging for Series RC circuit to a step input with time axis normalized by t
 
@@ -62,7 +62,7 @@ The discharge voltage for the capacitor is given by:
 
 Where V\ :sub:`0`\  is the initial voltage stored in capacitor at t = 0, and RC = t is time constant. The response curve is a decaying exponential as shown in figure 3. 
 
-.. image:: img/Activity_06_Figure_3.png
+.. image:: img/Activity_06_Fig_03.png
 
 Figure 3: Capacitor Discharging for Series RC circuit
 
@@ -87,12 +87,12 @@ _________
 	-Connect the Oscilloscope & Signal generator probes as is shown in figure 5.
 	-Set the oscilloscope attenuation to x1.
 
-.. figure::   img/Activity_06_Figure_4.png
+.. figure::   img/Activity_06_Fig_04.png
 
 Figure 4. Breadboard diagram of RC circuit  R\ :sub:`1`\ = 2.2 KΩ and C\ :sub:`1`\ = 1 µF. 
 
 
-.. figure::   img/Activity_06_Figure_5.png
+.. figure::   img/Activity_06_Fig_05.png
 
 Figure 5. Breadboard RC circuit R\ :sub:`1`\ = 2.2 KΩ and C\ :sub:`1`\ = 1 µF. 
 
@@ -136,13 +136,13 @@ Control/Move cursors using an left click+hold mouse control on the cursor marker
 
 Adjust the **time base** using **horizontal +/-** control until you have at approximately two cycles of the square wave on the display grid. 
 
-.. figure::   img/Activity_06_Figure_6.png
+.. figure::   img/Activity_06_Fig_06.png
 
 Figure 6. Oscilloscope interface and signals IN1 and IN2 on  RC circuit 
 
 In order to set cursors more accurately adjust the time base  until you have approximately  one or  half of the cycle of the square wave on the display grid. 
 
-.. figure::   img/Activity_06_Figure_7.png
+.. figure::   img/Activity_06_Fig_07.png
 
 Figure 7: Measuring the time constant t for OUT1 pulse width >> 5t . 
 
@@ -151,14 +151,14 @@ Set cursor as is shown in figure 2 readout  delta values and calculate time cons
 
 b. Pulse width =  5t : Set the frequency of OUT1 such that the pulse width = 5t (this should be approximately 45 Hz). Since the pulse width is 5t, the capacitor should just be able to fully charge and discharge during each pulse cycle. Using cursor tool determine t.
 
-.. figure::   img/Activity_06_Figure_8.png
+.. figure::   img/Activity_06_Fig_08.png
 
 Figure 8: Measuring the time constant t for OUT1 pulse width =  5t
 
 
 c. Pulse width less than 5t (for example 1t): In this case the capacitor does not have time to charge significantly before it is switched to discharge, and vice versa. Let the pulse width be only 1.0t in this case and set the frequency accordingly (this should be approximately 240 Hz). 
 
-.. figure::   img/Activity_06_Figure_9.png
+.. figure::   img/Activity_06_Fig_09.png
 
 Figure 9: Measuring the time constant t for OUT1 pulse width =  1t
 

@@ -86,7 +86,7 @@ Bereich von :math:`<\ mu F` gewählt werden.
    im Bereich von :math:`M \ Omega` ausgewählt werden können.
    
 
-.. figure:: img/ Activity_27_Fig_1.png
+.. figure:: img/ Activity_27_Fig_01.png
 
    Abbildung 1: Gemeinsame Source-Verstärker-Konfiguration
 
@@ -276,7 +276,7 @@ erhalten wir (nächstliegenden Wert) für :math:`R_2 = 3 M \ Omega`
 
 
 
-.. figure:: img/ Activity_27_Fig_2.png
+.. figure:: img/ Activity_27_Fig_02.png
 
    Abbildung 2: Gemeinsamer Quellverstärker mit Komponentenwerten
 
@@ -318,7 +318,7 @@ erhalten wir (nächstliegenden Wert) für :math:`R_2 = 3 M \ Omega`
      
 1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett.
    
-.. figure:: img/ Activity_27_Fig_3.png
+.. figure:: img/ Activity_27_Fig_03.png
 
    Abbildung 3: Common Source Verstärker auf dem Steckbrett
 
@@ -341,7 +341,7 @@ erhalten wir (nächstliegenden Wert) für :math:`R_2 = 3 M \ Omega`
    
 7. Wählen Sie im Messmenü P2P für IN1 und IN2
 
-.. figure:: img/ Activity_27_Fig_4.png
+.. figure:: img/ Activity_27_Fig_04.png
 
    Abbildung 4: Gemeinsame Quellenverstärker-Messungen
    
@@ -360,7 +360,7 @@ Komponenten und ähnlicher sind nicht exakt.
    5 kHz ein und messen Sie die Verstärkung des Verstärkers.
    
 
-.. figure:: img/ Activity_27_Fig_5.png
+.. figure:: img/ Activity_27_Fig_05.png
 
    Abbildung 5: Gemeinsame Quellenverstärkung bei 5 kHz Frequenz von
    :math:`V_ {in}`

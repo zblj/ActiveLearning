@@ -101,7 +101,7 @@ Dieser Zustand ähnelt einem geschlossenen Schalter, der die Unterseite
 von :math:`R_D` mit Masse verbindet.
 
 
-.. figure:: img/ Activity_25_Fig_1.png
+.. figure:: img/ Activity_25_Fig_01.png
 
    Abbildung 1: NMOS-FET-Schalter und seine Ladeleitung
 
@@ -142,7 +142,7 @@ so dass wir nahezu ideale Bedingungen annehmen können, wenn ein
 NMOS-Schaltkreis analysiert oder entworfen wird.
 
 
-.. figure:: img/ Activity_25_Fig_2.png
+.. figure:: img/ Activity_25_Fig_02.png
 
    Abbildung 2: NMOS-LED-Schalter
 
@@ -192,7 +192,7 @@ bringen.
    Elektrizität.
 	 
 
-.. figure:: img/ Activity_25_Fig_3.png
+.. figure:: img/ Activity_25_Fig_03.png
 
    Abbildung 3: NMOS LED-Schalter auf dem Steckbrett
 
@@ -216,7 +216,7 @@ bringen.
    auf x10 und den vertikalen Offset auf 0.
    
 
-.. figure:: img/ Activity_25_Fig_4.png
+.. figure:: img/ Activity_25_Fig_04.png
 
    Abbildung 4: NMOS als Switch-Messungen
 
@@ -244,7 +244,7 @@ sehen, wenn Gate-Signal übergeht :math:`V_ {TH}` der Transistor ist
 eingeschaltet.
 
 
-.. figure:: img/ Activity_25_Fig_5.png
+.. figure:: img/ Activity_25_Fig_05.png
 
    Abbildung 5: NMOS-Schaltereignis
 
@@ -258,7 +258,7 @@ Drain-Anschluss (D) des M1 können wir den Spannungsabfall am
 M1-Transistor messen (Abbildung 6).
 
 
-.. figure:: img/ Activity_25_Fig_6.png
+.. figure:: img/ Activity_25_Fig_06.png
 
    Abbildung 6: NMOS-Spannungsabfall.
 

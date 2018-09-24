@@ -33,7 +33,7 @@ __________________________
 Um Ihnen zu helfen, die Messungen zu verstehen, die Sie machen werden, ist in :numref:`12_fig_01` ein vereinfachtes elektrisches Modell eines Lautsprechers dargestellt.
 
 .. _12_fig_01:
-.. figure:: img/ Activity_12_Fig_1.png
+.. figure:: img/ Activity_12_Fig_01.png
 
 	    Lautsprecherimpedanzmodell
 
@@ -64,12 +64,12 @@ _________
 1. Bauen Sie zuerst die in :numref:`12_fig_01` und :numref:`12_fig_02` gezeigte Schaltung auf. Der Lautsprecher kann sich in einem Gehäuse befinden oder nicht.
 
 .. _12_fig_02:
-.. figure:: img/ Activity_12_Fig_2.png
+.. figure:: img/ Activity_12_Fig_02.png
 
 	    Lautsprecheranschlüsse
 
 .. _12_fig_03:
-.. figure:: img/ Activity_12_Fig_3.png
+.. figure:: img/ Activity_12_Fig_03.png
 
 	    STEMlab mit Shunt-Widerstand Impedanzanalysator und Lautsprecher
 
@@ -86,7 +86,7 @@ _________
     - Wählen Sie **Messung Starten**
 
 .. _12_fig_04:
-.. figure:: img/ Activity_12_Fig_4.png
+.. figure:: img/ Activity_12_Fig_04.png
 
 	    Grafik der Impedanz der Lautsprecherimpedanz, die mit der Anwendung des Impedanzanalysators aufgenommen wurde
 
@@ -94,7 +94,7 @@ _________
     - unter **Grafikeinstellungen** für **Y-Achse** wählen Sie **P [deg]**
 
 .. _12_fig_05:
-.. figure:: img/ Activity_12_Fig_5.png
+.. figure:: img/ Activity_12_Fig_05.png
 
 	    Grafik der Lautsprecherimpedanzphase, die mit der Anwendung des Impedanzanalysators aufgenommen wurde
 
@@ -106,7 +106,7 @@ Wie im Lautsprecher-Modell (:numref:`12_fig_01`) dargestellt, stellt der Widerst
 5. Flipover-Lautsprecher wie in Abbildung 6 gezeigt und Impedanzmessungen wiederholen
 
 .. _12_fig_06:   
-.. figure:: img/ Activity_12_Fig_6.png
+.. figure:: img/ Activity_12_Fig_06.png
 
 	    Lautsprecher in unterschiedlicher akustisch-mechanischer Umgebung
 
@@ -114,7 +114,7 @@ Wie wir aus :numref:`12_fig_07` sehen können, ist die Impedanz des Lautsprecher
 akustomechanische Umgebung ist deutlich sichtbar.
 
 .. _12_fig_07:
-.. figure:: img/ Activity_12_Fig_7.png
+.. figure:: img/ Activity_12_Fig_07.png
 
 	    Lautsprecherimpedanz in verschiedenen akustisch-mechanischen Umgebungen
 

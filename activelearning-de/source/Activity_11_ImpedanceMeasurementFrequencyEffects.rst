@@ -81,7 +81,7 @@ und **phase** :math:`P` dargestellt werden, wobei :math:`Z=|Z|e^{jP}`
 
 
 .. _11_fig_01:
-.. figure:: img/ Activity_11_Fig_1.png
+.. figure:: img/ Activity_11_Fig_01.png
 
    RLC-Reihenschaltung.
 
@@ -116,7 +116,7 @@ nicht sichtbar / lesbar ist:
 
 
 .. _11_fig_02:
-.. figure:: img/ Activity_11_Fig_2.png
+.. figure:: img/ Activity_11_Fig_02.png
 
    LCR-Meter-Anwendung
 
@@ -137,7 +137,7 @@ Messreihe RLC-Schaltung Impedanz
    
 
    .. _11_fig_03:
-   .. figure:: img/ Activity_11_Fig_3.png
+   .. figure:: img/ Activity_11_Fig_03.png
 
       STEMlab mit LCR-Meter-Frontend und Serien-RLC-Schaltung
 
@@ -156,7 +156,7 @@ Messreihe RLC-Schaltung Impedanz
     - Wählen Sie **Messung starten**
 
       .. _11_fig_04:
-      .. figure:: img/ Activity_11_Fig_4.png
+      .. figure:: img/ Activity_11_Fig_04.png
 
 	 Graph der Impedanz der RLC-Schaltungsimpedanz, die mit der Impedanzanalysatoranwendung aufgenommen wurde
       
@@ -165,7 +165,7 @@ Messreihe RLC-Schaltung Impedanz
    - unter **Plot settings Menu** für **Y-Achse**  **P [deg]** wählen
    
      .. _11_fig_05:
-     .. figure:: img/Activity_11_Fig_5.png
+     .. figure:: img/Activity_11_Fig_05.png
 
 	Diagramm der Impedanz der RLC-Schaltung mit der Anwendung des Impedanzanalysators
 

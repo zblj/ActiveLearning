@@ -25,11 +25,11 @@ Thévenin's Theorem is a process by which a complex circuit is reduced to an equ
 
 One of the principal uses of Thévenin's theorem is to replace a large portion of a circuit, often a more complicated and uninteresting part, by a simple equivalent. The new simpler circuit enables rapid calculations of the voltage, current, and power which the more complicated original circuit is able to deliver to a load. It also helps to choose the optimal value of the load (resistance) for maximum power transfer. 
 
-.. figure::   img/Activity_05_Figure_1.png
+.. figure::   img/Activity_05_Fig_01.png
 
 	Figure 1.
 
-.. figure::   img/Activity_05_Figure_2.png
+.. figure::   img/Activity_05_Fig_02.png
 
 	Figure 2: Thévenin Equivalent Circuit of Figure 1
 
@@ -37,7 +37,7 @@ One of the principal uses of Thévenin's theorem is to replace a large portion o
 
 In terms of a Thévenin Equivalent Circuit, maximum power is delivered to the load resistance R\ :sub:`L`\ when R\ :sub:`L`\ is equal to the Thévenin equivalent resistance R\ :sub:`TH`\ of the circuit.
 
-.. figure:: img/Activity_05_Figure_3.png
+.. figure:: img/Activity_05_Fig_03.png
 	
 	Figure 3: Maximum Power Transfer
  
@@ -98,14 +98,14 @@ c) Find V\ :sub:`TH`\: Remove the load resistance R\ :sub:`L`\ and measure the o
 	To get voltage values of IN1 and IN2 select MEAS menu, select MEAN value and select DONE.
 
 
-.. figure::  img/Activity_05_Figure_4.png
+.. figure::  img/Activity_05_Fig_04.png
 	
 	Figure 4: Measuring the Thevenin Voltage
 
 d) Find R\ :sub:`TH`\: Remove the source voltage Vs and construct the circuit as shown in figure 5. Use the Multimeter to measure the resistance looking into the opening where R\ :sub:`L`\ was. This gives R\ :sub:`TH`\. Make sure there is no power applied to the circuit before measuring with the Multimeter and the ground connection has been moved as shown.
 
 
-.. figure::  img/Activity_05_Figure_5.png
+.. figure::  img/Activity_05_Fig_05.png
 
 	Figure 5: Measuring the Thevenin Resistance R\ :sub:`TH`\. 
 	
@@ -114,7 +114,7 @@ e) Obtaining V\ :sub:`TH`\ and R\ :sub:`TH`\, construct the circuit of figure 2.
 Using the Oscilloscope & Signal generator application - connect channel OUT1  for the V\ :sub:`TH`\ source. In the OUT1 settings menu select “DC” signal waveform and in the Amplitude  field set the value to what you measured for V\ :sub:`TH`\ in step c).
 Select “enable” button. 
 
-.. figure::  img/Activity_05_Figure_6.png
+.. figure::  img/Activity_05_Fig_06.png
 
 Figure 6: Thevenin Equivalent Construction 
 
@@ -135,7 +135,7 @@ R\ :sub:`3`\  = 1 KΩ
 
 R\ :sub:`L`\ = combinations of 1 KΩ and 100 Ω resistors ( figure 8 )
 
-.. figure::  img/Activity_05_Figure_7.png
+.. figure::  img/Activity_05_Fig_07.png
 
 Figure 8. Rl configurations
 

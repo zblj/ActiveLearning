@@ -33,7 +33,7 @@ The Voltage Comparator
 A Differential Voltage Comparator such as the AD8561_ from the analog parts kit has a pinout similar in many ways to that of a conventional opamp but with many important differences (figure 1). There are the usual :math:`V_+` and :math:`V_-` power supply pins but a comparator will also have a ground (GND) pin as well. The differential :math:`+IN` and :math:`-IN` pins are essentially the same as a conventional op-amp. There will also be an output pin as in an opamp but there is often a second “inverting” ( or complementary ) output. Also, while the voltage at the output of an opamp can generally swing close to the :math:`+` and :math:`-` supply rails, the output of a comparator will swing only between ground(gnd) and the :math:`+` supply. This makes the output more like a digital signal and compatible with standard logic gates such as TTL or CMOS. The voltage comparator can be thought of as a single bit analog-to-digital converter (ADC). The AD8561 also includes a LATCH input which will latch or freeze the output and prevent it from changing even if the inputs change.
 
 
-.. image:: img/Activity_18_Figure_1.png
+.. figure:: img/Activity_18_Fig_01.png
 
 Figure 1: AD8561_  datasheet and pin assignments 
 
@@ -54,7 +54,7 @@ ___________
 
 Construct the comparator test circuit as shown in figure 2 on your solder-less breadboard. The two 4.7 kΩ pull-up resistors are optional and are used to increase the peak positive output swing to closer to the +5 V supply. 
 
-.. image:: img/Activity_18_Figure_2.png
+.. figure:: img/Activity_18_Fig_02.png
 
 Figure 2: AD8561_  comparator circuit
 
@@ -65,7 +65,7 @@ Figure 2: AD8561_  comparator circuit
    Note: It is not necessary to drop down voltage from 5V to 2.5V but we chose that just form simplicity.
 
 
-.. image:: img/Activity_18_Figure_3.png
+.. figure:: img/Activity_18_Fig_03.png
 
 Figure 3: AD8561_  comparator circuit on the breadboard
 
@@ -86,7 +86,7 @@ __________
 9. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
 
 
-.. image:: img/Activity_18_Figure_4.png
+.. figure:: img/Activity_18_Fig_04.png
 
 Figure 4: AD8561_  comparator circuit measurements
 
@@ -102,7 +102,7 @@ Now connect Channel IN1 (set probe attenuation x10 and IN1 settings menu set pro
      From description above you can maybe see how to make an PWM (pulse width modulation) signal using constant frequency triangle signal and changeable DC :math:`V_{ref}` value.
 
 
-.. image:: img/Activity_18_Figure_5.png
+.. figure:: img/Activity_18_Fig_05.png
 
 Figure 5: AD8561_  both output measurements at different :math:`V_{ref}=0.7V` 
 
@@ -110,7 +110,7 @@ Zoom into the falling edge of the output (IN2) square wave by adjusting the Hori
 This delay is caused by noise as the input signal slowly passes through the input threshold level ( 0.7 Volts in this case ) and can cause problems. This is the reason why it is good to have low noise power supply and low noise input signals on voltage comparator. 
 Try to repeat switching noise measurement at more noisy power supply (5V pin directly form STEMlab board)
 
-.. image:: img/Activity_18_Figure_6.png
+.. figure:: img/Activity_18_Fig_06.png
 
 Figure 6: Switching noise measurements.
 
@@ -120,7 +120,7 @@ Figure 6: Switching noise measurements.
      output will change states according to the :math:`V_{in}  - (V_{ref} = DC +(-) A_{noise})` ratio. So, as long :math:`V_{in}` amplitude **stays in the range** of :math:`V_{ref} = DC +(-) A_{noise}` value the comparator output will effectively switch on :math:`A_{noise}` and not on the input signals. Once :math:`V_{in}` goes below :math:`V_{ref} = DC - A_{noise}` or above :math:`V_{ref} = DC + A_{noise}` the comparator output will switch high or low but now on input signal values not on noise values. You can see that **low frequency triangle wave** :math:`V_{in}` amplitude **will spend more time** near :math:`V_{ref} = DC +(-) A_{noise}` causing voltage comparator to produce noisy output while **high frequency triangle wave** :math:`V_{in}` amplitude will **quickly pass by** :math:`V_{ref} = DC +(-) A_{noise}` range preventing voltage comparator to produce any noise switching. 
 
 
-.. image:: img/Activity_18_Figure_7.png
+.. figure:: img/Activity_18_Fig_07.png
 
 Figure 7: Switching event at high input signal frequency (100kHz)
 
@@ -131,7 +131,7 @@ _______________________________________________________________
 By “hysteresis” we mean that the threshold voltage is a function of the system’s current operating state, which is defined for this circuit by its output voltage: positive or negative saturation. Because :math:`V_{th}`, the voltage at pin 2, is determined by the voltage divider constructed from resistors R1 and R2, it changes in response to a change in the output voltage: once the output has gone high in response to an input which has passed below the threshold voltage, the threshold voltage is changed to a higher value :math:`V_{th+}` ( :math:`V_{ref}`  + a fraction of the output high voltage ); conversely, an input voltage climbing through :math:`V_{th+}` will change the output to its low state and cause the threshold voltage to be set to a lower value :math:`V_{th-}` ( :math:`V_{ref}` - a fraction of the output low voltage). 
 
 
-.. image:: img/Activity_18_Figure_8.png
+.. figure:: img/Activity_18_Fig_08.png
 
 Figure 8: Schmitt trigger 
 
@@ -165,7 +165,7 @@ The resulting hysteresis gap for the circuit of figure 8 is given by:
 For the AD8561 with a +2.5 V power supply and pull-up resistor, :math:`V_{high} - V_{low} \approx 2.3 V`. Because the other end of the voltage divider (bottom of R1) is connected to :math:`V_{ref} = 0.5 V`, the threshold voltages :math:`V_{th_{high}}` and :math:`V_{th_{low}}` will be centered around 0.5V (:math:`V_{ref}`) assuming that  :math:`V_{high}` and  :math:`V_{low}` are more or less centered around 0.5 V). Connecting the bottom of R1 to a different voltage reference source rather than to mid supply will not affect the hysteresis gap, but it will center that gap around a threshold proportional to the new reference voltage. In fact the negative input pin of the comparator could be connected to the fixed reference voltage and the end of R1 considered as the input. This in effect reverses or inverts the sense of the two outputs. Above stated can be represented in Schmitt Hysteresis plot shown on figure 9. 
 
 
-.. image:: img/Activity_18_Figure_9.png
+.. figure:: img/Activity_18_Fig_09.png
 
 Figure 9: Schmitt Hysteresis  
 
@@ -192,7 +192,7 @@ Add the two positive feedback resistors to your circuit as shown in figure 8. Us
 10. Set t/div value to 200us/div (You can set t/div using horizontal +/- controls)
 
 
-.. image:: img/Activity_18_Figure_10.png
+.. figure:: img/Activity_18_Fig_10.png
 
 Figure 10: Schmitt Hysteresis and output signal 
 
@@ -203,7 +203,7 @@ To see if the delay caused by the input noise has changed, again zoom into the f
 1. In the TRIGGER settings menu select source IN2, select positive edge, NORMAL and set trigger level to 2V
 2. Set t/div value to 5us/div (You can set t/div using horizontal +/- controls)
 
-.. image:: img/Activity_18_Figure_11.png
+.. figure:: img/Activity_18_Fig_11.png
 
 Figure 11: Switching noise with hysteresis
 

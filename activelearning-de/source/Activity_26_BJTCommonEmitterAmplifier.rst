@@ -67,7 +67,7 @@ des Ausgangssignals.
     Video-Tutorial zum `The Signal Path`_ Youtube-Kanal.
 
 
-.. figure:: img/ Activity_26_Fig_1.png
+.. figure:: img/ Activity_26_Fig_01.png
 
    Abbildung 1: Gemeinsame Emitter-Verstärker-Konfiguration
 
@@ -226,7 +226,7 @@ Widerstände verfügbar und diese Widerstände wurden verwendet für :math:`R_L`
 Komponenten wurden berechnet und ausgewählt.
 
 
-.. figure:: img/ Activity_26_Fig_2.png
+.. figure:: img/ Activity_26_Fig_02.png
 
    Abbildung 2: Gemeinsamer Emitterverstärker mit Komponentenwerten
 
@@ -234,7 +234,7 @@ Komponenten wurden berechnet und ausgewählt.
 
 1. Bauen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett auf.
 
-.. figure:: img/ Activity_26_Fig_3.png
+.. figure:: img/ Activity_26_Fig_03.png
 
    Abbildung 3: Gemeinsamer Emitter-Verstärker auf dem Steckbrett
 
@@ -257,7 +257,7 @@ Komponenten wurden berechnet und ausgewählt.
 7. Wählen Sie im Messmenü P2P für IN1 und IN2
    
 
-.. figure:: img/ Activity_26_Fig_4.png
+.. figure:: img/ Activity_26_Fig_04.png
 
    Abbildung 4: Gemeinsame Emitterverstärker-Messungen
 

@@ -55,7 +55,7 @@ und :math:`BW` Frequenzbandbreite in diesem Fall gegeben als: math:` BW = f_c`
 
 Abbildung 1 aus dem OP97-Datenblatt veranschaulicht diese Beziehung grafisch. Wenn eine Rückkopplung bereitgestellt wird, wie in einem invertierenden Verstärker, ist die Verstärkung gegeben durch G = -R2 / R1; Es muss jedoch erkannt werden, dass die Größe dieser Verstärkung niemals die Verstärkung übersteigen kann, die durch das Verstärkungs-Bandbreite-Produkt gegeben ist.
 
-.. figure:: img/ Activity_15_Fig_1.png
+.. figure:: img/ Activity_15_Fig_01.png
 
 Abbildung 1: OP97 Open-Loop-Verstärkung, Phase vs. Frequenz
 
@@ -83,7 +83,7 @@ _________
 Bauen Sie die in Abbildung 2 gezeigte Schaltung auf Ihrem lötfreien Steckbrett auf, um den Frequenzgang eines invertierenden Verstärkers mit einer Verstärkung von 1000 zu messen. Da die Verstärkung der Schaltung so hoch ist, muss die Schaltung mit einem sehr kleinen Eingangssignal betrieben werden. Um ein kleines Signal mit dem STEMlab-Generator zu erzeugen, wird ein 1/1000-Spannungsteiler [R3 - (R4 || R1)] verwendet, um das 2 V p2p-Sinussignal auf 2 mV p2p am invertierenden Verstärkereingang zu reduzieren. R4 und R1 sind aufgrund der "virtuellen Masse" an Pin 2 effektiv parallel. Die parallele Kombination von R4 und R1 beträgt 50 Ω, was bei 47 KΩ R3 zu einem Teilerverhältnis nahe 1/1000 führt.
 
 
-.. figure:: img/ Activity_15_Fig_2.png
+.. figure:: img/ Activity_15_Fig_02.png
 
 Abbildung 2: Invertierender Verstärker mit Verstärkung von 1000
 
@@ -104,14 +104,14 @@ Abbildung 2: Invertierender Verstärker mit Verstärkung von 1000
 - Wählen Sie die RUN-Taste
 
 
-.. figure:: img/ Activity_15_Fig_3.png
+.. figure:: img/ Activity_15_Fig_03.png
 
 Abbildung 3: Typischer OP97 Bode Plot Gain = 1000
 
 Aus der Abbildung 3 können wir sehen, dass die Daten der Theorie und des OP97-Datenblattes mit der Messung übereinstimmen. Bei Gain = 1000 beträgt das BW 900Hz.
 Stellen Sie R2 auf 10 kΩ, R3 = 4,7 kΩ, wiederholen Sie die Messungen und beobachten Sie die Ergebnisse.
 
-.. figure:: img/ Activity_15_Fig_4.png
+.. figure:: img/ Activity_15_Fig_04.png
 
 Abbildung 3: Typischer OP97 Bode Plot Gain = 100
 

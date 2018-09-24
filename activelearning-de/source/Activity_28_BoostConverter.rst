@@ -102,7 +102,7 @@ ist in 1 gezeigt.
 
 
 
-.. figure:: img/ Activity_28_Fig_1.png
+.. figure:: img/ Activity_28_Fig_01.png
 
    Abbildung 1: DC-DC-Aufwärtswandler
 
@@ -183,7 +183,7 @@ Verfahren
    
 
 
-.. figure:: img/ Activity_28_Fig_2.png
+.. figure:: img/ Activity_28_Fig_02.png
 
    Abbildung 2: DC - DC Boost Converter auf dem Steckbrett
 
@@ -219,7 +219,7 @@ Ausgangsspannung unter der Durchlassspannung der LEDs
 liegt (2x1.8V).
 	    
 
-.. figure:: img/ Activity_28_Fig_3.png
+.. figure:: img/ Activity_28_Fig_03.png
 
    Abbildung 3: DC - DC - Boost - Konverter ist ausgeschaltet
 
@@ -248,7 +248,7 @@ eingeschaltet ist, verursacht der von der Batterie ertrunkene Strom
 einen Spannungsabfall.
 
 
-.. figure:: img/ Activity_28_Fig_4.png
+.. figure:: img/ Activity_28_Fig_04.png
 
    Abbildung 4: DC - DC - Boost - Konverter ist eingeschaltet
 
@@ -279,7 +279,7 @@ einen Spannungsabfall.
     horizontalen +/- Kontrollen einstellen)
     
 
-.. figure:: img/ Activity_28_Fig_5.png
+.. figure:: img/ Activity_28_Fig_05.png
 
    Abbildung 5: M1 Schaltspannungen
 
@@ -315,9 +315,9 @@ beeinflusst, die die Drain-Spannung von :math:`M_1` beeinflusst.
 	  
 
 
-.. figure:: img/ Activity_28_Fig_6.png
+.. figure:: img/ Activity_28_Fig_06.png
 
-.. figure:: img/ Activity_28_Fig_7.png
+.. figure:: img/ Activity_28_Fig_07.png
 
    Abbildung 5: Oben: Ausgangsspannung bei 40% Einschaltdauer. Unten:
    Ausgangsspannung bei 80% Tastverhältnis

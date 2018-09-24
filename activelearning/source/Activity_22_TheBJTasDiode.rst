@@ -1,5 +1,5 @@
 The BJT transistor connected as a diode
-#########################################
+#######################################
 
 Objective
 __________
@@ -48,7 +48,7 @@ Materials
 
 An NPN transistor connected as is shown on figure 1 will behave as an regular diode. We can show that by measuring the NPN response using Oscilloscope & Signal generator application.
 
-.. image:: img/Activity_22_Figure_1.png
+.. figure:: img/Activity_22_Fig_01.png
 
 Figure 1:  NPN as a diode connection diagram 
 
@@ -62,7 +62,7 @@ Procedure
 
 1. Build the circuit from figure 1 on the breadboard. Set R1=2.2kΩ, R2=10kΩ and R3=1kΩ
 
-.. image:: img/Activity_22_Figure_2.png
+.. figure:: img/Activity_22_Fig_02.png
 
 Figure 2:  NPN as a diode connection on the breadboard 
 
@@ -78,7 +78,7 @@ Figure 2:  NPN as a diode connection on the breadboard
 6. Under MATH channel settings set :math:`IN1-IN2` and select ENABLE.
 7. Under IN1 and IN2 menu settings set probe to x10 and vertical offset to 0.
 
-.. image:: img/Activity_22_Figure_3.png
+.. figure:: img/Activity_22_Fig_03.png
 
 Figure 3:  NPN as a diode measurements
 
@@ -96,7 +96,7 @@ For this task we will use Jupyter Notebook Web application. How to start Jupyter
 .. note::
      The Jupyter_ Notebook_ is a web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. They have also ensured support for the Jupyter application with Red Pitaya libraries enabling control of all features of the STEMlab boards such as: signal acquisition, signal generation, digital signal control, communication etc. The Jupyter Notebook is started on the same way as any other applications. After starting Jupyter application a web based notebook is opened.  This combination of the notebook, STEMlab and Python features makes the STEMlab an excellent tool for prototyping and quick programing. Since Jupyter Notebook enables text, equation and picture editing this is a perfect tool for tutorials, examples and ect. 
 
-.. image:: img/Activity_19_Figure_7.png
+.. figure:: img/Activity_19_Fig_07.png
 
 Figure 4: Creating new Jupyter notebook
 
@@ -193,7 +193,7 @@ For measuring :math:`VI` curve an "XY" plot is required where x-axis will repres
 
 After running the code above you should get diode VI characteristic as is shown on figure 5.
 
-.. image:: img/Activity_22_Figure_5.png
+.. figure:: img/Activity_22_Fig_05.png
 
 Figure 5: BJT  VI characteristic measured using Jupyter Notebook
 
@@ -221,7 +221,7 @@ With battery added we can achieve reversed polarization by maximal amount
 
 Where :math:`V_{BC}` is maximal negative swing of our excitation voltage signal :math:`V_{OUT}`. 
 
-.. image:: img/Activity_22_Figure_6.png
+.. figure:: img/Activity_22_Fig_06.png
 
 Figure 6: NPN Emitter Base Reverse breakdown configuration 
 
@@ -231,7 +231,7 @@ Procedure
 
 Build the circuit from the figure 6 on the breadboard and continue with the measurements.
 
-.. image:: img/Activity_22_Figure_7.png
+.. figure:: img/Activity_22_Fig_07.png
 
 Figure 7: NPN Emitter Base Reverse breakdown configuration on the breadboard
 
@@ -264,7 +264,7 @@ Since you already have Jupyter Notebook running from previews example only small
 Be sure to measure the actual battery voltage for the most accurate measurements. 
 If you have updated Jupyter Notebook code and run it correctly you should get results similar as is shown on figure 8.
 
-.. image:: img/Activity_22_Figure_8.png
+.. figure:: img/Activity_22_Fig_08.png
 
 Figure 8: NPN Emitter Base Reverse breakdown voltage measurements
 
@@ -281,7 +281,7 @@ ____________________________________________________
 Here we will investigate a circuit configuration with smaller forward voltage characteristics than that of a bipolar 
 junction transistor (BJT) connected as a diode. The turn on voltage of the “diode” is should be about ~0.1V compared to ~0.7V for the simple diode connection in the first example. 
 
-.. image:: img/Activity_22_Figure_9.png
+.. figure:: img/Activity_22_Fig_09.png
 
 Figure 9: Configuration to lower effective forward voltage drop of diode 
 
@@ -290,12 +290,16 @@ Procedure
 ----------
 1. Build the circuit from figure 9 on the breadboard. Set R3=1kΩ,R4=100kΩ and use for Q1 2N3904 NPN and for Q2 2N3904 PNP transistor.
 
-.. image:: img/Activity_22_Figure_10.png
+.. figure:: img/Activity_22_Fig_10.png
 
 Figure 10:  Configuration to lower effective forward voltage drop of diode  on the breadboard
 
 .. warning::
-      Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double check your circuit. The  -3.3V and +3.3V  voltage supply pins do not have short circuit handling and they can be damaged in case of short circuit.
+   Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins
+   double check your circuit. The  -3.3V and +3.3V  voltage supply
+   pins do not have short circuit handling and they can be damaged in
+   case of short circuit.
+   
 
 2. Start the Oscilloscope & Signal generator application
 3. In the OUT1 settings menu set Amplitude value to 0.8V, DC offset to -0.12 V, Frequency to 1kHz to apply the input voltage. 
@@ -306,15 +310,24 @@ Figure 10:  Configuration to lower effective forward voltage drop of diode  on t
 6. Under IN1 and IN2 menu settings set probe to x10 and vertical offset to 0.
 7. Under MATH menu settings set vertical offset to 0.
 
-.. image:: img/Activity_22_Figure_11.png
+.. figure:: img/Activity_22_Fig_11.png
 
 Figure 11: Lower effective forward voltage drop of diode measurements
 
 .. note::
-   As you can see from the figure 11 the forward voltage drop is about 100mV. You can also notice that Q2 is not necessary to lower drop-down voltage of the Q1. 
-   The main role here plays resistor R4 connected to the base of the Q1. Try to remove Q2 and observe results.
 
+   As you can see from the figure 11 the forward voltage drop is about
+   100mV. You can also notice that Q2 is not necessary to lower
+   drop-down voltage of the Q1.
+   
+   The main role here plays resistor R4 connected to the base of the
+   Q1. Try to remove Q2 and observe results.
+   
+
+   
 Questions
 ----------
 
-1. Could the collector of the PNP Q2 be connected to some other node such as a negative supply voltage? And what would be the effect? 
+Could the collector of the PNP Q2 be connected to some other node
+such as a negative supply voltage? And what would be the effect?
+   

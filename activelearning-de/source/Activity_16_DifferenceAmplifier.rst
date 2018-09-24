@@ -29,7 +29,7 @@ __________________
 
 Der grundlegende Unterschied Opamp Schaltung ist in Abbildung 1 dargestellt. Um für die Übertragungsfunktion zu lösen :math:`V_ {out} = f (V_1, V_2)` des Differenzverstärkers können wir ein Superpositionsprinzip verwenden.
 
-.. figure:: img/ Activity_16_Fig_1.png
+.. figure:: img/ Activity_16_Fig_01.png
 
 Abbildung 1: Basis Differenzverstärker
 
@@ -75,14 +75,14 @@ Mit dem hinzugefügten Spannungsteiler (R3, R4) für die in 2 gezeigte Schaltung
 .. math::
 V_ {out} = 2V_2 - V_1 = \ frac {1} {2} 2 V_2 ^ * - V_1 = V_2 ^ * - V_1 = OUT_2 - OUT_1 \ quad (5)
 
-.. figure:: img/ Activity_16_Fig_2.png
+.. figure:: img/ Activity_16_Fig_02.png
 
 Abbildung 2: Differenzverstärker
 
 .. Warnung::
       Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse anschließen, überprüfen Sie Ihren Stromkreis. Die Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen Kurzschluss und können im Falle eines Kurzschlusses beschädigt werden.
 
-.. figure:: img/ Activity_16_Fig_3.png
+.. figure:: img/ Activity_16_Fig_03.png
 
 Abbildung 3: Differenzverstärker auf dem Steckbrett
 
@@ -95,7 +95,7 @@ Abbildung 3: Differenzverstärker auf dem Steckbrett
 7. Stellen Sie sicher, dass OUT1 V / div und OUT2 V / div auf der linken unteren Seite des Bildschirms auf 200mV / div eingestellt sind (Sie können V / div einstellen, indem Sie den gewünschten Kanal und die vertikalen +/- Regler auswählen)
 8. Wählen Sie im Messmenü "MAX", wählen Sie IN2 und drücken Sie FERTIG
 
-.. figure:: img/ Activity_16_Fig_4.png
+.. figure:: img/ Activity_16_Fig_04.png
 
 Abbildung 4: Differenzverstärkermessungen
 
@@ -106,7 +106,7 @@ Da beide Eingangssignale sinusförmig sind, ist das einzige Artefakt der Differe
 
 1. Wählen Sie im OUT2-Einstellungsmenü die SQUARE-Wellenform und beobachten Sie die Ergebnisse
 
-.. figure:: img/ Activity_16_Fig_5.png
+.. figure:: img/ Activity_16_Fig_05.png
 
 Abbildung 5: Differenzverstärkermessungen - Verschiedene Wellenformen von OUT1 und OUT2
 

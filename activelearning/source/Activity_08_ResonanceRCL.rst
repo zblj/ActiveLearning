@@ -38,7 +38,7 @@ A network is in resonance when the voltage and current at the network
 input terminals are in phase and the input impedance of the network is
 purely resistive.  
 
-.. figure:: img/Activity_08_Figure_1.png
+.. figure:: img/Activity_08_Fig_01.png
 
    Figure 1: Parallel Resonance Circuit
 
@@ -79,7 +79,7 @@ of course starts at zero, reaches a maximum value in the vicinity of
 the natural resonant frequency, and then drops again to zero as ω
 becomes infinite. The frequency response is shown in figure 2.  
 
-.. figure:: img/Activity_08_Figure_2.png
+.. figure:: img/Activity_08_Fig_02.png
 
    Figure 2: Frequency Response of Parallel Resonant Circuit
 
@@ -96,7 +96,7 @@ bandwidth of the resonant circuit and is defined as:
    \beta = \omega_2 - \omega_1	(3)
 
    
-.. figure:: img/Activity_08_Figure_3.png
+.. figure:: img/Activity_08_Fig_03.png
 
    Figure 3: Series Resonance Circuit
 
@@ -188,7 +188,7 @@ Matlab code for calculation of :math:`Z` is given below.
    
 By running code above we get following results shown on picture bellow.
 
-.. figure::   img/Activity_08_Figure_4.png
+.. figure::   img/Activity_08_Fig_04.png
  
    Figure 4: Calculation of the Impedance Z of parallel RLC circuit.
    Blue trace real/resistive part of Z, green trace imaginary/reactive
@@ -204,7 +204,7 @@ should look like.
 We can model the circuit from Figure 8 as is shown on figure below
 where  Z = 1/Y and Y is given in equation 1. 
 
-.. figure::   img/Activity_08_Figure_5.png
+.. figure::   img/Activity_08_Fig_05.png
 
    Figure 5: Representing parallel RLC circuit as a complex impedance Z
 
@@ -227,7 +227,7 @@ At some frequency f: where Z is maximal the Vout will be also
 maximal. This is the resonant frequency.
 
 
-.. figure::   img/Activity_08_Figure_6.png
+.. figure::   img/Activity_08_Fig_06.png
 
    Figure 6: Calculation of absolute value of impedance Z for the circuit shown on figure 3. 
 
@@ -251,7 +251,7 @@ Figs. 5 and 8.
 
 
 
-.. figure::   img/Activity_08_Figure_7.png
+.. figure::   img/Activity_08_Fig_07.png
 
    Figure 7: Calculation of frequency response (Vout/Vin) for circuit on figure 5.
 
@@ -262,7 +262,7 @@ Procedure:
    breadboard, with the component values RS = 100 Ω, R1 = 1 KΩ, C1 =
    0.1 µF and L1= 4.7 mH.
 
-.. figure::   img/Activity_08_Figure_8.png
+.. figure::   img/Activity_08_Fig_08.png
 
    Figure 8: Parallel RLC circuit for the measurements.
 
@@ -271,14 +271,14 @@ Procedure:
    frequency to 100Hz, end frequency to 1MHz and number of steps
    to 50. And Click “RUN” button. 
 
-.. figure::   img/Activity_08_Figure_9.png
+.. figure::   img/Activity_08_Fig_09.png
 
    Figure 9: Bode analyzer application
 
    
 After the measurements are done you should get the frequency response of your circuit as is shown on Figure 10q.
 
-.. figure::   img/Activity_08_Figure_10.png
+.. figure::   img/Activity_08_Fig_10.png
 
     Figure 10: Frequency response of circuit from Figure 8 take by Bode analyzer application.
 
@@ -286,9 +286,7 @@ After the measurements are done you should get the frequency response of your ci
 
 - Compare measurements and calculation. If there is any difference try to explain why.
 
-.. hint:: 
-
-   parasitic
+.. hint:: parasitic
 
 
 The Bode analyzer application will make a frequency sweep in such way

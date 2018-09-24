@@ -93,14 +93,14 @@ auf dem Pegel der Schwellenspannung :math:`V_ {TH}`.
    Vorwärtsabfallspannung erzeugen, die gleich ist zu :math:`V_ {TH}` 
 
 
-.. figure:: img/Activity_23_Fig_1.png
+.. figure:: img/Activity_23_Fig_01.png
 
    Abbildung 1: ZVN211_ Spezifikationen
 
 Auf dem Steckbrett die Schaltung aus Abbildung 2 aufbauen und mit den Messungen fortfahren.
 
 
-.. figure:: img/Activity_23_Fig_2.png
+.. figure:: img/Activity_23_Fig_02.png
 
    Abbildung 2: Anschlussdiagramm der NMOS-Diode
 
@@ -113,7 +113,7 @@ Verfahren
    M1 nehmen Sie ZVN211.
    
 
-.. figure:: img/Activity_22_Fig_3.png
+.. figure:: img/Activity_22_Fig_03.png
 
    Abbildung 3: NMOS-Diodenverbindung auf dem Steckbrett
 
@@ -156,7 +156,7 @@ Verfahren
 
 
 
-.. figure:: img/Activity_23_Fig_4.png
+.. figure:: img/Activity_23_Fig_04.png
 
    Abbildung 4: NMOS-Diodenanschluss-Messungen
 
@@ -190,7 +190,7 @@ Projekt erstellt, zeigt das Flussdiagramm in Abbildung 5.
    
 
 
-.. figure:: img/Activity_19_Fig_7.png
+.. figure:: img/Activity_19_Fig_07.png
 
    Abbildung 5: Erstellen eines neuen Jupyter-Notebooks
 
@@ -312,7 +312,7 @@ Nach dem Ausführen des obigen Codes sollten Sie die Diode
 VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
 
-.. figure:: img/ Activity_23_Fig_5.png
+.. figure:: img/ Activity_23_Fig_05.png
 
    Abbildung 6: NMOS VI-Kennlinie gemessen mit Jupyter Notebook
 
@@ -328,7 +328,7 @@ Konfiguration der PMOS-Diode ist in Abbildung 7 dargestellt.
 
 
 
-.. figure:: img/ Activity_23_Fig_6.png
+.. figure:: img/ Activity_23_Fig_06.png
 
    Abbildung 7: Anschlussdiagramm der PMOS-Diode
 
@@ -378,7 +378,7 @@ Verfahren
 9. Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf 1V ein
 
 
-.. figure:: img/ Activity_23_Fig_7.png
+.. figure:: img/ Activity_23_Fig_07.png
 
    Abbildung 8: PMOS-Diodenanschlussmessungen
 

@@ -74,7 +74,7 @@ NPN-Antwort unter Verwendung der Oszilloskop- &
 Signalgenerator-Anwendung zeigen.
 
 
-.. figure:: img/Activity_22_Fig_1.png
+.. figure:: img/Activity_22_Fig_01.png
 
    Abbildung 1: NPN als Diodenanschlussdiagramm
    
@@ -95,7 +95,7 @@ Verfahren
    Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein
    
 
-.. figure:: img/Activity_22_Fig_2.png
+.. figure:: img/Activity_22_Fig_02.png
 
    Abbildung 2: NPN als Diodenverbindung auf dem Steckbrett
    
@@ -131,7 +131,7 @@ Verfahren
    auf x10 und den vertikalen Offset auf 0.
    
 
-.. figure:: img/Activity_22_Fig_3.png
+.. figure:: img/Activity_22_Fig_03.png
 
    Abbildung 3: NPN als Diodenmessungen
 
@@ -173,7 +173,7 @@ erstellt, ist in Abbildung 4 dargestellt.
    dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.
    
 
-.. figure:: img/Activity_19_Fig_7.png
+.. figure:: img/Activity_19_Fig_07.png
 
    Abbildung 4: Erstellen eines neuen Jupyter-Notebooks
 
@@ -291,7 +291,7 @@ Nach dem Ausführen des obigen Codes sollten Sie die Diode
 VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
 
-.. figure:: img/Activity_22_Fig_5.png
+.. figure:: img/Activity_22_Fig_05.png
 
    Abbildung 5: BJT VI-Charakteristik gemessen mit Jupyter Notebook
    
@@ -342,7 +342,7 @@ Mit der Batterie können wir die umgekehrte Polarisation um den maximalen Betrag
 Wobei :math:`V_ {BC}` der maximale negative Swing unseres
 Anregungsspannungssignals ist :math:`V_ {OUT}`.
 
-.. figure:: img/Activity_22_Fig_6.png
+.. figure:: img/Activity_22_Fig_06.png
 
    Abbildung 6: NPN-Emitter Base Reverse-Durchbruchkonfiguration
 
@@ -355,7 +355,7 @@ mit den Messungen fort.
 
 
 
-.. figure:: img/Activity_22_Fig_7.png
+.. figure:: img/Activity_22_Fig_07.png
 
    Abbildung 7: NPN-Emitter Base Reverse-Durchbruchkonfiguration auf dem Steckbrett
 
@@ -408,7 +408,7 @@ Wenn Sie den Jupyter Notebook-Code aktualisiert und korrekt ausgeführt
 haben, sollten Sie ähnliche Ergebnisse wie in Abbildung 8 erhalten.
 
 
-.. figure:: img/Activity_22_Fig_8.png
+.. figure:: img/Activity_22_Fig_08.png
 
    Abbildung 8: Messung der NPN-Emitter-Basis-Durchbruchspannung
    
@@ -435,7 +435,7 @@ Einschaltspannung der "Diode" sollte etwa 0,1 V betragen im Vergleich
 zu 0,7 V für die einfache Diodenverbindung im ersten Beispiel.
 
 
-.. figure:: img/Activity_22_Fig_9.png
+.. figure:: img/Activity_22_Fig_09.png
 
    Abbildung 9: Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
 
@@ -503,326 +503,6 @@ Verfahren
 Fragen
 ------
 
-1. Könnte der Kollektor des PNP Q2 mit einem anderen Knoten wie einer
-   negativen Versorgungsspannung verbunden sein? Und was wäre der
-   Effekt?
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Könnte der Kollektor des PNP Q2 mit einem anderen Knoten wie einer
+negativen Versorgungsspannung verbunden sein? Und was wäre der
+Effekt?

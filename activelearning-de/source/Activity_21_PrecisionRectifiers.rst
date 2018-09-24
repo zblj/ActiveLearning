@@ -74,7 +74,7 @@ Eingangsanschluss) gebracht.
 
 
 
-.. figure:: img/ Activity_21_Fig_1.png
+.. figure:: img/ Activity_21_Fig_01.png
 
 Abbildung 1: Anschlussplan für Präzisions-Einweggleichrichter
 
@@ -84,7 +84,7 @@ Verfahren
 
 1. Erstellen Sie die Schaltung aus Abbildung 1 auf dem Steckbrett
 
-.. figure:: img/ Activity_21_Fig_2.png
+.. figure:: img/ Activity_21_Fig_02.png
 
 Abbildung 2: Verbindungen auf dem Steckbrett
 
@@ -106,7 +106,7 @@ Abbildung 2: Verbindungen auf dem Steckbrett
 5. Setze t / div Wert auf 2ms / div (Du kannst t / div mit horizontalen +/- Kontrollen einstellen)
 
 
-.. figure:: img/ Activity_21_Fig_3.png
+.. figure:: img/ Activity_21_Fig_03.png
 
 Abbildung 3: Präzisions-Einweggleichrichtermessungen
 
@@ -169,7 +169,7 @@ verwendet werden, haben eine Vorwärtsspannung von ungefähr 0,6 V.
 
 
 
-.. figure:: img/ Activity_21_Fig_4.png
+.. figure:: img/ Activity_21_Fig_04.png
 
 Abbildung 4: Präzisions-Vollweggleichrichter
 
@@ -187,7 +187,7 @@ Verfahren
    werden.
    
 
-.. figure:: img/ Activity_21_Fig_5.png
+.. figure:: img/ Activity_21_Fig_05.png
 
 Abbildung 5: Verbindungen auf dem Steckbrett
 
@@ -210,7 +210,7 @@ Abbildung 5: Verbindungen auf dem Steckbrett
    
 
 
-.. figure:: img/ Activity_21_Fig_6.png
+.. figure:: img/ Activity_21_Fig_06.png
 
 Abbildung 6: Präzisions-Vollweggleichrichtermessungen - Absolutwertschaltung
 

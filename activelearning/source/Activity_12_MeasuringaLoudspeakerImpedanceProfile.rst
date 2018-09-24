@@ -37,7 +37,7 @@ ____________________________
 To help understand the measurements you are about to make, a simplified electrical model of a loudspeaker is shown in figure 1. 
 
 
-.. image:: img/Activity_12_Figure_1.png
+.. image:: img/Activity_12_Fig_01.png
 
 Figure 1: Loudspeaker Impedance Model 
 
@@ -63,11 +63,11 @@ __________
 
 1. First build the circuit shown in the figure 1 and figure 2. The loudspeaker can be in an enclosure or not. 
 
-.. image:: img/Activity_12_Figure_2.png
+.. image:: img/Activity_12_Fig_02.png
 
 Figure 2: Loudspeaker connections 
 
-.. image:: img/Activity_12_Figure_3.png
+.. image:: img/Activity_12_Fig_03.png
 
 Figure 3: STEMlab with shunt resistor Impedance analyzer conection and Loudspeaker 
 
@@ -84,14 +84,14 @@ Figure 3: STEMlab with shunt resistor Impedance analyzer conection and Loudspeak
     - under **Frequency sweep** set  Start frequency to 10Hz and End frequency to 10kHz
     - select **Start measurement**
 
-.. image:: img/Activity_12_Figure_4.png
+.. image:: img/Activity_12_Fig_04.png
 
 Figure 4: Graph of the Loudspeaker impedance magnitude taken with Impedance analyzer application
 
 4.Plot mesured Phase
     - under **Plot settings menu** for **Y-axis** select **P[deg]**
 
-.. image:: img/Activity_12_Figure_5.png
+.. image:: img/Activity_12_Fig_05.png
 
 Figure 5:  Graph of the Loudspeaker impedance phase taken with Impedance analyzer application
 
@@ -104,13 +104,13 @@ acousto-mechanical environment of the speaker which will affect the loudspeaker 
 
 5. Flipover Loudspeaker  as is shown in figure 6 and repeat Impedance measurements
 
-.. image:: img/Activity_12_Figure_6.png
+.. image:: img/Activity_12_Fig_06.png
 
 Figure 6: Loudspeaker in different acousto-mechanical environment
 
 As we can see from figure 7 impedance of loudspeaker is now different and effect of 
 acousto-mechanical environment is clearly visible.
 
-.. image:: img/Activity_12_Figure_7.png
+.. image:: img/Activity_12_Fig_07.png
 
 Figure 7: Loudspeaker impedance at different acousto-mechanical environment

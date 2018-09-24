@@ -66,7 +66,7 @@ zwischenspeichert oder einfriert und verhindert, dass er sich
       
 
 
-.. figure:: img/Activity_18_Fig_1.png
+.. figure:: img/Activity_18_Fig_01.png
 
    Abbildung 1: AD8561_ Datenblatt und Pinbelegung
 
@@ -92,7 +92,7 @@ Ihrem Lötplatinen-Board dargestellt. Die zwei Pull-up-Widerstände mit
 Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
 
 
-.. figure:: img/Activity_18_Fig_2.png
+.. figure:: img/Activity_18_Fig_02.png
 
    Abbildung 2: AD8561_ Komparatorschaltung
 
@@ -118,7 +118,7 @@ Spitzenausgangswellenwert näher an die + 5-V-Versorgung zu bringen.
    
 
 
-.. figure:: img/ Activity_18_Fig_3.png
+.. figure:: img/ Activity_18_Fig_03.png
 
    Abbildung 3: AD8561_ Komparatorschaltung auf dem Steckbrett
 
@@ -165,7 +165,7 @@ Verfahren
    
 
 
-.. figure:: img/ Activity_18_Fig_4.png
+.. figure:: img/ Activity_18_Fig_04.png
 
    Abbildung 4: AD8561_ Komparatorschaltung Messungen
 
@@ -207,7 +207,7 @@ LOW-Zeitdauern sehen.
 	 
 
 
-.. figure:: img/ Activity_18_Fig_5.png
+.. figure:: img/ Activity_18_Fig_05.png
 
    Abbildung 5: AD8561_ beide Ausgangsmessungen bei verschiedenen :math:`V_ {ref} = 0.7V`
 
@@ -233,7 +233,7 @@ Versuchen Sie die Schaltgeräuschmessung bei einer geräuschvolleren
 Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
 
 
-.. figure:: img/ Activity_18_Fig_6.png
+.. figure:: img/ Activity_18_Fig_06.png
 
    Abbildung 6: Schaltgeräuschmessungen.
 
@@ -278,7 +278,7 @@ Stromversorgung zu wiederholen (5V Pin direkt von STEMlab Board)
 		 
 
 
-.. figure:: img/ Activity_18_Fig_7.png
+.. figure:: img/ Activity_18_Fig_07.png
 
    Abbildung 7: Schaltvorgang bei hoher Eingangssignalfrequenz (100 kHz)
 
@@ -310,7 +310,7 @@ niedrigen Ausgangsspannung.
       
 
 
-.. figure:: img/ Activity_18_Fig_8.png
+.. figure:: img/ Activity_18_Fig_08.png
 
    Abbildung 8: Schmitt-Trigger
 
@@ -369,7 +369,7 @@ Schmitt-Hystereseplotting in Abbildung 9 dargestellt werden.
       
 
 
-.. figure:: img/ Activity_18_Fig_9.png
+.. figure:: img/ Activity_18_Fig_09.png
 
    Abbildung 9: Schmitt Hysterese
 
@@ -470,213 +470,3 @@ anpassen. Pausiert der Ausgang auf dem gleichen Zwischenpegel wie der
 Wie Sie in Abbildung 11 sehen können, ist bei der Verwendung von
 Hysterese kein Schaltgeräusch vorhanden. Vergleichen Sie Abbildung 6
 und Abbildung 11.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

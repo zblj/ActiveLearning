@@ -65,7 +65,7 @@ bezeichnet eine LED wie im rechten Symbol. Pfeile zeigen in Richtung
 die Diode würde einen Photodioden-Lichtdetektor darstellen.
 
 
-.. figure:: img/Activity_19_Fig_1.png
+.. figure:: img/Activity_19_Fig_01.png
    :name: 19_fig_01
    :align: center
 
@@ -90,7 +90,7 @@ Das Eintreten in die Zener-Region wird als Peak Inverse Voltage bezeichnet
 (PIV) oder die Spitzensperrspannung (PRV).
 
 
-.. figure:: img/Activity_19_Fig_2.png
+.. figure:: img/Activity_19_Fig_02.png
    :name: 19_fig_02
    :align: center
 
@@ -191,7 +191,7 @@ ebenfalls in einem eingebaut spezielle transparente Verpackung wie in
 Abbildung 3 gezeigt.
 
 
-.. figure:: img/Activity_19_Fig_3.png
+.. figure:: img/Activity_19_Fig_03.png
    :name: 19_fig_03
    :align: center
 
@@ -262,7 +262,7 @@ angegeben wie:
    V_d = IN_2
 
    
-.. figure:: img/Activity_19_Fig_4.png
+.. figure:: img/Activity_19_Fig_04.png
    :name: 19_fig_04
    :align: center
 
@@ -312,7 +312,7 @@ Zeitbereichsmessungen
 
 1. Erstellen Sie die Schaltung aus Abbildung 4 auf dem Steckbrett
 
-   .. figure:: img/Activity_19_Fig_5.png
+   .. figure:: img/Activity_19_Fig_05.png
       :name: 19_fig_05
       :align: center
 
@@ -341,7 +341,7 @@ Zeitbereichsmessungen
    Spur mit Faktor R1 skaliert Diodenstrom **
    
 
-   .. figure:: img/Activity_19_Fig_6.png
+   .. figure:: img/Activity_19_Fig_06.png
       :name: 19_fig_06
       :align: center
 
@@ -365,7 +365,7 @@ Für diese Aufgabe verwenden wir die Jupyter Notebook Web-Anwendung.
 Wie man Jupyter Notebook startet und ein neues Projekt erstellt, zeigt
 das Flussdiagramm in Abbildung 7. 
 
-.. figure:: img/Activity_19_Fig_7.png
+.. figure:: img/Activity_19_Fig_07.png
    :name: 19_fig_07
    :align: center
 
@@ -404,9 +404,9 @@ Starten der Messungen.
 Nach dem Ausführen des obigen Codes sollten Sie die Diode VI als
 charakteristisch erhalten ist in Abb. 8 dargestellt.
 
-.. figure:: img/Activity_19_Fig_8.png
+.. figure:: img/Activity_19_Fig_08.png
    :name: 19_fig_08
-   :allign: center
+   :align: center
 
    Didoes VI-Charakteristik gemessen mit Jupyter Notebook
 

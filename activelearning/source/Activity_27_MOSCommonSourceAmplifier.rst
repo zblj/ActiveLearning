@@ -38,7 +38,7 @@ The configuration, shown in figure 1, demonstrates the NMOS transistor used as a
    One of the main advantages of MOS common source amplifier  over `BJT common emitter amplifier`_ is an extremely high input impedance along with a low noise output making them ideal for use in amplifier circuits that have very small input signals.
    Input impedance is effectively only dependent on input capacitance :math:`C_{iss}`, resistors :math:`R_1` and :math:`R_2` which can be selected in range of :math:`M \Omega`.
 
-.. image:: img/Activity_27_Figure_1.png
+.. image:: img/Activity_27_Fig_01.png
 
 Figure 1: Common source amplifier configuration 
 
@@ -156,7 +156,7 @@ For selected :math:`V_G  = 3.7 V` and :math:`R_1  = 1 M \Omega` we get (closest 
 
 
 
-.. image:: img/Activity_27_Figure_2.png
+.. image:: img/Activity_27_Fig_02.png
 
 Figure 2: Common source amplifier with components values
 
@@ -192,7 +192,7 @@ Figure 2: Common source amplifier with components values
 
 1. Build the circuit from figure 2 on the breadboard.
 
-.. image:: img/Activity_27_Figure_3.png
+.. image:: img/Activity_27_Fig_03.png
 
 Figure 3: Common source amplifier on the breadboard
 
@@ -204,7 +204,7 @@ Figure 3: Common source amplifier on the breadboard
 6. In the trigger menu settings and select NORMAL
 7. In the measurements menu select P2P for IN1 and IN2
 
-.. image:: img/Activity_27_Figure_4.png
+.. image:: img/Activity_27_Fig_04.png
 
 Figure 4: Common source amplifier measurements
 
@@ -212,7 +212,7 @@ On figure 3 the measurements of the common source amplifier are shown. From the 
 
 8. In order to see affect of the gain dependency on the input signal frequency set OUT1 frequency to 5kHz and measure amplifier gain.
 
-.. image:: img/Activity_27_Figure_5.png
+.. image:: img/Activity_27_Fig_05.png
 
 Figure 5: Common source amplifier gain at 5kHz frequency of :math:`V_{in}`
 

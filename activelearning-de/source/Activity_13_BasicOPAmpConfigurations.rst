@@ -95,7 +95,7 @@ Versorgungspins jedes Operationsverstärkers in Ihrer Schaltung
 vorzusehen.
 
 
-.. figure:: img/ Activity_13_Fig_1.png
+.. figure:: img/ Activity_13_Fig_01.png
 
    Abbildung 1: Stromanschlüsse mit 5-V-Stromanschluss von E2_-Anschluss_ und LM317_ einstellbar_ Regler_
 
@@ -124,7 +124,7 @@ Denken Sie daran, dass Sie das STEMlab einschalten müssen, bevor Sie
 die Spannungen mit dem Voltmeter messen.
 
 
-.. figure:: img/ Activity_13_Fig_2.png
+.. figure:: img/ Activity_13_Fig_02.png
 
    Abbildung 2: Stromanschlüsse
 
@@ -142,7 +142,7 @@ hohen ** Eingangswiderstands ** und ** niedrigen Ausgangswiderstands
 ** Anwendung.
 
 
-.. figure:: img/ Activity_13_Fig_3.png
+.. figure:: img/ Activity_13_Fig_03.png
 
    Abbildung 3: Unity Gain Follower
 
@@ -181,7 +181,7 @@ verbinden.
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
    
 
-.. figure:: img/ Activity_13_Fig_4.png
+.. figure:: img/ Activity_13_Fig_04.png
 
    Abbildung 4: Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
 
@@ -223,7 +223,7 @@ dem 10K-Widerstand, eingefügt.
 
 
 
-.. figure:: img/ Activity_13_Fig_5.png
+.. figure:: img/ Activity_13_Fig_05.png
 
    Abbildung 5: Puffer Beispiel
 
@@ -278,7 +278,7 @@ parallel zum 4,7 KΩ Widerstand ist. Notiere die Amplituden (P2P) von
 :math:`V_ {in}` (IN1) und :math:`V_ {out}`
       
 
-.. figure:: img/ Activity_13_Fig_6.png
+.. figure:: img/ Activity_13_Fig_06.png
 
    Abbildung 6: Beispiel für einen Pufferfall 1
 
@@ -309,7 +309,7 @@ Fig. 7 zeigt die herkömmliche Konfiguration eines invertierenden
 Verstärkers mit einem 10 KΩ "Last" -Widerstand am Ausgang.
 
 
-.. figure:: img/ Activity_13_Fig_7.png
+.. figure:: img/ Activity_13_Fig_07.png
 
    Abbildung 7: Invertierende Verstärkerkonfiguration
 
@@ -357,7 +357,7 @@ notwendigerweise den Operationsverstärker von dem Stift 2 zu dem Stift
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
    
 
-.. figure:: img/ Activity_13_Fig_8.png
+.. figure:: img/ Activity_13_Fig_08.png
 
    Abbildung 8: Messungen der invertierenden Verstärkerkonfiguration
 
@@ -383,7 +383,7 @@ Eingangswiderstands, so dass sie zum Puffern von nicht idealen Quellen
 geeignet ist, jedoch mit einer Verstärkung größer als ein.
 
 
-.. figure:: img/ Activity_13_Fig_9.png
+.. figure:: img/ Activity_13_Fig_09.png
 
    Abbildung 9: Nicht-invertierende Verstärkerkonfigurationsmessungen
 
@@ -608,317 +608,24 @@ gezeigt aufbauen und mit den Messungen fortfahren.
 Fragen
 ------
 
-- Anstiegsrate: Besprechen Sie, wie Sie die Anstiegsgeschwindigkeit in
-  der Einheit-Verstärkungs-Pufferkonfiguration gemessen und berechnet
-  haben, und vergleichen Sie dies mit dem Wert, der im OP97-Datenblatt
-  aufgeführt ist.
+1. Anstiegsrate: Besprechen Sie, wie Sie die Anstiegsgeschwindigkeit in
+   der Einheit-Verstärkungs-Pufferkonfiguration gemessen und berechnet
+   haben, und vergleichen Sie dies mit dem Wert, der im OP97-Datenblatt
+   aufgeführt ist.
   
-- Pufferung: Erklären Sie, warum der Pufferverstärker in Abbildung 5
-  die Funktion der Spannungsteilerschaltung bei unterschiedlichen
-  Lastwiderständen ermöglicht.
+2. Pufferung: Erklären Sie, warum der Pufferverstärker in Abbildung 5
+   die Funktion der Spannungsteilerschaltung bei unterschiedlichen
+   Lastwiderständen ermöglicht.
   
-- Ausgangssättigung: Erklären Sie Ihre Beobachtungen der
-  Ausgangsspannung Sättigung in der invertierenden
-  Verstärkerkonfiguration und Ihre Schätzung der internen Spannungen
-  sinkt. Wie nahe kommt die Ausgabe?
-  die Versorgungsschienen in diesem Experiment und später auch als
-  Komparator mit unterschiedlichen Versorgungsspannungen? Können Sie
-  erraten, wie hoch der Ausgangsspannungshub für einen
-  Operationsverstärker ist, der als "Rail-to-Rail" -Gerät beworben
-  wird?
+3. Ausgangssättigung: Erklären Sie Ihre Beobachtungen der
+   Ausgangsspannung Sättigung in der invertierenden
+   Verstärkerkonfiguration und Ihre Schätzung der internen Spannungen
+   sinkt. Wie nahe kommt die Ausgabe?
+   die Versorgungsschienen in diesem Experiment und später auch als
+   Komparator mit unterschiedlichen Versorgungsspannungen? Können Sie
+   erraten, wie hoch der Ausgangsspannungshub für einen
+   Operationsverstärker ist, der als "Rail-to-Rail" -Gerät beworben
+   wird?
   
-- Komparator: Besprechen Sie Ihre Messungen und was passiert, wenn die
-  Polarität von Vref umgekehrt wird.
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+4. Komparator: Besprechen Sie Ihre Messungen und was passiert, wenn die
+   Polarität von Vref umgekehrt wird.

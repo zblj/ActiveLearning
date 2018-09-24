@@ -42,7 +42,7 @@ Wenn der Eingang gleich ist :math:`+ V_ {in}`, wird der Transistor in die Sätti
 
 Dieser Zustand ähnelt einem geschlossenen Schalter, der den Boden von :math:`R_C` mit Masse verbindet.
 
-.. figure:: img/ Activity_24_Fig_1.png
+.. figure:: img/ Activity_24_Fig_01.png
 
 Abbildung 1: NPN BJT-Schalter und seine Lastlinie
 
@@ -60,7 +60,7 @@ Diese Bedingungen können sichergestellt werden, indem die Schaltung so ausgeleg
 
 Bedingung 1 garantiert, dass die Schaltung durch den Eingang in den Abschaltbereich getrieben wird. Die Bedingungen 2 und 3 stellen sicher, dass der Transistor in den Sättigungsbereich getrieben wird. Ein tatsächlicher BJT-Schalter unterscheidet sich von dem idealen Schalter in mehreren Aspekten. In der Praxis gibt es selbst im Sperrbereich einen kleinen Leckstrom durch den Transistor. Auch in der Sättigung fällt immer eine gewisse Spannung über den Innenwiderstand des Transistors ab. In der Regel liegt die Sättigung zwischen 0,2 und 0,4 V, abhängig vom Kollektorstrom und der Größe des Geräts. Diese Abweichungen vom Ideal sind bei einem Gerät mit richtiger Größe im Allgemeinen geringfügig, so dass wir bei der Analyse oder Konstruktion eines BJT-Schaltkreises nahezu ideale Bedingungen annehmen können.
 
-.. figure:: img/ Activity_24_Fig_2.png
+.. figure:: img/ Activity_24_Fig_02.png
 
 Abbildung 2: NPN-LED-Schalter
 
@@ -79,7 +79,7 @@ _________
 
 1. Erstellen Sie die Schaltung aus Abbildung 2 auf dem Steckbrett. Set :math:`R_B` = 1kΩ, :math:`R_C` = 100Ω
 
-.. figure:: img/ Activity_24_Fig_3.png
+.. figure:: img/ Activity_24_Fig_03.png
 
 Abbildung 3: NPN LED-Schalter auf dem Steckbrett
 
@@ -92,7 +92,7 @@ Abbildung 3: NPN LED-Schalter auf dem Steckbrett
 6. Stellen Sie unter IN2-Menüeinstellungen Sonde auf x10 und vertikalen Offset auf 0 ein.
 7. Setzen Sie unter IN1 den vertikalen Offset auf 0.
 
-.. figure:: img/ Activity_24_Fig_4.png
+.. figure:: img/ Activity_24_Fig_04.png
 
 Abbildung 4: NPN als Schalter Messungen
 

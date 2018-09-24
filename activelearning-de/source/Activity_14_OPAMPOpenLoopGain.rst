@@ -53,7 +53,7 @@ Präzisionsverstärker kann diese Verstärkung sehr hoch sein, in der Größenor
 (100 Millionen) oder mehr. Die offene Schleifenverstärkung des OP27_-Verstärkers ist
 rund 1,8 Millionen.
 
-.. figure:: img/ Activity_14_Fig_1.png
+.. figure:: img/ Activity_14_Fig_01.png
 
    Abbildung 1: OP27 Datenblatt und Open Loop Gain Wert markiert
 
@@ -158,7 +158,7 @@ In unserem Fall ist R3 = 97.3k :math:`\ Omega` und R2 = 99.7 :math:`\ Omega`
    Kurzschlussfall.
 
 
-.. figure:: img/ Activity_14_Fig_2.png
+.. figure:: img/ Activity_14_Fig_02.png
 
    Abbildung 2: Spannungsversorgung und Testschaltung
 
@@ -186,7 +186,7 @@ Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 
 ** Verbinden Sie OUT1 mit IN1 und stellen Sie die Tastkopfdämpfungen auf x1 ein. **
 
-.. figure:: img/ Activity_14_Fig_3.png
+.. figure:: img/ Activity_14_Fig_03.png
 
    Abbildung 3: Testschaltung. R5 auf POS1 (siehe Abbildung 2)
 
@@ -204,7 +204,7 @@ Erstellen Sie eine Schaltung im Steckbrett und setzen Sie R5 auf POS1.
 5. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.2mV **
 
 
-   .. figure:: img/ Activity_14_Fig_4.png
+   .. figure:: img/ Activity_14_Fig_04.png
 
    Abbildung 4: Messungen von :math:`V_ {out}` wenn R5 auf POS1 gesetzt wird (siehe Abbildung 2)
 
@@ -214,7 +214,7 @@ Schritt 2: S ist auf POS2 (Abbildung 2)
 
 Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
-.. figure:: img/ Activity_14_Fig_5.png
+.. figure:: img/ Activity_14_Fig_05.png
 
    Abbildung 5: Testschaltung. R5 auf POS2 (siehe Abbildung 2)
 
@@ -227,7 +227,7 @@ Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
 3. ** Anzeige MEAN (IN2): In unserem Fall ist es -34.8mV **
 
-   .. figure:: img/ Activity_14_Fig_6.png
+   .. figure:: img/ Activity_14_Fig_06.png
 
    Abbildung 6: Messungen von :math:`V_ {out}` wenn R5 auf POS2 gesetzt ist (siehe Abbildung 2)
 

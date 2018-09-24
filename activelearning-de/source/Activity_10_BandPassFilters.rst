@@ -58,7 +58,7 @@ Alle Signalfrequenzen :math:`f` unterhalb :math:`f_L` und oberhalb
 :math:`f_H` werden gedämpft und die Frequenzen dazwischen werden vom Filter durchgelassen. 
       
 .. _10_fig_01:
-.. figure:: img/Activity_10_Fig_1.png
+.. figure:: img/Activity_10_Fig_01.png
 
    Bandpass-Filterschaltung 
 
@@ -69,7 +69,7 @@ Frequenzgang
 Um zu zeigen, wie eine Schaltung auf einen Frequenzbereich reagiert, kann ein Diagramm der Größe ("Amplitude") der Ausgangsspannung des Filters in Abhängigkeit von der Frequenz erstellt werden. Es wird im Allgemeinen verwendet, um den Frequenzbereich zu charakterisieren, in dem der Filter für den Betrieb im Duchlass ausgelegt ist. Abbildung 2 zeigt einen typischen Frequenzgang eines Bandpassfilters.
 
 .. _10_fig_02:
-.. figure:: img/Activity_10_Fig_2.png
+.. figure:: img/Activity_10_Fig_02.png
 
    Bandpassfilter Frequenzgang
 
@@ -94,7 +94,7 @@ Vorgehensweise
    0,047 µF, L1 =22 mH auf.
 
    .. _10_fig_03:
-   .. figure:: img/Activity_10_Fig_3.png
+   .. figure:: img/Activity_10_Fig_03.png
 
 	       Bandpassfilter auf lötfreier Leiterplatte
 
@@ -120,7 +120,7 @@ Vorgehensweise
 
 
 .. _10_fig_04:  
-.. figure:: img/Activity_10_Fig_4.png
+.. figure:: img/Activity_10_Fig_04.png
 
 	       Bandpassfilter **gemessen** Frequenzgang
 
