@@ -4,14 +4,13 @@ OPAMP Verstärkungsbandbreite Produkt :math:`GBW`
 Zielsetzung
 ___________
 
-Das Ziel dieser Aktivität ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst.
-Der Parameter ist das ** Verstärkungs-Bandbreite-Produkt ** ( :math:`GBW`) oder die Verstärkungsbandbreite 1.
+Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst. Der Parameter ist der **Verstärkungsbandbreitenprodukt** (:mazh:`GBW`) oder die Verstärkungsbandbreite der Einheit.
 
 Anmerkungen
 ___________
 
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+.. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+.. _hier: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Oszilloskop: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
 .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -22,20 +21,18 @@ ___________
 .. _voltage: https://en.wikipedia.org/wiki/Voltage_divider
 .. _divider: https://en.wikipedia.org/wiki/Voltage_divider
 
+In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Erweiterungsstecker-Pins für die Spannungsversorgung -3,3V und +3,3V sind in der Dokumentation hier_ zu entnehmen. Die Anwendung des Bode_ - Analysators wird verwendet, um den Frequenzgang der Operationsverstärker-Schaltung zu messen.
 
-In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya STEMlab-Board-Hardware beziehen.
-Die für die Spannungsversorgung ** - 3.3V ** und ** + 3.3V ** verwendeten Steckerstifte sind in der Dokumentation hier aufgeführt.
-Die Bode_Analyzer-Anwendung wird verwendet, um den Frequenzgang der Operationsverstärkerschaltung zu messen.
 
 Materialien
 ___________
 
 - Rotes Pitaya STEMlab
 - OPAMP: 1x OP97
-- Widerstand: 2x 100 :math:`\ Omega`
-- Widerstand: 1x 47 :math:`k \ Omega`
-- Widerstand: 1x 100 :math:`k \ Omega`
-- Widerstand: 2x 10 :math:`k \ Omega`
+- Widerstand: 2x 100 :math:`\Omega`
+- Widerstand: 1x 47 :math:`k\Omega`
+- Widerstand: 1x 100 :math:`k\Omega`
+- Widerstand: 2x 10 :math:`k\Omega`
 
 Hintergrund
 ___________
