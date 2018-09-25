@@ -12,38 +12,37 @@ untersuchen. Bevor dieses Experiment durchgeführt wird, wird ein
 
 
 
-Anmerkungen
------------
-
-.. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
-.. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
-.. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
-.. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
-.. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
-.. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
-.. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-.. _Jupyter: http://jupyter.org/index.html
-.. _Notebook: http://jupyter.org/index.html
-.. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
-.. _ZVP211: https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf
-.. _empfohlen: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html
-
-
-In diesen Tutorials verwenden wir die Terminologie aus dem
-Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
-STEMlab-Board-Hardware beziehen.
-
-Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
-Beobachten von Signalen auf der Schaltung verwendet.
-
-Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
-verwendeten Steckerstifte sind in der Dokumentation hier
-aufgeführt.
-
-
 .. note::
+   
+   .. _hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
+   .. _Oscilloscope: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+   .. _Signal: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+   .. _generator: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
+   .. _here: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
+   .. _simple: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+   .. _rectifier: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity20_DiodeRectifiers.html
+   .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
+   .. _inverting: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
+   .. _Jupyter: http://jupyter.org/index.html
+   .. _Notebook: http://jupyter.org/index.html
+   .. _ZVN211: http://www.redrok.com/MOSFET_ZVN2110A_100V_320mA_4O_Vth2.4_TO-92_ELine.pdf
+   .. _ZVP211: https://www.diodes.com/assets/Datenblätter/ZVP2110A.pdf
+   .. _empfohlen: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity22_TheBJTasDiode.html
+
+
+   In diesen Tutorials verwenden wir die Terminologie aus dem
+   Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
+   STEMlab-Board-Hardware beziehen.
+
+   Oscilloscope_ & Signal_generator_Anwendung wird zum Erzeugen und
+   Beobachten von Signalen auf der Schaltung verwendet.
+
+   Die für die Spannungsversorgung **+5V**, **-3.3V** und **+3.3V**
+   verwendeten Steckerstifte sind in der Dokumentation hier
+   aufgeführt.
+
+
+.. hint::
    Red Pitaya STEMlab-Ausgänge können Spannungssignale mit einem
    maximalen Ausgangsbereich von +/- 1V (2Vpp) erzeugen. Für dieses
    Experiment sind die höheren Signalamplituden erforderlich. Aus
@@ -56,19 +55,19 @@ aufgeführt.
    :math:`R_i = 2.2k \Omega` und :math:`R_f = 10k \ Omega`
 
    
-   Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-   oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
+Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
+oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
    
 
 Materialien
 -----------
 
-- Rotes Pitaya STEMlab
-- 1x OP484_ Quad-Rail-Rail-Operationsverstärker
-- 1x 1kΩ Widerstand
-- 1x Kleinsignal-NMOS-Transistor (ZVN211_)
-- 1x Kleinsignal-PMOS-Transistor (ZVP211_)
-- 1x lötfreies Steckbrett
+- Red Pitaya STEMlab
+- OP484_ Quad-Rail-Rail-Operationsverstärker
+- 1kΩ Widerstand
+- Kleinsignal-NMOS-Transistor (ZVN211_)
+- Kleinsignal-PMOS-Transistor (ZVP211_)
+- lötfreies Steckbrett
 
   
 NMOS als Diode
@@ -94,15 +93,20 @@ auf dem Pegel der Schwellenspannung :math:`V_ {TH}`.
 
 
 .. figure:: img/Activity_23_Fig_01.png
+   :name: 23_fig_01
 
-   Abbildung 1: ZVN211_ Spezifikationen
+   ZVN211_ Spezifikationen
 
-Auf dem Steckbrett die Schaltung aus Abbildung 2 aufbauen und mit den Messungen fortfahren.
+Auf dem Steckbrett die Schaltung aus Abbildung 2 aufbauen und mit den
+Messungen fortfahren.
+
 
 
 .. figure:: img/Activity_23_Fig_02.png
+   :name: 23_fig_02
+   :align: center
 
-   Abbildung 2: Anschlussdiagramm der NMOS-Diode
+   Anschlussdiagramm der NMOS-Diode
 
 
 Verfahren
@@ -113,17 +117,19 @@ Verfahren
    M1 nehmen Sie ZVN211.
    
 
-.. figure:: img/Activity_22_Fig_03.png
+   .. figure:: img/Activity_23_Fig_03.png
+      :name: 23_fig_03
+      :align: center
 
-   Abbildung 3: NMOS-Diodenverbindung auf dem Steckbrett
+      NMOS-Diodenverbindung auf dem Steckbrett
 
    
-.. warning::
-   Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
-   anschließen, überprüfen Sie Ihren Stromkreis. Die
-   Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
-   Kurzschluss und können im Falle eines Kurzschlusses beschädigt
-   werden.
+   .. warning::
+      Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
+      anschließen, überprüfen Sie Ihren Stromkreis. Die
+      Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
+      Kurzschluss und können im Falle eines Kurzschlusses beschädigt
+      werden.
    
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
@@ -156,9 +162,11 @@ Verfahren
 
 
 
-.. figure:: img/Activity_23_Fig_04.png
+   .. figure:: img/Activity_23_Fig_04.png
+      :name: 23_fig_04
+      :align: center
 
-   Abbildung 4: NMOS-Diodenanschluss-Messungen
+      NMOS-Diodenanschluss-Messungen
 
    
 VI-Kurvenmessungen
@@ -190,9 +198,11 @@ Projekt erstellt, zeigt das Flussdiagramm in Abbildung 5.
    
 
 
-.. figure:: img/Activity_19_Fig_07.png
+.. figure:: img/Activity_23_Fig_05.png
+   :name: 23_fig_05
+   :align: center
 
-   Abbildung 5: Erstellen eines neuen Jupyter-Notebooks
+   Erstellen eines neuen Jupyter-Notebooks
 
 
 Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
@@ -201,106 +211,24 @@ kopieren Sie den Code und fügen Sie ihn ein.
 Der Code unten erzeugt das gleiche Signal wie in Abbildung 4, aber es
 wird sie im XY-Diagramm darstellen.
 
-<<<<<<< HEAD
 Zum Messen VI-Kurve wird ein "XY"-Plot benötigt, wobei die
 x-Achse die Diodenspannung darstellt
 :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
-=======
-Zum Messen :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei die
-x-Achse die Diodenspannung darstellt
 
- :math:`IN_2` und y-Achse ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
->>>>>>> 0ec086d13669d0e22791877a71d64de73b4932b8
+**Kopieren Sie den Code von unten in die Zelle 1**
 
-
-.. note:: Kopieren Sie den Code von unten in die Zelle 1
-
-.. code-block:: python
-
-   # Import libraries 
-   from redpitaya.overlay.mercury import mercury as overlay
-
-   from bokeh.io import push_notebook, show, output_notebook
-   from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
-   from bokeh.plotting import figure, output_file, show
-   from bokeh.resources import INLINE 
-   output_notebook(resources=INLINE)
-
-   import numpy as np
+.. literalinclude:: code/Activity_23_Code_01.py
+   :language: python
+   :linenos:
       
-   # Initialize fpga modules
-   fpga = overlay()
-   gen0 = fpga.gen(0)
-   osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
-      
-   # Configure OUT1 generator channel 
-   gen0.amplitude = 0.45
-   gen0.offset = -0.45
-   gen0.waveform = gen0.sawtooth(0.5)
-   gen0.frequency = 2000
-   gen0.start()
-   gen0.enable = True
-   gen0.trigger()
     
-   # R1 resistor value
-   R3 = 1000
-
-   # Configure IN1 and IN2 oscilloscope input channels
-   for ch in osc:
-       ch.filter_bypass = True
-       # data rate decimation 
-       ch.decimation = 10
-       # trigger timing [sample periods]
-       N = ch.buffer_size
-       ch.trigger_pre = 0
-       ch.trigger_post = N
-       # osc0 is controlling both channels
-       ch.sync_src = fpga.sync_src["osc0"]
-       ch.trig_src = fpga.trig_src["osc0"]
-       # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
-       ch.level = 0.01
-       ch.edge = 'pos'
-       ch.holdoff = 0
-       
-   # Initialize diode current and voltage
-   V = I = np.zeros(N)
-
-   # Plotting
-   hover = HoverTool(mode = 'vline', tooltips=[("V", "@x"), ("I", "@y")])
-   tools = "wheel_zoom, box_zoom, reset,pan" 
-   p = figure(plot_height=500,
-	      plot_width=900,
-	      title="XY plot of NMOS transistor VI characteristic",
-	      toolbar_location="right",
-	      tools=(tools, hover))
-   p.xaxis.axis_label = 'Voltage [V]'
-   p.yaxis.axis_label = 'Current [mA]'
-   r = p.line(V,I, line_width=1, line_alpha=0.7, color ="blue")
-   # get and explicit handle to update the next show cell 
-   target = show(p, notebook_handle=True)
-
- 
 Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere
 Code von unten hinein.
  
 
-.. code-block:: python
-
-   # Measuring I, V and re-plotting
-   while True:
-       # reset and start
-       osc[0].reset()
-       osc[0].start()
-       
-       # wait for data
-       while (osc[0].status_run()): pass
-       V0 = osc[0].data(N-100)*10  # IN1 signal
-       V1 = osc[1].data(N-100)*10  # IN2 signal
-       I = ((V0-V1)/R3)*1E3        # 1E3 convert to mA
-       r.data_source.data['x'] = V0
-       r.data_source.data['y'] = I
-       push_notebook(handle=target)
-
+.. literalinclude:: code/Activity_23_Code_02.py
+   :language: python
+   :linenos:
 
 	  
 Führen Sie Zelle 1 und Zelle 2 aus. notezelle 2 ist eine
@@ -312,9 +240,11 @@ Nach dem Ausführen des obigen Codes sollten Sie die Diode
 VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
 
-.. figure:: img/ Activity_23_Fig_05.png
+.. figure:: img/Activity_23_Fig_06.png
+   :name: 23_fig_06
+   :align: center
 
-   Abbildung 6: NMOS VI-Kennlinie gemessen mit Jupyter Notebook
+   NMOS VI-Kennlinie gemessen mit Jupyter Notebook
 
    
    
@@ -328,9 +258,11 @@ Konfiguration der PMOS-Diode ist in Abbildung 7 dargestellt.
 
 
 
-.. figure:: img/ Activity_23_Fig_06.png
+.. figure:: img/Activity_23_Fig_07.png
+   :name: 23_fig_07
+   :align: center
 
-   Abbildung 7: Anschlussdiagramm der PMOS-Diode
+   Anschlussdiagramm der PMOS-Diode
 
    
 
@@ -341,12 +273,12 @@ Verfahren
    Steckbrett. Stellen Sie R1 = 2.2kΩ, R2 = 10kΩ und R3 = 1kΩ ein. Für
    M1 nimm ZVP211.
 
-.. warning::
-   Bevor Sie den Stromkreis an die STEMlab :math:`-3.3\,\text{V}` und
-   :math:`+3.3\,\text{V}` Anschlüsse anschließen, überprüfen Sie Ihren
-   Stromkreis. Die Spannungsversorgungsstifte -3,3 V und +3,3 V haben
-   keinen Kurzschluss und können im Falle eines Kurzschlusses
-   beschädigt werden.
+   .. warning::
+      Bevor Sie den Stromkreis an die STEMlab :math:`-3.3\,\text{V}` und
+      :math:`+3.3\,\text{V}` Anschlüsse anschließen, überprüfen Sie Ihren
+      Stromkreis. Die Spannungsversorgungsstifte -3,3 V und +3,3 V haben
+      keinen Kurzschluss und können im Falle eines Kurzschlusses
+      beschädigt werden.
    
 
 2. Starten Sie die Anwendung Oszilloskop & Signalgenerator
@@ -378,9 +310,11 @@ Verfahren
 9. Stellen Sie unter TRIGER-Einstellungen den Triggerpegel auf 1V ein
 
 
-.. figure:: img/ Activity_23_Fig_07.png
+.. figure:: img/Activity_23_Fig_08.png
+   :name: 23_fig_08
+   :align: center
 
-   Abbildung 8: PMOS-Diodenanschlussmessungen
+   PMOS-Diodenanschlussmessungen
 
    
 Wie in Abbildung 8 zu sehen, verhält sich der PMOS in der

@@ -49,24 +49,21 @@ untersuchen, der als Diode geschaltet ist.
    und :math:`R_f = 10k \ Omega`
    
    Versuchen Sie zu beantworten, warum wir ein OP484 anstelle von OP27
-   oder OP97 verwendet haben. (note "Schiene-zu-Schiene").
+   oder OP97 verwendet haben. (Hinweis: *Rail-to-Rail*).
    
-
-Der Diode Verbunden NPN-Transistor
-----------------------------------
 
 Materialien
 -----------
 
-- Rotes Pitaya STEMlab
-- 1x OP484_ Quad-Rail-Rail-Operationsverstärker
-- 1x 1kΩ Widerstand
-- 1x 10kΩ Widerstand
-- 1x 2,2 kΩ Widerstand
-- 1x kleinsignal NPN-Transistor (2N3904)
-- 1x kleinsignal PNP-Transistor (2N3906)
-- 1x lötfreies Steckbrett
-- 1x 9V Batterie
+- Red Pitaya STEMlab
+- OP484_ Quad-Rail-Rail-Operationsverstärker
+- 1kΩ Widerstand
+- 10kΩ Widerstand
+- 2,2 kΩ Widerstand
+- kleinsignal NPN-Transistor (2N3904)
+- kleinsignal PNP-Transistor (2N3906)
+- lötfreies Steckbrett
+- 9V Batterie
 
 Ein NPN-Transistor, der wie in 1 gezeigt angeschlossen ist, verhält
 sich wie eine reguläre Diode. Wir können dies durch Messen der
@@ -75,8 +72,10 @@ Signalgenerator-Anwendung zeigen.
 
 
 .. figure:: img/Activity_22_Fig_01.png
+   :name: 22_fig_01
+   :align: center
 
-   Abbildung 1: NPN als Diodenanschlussdiagramm
+   NPN als Diodenanschlussdiagramm
    
 
 .. note::
@@ -85,7 +84,8 @@ Signalgenerator-Anwendung zeigen.
    ist. Diese Schaltung wird nur hinzugefügt, um das Signal OUT1 zu
    verstärken.
    
-   Von hier aus können Sie Punkt:math:`-5xV_ {OUT1}` als Haupterregungssignal betrachten.
+   Von hier aus können Sie Punkt :math:`-5 \times V_{OUT1}` als
+   Haupterregungssignal betrachten. 
 
 
 Verfahren
@@ -96,11 +96,13 @@ Verfahren
    
 
 .. figure:: img/Activity_22_Fig_02.png
+   :name: 22_fig_02
+   :align: center
 
-   Abbildung 2: NPN als Diodenverbindung auf dem Steckbrett
+   npn-Transistor als Diodenverbindung auf dem Steckbrett
    
 
-.. hint::
+.. note::
    Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
    anschließen, überprüfen Sie Ihren Stromkreis. Die
    Spannungsversorgungsstifte -3,3 V und + 3,3 V haben keinen
@@ -132,14 +134,17 @@ Verfahren
    
 
 .. figure:: img/Activity_22_Fig_03.png
+   :name: 22_fig_03
+   :align: center
 
-   Abbildung 3: NPN als Diodenmessungen
+   npn-Transistor als Diodenmessungen
 
    
 .. _previous: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity19_Diodes.html#procedure-time-domain-measurements
 
-Aus Fig. 3 können wir sehen, dass der NPN BJT-Transistor in der in
-Fig. 1 gezeigten Konfiguration sich wie eine Diode verhält.
+Aus :numref:`22_fig_03` können wir sehen, dass der NPN BJT-Transistor
+in der in :numref:`22_fig_01` gezeigten Konfiguration sich wie eine
+Diode verhält.
 
 Vergleichen Sie die Ergebnisse mit den Diodenmessungen von previous_
 experiment.
@@ -148,12 +153,11 @@ experiment.
 VI-Kurvenmessungen
 ------------------
 
-Da sich BJT wie eine Diode verhalten kann (Konfiguration in Abbildung
-1), können wir die VI-Charakteristik wie bei Diodenmessungen messen.
-
-Für diese Aufgabe verwenden wir die Jupyter Notebook
-Web-Anwendung. Wie man Jupyter Notebook startet und ein neues Projekt
-erstellt, ist in Abbildung 4 dargestellt.
+Da sich BJT wie eine Diode verhalten kann (vgl. Konfiguration in
+:numref:`22_fig_01`), können wir die VI-Charakteristik wie bei
+Diodenmessungen messen. Für diese Aufgabe verwenden wir die Jupyter
+Notebook Web-Anwendung. Wie man Jupyter Notebook startet und ein neues
+Projekt erstellt, ist in :numref:`22_fig_04` dargestellt.
 
 
 .. note::
@@ -173,9 +177,11 @@ erstellt, ist in Abbildung 4 dargestellt.
    dies ein perfektes Werkzeug für Tutorials, Beispiele und ect.
    
 
-.. figure:: img/Activity_19_Fig_07.png
+.. figure:: img/Activity_22_Fig_04.png
+   :name: 22_fig_04
+   :align: center
 
-   Abbildung 4: Erstellen eines neuen Jupyter-Notebooks
+   Erstellen eines neuen Jupyter-Notebooks
 
    
 Wenn Sie erfolgreich ein neues Jupyter-Notizbuch erstellt haben,
@@ -188,96 +194,22 @@ Zum Messen :math:`VI` -Kurve wird ein "XY"-Plot benötigt, wobei
 die x-Achse die Diodenspannung darstellt :math:`IN_2` und y-Achse
 ein Diodenstrom :math:`(IN_1 - IN_2) / R_3`.
 
-.. note:: Kopieren Sie den Code von unten in die Zelle 1
+
+**Kopieren Sie den Code von unten in die Zelle 1**
 
 	  
-.. code-block:: python
-
-   # Import libraries
-   from redpitaya.overlay.mercury import mercury as overlay
-
-   from bokeh.io import push_notebook, show, output_notebook
-   from bokeh.models import HoverTool, Range1d, LinearAxis, LabelSet, Label
-   from bokeh.plotting import figure, output_file, show
-   from bokeh.resources import INLINE
-   output_notebook(resources=INLINE)
-
-   import numpy as np
-
-   # Initialize fpga modules
-   fpga = overlay()
-   gen0 = fpga.gen(0)
-   osc = [fpga.osc(ch, 1.0) for ch in range(fpga.MNO)]
-
-   # Configure OUT1 generator channel
-   gen0.amplitude = 0.8
-   gen0.offset = -0.12
-   gen0.waveform = gen0.sawtooth(0.5)
-   gen0.frequency = 2000
-   gen0.start()
-   gen0.enable = True
-   gen0.trigger()
-
-   # R1 resistor value
-   R1 = 1000
-
-   # Configure IN1 and IN2 oscilloscope input channels
-   for ch in osc:
-       ch.filter_bypass = True
-       # data rate decimation
-       ch.decimation = 10
-       # trigger timing [sample periods]
-       N = ch.buffer_size
-       ch.trigger_pre = 0
-       ch.trigger_post = N
-       # osc0 is controlling both channels
-       ch.sync_src = fpga.sync_src["osc0"]
-       ch.trig_src = fpga.trig_src["osc0"]
-       # trigger level [V], edge ['neg', 'pos'] and holdoff time [sample periods]
-       ch.level = 0.01
-       ch.edg = 'pos'
-       ch.holdoff = 0
+.. literalinclude:: code/Activity_22_Code_01.py
+   :language: python
+   :linenos:
 
 
-   # Initialize diode current and voltage
-   V = I = np.zeros(N)
-
-
-   # Plotting
-   hover = HoverTool(mode='vline', tooltips=[("V", "@x"), ("I", "@y")])
-   tools = "wheel_zoom, box_zoom, reset,pan"
-   p = figure(plot_height=500,
-              plot_width=900,
-              title="XY plot of transistor VI characteristic",
-              toolbar_location="right",
-              tools=(tools, hover))
-   p.xaxis.axis_label = 'Voltage [V]'
-   p.yaxis.axis_label = 'Current [mA]'
-   r = p.line(V, I, line_width=1, line_alpha=0.7, color="blue")
-   # get and explicit handle to update the next show cell
-   target = show(p, notebook_handle=True)
-
-
-Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code von unten hinein.
-
+Erstelle eine neue Zelle (Einfügen -> Zelle darunter) und kopiere Code
+von unten hinein.
 
  
-.. code-block:: python
-
-   # Measuring I, V  and re-plotting
-   while True:
-       # reset and start
-       osc[0].reset()
-       osc[0].start()
-       # wait for data
-       while (osc[0].status_run()):
-           pass
-       V0 = osc[0].data(N-100)*10  # IN1 signal
-       V1 = osc[1].data(N-100)*10  # IN2 signal
-       I = ((V0-V1)/R1)*1E3        # 1E3 convert to mA
-       r.data_source.data['x'] = V0
-       r.data_source.data['y'] = I
-       push_notebook(handle=target)
+.. literalinclude:: code/Activity_22_Code_02.py
+   :language: python
+   :linenos:
 
 
 
@@ -292,11 +224,13 @@ VI-Charakteristik erhalten, wie in Abbildung 5 gezeigt.
 
 
 .. figure:: img/Activity_22_Fig_05.png
+   :name: 22_fig_05
+   :align: center
 
-   Abbildung 5: BJT VI-Charakteristik gemessen mit Jupyter Notebook
+   BJT VI-Charakteristik gemessen mit Jupyter Notebook
    
 
-In 5 ist die BJT VI-Charakteristik, gemessen in einer
+In :numref:`22_fig_05` ist die BJT VI-Charakteristik, gemessen in einer
 Diodenkonfiguration, gezeigt. Vergleichen Sie diese Ergebnisse mit der
 Charakteristik der Diode VI.
 
@@ -333,18 +267,24 @@ wir Q1 um den Betrag polarisieren:
 .. math::
    V_ {E-BC} = V_E - V_ {BC} = 0 - (-3,3 V) = 3,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}
 
-Mit der Batterie können wir die umgekehrte Polarisation um den maximalen Betrag erreichen
+Mit der Batterie können wir die umgekehrte Polarisation um den
+maximalen Betrag erreichen
 
 .. math::
-   V_ {E-BC} = V_E - V_ {BC} = 9 - (-3,3 V) = 12,3 V \quad \text{von} \quad \text{umgekehrte Polarisation}
+   :label: 22_eq_
+	   
+   V_ {E-BC} &= V_E - V_ {BC} = 9 - (-3,3 V) = 12.3 V 
 
 
 Wobei :math:`V_ {BC}` der maximale negative Swing unseres
 Anregungsspannungssignals ist :math:`V_ {OUT}`.
 
-.. figure:: img/Activity_22_Fig_06.png
 
-   Abbildung 6: NPN-Emitter Base Reverse-Durchbruchkonfiguration
+.. figure:: img/Activity_22_Fig_06.png
+   :name: 22_fig_06
+   :align: center
+
+   npn-Emitter Base Reverse-Durchbruchkonfiguration
 
 
 Verfahren
@@ -354,10 +294,11 @@ Baue die Schaltung aus der Abbildung 6 auf dem Steckbrett und fahre
 mit den Messungen fort.
 
 
-
 .. figure:: img/Activity_22_Fig_07.png
+   :name: 22_fig_07
+   :align: center
 
-   Abbildung 7: NPN-Emitter Base Reverse-Durchbruchkonfiguration auf dem Steckbrett
+   npn-Emitter Base Reverse-Durchbruchkonfiguration auf dem Steckbrett
 
    
 Für diese Aufgabe verwenden wir die Jupyter Notebook
@@ -369,26 +310,17 @@ ein kleines Update des Codes benötigt.
 
 
 .. note::
-   Sie sollten Jupyter Notebook anhalten, indem Sie das Symbol ** Stop
-   ** in der Menüleiste auswählen.
    
-   Nach diesem Update ** Zelle 2 ** wie unten gezeigt:
-    
-.. code-block:: python
+   Sie sollten Jupyter Notebook anhalten, indem Sie das Symbol
+   **Stop** in der Menüleiste auswählen.
 
-   # Measuring I , V  and re-plotting
-   while True:
-     # reset and start
-     osc[0].reset()
-     osc[0].start()
-     # wait for data
-     while (osc[0].status_run()): pass
-     V0 = osc[0].data(N-100)*10 - 9 # IN1 signal
-     V1 = osc[1].data(N-100)*10 - 9 # IN2 signal
-     I = ((V0-V1)/R1)*1E3        # 1E3 convert to mA
-     r.data_source.data['x'] = V0
-     r.data_source.data['y'] = I
-     push_notebook(handle=target)
+
+
+Nach diesem Update **Zelle 2** wie unten gezeigt:
+    
+.. literalinclude:: code/Activity_22_Code_02.py
+   :language: python
+   :linenos:
 
 
 Wie Sie aus dem obigen Code sehen können **haben wir nur "-9"**
@@ -409,18 +341,21 @@ haben, sollten Sie ähnliche Ergebnisse wie in Abbildung 8 erhalten.
 
 
 .. figure:: img/Activity_22_Fig_08.png
+   :name: 22_fig_08
+   :align: center
 
-   Abbildung 8: Messung der NPN-Emitter-Basis-Durchbruchspannung
+   Messung der NPN-Emitter-Basis-Durchbruchspannung
    
 
-Aus Fig. 8 können wir sehen, dass die umgekehrte Durchbruchspannung
-des NPN BJT 2N3904-Transistors etwa 10 V beträgt.
+Aus :numref:`22_fig_08` können wir sehen, dass die umgekehrte
+Durchbruchspannung des NPN BJT 2N3904-Transistors etwa 10 V beträgt.
 
 
-Fragen
+Frage
 ------
-1. Trennen Sie den Kollektor von Q1 und lassen Sie ihn offen. Wie
-   ändert sich die Durchbruchspannung?
+
+Trennen Sie den Kollektor von Q1 und lassen Sie ihn offen. Wie
+ändert sich die Durchbruchspannung?
    
 
 
@@ -436,20 +371,27 @@ zu 0,7 V für die einfache Diodenverbindung im ersten Beispiel.
 
 
 .. figure:: img/Activity_22_Fig_09.png
+   :name: 22_fig_09
+   :align: center
 
-   Abbildung 9: Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
+   Konfiguration zur Reduzierung des effektiven Durchlassspannungsabfalls der Diode
 
 
 Verfahren
 ---------
+
 1. Erstellen Sie die Schaltung aus Abbildung 9 auf dem
    Steckbrett. Setze R3 = 1kΩ, R4 = 100kΩ und verwende für Q1 2N3904
    NPN und für Q2 2N3904 PNP-Transistor.
    
 
 .. figure:: img/Activity_22_Fig_10.png
+   :name: 22_fig_10
+   :align: center
 
-   Abbildung 10: Konfiguration zur Verringerung des effektiven Durchlassspannungsabfalls der Diode auf dem Steckbrett
+   Konfiguration zur Verringerung des effektiven
+   Durchlassspannungsabfalls der Diode auf dem Steckbrett
+   
 
 .. warning::
    Bevor Sie den Stromkreis an die STEMlab -3.3V und + 3.3V Anschlüsse
@@ -485,12 +427,14 @@ Verfahren
    
 
 .. figure:: img/Activity_22_Fig_11.png
+   :name: 22_fig_11
+   :align: center
 
-   Abbildung 11: Geringerer effektiver Vorwärtsspannungsabfall von Diodenmessungen
+   Geringerer effektiver Vorwärtsspannungsabfall von Diodenmessungen
 
    
 .. warning::
-   Wie Sie der Abbildung 11 entnehmen können, beträgt der
+   Wie sie :numref:`22_fig_11` entnehmen können, beträgt der
    Vorwärtsspannungsabfall etwa 100 mV. Sie können auch feststellen,
    dass Q2 nicht notwendig ist, um die Drop-Down-Spannung des Q1 zu
    senken.
