@@ -79,14 +79,7 @@ Als nächstes verbinden Sie die +5 V Versorgungs- und GND-Anschlüsse von der ST
 Erster Schritt: Unity-Gain Amplifier (Spannungsfolger)
 ------------------------------------------------------
 
-Unsere erste Operationsverstärkerschaltung ist eine einfache, in
-Abbildung 3 gezeigte Schaltung. Dies wird als Puffer mit
-Einheitsverstärkung oder manchmal nur als Spannungsfolger bezeichnet,
-der durch die Übertragungsfunktion definiert ist :math:`V_ {out} = V_
-{in}` . Auf den ersten Blick mag es wie ein nutzloses Gerät
-erscheinen, aber wie wir später zeigen werden, findet es wegen seines
-hohen ** Eingangswiderstands ** und ** niedrigen Ausgangswiderstands
-** Anwendung.
+Unsere erste Operationsverstärkerschaltung ist eine einfache, in :numref:`13_fig_03` gezeigte Schaltung. Dies wird als Unity-Gain-Puffer oder manchmal nur als Spannungsfolger bezeichnet, der durch die Übertragungsfunktion definiert ist :math:`V_ {out} = V_{in}`. Auf den ersten Blick mag es wie ein nutzloses Gerät erscheinen, aber wie wir später zeigen werden, findet es wegen seines hohen **Eingangswiderstands** und **niedrigen Ausgangswiderstands** Verwendung.
 
 .. _13_fig_03:
 .. figure:: img/ Activity_13_Fig_03.png
@@ -94,32 +87,23 @@ hohen ** Eingangswiderstands ** und ** niedrigen Ausgangswiderstands
 	    Unity Gain Follower(Spannungsfolger)
 
    
-Verwenden Sie das Steckbrett und die STEMlab-Netzteile und
-konstruieren Sie die in Abbildung 3 gezeigte Schaltung. Beachten Sie,
-dass die Stromanschlüsse hier nicht explizit dargestellt wurden. Es
-wird angenommen, dass diese Verbindungen in jeder realen Schaltung
-hergestellt werden müssen (wie im vorherigen Schritt), so dass es
-unnötig ist, sie von nun an im Schaltplan zu zeigen. Verwenden Sie
-Jumper-Drähte, um Eingang und Ausgang mit dem Ausgang des
-Wellenformgenerators, OUT1 und den Oszilloskopeingängen IN1 und IN2 zu
-verbinden.
+Bauen Sie mit Ihrer Steckplatine und den STEMlab-Netzteilen die in :numref:`13_fig_03` dargestellte Schaltung auf. Beachten Sie, dass die Leistungsanschlüsse hier nicht explizit dargestellt wurden; es wird davon ausgegangen, dass diese Verbindungen in einer realen Schaltung hergestellt werden müssen (wie im vorherigen Schritt), so dass es nicht notwendig ist, sie von nun an im Schaltplan darzustellen. Verwenden Sie Überbrückungskabel, um Eingang und Ausgang mit dem Wellenform-Generatorausgang, OUT1 und den Oszilloskopeingängen IN1 und IN2 zu verbinden.
 
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+1. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
 2. Stellen Sie im Einstellungsmenü OUT1 den DC-Offset-Wert auf 0,5 und
-   den Amplitudenwert auf 0,45 V ein, um eine 1Vp-p-Sinuswelle mit der
+   den Amplitudenwert auf 0,5 V ein, um eine 1Vp-p-Sinuswelle mit der
    Mitte von 0,5 V als Eingangsspannung an den Schaltkreis
    anzulegen. Wählen Sie im Wellenformmenü SINE
    
-   Deaktivieren Sie die SHOW-Taste und wählen Sie enable. Stellen Sie
-   sicher, dass IN1 V / div und IN2 V / div am linken unteren
-   Bildschirmrand auf 200mV / div eingestellt sind (Sie können V / div
+   Deaktivieren Sie die SHOW-Taste und wählen Sie Enable. Stellen Sie
+   sicher, dass IN1 V/div und IN2 V/div am linken unteren
+   Bildschirmrand auf 200mV/div eingestellt sind (Sie können V/div
    einstellen, indem Sie den gewünschten Kanal und die vertikalen +/-
-   Regler auswählen). In IN1 und Das IN2-Einstellungsmenü stellt den
-   Wert von Vertical Offset auf -500mV ein. Für die stabile Aufnahme
-   stellen Sie den Triggerpegel im TRIGGER-Menü auf 0.5V und wählen
-   Sie NORMAL.
+   Regler auswählen). Stellen Sie im Einstellungsmenü IN1 und IN2 den Wert des
+   vertikalen Versatzes auf -500mV ein. Für die stabile Erfassung stellen Sie
+   den Triggerpegel im TRIGGER-Menü auf 0,5V ein und wählen Sie NORMAL.
    
 3. Wählen Sie im Messmenü "P2P", wählen Sie IN1 und drücken Sie
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
@@ -128,73 +112,47 @@ verbinden.
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
    
 
+.. _13_fig_04:
 .. figure:: img/ Activity_13_Fig_04.png
 
-   Abbildung 4: Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
+	    Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
 
    
-Unsere Messungen haben bestätigt, dass die Schaltung in 3 tatsächlich
-ein Spannungsfolger ist. Diese Konfiguration wird häufig verwendet,
-wenn unser Signalgenerator, der mit dem "+" - Pin des OPAMP verbunden
-ist, vom Einfluss der Schaltung getrennt werden muss, die mit dem
-Ausgang des Spannungsfolgers (Pin 6) verbunden ist.
-
-In der Realität hat ein Spannungsfolger, der in 3 gezeigt ist, seine
-Grenzen im Fall von Leistungen. Hauptsächlich ist dies die Fähigkeit
-des Spannungsfolgers, zu erhalten :math:`V_ {out} = V_ {in}`
-charakteristisch bei hohen Frequenzen von :math:`V_ {in}` (IN1 = OUT1,
-siehe Abbildung 3) .
-
-Versuchen Sie, die Frequenz des Signalgenerators (OUT1) auf 100 kHz
-oder 1 MHz zu erhöhen und beobachten Sie die Signale IN1 und IN2. Eine
-bestimmte Verzögerung des Signals IN2 wird angezeigt, die anzeigt,
-dass der Spannungsfolger eine Zeitverzögerung zwischen dem
-Eingangssignal (IN1) und dem Ausgangssignal (IN2) einfügt.
+Unsere Messungen haben bestätigt, dass die Schaltung in :numref:`13_fig_03` tatsächlich ein Spannungsfolger ist. Diese Konfiguration wird häufig verwendet, wenn beispielsweise unser Signalgenerator, der mit dem "+"-Pin des OPAMP verbunden ist, vom Einfluss der mit dem Ausgang des Spannungsfolgers verbundenen Schaltung getrennt werden muss (Pin 6). In Wirklichkeit hat ein in :numref:`13_fig_03` dargestellter Spannungsfolger bei Leistungen seine Grenzen. Dies ist vor allem die Fähigkeit des Spannungsfolgers, die :math:`V_{out}=V_{in}` -Charakteristik bei hohen Frequenzen von :math:`V_{in}` zu erhalten (IN1=OUT1, siehe :numref:`13_fig_03`). Versuchen Sie, die Frequenz des Signalgenerators (OUT1) auf 100kHz oder 1MHz zu erhöhen und die Signale IN1 und IN2 zu beobachten. Eine bestimmte Verzögerung des Signals IN2 erscheint und zeigt an, dass der Spannungsfolger eine Zeitverzögerung zwischen den Eingangs- (IN1) und Ausgangssignalen (IN2) einfügt.
 
 
 Pufferungsbeispiel
 ------------------
-Der hohe Eingangswiderstand des Operationsverstärkers
-(Nulleingangsstrom) bedeutet, dass der Generator nur sehr wenig
-belastet wird; h., es wird kein Strom von der Quellenschaltung
-bezogen, und daher fällt keine Spannung an irgendeinem internen
-Widerstand (Thevenin) ab. In dieser Konfiguration wirkt der
-Operationsverstärker also wie ein "Puffer", um die Quelle vor den
-Ladeeffekten von anderen Teilen des Systems zu schützen. Aus Sicht des
-Lastkreises transformiert der Puffer eine nicht ideale Spannungsquelle
-in eine nahezu ideale Quelle. Abbildung 5 beschreibt eine einfache
-Schaltung, mit der wir dieses Merkmal eines Puffers mit
-Einheitsverstärkung demonstrieren können. Hier wird der Puffer
-zwischen einer Spannungsteilerschaltung und einem "Last" -Widerstand,
-dem 10K-Widerstand, eingefügt.
+
+Der hohe Eingangswiderstand des Operationsverstärkers (Null-Eingangsstrom) bedeutet eine sehr geringe Belastung des Generators, d.h. es wird kein Strom aus der Quellschaltung entnommen und somit kein Spannungsabfall auf einem inneren (Thevenin-)Widerstand. In dieser Konfiguration wirkt der Operationsverstärker also wie ein "Puffer", um die Quelle vor den Ladeeffekten aus anderen Teilen des Systems zu schützen. Aus der Perspektive der Lastschaltung verwandelt der Puffer eine nicht-ideale Spannungsquelle in eine nahezu ideale Quelle. Abbildung 5 beschreibt eine einfache Schaltung, mit der wir diese Eigenschaft eines Unity-gain-Puffers demonstrieren können. Hier wird der Puffer zwischen einer Spannungsteilerschaltung und einem gewissen "Lastwiderstand", dem 10K-Widerstand, eingefügt.
 
 
-
+.. _13_fig_05:
 .. figure:: img/ Activity_13_Fig_05.png
 
-   Abbildung 5: Puffer Beispiel
+	    Puffer Beispiel
 
    
 Bauen Sie mit Ihrem Steckbrett und den STEMlab-Netzteilen die in
-Abbildung 5, Fall 1 gezeigte Schaltung ein.
+:numref:`13_fig_05`, Fall 1 gezeigte Schaltung auf.
 
 
 **Fall 1**
-Beobachte gleichzeitig :math:`V_ {in}` (IN1) und :math:`V_ {out}`
-(IN2) und zeichne die Amplituden (P2P) auf.
+Beobachten Sie gleichzeitig :math:`V_ {in}` (IN1) und :math:`V_ {out}`
+(IN2) und zeichnen Sie die Amplituden(P2P) auf.
 
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+1. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
 2. Stellen Sie im Menü OUT1-Einstellungen den DC-Offset-Wert auf 0 und
    den Amplitudenwert auf 1V, um eine 2Vp-p-Sinuswelle, die auf 0V
    zentriert ist, als Eingangsspannung an den Schaltkreis
    anzulegen. Wählen Sie im Wellenformmenü SINE
-   Deaktivieren Sie die SHOW-Taste und wählen Sie enable.
+   Deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
    
-3. Stellen Sie sicher, dass IN1 V / div und IN2 V / div auf der linken
-   unteren Seite des Bildschirms auf 200 mV / div eingestellt sind
-   (Sie können V / div einstellen, indem Sie den gewünschten Kanal und
+3. Stellen Sie sicher, dass IN1 V/div und IN2 V/div auf der linken
+   unteren Seite des Bildschirms auf 200 mV/div eingestellt sind
+   (Sie können V/div einstellen, indem Sie den gewünschten Kanal und
    die vertikalen +/- Regler auswählen)
    
 4. Stellen Sie im Einstellungsmenü IN2 den Wert für Vertical Offset
@@ -214,35 +172,27 @@ Beobachte gleichzeitig :math:`V_ {in}` (IN1) und :math:`V_ {out}`
    
 
 **Fall 2**
-Entfernen Sie die 10kΩ Last und ersetzen Sie stattdessen einen 1kΩ
-Widerstand und notieren Sie die Amplituden (P2P) von :math:`V_ {in}`
+Ersetzen Sie die 10kΩ Last mit einem 1kΩ Widerstand und notieren Sie die Amplituden(P2P) von :math:`V_ {in}`
 (IN1) und :math:`V_ {out}`
 
 
 **Fall 3**
 Bewegen Sie die 1 kΩ Last zwischen Pin 3 und +2,5 V, so dass sie
-parallel zum 4,7 KΩ Widerstand ist. Notiere die Amplituden (P2P) von
-:math:`V_ {in}` (IN1) und :math:`V_ {out}`
+parallel zum 4,7 KΩ Widerstand ist. Zeichnen Sie die Amplituden (P2P) von
+:math:`V_ {in}` (IN1) und :math:`V_ {out}` auf.
       
-
+.. _13_fig_06:
 .. figure:: img/ Activity_13_Fig_06.png
 
-   Abbildung 6: Beispiel für einen Pufferfall 1
+	    Beispiel für einen Pufferfall 1
 
-Wenn Sie Messungen in allen 3 Fällen durchgeführt haben, die Ihnen
-aufgefallen sind; Im Fall 1 und 2 gab es keinen Unterschied zwischen
-den Messungen von :math:`V_ {in}` (IN1) und :math:`V_ {out}` obwohl
-wir unterschiedliche Lasten (1K und 10K Widerstände) am Pufferausgang
-hatten. Aus dieser Tatsache ist es klar, dass die Pufferschaltung
-diese Lasten treiben kann :math:`V_ {out-case-1} = V_ {out-case-2}`
-mit der gleichen Ausgangsspannung, während verschiedene Lasten
-verhindert werden, die folgendes beeinflussen :math:` V_ {in} `Signal:
-math:` V_ {in-case-1} = V_ {in-case-2} `.
-
-Im Fall 3, dass ein 1K Widerstand zwischen Pin 3 ("+") und 2.5V
-addiert wird, beeinflusst dies die :math:`V_ {in}` Spannung und da ist
-die Schaltung ein Spannungsfolger, ein :math:`V_ {out}` wird sich
-entsprechend ändern.
+Wenn Sie Messungen in allen 3 Fällen durchgeführt haben, haben Sie folgendes bemerkt:
+In Fall 1 und 2 gab es keinen Unterschied zwischen den Messungen von :math:`V_{in}` (IN1) und :math:`V_{out}`,
+obwohl wir unterschiedliche Lasten (1K und 10K Widerstände) am Pufferausgang hatten.
+Aus dieser Tatsache ergibt sich, dass die Pufferschaltung diese Lasten :math:`V_{out-case1}=V_{out-case2}`
+mit der gleichen Ausgangsspannung treiben kann, während sie gleichzeitig verschiedene
+Lasten verhindert, die das :math:`V_{in}` -Signal :math:`V_{in-case1}=V_{in-case2}` beeinflussen. Wenn in Fall 3 1K-Widerstand zwischen Pin 3 ("+") und 2,5V hinzugefügt wird, wirkt sich dies auf die :math:`V_{in}` -Spannung aus
+und da die Schaltung ein Spannungsfolger ist, ändert sich ein :math:`V_{out}` entsprechend.
 
 
 
@@ -252,42 +202,39 @@ Grundlagen Verstärkerkonfigurationen
 Invertierender Verstärker
 -------------------------
 
-Fig. 7 zeigt die herkömmliche Konfiguration eines invertierenden
-Verstärkers mit einem 10 KΩ "Last" -Widerstand am Ausgang.
+:numref:`13_fig_07` zeigt die herkömmliche Konfiguration eines invertierenden
+Verstärkers mit einem 10 KΩ "Last" - Widerstand am Ausgang.
 
-
+.. _13_fig_07:
 .. figure:: img/ Activity_13_Fig_07.png
 
-   Abbildung 7: Invertierende Verstärkerkonfiguration
+	    Invertierende Verstärkerkonfiguration
 
    
-Montieren Sie nun die in Abbildung 7 gezeigte invertierende
-Verstärkerschaltung mit R2 = 4.7kΩ. Denken Sie daran, die
-Stromversorgung zu unterbrechen, bevor Sie eine neue Schaltung
-montieren. Schneiden und biegen Sie die Widerstandskabel nach Bedarf,
-um sie flach auf der Platinenoberfläche zu halten, und verwenden Sie
-für jede Verbindung die kürzesten Überbrückungskabel. Denken Sie
-daran, dass das Steckbrett Ihnen viel Flexibilität bietet. Zum
-Beispiel müssen die Leitungen des Widerstands R2 nicht
-notwendigerweise den Operationsverstärker von dem Stift 2 zu dem Stift
-6 überbrücken; Sie können stattdessen einen Zwischenknoten und eine
-Überbrückungsleitung verwenden, um das Gerät zu umgehen.
+Montieren Sie nun die in :numref:`13_fig_07` gezeigte invertierende
+Verstärkerschaltung mit R2 = 4.7kΩ. Denken Sie daran, die Stromversorgung zu trennen,
+bevor Sie einen neuen Stromkreis aufbauen. Schneiden und biegen Sie die
+Widerstandsleitungen nach Bedarf ab, um sie flach gegen die Platinenoberfläche zu halten,
+und verwenden Sie die kürzesten Überbrückungsdrähte für jede Verbindung. Denken Sie daran,
+die Platine bietet Ihnen eine große Flexibilität. So müssen beispielsweise die Leitungen
+des Widerstandes R2 nicht unbedingt über den Operationsverstärker von Pin 2 auf Pin 6
+überbrückt werden; Sie können stattdessen einen Zwischenknoten und einen Jumperdraht
+verwenden, um das Gerät zu umgehen.
 
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+1. Starten Sie die Oszilloskop & Signalgenerator - Anwedung.
    
-2. Stellen Sie im Menü OUT1-Einstellungen den DC-Offset-Wert auf -0,5
-   V und den Amplitudenwert auf 0,45 V ein, um eine offset-orientierte
-   Sinuswelle mit -0,5 V als Eingangsspannung an den Schaltkreis
-   anzulegen. Wählen Sie im Wellenformmenü aus SINE-Signal
-   deaktivieren Sie die SHOW-Taste und wählen Sie enable.
+2. Im Einstellungsmenü OUT1 den DC-Offsetwert auf -0,5V und den Amplitudenwert auf 0,45V
+   einstellen, um eine versetzte Sinuswelle mit -0,5V als Eingangsspannung für die
+   Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü die Option SINE-Signal,
+   deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
    
 3. Stellen Sie im Einstellungsmenü für IN1 und IN2 die
    Sondeneinstellungen auf x10 ein.
    
-4. Stellen Sie sicher, dass IN1 V / div am linken unteren
-   Bildschirmrand auf 200mV / div und IN2 bis 1V / div eingestellt ist
-   (Sie können V / div einstellen, indem Sie den gewünschten Kanal
+4. Stellen Sie sicher, dass IN1 V/div am linken unteren
+   Bildschirmrand auf 200mV/div und IN2 auf 1V/div eingestellt ist
+   (Sie können V/div einstellen, indem Sie den gewünschten Kanal
    auswählen und die vertikalen +/- Regler verwenden)
    
 5. Stellen Sie im Einstellungsmenü der IN1 den Wert für Vertical
@@ -302,11 +249,12 @@ notwendigerweise den Operationsverstärker von dem Stift 2 zu dem Stift
    
 8. Wählen Sie im Messmenü "MEAN", wählen Sie IN1 und drücken Sie
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
-   
 
+   
+.. _13_fig_08:
 .. figure:: img/ Activity_13_Fig_08.png
 
-   Abbildung 8: Messungen der invertierenden Verstärkerkonfiguration
+	    Messungen der invertierenden Verstärkerkonfiguration
 
 .. note::
    Aus den Messungen in Abbildung 8 können wir sehen, dass die
@@ -316,8 +264,8 @@ notwendigerweise den Operationsverstärker von dem Stift 2 zu dem Stift
    Verstärkercharakteristik, die gegeben ist als:
    
 
-.. math::
-   V_ {out} = - \ bigg (\ frac {R2} {R1} \ bigg) V_ {in} \ quad (2)
+   .. math::
+      V_ {out} = -\bigg(\frac{R2}{R1}\bigg)V_ {in}\quad           (2)
 
    
 Nicht invertierender Verstärker
@@ -329,10 +277,10 @@ die (üblicherweise) wünschenswerte Eigenschaft eines hohen
 Eingangswiderstands, so dass sie zum Puffern von nicht idealen Quellen
 geeignet ist, jedoch mit einer Verstärkung größer als ein.
 
-
+.. _13_fig_09:
 .. figure:: img/ Activity_13_Fig_09.png
 
-   Abbildung 9: Nicht-invertierende Verstärkerkonfigurationsmessungen
+	    Nicht-invertierende Verstärkerkonfigurationsmessungen
 
    
 Montieren Sie die nicht invertierende Verstärkerschaltung wie in
@@ -560,7 +508,7 @@ Fragen
    haben, und vergleichen Sie dies mit dem Wert, der im OP97-Datenblatt
    aufgeführt ist.
   
-2. Pufferung: Erklären Sie, warum der Pufferverstärker in Abbildung 5
+2. Pufferung: Erklären Sie, warum der Pufferverstärker in :numref:`13_fig_05`
    die Funktion der Spannungsteilerschaltung bei unterschiedlichen
    Lastwiderständen ermöglicht.
   
