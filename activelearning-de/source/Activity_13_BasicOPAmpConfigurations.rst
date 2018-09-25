@@ -35,7 +35,7 @@ Materialien
 - Widerstand: 3x 4,7 :math:`k\Omega`
 - Widerstand: 2x 10 :math:`k\Omega`
 - Widerstand: 1x 20 :math:`k\Omega`
-- Kondensator: 1x 1 :math:`\muF`
+- Kondensator: 1x 1 :math:`\mu F`
 
   
 Operationsverstärker-Grundlagen
@@ -64,7 +64,7 @@ Dazu gehört der so genannte " Netzentkopplungs- " Kondensator, der zwischen Net
 .. _13_fig_01:
 .. figure:: img/ Activity_13_Fig_01.png
 
-	    Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_ einstellbar_ Spannungsregler_
+	    :Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_  einstellbaren_  Spannungsregler_
 
 Es ist eine gute Praxis, die Anzeige der Stromversorgung zu haben. Dazu verwenden wir LED, die an die 2,5V-Schiene angeschlossen sind. Wenn die Spannung an dieser Schiene anliegt, leuchtet die LED auf. Da 2,5V von der 5V-Schiene geliefert werden, zeigt die gleiche LED auch den "OK"-Status der 5V-Versorgung an. Stecken Sie den LM317 und den Operationsverstärker in Ihre Leiterplatte und fügen Sie die Drähte, Widerstände, LED- und Versorgungskondensatoren hinzu, wie in :numref:`13_fig_01` dargestellt. Um später Probleme zu vermeiden, können Sie ein kleines Etikett auf der Lochrasterplatine anbringen, das angibt, welche Schienen +5 V, +2,5 V und GND entsprechen.
 
@@ -73,7 +73,7 @@ Als nächstes verbinden Sie die +5 V Versorgungs- und GND-Anschlüsse von der ST
 .. _13_fig_02:
 .. figure:: img/ Activity_13_Fig_02.png
 
-	    Stromanschlüsse
+	    :Stromanschlüsse
 
    
 Erster Schritt: Unity-Gain Amplifier (Spannungsfolger)
@@ -84,7 +84,7 @@ Unsere erste Operationsverstärkerschaltung ist eine einfache, in :numref:`13_fi
 .. _13_fig_03:
 .. figure:: img/ Activity_13_Fig_03.png
 
-	    Unity Gain Follower(Spannungsfolger)
+	    :Unity Gain Follower(Spannungsfolger)
 
    
 Bauen Sie mit Ihrer Steckplatine und den STEMlab-Netzteilen die in :numref:`13_fig_03` dargestellte Schaltung auf. Beachten Sie, dass die Leistungsanschlüsse hier nicht explizit dargestellt wurden; es wird davon ausgegangen, dass diese Verbindungen in einer realen Schaltung hergestellt werden müssen (wie im vorherigen Schritt), so dass es nicht notwendig ist, sie von nun an im Schaltplan darzustellen. Verwenden Sie Überbrückungskabel, um Eingang und Ausgang mit dem Wellenform-Generatorausgang, OUT1 und den Oszilloskopeingängen IN1 und IN2 zu verbinden.
@@ -115,7 +115,7 @@ Bauen Sie mit Ihrer Steckplatine und den STEMlab-Netzteilen die in :numref:`13_f
 .. _13_fig_04:
 .. figure:: img/ Activity_13_Fig_04.png
 
-	    Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
+	    :Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
 
    
 Unsere Messungen haben bestätigt, dass die Schaltung in :numref:`13_fig_03` tatsächlich ein Spannungsfolger ist. Diese Konfiguration wird häufig verwendet, wenn beispielsweise unser Signalgenerator, der mit dem "+"-Pin des OPAMP verbunden ist, vom Einfluss der mit dem Ausgang des Spannungsfolgers verbundenen Schaltung getrennt werden muss (Pin 6). In Wirklichkeit hat ein in :numref:`13_fig_03` dargestellter Spannungsfolger bei Leistungen seine Grenzen. Dies ist vor allem die Fähigkeit des Spannungsfolgers, die :math:`V_{out}=V_{in}` -Charakteristik bei hohen Frequenzen von :math:`V_{in}` zu erhalten (IN1=OUT1, siehe :numref:`13_fig_03`). Versuchen Sie, die Frequenz des Signalgenerators (OUT1) auf 100kHz oder 1MHz zu erhöhen und die Signale IN1 und IN2 zu beobachten. Eine bestimmte Verzögerung des Signals IN2 erscheint und zeigt an, dass der Spannungsfolger eine Zeitverzögerung zwischen den Eingangs- (IN1) und Ausgangssignalen (IN2) einfügt.
@@ -130,7 +130,7 @@ Der hohe Eingangswiderstand des Operationsverstärkers (Null-Eingangsstrom) bede
 .. _13_fig_05:
 .. figure:: img/ Activity_13_Fig_05.png
 
-	    Puffer Beispiel
+	    :Puffer Beispiel
 
    
 Bauen Sie mit Ihrem Steckbrett und den STEMlab-Netzteilen die in
@@ -184,7 +184,7 @@ parallel zum 4,7 KΩ Widerstand ist. Zeichnen Sie die Amplituden (P2P) von
 .. _13_fig_06:
 .. figure:: img/ Activity_13_Fig_06.png
 
-	    Beispiel für einen Pufferfall 1
+	    :Beispiel für einen Pufferfall 1
 
 Wenn Sie Messungen in allen 3 Fällen durchgeführt haben, haben Sie folgendes bemerkt:
 In Fall 1 und 2 gab es keinen Unterschied zwischen den Messungen von :math:`V_{in}` (IN1) und :math:`V_{out}`,
@@ -208,7 +208,7 @@ Verstärkers mit einem 10 KΩ "Last" - Widerstand am Ausgang.
 .. _13_fig_07:
 .. figure:: img/ Activity_13_Fig_07.png
 
-	    Invertierende Verstärkerkonfiguration
+	    :Invertierende Verstärkerkonfiguration
 
    
 Montieren Sie nun die in :numref:`13_fig_07` gezeigte invertierende
@@ -233,7 +233,7 @@ verwenden, um das Gerät zu umgehen.
    Sondeneinstellungen auf x10 ein.
    
 4. Stellen Sie sicher, dass IN1 V/div am linken unteren
-   Bildschirmrand auf 200mV/div und IN2 auf 1V/div eingestellt ist
+   Bildschirmrand auf 200 mV/div und IN2 auf 1 V/div eingestellt ist
    (Sie können V/div einstellen, indem Sie den gewünschten Kanal
    auswählen und die vertikalen +/- Regler verwenden)
    
@@ -254,7 +254,7 @@ verwenden, um das Gerät zu umgehen.
 .. _13_fig_08:
 .. figure:: img/ Activity_13_Fig_08.png
 
-	    Messungen der invertierenden Verstärkerkonfiguration
+	    :Messungen der invertierenden Verstärkerkonfiguration
 
 .. note::
    Aus den Messungen in Abbildung 8 können wir sehen, dass die
@@ -271,38 +271,31 @@ verwenden, um das Gerät zu umgehen.
 Nicht invertierender Verstärker
 -------------------------------
 
-Die Konfiguration des nicht invertierenden Verstärkers ist in 9
-gezeigt. Wie der Puffer mit Einheitsverstärkung hat diese Schaltung
-die (üblicherweise) wünschenswerte Eigenschaft eines hohen
-Eingangswiderstands, so dass sie zum Puffern von nicht idealen Quellen
-geeignet ist, jedoch mit einer Verstärkung größer als ein.
+Die nichtinvertierende Verstärkerkonfiguration ist in :numref:`13_fig_09` dargestellt. Wie der Unit-Gain-Puffer hat auch diese Schaltung die (meist) wünschenswerte Eigenschaft eines hohen Eingangswiderstandes, so dass sie für die Pufferung nicht-idealer Quellen nützlich ist, jedoch mit einer Verstärkung größer als eins.
 
 .. _13_fig_09:
 .. figure:: img/ Activity_13_Fig_09.png
 
-	    Nicht-invertierende Verstärkerkonfigurationsmessungen
+	    :Nicht-invertierende Verstärkerkonfigurationsmessungen
 
    
-Montieren Sie die nicht invertierende Verstärkerschaltung wie in
-Abbildung 9 dargestellt. Vergessen Sie nicht, die Stromversorgungen
-vor dem Zusammenbau der neuen Schaltung auszuschalten. Setze
-:math:`R2 = 4,7 k\Omega`.
+Bauen Sie die nicht invertierende Verstärkerschaltung wie in
+:numref:`13_fig_09` dargestellt auf. **Denken Sie dran, die Stromversorgungen vor dem Zusammenbau der neuen Schaltung auszuschalten.**  Setze Sie für :math:`R2 = 4,7 k\Omega` ein.
 
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+1. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
-2. Stellen Sie im Menü OUT1-Einstellungen den DC-Offset-Wert auf 0,5 V
-   und den Amplitudenwert auf 0,3 V ein, um eine offset-orientierte
-   Sinuswelle mit 0,5 V als Eingangsspannung an den Schaltkreis
-   anzulegen. Wählen Sie im Wellenformmenü aus SINE-Signal
-   deaktivieren Sie die SHOW-Taste und wählen Sie enable.
+2. Im Einstellungsmenü OUT1 den DC-Offsetwert auf 0,5V und den Amplitudenwert auf 0,3V einstellen,
+   um eine versetzte Sinuswelle, die auf 0,5V zentriert ist, als Eingangsspannung für die
+   Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü die Option SINE-Signal,
+   deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
    
 3. Stellen Sie im Einstellungsmenü für IN1 und IN2 die
    Sondeneinstellungen auf x10 ein.
    
 4. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V / div auf 100 mV / div und IN2 auf 1V / div eingestellt
-   ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal
+   dass IN1 V/div auf 100 mV/div und IN2 auf 1V/div eingestellt
+   ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal
    und die vertikalen +/- Regler auswählen)
    
 5. Stellen Sie im Einstellungsmenü der IN1 den Wert für Vertical
@@ -319,84 +312,62 @@ vor dem Zusammenbau der neuen Schaltung auszuschalten. Setze
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
    
 
-
+.. _13_fig_10:
 .. figure:: img/ Activity_13_Fig_10.png
 
-   Abbildung 10: Nicht-invertierende Verstärkerkonfigurationsmessungen
+	    :Nicht-invertierende Verstärkerkonfigurationsmessungen
 
    
 .. note::
-   Aus den in Abbildung 10 gezeigten Messungen können wir sehen, dass
+   Aus den in :numref:`13_fig_10` gezeigten Messungen können wir sehen, dass
    die Amplitude von :math:`V_ {out}` (IN2) ca. 5,7 mal größer ist als
    die Amplitude von :math:`V_ {in}` (IN1). Auch die Phase zwischen
    zwei Signalen beträgt ~ 0 Grad. Dies ist das Ergebnis einer nicht
    invertierenden Verstärkercharakteristik, die gegeben ist als:
    
 
-.. math::
-   V_ {out} = \ bigg (1 + \ frac {R2} {R1} \ bigg) V_ {in} \ quad (3)
+   .. math::
+      V_ {out} =\bigg(1+\frac{R2}{R1}\bigg)V_ {in}\quad      (3)
 
 
-Erhöhen Sie den Rückkopplungswiderstand R2 weiter bis zum Einsetzen
-des Abschneidens, d. H. Bis die Spitzen des Ausgangssignals aufgrund
-der Ausgangssättigung abgeflacht werden. Notieren Sie den Wert des
-Widerstands, wo dies geschieht. Erhöhen Sie nun den
-Rückkopplungswiderstand auf 100 KΩ. Beschreiben und zeichnen Sie
-Wellenformen in Ihrem Notebook. Was ist der theoretische Gewinn an
-diesem Punkt? Wie klein müsste das Eingangssignal sein, um bei dieser
-Verstärkung den Ausgangspegel unter 5V zu halten? Versuchen Sie, den
-Wellenformgenerator auf diesen Wert einzustellen. Beschreiben Sie die
-erreichte Leistung.
-
-Der letzte Schritt unterstreicht eine wichtige Überlegung für
-Verstärker mit hoher Verstärkung. Eine hohe Verstärkung bedeutet
-notwendigerweise eine große Ausgabe für einen kleinen
-Eingangspegel. Manchmal kann dies zu einer unbeabsichtigten Sättigung
-aufgrund der Verstärkung von niedrigem Rauschen oder Interferenz
-führen, zum Beispiel die Verstärkung von 60 Hz-Streusignalen von
-Stromleitungen, die manchmal aufgenommen werden können. Verstärker
-verstärken alle Signale an den Eingangsklemmen ... ob Sie wollen oder
-nicht!
+Erhöhen Sie den Rückkopplungswiderstand R2 weiter bis zum Beginn des Übersteuervorgangs, d.h. bis die Spitzen des Ausgangssignals aufgrund der Ausgangssättigung abzubauen beginnen. Notieren Sie den Wert des Widerstandes, wenn dies geschieht. Erhöhen Sie nun den Rückkopplungswiderstand auf 100 KΩ. Beschreiben und zeichnen Sie Wellenformen in Ihrem Notebook. Was ist der theoretische Gewinn an dieser Stelle? Wie klein müsste das Eingangssignal sein, um den Ausgangspegel bei dieser Verstärkung auf weniger als 5V zu halten? Versuchen Sie, den Wellenform-Generator auf diesen Wert einzustellen. Beschreiben Sie die erzielte Leistung. Der letzte Schritt unterstreicht eine wichtige Überlegung für High-Gain-Verstärker. High-Gain bedeutet notwendigerweise einen großen Ausgang für einen kleinen Eingangspegel. Manchmal kann dies zu einer unbeabsichtigten Sättigung durch die Verstärkung von schwachem Rauschen oder Störungen führen, z.B. durch die Verstärkung von 60Hz-Streusignalen von Stromleitungen, die manchmal empfangen werden können. Die Verstärker verstärken alle Signale an den Eingangsklemmen....ob Sie es wollen oder nicht!
 
 
 Summierverstärkerschaltung
 --------------------------
 
-Die Schaltung von Fig. 11 ist ein grundlegender invertierender
-Verstärker mit vier Eingängen, der als "summierender" Verstärker
-bezeichnet wird.
+Die Schaltung von :numref:`13_fig_11` ist ein grundlegender invertierender Verstärker mit vier Eingängen, genannt "Summierverstärker".
 
-
+.. _13_fig_11:
 .. figure:: img/ Activity_13_Fig_11.png
 
-   Abbildung 11: Summing Amplifier Konfiguration
+	    :Summing Amplifier Konfiguration
 
    
-Bei ausgeschalteter Stromversorgung die Schaltung wie in Abbildung 11
-gezeigt aufbauen und mit den Messungen fortfahren.
+Bauen Sie bei abgeschalteter Stromversorgung einen Stromkreis wie in :numref:`13_fig_11` dargestellt auf und fahren Sie mit den Messungen fort.
 
-
+.. _13_fig_12:
 .. figure:: img/ Activity_13_Fig_12.png
 
-   Abbildung 12: Summierverstärkerschaltung auf dem Steckbrett
+	    :Summierverstärkerschaltung auf dem Steckbrett
 
    
-**Setze ** :math:`R_ {in}` = :math:`R_ {in}` = :math:`R_ {f}` = 4.7kΩ.
+**Setzen Sie** :math:`R_ {in}` = :math:`R_ {in}` = :math:`R_ {f}` = 4.7kΩ.
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+1. Starten Sie die  Oszilloskop & Signalgenerator - Anwendung.
    
 2. Stellen Sie im Einstellungsmenü OUT1 und OUT2 den DC-Offset-Wert
    auf -0,5 V und den Amplitudenwert auf 0,3 V ein, um eine
    offset-sinusförmige Sinuswelle mit -0,5 V als Eingangsspannungen an
-   den Schaltkreis anzulegen. Aus der Wellenform Wählen Sie das SINE
-   Signal und wählen Sie enable.
+   den Schaltkreis anzulegen. Aus der Wellenform-Menu wählen Sie das SINE
+   Signal und wählen Sie Enable.
    
 3. Stellen Sie im Einstellungsmenü für IN1 und IN2 die
    Sondeneinstellungen auf x10 ein.
    
 4. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms,
-   dass IN1 V / div auf 100 mV / div und IN2 auf 1V / div eingestellt
-   ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal
+   dass IN1 V/div auf 100 mV/div und IN2 auf 1 V/div eingestellt
+   ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal
    und die vertikalen +/- Regler auswählen)
    
 5. Stellen Sie für die stabile Erfassung den Triggerpegel im
@@ -405,10 +376,10 @@ gezeigt aufbauen und mit den Messungen fortfahren.
 6. Wählen Sie im Messmenü "P2P", wählen Sie IN1 und drücken Sie
    FERTIG, wählen Sie IN2 und drücken Sie FERTIG
    
-
+.. _13_fig_13:
 .. figure:: img/ Activity_13_Fig_13.png
 
-   Abbildung 13: Summenverstärker-Messungen
+	    :Summenverstärker-Messungen
 
    
 .. note::
@@ -417,85 +388,65 @@ gezeigt aufbauen und mit den Messungen fortfahren.
    zwei Signalen ist ~ 0 Grad. Dies ist das Ergebnis einer
    invertierenden Summenverstärkercharakteristik, die gegeben ist als: 
 
-.. math::
-   -V_ {out} = \ frac {R_f} {R_ {in}} \ bigg (V_ {in1} + V_ {in2} \ bigg) \ quad (4)
+   .. math::
+      -V_ {out} = \frac{R_f}{R_ {in}}\bigg(V_ {in1} + V_ {in2}\bigg)\quad   (4)
 
-Im Allgemeinen :math:`R_ {in}` kann für jede Eingangsspannung
-unterschiedlich sein, also folgt:
+   Im Allgemeinen kann :math:`R_ {in}` für jede Eingangsspannung unterschiedlich sein, so dass es folgt:
 
+   .. math::
+      -V_ {out} =\frac{R_f}{R_ {in1}}V_{in1}+\frac{R_f}{R_ {in2}}V_ {in2}+ ... +\frac{R_f}{R_ {inN}}V_{inN}\quad    (5)
 
-.. math::
-   -V_ {out} = \ frac {R_f} {R_ {in1}} V_ {in1} + \ frac {R_f} {R_ {in2}} V_ {in2} + ... + \ frac {R_f} {R_ { inN}} V_ {inN} \ quad (5)
-
-Um die obige Gleichung nachzuweisen, versuchen Sie, OUT2 zu
-deaktivieren und den P2P-Wert von IN2 zu beobachten. Versuchen Sie
-auch, die OUT2-Amplitude zu ändern und die Messungen zu
-beobachten. Was passiert, wenn Sie die OUT2-Phase auf 180 Grad
-einstellen? Können Sie das Ergebnis in diesem Fall erklären?
-
+Um die obige Gleichung zu beweisen, versuchen Sie, OUT2 zu deaktivieren und den IN2 P2P-Wert zu beobachten. Versuchen Sie auch, die Amplitude von OUT2 zu ändern und Messungen zu beobachten. Was passiert, wenn Sie die OUT2-Phase auf 180 Grad einstellen? Können Sie das Ergebnis in diesem Fall erklären?
 
 
 Verwenden eines Operationsverstärkers als Vergleicher
 -----------------------------------------------------
 
-Die hohe Eigenverstärkung des Operationsverstärkers und die
-Ausgangssättigungseffekte können ausgenutzt werden, indem der
-Operationsverstärker als ein Komparator wie in 14 konfiguriert
-wird. Dies ist im Wesentlichen eine Entscheidungsschaltung mit binärem
-Zustand: Wenn die Spannung an der "+ "Terminal ist größer als die
-Spannung am" - "terminal,: math:` V_ {in} `>: math:` V_ {ref} `, der
-Ausgang geht auf" high "(sättigt bei seinem Maximalwert). Wenn
-umgekehrt :math:`V_ {in}` < :math:`V_ {ref}` wird der Ausgang
-"low". Die Schaltung vergleicht die Spannungen an den zwei Eingängen
-und erzeugt eine Ausgabe basierend auf den relativen Werten. Im
-Gegensatz zu allen vorherigen Schaltungen gibt es keine Rückkopplung
-zwischen dem Eingang und dem Ausgang; wir sagen, dass die Schaltung
-"open-loop" arbeitet.
+Die hohe intrinsische Verstärkung des Operationsverstärkers und die Ausgangssättigungseffekte können durch die Konfiguration des Operationsverstärkers als Vergleicher wie in :numref:`13_fig_14` genutzt werden. Dies ist im Wesentlichen eine binäre Entscheidungsschaltung: Wenn die Spannung an der Klemme "+" größer ist als die Spannung an der Klemme "-", :math:`V_{in}` > :math:`V_{ref}`, geht der Ausgang "high" (sättigt auf seinen Maximalwert). Umgekehrt, wenn :math:`V_{in}` < :math:`V_{ref}`, geht der Ausgang "low". Die Schaltung vergleicht die Spannungen an den beiden Eingängen und erzeugt aus den Relativwerten einen Ausgang. Im Gegensatz zu allen bisherigen Schaltungen gibt es keine Rückkopplung zwischen Eingang und Ausgang; wir sagen, dass die Schaltung "open-loop" arbeitet.
 
-
+.. _13_fig_14:
 .. figure:: img/ Activity_13_Fig_14.png
 
-   Abbildung 14: Op-Amp als Komparator
+	    :Op-Amp als Komparator
 
    
-Bei ausgeschalteter Stromversorgung die Schaltung wie in Abbildung 14
+Bei ausgeschalteter Stromversorgung die Schaltung wie in :numref:`13_fig_14`
 gezeigt aufbauen und mit den Messungen fortfahren.
 
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
+1. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
    
-2. Stellen Sie in OUT1 den Amplitudenwert auf 0,45 V und den DC-Offset
-   auf 0,5 V ein, um eine offsettierte Sinuswelle mit 0,5 V als
-   Eingangsspannung an den Schaltkreis anzulegen. Aus der Wellenform
-   Wählen Sie im Menü SINE-Signal die SHOW-Schaltfläche aus. Stellen
-   Sie die Frequenz auf 100Hz ein und wählen Sie enable
-   Wählen Sie im OUT2-DC-Signal die Option SHOW, um den Amplitudenwert
-   auf 0,5 V einzustellen, um eine Gleichspannung als REFERENCE-Wert
-   zu verwenden :math:`V_ {ref}`. Wählen Sie Aktivieren (Ein).
+2. Stellen Sie im OUT1 den Amplitudenwert auf 0,45V und den DC-Offsetwert auf 0,5V ein,
+   um eine versetzt angeordnete Sinuswelle, die auf 0,5V zentriert ist, als
+   Eingangsspannung für die Schaltung anzulegen. Wählen Sie aus dem Wellenform-Menü die
+   Option SINE-Signal und deaktivieren Sie die SHOW-Taste. Stellen Sie die Frequenz auf
+   100Hz ein und wählen Sie enable (ON). Wählen Sie im OUT2 das DC-Signal aus,
+   deaktivieren Sie die Option SHOW-Taste und stellen Sie den Amplitudenwert auf 0,5V,
+   um eine Gleichspannung als Referenzwert :math:`V_{ref}` anzulegen. Aktivieren Enable (EIN).
    
 3. Stellen Sie im Menü für die IN2-Einstellungen die
    Sondeneinstellungen auf x10 ein.
    
-4. Stellen Sie sicher, dass IN1 V / div am linken unteren
-   Bildschirmrand auf 200mV / div und IN2 bis 2V / div eingestellt ist
-   (Sie können V / div einstellen, indem Sie den gewünschten Kanal
+4. Stellen Sie sicher, dass IN1 V/div am linken unteren
+   Bildschirmrand auf 200 mV/div und IN2 bis 2 V/div eingestellt ist
+   (Sie können V/div einstellen, indem Sie den gewünschten Kanal
    auswählen und die vertikalen +/- Regler verwenden)
    
 5. Setzen Sie für die stabile Erfassung den Triggerpegel im
    TRIGGER-Menü auf 0,25 V und wählen Sie NORMAL.
    
-
+.. _13_fig_15:
 .. figure:: img/ Activity_13_Fig_15.png
 
-   Abbildung 15: Op-Amp als Komparatormessungen
+	    :Op-Amp als Komparatormessungen
 
    
 .. note::
-   Für den Komparator, der in 14 gezeigt ist, folgt:
+   Für den Komparator, der in :numref:`13_fig_14` gezeigt ist, folgt:
 
    .. math::
-      if \ quad V_ {in}> V_ {ref} \ quad; \ quad V_ {out} = V _ {+} \ quad (5)
-
+      if \ quad V_ {in}> V_ {ref} \ quad; \ quad V_ {out} = V _ {+} \ quad  (5)
+      
    .. math::
       if \ quad V_ {in} <V_ {ref} \ quad; \ quad V_ {out} = V _ {-}
 
@@ -503,24 +454,17 @@ gezeigt aufbauen und mit den Messungen fortfahren.
 Fragen
 ------
 
-1. Anstiegsrate: Besprechen Sie, wie Sie die Anstiegsgeschwindigkeit in
-   der Einheit-Verstärkungs-Pufferkonfiguration gemessen und berechnet
-   haben, und vergleichen Sie dies mit dem Wert, der im OP97-Datenblatt
-   aufgeführt ist.
+1. Anstiegsrate: Besprechen Sie, wie Sie die Anstiegsrate in der
+   Unit-Gain-Pufferkonfiguration gemessen und berechnet haben, und vergleichen
+   Sie diese mit dem im OP97-Datenblatt aufgeführten Wert.
   
-2. Pufferung: Erklären Sie, warum der Pufferverstärker in :numref:`13_fig_05`
-   die Funktion der Spannungsteilerschaltung bei unterschiedlichen
-   Lastwiderständen ermöglicht.
+2. Pufferung: Erklären Sie, warum der Pufferverstärker in :numref:`13_fig_05` es ermöglicht hat,
+   dass die Spannungsteilerschaltung mit unterschiedlichen Lastwiderständen perfekt funktioniert.
   
-3. Ausgangssättigung: Erklären Sie Ihre Beobachtungen der
-   Ausgangsspannung Sättigung in der invertierenden
-   Verstärkerkonfiguration und Ihre Schätzung der internen Spannungen
-   sinkt. Wie nahe kommt die Ausgabe?
-   die Versorgungsschienen in diesem Experiment und später auch als
-   Komparator mit unterschiedlichen Versorgungsspannungen? Können Sie
-   erraten, wie hoch der Ausgangsspannungshub für einen
-   Operationsverstärker ist, der als "Rail-to-Rail" -Gerät beworben
-   wird?
+3. Ausgangssättigung: Erklären Sie Ihre Beobachtungen der Ausgangsspannungssättigung
+   in der Konfiguration des Wechselrichters und Ihre Einschätzung der internen Spannungsabfälle.
+   Wie nah kommt der Ausgang in diesem Experiment und auch später als Vergleicher mit
+   unterschiedlichen Versorgungsspannungen an die Versorgungsschienen? Können Sie erraten,
+   wie der Ausgangsspannungshub für einen Operationsverstärker wäre, der als "Rail-to-Rail"-Gerät beworben wird?
   
-4. Komparator: Besprechen Sie Ihre Messungen und was passiert, wenn die
-   Polarität von Vref umgekehrt wird.
+4. Vergleicher: Besprechen Sie Ihre Messungen und was passieren würde, wenn die Polarität von Vref umgekehrt wird.
