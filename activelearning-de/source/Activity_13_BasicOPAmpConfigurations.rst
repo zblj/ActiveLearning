@@ -64,7 +64,7 @@ Dazu gehört der so genannte " Netzentkopplungs- " Kondensator, der zwischen Net
 .. _13_fig_01:
 .. figure:: img/ Activity_13_Fig_01.png
 
-	    Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_  einstellbaren_  Spannungsregler_
+	    :Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_  einstellbaren_  Spannungsregler_
 
 Es ist eine gute Praxis, die Anzeige der Stromversorgung zu haben. Dazu verwenden wir LED, die an die 2,5V-Schiene angeschlossen sind. Wenn die Spannung an dieser Schiene anliegt, leuchtet die LED auf. Da 2,5V von der 5V-Schiene geliefert werden, zeigt die gleiche LED auch den "OK"-Status der 5V-Versorgung an. Stecken Sie den LM317 und den Operationsverstärker in Ihre Leiterplatte und fügen Sie die Drähte, Widerstände, LED- und Versorgungskondensatoren hinzu, wie in :numref:`13_fig_01` dargestellt. Um später Probleme zu vermeiden, können Sie ein kleines Etikett auf der Lochrasterplatine anbringen, das angibt, welche Schienen +5 V, +2,5 V und GND entsprechen.
 
@@ -73,7 +73,7 @@ Als nächstes verbinden Sie die +5 V Versorgungs- und GND-Anschlüsse von der ST
 .. _13_fig_02:
 .. figure:: img/ Activity_13_Fig_02.png
 
-	    Stromanschlüsse
+	    :Stromanschlüsse
 
    
 Erster Schritt: Unity-Gain Amplifier (Spannungsfolger)
@@ -84,7 +84,7 @@ Unsere erste Operationsverstärkerschaltung ist eine einfache, in :numref:`13_fi
 .. _13_fig_03:
 .. figure:: img/ Activity_13_Fig_03.png
 
-	    Unity Gain Follower(Spannungsfolger)
+	    :Unity Gain Follower(Spannungsfolger)
 
    
 Bauen Sie mit Ihrer Steckplatine und den STEMlab-Netzteilen die in :numref:`13_fig_03` dargestellte Schaltung auf. Beachten Sie, dass die Leistungsanschlüsse hier nicht explizit dargestellt wurden; es wird davon ausgegangen, dass diese Verbindungen in einer realen Schaltung hergestellt werden müssen (wie im vorherigen Schritt), so dass es nicht notwendig ist, sie von nun an im Schaltplan darzustellen. Verwenden Sie Überbrückungskabel, um Eingang und Ausgang mit dem Wellenform-Generatorausgang, OUT1 und den Oszilloskopeingängen IN1 und IN2 zu verbinden.
@@ -115,7 +115,7 @@ Bauen Sie mit Ihrer Steckplatine und den STEMlab-Netzteilen die in :numref:`13_f
 .. _13_fig_04:
 .. figure:: img/ Activity_13_Fig_04.png
 
-	    Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
+	    :Unity Gain Follower-Messungen mit einer Oszilloskop- und Signalgenerator-Anwendung.
 
    
 Unsere Messungen haben bestätigt, dass die Schaltung in :numref:`13_fig_03` tatsächlich ein Spannungsfolger ist. Diese Konfiguration wird häufig verwendet, wenn beispielsweise unser Signalgenerator, der mit dem "+"-Pin des OPAMP verbunden ist, vom Einfluss der mit dem Ausgang des Spannungsfolgers verbundenen Schaltung getrennt werden muss (Pin 6). In Wirklichkeit hat ein in :numref:`13_fig_03` dargestellter Spannungsfolger bei Leistungen seine Grenzen. Dies ist vor allem die Fähigkeit des Spannungsfolgers, die :math:`V_{out}=V_{in}` -Charakteristik bei hohen Frequenzen von :math:`V_{in}` zu erhalten (IN1=OUT1, siehe :numref:`13_fig_03`). Versuchen Sie, die Frequenz des Signalgenerators (OUT1) auf 100kHz oder 1MHz zu erhöhen und die Signale IN1 und IN2 zu beobachten. Eine bestimmte Verzögerung des Signals IN2 erscheint und zeigt an, dass der Spannungsfolger eine Zeitverzögerung zwischen den Eingangs- (IN1) und Ausgangssignalen (IN2) einfügt.
@@ -130,7 +130,7 @@ Der hohe Eingangswiderstand des Operationsverstärkers (Null-Eingangsstrom) bede
 .. _13_fig_05:
 .. figure:: img/ Activity_13_Fig_05.png
 
-	    Puffer Beispiel
+	    :Puffer Beispiel
 
    
 Bauen Sie mit Ihrem Steckbrett und den STEMlab-Netzteilen die in
@@ -184,7 +184,7 @@ parallel zum 4,7 KΩ Widerstand ist. Zeichnen Sie die Amplituden (P2P) von
 .. _13_fig_06:
 .. figure:: img/ Activity_13_Fig_06.png
 
-	    Beispiel für einen Pufferfall 1
+	    :Beispiel für einen Pufferfall 1
 
 Wenn Sie Messungen in allen 3 Fällen durchgeführt haben, haben Sie folgendes bemerkt:
 In Fall 1 und 2 gab es keinen Unterschied zwischen den Messungen von :math:`V_{in}` (IN1) und :math:`V_{out}`,
@@ -208,7 +208,7 @@ Verstärkers mit einem 10 KΩ "Last" - Widerstand am Ausgang.
 .. _13_fig_07:
 .. figure:: img/ Activity_13_Fig_07.png
 
-	    Invertierende Verstärkerkonfiguration
+	    :Invertierende Verstärkerkonfiguration
 
    
 Montieren Sie nun die in :numref:`13_fig_07` gezeigte invertierende
@@ -254,7 +254,7 @@ verwenden, um das Gerät zu umgehen.
 .. _13_fig_08:
 .. figure:: img/ Activity_13_Fig_08.png
 
-	    Messungen der invertierenden Verstärkerkonfiguration
+	    :Messungen der invertierenden Verstärkerkonfiguration
 
 .. note::
    Aus den Messungen in Abbildung 8 können wir sehen, dass die
@@ -276,7 +276,7 @@ Die nichtinvertierende Verstärkerkonfiguration ist in :numref:`13_fig_09` darge
 .. _13_fig_09:
 .. figure:: img/ Activity_13_Fig_09.png
 
-	    Nicht-invertierende Verstärkerkonfigurationsmessungen
+	    :Nicht-invertierende Verstärkerkonfigurationsmessungen
 
    
 Bauen Sie die nicht invertierende Verstärkerschaltung wie in
@@ -315,7 +315,7 @@ Bauen Sie die nicht invertierende Verstärkerschaltung wie in
 .. _13_fig_10:
 .. figure:: img/ Activity_13_Fig_10.png
 
-	    Nicht-invertierende Verstärkerkonfigurationsmessungen
+	    :Nicht-invertierende Verstärkerkonfigurationsmessungen
 
    
 .. note::
@@ -341,15 +341,15 @@ Die Schaltung von :numref:`13_fig_11` ist ein grundlegender invertierender Verst
 .. _13_fig_11:
 .. figure:: img/ Activity_13_Fig_11.png
 
-	    Summing Amplifier Konfiguration
+	    :Summing Amplifier Konfiguration
 
    
-Bauen Sie bei abgeschalteter Stromversorgung einen Stromkreis wie in :numref:`13_fig_10` dargestellt auf und fahren Sie mit den Messungen fort.
+Bauen Sie bei abgeschalteter Stromversorgung einen Stromkreis wie in :numref:`13_fig_11` dargestellt auf und fahren Sie mit den Messungen fort.
 
 .. _13_fig_12:
 .. figure:: img/ Activity_13_Fig_12.png
 
-	    Summierverstärkerschaltung auf dem Steckbrett
+	    :Summierverstärkerschaltung auf dem Steckbrett
 
    
 **Setzen Sie** :math:`R_ {in}` = :math:`R_ {in}` = :math:`R_ {f}` = 4.7kΩ.
@@ -379,7 +379,7 @@ Bauen Sie bei abgeschalteter Stromversorgung einen Stromkreis wie in :numref:`13
 .. _13_fig_13:
 .. figure:: img/ Activity_13_Fig_13.png
 
-	    Summenverstärker-Messungen
+	    :Summenverstärker-Messungen
 
    
 .. note::
@@ -407,7 +407,7 @@ Die hohe intrinsische Verstärkung des Operationsverstärkers und die Ausgangss�
 .. _13_fig_14:
 .. figure:: img/ Activity_13_Fig_14.png
 
-	    Op-Amp als Komparator
+	    :Op-Amp als Komparator
 
    
 Bei ausgeschalteter Stromversorgung die Schaltung wie in :numref:`13_fig_14`
@@ -438,7 +438,7 @@ gezeigt aufbauen und mit den Messungen fortfahren.
 .. _13_fig_15:
 .. figure:: img/ Activity_13_Fig_15.png
 
-	    Op-Amp als Komparatormessungen
+	    :Op-Amp als Komparatormessungen
 
    
 .. note::
