@@ -64,7 +64,7 @@ Dazu gehört der so genannte " Netzentkopplungs- " Kondensator, der zwischen Net
 .. _13_fig_01:
 .. figure:: img/ Activity_13_Fig_01.png
 
-	    Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_  einstellbar_  Spannungsregler_
+	    Stromanschlüsse mit 5-V-Stromanschluss von E2_ - Anschluss_ und LM317_  einstellbaren_  Spannungsregler_
 
 Es ist eine gute Praxis, die Anzeige der Stromversorgung zu haben. Dazu verwenden wir LED, die an die 2,5V-Schiene angeschlossen sind. Wenn die Spannung an dieser Schiene anliegt, leuchtet die LED auf. Da 2,5V von der 5V-Schiene geliefert werden, zeigt die gleiche LED auch den "OK"-Status der 5V-Versorgung an. Stecken Sie den LM317 und den Operationsverstärker in Ihre Leiterplatte und fügen Sie die Drähte, Widerstände, LED- und Versorgungskondensatoren hinzu, wie in :numref:`13_fig_01` dargestellt. Um später Probleme zu vermeiden, können Sie ein kleines Etikett auf der Lochrasterplatine anbringen, das angibt, welche Schienen +5 V, +2,5 V und GND entsprechen.
 
