@@ -143,7 +143,7 @@ In unserem Fall ist R3 = 97.3k :math:`\Omega` und R2 = 99.7 :math:`\Omega`
 
 
 Schritt 1: S ist auf POS1 (:numref:`14_fig_02`)
----------------------------------------
+-----------------------------------------------
 
 Anstatt den Schalter S zu verwenden, kann R5 manuell auf Pin6 des Prüflings auf der Leiterplatte eingestellt werden. Bauen Sie eine Schaltung auf der Platine auf und stellen Sie R5 auf POS1 ein.
 
@@ -173,7 +173,7 @@ Anstatt den Schalter S zu verwenden, kann R5 manuell auf Pin6 des Prüflings auf
 
 
 Schritt 2: S ist auf POS2 (:numref:`14_fig_02`)
----------------------------------------
+-----------------------------------------------
 
 Baue eine Schaltung auf dem Steckbrett und setze R5 auf POS2.
 
