@@ -61,7 +61,7 @@ Spannungsrückkopplungs-Operationsverstärker arbeiten als **Spannungsein- und -
 
 .. math::
 
-   Verstärkung \ quad in \ quad dB = 20log (A_ {VOL}) \ quad (2)
+   Verstärkung \quad in \quad dB = 20log(A_ {VOL}) \quad             (2)
 
 .. note::
 
@@ -112,7 +112,7 @@ Wenn wir :math:`A_ {OL} = 1.8E6` nehmen, dann müssen wir für 1V am DUT(OP27)-A
    einige Größenordnungen größer als :math:`V_{d}` und somit mit unseren Geräten messbar ist.
 
 
-**Bauen Sie die in :numref:`14_fig_02` dargestellte Schaltung auf**. Bevor Sie die Widerstände R2 und R3 in die
+**Bauen Sie die in** :numref:`14_fig_02` **dargestellte Schaltung auf**. Bevor Sie die Widerstände R2 und R3 in die
 Schaltung einsetzen, messen und notieren Sie die Werte der beiden Widerstände mit einem DMM, falls vorhanden.
 
 In unserem Fall ist R3 = 97.3k :math:`\Omega` und R2 = 99.7 :math:`\Omega`
