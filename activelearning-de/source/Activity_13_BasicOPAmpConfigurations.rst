@@ -20,7 +20,7 @@ ___________
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn Sie sich auf die Verbindungen zur Red Pitaya
 STEMlab - Board - Hardware_ beziehen.
 
-Oscilloscope_ & Signal_ generator_ Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
+Oscilloscope_ & Signal_  generator_  Anwendung wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
 Erweiterungssteckerstift, der als 5V-Spannungsquelle verwendet wird, finden Sie in der Dokumentation hier_.
 
@@ -31,32 +31,32 @@ Materialien
 - Red Pitaya STEMlab 125-14 oder STEMlab 125-10
 - OPAMP: 1x AD8541 (CMOS-Rail-to-Rail-Verstärker)
 - LED: 1x
-- Widerstand: 4x 1 :math:`k \ Omega`
-- Widerstand: 3x 4,7 :math:`k \ Omega`
-- Widerstand: 2x 10 :math:`k \ Omega`
-- Widerstand: 1x 20 :math:`k \ Omega`
-- Kondensator: 1x 1 :math:`\ mu F`
+- Widerstand: 4x 1 :math:`k\Omega`
+- Widerstand: 3x 4,7 :math:`k\Omega`
+- Widerstand: 2x 10 :math:`k\Omega`
+- Widerstand: 1x 20 :math:`k\Omega`
+- Kondensator: 1x 1 :math:`\muF`
 
   
 Operationsverstärker-Grundlagen
 -------------------------------
 
 .. _LM317: http://www.ti.com/lit/ds/symlink/lm317.pdf
-.. _einstelbaren: http://www.ti.com/lit/ds/symlink/lm317.pdf
+.. _einstellbaren: http://www.ti.com/lit/ds/symlink/lm317.pdf
 .. _Spannungsregler: http://www.ti.com/lit/ds/symlink/lm317.pdf
 .. _E2: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 .. _Anschluss: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
 
 Erster Schritt: Anschließen der Gleichstromversorgung
 -----------------------------------------------------
-Operationsverstärker müssen immer mit Gleichstrom versorgt werden, daher ist es ratsam, diese Anschlüsse zuerst zu konfigurieren, bevor andere Schaltungskomponenten hinzugefügt werden. :numref:`13_fig_01` zeigt eine mögliche Leistungsanordnung auf Ihrer Steckplatine. Wir verwenden zwei der langen Schienen für die positive Versorgungsspannung und Masse. Mit dem einstellbaren_ Spannungsregler_ LM317_ stellen wir eine 2,5 V mittlere Versorgungsschiene zur Verfügung, die eventuell benötigt wird.
+Operationsverstärker müssen immer mit Gleichstrom versorgt werden, daher ist es ratsam, diese Anschlüsse zuerst zu konfigurieren, bevor andere Schaltungskomponenten hinzugefügt werden. :numref:`13_fig_01` zeigt eine mögliche Leistungsanordnung auf Ihrer Steckplatine. Wir verwenden zwei der langen Schienen für die positive Versorgungsspannung und Masse. Mit dem einstellbaren_  Spannungsregler_  LM317_ stellen wir eine 2,5 V mittlere Versorgungsschiene zur Verfügung, die eventuell benötigt wird.
 
 
 .. note::
    STEMlab-Boards haben keinen 2,5V DC-Ausgangspin, daher verwenden wir den einstellbaren Regler LM317, um eine 2,5V DC-Schiene aus einer 5V-Schiene bereitzustellen. Der Anschluss des LM317 ist sehr einfach und wird im Folgenden beschrieben. Die Gleichung zur Berechnung der Ausgangsspannung ist gegeben als:
       
    .. math::
-      V_ {out} = 1.25 \ bigg (1+ \ frac {R_2} {R_1} \ bigg) \ quad (1).
+      V_ {out} = 1.25\bigg(1+\frac{R_2}{R_1}\bigg)\quad   (1).
 
 
 Dazu gehört der so genannte " Netzentkopplungs- " Kondensator, der zwischen Netzteil und Erdungsschienen geschaltet ist. Es ist noch zu früh, um den Zweck dieser Kondensatoren ausführlich zu diskutieren, aber sie werden verwendet, um das Rauschen auf den Versorgungsleitungen zu reduzieren und parasitäre Schwingungen zu vermeiden. Es gilt als gute Praxis im analogen Schaltungsdesign, immer kleine Bypass-Kondensatoren in der Nähe der Versorgungsanschlüsse jedes Operationsverstärkers in Ihrer Schaltung zu verwenden.
