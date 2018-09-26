@@ -117,46 +117,41 @@ Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker au
 ---------------------------
 
 .. math::
-R_4 = R_2 = 100k \ Omega, \ quad R_3 = R_1 10k \ Omega, \ quad R_2 / R_1 = 10, \ quad R_S = R_5 = 10 \ Omega, \ quad I_L = \ frac {V_ {out}} {10 R_S }
-
+   R_4 = R_2 = 100k\Omega, \quad R_3 = R_1 10k\Omega, \quad R_2/R_1 = 10, \quad R_S = R_5 = 10\Omega, \quad I_L = \frac{V_{out}}{10R_S}
 
 .. note::
-     ** In unserem Beispiel wird der Laststrom als ** angegeben.
+     **In unserem Beispiel wird der Laststrom wie folgt angegeben**
 
       .. math::
-          I_L = \ frac {V_ {out}} {100} \ quad (8)
+          I_L = \frac{V_ {out}}{100} \quad (8)
  
 Materialien
 ___________
 
 - Rotes Pitaya STEMlab
 - OPAMP: 1x OP484_ Quad Rail zu Rail Verstärker
-- Widerstand: 3x 10 :math:`k \ Omega`
-- Widerstand: 1x 100 :math:`k \ Omega`
-- Widerstand: 1x 10 :math:`\ Omega`
-- Widerstand: 1x 220: Mathe: `\ Omega`
-- Kondensator: 1x 0.1 :math:`\ mu F`
+- Widerstand: 3x 10 :math:`k\Omega`
+- Widerstand: 1x 100 :math:`k\Omega`
+- Widerstand: 1x 10 :math:`\Omega`
+- Widerstand: 1x 220 :math:`\Omega`
+- Kondensator: 1x 0.1 :math:`\mu F`
 - Induktivität: 1x 4.7 :math:`mH`
 
-Richtungen
-__________
+Durchführung
+____________
 
-Bauen Sie den in Abbildung 2 gezeigten Strommessverstärker auf. R6 wird hinzugefügt, um den Ausgang des OP484 zu stabilisieren. Bei Verwendung großer Rückkopplungswiderstände kann das OP484 aufgrund der großen Eingangskapazität des IN2-Eingangs instabil werden.  :math:`V_ {S}` wird direkt vom OUT1 STEMlab-Ausgang als "Stromversorgung" für den LOAD bereitgestellt.
-Die Last besteht aus verschiedenen Impedanzen wie einem Widerstand, Kondensator oder Induktor.
-Das Eingangsspannungssignal IN2 zeigt direkt den Laststrom, wie in Gleichung 8 gezeigt.
+Bauen Sie den in :numref:`17_fig_02` gezeigten Strommessverstärker auf. :math:`R_6` wird hinzugefügt, um den Ausgang des OP484 zu stabilisieren. Bei Verwendung großer Rückkopplungswiderstände kann der OP484 aufgrund der großen Eingangskapazität des IN2-Eingangs instabil sein. :math:`V_{S}` wird direkt vom Ausgang OUT1 STEMlab als "Stromversorgung" für die Last bereitgestellt. Die Last besteht aus verschiedenen Impedanzen wie beispielsweise einem Widerstand, Kondensator oder Induktor. Das Eingangsspannungssignal IN2 zeigt den Laststrom direkt an, wie in Gleichung 8 dargestellt.
 
-
+.. _17_fig_02:
 .. figure:: img/ Activity_17_Fig_02.png
 
-Abbildung 2: Differenzverstärkerschaltung für die Strommessung
+	    : Differenzverstärkerschaltung für die Strommessung
 
-Komponentenwerte sind nächste:
+Komponentenwerte sind folgende:
 
 .. math::
      
-     R_4 = R_2 = 100k \ Omega, \ quad R_3 = R_1 = 10k \ Omega, \ quad R_S = R_5 = 10 \ Omega, \ quad R_6 = 220 \ Omega,
-
-     \ quad C_1 = 0,1 \ mu F, \ quad \ viereck L_1 = 4,7 mH
+     R_4 = R_2 = 100k\Omega, \quad R_3 = R_1 = 10k\Omega, \quad R_S = R_5 = 10\Omega, \quad R_6 = 220\Omega, \quad C_1 = 0,1 \mu F, \quad \quad L_1 = 4,7 mH
 
 
 Verfahren
@@ -165,104 +160,104 @@ _________
 Widerstand LAST
 ---------------
 
-Für LOAD nimm :math:`470 \ Omega` Widerstand und Bau Schaltung in Abbildung 2 gezeigt.
+Für die Last nehmen Sie den Widerstand :math:`470\Omega` und bauen Sie eine Schaltung, wie in :numref:`17_fig_02` dargestellt auf.
 
+.. _17_fig_03:
 .. figure:: img/ Activity_17_Fig_03.png
 
-Abbildung 3: Differenzverstärkerschaltung für Strommessung - Resistive LOAD
+	    : Differenzverstärkerschaltung für Strommessung - Resistive Last
 
 
-1. Starten Sie die Anwendung Oszilloskop & Signalgenerator.
-2. Stellen Sie im Menü OUT1-Einstellungen den Amplitudenwert auf 0,5 V ein, um eine Sinuswelle als Eingangsspannung zu verwenden :math:`V_ {source}`. Wählen Sie im Wellenformmenü SINE,
-   Deaktivieren Sie den SHOW-Button und wählen Sie enable.
-3. Stellen Sie für die stabile Erfassung die Triggerquelle auf IN1 ein
-4. Stellen Sie sicher, dass IN1 V / div am linken unteren Bildschirmrand auf 200mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
-5. Stellen Sie sicher, dass IN2 V / div am linken unteren Bildschirmrand auf 50mV / div gestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+1. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
+2. Im Menü OUT1 Einstellungen den Amplitudenwert auf 0,5V einstellen, um eine Sinuswelle als Eingangsspannungsquelle :math:`V_{Source}` anzulegen. Wählen Sie aus dem Wellenform-Menü SINE, deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
+3. Für die stabile Aufnahme die Triggerquelle auf IN1 einstellen.
+4. Stellen Sie sicher, dass IN1 V/div am linken unteren Bildschirmrand auf 200 mV/div eingestellt ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+5. Stellen Sie sicher, dass IN2 V/div am linken unteren Bildschirmrand auf 50 mV/div gestellt ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
 6. Wählen Sie im Messmenü "MAX", wählen Sie IN1 und drücken Sie FERTIG
 7. Wählen Sie im Messmenü "MAX", wählen Sie IN2 und drücken Sie FERTIG
-8. Setzen Sie t / div Wert auf 200us / div (Sie können t / div mit horizontalen +/- Kontrollen einstellen)
-9. Auslesen von IN2 und Berechnen des Laststroms unter Verwendung von Gleichung (8)
+8. Setzen Sie t/div Wert auf 200 us/div (Sie können t/div mit horizontalen +/- Regler einstellen)
+9. Messwerte von IN2 auslesen und Laststrom nach Gleichung (8) berechnen
 
-
+.. _17_fig_04:
 .. figure:: img/ Activity_17_Fig_04.png
 
-Abbildung 4: Widerstands-LOAD-Strommessungen
+	    :resestive-Last-Strommessungen
 
-Aus den Messungen von Abbildung 4 können wir den maximalen Laststrom berechnen als:
-
-.. math::
-     
-     I_L = \ frac {IN2_ {max}} {100} = \ frac {108,0 mV} {100} = 1,08 mA
-
-Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
+Aus den Messungen aus :numref:`17_fig_04` können wir den maximalen Laststrom berechnen als:
 
 .. math::
      
-     I_L = \ Frac {OUT1_ {max}} {R_ {Laden} + R_s} = \ Frac {0.5V} {470 \ Omega + 10 \ Omega} = 1.04mA
+     I_L = \frac{IN2_{max}}{100} = \frac{108,0 mV}{100} = 1,08 mA
 
-Wir können sehen, dass der gemessene Strom dem entspricht, was wir erwartet haben, um das korrekte Verhalten unseres Differenzverstärkers zu bestätigen.
-Die Differenz von 0,04 mA zwischen exaktem und gemessenem Wert des Laststroms ergibt sich aus den nominalen Toleranzen der Last und der Shunt-Widerstände.
+Wir können unsere Messungen überprüfen, indem wir den Laststrom berechnen wie folgt berechnen
 
-Kapazität LAST
+.. math::
+     
+     I_L = \frac{OUT1_{max}}{R_{Laden} + R_s} = \frac{0.5V}{470\Omega + 10\Omega} = 1.04mA
+
+Wir können sehen, dass der gemessene Strom dem entspricht, was wir erwartet haben, was das korrekte Verhalten unseres Differenzverstärkers bestätigt. Die Differenz von 0,04mA zwischen genauem und gemessenem Wert des Laststroms ergibt sich aus den Nenntoleranzen der Last- und Nebenwiderstände.
+
+Kapazitive LAST
 --------------
 
-Für LOAD nehmen Sie :math:`0.1 \ mu F` Kondensator und bauen Schaltung wie in Abbildung 2 gezeigt.
+Für die Last nehmen Sie :math:`0.1\mu F` Kondensator und bauen Schaltung wie in :numref:`17_fig_02` gezeigt auf.
 
+.. _17_fig_05:
 .. figure:: img/ Activity_17_Fig_05.png
 
-Abbildung 5: Kapazität LOAD
-
+	    : Kapazitive Last
+	    
+.. _17_fig_06:
 .. figure:: img/ Activity_17_Fig_06.png
 
-Abbildung 6: Kapazitäts-LOAD-Strommessungen
+	    : Kapazitive-Last-Strommessungen
 
-Aus den Messungen aus Abbildung 6 können wir den maximalen Laststrom berechnen als:
-
-.. math::
-     
-     I_L = \ Frac {IN2_ {max}} {100} = \ frac {36.5mV} {100} = 0.36mA
-
-Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
+Aus den Messungen aus :numref:`17_fig_06` können wir den maximalen Laststrom berechnen als:
 
 .. math::
      
-     I_L = \ Frac {OUT1_ {max}} {Z_ {Laden} + R_s} = \ Frac {OUT1_ {max}} {\ frac {1} {2 \ pi f_ {OUT_1} C_1} + R_s} = \ frac { 0,5 V} {1592 \ Omega + 10 \ Omega} = 0,31 mA
+     I_L = \frac{IN2_{max}}{100} = \frac{36.5mV}{100} = 0.36mA
+
+Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt berechnen
+
+.. math::
+     
+     I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1}C_1} + R_s} = \frac{0,5V}{1592\Omega + 10\Omega} = 0,31 mA
 
 Induktive Last
 --------------
 
-Für LOAD nehmen Sie :math:`4.7 mH` Induktor und bauen Schaltung wie in Abbildung 2 gezeigt.
+Für Last nehmen Sie :math:`4.7 mH` Induktivität und bauen Sie die Schaltung wie in :numref:`17_fig_02` gezeigt auf.
 
+.. _17_fig_07:
 .. figure:: img/ Activity_17_Fig_07.png
 
-Abbildung 7: Induktive Last
+	    : Induktive Last
 
 
 1. Stellen Sie im OUT1-Einstellungsmenü den Amplitudenwert auf 0,2 V ein
-2. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms, dass IN1 V / div auf 50 mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
-3. Stellen Sie sicher, dass IN2 V / div am linken unteren Bildschirmrand auf 500 mV / div eingestellt ist (Sie können V / div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+2. Vergewissern Sie sich auf der linken unteren Seite des Bildschirms, dass IN1 V/div auf 50 mV/div eingestellt ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+3. Stellen Sie sicher, dass IN2 V/div am linken unteren Bildschirmrand auf 500 mV/div eingestellt ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
 
-
+.. _17_fig_08:
 .. figure:: img/ Activity_17_Fig_08.png
 
-Abbildung 8: Induktive LOAD Strommessungen
+	    : Induktive-Last-Strommessungen
 
-Aus den Messungen aus Abbildung 8 können wir den maximalen Laststrom berechnen als:
-
-.. math::
-     
-     I_L = \ Frac {IN2_ {max}} {100} = \ frac {620mV} {100} = 6.2mA
-
-Wir können unsere Messungen überprüfen, indem wir den Laststrom als berechnen
+Aus den Messungen aus :numref:`17_fig_08` können wir den maximalen Laststrom berechnen als:
 
 .. math::
      
-     I_L = \ Frac {OUT1_ {max}} {Z_ {Laden} + R_s} = \ Frac {OUT1_ {max}} {2 \ pi f_ {OUT_1} L_1 + R_s} = \ frac {0.2V} {30 \ Omega +10 \ Omega} = 5,0 mA
+     I_L = \frac{IN2_{max}}{100} = \frac{620mV}{100} = 6.2mA
+
+Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt berechnen
+
+.. math::
+     
+     I_L = \frac {OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{2 \pi f_{OUT_1}L_1 + R_s} = \frac{0.2V}{30\Omega +10\Omega} = 5,0 mA
 
 .. note::
-    Bei der induktiven Last haben wir den größten Unterschied in den Messungen. Versuchen Sie zu erklären, warum.
-    note. Störeffekte, Serienwiderstand eines Induktors.
-
+   Bei induktiver Last haben wir den größten Unterschied in den Messungen. Versuchen Sie zu erklären, warum. Hinweis: Parasitäre, Serienwiderstand eines Induktors.
 
 
 
