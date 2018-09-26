@@ -114,7 +114,7 @@ Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker au
 
 
 **In unserem Beispiel haben wir**
----------------------------
+---------------------------------
 
 .. math::
    R_4 = R_2 = 100k\Omega, \quad R_3 = R_1 10k\Omega, \quad R_2/R_1 = 10, \quad R_S = R_5 = 10\Omega, \quad I_L = \frac{V_{out}}{10R_S}
@@ -198,7 +198,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom berechnen wie
 Wir können sehen, dass der gemessene Strom dem entspricht, was wir erwartet haben, was das korrekte Verhalten unseres Differenzverstärkers bestätigt. Die Differenz von 0,04mA zwischen genauem und gemessenem Wert des Laststroms ergibt sich aus den Nenntoleranzen der Last- und Nebenwiderstände.
 
 Kapazitive LAST
---------------
+---------------
 
 Für die Last nehmen Sie :math:`0.1\mu F` Kondensator und bauen Schaltung wie in :numref:`17_fig_02` gezeigt auf.
 
