@@ -4,7 +4,7 @@ OPAMP Verstärkungsbandbreite Produkt :math:`GBW`
 Zielsetzung
 ___________
 
-Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst. Der Parameter ist der **Verstärkungsbandbreitenprodukt** (:mazh:`GBW`) oder die Verstärkungsbandbreite der Einheit.
+Ziel dieser Übung ist es, einen Schlüsselparameter zu untersuchen, der die Leistung von Operationsverstärkern bei hohen Frequenzen beeinflusst. Der Parameter ist der **Verstärkungsbandbreitenprodukt** (:math:`GBW`) oder die Verstärkungsbandbreite der Einheit.
 
 Anmerkungen
 ___________
@@ -40,7 +40,11 @@ ___________
 Die Vorwärtsverstärkung, :math:`G`, ist definiert als die Verstärkung des Operationsverstärkers, wenn ein Signal differentiell und ohne negative Rückkopplung in den Verstärker eingespeist wird. Diese Verstärkung ist bei allen Frequenzen idealerweise unendlich, aber in einem echten Operationsverstärker ist sie begrenzt_ und hängt von der Frequenz ab. Bei niedriger Frequenz ist die Verstärkung maximal, nimmt mit zunehmender Frequenz linear ab und hat einen Wert von eins bei der Frequenz, die allgemein als Einheitsverstärkung- oder Grenzfrequenz :math:`f_{c}` bezeichnet wird (in Gleichungsform, :math:`G(f_c)=1`). Für den **OP97** beträgt die **Verstärkungsfrequenz 900 kHz**, die **Verstärkung im offenen Regelkreis bei dieser Frequenz ist einfach eins**. Dies ist auch die Closed-Loop-Bandbreite oder die maximale Frequenz, wenn die Rückführung mit einer Closed-Loop-Verstärkung von 1 konfiguriert ist. :math:`G_f` ist definiert als das **Verstärkungs-Bandbreitenprodukt** :math:`GBW`, und für alle Eingangsfrequenzen ist dieses Produkt konstant und gleich :math:`f_c`. Die Verstärkung kann als einfache Zahl (Betrag) oder in dB(Dezibel) angegeben werden.
 
 .. math::
-   GBW = Gewinn * f_c oder GBW = Gewinn * BW
+   GBW = Gewinn * f_c
+
+   oder
+
+   GBW = Gewinn * BW
 
 wobei :math:`f_c` die Grenzfrequenz ist (bei :math:`f_c` verringer sich die Verstärkung um -3dB (-3dB = :math:`1/ \sqrt{2}` Abfall in der Signalamplitude)) und :math:`BW` Frequenzbandbreite in diesem Fall gegeben als :math:`BW = f_c`
 
@@ -88,7 +92,7 @@ Bauen Sie die in :numfig:`15_fig_02` gezeigte Schaltung auf Ihrer lötfreien Loc
    überprüfen Sie Ihre Schaltung nochmals. Die Spannungsversorgungsstifte -3,3V
    und +3,3V haben keine Schutzschaltung und können im Falle eines Kurzschlusses beschädigt werden.
    
-1. Bauen Sie die Filterschaltung wie in :numfig:`15_fig_02` auf Ihrem lötfreien Steckbrett mit den Komponentenwerten R1 = R4 = 100 Ω, R2 = 100 kΩ und R3 = 47 kΩ auf.
+1. Bauen Sie die Filterschaltung wie in :numref:`15_fig_02` auf Ihrem lötfreien Steckbrett mit den Komponentenwerten R1 = R4 = 100 Ω, R2 = 100 kΩ und R3 = 47 kΩ auf.
 
 2. Starten Sie die Anwendung Bode analyzer. Die Bode-Analysatoranwendung führt einen
    Frequenzdurchlauf durch, so dass sie ein Sinussignal auf :math:`OUT1` innerhalb des von uns
@@ -103,7 +107,7 @@ Bauen Sie die in :numfig:`15_fig_02` gezeigte Schaltung auf Ihrer lötfreien Loc
 - Startfrequenz: 100 Hz
 - Endfrequenz: 20 kHz
 - Anzahl der Schritte: 50
-- Skallirung: Log
+- Skallierung: Log
 - Wählen Sie die RUN-Taste
 
 .. _15_fig_03:
