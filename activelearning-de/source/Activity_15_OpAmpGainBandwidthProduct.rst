@@ -18,8 +18,8 @@ ___________
 .. _begrenzt: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity14_OPAMPOpenLoopGain.html#opamp-open-loop-gain
 .. _invertierenden: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
 .. _Verstärker: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity13_BasicOPAmpConfigurations.html#inverting-amplifier
-.. _Spannungs: https://en.wikipedia.org/wiki/Voltage_divider
-.. _teiler: https://en.wikipedia.org/wiki/Voltage_divider
+.. _Spannungsteiler: https://de.wikipedia.org/wiki/Spannungsteiler
+
 
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Erweiterungsstecker-Pins für die Spannungsversorgung **-3,3V** und **+3,3V** sind in der Dokumentation hier_ zu entnehmen. Die Anwendung des Bode_ - Analysators wird verwendet, um den Frequenzgang der Operationsverstärker-Schaltung zu messen.
 
@@ -80,7 +80,7 @@ wobei :math:`f_c` die Grenzfrequenz ist (bei :math:`f_c` verringer sich die Vers
 Verfahren
 _________
 
-Bauen Sie die in :numfig:`15_fig_02` gezeigte Schaltung auf Ihrer lötfreien Lochrasterplatine auf, um den Frequenzgang eines Umkehrverstärkers zu messen, der mit einer geschlossenen Regelverstärkung von 1000 konfiguriert ist. Da die Verstärkung der Schaltung so hoch ist, muss die Schaltung mit einem sehr kleinen Eingangssignal betrieben werden. Um mit dem STEMlab-Generator ein Kleinsignal zu erzeugen, wird ein 1/1000- Spannungs_  teiler_ [R3 - (R4|||R1)] verwendet, um das 2V p2p-Sinussignal am Eingang des Wechselrichters auf 2 mV p2p zu reduzieren. Die Parallelkombination von R4 und R1 ist 50 KΩ, was bei den 47 KΩ R3 zu einem Teilerverhältnis nahe 1/1000 führt.
+Bauen Sie die in :numref:`15_fig_02` gezeigte Schaltung auf Ihrer lötfreien Lochrasterplatine auf, um den Frequenzgang eines Umkehrverstärkers zu messen, der mit einer geschlossenen Regelverstärkung von 1000 konfiguriert ist. Da die Verstärkung der Schaltung so hoch ist, muss die Schaltung mit einem sehr kleinen Eingangssignal betrieben werden. Um mit dem STEMlab-Generator ein Kleinsignal zu erzeugen, wird ein 1/1000- Spannungsteiler_ [R3 - (R4|||R1)] verwendet, um das 2V p2p-Sinussignal am Eingang des Wechselrichters auf 2 mV p2p zu reduzieren. Die Parallelkombination von R4 und R1 ist 50 KΩ, was bei den 47 KΩ R3 zu einem Teilerverhältnis nahe 1/1000 führt.
 
 .. _15_fig_02:
 .. figure:: img/ Activity_15_Fig_02.png
