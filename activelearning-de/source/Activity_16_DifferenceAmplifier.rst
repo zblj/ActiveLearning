@@ -32,24 +32,24 @@ Die grundlegende Unterschiede der Operationsverstärkerschaltung ist in :numref:
 Im ersten Schritt betrachten Sie die Schaltung aus :numref:`16_fig_01`, bei der der nichtinvertierende Eingang (Pin 3) auf GND gesetzt ist. Wir bekommen eine vertraute invertierende Verstärkerschaltung, deren Übertragungsfunktion wie folgt gegeben ist
 
 .. math::
-V_{out} = -V_1 \bigg( \frac{R_f}{R_i} \bigg) \quad  (1)
+   V_{out} = -V_1 \bigg( \frac{R_f}{R_i} \bigg) \quad  (1)
 
 Im zweiten Schritt betrachten Sie die Schaltung aus :numref:`16_fig_01`, bei der der :math:`V_1` Eingang auf GND gesetzt wird. Wir lernen die nicht-invertierende Verstärkerschaltung kennen, deren Übertragungsfunktion wie folg gegeben ist
 
 .. math::
-V_{out} = V_2 \bigg(1 + \frac{R_f}{R_i} \bigg) \quad (2)
+   V_{out} = V_2 \bigg(1 + \frac{R_f}{R_i} \bigg) \quad (2)
   
 Nach dem Superpositionsprinzip erhalten wir
 
 .. math::
-V_{out} = V_{out_{Schritt_1}} + V_{out_{Schritt_2}} = V_2 \bigg (1+ \frac{R_f}{R_i} \bigg) - V_1 \bigg( \frac{R_f}{R_i } \bigg) \quad (3)
+   V_{out} = V_{out_{Schritt_1}} + V_{out_{Schritt_2}} = V_2 \bigg (1+ \frac{R_f}{R_i} \bigg) - V_1 \bigg( \frac{R_f}{R_i } \bigg) \quad (3)
 
 Aus der obigen Gleichung können wir deutlich erkennen, dass die Schaltung :numref:`16_fig_01` tatsächlich ein Differenzverstärker ist, wobei das Ausgangssignal :math:`V_ {out}` die Differenz der um Faktor :math:`\frac{R_f}{R_1}` verstärkten  Eingangssignale :math:`V_2 - V_1` ist.
 
 Für :math:`R_f = R_i` erhalten wir:
 
 .. math::
-V_{out} = 2V_2 - V_1 \quad (4)
+   V_{out} = 2V_2 - V_1 \quad (4)
   
 
 Materialien
@@ -65,7 +65,7 @@ _________
 Bauen Sie den in Abbildung 2 gezeigten Differenzverstärker auf. R3 und R4 werden als Spannungsteiler hinzugefügt, um das Eingangssignal :math:`V_2^*` um die Hälfte zu dämpfen. Mit dem hinzugefügten Spannungsteiler (R3, R4) erhalten wir für die in :numref:`16_fig_02`und aus Gleichung (4) dargestellte Schaltung folgende Werte
 
 .. math::
-V_{out} = 2V_2 - V_1 = \frac{1}{2} 2 V_2^* - V_1 = V_2^* - V_1 = OUT_2 - OUT_1 \quad (5)
+   V_{out} = 2V_2 - V_1 = \frac{1}{2} 2 V_2^* - V_1 = V_2^* - V_1 = OUT_2 - OUT_1 \quad (5)
 
 .. _16_fig_02:
 .. figure:: img/ Activity_16_Fig_02.png
