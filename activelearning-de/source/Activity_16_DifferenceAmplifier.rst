@@ -62,7 +62,7 @@ ___________
 Verfahren
 _________
 
-Bauen Sie den in Abbildung 2 gezeigten Differenzverstärker auf. R3 und R4 werden als Spannungsteiler hinzugefügt, um das Eingangssignal :math:`V_2^*` um die Hälfte zu dämpfen. Mit dem hinzugefügten Spannungsteiler (R3, R4) erhalten wir für die in :numref:`16_fig_02`und aus Gleichung (4) dargestellte Schaltung folgende Werte
+Bauen Sie den in Abbildung 2 gezeigten Differenzverstärker auf. R3 und R4 werden als Spannungsteiler hinzugefügt, um das Eingangssignal :math:`V_2^*` um die Hälfte zu dämpfen. Mit dem hinzugefügten Spannungsteiler (R3, R4) erhalten wir für die in :numref:`16_fig_02` und aus Gleichung (4) dargestellte Schaltung folgende Werte
 
 .. math::
    V_{out} = 2V_2 - V_1 = \frac{1}{2} 2 V_2^* - V_1 = V_2^* - V_1 = OUT_2 - OUT_1 \quad (5)
