@@ -65,10 +65,10 @@ zwischenspeichert oder einfriert und verhindert, dass er sich
 ändert, selbst wenn sich die Eingänge ändern.
       
 
-
+.. _18_fig_01:
 .. figure:: img/Activity_18_Fig_01.png
 
-   Abbildung 1: AD8561_ Datenblatt und Pinbelegung
+	    : AD8561_ Datenblatt und Pinbelegung
 
    
 Materialien
