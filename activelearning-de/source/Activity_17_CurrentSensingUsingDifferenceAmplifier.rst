@@ -1,14 +1,14 @@
-Strommessung mit einem Differenzverstärker
-##########################################
+ Strommessung mit einem Differenzverstärker
+============================================
 
 
 Zielsetzung
-___________
+-----------
 
 Ziel dieser Labortätigkeit ist es, Strommesstechniken zu untersuchen, die einen als Differenzverstärker konfigurierten Operationsverstärker verwenden.
 
 Anmerkungen
-___________
+-----------
 
 .. _Hardware: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-10/top.html
 .. _Dokumentation: http://redpitaya.readthedocs.io/en/latest/doc/developerGuide/125-14/extt.html#extension-connector-e2
@@ -18,30 +18,35 @@ ___________
 .. _Differenzverstärker: http://red-pitaya-active-learning.readthedocs.io/en/latest/Activity16_DifferenceAmplifier.html#difference-amplifier
 .. _OP484: http://www.analog.com/media/en/technical-documentation/data-sheets/OP184_284_484.pdf
 
+
 In diesen Tutorials verwenden wir die Terminologie aus dem Benutzerhandbuch, wenn es um die Verbindungen zur Red Pitaya STEMlab Board Hardware_ geht. Die Erweiterungsstecker-Pins für die Spannungsversorgung **-3,3V** und **+3,3V** sind in der Dokumentation_ dargestellt. Die Oszilloskop_ - und Signalgeneratoranwendung_ wird zum Erzeugen und Beobachten von Signalen auf der Schaltung verwendet.
 
 Hintergrund
-___________
+-----------
 
 Wir haben den Differenzverstärker_ untersucht. Nun werden wir ihn als Strommessverstärker verwenden. Eine der Hauptanwendungen des Operationsverstärkers ist die Messung des Stroms an einem anderen Punkt in einer Schaltung als dort, wo er in oder aus der Erde oder dem gemeinsamen Knoten fließt. Der zu messende Strom wird durch Aufbrechen des Strompfades und Reihenschaltung eines Niederohmwiderstandes in eine kleine Spannung umgewandelt. Dieser Widerstand wird als Stromshunt-Widerstand oder auch nur als Shunt bezeichnet. Der Widerstand wird klein gehalten und der Spannungsabfall über dem Shunt klein, um die Auswirkungen dieser Änderung auf den Betrieb der Schaltung zu reduzieren. Der durch den Shunt-Widerstand fließende Strom wird als Pfadstrom angegeben.
 
 
 .. math::
+   :label: 17_eq_1
      
-    I_{Pfad} = I_{Shunt} = \frac{\Delta V}{R_{Shunt}} \quad (1)
+    I_{Pfad} = I_{Shunt} = \frac{\Delta V}{R_{Shunt}}
 
 Da die Differenzspannung am Widerstand (gegeben als :math:`\Delta V = V_{R_{shunt_{Knoten_1}}}-V_{R_{shunt_{Knoten_2}}}`) gemessen werden sollte, können wir sehen, dass ein Differenzverstärker ist eine ideale Schaltung für diese Aufgabe. Der kleine differentielle Spannungsabfall über den Shunt wird verstärkt und durch einen Operationsverstärker in eine einseitige (gemeinsam referenzierte) Spannung umgewandelt.
 
-.. _17_fig_01:
-.. figure:: img/ Activity_17_Fig_01.png
 
-	    : Basis-Differenzverstärker in der Stromsensorkonfiguration
+.. figure:: img/ Activity_17_Fig_01.png
+   :name: 17_fig_01
+   :align: center
+
+   Basis-Differenzverstärker in der Stromsensorkonfiguration
 
 
 Aus der :numref:`17_fig_01` wissen wir, dass die als :math:`Delta V = I_L R_s` angegebene Differenzspannung :math:`Delta V` Informationen über den Laststrom enthält. Auch aus der Differenzverstärker-Theorie wissen wir, dass :math:`\Delta V` irgendwie mit dem :math:`V_ {out}` zu tun haben wird. Die erste Annahme ist wie folgt:
 
 .. math::
-    V_{out} \propto \Delta V = I_L R_s \ quad (1)
+   
+   V_{out} \propto \Delta V = I_L R_s
 
 oder
 
