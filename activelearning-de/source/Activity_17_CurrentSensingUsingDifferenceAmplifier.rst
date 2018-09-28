@@ -39,7 +39,7 @@ Da die Differenzspannung am Widerstand (gegeben als :math:`\Delta V = V_{R_{shun
    Basis-Differenzverstärker in der Stromsensorkonfiguration
 
 
-Aus der :numref:`17_fig_01` wissen wir, dass die als :math:`Delta V = I_L R_s` angegebene Differenzspannung :math:`Delta V` Informationen über den Laststrom enthält. Auch aus der Differenzverstärker-Theorie wissen wir, dass :math:`\Delta V` irgendwie mit dem :math:`V_ {out}` zu tun haben wird. Die erste Annahme ist wie folgt:
+Aus der Abbildung 1 wissen wir, dass die als :math:`Delta V = I_L R_s` angegebene Differenzspannung :math:`Delta V` Informationen über den Laststrom enthält. Auch aus der Differenzverstärker-Theorie wissen wir, dass :math:`\Delta V` irgendwie mit dem :math:`V_ {out}` zu tun haben wird. Die erste Annahme ist wie folgt:
 
 .. math::
    V_{out} \propto \Delta V = I_L R_s \quad
@@ -49,7 +49,7 @@ oder
 .. math::
     I_L \propto \frac{V_{out}}{R_s}
 
-Mit anderen Worten: durch einfaches Messen und Skalieren von :math:`V_{out}` werden wir den Laststrom messen, wobei :math:`R_s` ein Nebenwiderstand ist. Übertragungscharakteristik des Differenzverstärkers für die in :numref:`17_fig_01` dargestellte Schaltung ist:
+Mit anderen Worten: durch einfaches Messen und Skalieren von :math:`V_{out}` werden wir den Laststrom messen, wobei :math:`R_s` ein Nebenwiderstand ist. Übertragungscharakteristik des Differenzverstärkers für die in Abbildung 1 dargestellte Schaltung ist:
 
 .. math::
    V_{out} = V_+ \bigg( 1 + \frac{R_2}{R_1} \bigg) - V_- \bigg(\frac{R_2}{R_1} \bigg) \quad (2)
@@ -69,7 +69,7 @@ und
 .. math::
    V_S = V_L + \Delta V \quad \Delta V = V_S - V_L
 
-Auf den ersten Blick, durch das Hinzufügen des Widerstandes :math:`R_4` zur Schaltung, wie in :numref:`17_fig_01` dargestellt, haben wir irgendwie eine komplizierte Übertragungsfunktion; von Gleichung (2) zu Gleichung (3). Aber das Hinzufügen von :math:`R_4` ist notwendig, um den Faktor :math:`1+R_2/R_1` zum Faktor :math:`R_2/R_1` aus der Gleichung (2) auszugleichen, um die Eingangsspannungen der Operationsverstärker gleichmäßig zu verstärken und somit eine einfache :math:`\Delta V` zu :math:`V_{out}` Korrelation zu ermöglichen. Der wichtige Schritt ist die Auswahl der Werte von :math:`R_3` und :math:`R_4` als
+Auf den ersten Blick, durch das Hinzufügen des Widerstandes :math:`R_4` zur Schaltung, wie in Abbildung 1 dargestellt, haben wir irgendwie eine komplizierte Übertragungsfunktion; von Gleichung (2) zu Gleichung (3). Aber das Hinzufügen von :math:`R_4` ist notwendig, um den Faktor :math:`1+R_2/R_1` zum Faktor :math:`R_2/R_1` aus der Gleichung (2) auszugleichen, um die Eingangsspannungen der Operationsverstärker gleichmäßig zu verstärken und somit eine einfache :math:`\Delta V` zu :math:`V_{out}` Korrelation zu ermöglichen. Der wichtige Schritt ist die Auswahl der Werte von :math:`R_3` und :math:`R_4` als
 
 .. math::
    R_4 = R_2 \quad R_3 = R_1
@@ -93,7 +93,7 @@ So können wir Gleichung (4) einfach schreiben als:
 .. math::
    V_{out} = V_S \bigg(\frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1} \bigg) \quad (5)
 
-Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker aus :numref:`17_fig_01` und der letzte Schritt ist, ihn in Bezug auf :math:`\Delta V` umzuschreiben, d.h. in Bezug auf :math:`I_L`.
+Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker aus Abbildung 1 und der letzte Schritt ist, ihn in Bezug auf :math:`\Delta V` umzuschreiben, d.h. in Bezug auf :math:`I_L`.
 
 .. math::
    V_{out} = \bigg (\frac{R_2}{R_1} \bigg)(V_S-V_L)
