@@ -28,9 +28,8 @@ Wir haben den Differenzverstärker_ untersucht. Nun werden wir ihn als Strommess
 
 
 .. math::
-   :label: 17_eq_1
-     
-    I_{Pfad} = I_{Shunt} = \frac{\Delta V}{R_{Shunt}}
+
+   I_{Pfad} = I_{Shunt} = \frac{\Delta V}{R_{Shunt}}
 
 Da die Differenzspannung am Widerstand (gegeben als :math:`\Delta V = V_{R_{shunt_{Knoten_1}}}-V_{R_{shunt_{Knoten_2}}}`) gemessen werden sollte, können wir sehen, dass ein Differenzverstärker ist eine ideale Schaltung für diese Aufgabe. Der kleine differentielle Spannungsabfall über den Shunt wird verstärkt und durch einen Operationsverstärker in eine einseitige (gemeinsam referenzierte) Spannung umgewandelt.
 
@@ -45,13 +44,12 @@ Da die Differenzspannung am Widerstand (gegeben als :math:`\Delta V = V_{R_{shun
 Aus der :numref:`17_fig_01` wissen wir, dass die als :math:`Delta V = I_L R_s` angegebene Differenzspannung :math:`Delta V` Informationen über den Laststrom enthält. Auch aus der Differenzverstärker-Theorie wissen wir, dass :math:`\Delta V` irgendwie mit dem :math:`V_ {out}` zu tun haben wird. Die erste Annahme ist wie folgt:
 
 .. math::
-   
-   V_{out} \propto \Delta V = I_L R_s
+   V_{out} \propto \Delta V = I_L R_s \quad
 
 oder
 
 .. math::
-    I_L \propto \frac{V_ {out}}{R_s}
+    I_L \propto \frac{V_{out}}{R_s}
 
 Mit anderen Worten: durch einfaches Messen und Skalieren von :math:`V_{out}` werden wir den Laststrom messen, wobei :math:`R_s` ein Nebenwiderstand ist. Übertragungscharakteristik des Differenzverstärkers für die in :numref:`17_fig_01` dargestellte Schaltung ist:
 
@@ -61,7 +59,7 @@ Mit anderen Worten: durch einfaches Messen und Skalieren von :math:`V_{out}` wer
 Dabei sind :math:`V_{+}` und :math:`V_{-}` Spannungen an nicht-invertierenden (Pin 3) bzw. invertierenden (Pin 2) Operationsverstärkerseingängen. Setzen wir nun :math:`V_{+}` und :math:`V_{-}` für Spannungen an Shunt-Widerstandsknoten erhalten wir
 
 .. math::
-   V_{out} = V_S \bigg (\frac{R_4}{R_3 + R_4} \bigg) \bigg(1 + \frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1 } \bigg) \quad  (3)
+   V_{out} = V_S \bigg(\frac{R_4}{R_3 + R_4}\bigg) \bigg(1 + \frac{R_2}{R_1} \bigg) - V_L \bigg(\frac{R_2}{R_1} \bigg) \quad  (3)
 
 wobei :math:`V_S` ist die Quellspannung und :math:`V_L` Lastspannung ist. Wir können auch schreiben
 
@@ -81,7 +79,7 @@ Auf den ersten Blick, durch das Hinzufügen des Widerstandes :math:`R_4` zur Sch
 Mit den obigen Gleichungen können wir Gleichung (3) wie folgt schreiben
 
 .. math::
-   V_{out} = V_S \bigg(\frac{R_2}{R_1 + R_2} \bigg) \bigg(1 + \frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1 } \bigg) \quad (4)
+   V_{out} = V_S \bigg(\frac{R_2}{R_1 + R_2} \bigg) \bigg(1 + \frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1} \bigg) \quad (4)
 
    =
 
@@ -90,12 +88,12 @@ Mit den obigen Gleichungen können wir Gleichung (3) wie folgt schreiben
 Sie besagt, dass
 
 .. math::
-     \bigg (\frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \bigg) = \frac{R_2}{R_1}
+     \bigg(\frac{R_2}{R_1 + R_2} + \frac{R_2R_2}{R_1(R_1 + R_2)} \bigg) = \frac{R_2}{R_1}
 
 So können wir Gleichung (4) einfach schreiben als:
 
 .. math::
-   V_{out} = V_S \bigg (\frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1} \bigg) \quad (5)
+   V_{out} = V_S \bigg(\frac{R_2}{R_1} \bigg) - V_L \bigg (\frac{R_2}{R_1} \bigg) \quad (5)
 
 Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker aus :numref:`17_fig_01` und der letzte Schritt ist, ihn in Bezug auf :math:`\Delta V` umzuschreiben, d.h. in Bezug auf :math:`I_L`.
 
@@ -115,7 +113,7 @@ Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker au
 
     .. math::
 
-        I_L = V_{Aus} \frac{R_1}{R_2 R_S} \quad (7)
+       I_L = V_{Aus} \frac{R_1}{R_2 R_S} \quad (7)
 
 
 **In unserem Beispiel haben wir**
@@ -128,7 +126,7 @@ Jetzt haben wir eine einfache Gleichung (5) für unseren Differenzverstärker au
      **In unserem Beispiel wird der Laststrom wie folgt angegeben**
 
       .. math::
-          I_L = \frac{V_ {out}}{100} \quad (8)
+          I_L = \frac{V_{out}}{100} \quad (8)
  
 Materialien
 ___________
@@ -227,7 +225,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt ber
 
 .. math::
      
-     I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1}C_1} + R_s} = \frac{0,5V}{1592\Omega + 10\Omega} = 0,31 mA
+     I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{\frac{1}{2 \pi f_{OUT_1}C_1} + R_s} = \frac{0,5V}{1592 \Omega + 10 \Omega} = 0,31 mA
 
 Induktive Last
 --------------
@@ -259,7 +257,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt ber
 
 .. math::
      
-     I_L = \frac {OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{2 \pi f_{OUT_1}L_1 + R_s} = \frac{0.2V}{30\Omega +10\Omega} = 5,0 mA
+     I_L = \frac{OUT1_{max}}{Z_{Laden} + R_s} = \frac{OUT1_{max}}{2 \pi f_{OUT_1}L_1 + R_s} = \frac{0.2V}{30 \Omega +10 \Omega} = 5,0 mA
 
 .. note::
    Bei induktiver Last haben wir den größten Unterschied in den Messungen. Versuchen Sie zu erklären, warum. Hinweis: Parasitäre, Serienwiderstand eines Induktors.
