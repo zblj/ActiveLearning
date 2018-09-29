@@ -1,5 +1,5 @@
  Strommessung mit einem Differenzverstärker
-============================================
+===========================================
 
 Zielsetzung
 -----------
@@ -197,14 +197,10 @@ Für die Last nehmen Sie den Widerstand :math:`470 \Omega` und bauen Sie eine Sc
 
 
 1. Starten Sie die Oszilloskop & Signalgenerator - Anwendung.
-2. Im Menü OUT1 Einstellungen den Amplitudenwert auf 0,5V einstellen, um eine Sinuswelle als
-   Eingangsspannungsquelle :math:`V_{Source}` anzulegen. Wählen Sie aus dem Wellenform-Menü SINE,
-   deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
+2. Im Menü OUT1 Einstellungen den Amplitudenwert auf 0,5V einstellen, um eine Sinuswelle als Eingangsspannungsquelle :math:`V_{Source}` anzulegen. Wählen Sie aus dem Wellenform-Menü SINE, deaktivieren Sie die SHOW-Taste und wählen Sie Enable.
 3. Für die stabile Aufnahme die Triggerquelle auf IN1 einstellen.
-4. Stellen Sie sicher, dass IN1 V/div am linken unteren Bildschirmrand auf 200 mV/div eingestellt ist
-   (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
-5. Stellen Sie sicher, dass IN2 V/div am linken unteren Bildschirmrand auf 50 mV/div gestellt ist
-   (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+4. Stellen Sie sicher, dass IN1 V/div am linken unteren Bildschirmrand auf 200 mV/div eingestellt ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
+5. Stellen Sie sicher, dass IN2 V/div am linken unteren Bildschirmrand auf 50 mV/div gestellt ist (Sie können V/div einstellen, indem Sie den gewünschten Kanal auswählen und die vertikalen +/- Regler verwenden)
 6. Wählen Sie im Messmenü "MAX", wählen Sie IN1 und drücken Sie FERTIG
 7. Wählen Sie im Messmenü "MAX", wählen Sie IN2 und drücken Sie FERTIG
 8. Setzen Sie t/div Wert auf 200 us/div (Sie können t/div mit horizontalen +/- Regler einstellen)
@@ -297,8 +293,7 @@ Wir können unsere Messungen überprüfen, indem wir den Laststrom wie folgt ber
 
    
 .. note::
-   Bei induktiver Last haben wir den größten Unterschied in den Messungen.
-   Versuchen Sie zu erklären, warum. Hinweis: Parasitäre, Serienwiderstand eines Induktors.
+   Bei induktiver Last haben wir den größten Unterschied in den Messungen. Versuchen Sie zu erklären, warum. Hinweis: Parasitäre, Serienwiderstand eines Induktors.
 
 
 
