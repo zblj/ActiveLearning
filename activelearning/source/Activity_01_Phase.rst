@@ -29,7 +29,8 @@ signals. First we will look at a sin wave and the phase term in the
 argument. You should be familiar with the equation: 
 
 .. math::
-	
+   :label: 01_eq_1
+	   
    f(t) = \sin(\omega t + \theta)
 
 :math:`\omega` sets the frequency of the sinusoidal wave as :math:`t`
@@ -49,59 +50,66 @@ time variable :math:`t` equal to a constant, say 1. The argument,
       
 Now let :math:`t` vary with time like it normally does. When the value
 of :math:`\omega t` changes linearly with time it yields a sine wave
-as shown in Fig. 1. As :math:`\omega t` goes from 0 to :math:`2 \pi`
-the sine wave goes from 0 up to 1, down to -1 and back to 0. This is
-one cycle or one period, :math:`T`, of a sine wave. The x-axis is the
-time varying argument/angle, :math:`\omega t`, which varies from 0 to
-:math:`2\pi`.
+as shown in :numref:`01_fig_01`. As :math:`\omega t` goes from 0 to
+:math:`2 \pi` the sine wave goes from 0 up to 1, down to -1 and back
+to 0. This is one cycle or one period, :math:`T`, of a sine wave. The
+x-axis is the time varying argument/angle, :math:`\omega t`, which
+varies from 0 to :math:`2\pi`.
 
 The value of :math:`\theta` is 0 in the function plotted in
-Fig. 1. Since the :math:`sin(0) = 0` the plot starts at 0. This is a
-simple sine wave without offset in time, which means no phase
-offset. Note that if we are using degrees :math:`\omega t`, in a range
-from from 0 to :math:`2 \pi` or 0 to :math:`360^{\circ}` to yield the sine
-wave shown in Fig. 1. 
+:numref:`01_fig_01`. Since the :math:`sin(0) = 0` the plot starts
+at 0. This is a simple sine wave without offset in time, which means
+no phase offset. Note that if we are using degrees :math:`\omega t`,
+in a range from from 0 to :math:`2 \pi` or 0 to :math:`360^{\circ}` to
+yield the sine wave shown in :numref:`01_fig_01`. 
 
 .. figure:: img/Activity_01_Fig_01.png
+   :name: 01_fig_01
    :align: center
 	
-   Figure 1: 2 cycles of :math:`\sin(t)`
+   2 cycles of :math:`\sin(t)`
 
    
 As a side note, what happens if :math:`\omega t > 2\pi`?
 
 Enter :math:`2.5\pi` in a calculator and see for yourself. As you
 should know, the sine function repeats every :math:`2\pi` radians or
-:math:`360^{\circ}`. It is similar to subtracting :math:`2\pi(I)` radians
-from the argument where I is the largest integer that yields a
-non-negative result. 
+:math:`360^{\circ}`. It is similar to subtracting :math:`N\, 2 \pi`
+rad from the argument where :math:`N` is the largest integer that
+yields a non-negative result.
 
-What happens if we plot a second sine wave into Fig. 1 with the same
-:math:`\omega` value and :math:`\theta = 0`?
+What happens if we plot a second sine wave into :numref:`01_fig_01`
+with the same :math:`\omega` value and :math:`\theta = 0`?
 
 We have another sine wave which lands on top of the first sine
 wave. Since :math:`\theta = 0` there is no phase difference between
 the sine waves and they look the same in time.
 
-Now alter :math:`\theta` to :math:`\pi / 2` rad or :math:`90^{\circ}` for
+Now, alter :math:`\theta` to :math:`\pi/4` rad or :math:`45^{\circ}` for
 the second sine wave. We see the original sine wave and a second sine
-wave shifted to the left in time. Fig. 2 shows the original sine wave
-(green) and the second sine wave (orange) with an offset in
-time. Since the offset is constant, we see the original sine wave
-shifted in time by a value of :math:`\theta` which is :math:`1/4` of
-the period in this example.
+wave shifted to the left in time. :numref:`01_fig_02` shows the
+original sine wave (green) and the second sine wave (orange) with an
+offset in time. Since the offset is constant, we see the original sine
+wave shifted in time by a value of :math:`\theta` which is :math:`1/4`
+of the period in this example.
 
 .. figure:: img/Activity_01_Fig_02.png
+   :name: 01_fig_02
    :align: center
 
-   Figure 2: green - :math:`\sin(t)`,  orange - :math:`\sin(t + \pi/4)`.
+   green - :math:`\sin(t)`,  orange - :math:`\sin(t + \pi/4)`.
 
-:math:`\theta` is time offset or phase portion of Eq. (1).
-The phase angle defines offset in time and vice versa. Eq. (2) shows
-the relationship. We happened to choose a particularly common 
-offset of :math:`90^{\circ}`. The phase offset between a sine wave and
+:math:`\theta` is time offset or phase portion of :eq:`01_eq_1`.
+The phase angle defines offset in time and vice versa. :eq:`01_eq_2`
+shows the relationship. We happened to choose a particularly common 
+offset of :math:`90^{\circ}`. The phase offset between a sine and
 cosine wave is :math:`90^{\circ}`. The offset angle is almost always
-not 90. As a matter of fact it is often a function of frequency (:math:`f`). 
+not 90. As a matter of fact it is often a function of frequency
+(:math:`f`). 
+
+
+Phase
+-----
 
 When there are two sine waves, e.g. displayed on a scope, the phase
 angle can be calculated by measuring the time between the two waveforms
@@ -110,21 +118,25 @@ as time measurement reference points in the waveform). One full period
 of the sine wave in time is the same as :math:`360^{\circ}`. Taking the
 ratio of the time between the two waveforms as :math:`\Delta t`, and
 the time in one period of a full sine wave as :math:`T`, you can
-determine the angle between them. Eq. (2) gives the exact relationship. 
-
-Phase
------
+determine the angle between them. :eq:`01_eq_2` gives the exact
+relationship.
 
 .. math::
+   :label: 01_eq_2
+   
+   \theta &= \frac{\Delta t}{T} 360^{\circ}
+   
+   &= \frac{\Delta t}{T} 2\pi \, rad
 
-   \theta = \frac{\Delta t}{T} 360^{\circ} = \frac{\Delta t}{T} 2\pi
-   \, rad = \Delta t f 2 \pi \, rad;
+   &= \Delta t f 2 \pi \, rad
+   
 
 where :math:`T` is the period of the sine wave.
 
 
 
-**Naturally occurring time offsets in sine waves.**
+Naturally occurring time offsets in sine waves
+----------------------------------------------
 
 Some passive components yield a time offset between the voltage across
 them and the current through them. In class we showed that the voltage
@@ -153,9 +165,11 @@ on the magnitude of the current. For an ideal capacitor the current
 :math:`i_C(t)` is related to the voltage by the following formula: 
 
 .. math::
-
+   :label: 01_eq_3
+	   
    i_C(t) = C \frac{dv_C(t)}{dt}
 
+   
 Right now, the full implications of this is beyond the scope of this
 lab. You will observe this behavior in later labs. The impedance of a
 capacitor is a function of frequency. The impedance goes down with
@@ -163,13 +177,15 @@ frequency conversely the lower the frequency the higher the
 impedance. 
 
 .. math::
-
+   :label: 01_eq_4
+	   
    Z_C = \frac{1}{j \omega C}, 
 
+   
 where :math:`\omega = 2 \pi f` is defined as the angular velocity.
 
 
-One subtle thing about Eq. (4) is the imaginary operator :math:`j`.
+One subtle thing about :eq:`01_eq_4` is the imaginary operator :math:`j`.
 When we looked at a resistor, i.e., there is no imaginary operator in
 the equation for the impedance. The sinusoidal current through a
 resistor and the voltage across a resistor have no time offset between
@@ -178,17 +194,19 @@ is in amplitude. The voltage is sinusoidal and is in phase with the
 current sinusoid. This is not the case with a capacitor. When we look
 at the waveform of a sinusoidal voltage across a capacitor it will be
 time shifted compared to the current through the capacitor. The
-imaginary operator :math:`j` is responsible for this. Looking at Fig. 3, we
-can observe that the current waveform has a peak (maximum) if the
-slope of the voltage waveform (:math:`dv/dt`) is maximal. 
+imaginary operator :math:`j` is responsible for this. Looking at
+:numref:`01_fig_03`, we can observe that the current waveform has a
+peak (maximum) if the slope of the voltage waveform (:math:`dv/dt`) is
+maximal.
 
 The time difference can be expressed as a phase angle between the two
-waveforms as defined in Eq. (2).
+waveforms as defined in :eq:`01_eq_2`.
 
 .. figure:: img/Activity_01_Fig_03.png
+   :name: 01_fig_03
    :align: center
 	
-   Figure 3: Phase angle determination between voltage (V) and current (I).
+   Phase angle determination between voltage (V) and current (I).
 
 You probably have seen circuits made entirely from resistors. These
 circuits have only real impedance, which means that voltages
@@ -217,7 +235,8 @@ of the current relative to the voltage is then:
    \theta = \arctan\left(\frac{b}{a}\right).
 
    
-**Materials**
+Materials
+---------
 
 - Red Pitaya STEMlab 125-14 or STEMlab 125-10 
 
@@ -225,8 +244,6 @@ of the current relative to the voltage is then:
 
 - :math:`1 \times 1 \mu F` capacitor 
 
-
-**Oscilloscope & Signal Generator**
 
 .. _quickstart: http://redpitaya.readthedocs.io/en/latest/doc/quickStart/first.html
 .. _here: http://redpitaya.readthedocs.io/en/latest/doc/appsFeatures/apps-featured/oscSigGen/osc.html
@@ -257,8 +274,8 @@ Procedure
   position and measurement parameters.
   
 - On the left bottom of the screen be sure that OUT1 V/div and OUT2
-  V/div are both set to 200 mV/div (You can set V/div by selecting the
-  desired channel and using vertical +/- controls).
+  V/div are both set to 200 mV/div. You can set V/div by selecting the
+  desired channel and using vertical +/- controls.
 
 - In the OUT1 controls menu, set the frequency of OUT1 to 1000 Hz with
   :math:`0^{\circ}` phase and 0.9 V  amplitude. Select SINE waveform
@@ -270,14 +287,15 @@ Procedure
 - Set t/div to 200 us/div (using horizontal +/- controls).
 
 .. figure:: img/Activity_01_Fig_04.png
+   :name: 01_fig_04
    :scale: 50 %
    
-   Figure 4: Sine signal generated with Oscilloscope and Signal
-   generator applications. Marked with green - main setting and
-   controls.   
+   Sine signal generated with Oscilloscope and Signal generator
+   applications. Marked with green - main setting and controls.   
 
 
-Measure the phase angle between two generated waveforms: 
+Measure the phase angle between two generated waveforms
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 From the previous settings you should  see what looks like 1 sine
 wave. There are two just one is on top of the other - zero phase
@@ -298,11 +316,14 @@ arbitrary. The high to low crossing could also be used.
 
 
 .. figure:: img/Activity_01_Fig_05.png
+   :name: 01_fig_05
    :scale: 50 %
+   :align: center
    
-   Figure 5: Oscilloscope application showing two sine signal with
+   Oscilloscope application showing two sine signal with
    phase difference.
 
+   
 - Change the phase of OUT2 to :math:`45^{\circ}`.
   Now it looks like the CHB signal lags the CHA signal.
 
@@ -323,8 +344,8 @@ Repeat the step for the second cursor and OUT2 signal.
        
 - What is :math:`\Delta t`?
        
-- Use the measured :math:`\Delta t` and Eq. (2) to calculate the phase
-  offset :math:`\theta` in degrees.
+- Use the measured :math:`\Delta t` and :eq:`01_eq_2` to calculate the
+  phase offset :math:`\theta` in degrees.
 
   
 Note you cannot measure the frequency of a signal that does not have
@@ -334,14 +355,17 @@ frequency so you already know what it is. You don't need to measure
 it in this part of the lab.
   
 
-3. Measuring magnitude using a real circuit. 
+Measuring magnitude using a real circuit
+""""""""""""""""""""""""""""""""""""""""
 
 .. figure:: img/Activity_01_Fig_06.png
+   :name: 01_fig_06
    :scale: 50 %
+   :align: center
    
-   Figure 6: R-R circuit.
+   R-R circuit.
 
-Build the circuit shown in Fig. 5 on your solderless breadboard
+Build the circuit shown in :numref:`01_fig_05` on your solderless breadboard
 using two :math:`470 \Omega` resistors, oscilloscope probes and Red
 Pitaya STEMlab board.
 
@@ -350,9 +374,11 @@ Pitaya STEMlab board.
 
 
 .. figure:: img/Activity_01_Fig_07.png
+   :name: 01_fig_07
    :scale: 50 %
+   :align: center
    
-   Figure 7: R-R circuit on the breadboard.
+   R-R circuit on the breadboard.
 
 
 We have connected OUT1 directly to IN1 so we can observe a real
@@ -382,6 +408,7 @@ voltage across R\ :sub:`1`\ (V\ :sub:`R1`\).
 - Using vertical +/- controls set  200 mV/div (0.2 V/div) for MATH
   trace.
 
+  
 With this settings you are observing:
 
 - IN1- Input excitation signal
@@ -423,18 +450,21 @@ Oscilloscope.
      
 What happens if you use :math:`220 \Omega` value for R\ :sub:`2`\? 
 
-- Measuring RC circuit
+
+Measuring RC circuit
+""""""""""""""""""""
 
 - Replace R\ :sub:`2`\ with a 1 uF capacitor C\ :sub:`1`\.
 
 
 .. figure:: img/Activity_01_Fig_08.png
+   :name: 01_fig_08
    :scale: 50 %
    
-   Figure 8: RC circuit on
+   RC circuit on
 
-NOTICE: For 1 uF capacitor you will be probably using an electrolytic
-capacitor.
+NOTICE: For :math:`1\, \mu F` capacitor you will be probably using an
+electrolytic capacitor.
 
 
 This capacitors are polarity sensitive i.e  on the positive capacitor
@@ -466,9 +496,10 @@ offset values.
 
   
 .. figure:: img/Activity_01_Fig_09.png
+   :name: 01_fig_09
    :scale: 50%
    
-   Figure 9: Oscilloscope signals with RC circuit.
+   Oscilloscope signals with RC circuit.
 
 
 - Measure IN1, IN2  and Math P2P (peak to peak) value.
@@ -488,10 +519,10 @@ with time offsets or phase differences displayed on the grid. Let's
 measure the time offsets and calculate the phase differences.
 
 
-4. Measure the time difference between V\ :sub:`R1`\ and V\
-   :sub:`C1`\. and calculate the phase offsets.
+- Measure the time difference between V\ :sub:`R1`\ and V\
+  :sub:`C1`\. and calculate the phase offsets.
 	
-Use Eq. (2) and the measured :math:`\Delta t` to calculate the phase
+Use :eq:`01_eq_2` and the measured :math:`\Delta t` to calculate the phase
 angle :math:`\theta`.
 
 The CURSORS are useful for determining :math:`\Delta t`; here's how:
@@ -540,8 +571,8 @@ with 1 or 2 cycles of the sine wave on the screen.
   :math:`\Delta t` _________, :math:`\theta` _________
 
 
-5. Measure the time difference and calculate the phase :math:`\theta`
-   offset at a different frequency.
+- Measure the time difference and calculate the phase :math:`\theta`
+  offset at a different frequency.
 
 - Set OUT1 frequency to 1000 Hz and the time / div to 200 us/div.
 
