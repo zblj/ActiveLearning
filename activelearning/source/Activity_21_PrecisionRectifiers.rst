@@ -98,7 +98,7 @@ Figure 4: Precision full-wave rectifier
 Procedure
 ----------
 
-1. Build the circuit from figure 1 on the breadboard 
+1. Build the circuit from figure 4 on the breadboard 
 
 .. warning::
   	Before connecting the circuit to the STEMlab -3.3V and +3.3V pins double check your circuit. The -3.3V and +3.3V voltage supply pins do not have short circuit handling and they can be damaged in case of short circuit.
