@@ -229,7 +229,7 @@ cell 2 for starting measurements again.
 
 
 After running the code above you should get diode VI characteristic as
-is shown on :numref:`23_fig_05`.
+is shown on :numref:`23_fig_06`.
 
 
 .. figure:: img/Activity_23_Fig_06.png
