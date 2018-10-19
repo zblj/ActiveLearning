@@ -87,7 +87,7 @@ __________
 Procedure
 ___________
 
-Tne common application for a NMOS (or any other) switch is to drive an LED. An LED driver is shown in figure 2. The driver shown in this figure is used to couple a low current part of the circuit to a relatively high current device (the LED). When the output from the low current circuit is low (0 V), the transistor is in cutoff and the LED is off. When the output from the low current circuit goes high (above :math:`V_{TH}`), the transistor is driven into triode and the LED lights. The driver is used because the low-current part of the circuit may not have the current capability to supply the 20 mA (typical) required to light the LED to full brightness.
+The common application for a NMOS (or any other) switch is to drive an LED. An LED driver is shown in figure 2. The driver shown in this figure is used to couple a low current part of the circuit to a relatively high current device (the LED). When the output from the low current circuit is low (0 V), the transistor is in cutoff and the LED is off. When the output from the low current circuit goes high (above :math:`V_{TH}`), the transistor is driven into triode and the LED lights. The driver is used because the low-current part of the circuit may not have the current capability to supply the 20 mA (typical) required to light the LED to full brightness.
 
 
 1. Build the LED switch circuit shown in figure 2 on your solder-less breadboard. :math:`R_D` serves to limit the current that flows in the LED from the +5 V power
