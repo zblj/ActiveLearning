@@ -291,7 +291,7 @@ latex_documents = [
 # the title page.
 #
 # latex_logo = None
-latex_logo = "img/RedPitayaLogo.png"
+latex_logo = "img/logo_stemlab.svg"
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
 #
