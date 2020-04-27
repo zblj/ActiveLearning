@@ -1,30 +1,5 @@
-{% extends "!layout.html" %}
-
-
-{% block rootrellink %}
-        <li><a href="{{ pathto('index') }}">home</a>|&nbsp;</li>
-        <li><a href="{{ pathto('search') }}">search</a></li>
+{% extends "!footer.html" %}
+{% block extrafooter %}
+    <p><a href="http://foo">new example link</a></p>
+    {{ super() }}
 {% endblock %}
-
-
-{% block relbar1 %}
-
-<div style="background-color: #4F96D2; text-align: left; padding: 5px 5px 10px 10px">
-    <a href="{{ pathto('index') }}">
-    <img src="{{ pathto("_static/img/favicon.ico.png", 1) }}" border="0" alt="Mapnik"/></a>
-</div>
-
-{{ super() }}
-{% endblock %}
-
-{# put the sidebar before the body #}
-{% block sidebar1 %}{{ sidebar() }}{% endblock %}
-{% block sidebar2 %}{% endblock %}
-
-{%- block sidebarsearch %}
-
-{# dont include the search sidebar...
-  {%- include "searchbox.html" %}
-#}
-
-{%- endblock %}
