@@ -1,7 +1,8 @@
+{# Import the theme's layout. #}
 {% extends "!layout.html" %}
-{% block head %}
+
+{# Add some extra stuff before and use existing with 'super()' call. #}
+{% block footer %}
+  <h2>My footer of awesomeness.</h2>
   {{ super() }}
-  <style type="text/css">
-    .important { color: #336699; }
-  </style>
 {% endblock %}
