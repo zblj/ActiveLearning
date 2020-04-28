@@ -60,7 +60,7 @@ source_encoding = 'utf-8-sig'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Red Pitaya'
+project = u'Red Pitaya STEMlab'
 copyright = u'2017, Red Pitaya d.d.'
 author = u'Red Pitaya'
 
