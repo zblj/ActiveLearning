@@ -1,8 +1,20 @@
 {# Import the theme's layout. #}
 {% extends "!layout.html" %}
 
-{# Add some extra stuff before and use existing with 'super()' call. #}
-{% block footer %}
-  <h2>My footer of awesomeness.</h2>
-  {{ super() }}
+{% block sidebartitle %}
+
+{% if logo and theme_logo_only %}
+  <a href="google.com">
+{% else %}
+  <a href="google.com" class="icon icon-home"> {{ project }}
+{% endif %}
+
+{% if logo %}
+  {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
+  <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
+{% endif %}
+</a>
+
+{% include "searchbox.html" %}
+
 {% endblock %}
