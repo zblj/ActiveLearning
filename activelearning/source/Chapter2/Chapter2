@@ -2,9 +2,6 @@
 Circuits and electronics II
 ###########################
 
-.. toctree::
-   :maxdepth: 1
-   
    
    Activity_14_OPAMPOpenLoopGain
    Activity_15_OpAmpGainBandwidthProduct
