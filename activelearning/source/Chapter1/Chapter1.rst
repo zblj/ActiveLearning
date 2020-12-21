@@ -1,6 +1,9 @@
 ##########################
 Circuits and electronics I
 ##########################
+
+.. toctree::
+   :maxdepth: 2
    
    Activity_01_Phase
    Activity_02_Kirchhoff

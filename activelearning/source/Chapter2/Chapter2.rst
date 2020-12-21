@@ -2,7 +2,9 @@
 Circuits and electronics II
 ###########################
 
-   
+.. toctree::
+   :maxdepth: 2
+
    Activity_14_OPAMPOpenLoopGain
    Activity_15_OpAmpGainBandwidthProduct
    Activity_16_DifferenceAmplifier
