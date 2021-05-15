@@ -10,6 +10,7 @@ Background
 We will kick this lesson off by taking a look at the basic equation, you will need to know if you ever wanted to tinker with electronics.
   
   .. math:: U=R \cdot I
+    :label: 01_eq_1
 
 This equation is the backbone of resistor circuits. Note that “a resistor circuit” is every circuit that you leave untouched for long enough, if there are no active elements. The second equation that comes in handy in such circuits is the one, which describes power dissipation on any resistor.
 
