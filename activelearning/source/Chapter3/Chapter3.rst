@@ -1,3 +1,7 @@
+############################
+Circuits and electronics III
+############################
+
 .. toctree::
    :maxdepth: 2
 
