@@ -42,7 +42,7 @@ Some equations and facts
 
 When you only have one voltage source, you can always calculate any voltage drop or current by simplifying the circuit using the following two equations for equivalent substitute resistor. 
 
-  .. math:: R_S _series =R_1 + R_2
+  .. math:: R_{S_{series}} = R_1 + R_2
     :label: 01_eq_4
 
   .. math:: \frac{R_{S_{parallel}}}{1} = \frac{1}{R_1} + \frac{1}{R_2}
@@ -110,7 +110,7 @@ Let’s write them down.
 I would like to mention that you should immediately see from the schematic that we have redundantly many currents. :math:`I_s`, :math:`I_1`, and :math:`I_5` are exactly the same, so are :math:`I_3` and :math:`I_4`.
 Moving along the KVL loops, we must be adding any voltage that we hit from the + side, and subtracting those that we hit from the -.
 
-  .. math:: L1: \;\;\; U_{R_1n + U_{R_2} + U_{R_5} - U_0 = 0
+  .. math:: L1: \;\;\; U_{R_1} + U_{R_2} + U_{R_5} - U_0 = 0
 
   .. math:: L2: \;\;\; U_{R_3} + U_{R_4} - U_{R_2} = 0
     :label: 01_eq_13
@@ -148,7 +148,7 @@ Unlike before, we are dealing with three distinct currents. This can be solved b
 
  .. math:: I_2 (R_1+R_2+R_5 )+I_3 (R_1+R_5 )=U_0
 
- .. math:: (I_3  \frac{R_3+R_4}{R_2}(R_1+R_2+R_5 )+I_3 (R_1+R_5 )=U_0
+ .. math:: (I_3  \frac{R_3+R_4}{R_2})(R_1+R_2+R_5 )+I_3 (R_1+R_5 )=U_0
 
  .. math:: I_3=\frac{U_0}{\frac{R_3+R_4}{R_2}(R_1+R_2+R_5 )+(R_1+R_5 ) }
 
