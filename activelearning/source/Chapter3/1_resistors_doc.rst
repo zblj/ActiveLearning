@@ -10,15 +10,18 @@ Background
 We will kick this lesson off by taking a look at the basic equation, you will need to know if you ever wanted to tinker with electronics.
   
   .. math:: U=R \cdot I
+    :label: 01_eq_1
     
 
 This equation is the backbone of resistor circuits. Note that “a resistor circuit” is every circuit that you leave untouched for long enough, if there are no active elements. The second equation that comes in handy in such circuits is the one, which describes power dissipation on any resistor.
 
   .. math:: P=U \cdot I
+    :label: 01_eq_2
 
 Even though you can always determine voltage drop across, and current flowing through any resistor, it often comes handy to remember two more equations, in which voltage drop or current is substituted for its function of the other two values.
   
   .. math:: P=I^2 \cdot R = U^2/R
+    :label: 01_eq_3
 
 With this out of the way, we can move on to…
 
@@ -40,19 +43,23 @@ Some equations and facts
 When you only have one voltage source, you can always calculate any voltage drop or current by simplifying the circuit using the following two equations for equivalent substitute resistor. 
 
   .. math:: R_S _series =R_1 + R_2
+    :label: 01_eq_4
 
-  .. math:: \frac{R_{S_parallel}}{1} = \frac{1}{R_1} + \frac{1}{R_2}
+  .. math:: \frac{R_{S_{parallel}}}{1} = \frac{1}{R_1} + \frac{1}{R_2}
+    :label: 01_eq_5
 
 Once you reach the circuit that only consists of one voltage (or current) source and one substitute resistor, you can trace the simplification steps backwards, calculating branch voltages and currents as you go along.
 Here you will need to know what happens to currents and voltages when you branch out. If substitute resistor is split into multiple parallel resistors, voltage drop across them remains the same. In fact, voltage drop between two nodes must remain the same no matter how you get between them (this comes from KVL).
 Current often behaves somewhat inversely to voltage, and as such, it remains the unchanged when a substitute resistor is split into multiple series resistors.
 If substitute resistor is split into series resistors, voltage is split among them proportionally to their resistance. We won’t go into details why that is, so an equation will have to suffice.
 
- .. math:: U_{R_x}=U_{R_{S_series}} \cdot \frac{R_x}{R_{S_series}}
+ .. math:: U_{R_x}=U_{R_{S_{series}}} \cdot \frac{R_x}{R_{S_{series}}}
+   :label: 01_eq_6
 
 It will come as no surprise that current is split proportionally to resistor’s resistance when it’s split into multiple parallel ones. Here’s the equations.
 
-  .. math:: I_{R_x} = I_{R_{S_parallel}} \cdot \frac{R_{S_series} - R_x}{R_{S_series}}
+  .. math:: I_{R_x} = I_{R_{S_{parallel}}} \cdot \frac{R_{S_{series}} - R_x}{R_{S_{series}}}
+    :label: 01_eq_7
 
 It will come as no surprise, that the lesser the resistance, the more current wants to flow through it, and the greater the resistance, the bigger the voltage drop.
 Before we move on to measurements, two more things to remember. When solving circuits in steady state, capacitors act as an open circuit, and inductors act as a short circuit. Consider this as a useful side note and move on.
@@ -74,13 +81,17 @@ Let’s assume that we are tasked by calculating voltage drop, current, and powe
 
 To put it into numbers:
 
-  .. math:: I_0=\frac{U_0}{R_{S_total}} = \frac{U_0}{(R_1+(R_2 |(R_3+R_4))+R_5 )}=...
+  .. math:: I_0=\frac{U_0}{R_{S_{total}}} = \frac{U_0}{(R_1+(R_2 |(R_3+R_4))+R_5 )}=...
+    :label: 01_eq_8
 
-  .. math:: U_{R_2} = U_0 \cdot \frac{R_2 |(R_3+R_4)}{R_{S_total}} =...
+  .. math:: U_{R_2} = U_0 \cdot \frac{R_2 |(R_3+R_4)}{R_{S_{total}}} =...
+    :label: 01_eq_9
 
   .. math:: I_{R_2} = \frac{U_{R_2}}{R_2} =...
+    :label: 01_eq_10
 
   .. math:: P_{R_2} = U_{R_2} \cdot I_{R_2}=...
+    :label: 01_eq_11
 
 Note that there was no need to calculate all voltage drops and currents to reach our goal.
 Next we will take a look at the more academic method. First we have to analyse the circuit. It has two branching nodes, which means we will need two node equations (KCL). We can also find three distinct current loops, and we will need one loop equation less (KVL).
@@ -94,18 +105,20 @@ Let’s write them down.
   .. math:: A: \;\;\; I_2+I_3-I_1=0
 
   .. math:: B: \;\;\; I_5-I_2-I_4=0
+    :label: 01_eq_12
 
 I would like to mention that you should immediately see from the schematic that we have redundantly many currents. :math:`I_s`, :math:`I_1`, and :math:`I_5` are exactly the same, so are :math:`I_3` and :math:`I_4`.
 Moving along the KVL loops, we must be adding any voltage that we hit from the + side, and subtracting those that we hit from the -.
 
   .. math:: L1: \;\;\; U_{R_1n + U_{R_2} + U_{R_5} - U_0 = 0
-    :label: 01_eq_13
 
   .. math:: L2: \;\;\; U_{R_3} + U_{R_4} - U_{R_2} = 0
+    :label: 01_eq_13
 
 Let’s first take a look at what we can do with the two node equations. First we can substitute redundant currents in B with the ones from A:
 
   .. math:: I_5 - I_2 - I_4 = 0 → I_2 + I_3 - I_1 = 0
+  :label: 01_eq_14
 
 Keen eyed among you will notice that after this transformation, equations A and B are the same equation. That makes things easy as we can simply express one of the currents as a function of the other two and move on to solving voltage equations.
 
