@@ -1,5 +1,6 @@
 .. toctree::
    :maxdepth: 2
 
-   1_resistors
+   1_resistors_doc
+   
    
