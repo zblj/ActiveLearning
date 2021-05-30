@@ -1,3 +1,10 @@
+window.MathJax = {
+  tex: {
+    tags: 'ams'
+  }
+};
+
+
 Resistor circuits
 =================
 
