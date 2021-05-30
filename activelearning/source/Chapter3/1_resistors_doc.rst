@@ -179,3 +179,14 @@ One thing you might want to do though, is to set up automatic mean measurements 
    :align: center
 
 I encourage you to build a different circuit. Don’t exceed three branching nodes to keep the calculations simple. Try to calculate voltage drops and compare them with measured values.
+
+
+-----------test---------------
+********************************
+In equation \eqref{eq:sample}, we find the value of an
+interesting integral:
+
+\begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+  \label{eq:sample}
+\end{equation}
