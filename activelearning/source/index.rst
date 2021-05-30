@@ -1,4 +1,9 @@
 Welcome to Red Pitaya's Active Learning
 =======================================
 
-Documentation is currently under review and will be available soon
+.. toctree::
+   :maxdepth: 2
+   :numbered:
+
+   Chapter3/Chapter3
+   .. Chapter2/Chapter2
