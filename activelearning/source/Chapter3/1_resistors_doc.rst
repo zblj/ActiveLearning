@@ -188,8 +188,13 @@ One thing you might want to do though, is to set up automatic mean measurements 
 I encourage you to build a different circuit. Don’t exceed three branching nodes to keep the calculations simple. Try to calculate voltage drops and compare them with measured values.
 
 
+primer "workaround" enačbe:
+-----------------------------
+  .. math:: I_3=\frac{U_0}{\frac{R_3+R_4}{R_2}(R_1+R_2+R_5 )+(R_1+R_5 ) }
+  .. math:: eq 1.2
+
 -----------test---------------
-********************************
+-------------------------------
 In equation \eqref{eq:sample}, we find the value of an
 interesting integral:
 
@@ -201,7 +206,3 @@ interesting integral:
 
 
 
-primer "workaround" enačbe:
------------------------------
- .. math:: I_3=\frac{U_0}{\frac{R_3+R_4}{R_2}(R_1+R_2+R_5 )+(R_1+R_5 ) }
-  .. math:: eq 1.2
