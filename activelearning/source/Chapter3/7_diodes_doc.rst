@@ -1,4 +1,4 @@
-Diodes ->|-
+Diodes
 =================
 
 Comming soon...

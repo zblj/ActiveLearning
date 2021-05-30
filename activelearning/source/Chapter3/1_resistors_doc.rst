@@ -197,3 +197,11 @@ interesting integral:
   \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
   \label{eq:sample}
 \end{equation}
+
+
+
+
+primer "workaround" enačbe:
+-----------------------------
+ .. math:: I_3=\frac{U_0}{\frac{R_3+R_4}{R_2}(R_1+R_2+R_5 )+(R_1+R_5 ) }
+  .. math:: eq 1.2
