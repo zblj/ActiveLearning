@@ -125,4 +125,28 @@ This will ensure that we can easily observe transient effect without the need to
    :name: setting up the signal generator
    :align: center
    
-Using cursors, we can measure time for the signal to reach 95% of its change. Since :math:`\tau`=2 μs we are expecting this measurement to be 6 μs (3τ). Unsurprisingly that is the case. A quick side note: in my case actual peak to peak voltage was 1.85 V, that is why I am measuring time from the start of input change to delta of 1.77 V.
+Using cursors, we can measure time for the signal to reach 95% of its change. Since τ = 2 μs we are expecting this measurement to be 6 μs (3τ). Unsurprisingly that is the case. A quick side note: in my case actual peak to peak voltage was 1.85 V, that is why I am measuring time from the start of input change to delta of 1.77 V.
+
+.. image:: img/2_screencap2.png
+   :name: measurement of transient response of an RC circuit
+   :align: center
+   
+Let’s quickly swap out the capacitor for an inductor. And take a look at the resulting oscillogram.
+
+.. image:: img/2_screencap3.png
+   :name: mesaurement of transient effect of an RL circuit
+   :align: center
+   
+Her we are measuring the time for voltage to move to within 5% of its final value. 15 μs this time. This is because the inductor I used was, 1 mH and the resulting time constant 5 μs.
+I encourage you to try making RC and CR circuits but be warned; you will have to use something different than an oscilloscope probe to connect signal generator to the circuit or you will have to deal with resistor divider effect, which will reduce steady state voltage. Here is a photo of a “home lab” setup for such measurement. If you have a proper cable, I encourage you to use it instead. Or just mind the voltage divider and use a standard oscilloscope probe. Not that depicted method is a bit flimsy as cables don’t make the best contact with the signal generator. You might want to press on it.
+
+.. image:: img/2_img2.jpg
+   :name: alternative wiring setup that eliminates probe’s series resistance on signal generator’s output
+   :align: center
+
+If you make the experiment, you will notice that CR circuit’s oscillogram takes the shape of RL’s and vice versa. I won’t go into detail about why that is, but I will leave you a hint that it has something to do with capacitors and inductors following their respective current curves, current flowing through resistor and you measuring voltage on same resistors. I think I gave away enough.
+
+One last thing
+------------------
+In the video I teased you with a question, what would happen if we made the same experiments on an LC circuit. Drop the signal generator’s frequency even lower and make an experiment. Works best if you use a low impedance cable instead of an oscilloscope probe for connecting signal generator to the output.
+Oh, I hope you didn’t think I will just tell you the outcome of the experiment! Well, I might in the future doc about [redacted] where this effect might come in handy.
