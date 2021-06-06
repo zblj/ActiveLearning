@@ -100,22 +100,22 @@ You can see that voltage reaches over 99% of its steady state value at :math:`5 
 
 What? Please explain...
 --------------------------
-Let’s take a look at an example. RC circuit, input voltage drops from 5 V to 3 V (:math:`U_0`=-2 V). Since we are looking at capacitor’s voltage, we should expect that it will slowly drop to that value, meaning that we need to find an equation that will equal 0 at t=0. :math:`e^{-t\tau}` fits the bill. Final voltage will therefore be starting voltage + voltage change (3 V in this case, but we didn’t need to calculate that). Voltage will follow the following curve:
+Let’s take a look at an example. RC circuit, input voltage drops from 5 V to 3 V ( :math:`U_0` =-2 V). Since we are looking at capacitor’s voltage, we should expect that it will slowly drop to that value, meaning that we need to find an equation that will equal 0 at t=0. :math:`e^{-t\tau}` fits the bill. Final voltage will therefore be starting voltage + voltage change (3 V in this case). Voltage will follow the following curve:
 
   .. math:: u_C = U_{START} + U_0 (1-e^{-t/\tau})
   .. math:: u_C = 5V - 2V \cdot (1-e^{-t/\tau})
 
-But don’t take my word for it. Feel free to try it out with a red pitaya. Just note that You will be limited to voltage range of :math:`\pm`1 V. Speaking of which…
+But don’t take my word for it. Feel free to try it out with a red pitaya. Just note that You will be limited to voltage range of ±1 V. Speaking of which…
 
 The experiment
 ----------------
-Let’s build a simple RC circuit and hook up the probes. Input 1 should be connected to the middle node, while output probe should be connected to resistor’s second lead. Capacitor’s other lead should be connected to ground (simply by connecting one alligator clip to it) and second input channel must be connected to Red Pitaya’s output. In the video I used a Y splitter that comes in RP’s accessories kit and used a piece of wire to connect output and input. It might look like a stupid solution but it’s the easiest way to see exactly what is happening on the output. If you connected probe to the node where the output probe is connected, you wouldn’t see the exact signal, because probes you are likely to be using have a :math:`100\;\Omega` internal resistance even in x1 mode, acting as part of a voltage divider. Oh and the second y splitter is there so that composition in photo is neater.
+Let’s build a simple RC circuit and hook up the probes. Input 1 should be connected to the middle node, while output probe should be connected to resistor’s second lead. Capacitor’s other lead should be connected to ground (simply by connecting one alligator clip to it) and second input channel must be connected to Red Pitaya’s output. In the video I used a Y splitter that comes in RP’s accessories kit and used a piece of wire to connect output and input. It might look like a stupid solution but it’s the easiest way to see exactly what is happening on the output. If you connected probe to the node where the output probe is connected, you wouldn’t see the exact signal, because probes you are likely to be using have a 100 Ω internal resistance even in x1 mode, acting as part of a voltage divider. Oh and the second y splitter is there so that composition in photo is neater.
 
 .. image:: img/2_img1.jpg
    :name: measuring setup for an RC circuit
    :align: center
    
-With everything hooked up, you have set input 1 to x10 mode (but input 2 in x1 mode, since it’s just a piece of wire with no attenuation), and set RP’s signal generator to output a square wave at an appropriate frequency. Appropriate in this case means that it is greater than :math:`1/5\tau`. I used a :math:`100\;\Omega` resistor and a 10 nF capacitor. Keeping in mind that output probe adds an extra :math:`100\;\Omega`, we get:
+With everything hooked up, you have set input 1 to x10 mode (but input 2 in x1 mode, since it’s just a piece of wire with no attenuation), and set RP’s signal generator to output a square wave at an appropriate frequency. Appropriate in this case means that it is greater than 1/5τ. I used a 100 Ω resistor and a 10 nF capacitor. Keeping in mind that output probe adds an extra 100 Ω, we get:
 
   .. math:: f_{max}=\frac{1}{10 \cdot 200\Omega \cdot 10nF}=50kHz
 
