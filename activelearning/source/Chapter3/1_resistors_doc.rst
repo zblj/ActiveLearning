@@ -1,12 +1,12 @@
 Resistor circuits
 =================
 
-Objective
+1. Objective
 -------------
 The objective of this activity is to brush up on your existing knowledge about Kirchhoff’s laws and expand on that knowledge by showing how they can be applied in resistor circuits. A secondary outcome will be a preliminary understanding of the Red Pitaya STEMlab hardware and software - test & measurements applications.
 
-Background
-----------
+2. Background
+----------------
 We will kick this lesson off by taking a look at the basic equation, you will need to know if you ever wanted to tinker with electronics.
   
   .. math:: U=R \cdot I
@@ -22,7 +22,7 @@ Even though you can always determine voltage drop across, and current flowing th
 
 With this out of the way, we can move on to…
 
-Kirchhoff’s laws
+3. Kirchhoff’s laws
 ---------------------
 To solve a circuit that consists of more than one component, you will need to know two more things, also known as Kirchhoff’s laws.  Kirchhoff’s current law (KCL):
 
@@ -34,8 +34,8 @@ To put it simply, any current entering a node must also leave it. If the first l
 
 If you have no idea what Mr. Kirchhoff meant, when he came up with his laws, don’t worry. It will become crystal clear when we take a look at examples later on. But first, we will take a look at a few equations and facts, that tend to make our lives easier when solving resistor circuits.
 
-Some equations and facts
---------------------------
+4. Some equations and facts
+-----------------------------
 
 When you only have one voltage source, you can always calculate any voltage drop or current by simplifying the circuit using the following two equations for equivalent substitute resistor. 
 
@@ -57,8 +57,8 @@ It will come as no surprise that current is split proportionally to resistor’s
 It will come as no surprise, that the lesser the resistance, the more current wants to flow through it, and the greater the resistance, the bigger the voltage drop.
 Before we move on to measurements, two more things to remember. When solving circuits in steady state, capacitors act as an open circuit, and inductors act as a short circuit. Consider this as a useful side note and move on.
 
-Practical example
-------------------
+5. Practical example
+---------------------
 
 You might be disappointed to learn that the circuit used in this example will be different from the one that was shown in the video. This is so that you can easily solve it by either using Kirchhoff’s laws or by substitution.
 
@@ -141,8 +141,8 @@ Unlike before, we are dealing with three distinct currents. This can be solved b
 And there you go, we now have an equation for :math:`I_3` that only relies on known constants. We only need to plug the values in and from there on, dominos will fall. Plugging :math:`I_3` into :math:`equation\;B`` yields :math:`I_2`. From there on, :math:`equation\;A` gives us :math:`I_1` and all of a sudden all currents are known. Lastly we can use :math:`equation\;L1` to get any voltage drop we desire and all left to do is to calculate the power, which is now one simple multiplication away.
 Was this more difficult than doing substitutions? Depends on who you ask. I solved the circuit both ways and don’t get me started on how much I hate calculating substitute resistance for parallel resistors. Besides, the second method yields all voltages and currents at once, which is what you will usually tasked with on the exams.
 
-Hands on
----------
+6. Hands on
+-------------
 
 You must have noticed that I shied away from using any numbers in my calculations. Let me tell you that I’ve been at university for such a long time that I’ve forgotten what equations with actual numbers even look like.
 Jokes aside, I shied away from numbers because, as you saw, we didn’t need them. Also in this hands on part, you will select your own resistors and measure voltages across them. You can select any resistors (but avoid going below 100 ohms so that nothing accidentally gets fried), and build the circuit on a breadboard as shown on the picture below. For U_0 you can choose between Red Pitaya’s supply pins. It can be 3.3 V, 5 V or even -4 V. Anything you fancy!
