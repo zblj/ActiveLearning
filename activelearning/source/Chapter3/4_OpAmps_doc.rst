@@ -141,4 +141,4 @@ If you read through the entire article, you are now familiar with the four most 
 The question I would like to leave you with is: how would you build a noninverting amplifier with attenuation (gain between 0 and 1)?
 
 Written by Luka Pogačnik
-This teaching material was created by :ref:`Red Pitaya <https://www.redpitaya.com/>` & :ref:`Zavod 404 <https://404.si/> in the scope of the :ref:`Smart4All <https://smart4all.fundingbox.com/>` innovation project.
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
