@@ -140,8 +140,6 @@ I would once again encourage you to see what happens when you turn the potentiom
 If you read through the entire article, you are now familiar with the four most common (or at least beginner friendly) applications for operational amplifiers: comparator, voltage follower and two flavours of amplifiers. If you also followed along with the experiments, you may have gotten a feeling for distortions you will encounter when amplifier is operating close to the or beyond saturation. In any case I hope You found this article both interesting and fun.
 The question I would like to leave you with is: how would you build a noninverting amplifier with attenuation (gain between 0 and 1)?
 
- 
------------------------
 Written by Luka Pogačnik
 
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
