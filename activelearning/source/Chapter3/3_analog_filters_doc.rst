@@ -151,3 +151,6 @@ Some differences can be attributed to idealized graph being oversimplified, some
 
 All the differences listed before are still present. Most notable among them is the fact that this time the corner frequency is too high. The reasons are the same as before.
 This brings us to the conclusion. You now know how to design low and high pass filters, are familiar with their idealized characteristics and have a basic understanding of how reality differs from idealizations. Or at least that was the intent:)
+
+Written by Luka Pogačnik
+This teaching material was created by :ref:`Red Pitaya <https://www.redpitaya.com/>` & :ref:`Zavod 404 <https://404.si/> in the scope of the :ref:`Smart4All <https://smart4all.fundingbox.com/>` innovation project.
