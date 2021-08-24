@@ -52,7 +52,7 @@ Since all resistors are a hundred ohms, the voltage drops on resistors are just 
 3. A better alternative
 ---------------------------
 If you skipped all the calculations in last chapter, I can’t blame you. They were everything but fun. And that was for a very simple circuit with two voltage sources and three resistors, just think what would happen if we had any more components!
-Luckily there is a better way. We call it superposition. If a circuit is linear (this means that output can be written in the form of :math:`a\U_1+bcdotU_2+...+xcdotI_1+ycdotI_2+...=X`), we can analyze the circuit with only one source connected at a time. We do that for all sources and sum up the results to get the full output. This is known as superposition.
+Luckily there is a better way. We call it superposition. If a circuit is linear (this means that output can be written in the form of :math:`a \cdot U_1+b \cdot U_2+...+x \cdot I_1+y \cdot I_2+...=X`), we can analyze the circuit with only one source connected at a time. We do that for all sources and sum up the results to get the full output. This is known as superposition.
 Note that “disconnection” means a different thing for voltage and current source. Voltage source gets replaced by an open circuit, while a current source is replaced by a short circuit as depicted below.
 
 .. image:: img/6_disconnection.png
