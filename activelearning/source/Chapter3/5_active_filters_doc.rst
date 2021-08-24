@@ -95,13 +95,13 @@ Let’s fire up a Red Pitaya and build the circuit.
 
 You know the drill. Signal generator channel 1 and input channel 1 to filter input, channel 2 to output. Both probes in x1 mode and run the bode analyzer! Both resistors are 100 ohm, the big capacitor (C1) is 47 uF, the small one is 100 nF, and here is what I got:
 
-.. image:: img/5_100.jpg
+.. image:: img/5_100.png
 	:name: bode plot
 	:align: center
 
 Nothing too special, sure, but we can move cutoff frequencies to alter the filter’s characteristics. This can be done either by changing resistors or changing capacitors. The following bode plot shows filter’s characteristics where C1 or R1 got changed by a factor of 10. I will let the reader try to determine which component got changed. Hint: take a look at the Y axis.
 
-.. image:: img/5_1k.jpg
+.. image:: img/5_1k.png
 	:name: bode plot of altered filter
 	:align: center
 
