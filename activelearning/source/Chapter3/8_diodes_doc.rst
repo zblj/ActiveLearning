@@ -108,6 +108,9 @@ White LED:
 	:name: white LED
 	:align: center
 
+We can clearly see that peak current is getting lower and lower with each graph. Red has highest current rating and white has the lowest one. That is inversely proportional to forward voltage, which is the greatest for the white LED. Can you find a reason for that phenomenon? Let me give you a hint. Red has the longest wavelength (lowest frequency) of the bunch, green has shorter wavelength (higher frequency), and so on. Higher frequency means higher energy. Was that helpful enough?
+White LED is based on blue or ultraviolet (UV) diode, and we see its forward voltage in the last oscillogram. Can you predict forward voltage of an infrared (IR) LED? If not, you can always make an experiment. You have one IR LED in the ADALP2000 kit. It’s one of the black looking diodes – the one that is slightly translucent with a bluish tint.
+
 8. Conclusion
 ---------------
 So this was a quick introduction to LEDs, I hope you fund it enlightening. At least the experiment with LEDs. Jokes aside, when you encounter the next problem, when you will want the current to flow in only one direction, or when you want to use an LED with an appropriate current setting, you now know how.
