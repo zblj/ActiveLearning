@@ -54,7 +54,7 @@ And what explains the half wave instead of full wave rectifier characteristic? T
 	:name: experiment 1 explanation
 	:align: center
 
-So this is actually just a half bridge rectifier with two diodes in parallel… Wait, does that mean that what I told you about expected voltage drop being 1.4 V was wrong? Yes, but I wanted to share a glimpse into how troubleshooting works. Find an explanation and work with it until you can prove it doesn’t work.
+So this is actually just a half bridge rectifier with a short circuit to ground when input is negative...  Wait, does that mean that what I told you about expected voltage drop being 1.4 V was wrong? Yes, but I wanted to share a glimpse into how troubleshooting works. Find an explanation and work with it until you can prove it doesn’t work.
 What happens if you don’t connect a grounding clip can be considered your optional homework, because solution lies elsewhere and I don’t want to drag this article too long.
 
 4. A transformer.
