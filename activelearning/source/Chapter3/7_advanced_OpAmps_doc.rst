@@ -29,7 +29,7 @@ It implements the function :math:`U_{out}=-\frac{R_2}{R_1} \cdot U_1`. Now let�
 	:name: OpAmp sumator
 	:align: center
 
-Did you read the previous course? The one about superposition? If you did, you must have already guessed what direction we’re sailing. Superposition. Function ;math:`U_{out}=a \cdot U_1 + b \cdot U_2` is a textbook example of a linear combination of multiple inputs, making it suitable for solving with superposition theorem.
+Did you read the previous course? The one about superposition? If you did, you must have already guessed what direction we’re sailing. Superposition. Function :math:`U_{out}=a \cdot U_1 + b \cdot U_2` is a textbook example of a linear combination of multiple inputs, making it suitable for solving with superposition theorem.
 
 That said, we have learned how to add two or more voltages together. “Two or more? You only showed two!” Yes, agreed, but if you make the same thought experiment as before, and you will see, that you can add any number of additional volktage sources, connected via their respective resistor to the inverting node of the OpAmp, and resulting function will still be as expected.
 
@@ -91,3 +91,7 @@ Same as before, probe in 10x mode, one output is sine, the other square wave, al
 ----------------
 And now you know how to implement all the basic arithmetic in analog circuits. Addition, subtraction, multiplication, and division (by a constant with resistors and by an arbitrary value in the form of multiplication by an inverse number; arbitrary divisor circuit also exists but we won’t go in detail about it).
 I hope found this course interesting and most of all, I hope you learned something. 
+
+Written by Luka Pogačnik
+
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.

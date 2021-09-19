@@ -13,6 +13,7 @@ Circuits & electronics
    Chapter3/6_superposition_doc
    Chapter3/7_advanced_OpAmps_doc
    Chapter3/8_diodes_doc
+   Chapter3/9_full_wave_rectifiers_doc
    Chapter3/9_function_generators_doc
    Chapter3/10_LDO_doc
    Chapter3/11_buck_converter_doc

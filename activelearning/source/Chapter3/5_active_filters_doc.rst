@@ -30,7 +30,7 @@ I’ve been using term resistance for the sake of simplicity but the same goes f
 
 3. Enter OpAmps
 -----------------
-Huge impedance? Like huge _input_ impedance? OpAmps have a huge input impedance!
+Huge impedance? Like huge input impedance? OpAmps have a huge input impedance!
 Buffering filter’s output with an OpAmp follower will in fact make sure that load doesn’t change filter’s characteristics. If you don’t trust me, I encourage to verify my claim but I won’t lose any more time on this solution, because there is a much better one just around the corner. Actually I will. Here’s the schematic:
 
 .. image:: img/5_LPF_bias.png

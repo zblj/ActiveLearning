@@ -90,6 +90,7 @@ Before showing the results, let’s discuss the power supply for OpAmp. It is po
 
 Yellow is RP’s output voltage, and green is amplified voltage after the noninverting amplifier. Clipping is visible but that fortunately doesn’t concern us as no current will be flowing in that phase.
 And now, some results. Green trace is before shunt resistor, yellow one is after it, and the purple one is their difference. The two dashed horizontal lines depict the point where current starts flowing (bottom) and the forward voltage (top).
+
 Red LED:
 
 .. image:: img/8_diode_red.png
