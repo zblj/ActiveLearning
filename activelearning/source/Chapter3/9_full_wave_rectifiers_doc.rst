@@ -28,7 +28,7 @@ It consists of two pairs of diodes. Each “sends” voltage in the appropriate 
 
 If we apply a signal to an ideal full wave rectifier, its output will be an equivalent of mathematical function out=abs(in). To illustrate that with a sine wave input where black is input and red is rectified output:
 
-.. image:: img/9_rectifier output.png
+.. image:: img/9_rectifier_output.png
 	:name: expected output
 	:align: center
 
@@ -36,7 +36,7 @@ If we apply a signal to an ideal full wave rectifier, its output will be an equi
 ----------------------
 Without further ado, let’s build a full bridge rectifier and try it out. Let Red Pitaya output a +-1 V sine wave for an input signal, and connect one probe to the input and one to the positive output as depicted below. Note that I used the alligator clip on output signal this time.
 
-.. image:: img/9_without transformer.jpg
+.. image:: img/9_without_transformer.jpg
 	:name: experiment 1
 	:align: center
 
@@ -66,7 +66,7 @@ A transformer outputs voltage that is higher, lower, or equal to the input volta
 
 Aside from changing the amplitude, a transformer also galvanically disconnects input and output. ADALP2000 component kit, from which we select components for this course, has two transformers in it. Both are from Coilcraft’s Hexa-Path series. They have six individual windings, from which we can construct “any” transformer we want. Biggest voltage ratio we can construct is 5:1 (or 1:5). This is done by selecting one coil to be input/output, and wiring the remaining five in series, paying attention on polarity (marked with a dot next to the inductor symbol. The following diagram is from the transformer’s `datasheet <https://www.coilcraft.com/getmedia/936400ae-3cbc-4381-aed1-ae101ef7a35e/hexa-path.pdf>`_
 
-.. image:: img/9_transformer schematic.png
+.. image:: img/9_transformer_schematic.png
 	:name: transformer schematic
 	:align: center
 
@@ -86,7 +86,7 @@ With all that said, let’s construct such circuit:
 
 Aside from the transformer, everything is exactly the same. Even those wires I called foreshadowing are in exact same spots. As if someone showed you exactly how to connect transformer’s windings to achieve 1:5 winding ratio… Anyway, here’s the setup:
 
-.. image:: img/9_with transformer.jpg
+.. image:: img/9_with_transformer.jpg
 	:name: experiment 2
 	:align: center
 
