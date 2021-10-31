@@ -142,8 +142,12 @@ I encourage you to run it through a DFT, convert amplitudes of signal’s peaks 
 
 Triangular waveforms consist of base frequency and odd multiples (same as square wave) with amplitudes of those spectral following this equation:
 
-	.. math:: a_n = \frac{2 \cdot amplitiude}{n \cdot \pi} sin(\frac{n \cdot \pi}{2} , n=[1,2,5,...)
+	.. math:: a_n = \frac{2 \cdot amplitiude}{n \cdot \pi} sin(\frac{n \cdot \pi}{2}) , n=[1,2,5,...)
 
 7. Conclusion
 --------------------
 We’ve taken a look at oscillators, we’ve learned about DFT analysis, and we’ve learned to convert a square wave into a sine or a triangular waveform. We’ve taken a look at only one of many oscillator designs. There are tonnes of other designs out there but this course is loaded with information as it is. If you are the curious kind, I would encourage you to look around the internet for oscillators that naturally produce sine waves. Maybe you are interested in sawtooths? Asymmetric square waves? Options are endless. Until next time, cheers!
+
+Written by Luka Pogačnik
+
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.

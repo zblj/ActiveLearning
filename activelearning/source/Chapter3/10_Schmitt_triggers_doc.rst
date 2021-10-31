@@ -21,9 +21,9 @@ Let’s start this course off by refreshing our knowledge about comparators. The
 
 For almost any real application, their characteristic can be described as such:
 
-	.. math:: U_{out}= U_{sat+} when U_{+} > U_{-}
+	.. math:: U_{out}= U_{sat+} \; when \; U_{+} > U_{-}
 	
-	.. math:: U_{out}= U_{sat-} when U_{+} < U_{-}
+	.. math:: U_{out}= U_{sat-} \; when \; U_{+} < U_{-}
 
 Depending on which input (inverting or noninverting) we select to be reference input, we can obtain an inverting or a noninverting comparator as shown on the image below.
 
