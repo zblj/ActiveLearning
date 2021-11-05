@@ -55,7 +55,7 @@ When this circuit operates in a somewhat inverting-compartator-ish way, you shou
 
 4. Schmitt trigger
 -----------------------
-In case you found it hard to follow my circuit description of an inverting Schmitt trigger from before, here is a pair of schematics, one for an inverting and one for a noninverting Schmitt trigger.
+In case you found it hard to follow my circuit description of an inverting Schmitt trigger from before, here is a pair of schematics, one for an inverting and one for a noninverting Schmitt trigger. Note that we connected reference voltage to the ground potential.
 
 .. image:: img/10_inverting_noninverting_schmitt.png
 	:name: schmitt schematics
@@ -99,13 +99,21 @@ Instead of walking you through the thought experiment of how and why a noninvert
 	:name: noninverting schmittscreencap
 	:align: center
 
-7. Extra credits
+7. Schmitt trigger instead of a comparator. Why?
+----------------------------------------------------
+Let me answer with a graph:
+
+.. image:: img/10_why_use_schmitt.png
+	:name: compartator vs Schmitt trigger
+	:align: center
+
+A noisy signal may trigger multiple transitions on the output while a Schmitt trigger with appropriately set hysteresis won’t. Pay attention to time when transition happens. Schmitt trigger has a delayed transition by design, because threshold voltages are offset from the reference voltage. For this reason, we still often use comparators. Also note that if noisy component is at a very high frequency, it may not trigger a spurious transition as the comparator needs some time to toggle the output.
+
+8. Extra credits
 -------------------
 Remember how I told you that I connected OpAmp to +- 3.3 V? That was done so that saturation voltages were +- 2.6 V. What would happen if saturation voltages weren’t the same?
-Another extra credits question would be this: We’ve taken a look at how a simple Schmitt trigger works but all switching happens around the zero voltage level. Can you figure out how to make the Schmitt trigger switch around some other voltage?
-Need a hint? In a noninverting Schmitt trigger, connect an offset voltage to the inverting input. It’s on you to figure out how to shift threshold voltages in an inverting Schmitt trigger.
 
-8. Conclusion
+9. Conclusion
 --------------------
 Schmitt triggers are a crucial component for signal conditioning in analog to digital interfaces. They are based on a comparator and only need two more resistors to function – and now you know how.
 In caser you need motivation to go back and replicate experiments from this course, let me tell you that the next course picks up from where we left off today. How do you like this cliffhanger?
