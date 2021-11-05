@@ -73,7 +73,7 @@ Let’s start off by looking at the inverting Schmitt trigger. Uout jumps betwee
 
 Now let's think about what happens during operation. Let’s assume that input is very low, far below comparator’s saturation voltage. This means that the comparator’s noninverting input is below 0 V and output will be positive. In order for output to toggle to negative saturation, input signal has to exceed :math:`U_{TH}`. Now that the output is at negative saturation, input has to fall below :math:`U_{TL}` for the output to toggle again. Hard to follow? Take a glance at the diagram and corresponding oscillogram.
 
-.. image:: img/10_iverting_schmitt_siagram.png
+.. image:: img/10_iverting_schmitt_diagram.png
 	:name: inverting schmitt characteristics
 	:align: center
 
@@ -91,7 +91,7 @@ Let’s now take a look at the noninverting Schmitt trigger, starting with toggl
 
 Instead of walking you through the thought experiment of how and why a noninverting Schmitt trigger works, let me just show you the diagram and the oscillogram.
 
-.. image:: img/10_noniverting_schmitt_diagram.png
+.. image:: img/10_niniverting_schmitt_diagram.png
 	:name: noninverting schmitt characteristics
 	:align: center
 
