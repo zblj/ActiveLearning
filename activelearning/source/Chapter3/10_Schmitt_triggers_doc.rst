@@ -91,7 +91,7 @@ Let’s now take a look at the noninverting Schmitt trigger, starting with toggl
 
 Instead of walking you through the thought experiment of how and why a noninverting Schmitt trigger works, let me just show you the diagram and the oscillogram.
 
-.. image:: img/10_noniverting_schmitt_siagram.png
+.. image:: img/10_noniverting_schmitt_diagram.png
 	:name: noninverting schmitt characteristics
 	:align: center
 
