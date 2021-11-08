@@ -54,7 +54,7 @@ Zener diodes exhibit especially steep characteristic, making them suitable for b
 
 7. An experiment
 --------------------
-Let’s make a very simple circuit and measure the output. You know the drill. Input at 10x, output should be a sine wave, +- 1 V. The diode I used in my experiment was 1N4001¸, one of the most classic diodes known to man.
+Let’s make a very simple circuit and measure the output. You know the drill. Input at 10x, output should be a sine wave, +- 1 V. The diode I used in my experiment was 1N4001, one of the most classic diodes known to man.
 
 .. image:: img/8_diode_simple.png
 	:name: simple rectifier
@@ -64,10 +64,10 @@ Let’s make a very simple circuit and measure the output. You know the drill. I
 	:name: simple rectifier measurement
 	:align: center
 
-At vertical resolution of 0.5 V/div you can see that green line (after diode) is always equal or greater than 0 V but also approximately 0.7 V less than the yellow line (function generator). Exactly the forward voltage.
+At vertical resolution of 0.5 V/div you can see that yellow line (after diode) is always equal or greater than 0 V but also approximately 0.7 V less than the green line (function generator). Exactly the forward voltage.
 But this was a very simple experiment and we haven’t mentioned OpAmps yet. Let’s try measuring currents through different diodes at higher voltages.
 
-7. The experiment
+8. The experiment
 -------------------
 Here is what we are about to do: Red Pitaya can only output +- 1 V, but we want to test LEDs. Because LES’s forward voltages exceed RP’s output range, we have to extend it. My proposed solution is a noninverting amplifier with x3 setting. Schematic and the corresponding circuit are depicted below.
 
@@ -112,7 +112,11 @@ White LED:
 We can clearly see that peak current is getting lower and lower with each graph. Red has highest current rating and white has the lowest one. That is inversely proportional to forward voltage, which is the greatest for the white LED. Can you find a reason for that phenomenon? Let me give you a hint. Red has the longest wavelength (lowest frequency) of the bunch, green has shorter wavelength (higher frequency), and so on. Higher frequency means higher energy. Was that helpful enough?
 White LED is based on blue or ultraviolet (UV) diode, and we see its forward voltage in the last oscillogram. Can you predict forward voltage of an infrared (IR) LED? If not, you can always make an experiment. You have one IR LED in the ADALP2000 kit. It’s one of the black looking diodes – the one that is slightly translucent with a bluish tint.
 
-8. Conclusion
+9. Extra credits
+-----------------
+Throughout this course we observed characteristics of single diodes. Can you find a way to measure the characteristics of multiple equal or different diodes, wired in series using only a Red Pitaya and nothing else?
+
+10. Conclusion
 ---------------
 So this was a quick introduction to LEDs, I hope you fund it enlightening. At least the experiment with LEDs. Jokes aside, when you encounter the next problem, when you will want the current to flow in only one direction, or when you want to use an LED with an appropriate current setting, you now know how.
 
