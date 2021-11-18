@@ -101,7 +101,7 @@ A nice thing about this DAC architecture is that we can easily add ore remove bi
 --------------------------------------
 Consider deriving a formula for R-2R DAC’s output voltage your homework and let’s quickly look at how we can construct a R-2R DAC. Just like before, I am taking Uref from Red Pitaya’s DAC, set to output a constant 1V signal.
 
-.. image:: img/13_r2r_circuit.png
+.. image:: img/13_r2r_circuit.jpg
 	:name: R-2R DAC circuit
 	:align: center
 
