@@ -16,5 +16,5 @@ Circuits & electronics
    9_full_wave_rectifiers_doc
    10_Schmitt_triggers_doc
    11_function_generators_doc
-   12_DAC_doc
-   13_ADC_doc
+   12_PWM_doc
+   13_DAC_doc
