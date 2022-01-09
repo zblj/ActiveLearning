@@ -88,6 +88,10 @@ Let’s loose the LED for this example to make the circuit simpler. This means w
 .. image:: img/12_PWM_filtering_circuit.jpg
 	:name: smoothing PWM signal
 	:align: center
+	
+.. image:: img/12_PWM_with_RC.png
+	:name: smoothing PWM signal schematic
+	:align: center
 
 Depending on PWM frequency you will get different results. I used a 10 kOhm resistor and a 1 uF capacitor. Here is what I got at 100 Hz PWM:
 

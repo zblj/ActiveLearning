@@ -27,7 +27,7 @@ Laugh all you want, but this is a legitimate DAC. One huge drawback it has is th
 
 Another disadvantage of this circuit is that by adding more bits, number of switches increases. On its own, this is not a problem, but unfortunately, each switch adds parasitic capacitance, which limits maximum operation frequency. This problem can be mitigated by using a staged design. Here first DAC with half the bits generates reference voltage for the second stage DAC.
 
-.. image:: img/13_staged_resistor_DAC_schematic copy.png
+.. image:: img/13_staged_resistor_DAC_schematic.png
 	:name: staged resistor voltage divider DAC schematic
 	:align: center
 
@@ -95,7 +95,13 @@ Unlike the binary weighted DAC that we explored before, a R-2R network does not 
 	:align: center
 
 As illustrated above, regardless of how many bits a R-2R network has, its output resistance is always R.
-A nice thing about this DAC architecture is that we can easily add ore remove bits simply by adding or removing a pair of resistors. As explained just a moment ago, this doesn’t affect the rest of the circuit. Another nice thing is that a R-2R DAC only requires N switches and 2N resistors of two sizes. By selecting R to be 10 kOhm, we can even obtain 2R (20 kOhm) from the standard set of resistors. Furthermore, R-2R ladders are so common that you can even buy a prebuilt network in a single component. They cost very little and may come in handy when we have enough free pins on a microcontroller. You don’t even need a special Uref, you can simply connect digital output pins to the inputs of a DAC and pretend that supply voltage is stable enough to serve as a reference voltage. Same holds true for a binary weighted DAC, but I see no reason why you would use that over a simple R-2R.
+A nice thing about this DAC architecture is that we can easily add or remove bits simply by adding or removing a pair of resistors. As explained just a moment ago, this doesn’t affect the rest of the circuit. AS such, we can easily add an amplifier to the circuit. The following schematic depicts an inverting amplifier with a gain of -1 added to a R-2R DAC. Note how the amplifier consists of only an OpAmp and one resistor with resistance R.
+
+.. image:: img/13_R-2R_with_inverting_amplifier_schematic.png
+	:name: R-2R DAC with inverting amplifier
+	:align: center
+
+Another nice thing is that a R-2R DAC only requires N switches and 2N resistors of two sizes. By selecting R to be 10 kOhm, we can even obtain 2R (20 kOhm) from the standard set of resistors. Furthermore, R-2R ladders are so common that you can even buy a prebuilt network in a single component. They cost very little and may come in handy when we have enough free pins on a microcontroller. You don’t even need a special Uref, you can simply connect digital output pins to the inputs of a DAC and pretend that supply voltage is stable enough to serve as a reference voltage. Same holds true for a binary weighted DAC, but I see no reason why you would use that over a simple R-2R.
 
 7. Experimenting with a R-2R DAC
 --------------------------------------
