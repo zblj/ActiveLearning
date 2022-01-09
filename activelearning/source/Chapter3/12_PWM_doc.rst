@@ -88,7 +88,9 @@ Let’s loose the LED for this example to make the circuit simpler. This means w
 .. image:: img/12_PWM_filtering_circuit.jpg
 	:name: smoothing PWM signal
 	:align: center
-	
+
+And for clarity's sake: a schematic:
+
 .. image:: img/12_PWM_with_RC.png
 	:name: smoothing PWM signal schematic
 	:align: center
