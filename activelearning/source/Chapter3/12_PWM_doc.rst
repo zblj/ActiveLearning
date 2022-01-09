@@ -89,7 +89,7 @@ Let’s loose the LED for this example to make the circuit simpler. This means w
 	:name: smoothing PWM signal
 	:align: center
 
-And for clarity's sake, here's a schematic a schematic:
+And for clarity's sake, here's a schematic:
 
 .. image:: img/12_PWM_with_RC.png
 	:name: smoothing PWM signal schematic
